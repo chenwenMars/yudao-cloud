@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "芋道 Cloud 微服务架构",
+    "subtitle": "yudao-cloud 项目模块与基础设施全景",
+    "output": "arch-yudao.html",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "git@github.com:chenwenMars/yudao-cloud.git",
+      "revision": "589b75a1f2cff689963cf8b506521a6df0046807",
+      "link_mode": "local-only"
+    }
+  },
+  "components": [
+    { "id": "users", "type": "external", "label": "用户", "sublabel": "管理员 / 消费者", "pos": [40, 40], "size": [110, 55] },
+    { "id": "ui-admin", "type": "frontend", "label": "管理后台", "sublabel": "Vue3 / Vue2", "pos": [200, 40], "size": [140, 55] },
+    { "id": "ui-mall", "type": "frontend", "label": "商城客户端", "sublabel": "uni-app", "pos": [380, 40], "size": [140, 55] },
+    { "id": "gateway", "type": "security", "label": "API 网关", "sublabel": "Spring Cloud Gateway", "pos": [270, 130], "size": [150, 62], "sources": [{"path": "yudao-gateway/pom.xml", "line": 1, "end_line": 109}] },
+    { "id": "server", "type": "backend", "label": "yudao-server", "sublabel": "聚合启动器", "pos": [270, 240], "size": [150, 62], "sources": [{"path": "yudao-server/pom.xml", "line": 1, "end_line": 227}] },
+    { "id": "monitor", "type": "external", "label": "监控平台", "sublabel": "SkyWalking", "pos": [830, 240], "size": [130, 55], "sources": [{"path": "yudao-gateway/pom.xml", "line": 62, "end_line": 73}] },
+    { "id": "core", "type": "backend", "label": "系统与基础设施", "sublabel": "system / infra", "pos": [40, 360], "size": [140, 62], "tag": "必选", "sources": [{"path": "yudao-module-system/pom.xml", "line": 1, "end_line": 24}] },
+    { "id": "biz", "type": "backend", "label": "通用可选", "sublabel": "member / bpm / pay", "pos": [210, 360], "size": [130, 62] },
+    { "id": "trade", "type": "backend", "label": "交易与企业", "sublabel": "mall / crm / erp", "pos": [370, 360], "size": [140, 62] },
+    { "id": "industry", "type": "backend", "label": "制造与物联", "sublabel": "mes / wms / iot", "pos": [540, 360], "size": [140, 62] },
+    { "id": "app", "type": "backend", "label": "应用扩展", "sublabel": "im / ai / hrm / fms / pms", "pos": [710, 360], "size": [150, 62] },
+    { "id": "framework", "type": "backend", "label": "技术框架层", "sublabel": "starter 组件", "pos": [370, 480], "size": [160, 62], "sources": [{"path": "yudao-framework/pom.xml", "line": 1, "end_line": 49}] },
+    { "id": "nacos", "type": "cloud", "label": "Nacos", "sublabel": "注册 / 配置中心", "pos": [60, 600], "size": [120, 55] },
+    { "id": "mysql", "type": "database", "label": "MySQL", "sublabel": "MyBatis Plus", "pos": [210, 600], "size": [120, 55] },
+    { "id": "redis", "type": "database", "label": "Redis", "sublabel": "Redisson", "pos": [360, 600], "size": [120, 55] },
+    { "id": "mq", "type": "messagebus", "label": "MQ", "sublabel": "RocketMQ / Kafka", "pos": [510, 600], "size": [120, 55] },
+    { "id": "oss", "type": "cloud", "label": "OSS", "sublabel": "MinIO / 阿里云", "pos": [660, 600], "size": [120, 55] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "业务模块域", "wraps": ["core", "biz", "trade", "industry", "app"], "pad": 16 },
+    { "kind": "region", "label": "基础设施层", "wraps": ["nacos", "mysql", "redis", "mq", "oss"], "pad": 16 }
+  ],
+  "connections": [
+    { "id": "users-to-gateway", "from": "users", "to": "gateway", "variant": "emphasis" },
+    { "id": "ui-admin-to-gateway", "from": "ui-admin", "to": "gateway" },
+    { "id": "ui-mall-to-gateway", "from": "ui-mall", "to": "gateway" },
+    { "id": "gateway-to-server", "from": "gateway", "to": "server", "variant": "emphasis" },
+    { "id": "server-to-monitor", "from": "server", "to": "monitor", "fromSide": "right", "toSide": "left" },
+    { "id": "server-to-core", "from": "server", "to": "core", "fromSide": "bottom", "toSide": "top" },
+    { "id": "server-to-biz", "from": "server", "to": "biz", "fromSide": "bottom", "toSide": "top" },
+    { "id": "server-to-trade", "from": "server", "to": "trade", "fromSide": "bottom", "toSide": "top" },
+    { "id": "server-to-industry", "from": "server", "to": "industry", "fromSide": "bottom", "toSide": "top" },
+    { "id": "server-to-app", "from": "server", "to": "app", "fromSide": "bottom", "toSide": "top" },
+    { "id": "core-to-fw", "from": "core", "to": "framework", "fromSide": "bottom", "toSide": "top" },
+    { "id": "biz-to-fw", "from": "biz", "to": "framework", "fromSide": "bottom", "toSide": "top" },
+    { "id": "trade-to-fw", "from": "trade", "to": "framework", "fromSide": "bottom", "toSide": "top" },
+    { "id": "industry-to-fw", "from": "industry", "to": "framework", "fromSide": "bottom", "toSide": "top" },
+    { "id": "app-to-fw", "from": "app", "to": "framework", "fromSide": "bottom", "toSide": "top" },
+    { "id": "fw-to-nacos", "from": "framework", "to": "nacos", "fromSide": "bottom", "toSide": "top" },
+    { "id": "fw-to-mysql", "from": "framework", "to": "mysql", "fromSide": "bottom", "toSide": "top" },
+    { "id": "fw-to-redis", "from": "framework", "to": "redis", "fromSide": "bottom", "toSide": "top" },
+    { "id": "fw-to-mq", "from": "framework", "to": "mq", "fromSide": "bottom", "toSide": "top" },
+    { "id": "fw-to-oss", "from": "framework", "to": "oss", "fromSide": "bottom", "toSide": "top" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "前端层", "items": ["管理后台提供 Vue3 / Vue2 双版本", "商城客户端基于 uni-app 跨端方案"] },
+    { "dot": "emerald", "title": "服务层", "items": ["yudao-server 为聚合启动器，单体运行所有模块", "支持按需拆分独立微服务部署", "18+ 业务模块按功能域分组"] },
+    { "dot": "rose", "title": "基础设施", "items": ["Nacos 统一注册中心与配置中心", "MySQL + Redis + MQ 数据持久化与缓存", "SkyWalking 分布式链路追踪"] }
+  ]
+}
