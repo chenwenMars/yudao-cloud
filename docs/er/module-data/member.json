@@ -1,0 +1,513 @@
+{
+  "module": "member",
+  "title": "Member 会员中心",
+  "domains": [
+    {
+      "name": "会员档案与分组",
+      "color": "#2456A6",
+      "tables": [
+        "member_user",
+        "member_group",
+        "member_tag"
+      ]
+    },
+    {
+      "name": "会员等级",
+      "color": "#7C3FA2",
+      "tables": [
+        "member_level",
+        "member_level_record",
+        "member_experience_record"
+      ]
+    },
+    {
+      "name": "积分与规则",
+      "color": "#276F9D",
+      "tables": [
+        "member_point_record",
+        "member_config"
+      ]
+    },
+    {
+      "name": "签到",
+      "color": "#477246",
+      "tables": [
+        "member_sign_in_config",
+        "member_sign_in_record"
+      ]
+    },
+    {
+      "name": "收货地址",
+      "color": "#A65D21",
+      "tables": [
+        "member_address"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "member_experience_record",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/level/MemberExperienceRecordDO.java",
+        "line": 36,
+        "text": "private Long userId;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_level_record",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/level/MemberLevelRecordDO.java",
+        "line": 37,
+        "text": "private Long userId;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_point_record",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/point/MemberPointRecordDO.java",
+        "line": 35,
+        "text": "private Long userId;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_address",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/address/AddressServiceImpl.java",
+        "line": 42,
+        "text": "address.setUserId(userId);"
+      },
+      "one": false
+    },
+    {
+      "child": "member_sign_in_record",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/signin/MemberSignInRecordServiceImpl.java",
+        "line": 93,
+        "text": "List<MemberUserDO> users = memberUserService.getUserListByNickname(pageReqVO.getNickname());"
+      },
+      "one": false
+    },
+    {
+      "child": "member_level_record",
+      "field": "level_id",
+      "parent": "member_level",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/level/MemberLevelRecordDO.java",
+        "line": 43,
+        "text": "private Long levelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_user",
+      "field": "level_id",
+      "parent": "member_level",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/user/MemberUserDO.java",
+        "line": 137,
+        "text": "private Long levelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_user",
+      "field": "group_id",
+      "parent": "member_group",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/user/MemberUserDO.java",
+        "line": 147,
+        "text": "private Long groupId;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_user",
+      "field": "tag_ids",
+      "parent": "member_tag",
+      "key": "id",
+      "kind": "collection",
+      "note": "CSV会员标签ID列表；不会把集合拆成新的物理表。",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/user/MemberUserDO.java",
+        "line": 130,
+        "text": "private List<Long> tagIds;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_user",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "公共租户编号，运行时隔离行为还需结合框架配置。",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "member_point_record",
+      "field": "biz_id",
+      "parent": "member_sign_in_record",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=1",
+      "note": "SIGN(1)：签到积分流水，biz_id 是签到记录 id 的字符串值。",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/signin/MemberSignInRecordServiceImpl.java",
+        "line": 127,
+        "text": "pointRecordService.createPointRecord(userId, record.getPoint(), MemberPointBizTypeEnum.SIGN, String.valueOf(record.getId()));"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 19,
+          "text": "SIGN(1, \"签到\", \"签到获得 {} 积分\", true),"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/point/MemberPointRecordServiceImpl.java",
+          "line": 90,
+          "text": ".setUserId(userId).setBizId(bizId).setBizType(bizType.getType())"
+        }
+      ],
+      "one": false
+    },
+    {
+      "child": "member_point_record",
+      "field": "biz_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=2",
+      "note": "ADMIN(2)：管理员调整会员积分；biz_id 是操作管理员 getLoginUserId() 的字符串值，不是被调整的会员编号。",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/MemberUserController.java",
+        "line": 75,
+        "text": "MemberPointBizTypeEnum.ADMIN, String.valueOf(getLoginUserId()));"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/MemberUserController.java",
+          "line": 74,
+          "text": "memberPointRecordService.createPointRecord(updateReqVO.getId(), updateReqVO.getPoint(),"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 20,
+          "text": "ADMIN(2, \"管理员修改\", \"管理员修改 {} 积分\", true),"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/point/MemberPointRecordServiceImpl.java",
+          "line": 90,
+          "text": ".setUserId(userId).setBizId(bizId).setBizType(bizType.getType())"
+        }
+      ],
+      "one": false
+    },
+    {
+      "child": "member_point_record",
+      "field": "biz_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=11/12/21/22",
+      "note": "ORDER_USE(11)、ORDER_USE_CANCEL(12)、ORDER_GIVE(21)、ORDER_GIVE_CANCEL(22)：按整单写 order.id；字符串业务引用。",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+        "line": 38,
+        "text": "reducePoint(order.getUserId(), order.getUsePoint(), MemberPointBizTypeEnum.ORDER_USE, order.getId());"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 44,
+          "text": "addPoint(order.getUserId(), order.getGivePoint(), MemberPointBizTypeEnum.ORDER_GIVE,"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 45,
+          "text": "order.getId());"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 62,
+          "text": "addPoint(order.getUserId(), usePoint, MemberPointBizTypeEnum.ORDER_USE_CANCEL,"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 63,
+          "text": "order.getId());"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 71,
+          "text": "reducePoint(order.getUserId(), givePoint, MemberPointBizTypeEnum.ORDER_GIVE_CANCEL,"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 72,
+          "text": "order.getId());"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 108,
+          "text": "memberPointApi.addPoint(userId, point, bizType.getType(), String.valueOf(bizId)).checkError();"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 114,
+          "text": "memberPointApi.reducePoint(userId, point, bizType.getType(), String.valueOf(bizId)).checkError();"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 22,
+          "text": "ORDER_USE(11, \"订单积分抵扣\", \"下单使用 {} 积分\", false), // 下单时，扣减积分"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 23,
+          "text": "ORDER_USE_CANCEL(12, \"订单积分抵扣（整单取消）\", \"订单取消，退还 {} 积分\", true), // ORDER_USE 的取消"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 26,
+          "text": "ORDER_GIVE(21, \"订单积分奖励\", \"下单获得 {} 积分\", true), // 支付订单时，赠送积分"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 27,
+          "text": "ORDER_GIVE_CANCEL(22, \"订单积分奖励（整单取消）\", \"订单取消，退还 {} 积分\", false), // ORDER_GIVE 的取消"
+        }
+      ],
+      "one": false
+    },
+    {
+      "child": "member_point_record",
+      "field": "biz_id",
+      "parent": "trade_order_item",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=13/23",
+      "note": "ORDER_USE_CANCEL_ITEM(13)、ORDER_GIVE_CANCEL_ITEM(23)：按退款明细写 orderItem.id；不是售后单 id。",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+        "line": 82,
+        "text": "addPoint(order.getUserId(), orderItem.getUsePoint(), MemberPointBizTypeEnum.ORDER_USE_CANCEL_ITEM, orderItem.getId());"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 84,
+          "text": "reducePoint(order.getUserId(), orderItem.getGivePoint(), MemberPointBizTypeEnum.ORDER_GIVE_CANCEL_ITEM, orderItem.getId());"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 108,
+          "text": "memberPointApi.addPoint(userId, point, bizType.getType(), String.valueOf(bizId)).checkError();"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 114,
+          "text": "memberPointApi.reducePoint(userId, point, bizType.getType(), String.valueOf(bizId)).checkError();"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 24,
+          "text": "ORDER_USE_CANCEL_ITEM(13, \"订单积分抵扣（单个退款）\", \"订单退款，退还 {} 积分\", true), // ORDER_USE 的取消"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/point/MemberPointBizTypeEnum.java",
+          "line": 28,
+          "text": "ORDER_GIVE_CANCEL_ITEM(23, \"订单积分奖励（单个退款）\", \"订单退款，扣除赠送的 {} 积分\", false) // ORDER_GIVE 的取消"
+        }
+      ],
+      "one": false
+    },
+    {
+      "child": "member_experience_record",
+      "field": "biz_id",
+      "parent": "member_sign_in_record",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=4",
+      "note": "SIGN_IN(4)：签到经验流水，biz_id 是签到记录 id 的字符串值。",
+      "evidence": {
+        "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/signin/MemberSignInRecordServiceImpl.java",
+        "line": 131,
+        "text": "memberLevelService.addExperience(userId, record.getExperience(), MemberExperienceBizTypeEnum.SIGN_IN, String.valueOf(record.getId()));"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/MemberExperienceBizTypeEnum.java",
+          "line": 23,
+          "text": "SIGN_IN(4, \"签到奖励\", \"签到获得 {} 经验\", true),"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberLevelServiceImpl.java",
+          "line": 246,
+          "text": "memberExperienceRecordService.createExperienceRecord(userId, experience, userExperience,"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberLevelServiceImpl.java",
+          "line": 247,
+          "text": "bizType, bizId);"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberExperienceRecordServiceImpl.java",
+          "line": 51,
+          "text": "bizId, bizType.getType(), bizType.getTitle(), description);"
+        }
+      ],
+      "one": false
+    },
+    {
+      "child": "member_experience_record",
+      "field": "biz_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=11/12",
+      "note": "ORDER_GIVE(11)、ORDER_GIVE_CANCEL(12)：整单奖励/取消传 order.id；字符串业务引用。",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+        "line": 49,
+        "text": "MemberExperienceBizTypeEnum.ORDER_GIVE.getType(), String.valueOf(order.getId())).checkError();"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 48,
+          "text": "memberLevelApi.addExperience(order.getUserId(), order.getPayPrice(),"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 75,
+          "text": "memberLevelApi.addExperience(order.getUserId(), payPrice,"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 76,
+          "text": "MemberExperienceBizTypeEnum.ORDER_GIVE_CANCEL.getType(), String.valueOf(order.getId())).checkError();"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/MemberExperienceBizTypeEnum.java",
+          "line": 25,
+          "text": "ORDER_GIVE(11, \"下单奖励\", \"下单获得 {} 经验\", true),"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/MemberExperienceBizTypeEnum.java",
+          "line": 26,
+          "text": "ORDER_GIVE_CANCEL(12, \"下单奖励（整单取消）\", \"取消订单获得 {} 经验\", false), // ORDER_GIVE 的取消"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberLevelServiceImpl.java",
+          "line": 246,
+          "text": "memberExperienceRecordService.createExperienceRecord(userId, experience, userExperience,"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberLevelServiceImpl.java",
+          "line": 247,
+          "text": "bizType, bizId);"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberExperienceRecordServiceImpl.java",
+          "line": 51,
+          "text": "bizId, bizType.getType(), bizType.getTitle(), description);"
+        }
+      ],
+      "one": false
+    },
+    {
+      "child": "member_experience_record",
+      "field": "biz_id",
+      "parent": "trade_order_item",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=13",
+      "note": "ORDER_GIVE_CANCEL_ITEM(13)：单项退款传 orderItem.id；虽读取售后金额，biz_id 不是售后单 id。",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+        "line": 89,
+        "text": "MemberExperienceBizTypeEnum.ORDER_GIVE_CANCEL_ITEM.getType(), String.valueOf(orderItem.getId())).checkError();"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 87,
+          "text": "AfterSaleDO afterSale = afterSaleService.getAfterSale(orderItem.getAfterSaleId());"
+        },
+        {
+          "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeMemberPointOrderHandler.java",
+          "line": 88,
+          "text": "memberLevelApi.reduceExperience(order.getUserId(), afterSale.getRefundPrice(),"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/MemberExperienceBizTypeEnum.java",
+          "line": 27,
+          "text": "ORDER_GIVE_CANCEL_ITEM(13, \"下单奖励（单个退款）\", \"退款订单获得 {} 经验\", false), // ORDER_GIVE 的取消"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberLevelServiceImpl.java",
+          "line": 246,
+          "text": "memberExperienceRecordService.createExperienceRecord(userId, experience, userExperience,"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberLevelServiceImpl.java",
+          "line": 247,
+          "text": "bizType, bizId);"
+        },
+        {
+          "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberExperienceRecordServiceImpl.java",
+          "line": 51,
+          "text": "bizId, bizType.getType(), bizType.getTitle(), description);"
+        }
+      ],
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/member.sql 为准，字段类型包含源码推断；所有连线均为代码支持的逻辑关联。",
+    "area_id指向内存地区库Area，不存在本次DDL的地区表，不伪造关系。",
+    "积分/经验流水 biz_id 按已确认业务分支引用签到记录、管理员、交易订单或订单项；字符串值不代表数据库物理外键。经验 ADMIN(0) 分支写常量0，不连接管理员；邀请/抽奖未确认写入目标，不推断关系。"
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "module": "iot",
+  "title": "物联网",
+  "domains": [
+    {
+      "name": "产品与物模型",
+      "color": "#2456A6",
+      "tables": [
+        "iot_product_category",
+        "iot_product",
+        "iot_thing_model"
+      ]
+    },
+    {
+      "name": "设备与Modbus",
+      "color": "#077E8C",
+      "tables": [
+        "iot_device",
+        "iot_device_group",
+        "iot_device_modbus_config",
+        "iot_device_modbus_point"
+      ]
+    },
+    {
+      "name": "OTA固件升级",
+      "color": "#6B45A8",
+      "tables": [
+        "iot_ota_firmware",
+        "iot_ota_task",
+        "iot_ota_task_record"
+      ]
+    },
+    {
+      "name": "场景告警与流转",
+      "color": "#CF7137",
+      "tables": [
+        "iot_scene_rule",
+        "iot_alert_config",
+        "iot_alert_record",
+        "iot_data_rule",
+        "iot_data_sink"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "iot_alert_config",
+      "field": "mail_template_code",
+      "parent": "system_mail_template",
+      "key": "code",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertConfigDO.java",
+        "line": 93,
+        "text": "* 关联 MailTemplateDO 的 code 属性"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_config",
+      "field": "notify_template_code",
+      "parent": "system_notify_template",
+      "key": "code",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertConfigDO.java",
+        "line": 99,
+        "text": "* 关联 NotifyTemplateDO 的 code 属性"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_config",
+      "field": "receive_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → system_users.id",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertConfigDO.java",
+        "line": 72,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_config",
+      "field": "scene_rule_ids",
+      "parent": "iot_scene_rule",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → iot_scene_rule.id",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertConfigDO.java",
+        "line": 64,
+        "text": "* 关联 {@link IotSceneRuleDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_config",
+      "field": "sms_template_code",
+      "parent": "system_sms_template",
+      "key": "code",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertConfigDO.java",
+        "line": 87,
+        "text": "* 关联 SmsTemplateDO 的 code 属性"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_record",
+      "field": "config_id",
+      "parent": "iot_alert_config",
+      "key": "id",
+      "kind": "logic",
+      "note": "告警触发时保存配置主键与名称/级别快照",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/service/alert/IotAlertRecordServiceImpl.java",
+        "line": 60,
+        "text": ".configId(config.getId()).configName(config.getName()).configLevel(config.getLevel())"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_record",
+      "field": "device_id",
+      "parent": "iot_device",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertRecordDO.java",
+        "line": 71,
+        "text": "* 关联 {@link IotDeviceDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_record",
+      "field": "product_id",
+      "parent": "iot_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertRecordDO.java",
+        "line": 65,
+        "text": "* 关联 {@link IotProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_alert_record",
+      "field": "scene_rule_id",
+      "parent": "iot_scene_rule",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertRecordDO.java",
+        "line": 58,
+        "text": "* 关联 {@link IotSceneRuleDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_data_rule",
+      "field": "sink_ids",
+      "parent": "iot_data_sink",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → iot_data_sink.id",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/IotDataRuleDO.java",
+        "line": 64,
+        "text": "* 关联 {@link IotDataSinkDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device",
+      "field": "firmware_id",
+      "parent": "iot_ota_firmware",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceDO.java",
+        "line": 117,
+        "text": "* 关联 {@link IotOtaFirmwareDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device",
+      "field": "gateway_id",
+      "parent": "iot_device",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceDO.java",
+        "line": 91,
+        "text": "* 关联 {@link IotDeviceDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device",
+      "field": "group_ids",
+      "parent": "iot_device_group",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → iot_device_group.id",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceDO.java",
+        "line": 63,
+        "text": "* 关联 {@link IotDeviceGroupDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device",
+      "field": "product_id",
+      "parent": "iot_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceDO.java",
+        "line": 71,
+        "text": "* 关联 {@link IotProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device_modbus_config",
+      "field": "device_id",
+      "parent": "iot_device",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceModbusConfigDO.java",
+        "line": 42,
+        "text": "* 关联 {@link IotDeviceDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device_modbus_config",
+      "field": "product_id",
+      "parent": "iot_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceModbusConfigDO.java",
+        "line": 36,
+        "text": "* 关联 {@link IotProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device_modbus_point",
+      "field": "device_id",
+      "parent": "iot_device",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceModbusPointDO.java",
+        "line": 38,
+        "text": "* 关联 {@link IotDeviceDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_device_modbus_point",
+      "field": "thing_model_id",
+      "parent": "iot_thing_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceModbusPointDO.java",
+        "line": 44,
+        "text": "* 关联 {@link IotThingModelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_ota_firmware",
+      "field": "product_id",
+      "parent": "iot_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaFirmwareDO.java",
+        "line": 49,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.iot.dal.dataobject.product.IotProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_ota_task",
+      "field": "firmware_id",
+      "parent": "iot_ota_firmware",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaTaskDO.java",
+        "line": 44,
+        "text": "* 关联 {@link IotOtaFirmwareDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_ota_task_record",
+      "field": "device_id",
+      "parent": "iot_device",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaTaskRecordDO.java",
+        "line": 54,
+        "text": "* 关联 {@link IotDeviceDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_ota_task_record",
+      "field": "firmware_id",
+      "parent": "iot_ota_firmware",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaTaskRecordDO.java",
+        "line": 41,
+        "text": "* 关联 {@link IotOtaFirmwareDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_ota_task_record",
+      "field": "from_firmware_id",
+      "parent": "iot_ota_firmware",
+      "key": "id",
+      "kind": "inferred",
+      "note": "从设备firmware_id复制升级前固件编号；目标沿设备固件关系追溯",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/service/ota/IotOtaTaskRecordServiceImpl.java",
+        "line": 58,
+        "text": ".deviceId(device.getId()).fromFirmwareId(Convert.toLong(device.getFirmwareId()))"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_ota_task_record",
+      "field": "task_id",
+      "parent": "iot_ota_task",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaTaskRecordDO.java",
+        "line": 47,
+        "text": "* 关联 {@link IotOtaTaskDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_product",
+      "field": "category_id",
+      "parent": "iot_product_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/product/IotProductDO.java",
+        "line": 49,
+        "text": "* 关联 {@link IotProductCategoryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "iot_thing_model",
+      "field": "product_id",
+      "parent": "iot_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/IotThingModelDO.java",
+        "line": 56,
+        "text": "* 关联 {@link IotProductDO#getId()}"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/iot.sql 为准；图中关系来自当前业务代码，均为逻辑关联，不表示数据库已建立物理外键。",
+    "灰色锚点引用其他模块已有表；集合字段连线表示集合元素与目标键关联。",
+    "设备消息、属性时序数据等TDengine存储未包含在本次SQL中；不构造时序表实体或外键。",
+    "group_ids、sink_ids、scene_rule_ids、receive_user_ids为集合逻辑关联。"
+  ]
+}

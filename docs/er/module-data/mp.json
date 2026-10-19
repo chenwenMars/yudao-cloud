@@ -1,0 +1,195 @@
+{
+  "module": "mp",
+  "title": "MP 微信公众号",
+  "domains": [
+    {
+      "name": "公众号与菜单",
+      "color": "#2456A6",
+      "tables": [
+        "mp_account",
+        "mp_menu"
+      ]
+    },
+    {
+      "name": "粉丝与标签",
+      "color": "#7C3FA2",
+      "tables": [
+        "mp_user",
+        "mp_tag"
+      ]
+    },
+    {
+      "name": "消息与素材",
+      "color": "#276F9D",
+      "tables": [
+        "mp_message",
+        "mp_auto_reply",
+        "mp_message_template",
+        "mp_material"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "mp_material",
+      "field": "account_id",
+      "parent": "mp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/material/MpMaterialDO.java",
+        "line": 37,
+        "text": "* 关联 {@link MpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_menu",
+      "field": "account_id",
+      "parent": "mp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/menu/MpMenuDO.java",
+        "line": 44,
+        "text": "* 关联 {@link MpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_auto_reply",
+      "field": "account_id",
+      "parent": "mp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/message/MpAutoReplyDO.java",
+        "line": 46,
+        "text": "* 关联 {@link MpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_message",
+      "field": "account_id",
+      "parent": "mp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/message/MpMessageDO.java",
+        "line": 46,
+        "text": "* 关联 {@link MpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_message_template",
+      "field": "account_id",
+      "parent": "mp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/message/MpMessageTemplateDO.java",
+        "line": 33,
+        "text": "* 关联 {@link MpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_tag",
+      "field": "account_id",
+      "parent": "mp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/tag/MpTagDO.java",
+        "line": 48,
+        "text": "* 关联 {@link MpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_user",
+      "field": "account_id",
+      "parent": "mp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/user/MpUserDO.java",
+        "line": 104,
+        "text": "* 关联 {@link MpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_message",
+      "field": "user_id",
+      "parent": "mp_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/message/MpMessageDO.java",
+        "line": 58,
+        "text": "* 关联 {@link MpUserDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_menu",
+      "field": "parent_id",
+      "parent": "mp_menu",
+      "key": "id",
+      "kind": "logic",
+      "note": "父菜单逻辑层级；根节点不对应真实父记录。",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/menu/MpMenuDO.java",
+        "line": 67,
+        "text": "private Long parentId;"
+      },
+      "one": false
+    },
+    {
+      "child": "mp_user",
+      "field": "tag_ids",
+      "parent": "mp_tag",
+      "key": "tag_id",
+      "kind": "collection",
+      "note": "集合元素对应公众号 tag_id 业务编号，非本地 id；还需同 account_id。",
+      "evidence": {
+        "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/user/MpUserDO.java",
+        "line": 96,
+        "text": "* 注意，对应的是 {@link MpTagDO#getTagId()} 字段"
+      },
+      "one": false,
+      "label": "同账号 tag_id 集合"
+    },
+    {
+      "child": "mp_account",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "公共租户编号，运行时隔离行为还需结合框架配置。",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/mp.sql 为准，字段类型包含源码推断；所有连线均为代码支持的逻辑关联。",
+    "粉丝tag_ids元素关联mp_tag.tag_id且受account_id范围约束；不是mp_tag.id。",
+    "media_id/template_id等微信平台编号不自动关联本地数据库主键。",
+    "mp_tag.id保留DDL非自增INPUT策略，其应用赋值矛盾见DDL推断说明。"
+  ]
+}

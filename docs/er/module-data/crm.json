@@ -1,0 +1,876 @@
+{
+  "module": "crm",
+  "title": "CRM 客户关系管理",
+  "domains": [
+    {
+      "name": "线索与客户",
+      "tables": [
+        "crm_clue",
+        "crm_customer",
+        "crm_customer_pool_config",
+        "crm_customer_limit_config"
+      ],
+      "color": "#2456A6"
+    },
+    {
+      "name": "联系人",
+      "tables": [
+        "crm_contact",
+        "crm_contact_business"
+      ],
+      "color": "#137C8B"
+    },
+    {
+      "name": "商机与阶段",
+      "tables": [
+        "crm_business",
+        "crm_business_product",
+        "crm_business_status_type",
+        "crm_business_status"
+      ],
+      "color": "#7B4CB2"
+    },
+    {
+      "name": "产品目录",
+      "tables": [
+        "crm_product_category",
+        "crm_product"
+      ],
+      "color": "#A56A18"
+    },
+    {
+      "name": "合同与回款",
+      "tables": [
+        "crm_contract",
+        "crm_contract_product",
+        "crm_contract_config",
+        "crm_receivable_plan",
+        "crm_receivable"
+      ],
+      "color": "#B04461"
+    },
+    {
+      "name": "协作权限与业绩",
+      "tables": [
+        "crm_follow_up_record",
+        "crm_permission",
+        "crm_owner_record",
+        "crm_performance_config"
+      ],
+      "color": "#3B7C56"
+    }
+  ],
+  "relations": [
+    {
+      "child": "crm_business",
+      "field": "customer_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessDO.java",
+        "line": 41,
+        "text": "* 关联 {@link CrmCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_business",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessDO.java",
+        "line": 61,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_business",
+      "field": "status_id",
+      "parent": "crm_business_status",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessDO.java",
+        "line": 74,
+        "text": "* 关联 {@link CrmBusinessStatusDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_business",
+      "field": "status_type_id",
+      "parent": "crm_business_status_type",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessDO.java",
+        "line": 68,
+        "text": "*  关联 {@link CrmBusinessStatusTypeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_business_product",
+      "field": "business_id",
+      "parent": "crm_business",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessProductDO.java",
+        "line": 37,
+        "text": "* 关联 {@link CrmBusinessDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_business_product",
+      "field": "product_id",
+      "parent": "crm_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessProductDO.java",
+        "line": 43,
+        "text": "* 关联 {@link CrmProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_business_status",
+      "field": "type_id",
+      "parent": "crm_business_status_type",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessStatusDO.java",
+        "line": 33,
+        "text": "* 关联 {@link CrmBusinessStatusTypeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_clue",
+      "field": "customer_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/clue/CrmClueDO.java",
+        "line": 71,
+        "text": "* 关联 {@link CrmCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_clue",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/clue/CrmClueDO.java",
+        "line": 58,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contact",
+      "field": "customer_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contact/CrmContactDO.java",
+        "line": 39,
+        "text": "* 关联 {@link CrmCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contact",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contact/CrmContactDO.java",
+        "line": 59,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contact",
+      "field": "parent_id",
+      "parent": "crm_contact",
+      "key": "id",
+      "kind": "logic",
+      "note": "层级自引用；根节点标识不指向实体行",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contact/CrmContactDO.java",
+        "line": 110,
+        "text": "* 关联 {@link CrmContactDO#id}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contact_business",
+      "field": "business_id",
+      "parent": "crm_business",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contact/CrmContactBusinessDO.java",
+        "line": 39,
+        "text": "* 关联 {@link CrmBusinessDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contact_business",
+      "field": "contact_id",
+      "parent": "crm_contact",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contact/CrmContactBusinessDO.java",
+        "line": 33,
+        "text": "* 关联 {@link CrmContactDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contract",
+      "field": "business_id",
+      "parent": "crm_business",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractDO.java",
+        "line": 53,
+        "text": "* 关联 {@link CrmBusinessDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contract",
+      "field": "customer_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractDO.java",
+        "line": 47,
+        "text": "* 关联 {@link CrmCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contract",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractDO.java",
+        "line": 65,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contract",
+      "field": "sign_contact_id",
+      "parent": "crm_contact",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractDO.java",
+        "line": 109,
+        "text": "* 关联 {@link CrmContactDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contract",
+      "field": "sign_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractDO.java",
+        "line": 115,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contract_product",
+      "field": "contract_id",
+      "parent": "crm_contract",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractProductDO.java",
+        "line": 35,
+        "text": "* 关联 {@link CrmContractDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_contract_product",
+      "field": "product_id",
+      "parent": "crm_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractProductDO.java",
+        "line": 41,
+        "text": "* 关联 {@link CrmProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_customer",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/customer/CrmCustomerDO.java",
+        "line": 57,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_customer_limit_config",
+      "field": "dept_ids",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "collection",
+      "note": "规则适用部门列表",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/customer/CrmCustomerLimitConfigServiceImpl.java",
+        "line": 113,
+        "text": "deptApi.validateDeptList(deptIds).checkError();"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "crm_customer_limit_config",
+      "field": "user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "规则适用后台用户列表",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/customer/CrmCustomerLimitConfigServiceImpl.java",
+        "line": 114,
+        "text": "adminUserApi.validateUserList(userIds).checkError();"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "crm_follow_up_record",
+      "field": "biz_id",
+      "parent": "crm_business",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=4；Service 对应跟进更新分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/followup/CrmFollowUpRecordServiceImpl.java",
+        "line": 76,
+        "text": "businessService.updateBusinessFollowUp(record.getBizId(), record.getNextTime(), record.getContent());"
+      },
+      "one": false,
+      "label": "biz_type=4"
+    },
+    {
+      "child": "crm_follow_up_record",
+      "field": "biz_id",
+      "parent": "crm_clue",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=1；Service 对应跟进更新分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/followup/CrmFollowUpRecordServiceImpl.java",
+        "line": 79,
+        "text": "clueService.updateClueFollowUp(record.getBizId(), record.getNextTime(), record.getContent());"
+      },
+      "one": false,
+      "label": "biz_type=1"
+    },
+    {
+      "child": "crm_follow_up_record",
+      "field": "biz_id",
+      "parent": "crm_contact",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=3；Service 对应跟进更新分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/followup/CrmFollowUpRecordServiceImpl.java",
+        "line": 82,
+        "text": "contactService.updateContactFollowUp(record.getBizId(), record.getNextTime(), record.getContent());"
+      },
+      "one": false,
+      "label": "biz_type=3"
+    },
+    {
+      "child": "crm_follow_up_record",
+      "field": "biz_id",
+      "parent": "crm_contract",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=5；Service 对应跟进更新分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/followup/CrmFollowUpRecordServiceImpl.java",
+        "line": 85,
+        "text": "contractService.updateContractFollowUp(record.getBizId(), record.getNextTime(), record.getContent());"
+      },
+      "one": false,
+      "label": "biz_type=5"
+    },
+    {
+      "child": "crm_follow_up_record",
+      "field": "biz_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=2；Service 对应跟进更新分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/followup/CrmFollowUpRecordServiceImpl.java",
+        "line": 73,
+        "text": "customerService.updateCustomerFollowUp(record.getBizId(), record.getNextTime(), record.getContent());"
+      },
+      "one": false,
+      "label": "biz_type=2"
+    },
+    {
+      "child": "crm_follow_up_record",
+      "field": "business_ids",
+      "parent": "crm_business",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/followup/CrmFollowUpRecordDO.java",
+        "line": 84,
+        "text": "* 关联 {@link CrmBusinessDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "crm_follow_up_record",
+      "field": "contact_ids",
+      "parent": "crm_contact",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/followup/CrmFollowUpRecordDO.java",
+        "line": 91,
+        "text": "* 关联 {@link CrmContactDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "crm_owner_record",
+      "field": "biz_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=2（CRM_CUSTOMER）；当前唯一已查到的写入分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/customer/CrmCustomerServiceImpl.java",
+        "line": 472,
+        "text": "ownerRecordService.createOwnerRecord(new CrmOwnerRecordCreateReqBO().setBizType(CrmBizTypeEnum.CRM_CUSTOMER.getType())"
+      },
+      "one": false,
+      "label": "biz_type=2"
+    },
+    {
+      "child": "crm_owner_record",
+      "field": "post_owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "客户负责人变更前/后后台用户；后负责人可为空",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/customer/CrmCustomerServiceImpl.java",
+        "line": 424,
+        "text": ".setBizId(customer.getId()).setPreOwnerUserId(customer.getOwnerUserId()).setPostOwnerUserId(ownerUserId));"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_owner_record",
+      "field": "pre_owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "客户负责人变更前/后后台用户；后负责人可为空",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/customer/CrmCustomerServiceImpl.java",
+        "line": 424,
+        "text": ".setBizId(customer.getId()).setPreOwnerUserId(customer.getOwnerUserId()).setPostOwnerUserId(ownerUserId));"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_performance_config",
+      "field": "object_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "object_type=2（DEPT）；仅此分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/performance/CrmPerformanceConfigServiceImpl.java",
+        "line": 111,
+        "text": "deptApi.validateDeptList(singleton(objectId)).checkError();"
+      },
+      "one": false,
+      "label": "object_type=2"
+    },
+    {
+      "child": "crm_performance_config",
+      "field": "object_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "object_type=3（USER）；仅此分支",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/performance/CrmPerformanceConfigServiceImpl.java",
+        "line": 116,
+        "text": "adminUserApi.validateUserList(singleton(objectId)).checkError();"
+      },
+      "one": false,
+      "label": "object_type=3"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_business",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=4（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 23,
+        "text": "CRM_BUSINESS(4, \"商机\"),"
+      },
+      "one": false,
+      "label": "biz_type=4"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_clue",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=1（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 20,
+        "text": "CRM_CLUE(1, \"线索\"),"
+      },
+      "one": false,
+      "label": "biz_type=1"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_contact",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=3（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 22,
+        "text": "CRM_CONTACT(3, \"联系人\"),"
+      },
+      "one": false,
+      "label": "biz_type=3"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_contract",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=5（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 24,
+        "text": "CRM_CONTRACT(5, \"合同\"),"
+      },
+      "one": false,
+      "label": "biz_type=5"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=2（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 21,
+        "text": "CRM_CUSTOMER(2, \"客户\"),"
+      },
+      "one": false,
+      "label": "biz_type=2"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_product",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=6（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 25,
+        "text": "CRM_PRODUCT(6, \"产品\"),"
+      },
+      "one": false,
+      "label": "biz_type=6"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_receivable",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=7（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 26,
+        "text": "CRM_RECEIVABLE(7, \"回款\"),"
+      },
+      "one": false,
+      "label": "biz_type=7"
+    },
+    {
+      "child": "crm_permission",
+      "field": "biz_id",
+      "parent": "crm_receivable_plan",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=8（CrmBizTypeEnum）；权限 DO 明确引用枚举对应实体",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-api/src/main/java/cn/iocoder/yudao/module/crm/enums/common/CrmBizTypeEnum.java",
+        "line": 27,
+        "text": "CRM_RECEIVABLE_PLAN(8, \"回款计划\")"
+      },
+      "one": false,
+      "label": "biz_type=8"
+    },
+    {
+      "child": "crm_permission",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/permission/CrmPermissionDO.java",
+        "line": 48,
+        "text": "* 关联 AdminUser 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_product",
+      "field": "category_id",
+      "parent": "crm_product_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/product/CrmProductDO.java",
+        "line": 60,
+        "text": "* 关联 {@link CrmProductCategoryDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_product",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/product/CrmProductDO.java",
+        "line": 70,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_product_category",
+      "field": "parent_id",
+      "parent": "crm_product_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "层级自引用；根节点标识不指向实体行",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/product/CrmProductCategoryDO.java",
+        "line": 45,
+        "text": "* 关联 {@link CrmProductCategoryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable",
+      "field": "contract_id",
+      "parent": "crm_contract",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivableDO.java",
+        "line": 56,
+        "text": "* 关联 {@link CrmContractDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable",
+      "field": "customer_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivableDO.java",
+        "line": 50,
+        "text": "* 关联 {@link CrmCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivableDO.java",
+        "line": 60,
+        "text": "* 负责人编号，关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable",
+      "field": "plan_id",
+      "parent": "crm_receivable_plan",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivableDO.java",
+        "line": 44,
+        "text": "* 关联 {@link CrmReceivablePlanDO#getId()}，非必须"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable_plan",
+      "field": "contract_id",
+      "parent": "crm_contract",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivablePlanDO.java",
+        "line": 48,
+        "text": "* 关联 {@link CrmContractDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable_plan",
+      "field": "customer_id",
+      "parent": "crm_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivablePlanDO.java",
+        "line": 42,
+        "text": "* 关联 {@link CrmCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable_plan",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivablePlanDO.java",
+        "line": 55,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "crm_receivable_plan",
+      "field": "receivable_id",
+      "parent": "crm_receivable",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/receivable/CrmReceivablePlanDO.java",
+        "line": 75,
+        "text": "* 回款编号，关联 {@link CrmReceivableDO#getId()}"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "结构以 sql/mysql/crm.sql 为准；图中连线表示源码支持的逻辑引用，DDL 未声明物理外键。",
+    "biz_id 多态引用按 CrmBizTypeEnum 展示；跟进记录仅绘制 Service 明确处理的线索、客户、联系人、商机、合同；负责人变更仅绘制目前写入的客户分支。",
+    "process_instance_id 指向 Flowable 运行时流程实例，499 张模块 DDL 中没有对应引擎表，本图不误连 BPM 扩展表。",
+    "area_id 为内存地区库 Area 标识；行业与跟进类型为字典值；不当作模块物理表外键。",
+    "crm_business_status_type.dept_ids 仅有使用部门编号注释，未查到当前业务读取或验证，不建立确定引用。"
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "module": "infra",
+  "title": "Infra 基础设施",
+  "domains": [
+    {
+      "name": "数据源与代码生成",
+      "color": "#2456A6",
+      "tables": [
+        "infra_data_source_config",
+        "infra_codegen_table",
+        "infra_codegen_column"
+      ]
+    },
+    {
+      "name": "文件存储",
+      "color": "#7C3FA2",
+      "tables": [
+        "infra_file_config",
+        "infra_file",
+        "infra_file_content"
+      ]
+    },
+    {
+      "name": "API 日志",
+      "color": "#276F9D",
+      "tables": [
+        "infra_api_access_log",
+        "infra_api_error_log"
+      ]
+    },
+    {
+      "name": "参数配置",
+      "color": "#477246",
+      "tables": [
+        "infra_config"
+      ]
+    },
+    {
+      "name": "开发示例",
+      "color": "#A65D21",
+      "tables": [
+        "yudao_demo01_contact",
+        "yudao_demo02_category",
+        "yudao_demo03_student",
+        "yudao_demo03_course",
+        "yudao_demo03_grade"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "infra_file",
+      "field": "config_id",
+      "parent": "infra_file_config",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+        "line": 33,
+        "text": "* 关联 {@link FileConfigDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_file_content",
+      "field": "config_id",
+      "parent": "infra_file_config",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+        "line": 37,
+        "text": "* 关联 {@link FileConfigDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_file",
+      "field": "path",
+      "parent": "infra_file_content",
+      "key": "path",
+      "kind": "conditional",
+      "note": "DB存储时按(config_id,path)匹配；可重复，取最新记录；非1:1",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/db/DBFileClient.java",
+        "line": 46,
+        "text": "List<FileContentDO> list = fileContentMapper.selectListByConfigIdAndPath(getId(), path);"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_codegen_column",
+      "field": "table_id",
+      "parent": "infra_codegen_table",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenColumnDO.java",
+        "line": 32,
+        "text": "* 关联 {@link CodegenTableDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_codegen_column",
+      "field": "dict_type",
+      "parent": "system_dict_type",
+      "key": "type",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenColumnDO.java",
+        "line": 92,
+        "text": "* 关联 DictTypeDO 的 type 属性"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_codegen_table",
+      "field": "data_source_config_id",
+      "parent": "infra_data_source_config",
+      "key": "id",
+      "kind": "conditional",
+      "note": "data_source_config_id != 0 时引用配置表 id；0 是运行时构造的 master 数据源，不要求存在对应配置表记录。",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenTableDO.java",
+        "line": 37,
+        "text": "private Long dataSourceConfigId;"
+      },
+      "one": false,
+      "label": "非0数据源",
+      "evidence_more": [
+        {
+          "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/db/DataSourceConfigServiceImpl.java",
+          "line": 79,
+          "text": "// 如果 id 为 0，默认为 master 的数据源"
+        },
+        {
+          "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/db/DataSourceConfigServiceImpl.java",
+          "line": 80,
+          "text": "if (Objects.equals(id, DataSourceConfigDO.ID_MASTER)) {"
+        },
+        {
+          "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/db/DataSourceConfigServiceImpl.java",
+          "line": 81,
+          "text": "return buildMasterDataSourceConfig();"
+        },
+        {
+          "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/db/DataSourceConfigServiceImpl.java",
+          "line": 84,
+          "text": "return dataSourceConfigMapper.selectById(id);"
+        },
+        {
+          "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/db/DataSourceConfigServiceImpl.java",
+          "line": 90,
+          "text": "// 补充 master 数据源"
+        },
+        {
+          "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/db/DataSourceConfigServiceImpl.java",
+          "line": 91,
+          "text": "result.add(0, buildMasterDataSourceConfig());"
+        }
+      ]
+    },
+    {
+      "child": "infra_codegen_table",
+      "field": "parent_menu_id",
+      "parent": "system_menu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenTableDO.java",
+        "line": 115,
+        "text": "private Long parentMenuId;"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_codegen_table",
+      "field": "master_table_id",
+      "parent": "infra_codegen_table",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenTableDO.java",
+        "line": 124,
+        "text": "private Long masterTableId;"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_codegen_table",
+      "field": "sub_join_column_id",
+      "parent": "infra_codegen_column",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenTableDO.java",
+        "line": 130,
+        "text": "private Long subJoinColumnId;"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_codegen_table",
+      "field": "tree_parent_column_id",
+      "parent": "infra_codegen_column",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenTableDO.java",
+        "line": 146,
+        "text": "private Long treeParentColumnId;"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_codegen_table",
+      "field": "tree_name_column_id",
+      "parent": "infra_codegen_column",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenTableDO.java",
+        "line": 154,
+        "text": "private Long treeNameColumnId;"
+      },
+      "one": false
+    },
+    {
+      "child": "yudao_demo03_course",
+      "field": "student_id",
+      "parent": "yudao_demo03_student",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/demo/demo03/inner/Demo03CourseInnerMapper.java",
+        "line": 18,
+        "text": "return selectList(Demo03CourseDO::getStudentId, studentId);"
+      },
+      "one": false
+    },
+    {
+      "child": "yudao_demo03_grade",
+      "field": "student_id",
+      "parent": "yudao_demo03_student",
+      "key": "id",
+      "kind": "logic",
+      "note": "应用按学生取单条班级记录；DDL未设唯一约束",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/demo/demo03/inner/Demo03GradeInnerMapper.java",
+        "line": 18,
+        "text": "return selectOne(Demo03GradeDO::getStudentId, studentId);"
+      },
+      "one": true
+    },
+    {
+      "child": "yudao_demo02_category",
+      "field": "parent_id",
+      "parent": "yudao_demo02_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/demo/demo02/Demo02CategoryDO.java",
+        "line": 38,
+        "text": "private Long parentId;"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_api_error_log",
+      "field": "process_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/logger/ApiErrorLogServiceImpl.java",
+        "line": 77,
+        "text": ".processUserId(processUserId).processTime(LocalDateTime.now()).build());"
+      },
+      "one": false
+    },
+    {
+      "child": "infra_api_access_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "infra_api_access_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "infra_api_error_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "infra_api_error_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/infra.sql 为准，字段类型包含源码推断；所有连线均为代码支持的逻辑关联。",
+    "仅按本次 infra.sql 的14张实体表绘制；旧总SQL中的 infra_job / infra_job_log 无当前实体，未纳入。",
+    "数据库文件内容通过(config_id,path)寻址且可重复，DBFileClient读取最新内容，不宣称固定1:1。",
+    "creator/updater、trace_id与原始请求参数等不由名称推测为外键。",
+    "代码生成的数据源编号0表示运行时 master 数据源；仅非0编号指向 infra_data_source_config 的实体行。"
+  ]
+}

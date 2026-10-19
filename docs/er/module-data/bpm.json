@@ -1,0 +1,168 @@
+{
+  "module": "bpm",
+  "title": "工作流程",
+  "domains": [
+    {
+      "name": "流程定义与表单",
+      "color": "#2456A6",
+      "tables": [
+        "bpm_category",
+        "bpm_form",
+        "bpm_process_definition_info"
+      ]
+    },
+    {
+      "name": "设计器与用户组",
+      "color": "#077E8C",
+      "tables": [
+        "bpm_process_expression",
+        "bpm_process_listener",
+        "bpm_user_group"
+      ]
+    },
+    {
+      "name": "流程业务与抄送",
+      "color": "#6B45A8",
+      "tables": [
+        "bpm_oa_leave",
+        "bpm_process_instance_copy"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "bpm_oa_leave",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/oa/BpmOALeaveDO.java",
+        "line": 39,
+        "text": "* 关联 AdminUserDO 的 id 属性"
+      },
+      "one": false
+    },
+    {
+      "child": "bpm_process_definition_info",
+      "field": "category",
+      "parent": "bpm_category",
+      "key": "code",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/definition/BpmProcessDefinitionInfoDO.java",
+        "line": 65,
+        "text": "* 关联 {@link BpmCategoryDO#getCode()}"
+      },
+      "one": false
+    },
+    {
+      "child": "bpm_process_definition_info",
+      "field": "form_id",
+      "parent": "bpm_form",
+      "key": "id",
+      "kind": "conditional",
+      "note": "form_type=NORMAL（普通表单）时引用动态表单",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/definition/BpmProcessDefinitionInfoDO.java",
+        "line": 90,
+        "text": "* 关联 {@link BpmFormDO#getId()}"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "bpm_process_definition_info",
+      "field": "manager_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → system_users.id",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/definition/BpmProcessDefinitionInfoDO.java",
+        "line": 165,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()} 字段的数组"
+      },
+      "one": false
+    },
+    {
+      "child": "bpm_process_definition_info",
+      "field": "start_dept_ids",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "collection",
+      "note": "start_dept_ids元素为用户所属部门编号；关联部门主键，非用户主键",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/definition/BpmProcessDefinitionInfoDO.java",
+        "line": 157,
+        "text": "* 关联 {@link AdminUserRespDTO#getDeptId()} 字段的数组"
+      },
+      "one": false,
+      "label": "可发起部门"
+    },
+    {
+      "child": "bpm_process_definition_info",
+      "field": "start_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → system_users.id",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/definition/BpmProcessDefinitionInfoDO.java",
+        "line": 143,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()} 字段的数组"
+      },
+      "one": false
+    },
+    {
+      "child": "bpm_process_instance_copy",
+      "field": "start_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "inferred",
+      "note": "从流程实例startUserId复制的发起人编号；用户由system模块管理",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/service/task/BpmProcessInstanceCopyServiceImpl.java",
+        "line": 77,
+        "text": ".setUserId(userId).setReason(reason).setStartUserId(Long.valueOf(processInstance.getStartUserId()))"
+      },
+      "one": false
+    },
+    {
+      "child": "bpm_process_instance_copy",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/task/BpmProcessInstanceCopyDO.java",
+        "line": 88,
+        "text": "* 关联 system_users 的 id 属性"
+      },
+      "one": false
+    },
+    {
+      "child": "bpm_user_group",
+      "field": "user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "用户组成员编号被候选人策略展开为任务候选用户集合",
+      "evidence": {
+        "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/flowable/core/candidate/strategy/user/BpmTaskCandidateGroupStrategy.java",
+        "line": 43,
+        "text": "return convertSetByFlatMap(groups, BpmUserGroupDO::getUserIds, Collection::stream);"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/bpm.sql 为准；图中关系来自当前业务代码，均为逻辑关联，不表示数据库已建立物理外键。",
+    "灰色锚点引用其他模块已有表；集合字段连线表示集合元素与目标键关联。",
+    "Flowable 的流程定义、模型、实例、历史任务及ACT_*引擎表未包含在本模块SQL中；process_definition_id、model_id、process_instance_id、task_id保持原字段，不伪造目标表。",
+    "流程分类以 category → bpm_category.code 建立业务关联，而非默认关联 id。"
+  ]
+}

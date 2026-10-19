@@ -1,0 +1,579 @@
+{
+  "module": "im",
+  "title": "即时通讯",
+  "domains": [
+    {
+      "name": "频道运营",
+      "color": "#2456A6",
+      "tables": [
+        "im_channel",
+        "im_channel_material",
+        "im_channel_message"
+      ]
+    },
+    {
+      "name": "私聊与好友",
+      "color": "#077E8C",
+      "tables": [
+        "im_friend",
+        "im_friend_request",
+        "im_private_message",
+        "im_conversation_read"
+      ]
+    },
+    {
+      "name": "群组与群聊",
+      "color": "#6B45A8",
+      "tables": [
+        "im_group",
+        "im_group_member",
+        "im_group_request",
+        "im_group_message"
+      ]
+    },
+    {
+      "name": "通话与素材",
+      "color": "#CF7137",
+      "tables": [
+        "im_rtc_call",
+        "im_rtc_participant",
+        "im_face_pack",
+        "im_face_pack_item",
+        "im_face_user_item",
+        "im_sensitive_word"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "im_channel_material",
+      "field": "channel_id",
+      "parent": "im_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/channel/ImChannelMaterialDO.java",
+        "line": 39,
+        "text": "* 关联 {@link ImChannelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "im_channel_message",
+      "field": "channel_id",
+      "parent": "im_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImChannelMessageDO.java",
+        "line": 45,
+        "text": "* 关联 {@link ImChannelDO#getId()}；冗余便于按频道检索"
+      },
+      "one": false
+    },
+    {
+      "child": "im_channel_message",
+      "field": "material_id",
+      "parent": "im_channel_material",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImChannelMessageDO.java",
+        "line": 51,
+        "text": "* 关联 {@link ImChannelMaterialDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "im_channel_message",
+      "field": "receiver_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "接收用户编号集合；集合为空表示所有用户可见",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/message/ImChannelMessageServiceImpl.java",
+        "line": 80,
+        "text": "if (CollUtil.isNotEmpty(message.getReceiverUserIds()) && !message.getReceiverUserIds().contains(userId)) {"
+      },
+      "one": false
+    },
+    {
+      "child": "im_conversation_read",
+      "field": "message_id",
+      "parent": "im_channel_message",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "conversation_type=3（频道）",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+        "line": 60,
+        "text": "* 关联 {@link ImPrivateMessageDO#getId()}、{@link ImGroupMessageDO#getId()}、{@link ImChannelMessageDO#getId()}"
+      },
+      "one": false,
+      "label": "频道"
+    },
+    {
+      "child": "im_conversation_read",
+      "field": "message_id",
+      "parent": "im_group_message",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "conversation_type=2（群聊）",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+        "line": 60,
+        "text": "* 关联 {@link ImPrivateMessageDO#getId()}、{@link ImGroupMessageDO#getId()}、{@link ImChannelMessageDO#getId()}"
+      },
+      "one": false,
+      "label": "群聊"
+    },
+    {
+      "child": "im_conversation_read",
+      "field": "message_id",
+      "parent": "im_private_message",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "conversation_type=1（私聊）",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+        "line": 60,
+        "text": "* 关联 {@link ImPrivateMessageDO#getId()}、{@link ImGroupMessageDO#getId()}、{@link ImChannelMessageDO#getId()}"
+      },
+      "one": false,
+      "label": "私聊"
+    },
+    {
+      "child": "im_conversation_read",
+      "field": "target_id",
+      "parent": "im_channel",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "conversation_type=3（频道）",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+        "line": 54,
+        "text": "* 私聊关联 AdminUserDO 的 id；群聊关联 {@link ImGroupDO#getId()}；频道关联 {@link ImChannelDO#getId()}"
+      },
+      "one": false,
+      "label": "频道"
+    },
+    {
+      "child": "im_conversation_read",
+      "field": "target_id",
+      "parent": "im_group",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "conversation_type=2（群聊）",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+        "line": 54,
+        "text": "* 私聊关联 AdminUserDO 的 id；群聊关联 {@link ImGroupDO#getId()}；频道关联 {@link ImChannelDO#getId()}"
+      },
+      "one": false,
+      "label": "群聊"
+    },
+    {
+      "child": "im_conversation_read",
+      "field": "target_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "conversation_type=1（私聊）",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+        "line": 54,
+        "text": "* 私聊关联 AdminUserDO 的 id；群聊关联 {@link ImGroupDO#getId()}；频道关联 {@link ImChannelDO#getId()}"
+      },
+      "one": false,
+      "label": "私聊"
+    },
+    {
+      "child": "im_conversation_read",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+        "line": 42,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_face_pack_item",
+      "field": "pack_id",
+      "parent": "im_face_pack",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/face/ImFacePackItemServiceImpl.java",
+        "line": 74,
+        "text": "facePackService.validateFacePackExists(reqVO.getPackId());"
+      },
+      "one": false
+    },
+    {
+      "child": "im_face_user_item",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/face/ImFaceUserItemDO.java",
+        "line": 32,
+        "text": "* 关联 AdminUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "im_friend",
+      "field": "friend_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/friend/ImFriendDO.java",
+        "line": 48,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_friend",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/friend/ImFriendDO.java",
+        "line": 42,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_friend_request",
+      "field": "from_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/friend/ImFriendRequestDO.java",
+        "line": 41,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_friend_request",
+      "field": "to_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/friend/ImFriendRequestDO.java",
+        "line": 47,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupDO.java",
+        "line": 42,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group",
+      "field": "pinned_message_ids",
+      "parent": "im_group_message",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素是群消息id；服务校验消息属于当前群且未撤回",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/group/ImGroupServiceImpl.java",
+        "line": 441,
+        "text": "ImGroupMessageDO message = groupMessageService.getGroupMessage(messageId);"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_member",
+      "field": "group_id",
+      "parent": "im_group",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupMemberDO.java",
+        "line": 42,
+        "text": "* 关联 {@link ImGroupDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_member",
+      "field": "inviter_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupMemberDO.java",
+        "line": 88,
+        "text": "* 关联 AdminUserDO 的 id 字段；用户主动申请进群时为 NULL"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_member",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupMemberDO.java",
+        "line": 48,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_message",
+      "field": "at_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → system_users.id",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImGroupMessageDO.java",
+        "line": 88,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_message",
+      "field": "group_id",
+      "parent": "im_group",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImGroupMessageDO.java",
+        "line": 51,
+        "text": "* 关联 {@link ImGroupDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_message",
+      "field": "receiver_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → system_users.id",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImGroupMessageDO.java",
+        "line": 81,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_message",
+      "field": "sender_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImGroupMessageDO.java",
+        "line": 45,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_request",
+      "field": "group_id",
+      "parent": "im_group",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupRequestDO.java",
+        "line": 43,
+        "text": "* 关联 {@link ImGroupDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_request",
+      "field": "handle_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "处理用户已由群主/管理员权限校验",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/group/ImGroupRequestServiceImpl.java",
+        "line": 129,
+        "text": ".setHandleUserId(userId).setHandleTime(now);"
+      },
+      "one": false
+    },
+    {
+      "child": "im_group_request",
+      "field": "inviter_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "conditional",
+      "note": "非NULL表示邀请的群成员用户；NULL表示用户主动申请",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/group/ImGroupRequestServiceImpl.java",
+        "line": 310,
+        "text": "request = new ImGroupRequestDO().setGroupId(groupId).setUserId(userId).setInviterUserId(inviterUserId)"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "im_group_request",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupRequestDO.java",
+        "line": 49,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_private_message",
+      "field": "receiver_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImPrivateMessageDO.java",
+        "line": 47,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_private_message",
+      "field": "sender_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImPrivateMessageDO.java",
+        "line": 41,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_rtc_call",
+      "field": "group_id",
+      "parent": "im_group",
+      "key": "id",
+      "kind": "conditional",
+      "note": "conversation_type=2（群聊）；私聊时为NULL",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/rtc/ImRtcCallDO.java",
+        "line": 63,
+        "text": "* 关联 {@link ImGroupDO#getId()}"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "im_rtc_call",
+      "field": "inviter_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/rtc/ImRtcCallDO.java",
+        "line": 57,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "im_rtc_participant",
+      "field": "call_id",
+      "parent": "im_rtc_call",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/rtc/ImRtcParticipantDO.java",
+        "line": 40,
+        "text": "* 关联 {@link ImRtcCallDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "im_rtc_participant",
+      "field": "room",
+      "parent": "im_rtc_call",
+      "key": "room",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/rtc/ImRtcParticipantDO.java",
+        "line": 46,
+        "text": "* 关联 {@link ImRtcCallDO#getRoom()}"
+      },
+      "one": false
+    },
+    {
+      "child": "im_rtc_participant",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/rtc/ImRtcParticipantDO.java",
+        "line": 52,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/im.sql 为准；图中关系来自当前业务代码，均为逻辑关联，不表示数据库已建立物理外键。",
+    "灰色锚点引用其他模块已有表；集合字段连线表示集合元素与目标键关联。"
+  ]
+}

@@ -1,0 +1,1496 @@
+{
+  "module": "erp",
+  "title": "ERP 进销存管理",
+  "domains": [
+    {
+      "name": "基础资料",
+      "tables": [
+        "erp_product_category",
+        "erp_product_unit",
+        "erp_product",
+        "erp_supplier",
+        "erp_customer",
+        "erp_warehouse",
+        "erp_account"
+      ],
+      "color": "#2456A6"
+    },
+    {
+      "name": "采购流程",
+      "tables": [
+        "erp_purchase_order",
+        "erp_purchase_order_items",
+        "erp_purchase_in",
+        "erp_purchase_in_items",
+        "erp_purchase_return",
+        "erp_purchase_return_items"
+      ],
+      "color": "#137C8B"
+    },
+    {
+      "name": "销售流程",
+      "tables": [
+        "erp_sale_order",
+        "erp_sale_order_items",
+        "erp_sale_out",
+        "erp_sale_out_items",
+        "erp_sale_return",
+        "erp_sale_return_items"
+      ],
+      "color": "#7B4CB2"
+    },
+    {
+      "name": "其他出入库",
+      "tables": [
+        "erp_stock_in",
+        "erp_stock_in_item",
+        "erp_stock_out",
+        "erp_stock_out_item"
+      ],
+      "color": "#A56A18"
+    },
+    {
+      "name": "盘点与调拨",
+      "tables": [
+        "erp_stock_check",
+        "erp_stock_check_item",
+        "erp_stock_move",
+        "erp_stock_move_item"
+      ],
+      "color": "#B04461"
+    },
+    {
+      "name": "库存台账",
+      "tables": [
+        "erp_stock",
+        "erp_stock_record"
+      ],
+      "color": "#3B7C56"
+    },
+    {
+      "name": "收付款",
+      "tables": [
+        "erp_finance_payment",
+        "erp_finance_payment_item",
+        "erp_finance_receipt",
+        "erp_finance_receipt_item"
+      ],
+      "color": "#54698A"
+    }
+  ],
+  "relations": [
+    {
+      "child": "erp_finance_payment",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinancePaymentDO.java",
+        "line": 62,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_finance_payment",
+      "field": "finance_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinancePaymentDO.java",
+        "line": 50,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_finance_payment",
+      "field": "supplier_id",
+      "parent": "erp_supplier",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinancePaymentDO.java",
+        "line": 56,
+        "text": "* 关联 {@link ErpSupplierDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_finance_payment_item",
+      "field": "biz_id",
+      "parent": "erp_purchase_in",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=11；ErpBizTypeEnum 对应 Service 校验分支",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/finance/ErpFinancePaymentServiceImpl.java",
+        "line": 164,
+        "text": "ErpPurchaseInDO purchaseIn = purchaseInService.validatePurchaseIn(item.getBizId());"
+      },
+      "one": false,
+      "label": "biz_type=11"
+    },
+    {
+      "child": "erp_finance_payment_item",
+      "field": "biz_id",
+      "parent": "erp_purchase_return",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=12；ErpBizTypeEnum 对应 Service 校验分支",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/finance/ErpFinancePaymentServiceImpl.java",
+        "line": 168,
+        "text": "ErpPurchaseReturnDO purchaseReturn = purchaseReturnService.validatePurchaseReturn(item.getBizId());"
+      },
+      "one": false,
+      "label": "biz_type=12"
+    },
+    {
+      "child": "erp_finance_payment_item",
+      "field": "payment_id",
+      "parent": "erp_finance_payment",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinancePaymentItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpFinancePaymentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_finance_receipt",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinanceReceiptDO.java",
+        "line": 62,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_finance_receipt",
+      "field": "customer_id",
+      "parent": "erp_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinanceReceiptDO.java",
+        "line": 56,
+        "text": "* 关联 {@link ErpCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_finance_receipt",
+      "field": "finance_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinanceReceiptDO.java",
+        "line": 50,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_finance_receipt_item",
+      "field": "biz_id",
+      "parent": "erp_sale_out",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=21；ErpBizTypeEnum 对应 Service 校验分支",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/finance/ErpFinanceReceiptServiceImpl.java",
+        "line": 164,
+        "text": "ErpSaleOutDO saleOut = saleOutService.validateSaleOut(item.getBizId());"
+      },
+      "one": false,
+      "label": "biz_type=21"
+    },
+    {
+      "child": "erp_finance_receipt_item",
+      "field": "biz_id",
+      "parent": "erp_sale_return",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=22；ErpBizTypeEnum 对应 Service 校验分支",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/finance/ErpFinanceReceiptServiceImpl.java",
+        "line": 168,
+        "text": "ErpSaleReturnDO saleReturn = saleReturnService.validateSaleReturn(item.getBizId());"
+      },
+      "one": false,
+      "label": "biz_type=22"
+    },
+    {
+      "child": "erp_finance_receipt_item",
+      "field": "receipt_id",
+      "parent": "erp_finance_receipt",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpFinanceReceiptItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpFinanceReceiptDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_product",
+      "field": "category_id",
+      "parent": "erp_product_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/product/ErpProductDO.java",
+        "line": 42,
+        "text": "* 关联 {@link ErpProductCategoryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_product",
+      "field": "unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/product/ErpProductDO.java",
+        "line": 48,
+        "text": "* 关联 {@link ErpProductUnitDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_product_category",
+      "field": "parent_id",
+      "parent": "erp_product_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "父分类层级；根节点不指向实体行",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/product/ErpProductCategoryServiceImpl.java",
+        "line": 95,
+        "text": "ErpProductCategoryDO parentCategory = erpProductCategoryMapper.selectById(parentId);"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInDO.java",
+        "line": 52,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in",
+      "field": "order_id",
+      "parent": "erp_purchase_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInDO.java",
+        "line": 63,
+        "text": "* 关联 {@link ErpPurchaseOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in",
+      "field": "supplier_id",
+      "parent": "erp_supplier",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInDO.java",
+        "line": 46,
+        "text": "* 关联 {@link ErpSupplierDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in_items",
+      "field": "in_id",
+      "parent": "erp_purchase_in",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInItemDO.java",
+        "line": 36,
+        "text": "* 关联 {@link ErpPurchaseInDO##getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in_items",
+      "field": "order_item_id",
+      "parent": "erp_purchase_order_items",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInItemDO.java",
+        "line": 42,
+        "text": "* 关联 {@link ErpPurchaseOrderItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in_items",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInItemDO.java",
+        "line": 55,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in_items",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInItemDO.java",
+        "line": 61,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_in_items",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseInItemDO.java",
+        "line": 49,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_order",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseOrderDO.java",
+        "line": 52,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_order",
+      "field": "supplier_id",
+      "parent": "erp_supplier",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseOrderDO.java",
+        "line": 46,
+        "text": "* 关联 {@link ErpSupplierDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_order_items",
+      "field": "order_id",
+      "parent": "erp_purchase_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseOrderItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpPurchaseOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_order_items",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseOrderItemDO.java",
+        "line": 41,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_order_items",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseOrderItemDO.java",
+        "line": 47,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnDO.java",
+        "line": 52,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return",
+      "field": "order_id",
+      "parent": "erp_purchase_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnDO.java",
+        "line": 63,
+        "text": "* 关联 {@link ErpPurchaseOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return",
+      "field": "supplier_id",
+      "parent": "erp_supplier",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnDO.java",
+        "line": 46,
+        "text": "* 关联 {@link ErpSupplierDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return_items",
+      "field": "order_item_id",
+      "parent": "erp_purchase_order_items",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnItemDO.java",
+        "line": 42,
+        "text": "* 关联 {@link ErpPurchaseOrderItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return_items",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnItemDO.java",
+        "line": 55,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return_items",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnItemDO.java",
+        "line": 61,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return_items",
+      "field": "return_id",
+      "parent": "erp_purchase_return",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnItemDO.java",
+        "line": 36,
+        "text": "* 关联 {@link ErpPurchaseReturnDO##getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_purchase_return_items",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseReturnItemDO.java",
+        "line": 49,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_order",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOrderDO.java",
+        "line": 52,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_order",
+      "field": "customer_id",
+      "parent": "erp_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOrderDO.java",
+        "line": 46,
+        "text": "* 关联 {@link ErpCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_order",
+      "field": "sale_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOrderDO.java",
+        "line": 58,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_order_items",
+      "field": "order_id",
+      "parent": "erp_sale_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOrderItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpSaleOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_order_items",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOrderItemDO.java",
+        "line": 41,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_order_items",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOrderItemDO.java",
+        "line": 47,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutDO.java",
+        "line": 52,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out",
+      "field": "customer_id",
+      "parent": "erp_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutDO.java",
+        "line": 46,
+        "text": "* 关联 {@link ErpCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out",
+      "field": "order_id",
+      "parent": "erp_sale_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutDO.java",
+        "line": 69,
+        "text": "* 关联 {@link ErpSaleOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out",
+      "field": "sale_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutDO.java",
+        "line": 58,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out_items",
+      "field": "order_item_id",
+      "parent": "erp_sale_order_items",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutItemDO.java",
+        "line": 43,
+        "text": "* 关联 {@link ErpSaleOrderItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out_items",
+      "field": "out_id",
+      "parent": "erp_sale_out",
+      "key": "id",
+      "kind": "logic",
+      "note": "以真实 setOutId(saleOut.getId()) 为准；DO 注释目标误写为其他出库",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/sale/ErpSaleOutServiceImpl.java",
+        "line": 98,
+        "text": "saleOutItems.forEach(o -> o.setOutId(saleOut.getId()));"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out_items",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutItemDO.java",
+        "line": 56,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out_items",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutItemDO.java",
+        "line": 62,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_out_items",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOutItemDO.java",
+        "line": 50,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return",
+      "field": "account_id",
+      "parent": "erp_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnDO.java",
+        "line": 52,
+        "text": "* 关联 {@link ErpAccountDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return",
+      "field": "customer_id",
+      "parent": "erp_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnDO.java",
+        "line": 46,
+        "text": "* 关联 {@link ErpCustomerDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return",
+      "field": "order_id",
+      "parent": "erp_sale_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnDO.java",
+        "line": 69,
+        "text": "* 关联 {@link ErpSaleOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return",
+      "field": "sale_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnDO.java",
+        "line": 58,
+        "text": "* 关联 AdminUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return_items",
+      "field": "order_item_id",
+      "parent": "erp_sale_order_items",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnItemDO.java",
+        "line": 42,
+        "text": "* 关联 {@link ErpSaleOrderItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return_items",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnItemDO.java",
+        "line": 55,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return_items",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnItemDO.java",
+        "line": 61,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return_items",
+      "field": "return_id",
+      "parent": "erp_sale_return",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnItemDO.java",
+        "line": 36,
+        "text": "* 关联 {@link ErpSaleReturnDO##getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_sale_return_items",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleReturnItemDO.java",
+        "line": 49,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockDO.java",
+        "line": 41,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_check_item",
+      "field": "check_id",
+      "parent": "erp_stock_check",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockCheckItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpStockCheckDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_check_item",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockCheckItemDO.java",
+        "line": 47,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_check_item",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockCheckItemDO.java",
+        "line": 53,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_check_item",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockCheckItemDO.java",
+        "line": 41,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_in",
+      "field": "supplier_id",
+      "parent": "erp_supplier",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockInDO.java",
+        "line": 40,
+        "text": "* 关联 {@link ErpSupplierDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_in_item",
+      "field": "in_id",
+      "parent": "erp_stock_in",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockInItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpStockInDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_in_item",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockInItemDO.java",
+        "line": 47,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_in_item",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockInItemDO.java",
+        "line": 53,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_in_item",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockInItemDO.java",
+        "line": 41,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_move_item",
+      "field": "from_warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockMoveItemDO.java",
+        "line": 41,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_move_item",
+      "field": "move_id",
+      "parent": "erp_stock_move",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockMoveItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpStockMoveDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_move_item",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockMoveItemDO.java",
+        "line": 53,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_move_item",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockMoveItemDO.java",
+        "line": 59,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_move_item",
+      "field": "to_warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockMoveItemDO.java",
+        "line": 47,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_out",
+      "field": "customer_id",
+      "parent": "erp_customer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockOutServiceImpl.java",
+        "line": 69,
+        "text": "customerService.validateCustomer(createReqVO.getCustomerId());"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_out_item",
+      "field": "out_id",
+      "parent": "erp_stock_out",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockOutItemDO.java",
+        "line": 35,
+        "text": "* 关联 {@link ErpStockOutDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_out_item",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockOutItemDO.java",
+        "line": 47,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_out_item",
+      "field": "product_unit_id",
+      "parent": "erp_product_unit",
+      "key": "id",
+      "kind": "logic",
+      "note": "冗余产品单位编号；来源 erp_product.unit_id",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockOutItemDO.java",
+        "line": 53,
+        "text": "* 冗余 {@link ErpProductDO#getUnitId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_out_item",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockOutItemDO.java",
+        "line": 41,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_purchase_in",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{70,71}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/purchase/ErpPurchaseInServiceImpl.java",
+        "line": 186,
+        "text": "bizType, purchaseInItem.getInId(), purchaseInItem.getId(), purchaseIn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=70/71"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_purchase_return",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{80,81}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/purchase/ErpPurchaseReturnServiceImpl.java",
+        "line": 182,
+        "text": "bizType, purchaseReturnItem.getReturnId(), purchaseReturnItem.getId(), purchaseReturn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=80/81"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_sale_out",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{50,51}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/sale/ErpSaleOutServiceImpl.java",
+        "line": 194,
+        "text": "bizType, saleOutItem.getOutId(), saleOutItem.getId(), saleOut.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=50/51"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_sale_return",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{60,61}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/sale/ErpSaleReturnServiceImpl.java",
+        "line": 194,
+        "text": "bizType, saleReturnItem.getReturnId(), saleReturnItem.getId(), saleReturn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=60/61"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_stock_check",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{40,41,42,43}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockCheckServiceImpl.java",
+        "line": 140,
+        "text": "bizType, stockCheckItem.getCheckId(), stockCheckItem.getId(), stockCheck.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=40/41/42/43"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_stock_in",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{10,11}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockInServiceImpl.java",
+        "line": 135,
+        "text": "bizType, stockInItem.getInId(), stockInItem.getId(), stockIn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=10/11"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_stock_move",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{30,31,32,33}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockMoveServiceImpl.java",
+        "line": 133,
+        "text": "fromBizType, stockMoveItem.getMoveId(), stockMoveItem.getId(), stockMove.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=30/31/32/33"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_id",
+      "parent": "erp_stock_out",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{20,21}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockOutServiceImpl.java",
+        "line": 136,
+        "text": "bizType, stockOutItem.getOutId(), stockOutItem.getId(), stockOut.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=20/21"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_purchase_in_items",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{70,71}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/purchase/ErpPurchaseInServiceImpl.java",
+        "line": 186,
+        "text": "bizType, purchaseInItem.getInId(), purchaseInItem.getId(), purchaseIn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=70/71"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_purchase_return_items",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{80,81}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/purchase/ErpPurchaseReturnServiceImpl.java",
+        "line": 182,
+        "text": "bizType, purchaseReturnItem.getReturnId(), purchaseReturnItem.getId(), purchaseReturn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=80/81"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_sale_out_items",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{50,51}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/sale/ErpSaleOutServiceImpl.java",
+        "line": 194,
+        "text": "bizType, saleOutItem.getOutId(), saleOutItem.getId(), saleOut.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=50/51"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_sale_return_items",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{60,61}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/sale/ErpSaleReturnServiceImpl.java",
+        "line": 194,
+        "text": "bizType, saleReturnItem.getReturnId(), saleReturnItem.getId(), saleReturn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=60/61"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_stock_check_item",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{40,41,42,43}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockCheckServiceImpl.java",
+        "line": 140,
+        "text": "bizType, stockCheckItem.getCheckId(), stockCheckItem.getId(), stockCheck.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=40/41/42/43"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_stock_in_item",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{10,11}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockInServiceImpl.java",
+        "line": 135,
+        "text": "bizType, stockInItem.getInId(), stockInItem.getId(), stockIn.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=10/11"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_stock_move_item",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{30,31,32,33}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockMoveServiceImpl.java",
+        "line": 133,
+        "text": "fromBizType, stockMoveItem.getMoveId(), stockMoveItem.getId(), stockMove.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=30/31/32/33"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "biz_item_id",
+      "parent": "erp_stock_out_item",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type∈{20,21}（ErpStockRecordBizTypeEnum）；含审核及反审核事件",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockOutServiceImpl.java",
+        "line": 136,
+        "text": "bizType, stockOutItem.getOutId(), stockOutItem.getId(), stockOut.getNo()));"
+      },
+      "one": false,
+      "label": "biz_type=20/21"
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "product_id",
+      "parent": "erp_product",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockRecordDO.java",
+        "line": 36,
+        "text": "* 关联 {@link ErpProductDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "erp_stock_record",
+      "field": "warehouse_id",
+      "parent": "erp_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockRecordDO.java",
+        "line": 42,
+        "text": "* 关联 {@link ErpWarehouseDO#getId()}"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "结构以 sql/mysql/erp.sql 为准；图中连线表示源码支持的逻辑引用，DDL 未声明物理外键。",
+    "收付款项 biz_id 仅按 Service 接受的采购入库/退货、销售出库/退货分支连接；库存流水 biz_id 与 biz_item_id 按库存事件枚举分开连接。",
+    "erp_sale_out_items.out_id 的 DO 注释误写 ErpStockOutDO；以 ErpSaleOutServiceImpl 的 setOutId(saleOut.getId()) 为准指向 erp_sale_out。",
+    "product_unit_id 是从产品复制的单位编号；按来源 unit_id 连至单位表并标注冗余，不误连产品主键。",
+    "订单号、业务单号、名称、价格等快照/冗余值不作为外键关系；库存表的产品+仓库维度不伪装成单列外键。"
+  ]
+}

@@ -1,0 +1,1210 @@
+{
+  "module": "pms",
+  "title": "项目与知识管理",
+  "domains": [
+    {
+      "name": "知识库与成员",
+      "color": "#2456A6",
+      "tables": [
+        "pms_knowledge_library",
+        "pms_knowledge_library_template",
+        "pms_knowledge_library_member",
+        "pms_knowledge_group",
+        "pms_knowledge_group_relation"
+      ]
+    },
+    {
+      "name": "知识内容与权限",
+      "color": "#077E8C",
+      "tables": [
+        "pms_knowledge_folder",
+        "pms_knowledge_document",
+        "pms_knowledge_document_label",
+        "pms_knowledge_content_permission",
+        "pms_knowledge_content_permission_member"
+      ]
+    },
+    {
+      "name": "知识互动与回收",
+      "color": "#6B45A8",
+      "tables": [
+        "pms_knowledge_document_comment",
+        "pms_knowledge_document_like",
+        "pms_knowledge_document_share",
+        "pms_knowledge_favorite",
+        "pms_knowledge_view_record",
+        "pms_knowledge_recycle_record"
+      ]
+    },
+    {
+      "name": "项目协作",
+      "color": "#CF7137",
+      "tables": [
+        "pms_project",
+        "pms_project_template",
+        "pms_project_member",
+        "pms_project_group",
+        "pms_project_group_relation",
+        "pms_project_favorite",
+        "pms_project_announcement",
+        "pms_iteration"
+      ]
+    },
+    {
+      "name": "工作项与看板",
+      "color": "#237C4B",
+      "tables": [
+        "pms_work_item",
+        "pms_work_item_status",
+        "pms_work_item_board",
+        "pms_work_item_label",
+        "pms_work_item_member",
+        "pms_work_item_comment",
+        "pms_work_item_activity",
+        "pms_work_item_user_sort",
+        "pms_work_item_work_log"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "pms_iteration",
+      "field": "owner_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/iteration/PmsIterationDO.java",
+        "line": 46,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_iteration",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/iteration/PmsIterationDO.java",
+        "line": 36,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_content_permission",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeContentPermissionDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_content_permission_member",
+      "field": "dept_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeContentPermissionMemberDO.java",
+        "line": 46,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_content_permission_member",
+      "field": "permission_id",
+      "parent": "pms_knowledge_content_permission",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeContentPermissionMemberDO.java",
+        "line": 34,
+        "text": "* 关联 {@link PmsKnowledgeContentPermissionDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_content_permission_member",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeContentPermissionMemberDO.java",
+        "line": 40,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document",
+      "field": "delete_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeDocumentDO.java",
+        "line": 109,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document",
+      "field": "folder_id",
+      "parent": "pms_knowledge_folder",
+      "key": "id",
+      "kind": "conditional",
+      "note": "folder_id=0表示不在文件夹中；非0时引用文件夹",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeDocumentDO.java",
+        "line": 62,
+        "text": "* 关联 {@link PmsKnowledgeFolderDO#getId()}"
+      },
+      "one": false,
+      "label": "位于文件夹"
+    },
+    {
+      "child": "pms_knowledge_document",
+      "field": "label_ids",
+      "parent": "pms_knowledge_document_label",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → pms_knowledge_document_label.id",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeDocumentDO.java",
+        "line": 102,
+        "text": "* 关联 {@link PmsKnowledgeDocumentLabelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeDocumentDO.java",
+        "line": 50,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document",
+      "field": "parent_id",
+      "parent": "pms_knowledge_document",
+      "key": "id",
+      "kind": "conditional",
+      "note": "parent_id=0表示根节点",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeDocumentDO.java",
+        "line": 68,
+        "text": "* 关联 {@link #getId()}"
+      },
+      "one": false,
+      "label": "非根节点"
+    },
+    {
+      "child": "pms_knowledge_document",
+      "field": "permission_id",
+      "parent": "pms_knowledge_content_permission",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeDocumentDO.java",
+        "line": 56,
+        "text": "* 关联 {@link PmsKnowledgeContentPermissionDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_comment",
+      "field": "document_id",
+      "parent": "pms_knowledge_document",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentCommentDO.java",
+        "line": 38,
+        "text": "* 关联 {@link PmsKnowledgeDocumentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_comment",
+      "field": "main_id",
+      "parent": "pms_knowledge_document_comment",
+      "key": "id",
+      "kind": "conditional",
+      "note": "main_id=0表示主评论",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentCommentDO.java",
+        "line": 50,
+        "text": "* 关联 {@link #getId()}"
+      },
+      "one": false,
+      "label": "非根节点"
+    },
+    {
+      "child": "pms_knowledge_document_comment",
+      "field": "reply_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentCommentDO.java",
+        "line": 56,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_comment",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentCommentDO.java",
+        "line": 44,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_like",
+      "field": "document_id",
+      "parent": "pms_knowledge_document",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentLikeDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PmsKnowledgeDocumentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_like",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentLikeDO.java",
+        "line": 39,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_share",
+      "field": "close_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentShareDO.java",
+        "line": 62,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_share",
+      "field": "document_id",
+      "parent": "pms_knowledge_document",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentShareDO.java",
+        "line": 39,
+        "text": "* 关联 {@link PmsKnowledgeDocumentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_document_share",
+      "field": "share_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → system_users.id",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeDocumentShareDO.java",
+        "line": 45,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_favorite",
+      "field": "entity_id",
+      "parent": "pms_knowledge_document",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=3（文档）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeFavoriteDO.java",
+        "line": 46,
+        "text": "* 根据 {@link #getType()} 关联知识库、文件夹或文档编号"
+      },
+      "one": false,
+      "label": "文档"
+    },
+    {
+      "child": "pms_knowledge_favorite",
+      "field": "entity_id",
+      "parent": "pms_knowledge_folder",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=2（文件夹）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeFavoriteDO.java",
+        "line": 46,
+        "text": "* 根据 {@link #getType()} 关联知识库、文件夹或文档编号"
+      },
+      "one": false,
+      "label": "文件夹"
+    },
+    {
+      "child": "pms_knowledge_favorite",
+      "field": "entity_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=1（知识库）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeFavoriteDO.java",
+        "line": 46,
+        "text": "* 根据 {@link #getType()} 关联知识库、文件夹或文档编号"
+      },
+      "one": false,
+      "label": "知识库"
+    },
+    {
+      "child": "pms_knowledge_favorite",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeFavoriteDO.java",
+        "line": 34,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_favorite",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeFavoriteDO.java",
+        "line": 52,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_folder",
+      "field": "delete_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeFolderDO.java",
+        "line": 70,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_folder",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeFolderDO.java",
+        "line": 42,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_folder",
+      "field": "parent_id",
+      "parent": "pms_knowledge_folder",
+      "key": "id",
+      "kind": "conditional",
+      "note": "parent_id=0表示根节点",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeFolderDO.java",
+        "line": 54,
+        "text": "* 关联 {@link #getId()}"
+      },
+      "one": false,
+      "label": "非根节点"
+    },
+    {
+      "child": "pms_knowledge_folder",
+      "field": "permission_id",
+      "parent": "pms_knowledge_content_permission",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/content/PmsKnowledgeFolderDO.java",
+        "line": 48,
+        "text": "* 关联 {@link PmsKnowledgeContentPermissionDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_group",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeGroupDO.java",
+        "line": 33,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_group_relation",
+      "field": "group_id",
+      "parent": "pms_knowledge_group",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeGroupRelationDO.java",
+        "line": 38,
+        "text": "* 关联 {@link PmsKnowledgeGroupDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_group_relation",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeGroupRelationDO.java",
+        "line": 44,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_group_relation",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeGroupRelationDO.java",
+        "line": 32,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_library",
+      "field": "delete_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeLibraryDO.java",
+        "line": 57,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_library_member",
+      "field": "dept_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeLibraryMemberDO.java",
+        "line": 46,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_library_member",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeLibraryMemberDO.java",
+        "line": 34,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_library_member",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeLibraryMemberDO.java",
+        "line": 40,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_recycle_record",
+      "field": "delete_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/recycle/PmsKnowledgeRecycleRecordDO.java",
+        "line": 58,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_recycle_record",
+      "field": "entity_id",
+      "parent": "pms_knowledge_document",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=3（文档）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/recycle/PmsKnowledgeRecycleRecordDO.java",
+        "line": 48,
+        "text": "* 根据 {@link #getType()} 关联知识库、文件夹或文档编号"
+      },
+      "one": false,
+      "label": "文档"
+    },
+    {
+      "child": "pms_knowledge_recycle_record",
+      "field": "entity_id",
+      "parent": "pms_knowledge_folder",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=2（文件夹）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/recycle/PmsKnowledgeRecycleRecordDO.java",
+        "line": 48,
+        "text": "* 根据 {@link #getType()} 关联知识库、文件夹或文档编号"
+      },
+      "one": false,
+      "label": "文件夹"
+    },
+    {
+      "child": "pms_knowledge_recycle_record",
+      "field": "entity_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=1（知识库）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/recycle/PmsKnowledgeRecycleRecordDO.java",
+        "line": 48,
+        "text": "* 根据 {@link #getType()} 关联知识库、文件夹或文档编号"
+      },
+      "one": false,
+      "label": "知识库"
+    },
+    {
+      "child": "pms_knowledge_recycle_record",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/recycle/PmsKnowledgeRecycleRecordDO.java",
+        "line": 36,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_view_record",
+      "field": "entity_id",
+      "parent": "pms_knowledge_document",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=3（文档）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeViewRecordDO.java",
+        "line": 46,
+        "text": "* 根据 {@link #getType()} 关联文件夹或文档编号"
+      },
+      "one": false,
+      "label": "文档"
+    },
+    {
+      "child": "pms_knowledge_view_record",
+      "field": "entity_id",
+      "parent": "pms_knowledge_folder",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "type=2（文件夹）",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeViewRecordDO.java",
+        "line": 46,
+        "text": "* 根据 {@link #getType()} 关联文件夹或文档编号"
+      },
+      "one": false,
+      "label": "文件夹"
+    },
+    {
+      "child": "pms_knowledge_view_record",
+      "field": "library_id",
+      "parent": "pms_knowledge_library",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeViewRecordDO.java",
+        "line": 34,
+        "text": "* 关联 {@link PmsKnowledgeLibraryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_knowledge_view_record",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/interaction/PmsKnowledgeViewRecordDO.java",
+        "line": 52,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_announcement",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectAnnouncementDO.java",
+        "line": 35,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_favorite",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectFavoriteDO.java",
+        "line": 32,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_favorite",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectFavoriteDO.java",
+        "line": 38,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_group",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectGroupDO.java",
+        "line": 35,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_group_relation",
+      "field": "group_id",
+      "parent": "pms_project_group",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectGroupRelationDO.java",
+        "line": 38,
+        "text": "* 关联 {@link PmsProjectGroupDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_group_relation",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectGroupRelationDO.java",
+        "line": 44,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_group_relation",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectGroupRelationDO.java",
+        "line": 32,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_member",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectMemberDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_project_member",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/project/PmsProjectMemberDO.java",
+        "line": 39,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item",
+      "field": "assignee_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemDO.java",
+        "line": 74,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item",
+      "field": "iteration_id",
+      "parent": "pms_iteration",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemDO.java",
+        "line": 106,
+        "text": "* 关联 {@link PmsIterationDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item",
+      "field": "label_ids",
+      "parent": "pms_work_item_label",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → pms_work_item_label.id",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemDO.java",
+        "line": 151,
+        "text": "* 关联 {@link PmsWorkItemLabelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item",
+      "field": "parent_id",
+      "parent": "pms_work_item",
+      "key": "id",
+      "kind": "conditional",
+      "note": "parent_id非NULL时引用同项目、同类型的父工作项；NULL为根工作项",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/service/pm/workitem/PmsWorkItemServiceImpl.java",
+        "line": 874,
+        "text": "PmsWorkItemDO parent = workItemMapper.selectById(currentParentId);"
+      },
+      "one": false,
+      "label": "非根节点"
+    },
+    {
+      "child": "pms_work_item",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemDO.java",
+        "line": 44,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item",
+      "field": "related_requirement_id",
+      "parent": "pms_work_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "缺陷关联需求工作项编号",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemDO.java",
+        "line": 118,
+        "text": "* 关联 {@link #getId()}"
+      },
+      "one": false,
+      "label": "关联需求"
+    },
+    {
+      "child": "pms_work_item",
+      "field": "status_id",
+      "parent": "pms_work_item_status",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemDO.java",
+        "line": 80,
+        "text": "* 关联 {@link PmsWorkItemStatusDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_activity",
+      "field": "operator_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemActivityDO.java",
+        "line": 45,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_activity",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemActivityDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_activity",
+      "field": "work_item_id",
+      "parent": "pms_work_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemActivityDO.java",
+        "line": 39,
+        "text": "* 关联 {@link PmsWorkItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_board",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemBoardDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_comment",
+      "field": "main_id",
+      "parent": "pms_work_item_comment",
+      "key": "id",
+      "kind": "conditional",
+      "note": "main_id=0表示主评论",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemCommentDO.java",
+        "line": 49,
+        "text": "* 关联 {@link #getId()}"
+      },
+      "one": false,
+      "label": "非根节点"
+    },
+    {
+      "child": "pms_work_item_comment",
+      "field": "reply_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemCommentDO.java",
+        "line": 55,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_comment",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemCommentDO.java",
+        "line": 43,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_comment",
+      "field": "work_item_id",
+      "parent": "pms_work_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemCommentDO.java",
+        "line": 37,
+        "text": "* 关联 {@link PmsWorkItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_member",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemMemberDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_member",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemMemberDO.java",
+        "line": 45,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_member",
+      "field": "work_item_id",
+      "parent": "pms_work_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemMemberDO.java",
+        "line": 39,
+        "text": "* 关联 {@link PmsWorkItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_status",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemStatusDO.java",
+        "line": 34,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_user_sort",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemUserSortDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_user_sort",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemUserSortDO.java",
+        "line": 45,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_user_sort",
+      "field": "work_item_id",
+      "parent": "pms_work_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemUserSortDO.java",
+        "line": 39,
+        "text": "* 关联 {@link PmsWorkItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_work_log",
+      "field": "project_id",
+      "parent": "pms_project",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemWorkLogDO.java",
+        "line": 32,
+        "text": "* 关联 {@link PmsProjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "pms_work_item_work_log",
+      "field": "work_item_id",
+      "parent": "pms_work_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/pm/workitem/PmsWorkItemWorkLogDO.java",
+        "line": 38,
+        "text": "* 关联 {@link PmsWorkItemDO#getId()}"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/pms.sql 为准；图中关系来自当前业务代码，均为逻辑关联，不表示数据库已建立物理外键。",
+    "灰色锚点引用其他模块已有表；集合字段连线表示集合元素与目标键关联。"
+  ]
+}

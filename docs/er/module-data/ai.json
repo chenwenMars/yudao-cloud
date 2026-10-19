@@ -1,0 +1,401 @@
+{
+  "module": "ai",
+  "title": "AI应用",
+  "domains": [
+    {
+      "name": "模型与工具",
+      "color": "#2456A6",
+      "tables": [
+        "ai_api_key",
+        "ai_model",
+        "ai_tool"
+      ]
+    },
+    {
+      "name": "对话与角色",
+      "color": "#077E8C",
+      "tables": [
+        "ai_chat_role",
+        "ai_chat_conversation",
+        "ai_chat_message"
+      ]
+    },
+    {
+      "name": "知识库检索",
+      "color": "#6B45A8",
+      "tables": [
+        "ai_knowledge",
+        "ai_knowledge_document",
+        "ai_knowledge_segment"
+      ]
+    },
+    {
+      "name": "创作与工作流",
+      "color": "#CF7137",
+      "tables": [
+        "ai_image",
+        "ai_music",
+        "ai_write",
+        "ai_mind_map",
+        "ai_workflow"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "ai_chat_conversation",
+      "field": "model_id",
+      "parent": "ai_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatConversationDO.java",
+        "line": 69,
+        "text": "* 关联 {@link AiModelDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_conversation",
+      "field": "role_id",
+      "parent": "ai_chat_role",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatConversationDO.java",
+        "line": 62,
+        "text": "* 关联 {@link AiChatRoleDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_conversation",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatConversationDO.java",
+        "line": 40,
+        "text": "* 关联 AdminUserDO 的 userId 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_message",
+      "field": "conversation_id",
+      "parent": "ai_chat_conversation",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatMessageDO.java",
+        "line": 46,
+        "text": "* 关联 {@link AiChatConversationDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_message",
+      "field": "model_id",
+      "parent": "ai_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatMessageDO.java",
+        "line": 88,
+        "text": "* 关联 {@link AiModelDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_message",
+      "field": "reply_id",
+      "parent": "ai_chat_message",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatMessageDO.java",
+        "line": 52,
+        "text": "* 关联 {@link #id} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_message",
+      "field": "role_id",
+      "parent": "ai_chat_role",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatMessageDO.java",
+        "line": 75,
+        "text": "* 关联 {@link AiChatRoleDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_message",
+      "field": "segment_ids",
+      "parent": "ai_knowledge_segment",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → ai_knowledge_segment.id",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatMessageDO.java",
+        "line": 109,
+        "text": "* 关联 {@link AiKnowledgeSegmentDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_message",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatMessageDO.java",
+        "line": 69,
+        "text": "* 关联 AdminUserDO 的 userId 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_role",
+      "field": "knowledge_ids",
+      "parent": "ai_knowledge",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → ai_knowledge.id",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/model/AiChatRoleDO.java",
+        "line": 73,
+        "text": "* 关联 {@link AiKnowledgeDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_role",
+      "field": "model_id",
+      "parent": "ai_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/model/AiChatRoleDO.java",
+        "line": 66,
+        "text": "* 关联 {@link AiModelDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_role",
+      "field": "tool_ids",
+      "parent": "ai_tool",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → ai_tool.id",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/model/AiChatRoleDO.java",
+        "line": 80,
+        "text": "* 关联 {@link AiToolDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_chat_role",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/model/AiChatRoleDO.java",
+        "line": 59,
+        "text": "* 关联 AdminUserDO 的 userId 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_image",
+      "field": "model_id",
+      "parent": "ai_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/image/AiImageDO.java",
+        "line": 59,
+        "text": "* 关联 {@link AiModelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_image",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/image/AiImageDO.java",
+        "line": 41,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_knowledge",
+      "field": "embedding_model_id",
+      "parent": "ai_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/knowledge/AiKnowledgeDO.java",
+        "line": 38,
+        "text": "* 关联 {@link AiModelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_knowledge_document",
+      "field": "knowledge_id",
+      "parent": "ai_knowledge",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/knowledge/AiKnowledgeDocumentDO.java",
+        "line": 28,
+        "text": "* 关联 {@link AiKnowledgeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_knowledge_segment",
+      "field": "document_id",
+      "parent": "ai_knowledge_document",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/knowledge/AiKnowledgeSegmentDO.java",
+        "line": 39,
+        "text": "* 关联 {@link AiKnowledgeDocumentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_knowledge_segment",
+      "field": "knowledge_id",
+      "parent": "ai_knowledge",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/knowledge/AiKnowledgeSegmentDO.java",
+        "line": 33,
+        "text": "* 关联 {@link AiKnowledgeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_mind_map",
+      "field": "model_id",
+      "parent": "ai_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/mindmap/AiMindMapDO.java",
+        "line": 43,
+        "text": "* 关联 {@link AiModelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_mind_map",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/mindmap/AiMindMapDO.java",
+        "line": 30,
+        "text": "* 关联 AdminUserDO 的 userId 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_model",
+      "field": "key_id",
+      "parent": "ai_api_key",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/model/AiModelDO.java",
+        "line": 36,
+        "text": "* 关联 {@link AiApiKeyDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_music",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/music/AiMusicDO.java",
+        "line": 35,
+        "text": "* 关联 AdminUserDO 的 userId 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_write",
+      "field": "model_id",
+      "parent": "ai_model",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/write/AiWriteDO.java",
+        "line": 52,
+        "text": "* 关联 {@link AiModelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "ai_write",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/write/AiWriteDO.java",
+        "line": 32,
+        "text": "* 关联 AdminUserDO 的 userId 字段"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/ai.sql 为准；图中关系来自当前业务代码，均为逻辑关联，不表示数据库已建立物理外键。",
+    "灰色锚点引用其他模块已有表；集合字段连线表示集合元素与目标键关联。",
+    "mcp_client_names 引用 spring.ai.mcp.client 配置，vector_id 引用外部向量存储，生成任务 task_id 引用模型服务任务；这些目标不是本次SQL中的表，不建立虚构外键。"
+  ]
+}

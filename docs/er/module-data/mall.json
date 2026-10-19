@@ -1,0 +1,1740 @@
+{
+  "module": "mall",
+  "title": "商城交易",
+  "domains": [
+    {
+      "name": "商品目录与规格",
+      "color": "#2456A6",
+      "tables": [
+        "product_brand",
+        "product_category",
+        "product_property",
+        "product_property_value",
+        "product_spu",
+        "product_sku"
+      ]
+    },
+    {
+      "name": "商品互动与统计",
+      "color": "#077E8C",
+      "tables": [
+        "product_comment",
+        "product_favorite",
+        "product_browse_history",
+        "product_statistics",
+        "trade_statistics"
+      ]
+    },
+    {
+      "name": "优惠券与折扣",
+      "color": "#6B45A8",
+      "tables": [
+        "promotion_coupon_template",
+        "promotion_coupon",
+        "promotion_discount_activity",
+        "promotion_discount_product",
+        "promotion_reward_activity"
+      ]
+    },
+    {
+      "name": "拼团与砍价",
+      "color": "#CF7137",
+      "tables": [
+        "promotion_combination_activity",
+        "promotion_combination_product",
+        "promotion_combination_record",
+        "promotion_bargain_activity",
+        "promotion_bargain_record",
+        "promotion_bargain_help"
+      ]
+    },
+    {
+      "name": "秒杀与积分商城",
+      "color": "#237C4B",
+      "tables": [
+        "promotion_seckill_config",
+        "promotion_seckill_activity",
+        "promotion_seckill_product",
+        "promotion_point_activity",
+        "promotion_point_product"
+      ]
+    },
+    {
+      "name": "内容装修与客服",
+      "color": "#9C426A",
+      "tables": [
+        "promotion_article_category",
+        "promotion_article",
+        "promotion_banner",
+        "promotion_diy_template",
+        "promotion_diy_page",
+        "promotion_kefu_conversation",
+        "promotion_kefu_message"
+      ]
+    },
+    {
+      "name": "交易与售后",
+      "color": "#5F6879",
+      "tables": [
+        "trade_config",
+        "trade_cart",
+        "trade_order",
+        "trade_order_item",
+        "trade_order_log",
+        "trade_after_sale",
+        "trade_after_sale_log"
+      ]
+    },
+    {
+      "name": "配送与分销",
+      "color": "#9A7A22",
+      "tables": [
+        "trade_delivery_express",
+        "trade_delivery_express_template",
+        "trade_delivery_express_template_charge",
+        "trade_delivery_express_template_free",
+        "trade_delivery_pick_up_store",
+        "trade_brokerage_user",
+        "trade_brokerage_record",
+        "trade_brokerage_withdraw"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "product_browse_history",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "统计Mapper从product_browse_history按spu_id=product_spu.id统计浏览记录",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-statistics-server/src/main/resources/mapper/product/ProductStatisticsMapper.xml",
+        "line": 11,
+        "text": "WHERE spu_id = spu.id"
+      },
+      "one": false
+    },
+    {
+      "child": "product_category",
+      "field": "parent_id",
+      "parent": "product_category",
+      "key": "id",
+      "kind": "conditional",
+      "note": "parent_id非PARENT_ID_NULL（0）时引用父分类",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/service/category/ProductCategoryServiceImpl.java",
+        "line": 89,
+        "text": "ProductCategoryDO category = productCategoryMapper.selectById(id);"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "product_comment",
+      "field": "order_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+        "line": 64,
+        "text": "* 关联 TradeOrderDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "product_comment",
+      "field": "order_item_id",
+      "parent": "trade_order_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+        "line": 70,
+        "text": "* 关联 TradeOrderItemDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "product_comment",
+      "field": "reply_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+        "line": 147,
+        "text": "* 关联 AdminUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "product_comment",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+        "line": 89,
+        "text": "* 关联 {@link ProductSkuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_comment",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+        "line": 77,
+        "text": "* 关联 {@link ProductSpuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_comment",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+        "line": 45,
+        "text": "* 关联 MemberUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "product_favorite",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/favorite/ProductFavoriteDO.java",
+        "line": 39,
+        "text": "* 关联 {@link ProductSpuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_favorite",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/favorite/ProductFavoriteDO.java",
+        "line": 33,
+        "text": "* 关联 MemberUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "product_property_value",
+      "field": "property_id",
+      "parent": "product_property",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/property/ProductPropertyValueDO.java",
+        "line": 42,
+        "text": "* 关联 {@link ProductPropertyDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_sku",
+      "field": "properties",
+      "parent": "product_property",
+      "key": "id",
+      "kind": "collection",
+      "note": "properties JSON数组中每个元素.propertyId → product_property.id",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/sku/ProductSkuDO.java",
+        "line": 107,
+        "text": "* 关联 {@link ProductPropertyDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_sku",
+      "field": "properties",
+      "parent": "product_property_value",
+      "key": "id",
+      "kind": "collection",
+      "note": "properties JSON数组中每个元素.valueId → product_property_value.id",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/sku/ProductSkuDO.java",
+        "line": 120,
+        "text": "* 关联 {@link ProductPropertyValueDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_sku",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/sku/ProductSkuDO.java",
+        "line": 39,
+        "text": "* 关联 {@link ProductSpuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_spu",
+      "field": "brand_id",
+      "parent": "product_brand",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/spu/ProductSpuDO.java",
+        "line": 67,
+        "text": "* 关联 {@link ProductBrandDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_spu",
+      "field": "category_id",
+      "parent": "product_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/spu/ProductSpuDO.java",
+        "line": 61,
+        "text": "* 关联 {@link ProductCategoryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "product_spu",
+      "field": "delivery_template_id",
+      "parent": "trade_delivery_express_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/spu/ProductSpuDO.java",
+        "line": 137,
+        "text": "* 对应 TradeDeliveryExpressTemplateDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "product_statistics",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "统计SQL以product_spu spu为源并投影spu.id AS spuId",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-statistics-server/src/main/resources/mapper/product/ProductStatisticsMapper.xml",
+        "line": 7,
+        "text": "SELECT spu.id                                                       AS spuId"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_article",
+      "field": "category_id",
+      "parent": "promotion_article_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/article/ArticleDO.java",
+        "line": 31,
+        "text": "* 分类编号 ArticleCategoryDO#id"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_article",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/article/ArticleDO.java",
+        "line": 35,
+        "text": "* 关联商品编号 ProductSpuDO#id"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_activity",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/bargain/BargainActivityServiceImpl.java",
+        "line": 122,
+        "text": "ProductSkuRespDTO sku = productSkuApi.getSku(skuId).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_activity",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "inferred",
+      "note": "砍价记录复制活动商品身份；SKU商品归属由商品API表示",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/bargain/BargainRecordServiceImpl.java",
+        "line": 62,
+        "text": ".activityId(reqVO.getActivityId()).spuId(activity.getSpuId()).skuId(activity.getSkuId())"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_help",
+      "field": "activity_id",
+      "parent": "promotion_bargain_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/bargain/BargainHelpDO.java",
+        "line": 33,
+        "text": "* 关联 {@link BargainActivityDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_help",
+      "field": "record_id",
+      "parent": "promotion_bargain_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/bargain/BargainHelpDO.java",
+        "line": 39,
+        "text": "* 关联 {@link BargainRecordDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_record",
+      "field": "activity_id",
+      "parent": "promotion_bargain_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/bargain/BargainRecordDO.java",
+        "line": 40,
+        "text": "* 关联 {@link BargainActivityDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_record",
+      "field": "order_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "inferred",
+      "note": "砍价记录在下单后回填交易订单编号",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/bargain/BargainRecordServiceImpl.java",
+        "line": 106,
+        "text": "int updateCount = bargainRecordMapper.updateOrderIdById(id, orderId);"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_record",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "创建记录时从已校验砍价活动复制商品编号",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/bargain/BargainRecordServiceImpl.java",
+        "line": 62,
+        "text": ".activityId(reqVO.getActivityId()).spuId(activity.getSpuId()).skuId(activity.getSkuId())"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_bargain_record",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "创建记录时从已校验砍价活动复制商品编号",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/bargain/BargainRecordServiceImpl.java",
+        "line": 62,
+        "text": ".activityId(reqVO.getActivityId()).spuId(activity.getSpuId()).skuId(activity.getSkuId())"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_activity",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/combination/CombinationActivityDO.java",
+        "line": 39,
+        "text": "* 关联 ProductSpuDO 的 id"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_product",
+      "field": "activity_id",
+      "parent": "promotion_combination_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "活动转换后商品明细保存所属activity.id；服务按activity.getId()读取明细",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/combination/CombinationActivityServiceImpl.java",
+        "line": 162,
+        "text": "List<CombinationProductDO> oldList = combinationProductMapper.selectListByActivityIds(CollUtil.newArrayList(activity.getId()));"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_product",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "SKU必须属于活动商品SPU的SKU集合",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/combination/CombinationActivityServiceImpl.java",
+        "line": 112,
+        "text": "if (!skuMap.containsKey(product.getSkuId())) {"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_product",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "商品明细共享所属活动已校验的SPU编号",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/combination/CombinationActivityServiceImpl.java",
+        "line": 103,
+        "text": "ProductSpuRespDTO spu = productSpuApi.getSpu(spuId).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_record",
+      "field": "activity_id",
+      "parent": "promotion_combination_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/combination/CombinationRecordDO.java",
+        "line": 45,
+        "text": "* 关联 {@link CombinationActivityDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_record",
+      "field": "head_id",
+      "parent": "promotion_combination_record",
+      "key": "id",
+      "kind": "conditional",
+      "note": "head_id 非 HEAD_ID_GROUP（0）时引用团长记录",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/combination/CombinationRecordDO.java",
+        "line": 92,
+        "text": "* 关联 {@link CombinationRecordDO#getId()}"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "promotion_combination_record",
+      "field": "order_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "订单按自身id获取对应拼团记录",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeCombinationOrderHandler.java",
+        "line": 89,
+        "text": "CombinationRecordRespDTO combinationRecord = combinationRecordApi.getCombinationRecordByOrderId(order.getUserId(), order.getId()).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_record",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/combination/CombinationRecordServiceImpl.java",
+        "line": 175,
+        "text": "ProductSkuRespDTO sku = productSkuApi.getSku(reqDTO.getSkuId()).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_record",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/combination/CombinationRecordServiceImpl.java",
+        "line": 174,
+        "text": "ProductSpuRespDTO spu = productSpuApi.getSpu(reqDTO.getSpuId()).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_combination_record",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/combination/CombinationRecordServiceImpl.java",
+        "line": 173,
+        "text": "MemberUserRespDTO user = memberUserApi.getUser(reqDTO.getUserId()).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_coupon",
+      "field": "product_scope_values",
+      "parent": "product_category",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "product_scope=3时集合元素关联目标；从优惠券模板冗余的范围快照",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/coupon/CouponDO.java",
+        "line": 98,
+        "text": "* 冗余 {@link CouponTemplateDO#getProductScopeValues()}"
+      },
+      "one": false,
+      "label": "指定分类"
+    },
+    {
+      "child": "promotion_coupon",
+      "field": "product_scope_values",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "product_scope=2时集合元素关联目标；从优惠券模板冗余的范围快照",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/coupon/CouponDO.java",
+        "line": 98,
+        "text": "* 冗余 {@link CouponTemplateDO#getProductScopeValues()}"
+      },
+      "one": false,
+      "label": "指定SPU"
+    },
+    {
+      "child": "promotion_coupon",
+      "field": "template_id",
+      "parent": "promotion_coupon_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/coupon/CouponDO.java",
+        "line": 39,
+        "text": "* 关联 {@link CouponTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_coupon",
+      "field": "use_order_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "conditional",
+      "note": "优惠券已使用时保存消费交易订单id",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/coupon/CouponServiceImpl.java",
+        "line": 73,
+        "text": ".setUseOrderId(orderId).setUseTime(LocalDateTime.now()));"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "promotion_coupon",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/coupon/CouponDO.java",
+        "line": 63,
+        "text": "* 关联 MemberUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_coupon_template",
+      "field": "product_scope_values",
+      "parent": "product_category",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "product_scope=3（CATEGORY）时，每个集合元素引用商品分类",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/coupon/CouponTemplateServiceImpl.java",
+        "line": 127,
+        "text": "productCategoryApi.validateCategoryList(productScopeValues).checkError();"
+      },
+      "one": false,
+      "label": "指定分类"
+    },
+    {
+      "child": "promotion_coupon_template",
+      "field": "product_scope_values",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "product_scope=2（SPU）时，每个集合元素引用商品SPU；=1时全部商品，无编号关联",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/coupon/CouponTemplateServiceImpl.java",
+        "line": 125,
+        "text": "productSpuApi.validateSpuList(productScopeValues).checkError();"
+      },
+      "one": false,
+      "label": "指定SPU"
+    },
+    {
+      "child": "promotion_discount_product",
+      "field": "activity_id",
+      "parent": "promotion_discount_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/discount/DiscountProductDO.java",
+        "line": 33,
+        "text": "* 关联 {@link DiscountActivityDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_discount_product",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/discount/DiscountProductDO.java",
+        "line": 46,
+        "text": "* 关联 ProductSkuDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_discount_product",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/discount/DiscountProductDO.java",
+        "line": 40,
+        "text": "* 关联 ProductSpuDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_diy_page",
+      "field": "template_id",
+      "parent": "promotion_diy_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/diy/DiyPageDO.java",
+        "line": 36,
+        "text": "* 关联 {@link DiyTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_kefu_conversation",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/kefu/KeFuConversationDO.java",
+        "line": 36,
+        "text": "* 关联 {@link MemberUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_kefu_message",
+      "field": "conversation_id",
+      "parent": "promotion_kefu_conversation",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/kefu/KeFuMessageDO.java",
+        "line": 34,
+        "text": "* 关联 {@link KeFuConversationDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_kefu_message",
+      "field": "receiver_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "receiver_type=1（会员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuMessageServiceImpl.java",
+        "line": 135,
+        "text": "memberUserApi.validateUser(receiverId).checkError();"
+      },
+      "one": false,
+      "label": "会员"
+    },
+    {
+      "child": "promotion_kefu_message",
+      "field": "receiver_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "receiver_type=2（管理员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuMessageServiceImpl.java",
+        "line": 132,
+        "text": "adminUserApi.validateUser(receiverId);"
+      },
+      "one": false,
+      "label": "管理员"
+    },
+    {
+      "child": "promotion_kefu_message",
+      "field": "sender_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "sender_type=1（会员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuMessageServiceImpl.java",
+        "line": 92,
+        "text": "MemberUserRespDTO user = memberUserApi.getUser(kefuMessage.getSenderId()).getCheckedData();"
+      },
+      "one": false,
+      "label": "会员"
+    },
+    {
+      "child": "promotion_kefu_message",
+      "field": "sender_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "sender_type=2（管理员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuMessageServiceImpl.java",
+        "line": 72,
+        "text": "AdminUserRespDTO user = adminUserApi.getUser(kefuMessage.getSenderId()).getCheckedData();"
+      },
+      "one": false,
+      "label": "管理员"
+    },
+    {
+      "child": "promotion_point_activity",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/point/PointActivityServiceImpl.java",
+        "line": 221,
+        "text": "ProductSpuRespDTO spu = productSpuApi.getSpu(spuId).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_point_product",
+      "field": "activity_id",
+      "parent": "promotion_point_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/point/PointProductDO.java",
+        "line": 33,
+        "text": "* 关联 {@link PointActivityDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_point_product",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "SKU必须属于活动商品SPU的SKU集合",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/point/PointActivityServiceImpl.java",
+        "line": 231,
+        "text": "if (!skuMap.containsKey(product.getSkuId())) {"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_point_product",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "商品明细共享所属活动已校验的SPU编号",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/point/PointActivityServiceImpl.java",
+        "line": 221,
+        "text": "ProductSpuRespDTO spu = productSpuApi.getSpu(spuId).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_reward_activity",
+      "field": "product_scope_values",
+      "parent": "product_category",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "product_scope=3（CATEGORY）时，每个集合元素引用商品分类",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/reward/RewardActivityServiceImpl.java",
+        "line": 181,
+        "text": "productCategoryApi.validateCategoryList(productScopeValues).checkError();"
+      },
+      "one": false,
+      "label": "指定分类"
+    },
+    {
+      "child": "promotion_reward_activity",
+      "field": "product_scope_values",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "product_scope=2（SPU）时，每个集合元素引用商品SPU；=1时全部商品，无编号关联",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/reward/RewardActivityServiceImpl.java",
+        "line": 179,
+        "text": "productSpuApi.validateSpuList(productScopeValues).checkError();"
+      },
+      "one": false,
+      "label": "指定SPU"
+    },
+    {
+      "child": "promotion_seckill_activity",
+      "field": "config_ids",
+      "parent": "promotion_seckill_config",
+      "key": "id",
+      "kind": "collection",
+      "note": "秒杀时段编号集合；逐批校验配置存在",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/seckill/SeckillActivityServiceImpl.java",
+        "line": 97,
+        "text": "seckillConfigService.validateSeckillConfigExists(configIds);"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_seckill_activity",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/seckill/SeckillActivityServiceImpl.java",
+        "line": 119,
+        "text": "ProductSpuRespDTO spu = productSpuApi.getSpu(spuId).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_seckill_product",
+      "field": "activity_id",
+      "parent": "promotion_seckill_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/seckill/SeckillProductDO.java",
+        "line": 38,
+        "text": "* 关联 {@link SeckillActivityDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_seckill_product",
+      "field": "config_ids",
+      "parent": "promotion_seckill_config",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → promotion_seckill_config.id",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/seckill/SeckillProductDO.java",
+        "line": 44,
+        "text": "* 关联 {@link SeckillConfigDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_seckill_product",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "SKU必须属于活动商品SPU的SKU集合",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/seckill/SeckillActivityServiceImpl.java",
+        "line": 128,
+        "text": "if (!skuMap.containsKey(product.getSkuId())) {"
+      },
+      "one": false
+    },
+    {
+      "child": "promotion_seckill_product",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "商品明细共享所属活动已校验的SPU编号",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/seckill/SeckillActivityServiceImpl.java",
+        "line": 119,
+        "text": "ProductSpuRespDTO spu = productSpuApi.getSpu(spuId).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "audit_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 147,
+        "text": "* 关联 AdminUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "logistics_id",
+      "parent": "trade_delivery_express",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 177,
+        "text": "* 关联 LogisticsDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "order_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 85,
+        "text": "* 关联 {@link TradeOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "order_item_id",
+      "parent": "trade_order_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 97,
+        "text": "* 关联 {@link TradeOrderItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "pay_refund_id",
+      "parent": "pay_refund",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 165,
+        "text": "* 对接 pay-module-biz 支付服务的退款订单编号，即 PayRefundDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 117,
+        "text": "* 关联 ProductSkuDO 的编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "商品SPU主键，售后单从订单项保存商品快照",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 103,
+        "text": "* 关联 ProductSpuDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+        "line": 59,
+        "text": "* 关联 MemberUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale_log",
+      "field": "after_sale_id",
+      "parent": "trade_after_sale",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleLogDO.java",
+        "line": 48,
+        "text": "* 关联 {@link AfterSaleDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_after_sale_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "user_type=1（会员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleLogDO.java",
+        "line": 35,
+        "text": "* 关联 2：MemberUserDO 的 id 字段"
+      },
+      "one": false,
+      "label": "会员"
+    },
+    {
+      "child": "trade_after_sale_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "user_type=2（管理员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleLogDO.java",
+        "line": 34,
+        "text": "* 关联 1：AdminUserDO 的 id 字段"
+      },
+      "one": false,
+      "label": "管理员"
+    },
+    {
+      "child": "trade_brokerage_record",
+      "field": "biz_id",
+      "parent": "trade_order_item",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "biz_type=ORDER时，biz_id字符串保存订单项id；不是交易订单主键",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeBrokerageOrderHandler.java",
+        "line": 87,
+        "text": "brokerageRecordService.cancelBrokerage(BrokerageRecordBizTypeEnum.ORDER, String.valueOf(orderItem.getId()));"
+      },
+      "one": false,
+      "label": "会员"
+    },
+    {
+      "child": "trade_brokerage_record",
+      "field": "source_user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageRecordDO.java",
+        "line": 93,
+        "text": "* 关联 MemberUserDO.id 字段，被推广用户的编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_brokerage_record",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageRecordDO.java",
+        "line": 36,
+        "text": "* 关联 MemberUserDO.id"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_brokerage_user",
+      "field": "bind_user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageUserDO.java",
+        "line": 37,
+        "text": "* 关联 MemberUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_brokerage_user",
+      "field": "id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageUserDO.java",
+        "line": 29,
+        "text": "* 对应 MemberUserDO 的 id 字段"
+      },
+      "one": true
+    },
+    {
+      "child": "trade_brokerage_withdraw",
+      "field": "pay_transfer_id",
+      "parent": "pay_transfer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageWithdrawDO.java",
+        "line": 112,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.pay.api.transfer.dto.PayTransferRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_brokerage_withdraw",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageWithdrawDO.java",
+        "line": 36,
+        "text": "* 关联 MemberUserDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_cart",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/cart/CartDO.java",
+        "line": 45,
+        "text": "* 关联 ProductSkuDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_cart",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/cart/CartDO.java",
+        "line": 39,
+        "text": "* 关联 ProductSpuDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_cart",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/cart/CartDO.java",
+        "line": 30,
+        "text": "* 关联 MemberUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_delivery_express_template_charge",
+      "field": "template_id",
+      "parent": "trade_delivery_express_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryExpressTemplateChargeDO.java",
+        "line": 32,
+        "text": "* 关联 {@link DeliveryExpressTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_delivery_express_template_free",
+      "field": "template_id",
+      "parent": "trade_delivery_express_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryExpressTemplateFreeDO.java",
+        "line": 32,
+        "text": "* 关联 {@link DeliveryExpressTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_delivery_pick_up_store",
+      "field": "verify_user_ids",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "collection",
+      "note": "集合元素 → system_users.id",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryPickUpStoreDO.java",
+        "line": 86,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()} 管理员编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "bargain_activity_id",
+      "parent": "promotion_bargain_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 327,
+        "text": "* 关联 BargainActivityDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "bargain_record_id",
+      "parent": "promotion_bargain_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 333,
+        "text": "* 关联 BargainRecordDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "brokerage_user_id",
+      "parent": "trade_brokerage_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "推广分销用户id；分销用户主键与会员id复用",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 121,
+        "text": "* 关联 {@link BrokerageUserDO#getId()} 字段，即 {@link MemberUserRespDTO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "combination_activity_id",
+      "parent": "promotion_combination_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 340,
+        "text": "* 关联 CombinationActivityDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "combination_head_id",
+      "parent": "promotion_combination_record",
+      "key": "head_id",
+      "kind": "conditional",
+      "note": "按DO声明引用拼团记录head_id业务分组字段；不是记录主键，目标可对应多条参团记录",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 346,
+        "text": "* 关联 CombinationRecordDO 的 headId 字段"
+      },
+      "one": false,
+      "label": "团长分组键"
+    },
+    {
+      "child": "trade_order",
+      "field": "combination_record_id",
+      "parent": "promotion_combination_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 352,
+        "text": "* 关联 CombinationRecordDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "coupon_id",
+      "parent": "promotion_coupon",
+      "key": "id",
+      "kind": "conditional",
+      "note": "coupon_id>0时使用该优惠券",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeCouponOrderHandler.java",
+        "line": 41,
+        "text": "couponApi.useCoupon(new CouponUseReqDTO().setId(order.getCouponId()).setUserId(order.getUserId())"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "trade_order",
+      "field": "give_coupon_ids",
+      "parent": "promotion_coupon",
+      "key": "id",
+      "kind": "collection",
+      "note": "订单赠券id集合，取消订单时按此集合失效",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeCouponOrderHandler.java",
+        "line": 73,
+        "text": "couponApi.invalidateCouponsByAdmin(order.getGiveCouponIds(), order.getUserId()).checkError();"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "give_coupon_template_counts",
+      "parent": "promotion_coupon_template",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON Map的key是优惠券模板id，value是赠送数量",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeCouponOrderHandler.java",
+        "line": 52,
+        "text": "List<Long> couponIds = couponApi.takeCouponsByAdmin(order.getGiveCouponTemplateCounts(), order.getUserId()).getCheckedData();"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "logistics_id",
+      "parent": "trade_delivery_express",
+      "key": "id",
+      "kind": "conditional",
+      "note": "logistics_id 非0且需要快递发货时",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 204,
+        "text": "* 关联 {@link DeliveryExpressDO#getId()}"
+      },
+      "one": false,
+      "label": "条件关联"
+    },
+    {
+      "child": "trade_order",
+      "field": "pay_order_id",
+      "parent": "pay_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 134,
+        "text": "* 对接 pay-module-biz 支付服务的支付订单编号，即 PayOrderDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "pick_up_store_id",
+      "parent": "trade_delivery_pick_up_store",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 242,
+        "text": "* 关联 {@link DeliveryPickUpStoreDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "point_activity_id",
+      "parent": "promotion_point_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 359,
+        "text": "* 关联 PointActivityDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "seckill_activity_id",
+      "parent": "promotion_seckill_activity",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 320,
+        "text": "* 关联 SeckillActivityDO 的 id 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+        "line": 71,
+        "text": "* 关联 MemberUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_item",
+      "field": "after_sale_id",
+      "parent": "trade_after_sale",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderItemDO.java",
+        "line": 166,
+        "text": "* 关联 {@link AfterSaleDO#getId()} 字段"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_item",
+      "field": "cart_id",
+      "parent": "trade_cart",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderItemDO.java",
+        "line": 46,
+        "text": "* 关联 {@link CartDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_item",
+      "field": "order_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderItemDO.java",
+        "line": 40,
+        "text": "* 关联 {@link TradeOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_item",
+      "field": "sku_id",
+      "parent": "product_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderItemDO.java",
+        "line": 66,
+        "text": "* 关联 ProductSkuDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_item",
+      "field": "spu_id",
+      "parent": "product_spu",
+      "key": "id",
+      "kind": "logic",
+      "note": "服务按订单项spu_id从商品SPU API批量读取；修正DO注释间接引用SKU.spuId的歧义",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeBrokerageOrderHandler.java",
+        "line": 105,
+        "text": "Map<Long, ProductSpuRespDTO> spusMap = productSpuApi.getSpuMap(convertList(orderItems, TradeOrderItemDO::getSpuId));"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_item",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderItemDO.java",
+        "line": 34,
+        "text": "* 关联 MemberUserDO 的 id 编号"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_log",
+      "field": "order_id",
+      "parent": "trade_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderLogDO.java",
+        "line": 58,
+        "text": "* 关联 {@link TradeOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "trade_order_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "user_type=1（会员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderLogDO.java",
+        "line": 45,
+        "text": "* 关联 AdminUserDO 的 id 字段、或者 MemberUserDO 的 id 字段"
+      },
+      "one": false,
+      "label": "会员"
+    },
+    {
+      "child": "trade_order_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "user_type=2（管理员）",
+      "evidence": {
+        "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderLogDO.java",
+        "line": 45,
+        "text": "* 关联 AdminUserDO 的 id 字段、或者 MemberUserDO 的 id 字段"
+      },
+      "one": false,
+      "label": "管理员"
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/mall.sql 为准；图中关系来自当前业务代码，均为逻辑关联，不表示数据库已建立物理外键。",
+    "灰色锚点引用其他模块已有表；集合字段连线表示集合元素与目标键关联。"
+  ]
+}

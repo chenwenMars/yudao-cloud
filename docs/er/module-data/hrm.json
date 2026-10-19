@@ -1,0 +1,1324 @@
+{
+  "module": "hrm",
+  "title": "HRM 人力资源管理",
+  "domains": [
+    {
+      "name": "员工档案",
+      "tables": [
+        "hrm_employee",
+        "hrm_employee_contact",
+        "hrm_employee_file",
+        "hrm_employee_personal_note",
+        "hrm_employee_change_record",
+        "hrm_employee_contract",
+        "hrm_employee_quit_info",
+        "hrm_employee_salary_card",
+        "hrm_employee_certificate",
+        "hrm_employee_education_experience",
+        "hrm_employee_training_experience",
+        "hrm_employee_work_experience"
+      ],
+      "color": "#2456A6"
+    },
+    {
+      "name": "考勤管理",
+      "tables": [
+        "hrm_attendance_group",
+        "hrm_attendance_holiday",
+        "hrm_attendance_clock",
+        "hrm_attendance_leave",
+        "hrm_config"
+      ],
+      "color": "#137C8B"
+    },
+    {
+      "name": "社会保险",
+      "tables": [
+        "hrm_insurance_scheme",
+        "hrm_insurance_scheme_project",
+        "hrm_insurance_employee_info",
+        "hrm_insurance_month_record",
+        "hrm_insurance_month_employee_record"
+      ],
+      "color": "#7B4CB2"
+    },
+    {
+      "name": "绩效配置",
+      "tables": [
+        "hrm_performance_assessment_template",
+        "hrm_performance_result_template",
+        "hrm_performance_plan"
+      ],
+      "color": "#A56A18"
+    },
+    {
+      "name": "绩效考核",
+      "tables": [
+        "hrm_performance_assessment",
+        "hrm_performance_assessment_dimension",
+        "hrm_performance_assessment_quota",
+        "hrm_performance_assessment_quota_score",
+        "hrm_performance_assessment_stage",
+        "hrm_performance_assessment_action_record",
+        "hrm_performance_assessment_appeal_record"
+      ],
+      "color": "#B04461"
+    },
+    {
+      "name": "招聘管理",
+      "tables": [
+        "hrm_recruit_post_type",
+        "hrm_recruit_post",
+        "hrm_recruit_channel",
+        "hrm_recruit_candidate",
+        "hrm_recruit_interview"
+      ],
+      "color": "#3B7C56"
+    },
+    {
+      "name": "薪酬管理",
+      "tables": [
+        "hrm_salary_option_template",
+        "hrm_salary_option",
+        "hrm_salary_tax_rule",
+        "hrm_salary_group",
+        "hrm_salary_config",
+        "hrm_salary_change_template",
+        "hrm_salary_employee_info",
+        "hrm_salary_change_record",
+        "hrm_salary_month_record",
+        "hrm_salary_month_employee_record"
+      ],
+      "color": "#54698A"
+    },
+    {
+      "name": "工资条发放",
+      "tables": [
+        "hrm_salary_slip_template",
+        "hrm_salary_slip_send_record",
+        "hrm_salary_slip"
+      ],
+      "color": "#8B643E"
+    }
+  ],
+  "relations": [
+    {
+      "child": "hrm_attendance_clock",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/attendance/record/HrmAttendanceClockDO.java",
+        "line": 46,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_attendance_group",
+      "field": "dept_ids",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/attendance/config/HrmAttendanceGroupDO.java",
+        "line": 56,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "hrm_attendance_group",
+      "field": "employee_ids",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/attendance/config/HrmAttendanceGroupDO.java",
+        "line": 63,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "hrm_attendance_leave",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/attendance/record/HrmAttendanceLeaveDO.java",
+        "line": 43,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee",
+      "field": "candidate_id",
+      "parent": "hrm_recruit_candidate",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeDO.java",
+        "line": 205,
+        "text": "* 关联 {@link HrmRecruitCandidateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee",
+      "field": "channel_id",
+      "parent": "hrm_recruit_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeDO.java",
+        "line": 191,
+        "text": "* 关联 {@link HrmRecruitChannelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee",
+      "field": "dept_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeDO.java",
+        "line": 120,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee",
+      "field": "leader_employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeDO.java",
+        "line": 126,
+        "text": "* 关联 {@link #id}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeDO.java",
+        "line": 58,
+        "text": "* 关联 {@link AdminUserRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_certificate",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/experience/HrmEmployeeCertificateDO.java",
+        "line": 40,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_change_record",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeChangeRecordDO.java",
+        "line": 43,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_change_record",
+      "field": "new_dept_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeChangeRecordDO.java",
+        "line": 67,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_change_record",
+      "field": "new_leader_employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeChangeRecordDO.java",
+        "line": 103,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_change_record",
+      "field": "old_dept_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeChangeRecordDO.java",
+        "line": 61,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_change_record",
+      "field": "old_leader_employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeChangeRecordDO.java",
+        "line": 97,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_contact",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeContactDO.java",
+        "line": 37,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_contract",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeContractDO.java",
+        "line": 45,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_education_experience",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/experience/HrmEmployeeEducationExperienceDO.java",
+        "line": 43,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_file",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeFileDO.java",
+        "line": 39,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_personal_note",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeePersonalNoteDO.java",
+        "line": 37,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_quit_info",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeQuitInfoDO.java",
+        "line": 43,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_salary_card",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/employment/HrmEmployeeSalaryCardDO.java",
+        "line": 36,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_training_experience",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/experience/HrmEmployeeTrainingExperienceDO.java",
+        "line": 40,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_employee_work_experience",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/experience/HrmEmployeeWorkExperienceDO.java",
+        "line": 40,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_insurance_employee_info",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/insurance/employee/HrmInsuranceEmployeeInfoDO.java",
+        "line": 38,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_insurance_employee_info",
+      "field": "scheme_id",
+      "parent": "hrm_insurance_scheme",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/insurance/employee/HrmInsuranceEmployeeInfoDO.java",
+        "line": 64,
+        "text": "* 关联 {@link HrmInsuranceSchemeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_insurance_month_employee_record",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/insurance/monthrecord/HrmInsuranceMonthEmployeeRecordDO.java",
+        "line": 53,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_insurance_month_employee_record",
+      "field": "month_record_id",
+      "parent": "hrm_insurance_month_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/insurance/monthrecord/HrmInsuranceMonthEmployeeRecordDO.java",
+        "line": 47,
+        "text": "* 关联 {@link HrmInsuranceMonthRecordDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_insurance_month_employee_record",
+      "field": "projects",
+      "parent": "hrm_insurance_scheme_project",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 项目快照：projects[].schemeProjectId；历史快照不随方案变化",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/insurance/monthrecord/HrmInsuranceMonthEmployeeRecordDO.java",
+        "line": 110,
+        "text": "* 关联 {@link HrmInsuranceSchemeProjectDO#getId()}"
+      },
+      "one": false,
+      "label": "[].schemeProjectId"
+    },
+    {
+      "child": "hrm_insurance_month_employee_record",
+      "field": "scheme_id",
+      "parent": "hrm_insurance_scheme",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/insurance/monthrecord/HrmInsuranceMonthEmployeeRecordDO.java",
+        "line": 59,
+        "text": "* 关联 {@link HrmInsuranceSchemeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_insurance_scheme_project",
+      "field": "scheme_id",
+      "parent": "hrm_insurance_scheme",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/insurance/config/HrmInsuranceSchemeProjectDO.java",
+        "line": 40,
+        "text": "* 关联 {@link HrmInsuranceSchemeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentDO.java",
+        "line": 57,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment",
+      "field": "plan_id",
+      "parent": "hrm_performance_plan",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentDO.java",
+        "line": 51,
+        "text": "* 关联 {@link HrmPerformancePlanDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_action_record",
+      "field": "assessment_id",
+      "parent": "hrm_performance_assessment",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentActionRecordDO.java",
+        "line": 38,
+        "text": "* 关联 {@link HrmPerformanceAssessmentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_action_record",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentActionRecordDO.java",
+        "line": 50,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_action_record",
+      "field": "stage_id",
+      "parent": "hrm_performance_assessment_stage",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentActionRecordDO.java",
+        "line": 44,
+        "text": "* 关联 {@link HrmPerformanceAssessmentStageDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_appeal_record",
+      "field": "assessment_id",
+      "parent": "hrm_performance_assessment",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentAppealRecordDO.java",
+        "line": 32,
+        "text": "* 关联 {@link HrmPerformanceAssessmentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_appeal_record",
+      "field": "stage_id",
+      "parent": "hrm_performance_assessment_stage",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentAppealRecordDO.java",
+        "line": 38,
+        "text": "* 关联 {@link HrmPerformanceAssessmentStageDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_dimension",
+      "field": "assessment_id",
+      "parent": "hrm_performance_assessment",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentDimensionDO.java",
+        "line": 34,
+        "text": "* 关联 {@link HrmPerformanceAssessmentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_quota",
+      "field": "assessment_id",
+      "parent": "hrm_performance_assessment",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentQuotaDO.java",
+        "line": 40,
+        "text": "* 关联 {@link HrmPerformanceAssessmentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_quota",
+      "field": "dimension_id",
+      "parent": "hrm_performance_assessment_dimension",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentQuotaDO.java",
+        "line": 46,
+        "text": "* 关联 {@link HrmPerformanceAssessmentDimensionDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_quota_score",
+      "field": "assessment_quota_id",
+      "parent": "hrm_performance_assessment_quota",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentQuotaScoreDO.java",
+        "line": 39,
+        "text": "* 关联 {@link HrmPerformanceAssessmentQuotaDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_quota_score",
+      "field": "assessment_stage_id",
+      "parent": "hrm_performance_assessment_stage",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentQuotaScoreDO.java",
+        "line": 33,
+        "text": "* 关联 {@link HrmPerformanceAssessmentStageDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_stage",
+      "field": "assessment_id",
+      "parent": "hrm_performance_assessment",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentStageDO.java",
+        "line": 40,
+        "text": "* 关联 {@link HrmPerformanceAssessmentDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_assessment_stage",
+      "field": "handler_employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/assessment/HrmPerformanceAssessmentStageDO.java",
+        "line": 56,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_plan",
+      "field": "appeal_stages",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：appeal_stages[].employeeId；handler type=3（SPECIFIED）时",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/plan/HrmPerformancePlanDO.java",
+        "line": 314,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].employeeId"
+    },
+    {
+      "child": "hrm_performance_plan",
+      "field": "assessment_template_id",
+      "parent": "hrm_performance_assessment_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/plan/HrmPerformancePlanDO.java",
+        "line": 125,
+        "text": "* 关联 {@link HrmPerformanceAssessmentTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_plan",
+      "field": "result_audit_stages",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：result_audit_stages[].employeeId；handler type=3（SPECIFIED）时",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/plan/HrmPerformancePlanDO.java",
+        "line": 314,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].employeeId"
+    },
+    {
+      "child": "hrm_performance_plan",
+      "field": "result_template_id",
+      "parent": "hrm_performance_result_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/plan/HrmPerformancePlanDO.java",
+        "line": 190,
+        "text": "* 关联 {@link HrmPerformanceResultTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_performance_plan",
+      "field": "review_stages",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：review_stages[].rater.employeeId；handler type=3（SPECIFIED）时",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/plan/HrmPerformancePlanDO.java",
+        "line": 314,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].rater.employeeId"
+    },
+    {
+      "child": "hrm_performance_plan",
+      "field": "scopes",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：scopes[].employeeIds；包含/排除员工范围",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/plan/HrmPerformancePlanDO.java",
+        "line": 226,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].employeeIds"
+    },
+    {
+      "child": "hrm_performance_plan",
+      "field": "scopes",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：scopes[].deptIds；员工部门范围",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/performance/plan/HrmPerformancePlanDO.java",
+        "line": 232,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false,
+      "label": "[].deptIds"
+    },
+    {
+      "child": "hrm_recruit_candidate",
+      "field": "channel_id",
+      "parent": "hrm_recruit_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/candidate/HrmRecruitCandidateDO.java",
+        "line": 97,
+        "text": "* 关联 {@link HrmRecruitChannelDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_recruit_candidate",
+      "field": "post_id",
+      "parent": "hrm_recruit_post",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/candidate/HrmRecruitCandidateDO.java",
+        "line": 69,
+        "text": "* 关联 {@link HrmRecruitPostDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_recruit_interview",
+      "field": "candidate_id",
+      "parent": "hrm_recruit_candidate",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/candidate/HrmRecruitInterviewDO.java",
+        "line": 45,
+        "text": "* 关联 {@link HrmRecruitCandidateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_recruit_interview",
+      "field": "interview_employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/candidate/HrmRecruitInterviewDO.java",
+        "line": 61,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_recruit_interview",
+      "field": "other_interview_employee_ids",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/candidate/HrmRecruitInterviewDO.java",
+        "line": 67,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "hrm_recruit_post",
+      "field": "dept_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/post/HrmRecruitPostDO.java",
+        "line": 65,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_recruit_post",
+      "field": "interview_employee_ids",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/post/HrmRecruitPostDO.java",
+        "line": 143,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "hrm_recruit_post",
+      "field": "owner_employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/post/HrmRecruitPostDO.java",
+        "line": 137,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_recruit_post",
+      "field": "post_type_id",
+      "parent": "hrm_recruit_post_type",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/post/HrmRecruitPostDO.java",
+        "line": 160,
+        "text": "* 关联 {@link HrmRecruitPostTypeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_recruit_post_type",
+      "field": "parent_id",
+      "parent": "hrm_recruit_post_type",
+      "key": "id",
+      "kind": "logic",
+      "note": "层级自引用；根节点标识不指向实体行",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/recruit/post/HrmRecruitPostTypeDO.java",
+        "line": 42,
+        "text": "* 关联 {@link #id}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_change_record",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/employee/HrmSalaryChangeRecordDO.java",
+        "line": 48,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_change_record",
+      "field": "probation_salary_options",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：probation_salary_options[].code；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/employee/HrmSalaryChangeRecordDO.java",
+        "line": 116,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_change_record",
+      "field": "salary_options",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：salary_options[].code；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/employee/HrmSalaryChangeRecordDO.java",
+        "line": 116,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_change_template",
+      "field": "options",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：options[].code；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/config/HrmSalaryChangeTemplateDO.java",
+        "line": 70,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_employee_info",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/employee/HrmSalaryEmployeeInfoDO.java",
+        "line": 47,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_employee_info",
+      "field": "probation_salary_options",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：probation_salary_options[].code；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/employee/HrmSalaryEmployeeInfoDO.java",
+        "line": 105,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_employee_info",
+      "field": "salary_options",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：salary_options[].code；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/employee/HrmSalaryEmployeeInfoDO.java",
+        "line": 105,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_group",
+      "field": "dept_ids",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/config/HrmSalaryGroupDO.java",
+        "line": 62,
+        "text": "* 关联 {@link DeptRespDTO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "hrm_salary_group",
+      "field": "employee_ids",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/config/HrmSalaryGroupDO.java",
+        "line": 69,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "hrm_salary_group",
+      "field": "tax_rule_id",
+      "parent": "hrm_salary_tax_rule",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/config/HrmSalaryGroupDO.java",
+        "line": 76,
+        "text": "* 关联 {@link HrmSalaryTaxRuleDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_month_employee_record",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/monthrecord/HrmSalaryMonthEmployeeRecordDO.java",
+        "line": 50,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_month_employee_record",
+      "field": "month_record_id",
+      "parent": "hrm_salary_month_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/monthrecord/HrmSalaryMonthEmployeeRecordDO.java",
+        "line": 44,
+        "text": "* 关联 {@link HrmSalaryMonthRecordDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_month_employee_record",
+      "field": "option_values",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：option_values[].code；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/monthrecord/HrmSalaryMonthEmployeeRecordDO.java",
+        "line": 106,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_month_record",
+      "field": "option_headers",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：option_headers[].code；含 children 递归子项；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/monthrecord/HrmSalaryMonthRecordDO.java",
+        "line": 117,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_option",
+      "field": "parent_code",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "logic",
+      "note": "薪资项目录层级，以 code 为业务键；根分类不指向实体行",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/config/HrmSalaryOptionDO.java",
+        "line": 69,
+        "text": "* 关联 {@link #code}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_option",
+      "field": "template_id",
+      "parent": "hrm_salary_option_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/config/HrmSalaryOptionDO.java",
+        "line": 59,
+        "text": "* 关联 {@link HrmSalaryOptionTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_option_template",
+      "field": "parent_code",
+      "parent": "hrm_salary_option_template",
+      "key": "code",
+      "kind": "logic",
+      "note": "薪资项目录层级，以 code 为业务键；根分类不指向实体行",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/config/HrmSalaryOptionTemplateDO.java",
+        "line": 44,
+        "text": "* 关联 {@link #code}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_slip",
+      "field": "employee_id",
+      "parent": "hrm_employee",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/slip/HrmSalarySlipDO.java",
+        "line": 59,
+        "text": "* 关联 {@link HrmEmployeeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_slip",
+      "field": "month_employee_record_id",
+      "parent": "hrm_salary_month_employee_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/slip/HrmSalarySlipDO.java",
+        "line": 53,
+        "text": "* 关联 {@link HrmSalaryMonthEmployeeRecordDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_slip",
+      "field": "options",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：options[].code；type=2（ITEM），含 children 递归子项；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/slip/HrmSalarySlipDO.java",
+        "line": 116,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    },
+    {
+      "child": "hrm_salary_slip",
+      "field": "send_record_id",
+      "parent": "hrm_salary_slip_send_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/slip/HrmSalarySlipDO.java",
+        "line": 47,
+        "text": "* 关联 {@link HrmSalarySlipSendRecordDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_slip_send_record",
+      "field": "month_record_id",
+      "parent": "hrm_salary_month_record",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/slip/HrmSalarySlipSendRecordDO.java",
+        "line": 40,
+        "text": "* 关联 {@link HrmSalaryMonthRecordDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "hrm_salary_slip_template",
+      "field": "options",
+      "parent": "hrm_salary_option",
+      "key": "code",
+      "kind": "collection",
+      "note": "JSON 薪资项业务编码引用：options[].code；type=2（ITEM），含 children 递归子项；保留名称/金额历史快照",
+      "evidence": {
+        "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/salary/slip/HrmSalarySlipTemplateDO.java",
+        "line": 84,
+        "text": "* 关联 {@link HrmSalaryOptionDO#getCode()}"
+      },
+      "one": false,
+      "label": "[].code"
+    }
+  ],
+  "notes": [
+    "结构以 sql/mysql/hrm.sql 为准；图中连线表示源码支持的逻辑引用，DDL 未声明物理外键。",
+    "员工档案 employee_id 与后台账号 user_id 属于不同身份，员工可无登录账号；部门/用户跨模块引用以灰色外部卡片展示。",
+    "部门、员工、面试官数组及绩效计划 JSON 中的员工/部门配置为集合引用，按物理列锚定并说明内部路径。",
+    "薪资项 parent_code 与 JSON code 引用薪资项业务编码；历史薪资与工资条保存快照，不假定数据库强制约束或快照随目录更新。",
+    "考勤请假的 process_instance_id 为 Flowable 运行时标识，地区编号为内存 Area 标识；本模块 DDL 没有对应目标表，不建立虚假外键。"
+  ]
+}

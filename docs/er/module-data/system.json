@@ -1,0 +1,904 @@
+{
+  "module": "system",
+  "title": "System 系统管理",
+  "domains": [
+    {
+      "name": "组织与权限",
+      "color": "#2456A6",
+      "tables": [
+        "system_dept",
+        "system_users",
+        "system_user_post",
+        "system_post",
+        "system_role",
+        "system_user_role",
+        "system_role_menu",
+        "system_menu"
+      ]
+    },
+    {
+      "name": "租户与套餐",
+      "color": "#7C3FA2",
+      "tables": [
+        "system_tenant_package",
+        "system_tenant"
+      ]
+    },
+    {
+      "name": "OAuth2 授权",
+      "color": "#276F9D",
+      "tables": [
+        "system_oauth2_client",
+        "system_oauth2_code",
+        "system_oauth2_approve",
+        "system_oauth2_refresh_token",
+        "system_oauth2_access_token"
+      ]
+    },
+    {
+      "name": "第三方登录",
+      "color": "#477246",
+      "tables": [
+        "system_social_client",
+        "system_social_user",
+        "system_social_user_bind"
+      ]
+    },
+    {
+      "name": "短信服务",
+      "color": "#A65D21",
+      "tables": [
+        "system_sms_channel",
+        "system_sms_template",
+        "system_sms_log",
+        "system_sms_code"
+      ]
+    },
+    {
+      "name": "邮件服务",
+      "color": "#9A495E",
+      "tables": [
+        "system_mail_account",
+        "system_mail_template",
+        "system_mail_log"
+      ]
+    },
+    {
+      "name": "站内信与公告",
+      "color": "#8F4D97",
+      "tables": [
+        "system_notify_template",
+        "system_notify_message",
+        "system_notice"
+      ]
+    },
+    {
+      "name": "字典管理",
+      "color": "#637D28",
+      "tables": [
+        "system_dict_type",
+        "system_dict_data"
+      ]
+    },
+    {
+      "name": "登录与操作日志",
+      "color": "#5E6677",
+      "tables": [
+        "system_login_log",
+        "system_operate_log"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "system_users",
+      "field": "dept_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/user/AdminUserDO.java",
+        "line": 57,
+        "text": "private Long deptId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_dept",
+      "field": "parent_id",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "logic",
+      "note": "根节点 parent_id=0 不对应真实记录",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dept/DeptDO.java",
+        "line": 24,
+        "text": "public static final Long PARENT_ID_ROOT = 0L;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_dept",
+      "field": "leader_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dept/DeptDO.java",
+        "line": 48,
+        "text": "* 关联 {@link AdminUserDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "system_menu",
+      "field": "parent_id",
+      "parent": "system_menu",
+      "key": "id",
+      "kind": "logic",
+      "note": "根节点 parent_id=0",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/permission/MenuDO.java",
+        "line": 63,
+        "text": "private Long parentId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_user_post",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dept/UserPostDO.java",
+        "line": 32,
+        "text": "private Long userId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_user_post",
+      "field": "post_id",
+      "parent": "system_post",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dept/UserPostDO.java",
+        "line": 38,
+        "text": "private Long postId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_user_role",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/permission/UserRoleDO.java",
+        "line": 29,
+        "text": "private Long userId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_user_role",
+      "field": "role_id",
+      "parent": "system_role",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/permission/UserRoleDO.java",
+        "line": 33,
+        "text": "private Long roleId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_role_menu",
+      "field": "role_id",
+      "parent": "system_role",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/permission/RoleMenuDO.java",
+        "line": 29,
+        "text": "private Long roleId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_role_menu",
+      "field": "menu_id",
+      "parent": "system_menu",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/permission/RoleMenuDO.java",
+        "line": 33,
+        "text": "private Long menuId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_users",
+      "field": "post_ids",
+      "parent": "system_post",
+      "key": "id",
+      "kind": "collection",
+      "note": "岗位编号集合；与用户岗位关联表同时维护",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/user/AdminUserServiceImpl.java",
+        "line": 117,
+        "text": "userPostMapper.insertBatch(convertList(user.getPostIds(),"
+      },
+      "one": false
+    },
+    {
+      "child": "system_role",
+      "field": "data_scope_dept_ids",
+      "parent": "system_dept",
+      "key": "id",
+      "kind": "collection",
+      "note": "自定义数据范围部门集合",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/permission/PermissionServiceImpl.java",
+        "line": 303,
+        "text": "CollUtil.addAll(result.getDeptIds(), role.getDataScopeDeptIds());"
+      },
+      "one": false
+    },
+    {
+      "child": "system_tenant",
+      "field": "package_id",
+      "parent": "system_tenant_package",
+      "key": "id",
+      "kind": "logic",
+      "note": "系统内置租户 package_id=0 为特殊值",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/tenant/TenantDO.java",
+        "line": 35,
+        "text": "public static final Long PACKAGE_ID_SYSTEM = 0L;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_tenant",
+      "field": "contact_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/tenant/TenantServiceImpl.java",
+        "line": 118,
+        "text": "tenantMapper.updateById(new TenantDO().setId(tenant.getId()).setContactUserId(userId));"
+      },
+      "one": false
+    },
+    {
+      "child": "system_tenant_package",
+      "field": "menu_ids",
+      "parent": "system_menu",
+      "key": "id",
+      "kind": "collection",
+      "note": "套餐菜单编号集合",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/tenant/TenantServiceImpl.java",
+        "line": 138,
+        "text": "permissionService.assignRoleMenu(roleId, tenantPackage.getMenuIds());"
+      },
+      "one": false
+    },
+    {
+      "child": "system_oauth2_access_token",
+      "field": "client_id",
+      "parent": "system_oauth2_client",
+      "key": "client_id",
+      "kind": "logic",
+      "note": "关联客户端业务编号，非主键 id",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/oauth2/OAuth2ClientMapper.java",
+        "line": 27,
+        "text": "return selectOne(OAuth2ClientDO::getClientId, clientId);"
+      },
+      "one": false
+    },
+    {
+      "child": "system_oauth2_refresh_token",
+      "field": "client_id",
+      "parent": "system_oauth2_client",
+      "key": "client_id",
+      "kind": "logic",
+      "note": "关联客户端业务编号，非主键 id",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/oauth2/OAuth2ClientMapper.java",
+        "line": 27,
+        "text": "return selectOne(OAuth2ClientDO::getClientId, clientId);"
+      },
+      "one": false
+    },
+    {
+      "child": "system_oauth2_code",
+      "field": "client_id",
+      "parent": "system_oauth2_client",
+      "key": "client_id",
+      "kind": "logic",
+      "note": "关联客户端业务编号，非主键 id",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/oauth2/OAuth2ClientMapper.java",
+        "line": 27,
+        "text": "return selectOne(OAuth2ClientDO::getClientId, clientId);"
+      },
+      "one": false
+    },
+    {
+      "child": "system_oauth2_approve",
+      "field": "client_id",
+      "parent": "system_oauth2_client",
+      "key": "client_id",
+      "kind": "logic",
+      "note": "关联客户端业务编号，非主键 id",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/oauth2/OAuth2ClientMapper.java",
+        "line": 27,
+        "text": "return selectOne(OAuth2ClientDO::getClientId, clientId);"
+      },
+      "one": false
+    },
+    {
+      "child": "system_oauth2_access_token",
+      "field": "refresh_token",
+      "parent": "system_oauth2_refresh_token",
+      "key": "refresh_token",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/oauth2/OAuth2TokenServiceImpl.java",
+        "line": 184,
+        "text": ".setRefreshToken(refreshTokenDO.getRefreshToken())"
+      },
+      "one": false
+    },
+    {
+      "child": "system_social_user_bind",
+      "field": "social_user_id",
+      "parent": "system_social_user",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/social/SocialUserBindDO.java",
+        "line": 46,
+        "text": "* 关联 {@link SocialUserDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "system_mail_template",
+      "field": "account_id",
+      "parent": "system_mail_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/mail/MailTemplateDO.java",
+        "line": 45,
+        "text": "private Long accountId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_mail_log",
+      "field": "account_id",
+      "parent": "system_mail_account",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/mail/MailLogDO.java",
+        "line": 74,
+        "text": "private Long accountId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_mail_log",
+      "field": "template_id",
+      "parent": "system_mail_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/mail/MailLogDO.java",
+        "line": 88,
+        "text": "private Long templateId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_sms_template",
+      "field": "channel_id",
+      "parent": "system_sms_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/sms/SmsTemplateDO.java",
+        "line": 85,
+        "text": "private Long channelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_sms_log",
+      "field": "channel_id",
+      "parent": "system_sms_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/sms/SmsLogDO.java",
+        "line": 46,
+        "text": "private Long channelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_sms_log",
+      "field": "template_id",
+      "parent": "system_sms_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/sms/SmsLogDO.java",
+        "line": 61,
+        "text": "private Long templateId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_notify_message",
+      "field": "template_id",
+      "parent": "system_notify_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/notify/NotifyMessageDO.java",
+        "line": 55,
+        "text": "private Long templateId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_dict_data",
+      "field": "dict_type",
+      "parent": "system_dict_type",
+      "key": "type",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/dict/DictDataServiceImpl.java",
+        "line": 68,
+        "text": "validateDictTypeExists(createReqVO.getDictType());"
+      },
+      "one": false
+    },
+    {
+      "child": "system_dept",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "租户编号逻辑关联；是否启用租户隔离需结合实体/配置",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_login_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_login_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_mail_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_mail_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_notify_message",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_notify_message",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_oauth2_access_token",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_oauth2_access_token",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_oauth2_access_token",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "租户编号逻辑关联；是否启用租户隔离需结合实体/配置",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_oauth2_approve",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_oauth2_approve",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_oauth2_code",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_oauth2_code",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_oauth2_refresh_token",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_oauth2_refresh_token",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_oauth2_refresh_token",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "租户编号逻辑关联；是否启用租户隔离需结合实体/配置",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_operate_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_operate_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_role",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "租户编号逻辑关联；是否启用租户隔离需结合实体/配置",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_role_menu",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "租户编号逻辑关联；是否启用租户隔离需结合实体/配置",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_sms_log",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_sms_log",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_social_client",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "租户编号逻辑关联；是否启用租户隔离需结合实体/配置",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "system_social_user_bind",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=2 关联管理员；user_type=1 关联 member_user。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "system_social_user_bind",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "仅 user_type=1 指向会员；与管理员编号空间区分。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "system_users",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "租户编号逻辑关联；是否启用租户隔离需结合实体/配置",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/system.sql 为准，字段类型包含源码推断；所有连线均为代码支持的逻辑关联。",
+    "OAuth2 client_id关联客户端业务编号client_id，不关联数值主键id。",
+    "user_type=1/2分别指向会员/管理员；根部门/菜单、系统租户套餐使用特殊哨兵值。",
+    "按新的system.sql列集合绘制；原总SQL多出的tenant_id、操作日志success不自动补回。"
+  ]
+}

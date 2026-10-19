@@ -1,0 +1,518 @@
+{
+  "module": "wms",
+  "title": "WMS 仓储管理",
+  "domains": [
+    {
+      "name": "商品与往来单位",
+      "color": "#2456A6",
+      "tables": [
+        "wms_item_category",
+        "wms_item_brand",
+        "wms_item",
+        "wms_item_sku",
+        "wms_merchant"
+      ]
+    },
+    {
+      "name": "仓库与库存",
+      "color": "#287D65",
+      "tables": [
+        "wms_warehouse",
+        "wms_inventory",
+        "wms_inventory_history"
+      ]
+    },
+    {
+      "name": "入库与出库",
+      "color": "#397D91",
+      "tables": [
+        "wms_receipt_order",
+        "wms_receipt_order_detail",
+        "wms_shipment_order",
+        "wms_shipment_order_detail"
+      ]
+    },
+    {
+      "name": "移库与盘点",
+      "color": "#6D639D",
+      "tables": [
+        "wms_movement_order",
+        "wms_movement_order_detail",
+        "wms_check_order",
+        "wms_check_order_detail"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "wms_inventory",
+      "field": "sku_id",
+      "parent": "wms_item_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/inventory/WmsInventoryDO.java",
+        "line": 36,
+        "text": "* 关联 {@link WmsItemSkuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_inventory",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/inventory/WmsInventoryDO.java",
+        "line": 42,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_inventory_history",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/inventory/WmsInventoryHistoryDO.java",
+        "line": 40,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_inventory_history",
+      "field": "sku_id",
+      "parent": "wms_item_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/inventory/WmsInventoryHistoryDO.java",
+        "line": 46,
+        "text": "* 关联 {@link WmsItemSkuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_item",
+      "field": "category_id",
+      "parent": "wms_item_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/md/item/WmsItemDO.java",
+        "line": 44,
+        "text": "* 关联 {@link WmsItemCategoryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_item",
+      "field": "brand_id",
+      "parent": "wms_item_brand",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/md/item/WmsItemDO.java",
+        "line": 50,
+        "text": "* 关联 {@link WmsItemBrandDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_item_sku",
+      "field": "item_id",
+      "parent": "wms_item",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/md/item/WmsItemSkuDO.java",
+        "line": 38,
+        "text": "* 关联 {@link WmsItemDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_check_order",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/check/WmsCheckOrderDO.java",
+        "line": 58,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_check_order_detail",
+      "field": "order_id",
+      "parent": "wms_check_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/check/WmsCheckOrderDetailDO.java",
+        "line": 40,
+        "text": "* 关联 {@link WmsCheckOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_check_order_detail",
+      "field": "sku_id",
+      "parent": "wms_item_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/check/WmsCheckOrderDetailDO.java",
+        "line": 46,
+        "text": "* 关联 {@link WmsItemSkuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_check_order_detail",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/check/WmsCheckOrderDetailDO.java",
+        "line": 55,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_check_order_detail",
+      "field": "inventory_id",
+      "parent": "wms_inventory",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/check/WmsCheckOrderDetailDO.java",
+        "line": 61,
+        "text": "* 关联 {@link WmsInventoryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_movement_order",
+      "field": "source_warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/movement/WmsMovementOrderDO.java",
+        "line": 58,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_movement_order",
+      "field": "target_warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/movement/WmsMovementOrderDO.java",
+        "line": 67,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_movement_order_detail",
+      "field": "order_id",
+      "parent": "wms_movement_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/movement/WmsMovementOrderDetailDO.java",
+        "line": 38,
+        "text": "* 关联 {@link WmsMovementOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_movement_order_detail",
+      "field": "sku_id",
+      "parent": "wms_item_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/movement/WmsMovementOrderDetailDO.java",
+        "line": 44,
+        "text": "* 关联 {@link WmsItemSkuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_movement_order_detail",
+      "field": "source_warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/movement/WmsMovementOrderDetailDO.java",
+        "line": 53,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_movement_order_detail",
+      "field": "target_warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/movement/WmsMovementOrderDetailDO.java",
+        "line": 62,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_receipt_order",
+      "field": "merchant_id",
+      "parent": "wms_merchant",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/receipt/WmsReceiptOrderDO.java",
+        "line": 64,
+        "text": "* 关联 {@link WmsMerchantDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_receipt_order",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/receipt/WmsReceiptOrderDO.java",
+        "line": 77,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_receipt_order_detail",
+      "field": "order_id",
+      "parent": "wms_receipt_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/receipt/WmsReceiptOrderDetailDO.java",
+        "line": 38,
+        "text": "* 关联 {@link WmsReceiptOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_receipt_order_detail",
+      "field": "sku_id",
+      "parent": "wms_item_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/receipt/WmsReceiptOrderDetailDO.java",
+        "line": 44,
+        "text": "* 关联 {@link WmsItemSkuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_receipt_order_detail",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/receipt/WmsReceiptOrderDetailDO.java",
+        "line": 53,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_shipment_order",
+      "field": "merchant_id",
+      "parent": "wms_merchant",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/shipment/WmsShipmentOrderDO.java",
+        "line": 64,
+        "text": "* 关联 {@link WmsMerchantDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_shipment_order",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/shipment/WmsShipmentOrderDO.java",
+        "line": 77,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_shipment_order_detail",
+      "field": "order_id",
+      "parent": "wms_shipment_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/shipment/WmsShipmentOrderDetailDO.java",
+        "line": 38,
+        "text": "* 关联 {@link WmsShipmentOrderDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_shipment_order_detail",
+      "field": "sku_id",
+      "parent": "wms_item_sku",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/shipment/WmsShipmentOrderDetailDO.java",
+        "line": 44,
+        "text": "* 关联 {@link WmsItemSkuDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_shipment_order_detail",
+      "field": "warehouse_id",
+      "parent": "wms_warehouse",
+      "key": "id",
+      "kind": "logic",
+      "note": "源码 Javadoc 明示的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/order/shipment/WmsShipmentOrderDetailDO.java",
+        "line": 53,
+        "text": "* 关联 {@link WmsWarehouseDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_item_category",
+      "field": "parent_id",
+      "parent": "wms_item_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "业务代码校验或写入的逻辑关联（DDL 未声明外键）",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/dal/dataobject/md/item/WmsItemCategoryDO.java",
+        "line": 38,
+        "text": "* 关联 {@link #id}"
+      },
+      "one": false
+    },
+    {
+      "child": "wms_inventory_history",
+      "field": "order_id",
+      "parent": "wms_receipt_order",
+      "key": "id",
+      "kind": "conditional",
+      "note": "order_type=1（WmsOrderTypeEnum.RECEIPT），库存流水来源单据",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/service/order/receipt/WmsReceiptOrderServiceImpl.java",
+        "line": 237,
+        "text": ".setOrderId(order.getId()).setOrderNo(order.getNo())"
+      },
+      "one": false,
+      "label": "order_type=1"
+    },
+    {
+      "child": "wms_inventory_history",
+      "field": "order_id",
+      "parent": "wms_shipment_order",
+      "key": "id",
+      "kind": "conditional",
+      "note": "order_type=2（WmsOrderTypeEnum.SHIPMENT），库存流水来源单据",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/service/order/shipment/WmsShipmentOrderServiceImpl.java",
+        "line": 236,
+        "text": ".setOrderId(order.getId()).setOrderNo(order.getNo())"
+      },
+      "one": false,
+      "label": "order_type=2"
+    },
+    {
+      "child": "wms_inventory_history",
+      "field": "order_id",
+      "parent": "wms_movement_order",
+      "key": "id",
+      "kind": "conditional",
+      "note": "order_type=3（WmsOrderTypeEnum.MOVEMENT），库存流水来源单据",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/service/order/movement/WmsMovementOrderServiceImpl.java",
+        "line": 235,
+        "text": ".setOrderId(order.getId()).setOrderNo(order.getNo())"
+      },
+      "one": false,
+      "label": "order_type=3"
+    },
+    {
+      "child": "wms_inventory_history",
+      "field": "order_id",
+      "parent": "wms_check_order",
+      "key": "id",
+      "kind": "conditional",
+      "note": "order_type=4（WmsOrderTypeEnum.CHECK），库存流水来源单据",
+      "evidence": {
+        "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/service/order/check/WmsCheckOrderServiceImpl.java",
+        "line": 217,
+        "text": ".setOrderId(order.getId()).setOrderNo(order.getNo())"
+      },
+      "one": false,
+      "label": "order_type=4"
+    }
+  ],
+  "notes": [
+    "WMS 实体明确 @link 的普通 ID 关系与 inventory_history.order_id 的四类 order_type 条件来源已核对；DDL 无物理外键。",
+    "本模块实体均继承 BaseDO，DDL 无 tenant_id；商品、SKU、仓库均使用 WMS 模块自身模型，未凭同名与 MES/Mall 交叉关联。"
+  ]
+}

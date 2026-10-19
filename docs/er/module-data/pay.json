@@ -1,0 +1,732 @@
+{
+  "module": "pay",
+  "title": "Pay 支付平台",
+  "domains": [
+    {
+      "name": "应用与渠道",
+      "color": "#2456A6",
+      "tables": [
+        "pay_app",
+        "pay_channel"
+      ]
+    },
+    {
+      "name": "支付与退款",
+      "color": "#7C3FA2",
+      "tables": [
+        "pay_order",
+        "pay_order_extension",
+        "pay_refund"
+      ]
+    },
+    {
+      "name": "转账",
+      "color": "#276F9D",
+      "tables": [
+        "pay_transfer"
+      ]
+    },
+    {
+      "name": "异步通知",
+      "color": "#477246",
+      "tables": [
+        "pay_notify_task",
+        "pay_notify_log"
+      ]
+    },
+    {
+      "name": "钱包与充值",
+      "color": "#A65D21",
+      "tables": [
+        "pay_wallet",
+        "pay_wallet_transaction",
+        "pay_wallet_recharge",
+        "pay_wallet_recharge_package"
+      ]
+    },
+    {
+      "name": "支付示例",
+      "color": "#9A495E",
+      "tables": [
+        "pay_demo_order",
+        "pay_demo_withdraw"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "child": "pay_channel",
+      "field": "app_id",
+      "parent": "pay_app",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/channel/PayChannelDO.java",
+        "line": 72,
+        "text": "private Long appId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_order",
+      "field": "app_id",
+      "parent": "pay_app",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/order/PayOrderDO.java",
+        "line": 38,
+        "text": "private Long appId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_order",
+      "field": "channel_id",
+      "parent": "pay_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/order/PayOrderDO.java",
+        "line": 44,
+        "text": "private Long channelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_order",
+      "field": "extension_id",
+      "parent": "pay_order_extension",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/order/PayOrderDO.java",
+        "line": 121,
+        "text": "private Long extensionId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_order_extension",
+      "field": "order_id",
+      "parent": "pay_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/order/PayOrderExtensionDO.java",
+        "line": 51,
+        "text": "private Long orderId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_order_extension",
+      "field": "channel_id",
+      "parent": "pay_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/order/PayOrderExtensionDO.java",
+        "line": 57,
+        "text": "private Long channelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_refund",
+      "field": "app_id",
+      "parent": "pay_app",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/refund/PayRefundDO.java",
+        "line": 54,
+        "text": "private Long appId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_refund",
+      "field": "channel_id",
+      "parent": "pay_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/refund/PayRefundDO.java",
+        "line": 60,
+        "text": "private Long channelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_refund",
+      "field": "order_id",
+      "parent": "pay_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/refund/PayRefundDO.java",
+        "line": 72,
+        "text": "private Long orderId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_transfer",
+      "field": "app_id",
+      "parent": "pay_app",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/transfer/PayTransferDO.java",
+        "line": 43,
+        "text": "private Long appId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_transfer",
+      "field": "channel_id",
+      "parent": "pay_channel",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/transfer/PayTransferDO.java",
+        "line": 49,
+        "text": "private Long channelId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_notify_task",
+      "field": "app_id",
+      "parent": "pay_app",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/notify/PayNotifyTaskDO.java",
+        "line": 48,
+        "text": "private Long appId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_notify_log",
+      "field": "task_id",
+      "parent": "pay_notify_task",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/notify/PayNotifyLogDO.java",
+        "line": 33,
+        "text": "private Long taskId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_wallet_recharge",
+      "field": "wallet_id",
+      "parent": "pay_wallet",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/wallet/PayWalletRechargeDO.java",
+        "line": 33,
+        "text": "private Long walletId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_wallet_recharge",
+      "field": "pay_order_id",
+      "parent": "pay_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/wallet/PayWalletRechargeDO.java",
+        "line": 70,
+        "text": "private Long payOrderId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_wallet_recharge",
+      "field": "pay_refund_id",
+      "parent": "pay_refund",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/wallet/PayWalletRechargeDO.java",
+        "line": 88,
+        "text": "private Long payRefundId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_wallet_transaction",
+      "field": "wallet_id",
+      "parent": "pay_wallet",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/wallet/PayWalletTransactionDO.java",
+        "line": 36,
+        "text": "private Long walletId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_demo_order",
+      "field": "pay_order_id",
+      "parent": "pay_order",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/demo/PayDemoOrderDO.java",
+        "line": 61,
+        "text": "private Long payOrderId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_demo_order",
+      "field": "pay_refund_id",
+      "parent": "pay_refund",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/demo/PayDemoOrderDO.java",
+        "line": 77,
+        "text": "private Long payRefundId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_demo_withdraw",
+      "field": "pay_transfer_id",
+      "parent": "pay_transfer",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/demo/PayDemoWithdrawDO.java",
+        "line": 68,
+        "text": "private Long payTransferId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_wallet_recharge",
+      "field": "package_id",
+      "parent": "pay_wallet_recharge_package",
+      "key": "id",
+      "kind": "logic",
+      "note": "DO旧Javadoc误写本类packageId；Service实际校验充值套餐表。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargeServiceImpl.java",
+        "line": 86,
+        "text": "PayWalletRechargePackageDO rechargePackage = payWalletRechargePackageService.validWalletRechargePackage(reqVO.getPackageId());"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_demo_order",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/demo/PayDemoOrderServiceImpl.java",
+        "line": 94,
+        "text": ".setUserId(userId).setUserType(UserTypeEnum.ADMIN.getValue()) // 用户信息"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_order",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "pay_order",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "pay_refund",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "pay_refund",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "pay_transfer",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "pay_transfer",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "pay_wallet",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 18,
+        "text": "ADMIN(2, \"管理员\"); // 面向 b 端，管理后台"
+      },
+      "one": false,
+      "label": "user_type=2"
+    },
+    {
+      "child": "pay_wallet",
+      "field": "user_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "用户身份以user_type分流，不跨身份直接匹配编号。",
+      "evidence": {
+        "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/UserTypeEnum.java",
+        "line": 17,
+        "text": "MEMBER(1, \"会员\"), // 面向 c 端，普通用户"
+      },
+      "one": false,
+      "label": "user_type=1"
+    },
+    {
+      "child": "pay_notify_task",
+      "field": "data_id",
+      "parent": "pay_order",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "通知类型决定data_id引用：1支付、2退款、3转账。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/notify/PayNotifyTaskDO.java",
+        "line": 58,
+        "text": "* 1. {@link PayNotifyTypeEnum#ORDER} 时，关联 {@link PayOrderDO#getId()}"
+      },
+      "one": false,
+      "label": "type=1"
+    },
+    {
+      "child": "pay_notify_task",
+      "field": "data_id",
+      "parent": "pay_refund",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "通知类型决定data_id引用：1支付、2退款、3转账。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/notify/PayNotifyTaskDO.java",
+        "line": 59,
+        "text": "* 2. {@link PayNotifyTypeEnum#REFUND} 时，关联 {@link PayRefundDO#getId()}"
+      },
+      "one": false,
+      "label": "type=2"
+    },
+    {
+      "child": "pay_notify_task",
+      "field": "data_id",
+      "parent": "pay_transfer",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "通知类型决定data_id引用：1支付、2退款、3转账。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/notify/PayNotifyTaskDO.java",
+        "line": 60,
+        "text": "* 3. {@link PayNotifyTypeEnum#TRANSFER} 时，关联 {@link PayTransferDO#getId()}"
+      },
+      "one": false,
+      "label": "type=3"
+    },
+    {
+      "child": "pay_wallet_transaction",
+      "field": "biz_id",
+      "parent": "pay_order",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "PAYMENT(3)：支付扣款业务，biz_id 是支付订单 id 的字符串值。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletServiceImpl.java",
+        "line": 101,
+        "text": "return reduceWalletBalance(wallet.getId(), orderExtension.getOrderId(), PAYMENT, price);"
+      },
+      "one": false,
+      "label": "biz_type=3"
+    },
+    {
+      "child": "pay_wallet_transaction",
+      "field": "biz_id",
+      "parent": "pay_refund",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "PAYMENT_REFUND(4)：支付退款业务，biz_id 是支付退款 id 的字符串值。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletServiceImpl.java",
+        "line": 118,
+        "text": "return addWalletBalance(walletId, String.valueOf(payRefund.getId()), PAYMENT_REFUND, refundPrice);"
+      },
+      "one": false,
+      "label": "biz_type=4"
+    },
+    {
+      "child": "pay_wallet_transaction",
+      "field": "biz_id",
+      "parent": "pay_wallet_recharge",
+      "key": "id",
+      "kind": "polymorphic",
+      "note": "RECHARGE(1) 与 RECHARGE_REFUND(2)：充值入账及充值退款均将钱包充值记录 id 写入 biz_id；以字符串保存，不是支付退款单 id。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargeServiceImpl.java",
+        "line": 154,
+        "text": "PayWalletBizTypeEnum.RECHARGE, recharge.getTotalPrice());"
+      },
+      "one": false,
+      "label": "biz_type=1/2",
+      "evidence_more": [
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargeServiceImpl.java",
+          "line": 153,
+          "text": "payWalletService.addWalletBalance(recharge.getWalletId(), String.valueOf(id),"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargeServiceImpl.java",
+          "line": 225,
+          "text": "PayWalletRechargeDO walletRecharge = walletRechargeMapper.selectById(id);"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargeServiceImpl.java",
+          "line": 238,
+          "text": "payWalletService.reduceWalletBalance(walletRecharge.getWalletId(), id,"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargeServiceImpl.java",
+          "line": 239,
+          "text": "PayWalletBizTypeEnum.RECHARGE_REFUND, walletRecharge.getTotalPrice());"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/wallet/PayWalletBizTypeEnum.java",
+          "line": 18,
+          "text": "RECHARGE(1, \"充值\"),"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/wallet/PayWalletBizTypeEnum.java",
+          "line": 19,
+          "text": "RECHARGE_REFUND(2, \"充值退款\"),"
+        }
+      ]
+    },
+    {
+      "child": "pay_channel",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "公共租户编号，运行时隔离行为还需结合框架配置。",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_notify_task",
+      "field": "tenant_id",
+      "parent": "system_tenant",
+      "key": "id",
+      "kind": "tenant",
+      "note": "公共租户编号，运行时隔离行为还需结合框架配置。",
+      "evidence": {
+        "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+        "line": 19,
+        "text": "private Long tenantId;"
+      },
+      "one": false
+    },
+    {
+      "child": "pay_wallet_transaction",
+      "field": "biz_id",
+      "parent": "member_user",
+      "key": "id",
+      "kind": "polymorphic",
+      "label": "biz_type=5",
+      "note": "UPDATE_BALANCE(5)：后台调整会员钱包余额；biz_id 写入目标会员 userId 的字符串值，钱包固定按 MEMBER 身份获取。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletController.java",
+        "line": 65,
+        "text": "payWalletService.addWalletBalance(wallet.getId(), String.valueOf(updateReqVO.getUserId()),"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletController.java",
+          "line": 58,
+          "text": "PayWalletDO wallet = payWalletService.getOrCreateWallet(updateReqVO.getUserId(), MEMBER.getValue());"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletController.java",
+          "line": 66,
+          "text": "PayWalletBizTypeEnum.UPDATE_BALANCE, updateReqVO.getBalance());"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/wallet/PayWalletBizTypeEnum.java",
+          "line": 22,
+          "text": "UPDATE_BALANCE(5, \"更新余额\"),"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletServiceImpl.java",
+          "line": 225,
+          "text": ".setBizId(bizId).setBizType(bizType.getType()).setTitle(bizType.getDescription());"
+        }
+      ],
+      "one": false
+    },
+    {
+      "child": "pay_wallet_transaction",
+      "field": "biz_id",
+      "parent": "pay_transfer",
+      "key": "no",
+      "kind": "polymorphic",
+      "label": "biz_type=6",
+      "note": "TRANSFER(6)：实际写入链路使用 transfer.no → outTransferNo → biz_id。源码矛盾：WalletPayClient.java:230-231 的成功查询却按 transfer.id 读取钱包流水，与写入端不一致；本图按已实现写入连接 no，不宣称该读取已修复。",
+      "evidence": {
+        "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/framework/pay/core/client/impl/wallet/WalletPayClient.java",
+        "line": 188,
+        "text": "PayWalletTransactionDO transaction = wallService.addWalletBalance(walletId, String.valueOf(reqDTO.getOutTransferNo()),"
+      },
+      "evidence_more": [
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/framework/pay/core/client/impl/wallet/WalletPayClient.java",
+          "line": 189,
+          "text": "PayWalletBizTypeEnum.TRANSFER, reqDTO.getPrice());"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/transfer/PayTransferServiceImpl.java",
+          "line": 95,
+          "text": "PayTransferUnifiedReqDTO transferUnifiedReq = BeanUtils.toBean(reqDTO, PayTransferUnifiedReqDTO.class)"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/transfer/PayTransferServiceImpl.java",
+          "line": 96,
+          "text": ".setOutTransferNo(transfer.getNo())"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletServiceImpl.java",
+          "line": 225,
+          "text": ".setBizId(bizId).setBizType(bizType.getType()).setTitle(bizType.getDescription());"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/framework/pay/core/client/impl/wallet/WalletPayClient.java",
+          "line": 230,
+          "text": "PayWalletTransactionDO walletTransaction = walletTransactionService.getWalletTransaction("
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/framework/pay/core/client/impl/wallet/WalletPayClient.java",
+          "line": 231,
+          "text": "String.valueOf(transfer.getId()), PayWalletBizTypeEnum.TRANSFER);"
+        },
+        {
+          "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/wallet/PayWalletBizTypeEnum.java",
+          "line": 23,
+          "text": "TRANSFER(6, \"转账\");"
+        }
+      ],
+      "one": false
+    }
+  ],
+  "notes": [
+    "表结构以 sql/mysql/pay.sql 为准，字段类型包含源码推断；所有连线均为代码支持的逻辑关联。",
+    "merchant_*为业务调用方订单号，不存在统一商户订单表；不按相似名称误连。",
+    "示例spu_id来自演示内置商品数据，不据名称连接商城product_spu。",
+    "支付通知 data_id 和钱包流水 biz_id 按业务类型分支绘制；充值退款(2)指充值记录，调整余额(5)指会员，转账(6)按实际写入指转账业务单号 no。",
+    "钱包转账流水存在源码读写矛盾：写入 biz_id 使用 transfer.no，WalletPayClient 成功查询却按 transfer.id 查；ER 图保留此边界，未修改支付业务代码。"
+  ]
+}

@@ -1,0 +1,968 @@
+{
+  "module": "fms",
+  "title": "FMS 财务核算管理",
+  "domains": [
+    {
+      "name": "账套与基础设置",
+      "tables": [
+        "fms_account_set",
+        "fms_account_user",
+        "fms_currency",
+        "fms_digest",
+        "fms_finance_indicator",
+        "fms_finance_parameter",
+        "fms_voucher_word"
+      ],
+      "color": "#2456A6"
+    },
+    {
+      "name": "会计科目与期初",
+      "tables": [
+        "fms_subject",
+        "fms_subject_template",
+        "fms_initial_balance"
+      ],
+      "color": "#137C8B"
+    },
+    {
+      "name": "辅助核算",
+      "tables": [
+        "fms_auxiliary_type",
+        "fms_auxiliary_item",
+        "fms_assist_combination"
+      ],
+      "color": "#7B4CB2"
+    },
+    {
+      "name": "凭证模板",
+      "tables": [
+        "fms_voucher_template_category",
+        "fms_voucher_template"
+      ],
+      "color": "#A56A18"
+    },
+    {
+      "name": "凭证记账",
+      "tables": [
+        "fms_voucher",
+        "fms_voucher_entry"
+      ],
+      "color": "#B04461"
+    },
+    {
+      "name": "期末结账",
+      "tables": [
+        "fms_closing_period",
+        "fms_closing",
+        "fms_closing_template",
+        "fms_closing_voucher"
+      ],
+      "color": "#3B7C56"
+    },
+    {
+      "name": "财务报表",
+      "tables": [
+        "fms_report_template",
+        "fms_balance_sheet_config",
+        "fms_balance_sheet_report",
+        "fms_cash_flow_statement_config",
+        "fms_cash_flow_statement_report",
+        "fms_cash_flow_extend_config",
+        "fms_cash_flow_extend_data",
+        "fms_income_statement_config",
+        "fms_income_statement_report"
+      ],
+      "color": "#54698A"
+    }
+  ],
+  "relations": [
+    {
+      "child": "fms_account_set",
+      "field": "currency_id",
+      "parent": "fms_currency",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAccountSetDO.java",
+        "line": 111,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsCurrencyDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_account_user",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAccountUserDO.java",
+        "line": 37,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_account_user",
+      "field": "user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAccountUserDO.java",
+        "line": 43,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.system.dal.dataobject.user.AdminUserDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_assist_combination",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAuxiliaryCombinationDO.java",
+        "line": 47,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_assist_combination",
+      "field": "items",
+      "parent": "fms_auxiliary_item",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：items[].itemId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAuxiliaryCombinationDO.java",
+        "line": 80,
+        "text": "* 关联 {@link FmsAuxiliaryItemDO#getId()}"
+      },
+      "one": false,
+      "label": "[].itemId"
+    },
+    {
+      "child": "fms_assist_combination",
+      "field": "items",
+      "parent": "fms_auxiliary_type",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：items[].typeId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAuxiliaryCombinationDO.java",
+        "line": 74,
+        "text": "* 关联 {@link FmsAuxiliaryTypeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].typeId"
+    },
+    {
+      "child": "fms_assist_combination",
+      "field": "subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAuxiliaryCombinationDO.java",
+        "line": 41,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_auxiliary_item",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAuxiliaryItemDO.java",
+        "line": 58,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_auxiliary_item",
+      "field": "auxiliary_type_id",
+      "parent": "fms_auxiliary_type",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAuxiliaryItemDO.java",
+        "line": 46,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryTypeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_auxiliary_type",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsAuxiliaryTypeDO.java",
+        "line": 45,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_balance_sheet_config",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/balance/FmsBalanceSheetConfigDO.java",
+        "line": 61,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_balance_sheet_report",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/balance/FmsBalanceSheetReportDO.java",
+        "line": 103,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_cash_flow_extend_config",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/cashflow/FmsCashFlowExtendConfigDO.java",
+        "line": 77,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_cash_flow_extend_data",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/cashflow/FmsCashFlowExtendDataDO.java",
+        "line": 75,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_cash_flow_statement_config",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/cashflow/FmsCashFlowStatementConfigDO.java",
+        "line": 65,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_cash_flow_statement_report",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/cashflow/FmsCashFlowStatementReportDO.java",
+        "line": 91,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingSchemeDO.java",
+        "line": 113,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing",
+      "field": "adjustment_closing_subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingSchemeDO.java",
+        "line": 91,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing",
+      "field": "other_closing_subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingSchemeDO.java",
+        "line": 97,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing",
+      "field": "prior_year_adjustment_subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingSchemeDO.java",
+        "line": 85,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing",
+      "field": "subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingSchemeDO.java",
+        "line": 51,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing",
+      "field": "subject_rules",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：subject_rules[].subjectId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingSchemeDO.java",
+        "line": 138,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false,
+      "label": "[].subjectId"
+    },
+    {
+      "child": "fms_closing",
+      "field": "voucher_word_id",
+      "parent": "fms_voucher_word",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingSchemeDO.java",
+        "line": 69,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsVoucherWordDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing_period",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingPeriodDO.java",
+        "line": 43,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing_template",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingTemplateDO.java",
+        "line": 40,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing_template",
+      "field": "subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingTemplateDO.java",
+        "line": 64,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing_template",
+      "field": "subject_rules",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：subject_rules[].subjectId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingTemplateDO.java",
+        "line": 101,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false,
+      "label": "[].subjectId"
+    },
+    {
+      "child": "fms_closing_voucher",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingVoucherDO.java",
+        "line": 64,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing_voucher",
+      "field": "closing_id",
+      "parent": "fms_closing",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingVoucherDO.java",
+        "line": 40,
+        "text": "* 关联 {@link FmsClosingSchemeDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_closing_voucher",
+      "field": "voucher_id",
+      "parent": "fms_voucher",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/closing/FmsClosingVoucherDO.java",
+        "line": 46,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.voucher.FmsVoucherDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_currency",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsCurrencyDO.java",
+        "line": 49,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_digest",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsDigestDO.java",
+        "line": 35,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_finance_indicator",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsFinanceIndicatorDO.java",
+        "line": 33,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_finance_parameter",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsFinanceParameterDO.java",
+        "line": 47,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_income_statement_config",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/income/FmsIncomeStatementConfigDO.java",
+        "line": 57,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_income_statement_report",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/report/income/FmsIncomeStatementReportDO.java",
+        "line": 93,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_initial_balance",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsInitialBalanceDO.java",
+        "line": 92,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_initial_balance",
+      "field": "assist_balances",
+      "parent": "fms_assist_combination",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：assist_balances[].assistCombinationId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsInitialBalanceDO.java",
+        "line": 113,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryCombinationDO#getId()}"
+      },
+      "one": false,
+      "label": "[].assistCombinationId"
+    },
+    {
+      "child": "fms_initial_balance",
+      "field": "assist_balances",
+      "parent": "fms_auxiliary_item",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：assist_balances[].auxiliaries[].itemId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsInitialBalanceDO.java",
+        "line": 186,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryItemDO#getId()}"
+      },
+      "one": false,
+      "label": "[].auxiliaries[].itemId"
+    },
+    {
+      "child": "fms_initial_balance",
+      "field": "assist_balances",
+      "parent": "fms_auxiliary_type",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：assist_balances[].auxiliaries[].typeId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsInitialBalanceDO.java",
+        "line": 180,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryTypeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].auxiliaries[].typeId"
+    },
+    {
+      "child": "fms_initial_balance",
+      "field": "subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsInitialBalanceDO.java",
+        "line": 42,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_subject",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsSubjectDO.java",
+        "line": 99,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_subject",
+      "field": "auxiliary_type_ids",
+      "parent": "fms_auxiliary_type",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsSubjectDO.java",
+        "line": 105,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryTypeDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "fms_subject",
+      "field": "currency_ids",
+      "parent": "fms_currency",
+      "key": "id",
+      "kind": "collection",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsSubjectDO.java",
+        "line": 112,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsCurrencyDO#getId()}"
+      },
+      "one": false,
+      "label": "编号集合"
+    },
+    {
+      "child": "fms_subject",
+      "field": "parent_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "层级自引用；根节点标识不指向实体行",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsSubjectDO.java",
+        "line": 55,
+        "text": "* 关联 {@link FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_subject_template",
+      "field": "parent_id",
+      "parent": "fms_subject_template",
+      "key": "id",
+      "kind": "logic",
+      "note": "层级自引用；根节点标识不指向实体行",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsSubjectTemplateDO.java",
+        "line": 53,
+        "text": "* 关联 {@link FmsSubjectTemplateDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherDO.java",
+        "line": 90,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher",
+      "field": "reviewer_user_id",
+      "parent": "system_users",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherDO.java",
+        "line": 84,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.system.dal.dataobject.user.AdminUserDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher",
+      "field": "voucher_word_id",
+      "parent": "fms_voucher_word",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherDO.java",
+        "line": 43,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsVoucherWordDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_entry",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 86,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_entry",
+      "field": "assist_combination_id",
+      "parent": "fms_assist_combination",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 96,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryCombinationDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_entry",
+      "field": "auxiliaries",
+      "parent": "fms_auxiliary_item",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：auxiliaries[].itemId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 129,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryItemDO#getId()}"
+      },
+      "one": false,
+      "label": "[].itemId"
+    },
+    {
+      "child": "fms_voucher_entry",
+      "field": "auxiliaries",
+      "parent": "fms_auxiliary_type",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：auxiliaries[].typeId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 123,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryTypeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].typeId"
+    },
+    {
+      "child": "fms_voucher_entry",
+      "field": "subject_id",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 80,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_entry",
+      "field": "voucher_id",
+      "parent": "fms_voucher",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 64,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.voucher.FmsVoucherDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_template",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsVoucherTemplateDO.java",
+        "line": 52,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_template",
+      "field": "category_id",
+      "parent": "fms_voucher_template_category",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsVoucherTemplateDO.java",
+        "line": 41,
+        "text": "* 关联 {@link FmsVoucherTemplateCategoryDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_template",
+      "field": "entries",
+      "parent": "fms_auxiliary_item",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：entries[].auxiliaries[].itemId；复用 FmsVoucherEntryDO.AuxiliaryItem",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 129,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryItemDO#getId()}"
+      },
+      "one": false,
+      "label": "[].auxiliaries[].itemId"
+    },
+    {
+      "child": "fms_voucher_template",
+      "field": "entries",
+      "parent": "fms_auxiliary_type",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：entries[].auxiliaries[].typeId；复用 FmsVoucherEntryDO.AuxiliaryItem",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/voucher/FmsVoucherEntryDO.java",
+        "line": 123,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAuxiliaryTypeDO#getId()}"
+      },
+      "one": false,
+      "label": "[].auxiliaries[].typeId"
+    },
+    {
+      "child": "fms_voucher_template",
+      "field": "entries",
+      "parent": "fms_subject",
+      "key": "id",
+      "kind": "collection",
+      "note": "JSON 内部引用：entries[].subjectId",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsVoucherTemplateDO.java",
+        "line": 69,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsSubjectDO#getId()}"
+      },
+      "one": false,
+      "label": "[].subjectId"
+    },
+    {
+      "child": "fms_voucher_template_category",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsVoucherTemplateCategoryDO.java",
+        "line": 35,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    },
+    {
+      "child": "fms_voucher_word",
+      "field": "account_set_id",
+      "parent": "fms_account_set",
+      "key": "id",
+      "kind": "logic",
+      "note": "",
+      "evidence": {
+        "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/dal/dataobject/config/FmsVoucherWordDO.java",
+        "line": 47,
+        "text": "* 关联 {@link cn.iocoder.yudao.module.fms.dal.dataobject.config.FmsAccountSetDO#getId()}"
+      },
+      "one": false
+    }
+  ],
+  "notes": [
+    "结构以 sql/mysql/fms.sql 为准；图中连线表示源码支持的逻辑引用，DDL 未声明物理外键。",
+    "subject_rules、items、assist_balances、entries、auxiliaries 为 JSON 嵌套结构；集合连线锚定物理 JSON 列，在注释说明内部 ID 路径。",
+    "财务报表按账套和会计期间保存配置快照，不把 row_id、公式、科目名称/编码快照自动连接为主键外键。",
+    "科目辅助类别与币种数组使用集合引用；账套是财务边界，不因同名 account_set_id 以外字段建立推测关系。"
+  ]
+}
