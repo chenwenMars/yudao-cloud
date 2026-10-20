@@ -2,6 +2,15 @@
 
 > 本文根据当前工作区的 Controller、ServiceImpl、DO、枚举、网关代码和静态调用关系整理；未启动 MQTT/网关、未连接 MySQL、Redis 或 TDengine，未向真实设备下发指令。配套材料：[推导 DDL](../../sql/mysql/iot.sql) · [ER 图](../er/iot-er.drawio)。本文中的“上报、下发、告警、执行”表示源码存在对应路径，不表示设备协议、网络连接或数据一致性已经实际验证。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-iot-server；辅助接入单元：yudao-module-iot-gateway`（[pom.xml](../../yudao-module-iot/yudao-module-iot-server/pom.xml)）；Gateway 配置见 [pom.xml](../../yudao-module-iot/yudao-module-iot-gateway/pom.xml) |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | TDengine JDBC、Quartz、MQTT Paho、RocketMQ、Kafka、AMQP、OkHttp；另含 IoT Core 与 Gateway 模块。 |
+| 主要作用 | 管理物联网产品、物模型、设备、属性、规则、告警、OTA 和外部数据流转；设备协议接入由 Gateway 协作。 |
+
 ## 1. 定位与数据边界
 
 IoT 模块把产品、物模型、设备、网关拓扑、Modbus 点位、设备消息、属性时序、OTA 和规则引擎放在同一业务域：管理端定义什么设备和属性，设备侧经网关认证与收发消息，服务端把属性写入时序库并据消息匹配数据流转、场景和告警规则。

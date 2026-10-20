@@ -4,6 +4,15 @@
 
 关联资料：[DDL](../../sql/mysql/system.sql)｜[ER 图](../er/system-er.drawio)｜[关系依据](../er/module-data/system.json)
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-system-server`（[pom.xml](../../yudao-module-system/yudao-module-system-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/数据权限/IP/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | 任务调度、消息队列、邮件、JustAuth、WxJava（公众号/小程序）、验证码、Excel 与监控 starter。 |
+| 主要作用 | 提供后台用户、组织权限、OAuth2、租户、字典地区、通知、社交登录、短信邮件和审计等平台管理能力。 |
+
 ## 模块定位
 
 System 是后台身份、组织权限、多租户和通用沟通能力的基础域。它维护管理员用户、部门/岗位、角色/菜单/授权关系、租户套餐、OAuth2 客户端与 token、字典、地区、短信、邮件、站内信、公告、社交账号、登录和操作日志。会员用户不在这里建主体表，Member 模块通过 System 的公共 API 使用验证码、令牌、社交绑定与日志。

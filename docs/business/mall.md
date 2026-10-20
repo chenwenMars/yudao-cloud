@@ -2,6 +2,15 @@
 
 > 本文依据商城四个 server（product、promotion、trade、statistics）的 Controller、ServiceImpl、DO、枚举和静态调用关系整理；未启动前端、未真实下单、支付、发货或调用第三方物流。配套材料：[推导 DDL](../../sql/mysql/mall.sql) · [ER 图](../er/mall-er.drawio)。金额、库存、优惠和支付回调的实际并发/幂等效果需在真实数据库与支付环境中验证。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-product-server、yudao-module-promotion-server、yudao-module-trade-server、yudao-module-statistics-server`（[pom.xml](../../yudao-module-mall/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | Trade 使用 Redis 与任务调度；Promotion 使用任务调度与消息队列；各服务通过 Product、Promotion、Trade、Member、Pay API 协作。 |
+| 主要作用 | 以商品、营销、交易履约和经营统计四个服务组成商城业务域。 |
+
 ## 1. 模块定位、四个 server 的边界
 
 商城不是一个单一表域，而由四个服务协作完成“商品可售 → 营销定价 → 交易履约 → 经营统计”：

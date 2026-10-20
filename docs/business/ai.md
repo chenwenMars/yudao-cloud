@@ -2,6 +2,15 @@
 
 > 本文依据当前工作区源码进行静态分析，未启动服务、未调用模型、未验证外部供应商或向量存储的运行行为。数据库结构见 [ai.sql](../../sql/mysql/ai.sql)，对象关系见 [AI ER 图](../er/ai-er.drawio)。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-ai-server`（[pom.xml](../../yudao-module-ai/yudao-module-ai-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | Spring AI（OpenAI、Azure OpenAI、Anthropic、DeepSeek、Ollama、Stability AI、DashScope）、Qdrant/Redis/Milvus 向量库、Tika 文档读取、MCP Server/Client、Tinyflow。 |
+| 主要作用 | 承载模型与密钥配置、角色和工具、对话、知识库检索，以及图片/音乐/写作等 AI 生成任务。 |
+
 ## 1. 定位、使用者与责任边界
 
 AI 模块把模型配置、聊天、知识库检索与内容生成组织成可管理的业务功能。它的调用者主要是管理后台中的登录用户：普通使用者操作“我的”对话和创作记录，管理员维护密钥、模型、角色、工具及全局记录。所有控制器目前位于 `controller/admin`，不能据此声称已经存在面向匿名访客的独立 AI 门户或会员计费产品。

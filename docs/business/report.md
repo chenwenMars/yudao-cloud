@@ -2,6 +2,15 @@
 
 > 本文依据当前源码静态分析，未启动GoView前端、未执行SQL、未验证已发布大屏的访问行为。结构见 [report.sql](../../sql/mysql/report.sql)，关系见 [Report ER图](../er/report-er.drawio)。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-report-server`（[pom.xml](../../yudao-module-report/yudao-module-report-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | Jimureport 与 Jimubi、System/Infra/Report API、监控 starter。 |
+| 主要作用 | 保存 GoView 大屏项目配置，并为大屏提供 SQL 或示例 HTTP 数据接口；报表引擎能力来自 Jimureport/Jimubi 依赖。 |
+
 ## 1. 模块定位与范围
 
 本模块为GoView大屏提供两类后端能力：保存大屏项目配置，以及向图表返回统一格式的数据。它不是商城统计模块，也不是一个已经实现指标口径治理、ETL、数据仓库建模和报表调度的完整BI平台。大屏编辑、图表交互和页面渲染不在这两个Java Controller中完成。

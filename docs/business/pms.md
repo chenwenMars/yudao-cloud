@@ -2,6 +2,15 @@
 
 > 本文依据当前工作区的 Controller、ServiceImpl、DO、枚举和静态调用关系整理；未启动服务、未导入 Excel、未发送通知、未验证数据权限或页面交互。配套材料：[推导 DDL](../../sql/mysql/pms.sql) · [ER 图](../er/pms-er.drawio)。PMS 在当前实现中包含项目管理（PM）和知识库（KB）两个相邻但独立的业务域。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-pms-server`（[pom.xml](../../yudao-module-pms/yudao-module-pms-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | System/Infra/PMS API、任务调度、Excel 与监控 starter。 |
+| 主要作用 | 提供项目、成员、工作项、迭代与知识库、文档、权限、互动和回收站能力。 |
+
 ## 1. 定位与责任边界
 
 PMS 是面向系统用户的协作工作台：项目域管理项目、成员、迭代、事项、看板、工时和公告；知识库域管理知识库、目录、文档、内容权限、互动和回收站。二者共用用户、通知和租户等基础能力，但项目事项不会自动变成知识库文档，知识库文档也不是项目需求的附件替代。

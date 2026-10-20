@@ -4,6 +4,15 @@
 
 关联资料：[DDL](../../sql/mysql/infra.sql)｜[ER 图](../er/infra-er.drawio)｜[关系依据](../er/module-data/infra.json)
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-infra-server`（[pom.xml](../../yudao-module-infra/yudao-module-infra-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | WebSocket、任务调度、消息队列、MyBatis-Plus Generator、Velocity、S3、Tika、JSch 与 Commons Net。 |
+| 主要作用 | 提供文件、配置、数据源、代码生成、Redis 监控和 WebSocket 等平台基础设施能力。 |
+
 ## 定位
 
 Infra 是其他业务模块共用的运行支撑域：参数配置、文件存储、代码生成元数据、多数据源、访问/错误日志与 Redis 观测。它不是业务订单模块；其若干 `demo*` 表及接口是代码生成示例，不能当作真实的客户、分类或学生业务。

@@ -4,6 +4,15 @@
 
 关联资料：[DDL](../../sql/mysql/pay.sql)｜[ER 图](../er/pay-er.drawio)｜[关系依据](../er/module-data/pay.json)
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-pay-server`（[pom.xml](../../yudao-module-pay/yudao-module-pay-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | 支付宝 SDK、微信支付 SDK、任务调度、System/Pay API、Excel 与监控 starter。 |
+| 主要作用 | 为接入方提供应用渠道配置、支付、退款、转账、商户通知、钱包及充值能力。 |
+
 ## 定位与边界
 
 Pay 提供给其他业务模块的支付基础能力：应用/渠道配置、支付单和尝试单、退款、转账、商户通知、会员钱包和充值。它不拥有商城订单本身；接入方用 `app_key + merchant_order_id` 创建支付单，再接收支付/退款/转账结果通知。金额字段在 Service 中按 `Integer price` 传递，本文不自行断言为元或分，具体应以调用方和渠道协议确认。

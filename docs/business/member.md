@@ -4,6 +4,15 @@
 
 关联资料：[DDL](../../sql/mysql/member.sql)｜[ER 图](../er/member-er.drawio)｜[关系源码依据](../er/module-data/member.json)
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-member-server`（[pom.xml](../../yudao-module-member/yudao-module-member-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/IP/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | 消息队列、System/Infra/Member API、Excel 与监控 starter。 |
+| 主要作用 | 维护会员身份和档案、地址、分组标签、积分经验等级、签到及会员侧认证协作。 |
+
 ## 定位与边界
 
 Member 是面向终端会员的身份与档案域。它维护会员账号、收货地址、分组、标签、积分、经验/等级和签到；同时提供 App 登录、注册式的验证码登录、社交账号绑定、手机号与密码变更等入口。管理员用户、统一令牌、短信验证码、第三方社交账号和登录日志并不存放在 Member 自己的表中，分别通过 System 模块 API 使用。

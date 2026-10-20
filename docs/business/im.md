@@ -2,6 +2,15 @@
 
 > 本文仅依据当前 Controller、ServiceImpl、DO、枚举和静态调用关系整理，未连接 WebSocket、LiveKit、Redis、数据库或客户端。通信“推送”“已读”“通话”均指后端已有代码路径，不能据此声称消息必达、离线送达或音视频已在线验证。配套材料：[推导 DDL](../../sql/mysql/im.sql) · [ER 图](../er/im-er.drawio)。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-im-server`（[pom.xml](../../yudao-module-im/yudao-module-im-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | 消息队列与任务调度 starter、Sensitive Word、pinyin4j、System/Infra/IM API。 |
+| 主要作用 | 提供好友、群组、私聊/群聊/频道消息、阅读位置、敏感词、表情与 LiveKit RTC 会话管理。 |
+
 ## 1. 模块定位与通信边界
 
 IM 模块面向后台登录用户提供好友、群组、频道、私聊/群聊/频道消息、表情、敏感词、阅读位置和 RTC 通话会话管理。它既保存可回溯的消息和关系，也在事务提交后经 WebSocket 通知在线用户；前端使用拉取接口补齐未实时收到的持久消息。

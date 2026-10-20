@@ -4,6 +4,15 @@
 
 配套材料：[完整 ER 图](../er/wms-er.drawio) · [MySQL DDL 推导稿](../../sql/mysql/wms.sql) · [关联证据与分区](../er/module-data/wms.json)。DDL 中的物理类型有推断成分，不能据此反推真实生产库约束。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-wms-server`（[pom.xml](../../yudao-module-wms/yudao-module-wms-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | System/WMS API、Excel 与监控 starter。 |
+| 主要作用 | 维护仓储主数据，处理收货、发货、移库、盘点、库存余额和库存流水。 |
+
 ## 1. 模块解决什么问题
 
 WMS 提供一套以“商品 SKU + 仓库”为库存维度的独立仓储单据系统：维护商品、分类、品牌、往来企业与仓库，通过入库、出库、移库、盘库四种单据改变余额，并保留每次变化前后的库存流水。

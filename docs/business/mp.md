@@ -4,6 +4,15 @@
 
 关联资料：[DDL](../../sql/mysql/mp.sql)｜[ER 图](../er/mp-er.drawio)｜[关系依据](../er/module-data/mp.json)
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-mp-server`（[pom.xml](../../yudao-module-mp/yudao-module-mp-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | WxJava MP、System/Infra/MP API、参数校验、Excel 与监控 starter。 |
+| 主要作用 | 对接微信公众号的账号、粉丝、标签、菜单、消息、素材、草稿发布与运营统计。 |
+
 ## 模块定位
 
 MP 是公众号运营后台的适配层。它把租户下的公众号配置、粉丝、标签、菜单、自动回复、客服消息、模板消息元数据和素材元数据保存在本地，同时通过微信 Java SDK 调用公众号开放能力。草稿和已发布图文主要由微信端保存；本地并没有一张“文章正文发布表”，不要把 `mp_material` 当成所有公众号内容的本地镜像。

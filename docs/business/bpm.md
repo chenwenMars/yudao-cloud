@@ -2,6 +2,15 @@
 
 > 本文根据当前工作区的 Controller、ServiceImpl、DO、枚举、Mapper 及其静态调用关系整理；未启动服务、未部署 BPMN 模型、未连接 Flowable 或真实业务系统。文中“会”“完成”等描述的是源码已存在的调用路径，不代表线上流程、定时器、消息或 HTTP 回调已经运行验证。配套材料：[推导 DDL](../../sql/mysql/bpm.sql) · [ER 图](../er/bpm-er.drawio)。
 
+## 技术栈、服务模块与主要作用
+
+| 项目 | 当前代码依据 |
+| --- | --- |
+| 后端服务 | `yudao-module-bpm-server`（[pom.xml](../../yudao-module-bpm/yudao-module-bpm-server/pom.xml)） |
+| 基础技术栈 | Java 17、Spring Boot 3.5.15、Maven、MyBatis、Redis、租户/数据权限/安全、模块 RPC、Nacos 服务发现与配置。 |
+| 模块专项依赖 | Flowable Process 与 Flowable Actuator。 |
+| 主要作用 | 提供流程模型与定义管理、流程实例和人工任务处理、表单、抄送、意见/附件及请假示例；运行时流程由 Flowable 管理。 |
+
 ## 1. 定位与责任边界
 
 BPM 模块提供流程定义配置、流程实例发起、人工任务处理、意见/附件、抄送以及一个请假示例。它把“某个业务单据是否走到批准、拒绝、撤销”等通用编排交给 Flowable，把与平台自身有关的表单、分类、候选人员组、定义扩展信息和请假业务记录保存在本模块。
