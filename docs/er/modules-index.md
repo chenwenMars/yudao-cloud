@@ -46,7 +46,7 @@
 - 使用 draw.io Desktop 实际导出 18 张全量预览，以及 ERP/CRM/MES/HRM/Mall/AI/Pay 共 7 张领域详情样本；对样本进行视觉检查。
 - 未执行数据库建表、查询数据库或验证运行时数据，源码关系不等于实际生产库约束。
 
-详细统计和 SHA-256 见 [modules-verification.json](modules-verification.json)。
+
 
 ## 各模块的关联边界
 

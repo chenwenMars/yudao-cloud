@@ -97,4 +97,4 @@
 - 子代理分组独立复核 MES/WMS、CRM/ERP/FMS/HRM、AI/BPM/IM/IoT/Mall/PMS/Report 的字段覆盖与特殊类型。
 - 没有连接数据库、执行 DDL、导入数据或启动业务服务；MySQL 引擎兼容性与业务运行尚未实测。
 
-逐文件统计、SHA-256、核验范围及源SQL差异见 [inferred-ddl-verification.json](inferred-ddl-verification.json)。
+

@@ -124,4 +124,4 @@
 - 浏览器字体测量检查 2181 项表名、字段名、类型与注释文本，横向溢出为 0。
 - 使用 draw.io Desktop 实际导出全量图、组织权限、日志、代码生成页面，抽查长字段、长注释与连线布局。
 - [全量预览](ruoyi-vue-pro-er-overview.png) 是缩略预览；完整细节请打开 draw.io 文件放大查看。
-- 机器可读核验记录见 [verification.json](verification.json)。
+
