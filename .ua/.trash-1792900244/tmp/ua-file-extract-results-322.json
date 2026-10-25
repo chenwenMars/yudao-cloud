@@ -1,0 +1,778 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/user/MpUserController.http",
+    "yudao-module-pay/pom.xml",
+    "yudao-module-pay/yudao-module-pay-api/pom.xml",
+    "yudao-module-pay/yudao-module-pay-server/pom.xml",
+    "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/demo/PayDemoWithdrawController.http",
+    "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/order/AppPayOrderController.http"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 19,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/framework/mp/config/YudaoWxMpConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "wxMpConfigStorage",
+          "startLine": 37,
+          "endLine": 47,
+          "params": [
+            "properties",
+            "applicationContext"
+          ]
+        },
+        {
+          "name": "applyWxMpConfig",
+          "startLine": 49,
+          "endLine": 71,
+          "params": [
+            "config",
+            "properties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoWxMpConfiguration",
+          "startLine": 33,
+          "endLine": 73,
+          "methods": [
+            "wxMpConfigStorage",
+            "applyWxMpConfig"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "wxMpConfigStorage",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoWxMpConfiguration",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "applicationContext.getBean",
+          "lineNumber": 42
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "new RedisTemplateWxRedisOps",
+          "lineNumber": 43
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "new WxMpRedisConfigImpl",
+          "lineNumber": 44
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "properties.getConfigStorage().getKeyPrefix",
+          "lineNumber": 44
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "properties.getConfigStorage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "applyWxMpConfig",
+          "lineNumber": 45
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setAppId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getAppId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setSecret",
+          "lineNumber": 51
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getSecret",
+          "lineNumber": 51
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setToken",
+          "lineNumber": 52
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getToken",
+          "lineNumber": 52
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setAesKey",
+          "lineNumber": 53
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getAesKey",
+          "lineNumber": 53
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setUseStableAccessToken",
+          "lineNumber": 54
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.isUseStableAccessToken",
+          "lineNumber": 54
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getConfigStorage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyHost",
+          "lineNumber": 57
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyHost",
+          "lineNumber": 57
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyUsername",
+          "lineNumber": 58
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyUsername",
+          "lineNumber": 58
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyPassword",
+          "lineNumber": 59
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyPassword",
+          "lineNumber": 59
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyPort",
+          "lineNumber": 60
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyPort",
+          "lineNumber": 61
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyPort",
+          "lineNumber": 61
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 64
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 64
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getApiHost",
+          "lineNumber": 64
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 64
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "new WxMpHostConfig",
+          "lineNumber": 65
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "hostConfig.setApiHost",
+          "lineNumber": 66
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getApiHost",
+          "lineNumber": 66
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 66
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "hostConfig.setOpenHost",
+          "lineNumber": 67
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getOpenHost",
+          "lineNumber": 67
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 67
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "hostConfig.setMpHost",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getMpHost",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHostConfig",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/framework/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/framework/rpc/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/framework/security/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/other/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/notify/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/MessageTemplateConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "MessageTemplateConstants",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "WXA_WALLET_RECHARGER_PAID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MessageTemplateConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/PayServerApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayServerApplication",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "PayServerApplication",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/app/vo/PayAppUpdateStatusReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "PayAppUpdateStatusReqVO",
+          "startLine": 8,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayAppUpdateStatusReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/order/vo/PayOrderBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 66,
+      "classes": [
+        {
+          "name": "PayOrderBaseVO",
+          "startLine": 17,
+          "endLine": 89,
+          "methods": [],
+          "properties": [
+            "appId",
+            "channelId",
+            "channelCode",
+            "merchantOrderId",
+            "subject",
+            "body",
+            "notifyUrl",
+            "price",
+            "channelFeeRate",
+            "channelFeePrice",
+            "status",
+            "userIp",
+            "expireTime",
+            "successTime",
+            "extensionId",
+            "no",
+            "refundPrice",
+            "channelUserId",
+            "channelOrderNo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderBaseVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/order/vo/PayOrderDetailsRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "PayOrderDetailsRespVO",
+          "startLine": 10,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "id",
+            "appName",
+            "createTime",
+            "updateTime",
+            "extension"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderDetailsRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/order/vo/PayOrderPageItemRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "PayOrderPageItemRespVO",
+          "startLine": 10,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime",
+            "appName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderPageItemRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/refund/vo/PayRefundBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 52,
+      "classes": [
+        {
+          "name": "PayRefundBaseVO",
+          "startLine": 12,
+          "endLine": 78,
+          "methods": [],
+          "properties": [
+            "no",
+            "appId",
+            "channelId",
+            "channelCode",
+            "orderId",
+            "merchantOrderId",
+            "merchantRefundId",
+            "notifyUrl",
+            "status",
+            "payPrice",
+            "refundPrice",
+            "reason",
+            "userIp",
+            "channelOrderNo",
+            "channelRefundNo",
+            "successTime",
+            "channelErrorCode",
+            "channelErrorMsg",
+            "channelNotifyData"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayRefundBaseVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/transfer/vo/PayTransferCreateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "PayTransferCreateRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "id",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayTransferCreateRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/rechargepackage/WalletRechargePackageBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "WalletRechargePackageBaseVO",
+          "startLine": 12,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "name",
+            "payPrice",
+            "bonusPrice",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WalletRechargePackageBaseVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/wallet/PayWalletBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "PayWalletBaseVO",
+          "startLine": 12,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "balance",
+            "totalExpense",
+            "totalRecharge",
+            "freezePrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletBaseVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

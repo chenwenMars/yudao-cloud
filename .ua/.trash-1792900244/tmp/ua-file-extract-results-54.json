@@ -1,0 +1,4839 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/combination/vo/record/AppCombinationRecordSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "AppCombinationRecordSummaryRespVO",
+          "startLine": 8,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "AVATAR_COUNT",
+            "userCount",
+            "avatars"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AVATAR_COUNT",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "AppCombinationRecordSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/coupon/AppCouponController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "takeCoupon",
+          "startLine": 40,
+          "endLine": 56,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCouponPage",
+          "startLine": 58,
+          "endLine": 64,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getCoupon",
+          "startLine": 66,
+          "endLine": 72,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getUnusedCouponCount",
+          "startLine": 74,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppCouponController",
+          "startLine": 29,
+          "endLine": 80,
+          "methods": [
+            "takeCoupon",
+            "getCouponPage",
+            "getCoupon",
+            "getUnusedCouponCount"
+          ],
+          "properties": [
+            "couponService",
+            "couponTemplateService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "takeCoupon",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "getCouponPage",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getCoupon",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getUnusedCouponCount",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "AppCouponController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "takeCoupon",
+          "callee": "getLoginUserId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "couponService.takeCoupon",
+          "lineNumber": 46
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "reqVO.getTemplateId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "CollUtil.newHashSet",
+          "lineNumber": 46
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "couponTemplateService.getCouponTemplate",
+          "lineNumber": 49
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "reqVO.getTemplateId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "couponTemplate.getTakeLimitCount",
+          "lineNumber": 51
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "couponTemplate.getTakeLimitCount",
+          "lineNumber": 51
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "couponService.getTakeCount",
+          "lineNumber": 52
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "reqVO.getTemplateId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "couponTemplate.getTakeLimitCount",
+          "lineNumber": 53
+        },
+        {
+          "caller": "takeCoupon",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getCouponPage",
+          "callee": "couponService.getCouponPage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getCouponPage",
+          "callee": "CouponConvert.INSTANCE.convert",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getCouponPage",
+          "callee": "Collections.singleton",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getCouponPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getCouponPage",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getCouponPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getCoupon",
+          "callee": "couponService.getCoupon",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getCoupon",
+          "callee": "getLoginUserId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getCoupon",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getCoupon",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getUnusedCouponCount",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getUnusedCouponCount",
+          "callee": "couponService.getUnusedCouponCount",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getUnusedCouponCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/coupon/AppCouponTemplateController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 146,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "getCouponTemplate",
+          "startLine": 49,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCouponTemplateList",
+          "startLine": 64,
+          "endLine": 89,
+          "params": [
+            "spuId",
+            "productScope",
+            "count"
+          ]
+        },
+        {
+          "name": "getCouponTemplateList",
+          "startLine": 91,
+          "endLine": 104,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getCouponTemplatePage",
+          "startLine": 106,
+          "endLine": 123,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getProductScopeValue",
+          "startLine": 132,
+          "endLine": 144,
+          "params": [
+            "productScope",
+            "spuId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppCouponTemplateController",
+          "startLine": 35,
+          "endLine": 146,
+          "methods": [
+            "getCouponTemplate",
+            "getCouponTemplateList",
+            "getCouponTemplateList",
+            "getCouponTemplatePage",
+            "getProductScopeValue"
+          ],
+          "properties": [
+            "couponTemplateService",
+            "couponService",
+            "productSpuApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCouponTemplate",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getCouponTemplateList",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getCouponTemplateList",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getCouponTemplatePage",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "AppCouponTemplateController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCouponTemplate",
+          "callee": "couponTemplateService.getCouponTemplate",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "couponService.getUserCanCanTakeMap",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "getLoginUserId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "singletonList",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "BeanUtils.toBean(template, AppCouponTemplateRespVO.class).setCanTake",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "canCanTakeMap.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getCouponTemplate",
+          "callee": "template.getId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "getProductScopeValue",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "singletonList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "CouponTakeTypeEnum.USER.getType",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "couponTemplateService.getCouponTemplateList",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "couponService.getUserCanCanTakeMap",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "getLoginUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "CouponTemplateConvert.INSTANCE.convertAppList",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "couponTemplateService.getCouponTemplateList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "couponService.getUserCanCanTakeMap",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "getLoginUserId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "success",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getCouponTemplateList",
+          "callee": "CouponTemplateConvert.INSTANCE.convertAppList",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "getProductScopeValue",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "pageReqVO.getProductScope",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "pageReqVO.getSpuId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "singletonList",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "CouponTakeTypeEnum.USER.getType",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "couponTemplateService.getCouponTemplatePage",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "CouponTemplateConvert.INSTANCE.convert",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "pageReqVO.getProductScope",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "couponService.getUserCanCanTakeMap",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "getLoginUserId",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "success",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getCouponTemplatePage",
+          "callee": "CouponTemplateConvert.INSTANCE.convertAppPage",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getProductScopeValue",
+          "callee": "ObjectUtils.equalsAny",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getProductScopeValue",
+          "callee": "PromotionProductScopeEnum.ALL.getScope",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getProductScopeValue",
+          "callee": "Objects.equals",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProductScopeValue",
+          "callee": "PromotionProductScopeEnum.CATEGORY.getScope",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProductScopeValue",
+          "callee": "productSpuApi.getSpu(spuId).getCheckedData",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getProductScopeValue",
+          "callee": "productSpuApi.getSpu",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getProductScopeValue",
+          "callee": "spu.getCategoryId",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/coupon/vo/coupon/AppCouponPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "AppCouponPageReqVO",
+          "startLine": 11,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppCouponPageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/coupon/vo/coupon/AppCouponRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "AppCouponRespVO",
+          "startLine": 9,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status",
+            "usePrice",
+            "productScope",
+            "productScopeValues",
+            "validStartTime",
+            "validEndTime",
+            "discountType",
+            "discountPercent",
+            "discountPrice",
+            "discountLimitPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppCouponRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/coupon/vo/coupon/AppCouponTakeReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AppCouponTakeReqVO",
+          "startLine": 7,
+          "endLine": 15,
+          "methods": [],
+          "properties": [
+            "templateId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppCouponTakeReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/coupon/vo/template/AppCouponTemplatePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "AppCouponTemplatePageReqVO",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "productScope",
+            "spuId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppCouponTemplatePageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/coupon/vo/template/AppCouponTemplateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 52,
+      "classes": [
+        {
+          "name": "AppCouponTemplateRespVO",
+          "startLine": 10,
+          "endLine": 76,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "totalCount",
+            "takeLimitCount",
+            "usePrice",
+            "productScope",
+            "productScopeValues",
+            "validityType",
+            "validStartTime",
+            "validEndTime",
+            "fixedStartTerm",
+            "fixedEndTerm",
+            "discountType",
+            "discountPercent",
+            "discountPrice",
+            "discountLimitPrice",
+            "takeCount",
+            "canTake"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppCouponTemplateRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/point/AppPointActivityController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "getPointActivityPage",
+          "startLine": 49,
+          "endLine": 63,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getPointActivity",
+          "startLine": 65,
+          "endLine": 85,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCombinationActivityListByIds",
+          "startLine": 87,
+          "endLine": 101,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "buildAppPointActivityRespVOList",
+          "startLine": 103,
+          "endLine": 119,
+          "params": [
+            "activityList"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPointActivityController",
+          "startLine": 37,
+          "endLine": 121,
+          "methods": [
+            "getPointActivityPage",
+            "getPointActivity",
+            "getCombinationActivityListByIds",
+            "buildAppPointActivityRespVOList"
+          ],
+          "properties": [
+            "pointActivityService",
+            "productSpuApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPointActivityPage",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getPointActivity",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getCombinationActivityListByIds",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "AppPointActivityController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPointActivityPage",
+          "callee": "pointActivityService.getPointActivityPage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "buildAppPointActivityRespVOList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPointActivityPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "pointActivityService.getPointActivity",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "activity.getStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "CommonStatusEnum.DISABLE.getStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "pointActivityService.getPointProductListByActivityIds",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "Collections.singletonList",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "getMinObject",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "BeanUtils.toBean(activity, AppPointActivityDetailRespVO.class)\n                .setProducts(BeanUtils.toBean(products, AppPointActivityDetailRespVO.Product.class))\n                .setPoint(minProduct.getPoint()).setPrice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "BeanUtils.toBean(activity, AppPointActivityDetailRespVO.class)\n                .setProducts(BeanUtils.toBean(products, AppPointActivityDetailRespVO.Product.class)).setPoint",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "BeanUtils.toBean(activity, AppPointActivityDetailRespVO.class).setProducts",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "minProduct.getPoint",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "minProduct.getPrice",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getPointActivity",
+          "callee": "success",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "pointActivityService.getPointActivityListByIds",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "activityList.removeIf",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "CommonStatusEnum.isDisable",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "activity.getStatus",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "Collections.emptyList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "buildAppPointActivityRespVOList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "success",
+          "lineNumber": 100
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "pointActivityService.getPointProductListByActivityIds",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 105
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "convertMultiMap",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "productSpuApi.getSpuMap",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "result.forEach",
+          "lineNumber": 110
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "getMinObject",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "productsMap.get",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "activity.getId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "activity.setPoint(minProduct.getPoint()).setPrice",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "activity.setPoint",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "minProduct.getPoint",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "minProduct.getPrice",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "activity.getSpuId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "activity.setSpuName(spu.getName()).setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "activity.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "activity.setSpuName",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "spu.getName",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildAppPointActivityRespVOList",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/point/vo/AppPointActivityDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "AppPointActivityDetailRespVO",
+          "startLine": 8,
+          "endLine": 65,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "status",
+            "stock",
+            "totalStock",
+            "remark",
+            "products",
+            "point",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPointActivityDetailRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/point/vo/AppPointActivityRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "AppPointActivityRespVO",
+          "startLine": 7,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "status",
+            "stock",
+            "totalStock",
+            "spuName",
+            "picUrl",
+            "marketPrice",
+            "point",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPointActivityRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/reward/AppRewardActivityController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "getRewardActivity",
+          "startLine": 30,
+          "endLine": 47,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppRewardActivityController",
+          "startLine": 21,
+          "endLine": 49,
+          "methods": [
+            "getRewardActivity"
+          ],
+          "properties": [
+            "rewardActivityService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getRewardActivity",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "AppRewardActivityController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getRewardActivity",
+          "callee": "rewardActivityService.getRewardActivity",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "activityVO.getRules().size",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "activityVO.getRules",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "activityVO.getRules().get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "activityVO.getRules",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "activity.getRules().get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "activity.getRules",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "ruleVO.setDescription",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "rewardActivityService.getRewardActivityRuleDescription",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "activity.getConditionType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getRewardActivity",
+          "callee": "success",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/reward/vo/AppRewardActivityRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "AppRewardActivityRespVO",
+          "startLine": 10,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "id",
+            "status",
+            "name",
+            "startTime",
+            "endTime",
+            "conditionType",
+            "productScope",
+            "productScopeValues",
+            "rules"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppRewardActivityRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/seckill/AppSeckillActivityController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 175,
+      "nonEmptyLines": 156,
+      "functions": [
+        {
+          "name": "getNowSeckillActivity",
+          "startLine": 76,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "getNowSeckillActivity0",
+          "startLine": 83,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "getSeckillActivityPage",
+          "startLine": 99,
+          "endLine": 114,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getSeckillActivity",
+          "startLine": 116,
+          "endLine": 155,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCombinationActivityListByIds",
+          "startLine": 157,
+          "endLine": 173,
+          "params": [
+            "ids"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppSeckillActivityController",
+          "startLine": 48,
+          "endLine": 175,
+          "methods": [
+            "getNowSeckillActivity",
+            "getNowSeckillActivity0",
+            "getSeckillActivityPage",
+            "getSeckillActivity",
+            "getCombinationActivityListByIds"
+          ],
+          "properties": [
+            "nowSeckillActivityCache",
+            "activityService",
+            "configService",
+            "spuApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getNowSeckillActivity",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "getSeckillActivityPage",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "getSeckillActivity",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "getCombinationActivityListByIds",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "AppSeckillActivityController",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "load",
+          "callee": "getNowSeckillActivity0",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getNowSeckillActivity",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getNowSeckillActivity",
+          "callee": "nowSeckillActivityCache.getUnchecked",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "configService.getCurrentSeckillConfig",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "new AppSeckillActivityNowRespVO",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "activityService.getSeckillActivityListByConfigIdAndStatus",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "config.getId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "activityService.getSeckillProductListByActivityIds",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "convertList",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "spuApi.getSpuList(convertList(activityList, SeckillActivityDO::getSpuId)).getCheckedData",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "spuApi.getSpuList",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "convertList",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getNowSeckillActivity0",
+          "callee": "SeckillActivityConvert.INSTANCE.convert",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "activityService.getSeckillActivityAppPageByConfigId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "success",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "activityService.getSeckillProductListByActivityIds",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "convertList",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "spuApi.getSpuList(convertList(pageResult.getList(), SeckillActivityDO::getSpuId)).getCheckedData",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "spuApi.getSpuList",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "convertList",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "success",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getSeckillActivityPage",
+          "callee": "SeckillActivityConvert.INSTANCE.convertPage02",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activityService.getSeckillActivity",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "ObjectUtil.equal",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activity.getStatus",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "CommonStatusEnum.DISABLE.getStatus",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "success",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "configService.getSeckillConfigListByStatus",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "configs.removeIf",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "CollUtil.contains",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activity.getConfigIds",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "config.getId",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "findFirst",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "isBetween",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "config0.getStartTime",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "config0.getEndTime",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "CollUtil.getLast",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "LocalDateTimeUtils.isBetween",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activity.getStartTime",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activity.getEndTime",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "LocalDate.now",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activity.getEndTime().toLocalDate",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activity.getEndTime",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "LocalTime.parse",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "config.getStartTime",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "LocalTime.parse",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "config.getEndTime",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activityService.getSeckillProductListByActivityId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "activity.getId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "success",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getSeckillActivity",
+          "callee": "SeckillActivityConvert.INSTANCE.convert3",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "activityService.getSeckillActivityListByIds",
+          "lineNumber": 163
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "activityList.removeIf",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "CommonStatusEnum.isDisable",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "activity.getStatus",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "success",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "Collections.emptyList",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "activityService.getSeckillProductListByActivityIds",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "convertList",
+          "lineNumber": 170
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "spuApi.getSpuList(convertList(activityList, SeckillActivityDO::getSpuId)).getCheckedData",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "spuApi.getSpuList",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "convertList",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "success",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getCombinationActivityListByIds",
+          "callee": "SeckillActivityConvert.INSTANCE.convertAppList",
+          "lineNumber": 172
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/seckill/AppSeckillConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "getSeckillConfigList",
+          "startLine": 30,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppSeckillConfigController",
+          "startLine": 22,
+          "endLine": 38,
+          "methods": [
+            "getSeckillConfigList"
+          ],
+          "properties": [
+            "configService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getSeckillConfigList",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "AppSeckillConfigController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSeckillConfigList",
+          "callee": "configService.getSeckillConfigListByStatus",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getSeckillConfigList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getSeckillConfigList",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getSeckillConfigList",
+          "callee": "SeckillConfigConvert.INSTANCE.convertList2",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/seckill/vo/activity/AppSeckillActivityDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "AppSeckillActivityDetailRespVO",
+          "startLine": 9,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status",
+            "startTime",
+            "endTime",
+            "spuId",
+            "totalLimitCount",
+            "singleLimitCount",
+            "stock",
+            "totalStock",
+            "products"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppSeckillActivityDetailRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/seckill/vo/activity/AppSeckillActivityNowRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "AppSeckillActivityNowRespVO",
+          "startLine": 9,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "config",
+            "activities"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppSeckillActivityNowRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/seckill/vo/activity/AppSeckillActivityPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "AppSeckillActivityPageReqVO",
+          "startLine": 9,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "configId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppSeckillActivityPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/seckill/vo/activity/AppSeckillActivityRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "AppSeckillActivityRespVO",
+          "startLine": 6,
+          "endLine": 41,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "spuId",
+            "spuName",
+            "picUrl",
+            "marketPrice",
+            "status",
+            "stock",
+            "totalStock",
+            "seckillPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppSeckillActivityRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/seckill/vo/config/AppSeckillConfigRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "AppSeckillConfigRespVO",
+          "startLine": 8,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "id",
+            "startTime",
+            "endTime",
+            "sliderPicUrls"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppSeckillConfigRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/bargain/BargainActivityConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 77,
+      "classes": [
+        {
+          "name": "BargainActivityConvert",
+          "startLine": 27,
+          "endLine": 95,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertPage",
+            "convert1",
+            "convert",
+            "convertAppPage",
+            "convertAppPage",
+            "convertAppList",
+            "convertAppList"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainActivityConvert",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList().forEach",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertPage",
+          "callee": "findAndThen",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getSpuId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setPicUrl(spu.getPicUrl()).setSpuName",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setPicUrl",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getName",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setRecordUserCount(recordUserCountMap.getOrDefault(item.getId(), 0))\n                    .setRecordSuccessUserCount(recordSuccessUserCountMap.getOrDefault(item.getId(), 0)).setHelpUserCount",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setRecordUserCount(recordUserCountMap.getOrDefault(item.getId(), 0)).setRecordSuccessUserCount",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setRecordUserCount",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convertPage",
+          "callee": "recordUserCountMap.getOrDefault",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convertPage",
+          "callee": "recordSuccessUserCountMap.getOrDefault",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convertPage",
+          "callee": "helpUserCountMap.getOrDefault",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convert",
+          "callee": "convert1(bean).setSuccessUserCount",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convert",
+          "callee": "convert1",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convert",
+          "callee": "detail.setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convert",
+          "callee": "detail.setPicUrl",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "convertAppPage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "convertMap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "result.getList",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "findAndThen",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "item.getSpuId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "item.setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "item.setPicUrl",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "result.setList",
+          "lineNumber": 80
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "convertAppList",
+          "lineNumber": 87
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "convertMap",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "findAndThen",
+          "lineNumber": 90
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.getSpuId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 90
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setPicUrl",
+          "lineNumber": 90
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 90
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/bargain/BargainHelpConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "BargainHelpConvert",
+          "startLine": 20,
+          "endLine": 46,
+          "methods": [
+            "convertPage",
+            "convertPage",
+            "convertList",
+            "convertList02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainHelpConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 27
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 29
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 29
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 30
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.getUserId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setNickname",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getNickname",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getAvatar",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertList02",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convertList",
+          "callee": "helpVOs.forEach",
+          "lineNumber": 39
+        },
+        {
+          "caller": "convertList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 40
+        },
+        {
+          "caller": "convertList",
+          "callee": "help.getUserId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "convertList",
+          "callee": "help.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertList",
+          "callee": "help.setNickname",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertList",
+          "callee": "user.getNickname",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertList",
+          "callee": "user.getAvatar",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/bargain/BargainRecordConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 82,
+      "classes": [
+        {
+          "name": "BargainRecordConvert",
+          "startLine": 29,
+          "endLine": 92,
+          "methods": [
+            "convertPage",
+            "convertPage",
+            "convertPage02",
+            "convertPage02",
+            "convert",
+            "convert02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainRecordConvert",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 40
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.getUserId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setNickname",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getNickname",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getAvatar",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setActivity(BargainActivityConvert.INSTANCE.convert(activityMap.get(record.getActivityId()))).setHelpCount",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setActivity",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "BargainActivityConvert.INSTANCE.convert",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "activityMap.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.getActivityId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "helpCountMap.getOrDefault",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.getId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertPage02",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertMap",
+          "lineNumber": 57
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertMap",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertMap",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "pageResult.getList",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.getActivityId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.setActivityName(activity.getName()).setEndTime",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.setActivityName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "activity.getName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "activity.getEndTime",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.getSpuId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.setPicUrl",
+          "lineNumber": 64
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.getPicUrl",
+          "lineNumber": 64
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.getOrderId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.setPayStatus(order.getPayStatus()).setPayOrderId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "record.setPayStatus",
+          "lineNumber": 66
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "order.getPayStatus",
+          "lineNumber": 66
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "order.getPayOrderId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBargainRecordSummaryRespVO().setSuccessUserCount",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBargainRecordSummaryRespVO",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convert",
+          "callee": "convertMap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "convert",
+          "callee": "summary.setSuccessList",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convert",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBargainRecordSummaryRespVO.Record",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convert",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convert",
+          "callee": "record.getUserId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convert",
+          "callee": "recordVO.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convert",
+          "callee": "recordVO.setNickname",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getNickname",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getAvatar",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convert",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 80
+        },
+        {
+          "caller": "convert",
+          "callee": "record.getActivityId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "convert",
+          "callee": "recordVO.setActivityName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "activity.getName",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/combination/CombinationActivityConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 229,
+      "nonEmptyLines": 196,
+      "classes": [
+        {
+          "name": "CombinationActivityConvert",
+          "startLine": 45,
+          "endLine": 229,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertPage",
+            "convertList2",
+            "convert",
+            "convertList",
+            "convertList",
+            "convert",
+            "convert4",
+            "convert",
+            "convertList",
+            "convertAppList",
+            "convertAppPage",
+            "convert2",
+            "convertList1",
+            "convert3",
+            "convertList3",
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convertVirtualRecordList",
+            "convert5"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationActivityConvert",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "convert(activity).setProducts",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList2",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 70
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMultiMap",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 73
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getSpuId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setSpuName(spu.getName()).setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setSpuName",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getName",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 75
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setProducts",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertList2",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convertPage",
+          "callee": "productMap.get",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setGroupCount(groupCountMap.getOrDefault(item.getId(), 0))\n                    .setGroupSuccessCount(groupSuccessCountMap.getOrDefault(item.getId(), 0)).setRecordCount",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setGroupCount(groupCountMap.getOrDefault(item.getId(), 0)).setGroupSuccessCount",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setGroupCount",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convertPage",
+          "callee": "groupCountMap.getOrDefault",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "convertPage",
+          "callee": "groupSuccessCountMap.getOrDefault",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convertPage",
+          "callee": "recordCountMap.getOrDefault",
+          "lineNumber": 80
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert(activity, item).setActivityStatus",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "activity.getStatus",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertMap",
+          "lineNumber": 106
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 107
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert(activity, updateProductVO)\n                .setId(productMap.get(updateProductVO.getSkuId())).setActivityStatus",
+          "lineNumber": 107
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert(activity, updateProductVO).setId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert",
+          "lineNumber": 107
+        },
+        {
+          "caller": "convertList",
+          "callee": "productMap.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "convertList",
+          "callee": "updateProductVO.getSkuId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "convertList",
+          "callee": "activity.getStatus",
+          "lineNumber": 109
+        },
+        {
+          "caller": "convert4",
+          "callee": "new CombinationRecordCreateRespDTO().setCombinationActivityId(combinationRecord.getActivityId())\n                .setCombinationRecordId(combinationRecord.getId()).setCombinationHeadId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert4",
+          "callee": "new CombinationRecordCreateRespDTO().setCombinationActivityId(combinationRecord.getActivityId()).setCombinationRecordId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert4",
+          "callee": "new CombinationRecordCreateRespDTO().setCombinationActivityId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert4",
+          "callee": "new CombinationRecordCreateRespDTO",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert4",
+          "callee": "combinationRecord.getActivityId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert4",
+          "callee": "combinationRecord.getId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "convert4",
+          "callee": "combinationRecord.getHeadId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup(false)\n                .setStatus(CombinationRecordStatusEnum.IN_PROGRESS.getStatus()) // 创建后默认状态为进行中\n                .setUserSize(activity.getUserSize()).setUserCount(1) // 默认就是 1 插入后会接着更新一次所有的拼团记录\n                .setNickname(user.getNickname()).setAvatar(user.getAvatar()) // 用户信息\n                .setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup(false)\n                .setStatus(CombinationRecordStatusEnum.IN_PROGRESS.getStatus()) // 创建后默认状态为进行中\n                .setUserSize(activity.getUserSize()).setUserCount(1) // 默认就是 1 插入后会接着更新一次所有的拼团记录\n                .setNickname(user.getNickname()).setAvatar(user.getAvatar()).setSpuName",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup(false)\n                .setStatus(CombinationRecordStatusEnum.IN_PROGRESS.getStatus()) // 创建后默认状态为进行中\n                .setUserSize(activity.getUserSize()).setUserCount(1) // 默认就是 1 插入后会接着更新一次所有的拼团记录\n                .setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup(false)\n                .setStatus(CombinationRecordStatusEnum.IN_PROGRESS.getStatus()) // 创建后默认状态为进行中\n                .setUserSize(activity.getUserSize()).setUserCount(1).setNickname",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup(false)\n                .setStatus(CombinationRecordStatusEnum.IN_PROGRESS.getStatus()) // 创建后默认状态为进行中\n                .setUserSize(activity.getUserSize()).setUserCount",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup(false)\n                .setStatus(CombinationRecordStatusEnum.IN_PROGRESS.getStatus()).setUserSize",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup(false).setStatus",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(reqDTO).setVirtualGroup",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convert",
+          "callee": "CombinationRecordStatusEnum.IN_PROGRESS.getStatus",
+          "lineNumber": 123
+        },
+        {
+          "caller": "convert",
+          "callee": "activity.getUserSize",
+          "lineNumber": 124
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getNickname",
+          "lineNumber": 125
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getAvatar",
+          "lineNumber": 125
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getName",
+          "lineNumber": 126
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjectUtil.defaultIfBlank",
+          "lineNumber": 126
+        },
+        {
+          "caller": "convert",
+          "callee": "sku.getPicUrl",
+          "lineNumber": 126
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 126
+        },
+        {
+          "caller": "convertList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 132
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertMap",
+          "lineNumber": 133
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertMultiMap",
+          "lineNumber": 134
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 135
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setCombinationPrice",
+          "lineNumber": 137
+        },
+        {
+          "caller": "convertList",
+          "callee": "getMinValue",
+          "lineNumber": 137
+        },
+        {
+          "caller": "convertList",
+          "callee": "productMap.get",
+          "lineNumber": 137
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.getId",
+          "lineNumber": 137
+        },
+        {
+          "caller": "convertList",
+          "callee": "findAndThen",
+          "lineNumber": 139
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.getSpuId",
+          "lineNumber": 139
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setSpuName(spu.getName())\n                    .setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 139
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 139
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setSpuName",
+          "lineNumber": 139
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getName",
+          "lineNumber": 139
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 140
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 140
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 148
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "convertMap",
+          "lineNumber": 149
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "convertMultiMap",
+          "lineNumber": 150
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 151
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setCombinationPrice",
+          "lineNumber": 153
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "getMinValue",
+          "lineNumber": 153
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "productMap.get",
+          "lineNumber": 153
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.getId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "findAndThen",
+          "lineNumber": 155
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.getSpuId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setSpuName(spu.getName())\n                    .setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 155
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 155
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setSpuName",
+          "lineNumber": 155
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getName",
+          "lineNumber": 155
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 156
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 156
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 164
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "convertAppList",
+          "lineNumber": 164
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "result.getList",
+          "lineNumber": 164
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "result.getTotal",
+          "lineNumber": 164
+        },
+        {
+          "caller": "convert3",
+          "callee": "convert2(combinationActivity).setProducts",
+          "lineNumber": 172
+        },
+        {
+          "caller": "convert3",
+          "callee": "convert2",
+          "lineNumber": 172
+        },
+        {
+          "caller": "convert3",
+          "callee": "convertList1",
+          "lineNumber": 172
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 182
+        },
+        {
+          "caller": "convert",
+          "callee": "convertMap",
+          "lineNumber": 184
+        },
+        {
+          "caller": "convert",
+          "callee": "convertMultiMap",
+          "lineNumber": 185
+        },
+        {
+          "caller": "convert",
+          "callee": "result.setList",
+          "lineNumber": 186
+        },
+        {
+          "caller": "convert",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 186
+        },
+        {
+          "caller": "convert",
+          "callee": "result.getList",
+          "lineNumber": 186
+        },
+        {
+          "caller": "convert",
+          "callee": "findAndThen",
+          "lineNumber": 187
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getActivityId",
+          "lineNumber": 187
+        },
+        {
+          "caller": "convert",
+          "callee": "item.setActivity",
+          "lineNumber": 188
+        },
+        {
+          "caller": "convert",
+          "callee": "convert(activity).setProducts",
+          "lineNumber": 188
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 188
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList2",
+          "lineNumber": 188
+        },
+        {
+          "caller": "convert",
+          "callee": "productsMap.get",
+          "lineNumber": 188
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getActivityId",
+          "lineNumber": 188
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppCombinationRecordDetailRespVO()\n                .setHeadRecord(convert(headRecord)).setMemberRecords",
+          "lineNumber": 196
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppCombinationRecordDetailRespVO().setHeadRecord",
+          "lineNumber": 196
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppCombinationRecordDetailRespVO",
+          "lineNumber": 196
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 197
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList3",
+          "lineNumber": 197
+        },
+        {
+          "caller": "convert",
+          "callee": "CollectionUtils.findFirst",
+          "lineNumber": 199
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjectUtil.equal",
+          "lineNumber": 199
+        },
+        {
+          "caller": "convert",
+          "callee": "r.getUserId",
+          "lineNumber": 199
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjectUtil.equal",
+          "lineNumber": 200
+        },
+        {
+          "caller": "convert",
+          "callee": "headRecord.getUserId",
+          "lineNumber": 200
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setOrderId",
+          "lineNumber": 203
+        },
+        {
+          "caller": "convert",
+          "callee": "userRecord.getOrderId",
+          "lineNumber": 203
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "headRecord.getUserSize",
+          "lineNumber": 214
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "headRecord.getUserCount",
+          "lineNumber": 214
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "convert5(headRecord).setHeadId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "convert5",
+          "lineNumber": 218
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "headRecord.getId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "newRecord.setCount(0) // 会单独更新下，在后续的 Service 逻辑里\n                    .setUserId(0L).setNickname(\"\").setAvatar(\"\").setOrderId",
+          "lineNumber": 220
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "newRecord.setCount(0) // 会单独更新下，在后续的 Service 逻辑里\n                    .setUserId(0L).setNickname(\"\").setAvatar",
+          "lineNumber": 220
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "newRecord.setCount(0) // 会单独更新下，在后续的 Service 逻辑里\n                    .setUserId(0L).setNickname",
+          "lineNumber": 220
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "newRecord.setCount(0).setUserId",
+          "lineNumber": 220
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "newRecord.setCount",
+          "lineNumber": 220
+        },
+        {
+          "caller": "convertVirtualRecordList",
+          "callee": "createRecords.add",
+          "lineNumber": 222
+        }
+      ],
+      "metrics": {
+        "importCount": 24,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/coupon/CouponConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "CouponConvert",
+          "startLine": 23,
+          "endLine": 58,
+          "methods": [
+            "convertPage",
+            "convert",
+            "convert",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponConvert",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice())\n                .setProductScope(template.getProductScope())\n                .setProductScopeValues(template.getProductScopeValues())\n                .setDiscountType(template.getDiscountType())\n                .setDiscountPercent(template.getDiscountPercent())\n                .setDiscountPrice(template.getDiscountPrice())\n                .setDiscountLimitPrice(template.getDiscountLimitPrice())\n                .setStatus(CouponStatusEnum.UNUSED.getStatus()).setUserId",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice())\n                .setProductScope(template.getProductScope())\n                .setProductScopeValues(template.getProductScopeValues())\n                .setDiscountType(template.getDiscountType())\n                .setDiscountPercent(template.getDiscountPercent())\n                .setDiscountPrice(template.getDiscountPrice())\n                .setDiscountLimitPrice(template.getDiscountLimitPrice()).setStatus",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice())\n                .setProductScope(template.getProductScope())\n                .setProductScopeValues(template.getProductScopeValues())\n                .setDiscountType(template.getDiscountType())\n                .setDiscountPercent(template.getDiscountPercent())\n                .setDiscountPrice(template.getDiscountPrice()).setDiscountLimitPrice",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice())\n                .setProductScope(template.getProductScope())\n                .setProductScopeValues(template.getProductScopeValues())\n                .setDiscountType(template.getDiscountType())\n                .setDiscountPercent(template.getDiscountPercent()).setDiscountPrice",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice())\n                .setProductScope(template.getProductScope())\n                .setProductScopeValues(template.getProductScopeValues())\n                .setDiscountType(template.getDiscountType()).setDiscountPercent",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice())\n                .setProductScope(template.getProductScope())\n                .setProductScopeValues(template.getProductScopeValues()).setDiscountType",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice())\n                .setProductScope(template.getProductScope()).setProductScopeValues",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType())\n                .setUsePrice(template.getUsePrice()).setProductScope",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName())\n                .setTakeType(template.getTakeType()).setUsePrice",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId())\n                .setName(template.getName()).setTakeType",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO()\n                .setTemplateId(template.getId()).setName",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO().setTemplateId",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "new CouponDO",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getName",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getTakeType",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getUsePrice",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getProductScope",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getProductScopeValues",
+          "lineNumber": 39
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getDiscountType",
+          "lineNumber": 40
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getDiscountPercent",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getDiscountPrice",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getDiscountLimitPrice",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convert",
+          "callee": "CouponStatusEnum.UNUSED.getStatus",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convert",
+          "callee": "CouponTemplateValidityTypeEnum.DATE.getType().equals",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convert",
+          "callee": "CouponTemplateValidityTypeEnum.DATE.getType",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getValidityType",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convert",
+          "callee": "coupon.setValidStartTime",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getValidStartTime",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "coupon.setValidEndTime",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getValidEndTime",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convert",
+          "callee": "CouponTemplateValidityTypeEnum.TERM.getType().equals",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convert",
+          "callee": "CouponTemplateValidityTypeEnum.TERM.getType",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getValidityType",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convert",
+          "callee": "coupon.setValidStartTime",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "LocalDateTime.now().plusDays",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getFixedStartTerm",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "coupon.setValidEndTime",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convert",
+          "callee": "coupon.getValidStartTime().plusDays",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convert",
+          "callee": "coupon.getValidStartTime",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convert",
+          "callee": "template.getFixedEndTerm",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/coupon/CouponTemplateConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "CouponTemplateConvert",
+          "startLine": 23,
+          "endLine": 63,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertPage",
+            "convert",
+            "convertAppPage",
+            "convertAppList",
+            "convertAppPage",
+            "convertAppList",
+            "copyTo",
+            "convertList"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponTemplateConvert",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertAppPage",
+          "callee": "convertAppPage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "copyTo",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertAppPage",
+          "callee": "result.getList",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "convertAppList",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "copyTo",
+          "lineNumber": 50
+        },
+        {
+          "caller": "copyTo",
+          "callee": "template.setCanTake",
+          "lineNumber": 57
+        },
+        {
+          "caller": "copyTo",
+          "callee": "MapUtil.getBool",
+          "lineNumber": 57
+        },
+        {
+          "caller": "copyTo",
+          "callee": "template.getId",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/discount/DiscountActivityConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "DiscountActivityConvert",
+          "startLine": 21,
+          "endLine": 51,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertList2",
+            "convertPage",
+            "convertPage",
+            "convert",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DiscountActivityConvert",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertPage",
+          "callee": "item.setProducts",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertList2",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean(activity, DiscountActivityRespVO.class).setProducts",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList2",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/seckill/SeckillActivityConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 174,
+      "nonEmptyLines": 147,
+      "classes": [
+        {
+          "name": "SeckillActivityConvert",
+          "startLine": 38,
+          "endLine": 174,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertPage",
+            "convert1",
+            "convert",
+            "convert",
+            "convertList",
+            "convertList",
+            "convertAppList",
+            "convertList2",
+            "convertList3",
+            "convert",
+            "convertPage1",
+            "convertPage02",
+            "convert2",
+            "convertList1",
+            "convert3",
+            "convert02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SeckillActivityConvert",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "convertPage",
+          "callee": "CollectionUtils.convertMap",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMultiMap",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "activity.setProducts",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertList2",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "productMap.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "activity.getId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "activity.getSpuId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "activity.setSpuName(spu.getName()).setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage",
+          "callee": "activity.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage",
+          "callee": "activity.setSpuName",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getName",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convert",
+          "callee": "convert1(activity).setProducts",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convert",
+          "callee": "convert1",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList2",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert(activity, item).setActivityStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convertList",
+          "callee": "activity.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convertList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 94
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertMap",
+          "lineNumber": 95
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertMultiMap",
+          "lineNumber": 96
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 97
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setSeckillPrice",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertList",
+          "callee": "getMinValue",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertList",
+          "callee": "productMap.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.getId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertList",
+          "callee": "findAndThen",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.getSpuId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setSpuName(spu.getName())\n                    .setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "item.setSpuName",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getName",
+          "lineNumber": 101
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 102
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 102
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 110
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "convertMap",
+          "lineNumber": 111
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "convertMultiMap",
+          "lineNumber": 112
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 113
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setSeckillPrice",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "getMinValue",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "productMap.get",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.getId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "findAndThen",
+          "lineNumber": 117
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.getSpuId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setSpuName(spu.getName())\n                    .setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 117
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 117
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "item.setSpuName",
+          "lineNumber": 117
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getName",
+          "lineNumber": 117
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 118
+        },
+        {
+          "caller": "convertAppList",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 118
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppSeckillActivityNowRespVO",
+          "lineNumber": 129
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setConfig",
+          "lineNumber": 130
+        },
+        {
+          "caller": "convert",
+          "callee": "SeckillConfigConvert.INSTANCE.convert1",
+          "lineNumber": 130
+        },
+        {
+          "caller": "convert",
+          "callee": "convertMap",
+          "lineNumber": 131
+        },
+        {
+          "caller": "convert",
+          "callee": "convertMultiMap",
+          "lineNumber": 132
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setActivities",
+          "lineNumber": 133
+        },
+        {
+          "caller": "convert",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList3",
+          "lineNumber": 133
+        },
+        {
+          "caller": "convert",
+          "callee": "item.setSeckillPrice",
+          "lineNumber": 135
+        },
+        {
+          "caller": "convert",
+          "callee": "getMinValue",
+          "lineNumber": 135
+        },
+        {
+          "caller": "convert",
+          "callee": "productMap.get",
+          "lineNumber": 135
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "convert",
+          "callee": "findAndThen",
+          "lineNumber": 137
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getSpuId",
+          "lineNumber": 137
+        },
+        {
+          "caller": "convert",
+          "callee": "item.setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 138
+        },
+        {
+          "caller": "convert",
+          "callee": "item.setPicUrl",
+          "lineNumber": 138
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 138
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 138
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertPage1",
+          "lineNumber": 147
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertMap",
+          "lineNumber": 148
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertMultiMap",
+          "lineNumber": 149
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 150
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "result.getList",
+          "lineNumber": 150
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "item.setSeckillPrice",
+          "lineNumber": 152
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "getMinValue",
+          "lineNumber": 152
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "productMap.get",
+          "lineNumber": 152
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "item.getId",
+          "lineNumber": 152
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "findAndThen",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "item.getSpuId",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "item.setPicUrl(spu.getPicUrl()).setMarketPrice",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "item.setPicUrl",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "spu.getMarketPrice",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "result.setList",
+          "lineNumber": 157
+        },
+        {
+          "caller": "convert3",
+          "callee": "convert2(activity)\n                .setProducts(convertList1(products))\n                .setStartTime(startTime).setEndTime",
+          "lineNumber": 167
+        },
+        {
+          "caller": "convert3",
+          "callee": "convert2(activity)\n                .setProducts(convertList1(products)).setStartTime",
+          "lineNumber": 167
+        },
+        {
+          "caller": "convert3",
+          "callee": "convert2(activity).setProducts",
+          "lineNumber": 167
+        },
+        {
+          "caller": "convert3",
+          "callee": "convert2",
+          "lineNumber": 167
+        },
+        {
+          "caller": "convert3",
+          "callee": "convertList1",
+          "lineNumber": 168
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/seckill/SeckillConfigConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "SeckillConfigConvert",
+          "startLine": 20,
+          "endLine": 40,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertList1",
+            "convertPage",
+            "convertList2",
+            "convert1"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SeckillConfigConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/bargain/BargainActivityDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 95,
+      "classes": [
+        {
+          "name": "BargainActivityDO",
+          "startLine": 17,
+          "endLine": 107,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "startTime",
+            "endTime",
+            "status",
+            "spuId",
+            "skuId",
+            "bargainFirstPrice",
+            "bargainMinPrice",
+            "stock",
+            "totalStock",
+            "helpMaxCount",
+            "bargainCount",
+            "totalLimitCount",
+            "randomMinPrice",
+            "randomMaxPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainActivityDO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/bargain/BargainHelpDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "BargainHelpDO",
+          "startLine": 14,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "id",
+            "activityId",
+            "recordId",
+            "userId",
+            "reducePrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainHelpDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/bargain/BargainRecordDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 72,
+      "classes": [
+        {
+          "name": "BargainRecordDO",
+          "startLine": 17,
+          "endLine": 81,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "activityId",
+            "spuId",
+            "skuId",
+            "bargainFirstPrice",
+            "bargainPrice",
+            "status",
+            "endTime",
+            "orderId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainRecordDO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/combination/CombinationActivityDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 72,
+      "classes": [
+        {
+          "name": "CombinationActivityDO",
+          "startLine": 17,
+          "endLine": 77,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "spuId",
+            "totalLimitCount",
+            "singleLimitCount",
+            "startTime",
+            "endTime",
+            "userSize",
+            "virtualGroup",
+            "status",
+            "limitDuration"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationActivityDO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/combination/CombinationProductDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "CombinationProductDO",
+          "startLine": 16,
+          "endLine": 67,
+          "methods": [],
+          "properties": [
+            "id",
+            "activityId",
+            "spuId",
+            "skuId",
+            "combinationPrice",
+            "activityStatus",
+            "activityStartTime",
+            "activityEndTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationProductDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/combination/CombinationRecordDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 129,
+      "classes": [
+        {
+          "name": "CombinationRecordDO",
+          "startLine": 21,
+          "endLine": 140,
+          "methods": [],
+          "properties": [
+            "HEAD_ID_GROUP",
+            "id",
+            "activityId",
+            "combinationPrice",
+            "spuId",
+            "spuName",
+            "picUrl",
+            "skuId",
+            "count",
+            "userId",
+            "nickname",
+            "avatar",
+            "headId",
+            "status",
+            "orderId",
+            "userSize",
+            "userCount",
+            "virtualGroup",
+            "expireTime",
+            "startTime",
+            "endTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HEAD_ID_GROUP",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "CombinationRecordDO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

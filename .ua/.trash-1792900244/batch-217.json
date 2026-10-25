@@ -1,0 +1,67 @@
+{
+  "nodes": [
+    {
+      "id": "document:script/livekit-poc/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "script/livekit-poc/README.md",
+      "summary": "说明 LiveKit Server 自部署 PoC 的启动步骤、服务端口、开发凭据和浏览器联调方式，并提示生产环境更换密钥。",
+      "tags": [
+        "项目文档",
+        "本地验证",
+        "实时音视频"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:script/livekit-poc/docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "script/livekit-poc/docker-compose.yml",
+      "summary": "定义本地 LiveKit 服务容器，使用端口映射开放信令与 WebRTC 传输端口，并挂载服务配置文件。",
+      "tags": [
+        "容器编排",
+        "实时音视频",
+        "本地开发"
+      ],
+      "complexity": "simple",
+      "languageNotes": "配置以端口映射模式运行 LiveKit，并通过命令参数指定挂载的配置文件。"
+    },
+    {
+      "id": "service:script/livekit-poc/docker-compose.yml:livekit",
+      "type": "service",
+      "name": "livekit",
+      "filePath": "script/livekit-poc/docker-compose.yml",
+      "summary": "Compose 中的 LiveKit Server 服务，使用 livekit-server 镜像并配置容器名、重启策略、7880/7881/7882 端口及只读配置挂载。",
+      "tags": [
+        "LiveKit服务",
+        "容器服务",
+        "实时音视频"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:script/livekit-poc/verify.sh",
+      "type": "file",
+      "name": "verify.sh",
+      "filePath": "script/livekit-poc/verify.sh",
+      "summary": "验证本地 LiveKit PoC：轮询 HTTP 就绪状态、签发 JWT、调用房间创建/查询/删除 RPC，并输出浏览器联调链接。",
+      "tags": [
+        "验证脚本",
+        "LiveKit",
+        "集成验证"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "脚本使用 curl、jq、Python 标准库和环境变量配置 API 凭据、主机与房间名。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:script/livekit-poc/docker-compose.yml",
+      "target": "service:script/livekit-poc/docker-compose.yml:livekit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

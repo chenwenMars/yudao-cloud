@@ -1,0 +1,82 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 1,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "services": [
+        {
+          "name": "eclipse-temurin",
+          "image": "eclipse-temurin:21-jre",
+          "ports": [
+            48085
+          ],
+          "startLine": 3,
+          "endLine": 21
+        }
+      ],
+      "steps": [
+        {
+          "name": "FROM eclipse-temurin:21-jre",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "RUN mkdir -p /yudao-module-pay-server",
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "WORKDIR /yudao-module-pay-server",
+          "startLine": 8,
+          "endLine": 8
+        },
+        {
+          "name": "COPY ./target/yudao-module-pay-server.jar app.jar",
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "ENV TZ=Asia/Shanghai JAVA_OPTS=\"-Xms512m -Xmx512m\"",
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "EXPOSE 48085",
+          "startLine": 17,
+          "endLine": 17
+        },
+        {
+          "name": "CMD java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -j",
+          "startLine": 20,
+          "endLine": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "serviceCount": 1,
+        "stepCount": 7
+      }
+    }
+  ]
+}

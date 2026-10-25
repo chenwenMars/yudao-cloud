@@ -1,0 +1,92 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 1,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-server/Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "services": [
+        {
+          "name": "eclipse-temurin",
+          "image": "eclipse-temurin:21-jre",
+          "ports": [
+            48080
+          ],
+          "startLine": 3,
+          "endLine": 24
+        }
+      ],
+      "steps": [
+        {
+          "name": "FROM eclipse-temurin:21-jre",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "RUN mkdir -p /yudao-server",
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "WORKDIR /yudao-server",
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "COPY ./target/yudao-server.jar app.jar",
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "ENV TZ=Asia/Shanghai",
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "name": "ENV JAVA_OPTS=\"-Xms512m -Xmx512m -Djava.security.egd=file:/dev/.",
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "ENV ARGS=\"\"",
+          "startLine": 17,
+          "endLine": 17
+        },
+        {
+          "name": "EXPOSE 48080",
+          "startLine": 20,
+          "endLine": 20
+        },
+        {
+          "name": "CMD java ${JAVA_OPTS} -jar app.jar $ARGS",
+          "startLine": 23,
+          "endLine": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "serviceCount": 1,
+        "stepCount": 9
+      }
+    }
+  ]
+}

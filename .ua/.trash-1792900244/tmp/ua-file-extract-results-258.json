@@ -1,0 +1,1244 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [
+    "yudao-framework/yudao-spring-boot-starter-web/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-framework/yudao-spring-boot-starter-web/src/main/resources/banner.txt",
+    "yudao-framework/yudao-spring-boot-starter-websocket/pom.xml",
+    "yudao-framework/yudao-spring-boot-starter-websocket/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-gateway/pom.xml",
+    "yudao-module-ai/pom.xml",
+    "yudao-module-ai/yudao-module-ai-api/pom.xml"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 18,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 17,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/swagger/config/SwaggerProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "SwaggerProperties",
+          "startLine": 13,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "title",
+            "description",
+            "author",
+            "version",
+            "url",
+            "email",
+            "license",
+            "licenseUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SwaggerProperties",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/swagger/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/web/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/xss/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/test/java/cn/iocoder/yudao/framework/encrypt/ApiEncryptTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "testGenerateAsymmetric",
+          "startLine": 22,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "testEncrypt_aes",
+          "startLine": 58,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "testEncrypt_rsa",
+          "startLine": 72,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApiEncryptTest",
+          "startLine": 19,
+          "endLine": 86,
+          "methods": [
+            "testGenerateAsymmetric",
+            "testEncrypt_aes",
+            "testEncrypt_rsa"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "testGenerateAsymmetric",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "testEncrypt_aes",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "testEncrypt_rsa",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "ApiEncryptTest",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "AsymmetricAlgorithm.RSA.getValue",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "Objects.equals",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "AsymmetricAlgorithm.RSA.getValue",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "SecureUtil.rsa",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "requestRsa.getPublicKeyBase64",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "requestRsa.getPrivateKeyBase64",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "new RSA",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "responseRsa.getPrivateKeyBase64",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "responseRsa.getPublicKeyBase64",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "Objects.equals",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "SymmetricAlgorithm.AES.getValue",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "RandomUtil.randomNumbers",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "RandomUtil.randomNumbers",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "System.out.println",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "System.out.println",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "System.out.println",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGenerateAsymmetric",
+          "callee": "System.out.println",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testEncrypt_aes",
+          "callee": "SecureUtil.aes(StrUtil.utf8Bytes(key)).encryptBase64",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testEncrypt_aes",
+          "callee": "SecureUtil.aes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testEncrypt_aes",
+          "callee": "StrUtil.utf8Bytes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testEncrypt_aes",
+          "callee": "System.out.println",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testEncrypt_rsa",
+          "callee": "SecureUtil.rsa(null, key).encryptBase64",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testEncrypt_rsa",
+          "callee": "SecureUtil.rsa",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testEncrypt_rsa",
+          "callee": "System.out.println",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/kafka/KafkaWebSocketMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "KafkaWebSocketMessage",
+          "startLine": 10,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "sessionId",
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KafkaWebSocketMessage",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/rabbitmq/RabbitMQWebSocketMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "RabbitMQWebSocketMessage",
+          "startLine": 12,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "sessionId",
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RabbitMQWebSocketMessage",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/rocketmq/RocketMQWebSocketMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "RocketMQWebSocketMessage",
+          "startLine": 10,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "sessionId",
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RocketMQWebSocketMessage",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/《芋道 Spring Boot WebSocket 入门》.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/GatewayServerApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 9,
+          "endLine": 12,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GatewayServerApplication",
+          "startLine": 6,
+          "endLine": 14,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "GatewayServerApplication",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/filter/cors/CorsFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "filter",
+          "startLine": 26,
+          "endLine": 46,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CorsFilter",
+          "startLine": 20,
+          "endLine": 48,
+          "methods": [
+            "filter"
+          ],
+          "properties": [
+            "ALL",
+            "MAX_AGE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "CorsFilter",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 29
+        },
+        {
+          "caller": "filter",
+          "callee": "CorsUtils.isCorsRequest",
+          "lineNumber": 30
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 31
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getResponse",
+          "lineNumber": 35
+        },
+        {
+          "caller": "filter",
+          "callee": "response.getHeaders",
+          "lineNumber": 36
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.add",
+          "lineNumber": 37
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.add",
+          "lineNumber": 38
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.add",
+          "lineNumber": 39
+        },
+        {
+          "caller": "filter",
+          "callee": "headers.add",
+          "lineNumber": 40
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getMethod",
+          "lineNumber": 41
+        },
+        {
+          "caller": "filter",
+          "callee": "response.setStatusCode",
+          "lineNumber": 42
+        },
+        {
+          "caller": "filter",
+          "callee": "Mono.empty",
+          "lineNumber": 43
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/filter/grey/GrayReactiveLoadBalancerClientFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "getOrder",
+          "startLine": 48,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "filter",
+          "startLine": 54,
+          "endLine": 116,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "reconstructURI",
+          "startLine": 118,
+          "endLine": 120,
+          "params": [
+            "serviceInstance",
+            "original"
+          ]
+        },
+        {
+          "name": "choose",
+          "startLine": 122,
+          "endLine": 129,
+          "params": [
+            "lbRequest",
+            "serviceId",
+            "supportedLifecycleProcessors"
+          ]
+        },
+        {
+          "name": "getHint",
+          "startLine": 131,
+          "endLine": 137,
+          "params": [
+            "serviceId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GrayReactiveLoadBalancerClientFilter",
+          "startLine": 38,
+          "endLine": 139,
+          "methods": [
+            "getOrder",
+            "filter",
+            "reconstructURI",
+            "choose",
+            "getHint"
+          ],
+          "properties": [
+            "clientFactory",
+            "properties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOrder",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "filter",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "GrayReactiveLoadBalancerClientFilter",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttribute",
+          "lineNumber": 56
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttribute",
+          "lineNumber": 57
+        },
+        {
+          "caller": "filter",
+          "callee": "\"grayLb\".equals",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "url.getScheme",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "\"grayLb\".equals",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 60
+        },
+        {
+          "caller": "filter",
+          "callee": "addOriginalRequestUrl",
+          "lineNumber": 63
+        },
+        {
+          "caller": "filter",
+          "callee": "log.isTraceEnabled",
+          "lineNumber": 65
+        },
+        {
+          "caller": "filter",
+          "callee": "log.trace",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filter",
+          "callee": "ReactiveLoadBalancerClientFilter.class.getSimpleName",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttribute",
+          "lineNumber": 69
+        },
+        {
+          "caller": "filter",
+          "callee": "requestUri.getHost",
+          "lineNumber": 70
+        },
+        {
+          "caller": "filter",
+          "callee": "LoadBalancerLifecycleValidator.getSupportedLifecycleProcessors",
+          "lineNumber": 71
+        },
+        {
+          "caller": "filter",
+          "callee": "clientFactory.getInstances",
+          "lineNumber": 72
+        },
+        {
+          "caller": "filter",
+          "callee": "new DefaultRequest<>",
+          "lineNumber": 74
+        },
+        {
+          "caller": "filter",
+          "callee": "new RequestDataContext",
+          "lineNumber": 75
+        },
+        {
+          "caller": "filter",
+          "callee": "new RequestData",
+          "lineNumber": 75
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 75
+        },
+        {
+          "caller": "filter",
+          "callee": "getHint",
+          "lineNumber": 75
+        },
+        {
+          "caller": "filter",
+          "callee": "choose(lbRequest, serviceId, supportedLifecycleProcessors).doOnNext(response -> {\n\n                    if (!response.hasServer()) {\n                        supportedLifecycleProcessors.forEach(lifecycle -> lifecycle\n                                .onComplete(new CompletionContext<>(CompletionContext.Status.DISCARD, lbRequest, response)));\n                        throw NotFoundException.create(properties.isUse404(), \"Unable to find instance for \" + url.getHost());\n                    }\n\n                    ServiceInstance retrievedInstance = response.getServer();\n\n                    URI uri = exchange.getRequest().getURI();\n\n                    // if the `lb:<scheme>` mechanism was used, use `<scheme>` as the default,\n                    // if the loadbalancer doesn't provide one.\n                    String overrideScheme = retrievedInstance.isSecure() ? \"https\" : \"http\";\n                    if (schemePrefix != null) {\n                        overrideScheme = url.getScheme();\n                    }\n\n                    DelegatingServiceInstance serviceInstance = new DelegatingServiceInstance(retrievedInstance,\n                            overrideScheme);\n\n                    URI requestUrl = reconstructURI(serviceInstance, uri);\n\n                    if (log.isTraceEnabled()) {\n                        log.trace(\"LoadBalancerClientFilter url chosen: \" + requestUrl);\n                    }\n                    exchange.getAttributes().put(GATEWAY_REQUEST_URL_ATTR, requestUrl);\n                    exchange.getAttributes().put(GATEWAY_LOADBALANCER_RESPONSE_ATTR, response);\n                    supportedLifecycleProcessors.forEach(lifecycle -> lifecycle.onStartRequest(lbRequest, response));\n                }).then(chain.filter(exchange))\n                .doOnError(throwable -> supportedLifecycleProcessors.forEach(lifecycle -> lifecycle\n                        .onComplete(new CompletionContext<ResponseData, ServiceInstance, RequestDataContext>(\n                                CompletionContext.Status.FAILED, throwable, lbRequest,\n                                exchange.getAttribute(GATEWAY_LOADBALANCER_RESPONSE_ATTR))))).doOnSuccess",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter",
+          "callee": "choose(lbRequest, serviceId, supportedLifecycleProcessors).doOnNext(response -> {\n\n                    if (!response.hasServer()) {\n                        supportedLifecycleProcessors.forEach(lifecycle -> lifecycle\n                                .onComplete(new CompletionContext<>(CompletionContext.Status.DISCARD, lbRequest, response)));\n                        throw NotFoundException.create(properties.isUse404(), \"Unable to find instance for \" + url.getHost());\n                    }\n\n                    ServiceInstance retrievedInstance = response.getServer();\n\n                    URI uri = exchange.getRequest().getURI();\n\n                    // if the `lb:<scheme>` mechanism was used, use `<scheme>` as the default,\n                    // if the loadbalancer doesn't provide one.\n                    String overrideScheme = retrievedInstance.isSecure() ? \"https\" : \"http\";\n                    if (schemePrefix != null) {\n                        overrideScheme = url.getScheme();\n                    }\n\n                    DelegatingServiceInstance serviceInstance = new DelegatingServiceInstance(retrievedInstance,\n                            overrideScheme);\n\n                    URI requestUrl = reconstructURI(serviceInstance, uri);\n\n                    if (log.isTraceEnabled()) {\n                        log.trace(\"LoadBalancerClientFilter url chosen: \" + requestUrl);\n                    }\n                    exchange.getAttributes().put(GATEWAY_REQUEST_URL_ATTR, requestUrl);\n                    exchange.getAttributes().put(GATEWAY_LOADBALANCER_RESPONSE_ATTR, response);\n                    supportedLifecycleProcessors.forEach(lifecycle -> lifecycle.onStartRequest(lbRequest, response));\n                }).then(chain.filter(exchange)).doOnError",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter",
+          "callee": "choose(lbRequest, serviceId, supportedLifecycleProcessors).doOnNext(response -> {\n\n                    if (!response.hasServer()) {\n                        supportedLifecycleProcessors.forEach(lifecycle -> lifecycle\n                                .onComplete(new CompletionContext<>(CompletionContext.Status.DISCARD, lbRequest, response)));\n                        throw NotFoundException.create(properties.isUse404(), \"Unable to find instance for \" + url.getHost());\n                    }\n\n                    ServiceInstance retrievedInstance = response.getServer();\n\n                    URI uri = exchange.getRequest().getURI();\n\n                    // if the `lb:<scheme>` mechanism was used, use `<scheme>` as the default,\n                    // if the loadbalancer doesn't provide one.\n                    String overrideScheme = retrievedInstance.isSecure() ? \"https\" : \"http\";\n                    if (schemePrefix != null) {\n                        overrideScheme = url.getScheme();\n                    }\n\n                    DelegatingServiceInstance serviceInstance = new DelegatingServiceInstance(retrievedInstance,\n                            overrideScheme);\n\n                    URI requestUrl = reconstructURI(serviceInstance, uri);\n\n                    if (log.isTraceEnabled()) {\n                        log.trace(\"LoadBalancerClientFilter url chosen: \" + requestUrl);\n                    }\n                    exchange.getAttributes().put(GATEWAY_REQUEST_URL_ATTR, requestUrl);\n                    exchange.getAttributes().put(GATEWAY_LOADBALANCER_RESPONSE_ATTR, response);\n                    supportedLifecycleProcessors.forEach(lifecycle -> lifecycle.onStartRequest(lbRequest, response));\n                }).then",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter",
+          "callee": "choose(lbRequest, serviceId, supportedLifecycleProcessors).doOnNext",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter",
+          "callee": "choose",
+          "lineNumber": 76
+        },
+        {
+          "caller": "filter",
+          "callee": "response.hasServer",
+          "lineNumber": 78
+        },
+        {
+          "caller": "filter",
+          "callee": "supportedLifecycleProcessors.forEach",
+          "lineNumber": 79
+        },
+        {
+          "caller": "filter",
+          "callee": "lifecycle.onComplete",
+          "lineNumber": 79
+        },
+        {
+          "caller": "filter",
+          "callee": "new CompletionContext<>",
+          "lineNumber": 80
+        },
+        {
+          "caller": "filter",
+          "callee": "NotFoundException.create",
+          "lineNumber": 81
+        },
+        {
+          "caller": "filter",
+          "callee": "properties.isUse404",
+          "lineNumber": 81
+        },
+        {
+          "caller": "filter",
+          "callee": "url.getHost",
+          "lineNumber": 81
+        },
+        {
+          "caller": "filter",
+          "callee": "response.getServer",
+          "lineNumber": 84
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest().getURI",
+          "lineNumber": 86
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 86
+        },
+        {
+          "caller": "filter",
+          "callee": "retrievedInstance.isSecure",
+          "lineNumber": 90
+        },
+        {
+          "caller": "filter",
+          "callee": "url.getScheme",
+          "lineNumber": 92
+        },
+        {
+          "caller": "filter",
+          "callee": "new DelegatingServiceInstance",
+          "lineNumber": 95
+        },
+        {
+          "caller": "filter",
+          "callee": "reconstructURI",
+          "lineNumber": 98
+        },
+        {
+          "caller": "filter",
+          "callee": "log.isTraceEnabled",
+          "lineNumber": 100
+        },
+        {
+          "caller": "filter",
+          "callee": "log.trace",
+          "lineNumber": 101
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttributes().put",
+          "lineNumber": 103
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 103
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttributes().put",
+          "lineNumber": 104
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 104
+        },
+        {
+          "caller": "filter",
+          "callee": "supportedLifecycleProcessors.forEach",
+          "lineNumber": 105
+        },
+        {
+          "caller": "filter",
+          "callee": "lifecycle.onStartRequest",
+          "lineNumber": 105
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 106
+        },
+        {
+          "caller": "filter",
+          "callee": "supportedLifecycleProcessors.forEach",
+          "lineNumber": 107
+        },
+        {
+          "caller": "filter",
+          "callee": "lifecycle.onComplete",
+          "lineNumber": 107
+        },
+        {
+          "caller": "filter",
+          "callee": "new CompletionContext<ResponseData, ServiceInstance, RequestDataContext>",
+          "lineNumber": 108
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttribute",
+          "lineNumber": 110
+        },
+        {
+          "caller": "filter",
+          "callee": "supportedLifecycleProcessors.forEach",
+          "lineNumber": 111
+        },
+        {
+          "caller": "filter",
+          "callee": "lifecycle.onComplete",
+          "lineNumber": 111
+        },
+        {
+          "caller": "filter",
+          "callee": "new CompletionContext<ResponseData, ServiceInstance, RequestDataContext>",
+          "lineNumber": 112
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getAttribute",
+          "lineNumber": 114
+        },
+        {
+          "caller": "filter",
+          "callee": "new ResponseData",
+          "lineNumber": 115
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getResponse",
+          "lineNumber": 115
+        },
+        {
+          "caller": "filter",
+          "callee": "new RequestData",
+          "lineNumber": 115
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 115
+        },
+        {
+          "caller": "reconstructURI",
+          "callee": "LoadBalancerUriTools.reconstructURI",
+          "lineNumber": 119
+        },
+        {
+          "caller": "choose",
+          "callee": "new GrayLoadBalancer",
+          "lineNumber": 125
+        },
+        {
+          "caller": "choose",
+          "callee": "clientFactory.getLazyProvider",
+          "lineNumber": 126
+        },
+        {
+          "caller": "choose",
+          "callee": "supportedLifecycleProcessors.forEach",
+          "lineNumber": 127
+        },
+        {
+          "caller": "choose",
+          "callee": "lifecycle.onStart",
+          "lineNumber": 127
+        },
+        {
+          "caller": "choose",
+          "callee": "loadBalancer.choose",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getHint",
+          "callee": "clientFactory.getProperties",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getHint",
+          "callee": "loadBalancerProperties.getHint",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getHint",
+          "callee": "hints.getOrDefault",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getHint",
+          "callee": "hints.get",
+          "lineNumber": 135
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/filter/logging/AccessLog.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 84,
+      "classes": [
+        {
+          "name": "AccessLog",
+          "startLine": 13,
+          "endLine": 92,
+          "methods": [],
+          "properties": [
+            "traceId",
+            "userId",
+            "userType",
+            "route",
+            "schema",
+            "requestMethod",
+            "requestUrl",
+            "queryParams",
+            "requestBody",
+            "requestHeaders",
+            "userIp",
+            "responseBody",
+            "responseHeaders",
+            "httpStatus",
+            "startTime",
+            "endTime",
+            "duration"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AccessLog",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/route/dynamic/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/route/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/util/BannerApplicationRunner.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "run",
+          "startLine": 20,
+          "endLine": 59,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BannerApplicationRunner",
+          "startLine": 16,
+          "endLine": 61,
+          "methods": [
+            "run"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "run",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "BannerApplicationRunner",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run",
+          "callee": "ThreadUtil.execute",
+          "lineNumber": 22
+        },
+        {
+          "caller": "run",
+          "callee": "ThreadUtil.sleep",
+          "lineNumber": 23
+        },
+        {
+          "caller": "run",
+          "callee": "log.info",
+          "lineNumber": 24
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 35
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 37
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 39
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 41
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 43
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 45
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 47
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 49
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 51
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 53
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 55
+        },
+        {
+          "caller": "run",
+          "callee": "System.out.println",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/api/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

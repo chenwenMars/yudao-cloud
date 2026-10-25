@@ -1,0 +1,5484 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/xss/core/filter/XssFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "doFilterInternal",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "request",
+            "response",
+            "filterChain"
+          ]
+        },
+        {
+          "name": "shouldNotFilter",
+          "startLine": 40,
+          "endLine": 50,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "XssFilter",
+          "startLine": 20,
+          "endLine": 52,
+          "methods": [
+            "doFilterInternal",
+            "shouldNotFilter"
+          ],
+          "properties": [
+            "properties",
+            "pathMatcher",
+            "xssCleaner"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "XssFilter",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doFilterInternal",
+          "callee": "filterChain.doFilter",
+          "lineNumber": 37
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "new XssRequestWrapper",
+          "lineNumber": 37
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "properties.isEnable",
+          "lineNumber": 43
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "request.getRequestURI",
+          "lineNumber": 48
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "properties.getExcludeUrls().stream().anyMatch",
+          "lineNumber": 49
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "properties.getExcludeUrls().stream",
+          "lineNumber": 49
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "properties.getExcludeUrls",
+          "lineNumber": 49
+        },
+        {
+          "caller": "shouldNotFilter",
+          "callee": "pathMatcher.match",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/xss/core/filter/XssRequestWrapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "XssRequestWrapper",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "request",
+            "xssCleaner"
+          ]
+        },
+        {
+          "name": "getParameterMap",
+          "startLine": 25,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "getParameterValues",
+          "startLine": 39,
+          "endLine": 51,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getParameter",
+          "startLine": 53,
+          "endLine": 60,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getAttribute",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getHeader",
+          "startLine": 73,
+          "endLine": 80,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getQueryString",
+          "startLine": 83,
+          "endLine": 90,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "XssRequestWrapper",
+          "startLine": 15,
+          "endLine": 92,
+          "methods": [
+            "XssRequestWrapper",
+            "getParameterMap",
+            "getParameterValues",
+            "getParameter",
+            "getAttribute",
+            "getHeader",
+            "getQueryString"
+          ],
+          "properties": [
+            "xssCleaner"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "XssRequestWrapper",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "getParameterMap",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "getParameterValues",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "getParameter",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "getAttribute",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getHeader",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getQueryString",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "XssRequestWrapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getParameterMap",
+          "callee": "new LinkedHashMap<>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getParameterMap",
+          "callee": "super.getParameterMap",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getParameterMap",
+          "callee": "parameters.entrySet",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getParameterMap",
+          "callee": "entry.getValue",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getParameterMap",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getParameterMap",
+          "callee": "map.put",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getParameterMap",
+          "callee": "entry.getKey",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getParameterValues",
+          "callee": "super.getParameterValues",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getParameterValues",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getParameter",
+          "callee": "super.getParameter",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getParameter",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getAttribute",
+          "callee": "super.getAttribute",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getAttribute",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getHeader",
+          "callee": "super.getHeader",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getHeader",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getQueryString",
+          "callee": "super.getQueryString",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getQueryString",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/xss/core/json/XssStringJsonDeserializer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "deserialize",
+          "startLine": 38,
+          "endLine": 80,
+          "params": [
+            "p",
+            "ctxt"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "XssStringJsonDeserializer",
+          "startLine": 23,
+          "endLine": 81,
+          "methods": [
+            "deserialize"
+          ],
+          "properties": [
+            "properties",
+            "pathMatcher",
+            "xssCleaner"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "deserialize",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "XssStringJsonDeserializer",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deserialize",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 41
+        },
+        {
+          "caller": "deserialize",
+          "callee": "ServletUtils.getRequest().getRequestURI",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deserialize",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deserialize",
+          "callee": "properties.getExcludeUrls().stream().anyMatch",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deserialize",
+          "callee": "properties.getExcludeUrls().stream",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deserialize",
+          "callee": "properties.getExcludeUrls",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deserialize",
+          "callee": "pathMatcher.match",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deserialize",
+          "callee": "p.getText",
+          "lineNumber": 45
+        },
+        {
+          "caller": "deserialize",
+          "callee": "p.hasToken",
+          "lineNumber": 50
+        },
+        {
+          "caller": "deserialize",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 51
+        },
+        {
+          "caller": "deserialize",
+          "callee": "p.getText",
+          "lineNumber": 51
+        },
+        {
+          "caller": "deserialize",
+          "callee": "p.currentToken",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deserialize",
+          "callee": "_deserializeFromArray",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deserialize",
+          "callee": "p.getEmbeddedObject",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deserialize",
+          "callee": "ctxt.getBase64Variant().encode",
+          "lineNumber": 65
+        },
+        {
+          "caller": "deserialize",
+          "callee": "ctxt.getBase64Variant",
+          "lineNumber": 65
+        },
+        {
+          "caller": "deserialize",
+          "callee": "ob.toString",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deserialize",
+          "callee": "ctxt.extractScalarFromObject",
+          "lineNumber": 72
+        },
+        {
+          "caller": "deserialize",
+          "callee": "t.isScalarValue",
+          "lineNumber": 75
+        },
+        {
+          "caller": "deserialize",
+          "callee": "p.getValueAsString",
+          "lineNumber": 76
+        },
+        {
+          "caller": "deserialize",
+          "callee": "xssCleaner.clean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "deserialize",
+          "callee": "ctxt.handleUnexpectedToken",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/config/WebSocketProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "WebSocketProperties",
+          "startLine": 15,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "path",
+            "senderType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebSocketProperties",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/security/LoginUserHandshakeInterceptor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "beforeHandshake",
+          "startLine": 26,
+          "endLine": 35,
+          "params": [
+            "request",
+            "response",
+            "wsHandler",
+            "attributes"
+          ]
+        },
+        {
+          "name": "afterHandshake",
+          "startLine": 37,
+          "endLine": 41,
+          "params": [
+            "request",
+            "response",
+            "wsHandler",
+            "exception"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LoginUserHandshakeInterceptor",
+          "startLine": 24,
+          "endLine": 43,
+          "methods": [
+            "beforeHandshake",
+            "afterHandshake"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "beforeHandshake",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "afterHandshake",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "LoginUserHandshakeInterceptor",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "beforeHandshake",
+          "callee": "SecurityFrameworkUtils.getLoginUser",
+          "lineNumber": 29
+        },
+        {
+          "caller": "beforeHandshake",
+          "callee": "WebSocketFrameworkUtils.setLoginUser",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/security/WebSocketAuthorizeRequestsCustomizer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "customize",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebSocketAuthorizeRequestsCustomizer",
+          "startLine": 14,
+          "endLine": 24,
+          "methods": [
+            "customize"
+          ],
+          "properties": [
+            "webSocketProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "customize",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "WebSocketAuthorizeRequestsCustomizer",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(webSocketProperties.getPath()).permitAll",
+          "lineNumber": 21
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 21
+        },
+        {
+          "caller": "customize",
+          "callee": "webSocketProperties.getPath",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/session/WebSocketSessionManagerImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "addSession",
+          "startLine": 40,
+          "endLine": 64,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "removeSession",
+          "startLine": 66,
+          "endLine": 84,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "getSession",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSessionList",
+          "startLine": 91,
+          "endLine": 113,
+          "params": [
+            "userType"
+          ]
+        },
+        {
+          "name": "getSessionList",
+          "startLine": 115,
+          "endLine": 123,
+          "params": [
+            "userType",
+            "userId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebSocketSessionManagerImpl",
+          "startLine": 22,
+          "endLine": 125,
+          "methods": [
+            "addSession",
+            "removeSession",
+            "getSession",
+            "getSessionList",
+            "getSessionList"
+          ],
+          "properties": [
+            "idSessions",
+            "userSessions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addSession",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "removeSession",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getSession",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "getSessionList",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getSessionList",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "WebSocketSessionManagerImpl",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addSession",
+          "callee": "idSessions.put",
+          "lineNumber": 43
+        },
+        {
+          "caller": "addSession",
+          "callee": "session.getId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "addSession",
+          "callee": "WebSocketFrameworkUtils.getLoginUser",
+          "lineNumber": 45
+        },
+        {
+          "caller": "addSession",
+          "callee": "userSessions.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "addSession",
+          "callee": "user.getUserType",
+          "lineNumber": 49
+        },
+        {
+          "caller": "addSession",
+          "callee": "new ConcurrentHashMap<>",
+          "lineNumber": 51
+        },
+        {
+          "caller": "addSession",
+          "callee": "userSessions.putIfAbsent",
+          "lineNumber": 52
+        },
+        {
+          "caller": "addSession",
+          "callee": "user.getUserType",
+          "lineNumber": 52
+        },
+        {
+          "caller": "addSession",
+          "callee": "userSessions.get",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addSession",
+          "callee": "user.getUserType",
+          "lineNumber": 53
+        },
+        {
+          "caller": "addSession",
+          "callee": "userSessionsMap.get",
+          "lineNumber": 56
+        },
+        {
+          "caller": "addSession",
+          "callee": "user.getId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "addSession",
+          "callee": "new CopyOnWriteArrayList<>",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addSession",
+          "callee": "userSessionsMap.putIfAbsent",
+          "lineNumber": 59
+        },
+        {
+          "caller": "addSession",
+          "callee": "user.getId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "addSession",
+          "callee": "userSessionsMap.get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addSession",
+          "callee": "user.getId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "addSession",
+          "callee": "sessions.add",
+          "lineNumber": 63
+        },
+        {
+          "caller": "removeSession",
+          "callee": "idSessions.remove",
+          "lineNumber": 69
+        },
+        {
+          "caller": "removeSession",
+          "callee": "session.getId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "removeSession",
+          "callee": "WebSocketFrameworkUtils.getLoginUser",
+          "lineNumber": 71
+        },
+        {
+          "caller": "removeSession",
+          "callee": "userSessions.get",
+          "lineNumber": 75
+        },
+        {
+          "caller": "removeSession",
+          "callee": "user.getUserType",
+          "lineNumber": 75
+        },
+        {
+          "caller": "removeSession",
+          "callee": "userSessionsMap.get",
+          "lineNumber": 79
+        },
+        {
+          "caller": "removeSession",
+          "callee": "user.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "removeSession",
+          "callee": "sessions.removeIf",
+          "lineNumber": 80
+        },
+        {
+          "caller": "removeSession",
+          "callee": "session0.getId().equals",
+          "lineNumber": 80
+        },
+        {
+          "caller": "removeSession",
+          "callee": "session0.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "removeSession",
+          "callee": "session.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "removeSession",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 81
+        },
+        {
+          "caller": "removeSession",
+          "callee": "userSessionsMap.remove",
+          "lineNumber": 82
+        },
+        {
+          "caller": "removeSession",
+          "callee": "user.getId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getSession",
+          "callee": "idSessions.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "userSessions.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "new LinkedList<>",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "TenantContextHolder.getTenantId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "userSessionsMap.values",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "WebSocketFrameworkUtils.getTenantId",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "sessions.get",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "contextTenantId.equals",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "result.addAll",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "userSessions.get",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "userSessionsMap.get",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getSessionList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/util/WebSocketFrameworkUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "setLoginUser",
+          "startLine": 23,
+          "endLine": 25,
+          "params": [
+            "loginUser",
+            "attributes"
+          ]
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "getLoginUserId",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "getLoginUserType",
+          "startLine": 51,
+          "endLine": 54,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "getTenantId",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "session"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebSocketFrameworkUtils",
+          "startLine": 13,
+          "endLine": 67,
+          "methods": [
+            "setLoginUser",
+            "getLoginUser",
+            "getLoginUserId",
+            "getLoginUserType",
+            "getTenantId"
+          ],
+          "properties": [
+            "ATTRIBUTE_LOGIN_USER"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ATTRIBUTE_LOGIN_USER",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginUser",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUser",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUserId",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUserType",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "getTenantId",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "WebSocketFrameworkUtils",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setLoginUser",
+          "callee": "attributes.put",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "session.getAttributes().get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "session.getAttributes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getLoginUserId",
+          "callee": "getLoginUser",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getLoginUserId",
+          "callee": "loginUser.getId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getLoginUserType",
+          "callee": "getLoginUser",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getLoginUserType",
+          "callee": "loginUser.getUserType",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getTenantId",
+          "callee": "getLoginUser",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getTenantId",
+          "callee": "loginUser.getTenantId",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/filter/logging/AccessLogFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 273,
+      "nonEmptyLines": 247,
+      "functions": [
+        {
+          "name": "writeAccessLog",
+          "startLine": 70,
+          "endLine": 108,
+          "params": [
+            "exchange",
+            "gatewayLog"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 110,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "filter",
+          "startLine": 115,
+          "endLine": 136,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "filterWithoutRequestBody",
+          "startLine": 138,
+          "endLine": 143,
+          "params": [
+            "exchange",
+            "chain",
+            "accessLog"
+          ]
+        },
+        {
+          "name": "filterWithRequestBody",
+          "startLine": 150,
+          "endLine": 179,
+          "params": [
+            "exchange",
+            "chain",
+            "gatewayLog"
+          ]
+        },
+        {
+          "name": "recordResponseLog",
+          "startLine": 185,
+          "endLine": 223,
+          "params": [
+            "exchange",
+            "gatewayLog"
+          ]
+        },
+        {
+          "name": "requestDecorate",
+          "startLine": 235,
+          "endLine": 258,
+          "params": [
+            "exchange",
+            "headers",
+            "outputMessage"
+          ]
+        },
+        {
+          "name": "readContent",
+          "startLine": 262,
+          "endLine": 271,
+          "params": [
+            "dataBuffers"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AccessLogFilter",
+          "startLine": 58,
+          "endLine": 273,
+          "methods": [
+            "writeAccessLog",
+            "getOrder",
+            "filter",
+            "filterWithoutRequestBody",
+            "filterWithRequestBody",
+            "recordResponseLog",
+            "requestDecorate",
+            "readContent"
+          ],
+          "properties": [
+            "codecConfigurer"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOrder",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "filter",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "AccessLogFilter",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "writeAccessLog",
+          "callee": "SkyWalkingTraceUtils.callWithTraceIdInMdc",
+          "lineNumber": 71
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.setTraceId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "SkyWalkingTraceUtils.getTraceId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "MapUtil.newHashMap",
+          "lineNumber": 81
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 82
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getTraceId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 83
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getUserId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 84
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getUserType",
+          "lineNumber": 84
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 85
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRoute",
+          "lineNumber": 85
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRoute().getId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRoute",
+          "lineNumber": 85
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 86
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getSchema",
+          "lineNumber": 86
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 87
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRequestUrl",
+          "lineNumber": 87
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 88
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getQueryParams().toSingleValueMap",
+          "lineNumber": 88
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getQueryParams",
+          "lineNumber": 88
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 89
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "JsonUtils.isJson",
+          "lineNumber": 89
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRequestBody",
+          "lineNumber": 89
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "JSONUtil.parse",
+          "lineNumber": 90
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRequestBody",
+          "lineNumber": 90
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRequestBody",
+          "lineNumber": 90
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 91
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 91
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRequestHeaders().toSingleValueMap",
+          "lineNumber": 91
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getRequestHeaders",
+          "lineNumber": 91
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 92
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getUserIp",
+          "lineNumber": 92
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 93
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "JsonUtils.isJson",
+          "lineNumber": 93
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getResponseBody",
+          "lineNumber": 93
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "JSONUtil.parse",
+          "lineNumber": 94
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getResponseBody",
+          "lineNumber": 94
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getResponseBody",
+          "lineNumber": 94
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 95
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getResponseHeaders",
+          "lineNumber": 95
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 96
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getResponseHeaders().toSingleValueMap",
+          "lineNumber": 96
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getResponseHeaders",
+          "lineNumber": 96
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 97
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getHttpStatus",
+          "lineNumber": 97
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 98
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "LocalDateTimeUtil.format",
+          "lineNumber": 98
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getStartTime",
+          "lineNumber": 98
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 99
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "LocalDateTimeUtil.format",
+          "lineNumber": 99
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getEndTime",
+          "lineNumber": 99
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "values.put",
+          "lineNumber": 100
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getDuration",
+          "lineNumber": 100
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "gatewayLog.getDuration",
+          "lineNumber": 100
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "log.info",
+          "lineNumber": 101
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "JsonUtils.toJsonPrettyString",
+          "lineNumber": 101
+        },
+        {
+          "caller": "writeAccessLog",
+          "callee": "log.error",
+          "lineNumber": 104
+        },
+        {
+          "caller": "filter",
+          "callee": "exchange.getRequest",
+          "lineNumber": 118
+        },
+        {
+          "caller": "filter",
+          "callee": "new AccessLog",
+          "lineNumber": 119
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setRoute",
+          "lineNumber": 120
+        },
+        {
+          "caller": "filter",
+          "callee": "WebFrameworkUtils.getGatewayRoute",
+          "lineNumber": 120
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setSchema",
+          "lineNumber": 121
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI().getScheme",
+          "lineNumber": 121
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI",
+          "lineNumber": 121
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setRequestMethod",
+          "lineNumber": 122
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getMethod().name",
+          "lineNumber": 122
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getMethod",
+          "lineNumber": 122
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setRequestUrl",
+          "lineNumber": 123
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI().getRawPath",
+          "lineNumber": 123
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getURI",
+          "lineNumber": 123
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setQueryParams",
+          "lineNumber": 124
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getQueryParams",
+          "lineNumber": 124
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setRequestHeaders",
+          "lineNumber": 125
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getHeaders",
+          "lineNumber": 125
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setStartTime",
+          "lineNumber": 126
+        },
+        {
+          "caller": "filter",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 126
+        },
+        {
+          "caller": "filter",
+          "callee": "gatewayLog.setUserIp",
+          "lineNumber": 127
+        },
+        {
+          "caller": "filter",
+          "callee": "WebFrameworkUtils.getClientIP",
+          "lineNumber": 127
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getHeaders().getContentType",
+          "lineNumber": 130
+        },
+        {
+          "caller": "filter",
+          "callee": "request.getHeaders",
+          "lineNumber": 130
+        },
+        {
+          "caller": "filter",
+          "callee": "MediaType.APPLICATION_FORM_URLENCODED.isCompatibleWith",
+          "lineNumber": 131
+        },
+        {
+          "caller": "filter",
+          "callee": "MediaType.APPLICATION_JSON.isCompatibleWith",
+          "lineNumber": 132
+        },
+        {
+          "caller": "filter",
+          "callee": "filterWithRequestBody",
+          "lineNumber": 133
+        },
+        {
+          "caller": "filter",
+          "callee": "filterWithoutRequestBody",
+          "lineNumber": 135
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "recordResponseLog",
+          "lineNumber": 140
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "chain.filter(exchange.mutate().response(decoratedResponse).build()).then",
+          "lineNumber": 141
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "chain.filter",
+          "lineNumber": 141
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "exchange.mutate().response(decoratedResponse).build",
+          "lineNumber": 141
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "exchange.mutate().response",
+          "lineNumber": 141
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "exchange.mutate",
+          "lineNumber": 141
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "Mono.fromRunnable",
+          "lineNumber": 142
+        },
+        {
+          "caller": "filterWithoutRequestBody",
+          "callee": "writeAccessLog",
+          "lineNumber": 142
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "ServerRequest.create",
+          "lineNumber": 153
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "codecConfigurer.getReaders",
+          "lineNumber": 153
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "serverRequest.bodyToMono(String.class).flatMap",
+          "lineNumber": 154
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "serverRequest.bodyToMono",
+          "lineNumber": 154
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "gatewayLog.setRequestBody",
+          "lineNumber": 155
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "Mono.just",
+          "lineNumber": 156
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "BodyInserters.fromPublisher",
+          "lineNumber": 160
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "new HttpHeaders",
+          "lineNumber": 162
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "headers.putAll",
+          "lineNumber": 163
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 163
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "exchange.getRequest",
+          "lineNumber": 163
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "headers.remove",
+          "lineNumber": 166
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "new CachedBodyOutputMessage",
+          "lineNumber": 167
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "bodyInserter.insert(outputMessage, new BodyInserterContext()).then",
+          "lineNumber": 169
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "bodyInserter.insert",
+          "lineNumber": 169
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "new BodyInserterContext",
+          "lineNumber": 169
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "Mono.defer",
+          "lineNumber": 169
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "requestDecorate",
+          "lineNumber": 171
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "recordResponseLog",
+          "lineNumber": 173
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "chain.filter(exchange.mutate().request(decoratedRequest).response(decoratedResponse).build()).then",
+          "lineNumber": 175
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "chain.filter",
+          "lineNumber": 175
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "exchange.mutate().request(decoratedRequest).response(decoratedResponse).build",
+          "lineNumber": 175
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "exchange.mutate().request(decoratedRequest).response",
+          "lineNumber": 175
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "exchange.mutate().request",
+          "lineNumber": 175
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "exchange.mutate",
+          "lineNumber": 175
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "Mono.fromRunnable",
+          "lineNumber": 176
+        },
+        {
+          "caller": "filterWithRequestBody",
+          "callee": "writeAccessLog",
+          "lineNumber": 176
+        },
+        {
+          "caller": "recordResponseLog",
+          "callee": "exchange.getResponse",
+          "lineNumber": 186
+        },
+        {
+          "caller": "recordResponseLog",
+          "callee": "new ServerHttpResponseDecorator",
+          "lineNumber": 187
+        },
+        {
+          "caller": "writeWith",
+          "callee": "response.bufferFactory",
+          "lineNumber": 192
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.setEndTime",
+          "lineNumber": 194
+        },
+        {
+          "caller": "writeWith",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 194
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.setDuration",
+          "lineNumber": 195
+        },
+        {
+          "caller": "writeWith",
+          "callee": "LocalDateTimeUtil.between(gatewayLog.getStartTime(),\n                            gatewayLog.getEndTime()).toMillis",
+          "lineNumber": 195
+        },
+        {
+          "caller": "writeWith",
+          "callee": "LocalDateTimeUtil.between",
+          "lineNumber": 195
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.getStartTime",
+          "lineNumber": 195
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.getEndTime",
+          "lineNumber": 196
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.setUserId",
+          "lineNumber": 198
+        },
+        {
+          "caller": "writeWith",
+          "callee": "SecurityFrameworkUtils.getLoginUserId",
+          "lineNumber": 198
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.setUserType",
+          "lineNumber": 199
+        },
+        {
+          "caller": "writeWith",
+          "callee": "SecurityFrameworkUtils.getLoginUserType",
+          "lineNumber": 199
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.setResponseHeaders",
+          "lineNumber": 200
+        },
+        {
+          "caller": "writeWith",
+          "callee": "response.getHeaders",
+          "lineNumber": 200
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.setHttpStatus",
+          "lineNumber": 201
+        },
+        {
+          "caller": "writeWith",
+          "callee": "response.getStatusCode",
+          "lineNumber": 201
+        },
+        {
+          "caller": "writeWith",
+          "callee": "exchange.getAttribute",
+          "lineNumber": 204
+        },
+        {
+          "caller": "writeWith",
+          "callee": "StringUtils.isNotBlank",
+          "lineNumber": 205
+        },
+        {
+          "caller": "writeWith",
+          "callee": "originalResponseContentType.contains",
+          "lineNumber": 206
+        },
+        {
+          "caller": "writeWith",
+          "callee": "Flux.from",
+          "lineNumber": 207
+        },
+        {
+          "caller": "writeWith",
+          "callee": "super.writeWith",
+          "lineNumber": 208
+        },
+        {
+          "caller": "writeWith",
+          "callee": "fluxBody.buffer().map",
+          "lineNumber": 208
+        },
+        {
+          "caller": "writeWith",
+          "callee": "fluxBody.buffer",
+          "lineNumber": 208
+        },
+        {
+          "caller": "writeWith",
+          "callee": "readContent",
+          "lineNumber": 210
+        },
+        {
+          "caller": "writeWith",
+          "callee": "new String",
+          "lineNumber": 211
+        },
+        {
+          "caller": "writeWith",
+          "callee": "gatewayLog.setResponseBody",
+          "lineNumber": 212
+        },
+        {
+          "caller": "writeWith",
+          "callee": "bufferFactory.wrap",
+          "lineNumber": 215
+        },
+        {
+          "caller": "writeWith",
+          "callee": "super.writeWith",
+          "lineNumber": 220
+        },
+        {
+          "caller": "requestDecorate",
+          "callee": "new ServerHttpRequestDecorator",
+          "lineNumber": 236
+        },
+        {
+          "caller": "requestDecorate",
+          "callee": "exchange.getRequest",
+          "lineNumber": 236
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "headers.getContentLength",
+          "lineNumber": 240
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "new HttpHeaders",
+          "lineNumber": 241
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "httpHeaders.putAll",
+          "lineNumber": 242
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "super.getHeaders",
+          "lineNumber": 242
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "httpHeaders.setContentLength",
+          "lineNumber": 244
+        },
+        {
+          "caller": "getHeaders",
+          "callee": "httpHeaders.set",
+          "lineNumber": 248
+        },
+        {
+          "caller": "getBody",
+          "callee": "outputMessage.getBody",
+          "lineNumber": 255
+        },
+        {
+          "caller": "readContent",
+          "callee": "new DefaultDataBufferFactory",
+          "lineNumber": 264
+        },
+        {
+          "caller": "readContent",
+          "callee": "dataBufferFactory.join",
+          "lineNumber": 265
+        },
+        {
+          "caller": "readContent",
+          "callee": "join.readableByteCount",
+          "lineNumber": 266
+        },
+        {
+          "caller": "readContent",
+          "callee": "join.read",
+          "lineNumber": 267
+        },
+        {
+          "caller": "readContent",
+          "callee": "DataBufferUtils.release",
+          "lineNumber": 269
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/filter/security/LoginUser.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "LoginUser",
+          "startLine": 16,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "id",
+            "userType",
+            "info",
+            "tenantId",
+            "scopes",
+            "expiresTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginUser",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/filter/security/TokenAuthenticationFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 168,
+      "nonEmptyLines": 146,
+      "functions": [
+        {
+          "name": "TokenAuthenticationFilter",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "lbFunction"
+          ]
+        },
+        {
+          "name": "filter",
+          "startLine": 83,
+          "endLine": 111,
+          "params": [
+            "exchange",
+            "chain"
+          ]
+        },
+        {
+          "name": "getLoginUser",
+          "startLine": 113,
+          "endLine": 132,
+          "params": [
+            "exchange",
+            "token"
+          ]
+        },
+        {
+          "name": "checkAccessToken",
+          "startLine": 134,
+          "endLine": 139,
+          "params": [
+            "tenantId",
+            "token"
+          ]
+        },
+        {
+          "name": "buildUser",
+          "startLine": 141,
+          "endLine": 161,
+          "params": [
+            "body"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 163,
+          "endLine": 166,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TokenAuthenticationFilter",
+          "startLine": 38,
+          "endLine": 168,
+          "methods": [
+            "TokenAuthenticationFilter",
+            "filter",
+            "getLoginUser",
+            "checkAccessToken",
+            "buildUser",
+            "getOrder"
+          ],
+          "properties": [
+            "CHECK_RESULT_TYPE_REFERENCE",
+            "LOGIN_USER_EMPTY",
+            "webClient",
+            "loginUserCache"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenAuthenticationFilter",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "filter",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 163,
+          "isDefault": false
+        },
+        {
+          "name": "TokenAuthenticationFilter",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "load",
+          "callee": "checkAccessToken(token.getKey(), token.getValue()).block",
+          "lineNumber": 69
+        },
+        {
+          "caller": "load",
+          "callee": "checkAccessToken",
+          "lineNumber": 69
+        },
+        {
+          "caller": "load",
+          "callee": "token.getKey",
+          "lineNumber": 69
+        },
+        {
+          "caller": "load",
+          "callee": "token.getValue",
+          "lineNumber": 69
+        },
+        {
+          "caller": "load",
+          "callee": "buildUser",
+          "lineNumber": 70
+        },
+        {
+          "caller": "TokenAuthenticationFilter",
+          "callee": "WebClient.builder().filter(lbFunction).build",
+          "lineNumber": 80
+        },
+        {
+          "caller": "TokenAuthenticationFilter",
+          "callee": "WebClient.builder().filter",
+          "lineNumber": 80
+        },
+        {
+          "caller": "TokenAuthenticationFilter",
+          "callee": "WebClient.builder",
+          "lineNumber": 80
+        },
+        {
+          "caller": "filter",
+          "callee": "SecurityFrameworkUtils.removeLoginUser",
+          "lineNumber": 86
+        },
+        {
+          "caller": "filter",
+          "callee": "SecurityFrameworkUtils.obtainAuthorization",
+          "lineNumber": 89
+        },
+        {
+          "caller": "filter",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 90
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 91
+        },
+        {
+          "caller": "filter",
+          "callee": "getLoginUser(exchange, token).defaultIfEmpty(LOGIN_USER_EMPTY).flatMap",
+          "lineNumber": 97
+        },
+        {
+          "caller": "filter",
+          "callee": "getLoginUser(exchange, token).defaultIfEmpty",
+          "lineNumber": 97
+        },
+        {
+          "caller": "filter",
+          "callee": "getLoginUser",
+          "lineNumber": 97
+        },
+        {
+          "caller": "filter",
+          "callee": "user.getExpiresTime",
+          "lineNumber": 100
+        },
+        {
+          "caller": "filter",
+          "callee": "LocalDateTimeUtils.beforeNow",
+          "lineNumber": 100
+        },
+        {
+          "caller": "filter",
+          "callee": "user.getExpiresTime",
+          "lineNumber": 100
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 101
+        },
+        {
+          "caller": "filter",
+          "callee": "SecurityFrameworkUtils.setLoginUser",
+          "lineNumber": 105
+        },
+        {
+          "caller": "filter",
+          "callee": "finalExchange.mutate()\n                    .request(builder -> SecurityFrameworkUtils.setLoginUserHeader(builder, user)).build",
+          "lineNumber": 107
+        },
+        {
+          "caller": "filter",
+          "callee": "finalExchange.mutate().request",
+          "lineNumber": 107
+        },
+        {
+          "caller": "filter",
+          "callee": "finalExchange.mutate",
+          "lineNumber": 107
+        },
+        {
+          "caller": "filter",
+          "callee": "SecurityFrameworkUtils.setLoginUserHeader",
+          "lineNumber": 108
+        },
+        {
+          "caller": "filter",
+          "callee": "chain.filter",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "WebFrameworkUtils.getTenantId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "new KeyValue<Long, String>().setKey(tenantId).setValue",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "new KeyValue<Long, String>().setKey",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "new KeyValue<Long, String>",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "loginUserCache.getIfPresent",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "Mono.just",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "checkAccessToken(tenantId, token).flatMap",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "checkAccessToken",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "buildUser",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "loginUserCache.put",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "Mono.just",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getLoginUser",
+          "callee": "Mono.empty",
+          "lineNumber": 130
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "webClient.get()\n                .uri(OAuth2TokenCommonApi.URL_CHECK, uriBuilder -> uriBuilder.queryParam(\"accessToken\", token).build())\n                .headers(httpHeaders -> WebFrameworkUtils.setTenantIdHeader(tenantId, httpHeaders)) // 设置租户的 Header\n                .retrieve().bodyToMono",
+          "lineNumber": 135
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "webClient.get()\n                .uri(OAuth2TokenCommonApi.URL_CHECK, uriBuilder -> uriBuilder.queryParam(\"accessToken\", token).build())\n                .headers(httpHeaders -> WebFrameworkUtils.setTenantIdHeader(tenantId, httpHeaders)).retrieve",
+          "lineNumber": 135
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "webClient.get()\n                .uri(OAuth2TokenCommonApi.URL_CHECK, uriBuilder -> uriBuilder.queryParam(\"accessToken\", token).build()).headers",
+          "lineNumber": 135
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "webClient.get().uri",
+          "lineNumber": 135
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "webClient.get",
+          "lineNumber": 135
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "uriBuilder.queryParam(\"accessToken\", token).build",
+          "lineNumber": 136
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "uriBuilder.queryParam",
+          "lineNumber": 136
+        },
+        {
+          "caller": "checkAccessToken",
+          "callee": "WebFrameworkUtils.setTenantIdHeader",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildUser",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildUser",
+          "callee": "result.isError",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildUser",
+          "callee": "Objects.equals",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildUser",
+          "callee": "result.getCode",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildUser",
+          "callee": "HttpStatus.UNAUTHORIZED.value",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildUser",
+          "callee": "result.getData",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildUser",
+          "callee": "new LoginUser().setId(tokenInfo.getUserId()).setUserType(tokenInfo.getUserType())\n                .setInfo(tokenInfo.getUserInfo()) // 额外的用户信息\n                .setTenantId(tokenInfo.getTenantId()).setScopes(tokenInfo.getScopes()).setExpiresTime",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "new LoginUser().setId(tokenInfo.getUserId()).setUserType(tokenInfo.getUserType())\n                .setInfo(tokenInfo.getUserInfo()) // 额外的用户信息\n                .setTenantId(tokenInfo.getTenantId()).setScopes",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "new LoginUser().setId(tokenInfo.getUserId()).setUserType(tokenInfo.getUserType())\n                .setInfo(tokenInfo.getUserInfo()).setTenantId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "new LoginUser().setId(tokenInfo.getUserId()).setUserType(tokenInfo.getUserType()).setInfo",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "new LoginUser().setId(tokenInfo.getUserId()).setUserType",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "new LoginUser().setId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "new LoginUser",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "tokenInfo.getUserId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "tokenInfo.getUserType",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildUser",
+          "callee": "tokenInfo.getUserInfo",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildUser",
+          "callee": "tokenInfo.getTenantId",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildUser",
+          "callee": "tokenInfo.getScopes",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildUser",
+          "callee": "tokenInfo.getExpiresTime",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/handler/GlobalExceptionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 31,
+          "endLine": 49,
+          "params": [
+            "exchange",
+            "ex"
+          ]
+        },
+        {
+          "name": "responseStatusExceptionHandler",
+          "startLine": 54,
+          "endLine": 60,
+          "params": [
+            "exchange",
+            "ex"
+          ]
+        },
+        {
+          "name": "defaultExceptionHandler",
+          "startLine": 65,
+          "endLine": 73,
+          "params": [
+            "exchange",
+            "ex"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GlobalExceptionHandler",
+          "startLine": 26,
+          "endLine": 75,
+          "methods": [
+            "handle",
+            "responseStatusExceptionHandler",
+            "defaultExceptionHandler"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "defaultExceptionHandler",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "GlobalExceptionHandler",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "exchange.getResponse",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handle",
+          "callee": "response.isCommitted",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handle",
+          "callee": "Mono.error",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handle",
+          "callee": "SkyWalkingTraceUtils.callWithTraceIdInMdc",
+          "lineNumber": 40
+        },
+        {
+          "caller": "handle",
+          "callee": "responseStatusExceptionHandler",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handle",
+          "callee": "defaultExceptionHandler",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handle",
+          "callee": "WebFrameworkUtils.writeJSON",
+          "lineNumber": 48
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "exchange.getRequest",
+          "lineNumber": 57
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "log.error",
+          "lineNumber": 58
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "request.getURI",
+          "lineNumber": 58
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "request.getMethod",
+          "lineNumber": 58
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "CommonResult.error",
+          "lineNumber": 59
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "ex.getStatusCode().value",
+          "lineNumber": 59
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "ex.getStatusCode",
+          "lineNumber": 59
+        },
+        {
+          "caller": "responseStatusExceptionHandler",
+          "callee": "ex.getReason",
+          "lineNumber": 59
+        },
+        {
+          "caller": "defaultExceptionHandler",
+          "callee": "exchange.getRequest",
+          "lineNumber": 68
+        },
+        {
+          "caller": "defaultExceptionHandler",
+          "callee": "log.error",
+          "lineNumber": 69
+        },
+        {
+          "caller": "defaultExceptionHandler",
+          "callee": "request.getURI",
+          "lineNumber": 69
+        },
+        {
+          "caller": "defaultExceptionHandler",
+          "callee": "request.getMethod",
+          "lineNumber": 69
+        },
+        {
+          "caller": "defaultExceptionHandler",
+          "callee": "CommonResult.error",
+          "lineNumber": 72
+        },
+        {
+          "caller": "defaultExceptionHandler",
+          "callee": "INTERNAL_SERVER_ERROR.getCode",
+          "lineNumber": 72
+        },
+        {
+          "caller": "defaultExceptionHandler",
+          "callee": "INTERNAL_SERVER_ERROR.getMsg",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/util/SecurityFrameworkUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "SecurityFrameworkUtils",
+          "startLine": 33,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "obtainAuthorization",
+          "startLine": 41,
+          "endLine": 51,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "setLoginUser",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "exchange",
+            "user"
+          ]
+        },
+        {
+          "name": "removeLoginUser",
+          "startLine": 70,
+          "endLine": 79,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "getLoginUserId",
+          "startLine": 87,
+          "endLine": 89,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "getLoginUserType",
+          "startLine": 97,
+          "endLine": 99,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "setLoginUserHeader",
+          "startLine": 107,
+          "endLine": 116,
+          "params": [
+            "builder",
+            "user"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityFrameworkUtils",
+          "startLine": 21,
+          "endLine": 118,
+          "methods": [
+            "SecurityFrameworkUtils",
+            "obtainAuthorization",
+            "setLoginUser",
+            "removeLoginUser",
+            "getLoginUserId",
+            "getLoginUserType",
+            "setLoginUserHeader"
+          ],
+          "properties": [
+            "AUTHORIZATION_HEADER",
+            "AUTHORIZATION_BEARER",
+            "LOGIN_USER_HEADER",
+            "LOGIN_USER_ID_ATTR",
+            "LOGIN_USER_TYPE_ATTR"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "obtainAuthorization",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginUser",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "removeLoginUser",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUserId",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginUserType",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "setLoginUserHeader",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityFrameworkUtils",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "obtainAuthorization",
+          "callee": "exchange.getRequest().getHeaders().getFirst",
+          "lineNumber": 42
+        },
+        {
+          "caller": "obtainAuthorization",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 42
+        },
+        {
+          "caller": "obtainAuthorization",
+          "callee": "exchange.getRequest",
+          "lineNumber": 42
+        },
+        {
+          "caller": "obtainAuthorization",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 43
+        },
+        {
+          "caller": "obtainAuthorization",
+          "callee": "authorization.indexOf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "obtainAuthorization",
+          "callee": "authorization.substring(index + 7).trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "obtainAuthorization",
+          "callee": "authorization.substring",
+          "lineNumber": 50
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "exchange.getAttributes().put",
+          "lineNumber": 60
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 60
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "user.getId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "exchange.getAttributes().put",
+          "lineNumber": 61
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 61
+        },
+        {
+          "caller": "setLoginUser",
+          "callee": "user.getUserType",
+          "lineNumber": 61
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.getRequest().getHeaders().containsKey",
+          "lineNumber": 72
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 72
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.getRequest",
+          "lineNumber": 72
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.getRequest().mutate()\n                .headers(httpHeaders -> httpHeaders.remove(LOGIN_USER_HEADER)).build",
+          "lineNumber": 76
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.getRequest().mutate().headers",
+          "lineNumber": 76
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.getRequest().mutate",
+          "lineNumber": 76
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.getRequest",
+          "lineNumber": 76
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "httpHeaders.remove",
+          "lineNumber": 77
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.mutate().request(request).build",
+          "lineNumber": 78
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.mutate().request",
+          "lineNumber": 78
+        },
+        {
+          "caller": "removeLoginUser",
+          "callee": "exchange.mutate",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getLoginUserId",
+          "callee": "MapUtil.getLong",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getLoginUserId",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getLoginUserType",
+          "callee": "MapUtil.getInt",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getLoginUserType",
+          "callee": "exchange.getAttributes",
+          "lineNumber": 98
+        },
+        {
+          "caller": "setLoginUserHeader",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "setLoginUserHeader",
+          "callee": "URLEncoder.encode",
+          "lineNumber": 110
+        },
+        {
+          "caller": "setLoginUserHeader",
+          "callee": "builder.header",
+          "lineNumber": 111
+        },
+        {
+          "caller": "setLoginUserHeader",
+          "callee": "log.error",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/util/SkyWalkingTraceUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "SkyWalkingTraceUtils",
+          "startLine": 22,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "getTraceId",
+          "startLine": 30,
+          "endLine": 43,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "callWithTraceIdInMdc",
+          "startLine": 53,
+          "endLine": 62,
+          "params": [
+            "exchange",
+            "callable"
+          ]
+        },
+        {
+          "name": "putTraceIdIntoMdc",
+          "startLine": 70,
+          "endLine": 78,
+          "params": [
+            "traceId"
+          ]
+        },
+        {
+          "name": "restoreTraceIdInMdc",
+          "startLine": 85,
+          "endLine": 91,
+          "params": [
+            "previousTraceId"
+          ]
+        },
+        {
+          "name": "isTraceIdValid",
+          "startLine": 93,
+          "endLine": 95,
+          "params": [
+            "traceId"
+          ]
+        },
+        {
+          "name": "getCurrentTraceId",
+          "startLine": 97,
+          "endLine": 100,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SkyWalkingTraceUtils",
+          "startLine": 17,
+          "endLine": 102,
+          "methods": [
+            "SkyWalkingTraceUtils",
+            "getTraceId",
+            "callWithTraceIdInMdc",
+            "putTraceIdIntoMdc",
+            "restoreTraceIdInMdc",
+            "isTraceIdValid",
+            "getCurrentTraceId"
+          ],
+          "properties": [
+            "MDC_KEY_TID",
+            "TRACE_ID_DEFAULT"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTraceId",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "callWithTraceIdInMdc",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "putTraceIdIntoMdc",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "restoreTraceIdInMdc",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "SkyWalkingTraceUtils",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTraceId",
+          "callee": "WebFluxSkyWalkingTraceContext.traceId",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getTraceId",
+          "callee": "isTraceIdValid",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getTraceId",
+          "callee": "getCurrentTraceId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "callWithTraceIdInMdc",
+          "callee": "WebFluxSkyWalkingOperators.continueTracing",
+          "lineNumber": 54
+        },
+        {
+          "caller": "callWithTraceIdInMdc",
+          "callee": "putTraceIdIntoMdc",
+          "lineNumber": 55
+        },
+        {
+          "caller": "callWithTraceIdInMdc",
+          "callee": "getTraceId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "callWithTraceIdInMdc",
+          "callee": "callable.call",
+          "lineNumber": 57
+        },
+        {
+          "caller": "callWithTraceIdInMdc",
+          "callee": "restoreTraceIdInMdc",
+          "lineNumber": 59
+        },
+        {
+          "caller": "putTraceIdIntoMdc",
+          "callee": "MDC.get",
+          "lineNumber": 71
+        },
+        {
+          "caller": "putTraceIdIntoMdc",
+          "callee": "MDC.put",
+          "lineNumber": 73
+        },
+        {
+          "caller": "putTraceIdIntoMdc",
+          "callee": "MDC.remove",
+          "lineNumber": 75
+        },
+        {
+          "caller": "restoreTraceIdInMdc",
+          "callee": "MDC.remove",
+          "lineNumber": 87
+        },
+        {
+          "caller": "restoreTraceIdInMdc",
+          "callee": "MDC.put",
+          "lineNumber": 90
+        },
+        {
+          "caller": "isTraceIdValid",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 94
+        },
+        {
+          "caller": "isTraceIdValid",
+          "callee": "TRACE_ID_DEFAULT.equals",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getCurrentTraceId",
+          "callee": "TraceContext.traceId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getCurrentTraceId",
+          "callee": "isTraceIdValid",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-gateway/src/main/java/cn/iocoder/yudao/gateway/util/WebFrameworkUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "WebFrameworkUtils",
+          "startLine": 31,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "setTenantIdHeader",
+          "startLine": 39,
+          "endLine": 44,
+          "params": [
+            "tenantId",
+            "httpHeaders"
+          ]
+        },
+        {
+          "name": "getTenantId",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "writeJSON",
+          "startLine": 57,
+          "endLine": 73,
+          "params": [
+            "exchange",
+            "object"
+          ]
+        },
+        {
+          "name": "getClientIP",
+          "startLine": 84,
+          "endLine": 104,
+          "params": [
+            "exchange"
+          ]
+        },
+        {
+          "name": "getGatewayRoute",
+          "startLine": 112,
+          "endLine": 114,
+          "params": [
+            "exchange"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebFrameworkUtils",
+          "startLine": 26,
+          "endLine": 116,
+          "methods": [
+            "WebFrameworkUtils",
+            "setTenantIdHeader",
+            "getTenantId",
+            "writeJSON",
+            "getClientIP",
+            "getGatewayRoute"
+          ],
+          "properties": [
+            "HEADER_TENANT_ID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setTenantIdHeader",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "getTenantId",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "writeJSON",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getClientIP",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getGatewayRoute",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "WebFrameworkUtils",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setTenantIdHeader",
+          "callee": "httpHeaders.set",
+          "lineNumber": 43
+        },
+        {
+          "caller": "setTenantIdHeader",
+          "callee": "String.valueOf",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getTenantId",
+          "callee": "exchange.getRequest().getHeaders().getFirst",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getTenantId",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getTenantId",
+          "callee": "exchange.getRequest",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getTenantId",
+          "callee": "NumberUtil.isNumber",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getTenantId",
+          "callee": "Long.valueOf",
+          "lineNumber": 48
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "exchange.getResponse",
+          "lineNumber": 60
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "response.getHeaders().setContentType",
+          "lineNumber": 61
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "response.getHeaders",
+          "lineNumber": 61
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "response.writeWith",
+          "lineNumber": 63
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "Mono.fromSupplier",
+          "lineNumber": 63
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "response.bufferFactory",
+          "lineNumber": 64
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "bufferFactory.wrap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "JsonUtils.toJsonByte",
+          "lineNumber": 66
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "exchange.getRequest",
+          "lineNumber": 68
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "log.error",
+          "lineNumber": 69
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "request.getURI",
+          "lineNumber": 69
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "request.getMethod",
+          "lineNumber": 69
+        },
+        {
+          "caller": "writeJSON",
+          "callee": "bufferFactory.wrap",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "ArrayUtil.isNotEmpty",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "ArrayUtil.addAll",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest().getHeaders().getFirst",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest().getHeaders",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "NetUtil.isUnknown",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "NetUtil.getMultistageReverseProxyIp",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest().getRemoteAddress",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest().getRemoteAddress().getHostString",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest().getRemoteAddress",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "exchange.getRequest",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getClientIP",
+          "callee": "NetUtil.getMultistageReverseProxyIp",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getGatewayRoute",
+          "callee": "exchange.getAttribute",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 26,
+          "endLine": 57,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 18,
+          "endLine": 59,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": [
+            "mcpServerSseProperties",
+            "mcpServerStreamableHttpProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 38
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 38
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 38
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 38
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 41
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 41
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 45
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 45
+        },
+        {
+          "caller": "customize",
+          "callee": "mcpServerSseProperties.ifPresent",
+          "lineNumber": 48
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(properties.getSseEndpoint()).permitAll",
+          "lineNumber": 49
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 49
+        },
+        {
+          "caller": "customize",
+          "callee": "properties.getSseEndpoint",
+          "lineNumber": 49
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(properties.getSseMessageEndpoint()).permitAll",
+          "lineNumber": 50
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 50
+        },
+        {
+          "caller": "customize",
+          "callee": "properties.getSseMessageEndpoint",
+          "lineNumber": 50
+        },
+        {
+          "caller": "customize",
+          "callee": "mcpServerStreamableHttpProperties.ifPresent",
+          "lineNumber": 52
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(properties.getMcpEndpoint()).permitAll",
+          "lineNumber": 53
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 53
+        },
+        {
+          "caller": "customize",
+          "callee": "properties.getMcpEndpoint",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-api/src/main/java/cn/iocoder/yudao/module/bpm/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 40,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 29
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 29
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 34
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/web/config/BpmWebConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "flowableWebFilter",
+          "startLine": 22,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmWebConfiguration",
+          "startLine": 16,
+          "endLine": 30,
+          "methods": [
+            "flowableWebFilter"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "flowableWebFilter",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "BpmWebConfiguration",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "flowableWebFilter",
+          "callee": "new FilterRegistrationBean<>",
+          "lineNumber": 24
+        },
+        {
+          "caller": "flowableWebFilter",
+          "callee": "registrationBean.setFilter",
+          "lineNumber": 25
+        },
+        {
+          "caller": "flowableWebFilter",
+          "callee": "new FlowableWebFilter",
+          "lineNumber": 25
+        },
+        {
+          "caller": "flowableWebFilter",
+          "callee": "registrationBean.setOrder",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/web/core/FlowableWebFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "doFilterInternal",
+          "startLine": 20,
+          "endLine": 35,
+          "params": [
+            "request",
+            "response",
+            "chain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FlowableWebFilter",
+          "startLine": 18,
+          "endLine": 36,
+          "methods": [
+            "doFilterInternal"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FlowableWebFilter",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doFilterInternal",
+          "callee": "SecurityFrameworkUtils.getLoginUserId",
+          "lineNumber": 25
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "FlowableUtils.setAuthenticatedUserId",
+          "lineNumber": 27
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "chain.doFilter",
+          "lineNumber": 30
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "FlowableUtils.clearAuthenticatedUserId",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/statistics/CrmStatisticsCustomerController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "getCustomerSummaryByDate",
+          "startLine": 29,
+          "endLine": 34,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerSummaryByUser",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getFollowupSummaryByDate",
+          "startLine": 43,
+          "endLine": 48,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getFollowUpSummaryByUser",
+          "startLine": 50,
+          "endLine": 55,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getFollowUpSummaryByType",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getContractSummary",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPoolSummaryByDate",
+          "startLine": 71,
+          "endLine": 76,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPoolSummaryByUser",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerDealCycleByDate",
+          "startLine": 85,
+          "endLine": 90,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerDealCycleByUser",
+          "startLine": 92,
+          "endLine": 97,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerDealCycleByArea",
+          "startLine": 99,
+          "endLine": 104,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerDealCycleByProduct",
+          "startLine": 106,
+          "endLine": 111,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmStatisticsCustomerController",
+          "startLine": 20,
+          "endLine": 113,
+          "methods": [
+            "getCustomerSummaryByDate",
+            "getCustomerSummaryByUser",
+            "getFollowupSummaryByDate",
+            "getFollowUpSummaryByUser",
+            "getFollowUpSummaryByType",
+            "getContractSummary",
+            "getPoolSummaryByDate",
+            "getPoolSummaryByUser",
+            "getCustomerDealCycleByDate",
+            "getCustomerDealCycleByUser",
+            "getCustomerDealCycleByArea",
+            "getCustomerDealCycleByProduct"
+          ],
+          "properties": [
+            "customerService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCustomerSummaryByDate",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerSummaryByUser",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getFollowupSummaryByDate",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "getFollowUpSummaryByUser",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getFollowUpSummaryByType",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getContractSummary",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getPoolSummaryByDate",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getPoolSummaryByUser",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerDealCycleByDate",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerDealCycleByUser",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerDealCycleByArea",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerDealCycleByProduct",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "CrmStatisticsCustomerController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCustomerSummaryByDate",
+          "callee": "success",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getCustomerSummaryByDate",
+          "callee": "customerService.getCustomerSummaryByDate",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getCustomerSummaryByUser",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getCustomerSummaryByUser",
+          "callee": "customerService.getCustomerSummaryByUser",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getFollowupSummaryByDate",
+          "callee": "success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getFollowupSummaryByDate",
+          "callee": "customerService.getFollowUpSummaryByDate",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getFollowUpSummaryByUser",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getFollowUpSummaryByUser",
+          "callee": "customerService.getFollowUpSummaryByUser",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getFollowUpSummaryByType",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getFollowUpSummaryByType",
+          "callee": "customerService.getFollowUpSummaryByType",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getContractSummary",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getContractSummary",
+          "callee": "customerService.getContractSummary",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getPoolSummaryByDate",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPoolSummaryByDate",
+          "callee": "customerService.getPoolSummaryByDate",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPoolSummaryByUser",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getPoolSummaryByUser",
+          "callee": "customerService.getPoolSummaryByUser",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getCustomerDealCycleByDate",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getCustomerDealCycleByDate",
+          "callee": "customerService.getCustomerDealCycleByDate",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getCustomerDealCycleByUser",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getCustomerDealCycleByUser",
+          "callee": "customerService.getCustomerDealCycleByUser",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getCustomerDealCycleByArea",
+          "callee": "success",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getCustomerDealCycleByArea",
+          "callee": "customerService.getCustomerDealCycleByArea",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getCustomerDealCycleByProduct",
+          "callee": "success",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getCustomerDealCycleByProduct",
+          "callee": "customerService.getCustomerDealCycleByProduct",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 13,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/statistics/CrmStatisticsPortraitController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "getCustomerAreaSummary",
+          "startLine": 29,
+          "endLine": 34,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerIndustrySummary",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerLevelSummary",
+          "startLine": 43,
+          "endLine": 48,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getCustomerSourceSummary",
+          "startLine": 50,
+          "endLine": 55,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmStatisticsPortraitController",
+          "startLine": 20,
+          "endLine": 57,
+          "methods": [
+            "getCustomerAreaSummary",
+            "getCustomerIndustrySummary",
+            "getCustomerLevelSummary",
+            "getCustomerSourceSummary"
+          ],
+          "properties": [
+            "statisticsPortraitService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCustomerAreaSummary",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerIndustrySummary",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerLevelSummary",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerSourceSummary",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "CrmStatisticsPortraitController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCustomerAreaSummary",
+          "callee": "success",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getCustomerAreaSummary",
+          "callee": "statisticsPortraitService.getCustomerSummaryByArea",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getCustomerIndustrySummary",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getCustomerIndustrySummary",
+          "callee": "statisticsPortraitService.getCustomerSummaryByIndustry",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getCustomerLevelSummary",
+          "callee": "success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getCustomerLevelSummary",
+          "callee": "statisticsPortraitService.getCustomerSummaryByLevel",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getCustomerSourceSummary",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getCustomerSourceSummary",
+          "callee": "statisticsPortraitService.getCustomerSummaryBySource",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/statistics/CrmStatisticsCustomerService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 96,
+      "classes": [
+        {
+          "name": "CrmStatisticsCustomerService",
+          "startLine": 12,
+          "endLine": 112,
+          "methods": [
+            "getCustomerSummaryByDate",
+            "getCustomerSummaryByUser",
+            "getFollowUpSummaryByDate",
+            "getFollowUpSummaryByUser",
+            "getFollowUpSummaryByType",
+            "getContractSummary",
+            "getPoolSummaryByDate",
+            "getPoolSummaryByUser",
+            "getCustomerDealCycleByDate",
+            "getCustomerDealCycleByUser",
+            "getCustomerDealCycleByArea",
+            "getCustomerDealCycleByProduct"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmStatisticsCustomerService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/statistics/CrmStatisticsPortraitService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "CrmStatisticsPortraitService",
+          "startLine": 12,
+          "endLine": 46,
+          "methods": [
+            "getCustomerSummaryByArea",
+            "getCustomerSummaryByIndustry",
+            "getCustomerSummaryByLevel",
+            "getCustomerSummaryBySource"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmStatisticsPortraitService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-api/src/main/java/cn/iocoder/yudao/module/erp/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/statistics/ErpPurchaseStatisticsController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "getPurchaseSummary",
+          "startLine": 36,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "getPurchaseTimeSummary",
+          "startLine": 52,
+          "endLine": 67,
+          "params": [
+            "count"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpPurchaseStatisticsController",
+          "startLine": 27,
+          "endLine": 69,
+          "methods": [
+            "getPurchaseSummary",
+            "getPurchaseTimeSummary"
+          ],
+          "properties": [
+            "purchaseStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPurchaseSummary",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getPurchaseTimeSummary",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "ErpPurchaseStatisticsController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "LocalDateTimeUtils.getToday",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "LocalDateTimeUtils.getYesterday",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "LocalDateTimeUtils.getMonth",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "LocalDateTimeUtils.getYear",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "new ErpPurchaseSummaryRespVO()\n                .setTodayPrice(purchaseStatisticsService.getPurchasePrice(today, null))\n                .setYesterdayPrice(purchaseStatisticsService.getPurchasePrice(yesterday, today))\n                .setMonthPrice(purchaseStatisticsService.getPurchasePrice(month, null)).setYearPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "new ErpPurchaseSummaryRespVO()\n                .setTodayPrice(purchaseStatisticsService.getPurchasePrice(today, null))\n                .setYesterdayPrice(purchaseStatisticsService.getPurchasePrice(yesterday, today)).setMonthPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "new ErpPurchaseSummaryRespVO()\n                .setTodayPrice(purchaseStatisticsService.getPurchasePrice(today, null)).setYesterdayPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "new ErpPurchaseSummaryRespVO().setTodayPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "new ErpPurchaseSummaryRespVO",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "purchaseStatisticsService.getPurchasePrice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "purchaseStatisticsService.getPurchasePrice",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "purchaseStatisticsService.getPurchasePrice",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "purchaseStatisticsService.getPurchasePrice",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getPurchaseSummary",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "new ArrayList<>",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "LocalDateTimeUtils.beginOfMonth",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "LocalDateTime.now().minusMonths",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "LocalDateTimeUtils.endOfMonth",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "summaryList.add",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "new ErpPurchaseTimeSummaryRespVO()\n                    .setTime(LocalDateTimeUtil.format(startTime, NORM_MONTH_PATTERN)).setPrice",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "new ErpPurchaseTimeSummaryRespVO().setTime",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "new ErpPurchaseTimeSummaryRespVO",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "LocalDateTimeUtil.format",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "purchaseStatisticsService.getPurchasePrice",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getPurchaseTimeSummary",
+          "callee": "success",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/statistics/ErpSaleStatisticsController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "getSaleSummary",
+          "startLine": 36,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "getSaleTimeSummary",
+          "startLine": 52,
+          "endLine": 67,
+          "params": [
+            "count"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpSaleStatisticsController",
+          "startLine": 27,
+          "endLine": 69,
+          "methods": [
+            "getSaleSummary",
+            "getSaleTimeSummary"
+          ],
+          "properties": [
+            "saleStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getSaleSummary",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getSaleTimeSummary",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "ErpSaleStatisticsController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSaleSummary",
+          "callee": "LocalDateTimeUtils.getToday",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "LocalDateTimeUtils.getYesterday",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "LocalDateTimeUtils.getMonth",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "LocalDateTimeUtils.getYear",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "new ErpSaleSummaryRespVO()\n                .setTodayPrice(saleStatisticsService.getSalePrice(today, null))\n                .setYesterdayPrice(saleStatisticsService.getSalePrice(yesterday, today))\n                .setMonthPrice(saleStatisticsService.getSalePrice(month, null)).setYearPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "new ErpSaleSummaryRespVO()\n                .setTodayPrice(saleStatisticsService.getSalePrice(today, null))\n                .setYesterdayPrice(saleStatisticsService.getSalePrice(yesterday, today)).setMonthPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "new ErpSaleSummaryRespVO()\n                .setTodayPrice(saleStatisticsService.getSalePrice(today, null)).setYesterdayPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "new ErpSaleSummaryRespVO().setTodayPrice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "new ErpSaleSummaryRespVO",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "saleStatisticsService.getSalePrice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "saleStatisticsService.getSalePrice",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "saleStatisticsService.getSalePrice",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "saleStatisticsService.getSalePrice",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getSaleSummary",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "new ArrayList<>",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "LocalDateTimeUtils.beginOfMonth",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "LocalDateTime.now().minusMonths",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "LocalDateTimeUtils.endOfMonth",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "summaryList.add",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "new ErpSaleTimeSummaryRespVO()\n                    .setTime(LocalDateTimeUtil.format(startTime, NORM_MONTH_PATTERN)).setPrice",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "new ErpSaleTimeSummaryRespVO().setTime",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "new ErpSaleTimeSummaryRespVO",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "LocalDateTimeUtil.format",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "saleStatisticsService.getSalePrice",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getSaleTimeSummary",
+          "callee": "success",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/statistics/vo/purchase/ErpPurchaseSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ErpPurchaseSummaryRespVO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "todayPrice",
+            "yesterdayPrice",
+            "monthPrice",
+            "yearPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpPurchaseSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/statistics/vo/purchase/ErpPurchaseTimeSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "ErpPurchaseTimeSummaryRespVO",
+          "startLine": 8,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "time",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpPurchaseTimeSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/statistics/vo/sale/ErpSaleSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ErpSaleSummaryRespVO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "todayPrice",
+            "yesterdayPrice",
+            "monthPrice",
+            "yearPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpSaleSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/statistics/vo/sale/ErpSaleTimeSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "ErpSaleTimeSummaryRespVO",
+          "startLine": 8,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "time",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpSaleTimeSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/statistics/ErpPurchaseStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "ErpPurchaseStatisticsService",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [
+            "getPurchasePrice"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpPurchaseStatisticsService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/statistics/ErpSaleStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "ErpSaleStatisticsService",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [
+            "getSalePrice"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpSaleStatisticsService",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

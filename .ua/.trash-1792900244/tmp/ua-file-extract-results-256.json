@@ -1,0 +1,732 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "yudao-framework/yudao-spring-boot-starter-monitor/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-framework/yudao-spring-boot-starter-mq/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/resources/META-INF/spring.factories",
+    "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-framework/yudao-spring-boot-starter-protection/pom.xml",
+    "yudao-framework/yudao-spring-boot-starter-protection/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 19,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-monitor/src/main/java/cn/iocoder/yudao/framework/tracer/config/TracerProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "TracerProperties",
+          "startLine": 11,
+          "endLine": 14,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TracerProperties",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-monitor/src/main/java/cn/iocoder/yudao/framework/tracer/config/YudaoMetricsAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "metricsCommonTags",
+          "startLine": 22,
+          "endLine": 26,
+          "params": [
+            "applicationName"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoMetricsAutoConfiguration",
+          "startLine": 17,
+          "endLine": 28,
+          "methods": [
+            "metricsCommonTags"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metricsCommonTags",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoMetricsAutoConfiguration",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "metricsCommonTags",
+          "callee": "registry.config().commonTags",
+          "lineNumber": 25
+        },
+        {
+          "caller": "metricsCommonTags",
+          "callee": "registry.config",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-monitor/src/main/java/cn/iocoder/yudao/framework/tracer/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/rabbitmq/config/YudaoRabbitMQAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "createMessageConverter",
+          "startLine": 23,
+          "endLine": 26,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoRabbitMQAutoConfiguration",
+          "startLine": 15,
+          "endLine": 28,
+          "methods": [
+            "createMessageConverter"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMessageConverter",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoRabbitMQAutoConfiguration",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMessageConverter",
+          "callee": "new Jackson2JsonMessageConverter",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/rabbitmq/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/rabbitmq/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/datasource/core/enums/DataSourceEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "DataSourceEnum",
+          "startLine": 9,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "MASTER",
+            "SLAVE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DataSourceEnum",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/datasource/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/translate/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/test/java/cn/iocoder/yudao/framework/mybatis/core/query/LambdaQueryWrapperXTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "initTableInfo",
+          "startLine": 23,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "testBetweenIfPresent_overlap",
+          "startLine": 28,
+          "endLine": 56,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "LambdaQueryWrapperXTest",
+          "startLine": 21,
+          "endLine": 67,
+          "methods": [
+            "initTableInfo",
+            "testBetweenIfPresent_overlap"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "initTableInfo",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "testBetweenIfPresent_overlap",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "LambdaQueryWrapperXTest",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initTableInfo",
+          "callee": "TableInfoHelper.initTableInfo",
+          "lineNumber": 25
+        },
+        {
+          "caller": "initTableInfo",
+          "callee": "new MapperBuilderAssistant",
+          "lineNumber": 25
+        },
+        {
+          "caller": "initTableInfo",
+          "callee": "new MybatisConfiguration",
+          "lineNumber": 25
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "assertEquals",
+          "lineNumber": 31
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>()\n                .betweenIfPresent(TestDO::getStartTime, TestDO::getEndTime, null).getSqlSegment",
+          "lineNumber": 31
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>().betweenIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>()\n                .betweenIfPresent(TestDO::getStartTime, TestDO::getEndTime,\n                        new LocalDateTime[]{beginTime, endTime}).getSqlSegment",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>().betweenIfPresent",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "assertTrue",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "sqlSegment.contains",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "assertTrue",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "sqlSegment.contains",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>()\n                .betweenIfPresent(TestDO::getStartTime, TestDO::getEndTime,\n                        new LocalDateTime[]{beginTime}).getSqlSegment",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>().betweenIfPresent",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "assertTrue",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "sqlSegment.contains",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>()\n                .betweenIfPresent(TestDO::getStartTime, TestDO::getEndTime,\n                        new LocalDateTime[]{null, endTime}).getSqlSegment",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>().betweenIfPresent",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "new LambdaQueryWrapperX<TestDO>",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "assertTrue",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testBetweenIfPresent_overlap",
+          "callee": "sqlSegment.contains",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/test/java/cn/iocoder/yudao/framework/mybatis/core/query/QueryWrapperXTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "testBetweenIfPresent_array",
+          "startLine": 15,
+          "endLine": 30,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "QueryWrapperXTest",
+          "startLine": 13,
+          "endLine": 32,
+          "methods": [
+            "testBetweenIfPresent_array"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "testBetweenIfPresent_array",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "QueryWrapperXTest",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "assertEquals",
+          "lineNumber": 18
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", (Object[]) null).getSqlSegment",
+          "lineNumber": 18
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent",
+          "lineNumber": 18
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 18
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "assertEquals",
+          "lineNumber": 19
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", new Object[0]).getSqlSegment",
+          "lineNumber": 19
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "assertTrue",
+          "lineNumber": 22
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", new Object[]{1})\n                .getSqlSegment().contains",
+          "lineNumber": 22
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", new Object[]{1}).getSqlSegment",
+          "lineNumber": 22
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "assertTrue",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", new Object[]{null, 2})\n                .getSqlSegment().contains",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", new Object[]{null, 2}).getSqlSegment",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "assertTrue",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", new Object[]{1, 2})\n                .getSqlSegment().contains",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent(\"create_time\", new Object[]{1, 2}).getSqlSegment",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>().betweenIfPresent",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testBetweenIfPresent_array",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/lock4j/core/Lock4jRedisKeyConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "Lock4jRedisKeyConstants",
+          "startLine": 8,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "LOCK4J"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Lock4jRedisKeyConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/lock4j/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/signature/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

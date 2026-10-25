@@ -1,0 +1,3955 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/exception/util/ServiceExceptionUtil.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "exception",
+          "startLine": 21,
+          "endLine": 23,
+          "params": [
+            "errorCode"
+          ]
+        },
+        {
+          "name": "exception",
+          "startLine": 25,
+          "endLine": 27,
+          "params": [
+            "errorCode"
+          ]
+        },
+        {
+          "name": "exception0",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "code",
+            "messagePattern"
+          ]
+        },
+        {
+          "name": "invalidParamException",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "messagePattern"
+          ]
+        },
+        {
+          "name": "doFormat",
+          "startLine": 48,
+          "endLine": 75,
+          "params": [
+            "code",
+            "messagePattern"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServiceExceptionUtil",
+          "startLine": 16,
+          "endLine": 77,
+          "methods": [
+            "exception",
+            "exception",
+            "exception0",
+            "invalidParamException",
+            "doFormat"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "exception",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "exception",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "exception0",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "invalidParamException",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "doFormat",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "ServiceExceptionUtil",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "exception",
+          "callee": "exception0",
+          "lineNumber": 22
+        },
+        {
+          "caller": "exception",
+          "callee": "errorCode.getCode",
+          "lineNumber": 22
+        },
+        {
+          "caller": "exception",
+          "callee": "errorCode.getMsg",
+          "lineNumber": 22
+        },
+        {
+          "caller": "exception",
+          "callee": "exception0",
+          "lineNumber": 26
+        },
+        {
+          "caller": "exception",
+          "callee": "errorCode.getCode",
+          "lineNumber": 26
+        },
+        {
+          "caller": "exception",
+          "callee": "errorCode.getMsg",
+          "lineNumber": 26
+        },
+        {
+          "caller": "exception0",
+          "callee": "doFormat",
+          "lineNumber": 30
+        },
+        {
+          "caller": "exception0",
+          "callee": "new ServiceException",
+          "lineNumber": 31
+        },
+        {
+          "caller": "invalidParamException",
+          "callee": "exception0",
+          "lineNumber": 35
+        },
+        {
+          "caller": "invalidParamException",
+          "callee": "GlobalErrorCodeConstants.BAD_REQUEST.getCode",
+          "lineNumber": 35
+        },
+        {
+          "caller": "doFormat",
+          "callee": "new StringBuilder",
+          "lineNumber": 50
+        },
+        {
+          "caller": "doFormat",
+          "callee": "messagePattern.length",
+          "lineNumber": 50
+        },
+        {
+          "caller": "doFormat",
+          "callee": "messagePattern.indexOf",
+          "lineNumber": 55
+        },
+        {
+          "caller": "doFormat",
+          "callee": "log.error",
+          "lineNumber": 57
+        },
+        {
+          "caller": "doFormat",
+          "callee": "sbuf.append",
+          "lineNumber": 61
+        },
+        {
+          "caller": "doFormat",
+          "callee": "messagePattern.substring",
+          "lineNumber": 61
+        },
+        {
+          "caller": "doFormat",
+          "callee": "sbuf.toString",
+          "lineNumber": 62
+        },
+        {
+          "caller": "doFormat",
+          "callee": "sbuf.append",
+          "lineNumber": 65
+        },
+        {
+          "caller": "doFormat",
+          "callee": "sbuf.append",
+          "lineNumber": 66
+        },
+        {
+          "caller": "doFormat",
+          "callee": "messagePattern.indexOf",
+          "lineNumber": 70
+        },
+        {
+          "caller": "doFormat",
+          "callee": "log.error",
+          "lineNumber": 71
+        },
+        {
+          "caller": "doFormat",
+          "callee": "sbuf.append",
+          "lineNumber": 73
+        },
+        {
+          "caller": "doFormat",
+          "callee": "messagePattern.substring",
+          "lineNumber": 73
+        },
+        {
+          "caller": "doFormat",
+          "callee": "sbuf.toString",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/validation/ValidationUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "isMobile",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "mobile"
+          ]
+        },
+        {
+          "name": "isURL",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "isXmlNCName",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "validate",
+          "startLine": 42,
+          "endLine": 46,
+          "params": [
+            "object"
+          ]
+        },
+        {
+          "name": "validate",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "validator",
+            "object"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ValidationUtils",
+          "startLine": 19,
+          "endLine": 55,
+          "methods": [
+            "isMobile",
+            "isURL",
+            "isXmlNCName",
+            "validate",
+            "validate"
+          ],
+          "properties": [
+            "PATTERN_MOBILE",
+            "PATTERN_URL",
+            "PATTERN_XML_NCNAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isMobile",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "isURL",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "isXmlNCName",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "validate",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "validate",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "ValidationUtils",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isMobile",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 28
+        },
+        {
+          "caller": "isMobile",
+          "callee": "PATTERN_MOBILE.matcher(mobile).matches",
+          "lineNumber": 29
+        },
+        {
+          "caller": "isMobile",
+          "callee": "PATTERN_MOBILE.matcher",
+          "lineNumber": 29
+        },
+        {
+          "caller": "isURL",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isURL",
+          "callee": "PATTERN_URL.matcher(url).matches",
+          "lineNumber": 34
+        },
+        {
+          "caller": "isURL",
+          "callee": "PATTERN_URL.matcher",
+          "lineNumber": 34
+        },
+        {
+          "caller": "isXmlNCName",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isXmlNCName",
+          "callee": "PATTERN_XML_NCNAME.matcher(str).matches",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isXmlNCName",
+          "callee": "PATTERN_XML_NCNAME.matcher",
+          "lineNumber": 39
+        },
+        {
+          "caller": "validate",
+          "callee": "Validation.buildDefaultValidatorFactory().getValidator",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validate",
+          "callee": "Validation.buildDefaultValidatorFactory",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validate",
+          "callee": "Assert.notNull",
+          "lineNumber": 44
+        },
+        {
+          "caller": "validate",
+          "callee": "validate",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validate",
+          "callee": "validator.validate",
+          "lineNumber": 49
+        },
+        {
+          "caller": "validate",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validate",
+          "callee": "new ConstraintViolationException",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/validation/MobileValidator.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "initialize",
+          "startLine": 11,
+          "endLine": 13,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "isValid",
+          "startLine": 15,
+          "endLine": 23,
+          "params": [
+            "value",
+            "context"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MobileValidator",
+          "startLine": 9,
+          "endLine": 25,
+          "methods": [
+            "initialize",
+            "isValid"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "initialize",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "isValid",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "MobileValidator",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isValid",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 18
+        },
+        {
+          "caller": "isValid",
+          "callee": "ValidationUtils.isMobile",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/job/TenantJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/util/TenantUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 26,
+          "endLine": 38,
+          "params": [
+            "tenantId",
+            "runnable"
+          ]
+        },
+        {
+          "name": "execute",
+          "startLine": 50,
+          "endLine": 64,
+          "params": [
+            "tenantId",
+            "callable"
+          ]
+        },
+        {
+          "name": "executeIgnore",
+          "startLine": 71,
+          "endLine": 80,
+          "params": [
+            "runnable"
+          ]
+        },
+        {
+          "name": "executeIgnore",
+          "startLine": 88,
+          "endLine": 99,
+          "params": [
+            "callable"
+          ]
+        },
+        {
+          "name": "addTenantHeader",
+          "startLine": 107,
+          "endLine": 111,
+          "params": [
+            "headers",
+            "tenantId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TenantUtils",
+          "startLine": 15,
+          "endLine": 113,
+          "methods": [
+            "execute",
+            "execute",
+            "executeIgnore",
+            "executeIgnore",
+            "addTenantHeader"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "execute",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "executeIgnore",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "executeIgnore",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "addTenantHeader",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "TenantUtils",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.getTenantId",
+          "lineNumber": 27
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.isIgnore",
+          "lineNumber": 28
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setTenantId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 31
+        },
+        {
+          "caller": "execute",
+          "callee": "runnable.run",
+          "lineNumber": 33
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setTenantId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 36
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.getTenantId",
+          "lineNumber": 51
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.isIgnore",
+          "lineNumber": 52
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setTenantId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 55
+        },
+        {
+          "caller": "execute",
+          "callee": "callable.call",
+          "lineNumber": 57
+        },
+        {
+          "caller": "execute",
+          "callee": "new RuntimeException",
+          "lineNumber": 59
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setTenantId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "execute",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 62
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "TenantContextHolder.isIgnore",
+          "lineNumber": 72
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 74
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "runnable.run",
+          "lineNumber": 76
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 78
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "TenantContextHolder.isIgnore",
+          "lineNumber": 89
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 91
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "callable.call",
+          "lineNumber": 93
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "new RuntimeException",
+          "lineNumber": 95
+        },
+        {
+          "caller": "executeIgnore",
+          "callee": "TenantContextHolder.setIgnore",
+          "lineNumber": 97
+        },
+        {
+          "caller": "addTenantHeader",
+          "callee": "headers.put",
+          "lineNumber": 109
+        },
+        {
+          "caller": "addTenantHeader",
+          "callee": "tenantId.toString",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/datasource/config/YudaoDataSourceAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "druidAdRemoveFilterFilter",
+          "startLine": 25,
+          "endLine": 38,
+          "params": [
+            "properties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoDataSourceAutoConfiguration",
+          "startLine": 17,
+          "endLine": 40,
+          "methods": [
+            "druidAdRemoveFilterFilter"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "druidAdRemoveFilterFilter",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoDataSourceAutoConfiguration",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "properties.getStatViewServlet",
+          "lineNumber": 29
+        },
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "config.getUrlPattern",
+          "lineNumber": 31
+        },
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "config.getUrlPattern",
+          "lineNumber": 31
+        },
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "pattern.replaceAll",
+          "lineNumber": 32
+        },
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "new FilterRegistrationBean<>",
+          "lineNumber": 34
+        },
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "registrationBean.setFilter",
+          "lineNumber": 35
+        },
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "new DruidAdRemoveFilter",
+          "lineNumber": 35
+        },
+        {
+          "caller": "druidAdRemoveFilterFilter",
+          "callee": "registrationBean.addUrlPatterns",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/datasource/core/filter/DruidAdRemoveFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "doFilterInternal",
+          "startLine": 24,
+          "endLine": 36,
+          "params": [
+            "request",
+            "response",
+            "chain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DruidAdRemoveFilter",
+          "startLine": 17,
+          "endLine": 38,
+          "methods": [
+            "doFilterInternal"
+          ],
+          "properties": [
+            "COMMON_JS_ILE_PATH"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DruidAdRemoveFilter",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doFilterInternal",
+          "callee": "chain.doFilter",
+          "lineNumber": 27
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "response.resetBuffer",
+          "lineNumber": 29
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "Utils.readFromResource",
+          "lineNumber": 31
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "text.replaceAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "text.replaceAll",
+          "lineNumber": 34
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "response.getWriter().write",
+          "lineNumber": 35
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "response.getWriter",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/config/YudaoMybatisAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "mybatisPlusInterceptor",
+          "startLine": 47,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "defaultMetaObjectHandler",
+          "startLine": 56,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "keyGenerator",
+          "startLine": 61,
+          "endLine": 82,
+          "params": [
+            "environment"
+          ]
+        },
+        {
+          "name": "jacksonTypeHandler",
+          "startLine": 84,
+          "endLine": 93,
+          "params": [
+            "objectMappers"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoMybatisAutoConfiguration",
+          "startLine": 34,
+          "endLine": 95,
+          "methods": [
+            "mybatisPlusInterceptor",
+            "defaultMetaObjectHandler",
+            "keyGenerator",
+            "jacksonTypeHandler"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "mybatisPlusInterceptor",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "defaultMetaObjectHandler",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "keyGenerator",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "jacksonTypeHandler",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoMybatisAutoConfiguration",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mybatisPlusInterceptor",
+          "callee": "new MybatisPlusInterceptor",
+          "lineNumber": 49
+        },
+        {
+          "caller": "mybatisPlusInterceptor",
+          "callee": "mybatisPlusInterceptor.addInnerInterceptor",
+          "lineNumber": 50
+        },
+        {
+          "caller": "mybatisPlusInterceptor",
+          "callee": "new PaginationInnerInterceptor",
+          "lineNumber": 50
+        },
+        {
+          "caller": "defaultMetaObjectHandler",
+          "callee": "new DefaultDBFieldHandler",
+          "lineNumber": 58
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "IdTypeEnvironmentPostProcessor.getDbType",
+          "lineNumber": 64
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new PostgreKeyGenerator",
+          "lineNumber": 68
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new OracleKeyGenerator",
+          "lineNumber": 71
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new H2KeyGenerator",
+          "lineNumber": 73
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new KingbaseKeyGenerator",
+          "lineNumber": 75
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new DmKeyGenerator",
+          "lineNumber": 77
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 81
+        },
+        {
+          "caller": "keyGenerator",
+          "callee": "StrUtil.format",
+          "lineNumber": 81
+        },
+        {
+          "caller": "jacksonTypeHandler",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 87
+        },
+        {
+          "caller": "jacksonTypeHandler",
+          "callee": "JsonUtils.getObjectMapper",
+          "lineNumber": 89
+        },
+        {
+          "caller": "jacksonTypeHandler",
+          "callee": "JacksonTypeHandler.setObjectMapper",
+          "lineNumber": 91
+        },
+        {
+          "caller": "jacksonTypeHandler",
+          "callee": "new JacksonTypeHandler",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/handler/DefaultDBFieldHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "insertFill",
+          "startLine": 20,
+          "endLine": 46,
+          "params": [
+            "metaObject"
+          ]
+        },
+        {
+          "name": "updateFill",
+          "startLine": 48,
+          "endLine": 62,
+          "params": [
+            "metaObject"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultDBFieldHandler",
+          "startLine": 18,
+          "endLine": 63,
+          "methods": [
+            "insertFill",
+            "updateFill"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "insertFill",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "updateFill",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultDBFieldHandler",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "insertFill",
+          "callee": "Objects.nonNull",
+          "lineNumber": 23
+        },
+        {
+          "caller": "insertFill",
+          "callee": "metaObject.getOriginalObject",
+          "lineNumber": 23
+        },
+        {
+          "caller": "insertFill",
+          "callee": "metaObject.getOriginalObject",
+          "lineNumber": 24
+        },
+        {
+          "caller": "insertFill",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 26
+        },
+        {
+          "caller": "insertFill",
+          "callee": "Objects.isNull",
+          "lineNumber": 28
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.getCreateTime",
+          "lineNumber": 28
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.setCreateTime",
+          "lineNumber": 29
+        },
+        {
+          "caller": "insertFill",
+          "callee": "Objects.isNull",
+          "lineNumber": 32
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.getUpdateTime",
+          "lineNumber": 32
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.setUpdateTime",
+          "lineNumber": 33
+        },
+        {
+          "caller": "insertFill",
+          "callee": "SecurityFrameworkUtils.getLoginUserId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "insertFill",
+          "callee": "Objects.nonNull",
+          "lineNumber": 38
+        },
+        {
+          "caller": "insertFill",
+          "callee": "Objects.isNull",
+          "lineNumber": 38
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.getCreator",
+          "lineNumber": 38
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.setCreator",
+          "lineNumber": 39
+        },
+        {
+          "caller": "insertFill",
+          "callee": "userId.toString",
+          "lineNumber": 39
+        },
+        {
+          "caller": "insertFill",
+          "callee": "Objects.nonNull",
+          "lineNumber": 42
+        },
+        {
+          "caller": "insertFill",
+          "callee": "Objects.isNull",
+          "lineNumber": 42
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.getUpdater",
+          "lineNumber": 42
+        },
+        {
+          "caller": "insertFill",
+          "callee": "baseDO.setUpdater",
+          "lineNumber": 43
+        },
+        {
+          "caller": "insertFill",
+          "callee": "userId.toString",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateFill",
+          "callee": "getFieldValByName",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateFill",
+          "callee": "Objects.isNull",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateFill",
+          "callee": "setFieldValByName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateFill",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateFill",
+          "callee": "getFieldValByName",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateFill",
+          "callee": "SecurityFrameworkUtils.getLoginUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateFill",
+          "callee": "Objects.nonNull",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateFill",
+          "callee": "Objects.isNull",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateFill",
+          "callee": "setFieldValByName",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateFill",
+          "callee": "userId.toString",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-test/src/main/java/cn/iocoder/yudao/framework/test/config/SqlInitializationTestConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "dataSourceScriptDatabaseInitializer",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "dataSource",
+            "initializationProperties"
+          ]
+        },
+        {
+          "name": "createFrom",
+          "startLine": 41,
+          "endLine": 50,
+          "params": [
+            "properties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SqlInitializationTestConfiguration",
+          "startLine": 26,
+          "endLine": 52,
+          "methods": [
+            "dataSourceScriptDatabaseInitializer",
+            "createFrom"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "dataSourceScriptDatabaseInitializer",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "SqlInitializationTestConfiguration",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "dataSourceScriptDatabaseInitializer",
+          "callee": "createFrom",
+          "lineNumber": 37
+        },
+        {
+          "caller": "dataSourceScriptDatabaseInitializer",
+          "callee": "new DataSourceScriptDatabaseInitializer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createFrom",
+          "callee": "new DatabaseInitializationSettings",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createFrom",
+          "callee": "settings.setSchemaLocations",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createFrom",
+          "callee": "properties.getSchemaLocations",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createFrom",
+          "callee": "settings.setDataLocations",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createFrom",
+          "callee": "properties.getDataLocations",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createFrom",
+          "callee": "settings.setContinueOnError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createFrom",
+          "callee": "properties.isContinueOnError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createFrom",
+          "callee": "settings.setSeparator",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createFrom",
+          "callee": "properties.getSeparator",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createFrom",
+          "callee": "settings.setEncoding",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createFrom",
+          "callee": "properties.getEncoding",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createFrom",
+          "callee": "settings.setMode",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createFrom",
+          "callee": "properties.getMode",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-test/src/main/java/cn/iocoder/yudao/framework/test/core/ut/BaseDbAndRedisUnitTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "BaseDbAndRedisUnitTest",
+          "startLine": 27,
+          "endLine": 55,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BaseDbAndRedisUnitTest",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-test/src/main/java/cn/iocoder/yudao/framework/test/core/util/RandomUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 126,
+      "functions": [
+        {
+          "name": "randomString",
+          "startLine": 73,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "randomLongId",
+          "startLine": 77,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "randomInteger",
+          "startLine": 81,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "randomDate",
+          "startLine": 85,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "randomLocalDateTime",
+          "startLine": 89,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "randomShort",
+          "startLine": 94,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "randomSet",
+          "startLine": 98,
+          "endLine": 101,
+          "params": [
+            "clazz"
+          ]
+        },
+        {
+          "name": "randomCommonStatus",
+          "startLine": 103,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "randomEmail",
+          "startLine": 107,
+          "endLine": 109,
+          "params": []
+        },
+        {
+          "name": "randomMobile",
+          "startLine": 111,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "randomURL",
+          "startLine": 115,
+          "endLine": 117,
+          "params": []
+        },
+        {
+          "name": "randomPojo",
+          "startLine": 119,
+          "endLine": 127,
+          "params": [
+            "clazz"
+          ]
+        },
+        {
+          "name": "randomPojo",
+          "startLine": 129,
+          "endLine": 137,
+          "params": [
+            "clazz",
+            "type"
+          ]
+        },
+        {
+          "name": "randomPojoList",
+          "startLine": 139,
+          "endLine": 143,
+          "params": [
+            "clazz"
+          ]
+        },
+        {
+          "name": "randomPojoList",
+          "startLine": 145,
+          "endLine": 149,
+          "params": [
+            "clazz",
+            "size"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RandomUtils",
+          "startLine": 27,
+          "endLine": 151,
+          "methods": [
+            "randomString",
+            "randomLongId",
+            "randomInteger",
+            "randomDate",
+            "randomLocalDateTime",
+            "randomShort",
+            "randomSet",
+            "randomCommonStatus",
+            "randomEmail",
+            "randomMobile",
+            "randomURL",
+            "randomPojo",
+            "randomPojo",
+            "randomPojoList",
+            "randomPojoList"
+          ],
+          "properties": [
+            "RANDOM_STRING_LENGTH",
+            "TINYINT_MAX",
+            "RANDOM_DATE_MAX",
+            "RANDOM_COLLECTION_LENGTH",
+            "PODAM_FACTORY"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "randomString",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "randomLongId",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "randomInteger",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "randomDate",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "randomLocalDateTime",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "randomShort",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "randomSet",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "randomCommonStatus",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "randomEmail",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "randomMobile",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "randomURL",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "randomPojo",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "randomPojo",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "randomPojoList",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "randomPojoList",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "RandomUtils",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "randomString",
+          "callee": "RandomUtil.randomString",
+          "lineNumber": 74
+        },
+        {
+          "caller": "randomLongId",
+          "callee": "RandomUtil.randomLong",
+          "lineNumber": 78
+        },
+        {
+          "caller": "randomInteger",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 82
+        },
+        {
+          "caller": "randomDate",
+          "callee": "RandomUtil.randomDay",
+          "lineNumber": 86
+        },
+        {
+          "caller": "randomLocalDateTime",
+          "callee": "LocalDateTimeUtil.of(randomDate()).withNano",
+          "lineNumber": 91
+        },
+        {
+          "caller": "randomLocalDateTime",
+          "callee": "LocalDateTimeUtil.of",
+          "lineNumber": 91
+        },
+        {
+          "caller": "randomLocalDateTime",
+          "callee": "randomDate",
+          "lineNumber": 91
+        },
+        {
+          "caller": "randomShort",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 95
+        },
+        {
+          "caller": "randomSet",
+          "callee": "Stream.iterate(0, i -> i).limit(RandomUtil.randomInt(1, RANDOM_COLLECTION_LENGTH))\n                .map(i -> randomPojo(clazz)).collect",
+          "lineNumber": 99
+        },
+        {
+          "caller": "randomSet",
+          "callee": "Stream.iterate(0, i -> i).limit(RandomUtil.randomInt(1, RANDOM_COLLECTION_LENGTH)).map",
+          "lineNumber": 99
+        },
+        {
+          "caller": "randomSet",
+          "callee": "Stream.iterate(0, i -> i).limit",
+          "lineNumber": 99
+        },
+        {
+          "caller": "randomSet",
+          "callee": "Stream.iterate",
+          "lineNumber": 99
+        },
+        {
+          "caller": "randomSet",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 99
+        },
+        {
+          "caller": "randomSet",
+          "callee": "randomPojo",
+          "lineNumber": 100
+        },
+        {
+          "caller": "randomSet",
+          "callee": "Collectors.toSet",
+          "lineNumber": 100
+        },
+        {
+          "caller": "randomCommonStatus",
+          "callee": "RandomUtil.randomEle(CommonStatusEnum.values()).getStatus",
+          "lineNumber": 104
+        },
+        {
+          "caller": "randomCommonStatus",
+          "callee": "RandomUtil.randomEle",
+          "lineNumber": 104
+        },
+        {
+          "caller": "randomCommonStatus",
+          "callee": "CommonStatusEnum.values",
+          "lineNumber": 104
+        },
+        {
+          "caller": "randomEmail",
+          "callee": "randomString",
+          "lineNumber": 108
+        },
+        {
+          "caller": "randomMobile",
+          "callee": "RandomUtil.randomNumbers",
+          "lineNumber": 112
+        },
+        {
+          "caller": "randomURL",
+          "callee": "randomString",
+          "lineNumber": 116
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "PODAM_FACTORY.manufacturePojo",
+          "lineNumber": 121
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "ArrayUtil.isNotEmpty",
+          "lineNumber": 123
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "Arrays.stream(consumers).forEach",
+          "lineNumber": 124
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "Arrays.stream",
+          "lineNumber": 124
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "consumer.accept",
+          "lineNumber": 124
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "PODAM_FACTORY.manufacturePojo",
+          "lineNumber": 131
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "ArrayUtil.isNotEmpty",
+          "lineNumber": 133
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "Arrays.stream(consumers).forEach",
+          "lineNumber": 134
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "Arrays.stream",
+          "lineNumber": 134
+        },
+        {
+          "caller": "randomPojo",
+          "callee": "consumer.accept",
+          "lineNumber": 134
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 141
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "randomPojoList",
+          "lineNumber": 142
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "Stream.iterate(0, i -> i).limit(size).map(o -> randomPojo(clazz, consumers)).collect",
+          "lineNumber": 147
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "Stream.iterate(0, i -> i).limit(size).map",
+          "lineNumber": 147
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "Stream.iterate(0, i -> i).limit",
+          "lineNumber": 147
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "Stream.iterate",
+          "lineNumber": 147
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "randomPojo",
+          "lineNumber": 147
+        },
+        {
+          "caller": "randomPojoList",
+          "callee": "Collectors.toList",
+          "lineNumber": 148
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 16,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/job/customer/CrmCustomerAutoPutPoolJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 20,
+          "endLine": 25,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmCustomerAutoPutPoolJob",
+          "startLine": 14,
+          "endLine": 27,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "customerService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "CrmCustomerAutoPutPoolJob",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "customerService.autoPutCustomerPool",
+          "lineNumber": 23
+        },
+        {
+          "caller": "execute",
+          "callee": "String.format",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/job/salary/HrmSalaryChangeJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 26,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmSalaryChangeJob",
+          "startLine": 20,
+          "endLine": 40,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "salaryEmployeeInfoService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "HrmSalaryChangeJob",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "XxlJobHelper.getJobParam",
+          "lineNumber": 29
+        },
+        {
+          "caller": "execute",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 30
+        },
+        {
+          "caller": "execute",
+          "callee": "LocalDate.now",
+          "lineNumber": 30
+        },
+        {
+          "caller": "execute",
+          "callee": "LocalDate.parse",
+          "lineNumber": 30
+        },
+        {
+          "caller": "execute",
+          "callee": "salaryEmployeeInfoService.applyDueSalaryChanges",
+          "lineNumber": 33
+        },
+        {
+          "caller": "execute",
+          "callee": "String.format",
+          "lineNumber": 36
+        },
+        {
+          "caller": "execute",
+          "callee": "employeeIds.size",
+          "lineNumber": 37
+        },
+        {
+          "caller": "execute",
+          "callee": "new HashSet<>(employeeIds).size",
+          "lineNumber": 37
+        },
+        {
+          "caller": "execute",
+          "callee": "new HashSet<>",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/job/rtc/ImRtcCallCleanupJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "param"
+          ]
+        },
+        {
+          "name": "resolveThresholdMinutes",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcCallCleanupJob",
+          "startLine": 19,
+          "endLine": 58,
+          "methods": [
+            "execute",
+            "resolveThresholdMinutes"
+          ],
+          "properties": [
+            "rtcCallService",
+            "imProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcCallCleanupJob",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "resolveThresholdMinutes",
+          "lineNumber": 37
+        },
+        {
+          "caller": "execute",
+          "callee": "rtcCallService.cleanupZombieCalls",
+          "lineNumber": 38
+        },
+        {
+          "caller": "execute",
+          "callee": "log.info",
+          "lineNumber": 39
+        },
+        {
+          "caller": "execute",
+          "callee": "XxlJobHelper.handleSuccess",
+          "lineNumber": 40
+        },
+        {
+          "caller": "execute",
+          "callee": "String.format",
+          "lineNumber": 40
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "imProperties.getRtc().getCleanupZombieThresholdMinutes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "imProperties.getRtc",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "NumberUtil.isInteger",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "Integer.parseInt",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/job/rtc/ImRtcParticipantTimeoutJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "param"
+          ]
+        },
+        {
+          "name": "resolveThresholdMinutes",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcParticipantTimeoutJob",
+          "startLine": 19,
+          "endLine": 58,
+          "methods": [
+            "execute",
+            "resolveThresholdMinutes"
+          ],
+          "properties": [
+            "rtcCallService",
+            "imProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcParticipantTimeoutJob",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "resolveThresholdMinutes",
+          "lineNumber": 37
+        },
+        {
+          "caller": "execute",
+          "callee": "rtcCallService.timeoutInvitingParticipants",
+          "lineNumber": 38
+        },
+        {
+          "caller": "execute",
+          "callee": "log.info",
+          "lineNumber": 39
+        },
+        {
+          "caller": "execute",
+          "callee": "XxlJobHelper.handleSuccess",
+          "lineNumber": 40
+        },
+        {
+          "caller": "execute",
+          "callee": "String.format",
+          "lineNumber": 40
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "imProperties.getRtc().getInviteTimeoutMinutes",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "imProperties.getRtc",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "NumberUtil.isInteger",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveThresholdMinutes",
+          "callee": "Integer.parseInt",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/job/combination/CombinationRecordExpireJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 24,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CombinationRecordExpireJob",
+          "startLine": 18,
+          "endLine": 31,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "combinationRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "CombinationRecordExpireJob",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "combinationRecordService.expireCombinationRecord",
+          "lineNumber": 27
+        },
+        {
+          "caller": "execute",
+          "callee": "StrUtil.format",
+          "lineNumber": 28
+        },
+        {
+          "caller": "execute",
+          "callee": "keyValue.getKey",
+          "lineNumber": 28
+        },
+        {
+          "caller": "execute",
+          "callee": "keyValue.getValue",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/job/coupon/CouponExpireJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 23,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CouponExpireJob",
+          "startLine": 17,
+          "endLine": 30,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "couponService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "CouponExpireJob",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "couponService.expireCoupon",
+          "lineNumber": 26
+        },
+        {
+          "caller": "execute",
+          "callee": "StrUtil.format",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/job/product/ProductStatisticsJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 30,
+          "endLine": 45,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductStatisticsJob",
+          "startLine": 18,
+          "endLine": 47,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "productStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "ProductStatisticsJob",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "ObjUtil.defaultIfBlank",
+          "lineNumber": 34
+        },
+        {
+          "caller": "execute",
+          "callee": "NumberUtil.isInteger",
+          "lineNumber": 36
+        },
+        {
+          "caller": "execute",
+          "callee": "new RuntimeException",
+          "lineNumber": 37
+        },
+        {
+          "caller": "execute",
+          "callee": "Convert.toInt",
+          "lineNumber": 39
+        },
+        {
+          "caller": "execute",
+          "callee": "new RuntimeException",
+          "lineNumber": 41
+        },
+        {
+          "caller": "execute",
+          "callee": "productStatisticsService.statisticsProduct",
+          "lineNumber": 43
+        },
+        {
+          "caller": "execute",
+          "callee": "StrUtil.format",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/job/trade/TradeStatisticsJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 31,
+          "endLine": 46,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TradeStatisticsJob",
+          "startLine": 19,
+          "endLine": 48,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "tradeStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "TradeStatisticsJob",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "ObjUtil.defaultIfBlank",
+          "lineNumber": 35
+        },
+        {
+          "caller": "execute",
+          "callee": "NumberUtil.isInteger",
+          "lineNumber": 37
+        },
+        {
+          "caller": "execute",
+          "callee": "new RuntimeException",
+          "lineNumber": 38
+        },
+        {
+          "caller": "execute",
+          "callee": "Convert.toInt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "execute",
+          "callee": "new RuntimeException",
+          "lineNumber": 42
+        },
+        {
+          "caller": "execute",
+          "callee": "tradeStatisticsService.statisticsTrade",
+          "lineNumber": 44
+        },
+        {
+          "caller": "execute",
+          "callee": "StrUtil.format",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-api/src/main/java/cn/iocoder/yudao/module/trade/enums/brokerage/BrokerageWithdrawStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrokerageWithdrawStatusEnum",
+          "startLine": 14,
+          "endLine": 41,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "BrokerageWithdrawStatusEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-api/src/main/java/cn/iocoder/yudao/module/trade/enums/brokerage/BrokerageWithdrawTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 38,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "isApi",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrokerageWithdrawTypeEnum",
+          "startLine": 15,
+          "endLine": 53,
+          "methods": [
+            "array",
+            "isApi"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isApi",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "BrokerageWithdrawTypeEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isApi",
+          "callee": "ObjectUtils.equalsAny",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isApi",
+          "callee": "WALLET.getType",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isApi",
+          "callee": "ALIPAY_API.getType",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isApi",
+          "callee": "WECHAT_API.getType",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/brokerage/BrokerageWithdrawController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "approveBrokerageWithdraw",
+          "startLine": 45,
+          "endLine": 52,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "rejectBrokerageWithdraw",
+          "startLine": 54,
+          "endLine": 61,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getBrokerageWithdraw",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBrokerageWithdrawPage",
+          "startLine": 72,
+          "endLine": 83,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "updateBrokerageWithdrawTransferred",
+          "startLine": 85,
+          "endLine": 93,
+          "params": [
+            "notifyReqDTO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrokerageWithdrawController",
+          "startLine": 32,
+          "endLine": 95,
+          "methods": [
+            "approveBrokerageWithdraw",
+            "rejectBrokerageWithdraw",
+            "getBrokerageWithdraw",
+            "getBrokerageWithdrawPage",
+            "updateBrokerageWithdrawTransferred"
+          ],
+          "properties": [
+            "brokerageWithdrawService",
+            "memberUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "approveBrokerageWithdraw",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "rejectBrokerageWithdraw",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getBrokerageWithdraw",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getBrokerageWithdrawPage",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "updateBrokerageWithdrawTransferred",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "BrokerageWithdrawController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "approveBrokerageWithdraw",
+          "callee": "brokerageWithdrawService.auditBrokerageWithdraw",
+          "lineNumber": 49
+        },
+        {
+          "caller": "approveBrokerageWithdraw",
+          "callee": "getClientIP",
+          "lineNumber": 50
+        },
+        {
+          "caller": "approveBrokerageWithdraw",
+          "callee": "success",
+          "lineNumber": 51
+        },
+        {
+          "caller": "rejectBrokerageWithdraw",
+          "callee": "brokerageWithdrawService.auditBrokerageWithdraw",
+          "lineNumber": 58
+        },
+        {
+          "caller": "rejectBrokerageWithdraw",
+          "callee": "reqVO.getId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "rejectBrokerageWithdraw",
+          "callee": "reqVO.getAuditReason",
+          "lineNumber": 59
+        },
+        {
+          "caller": "rejectBrokerageWithdraw",
+          "callee": "getClientIP",
+          "lineNumber": 59
+        },
+        {
+          "caller": "rejectBrokerageWithdraw",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "brokerageWithdrawService.getBrokerageWithdraw",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "BrokerageWithdrawConvert.INSTANCE.convert",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "brokerageWithdrawService.getBrokerageWithdrawPage",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "memberUserApi.getUserMap",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "convertSet",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "BrokerageWithdrawConvert.INSTANCE.convertPage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "log.info",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "brokerageWithdrawService.updateBrokerageWithdrawTransferred",
+          "lineNumber": 90
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "Long.parseLong",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "notifyReqDTO.getMerchantTransferId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "notifyReqDTO.getPayTransferId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "success",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/brokerage/vo/withdraw/BrokerageWithdrawPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawPageReqVO",
+          "startLine": 17,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "userId",
+            "type",
+            "userName",
+            "userAccount",
+            "bankName",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawPageReqVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/brokerage/vo/withdraw/BrokerageWithdrawRejectReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawRejectReqVO",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "id",
+            "auditReason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawRejectReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/brokerage/vo/withdraw/BrokerageWithdrawRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawRespVO",
+          "startLine": 8,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "userNickname",
+            "price",
+            "feePrice",
+            "totalPrice",
+            "type",
+            "userName",
+            "userAccount",
+            "bankName",
+            "bankAddress",
+            "qrCodeUrl",
+            "status",
+            "auditReason",
+            "auditTime",
+            "remark",
+            "payTransferId",
+            "transferErrorMsg",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/brokerage/AppBrokerageWithdrawController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "getBrokerageWithdrawPage",
+          "startLine": 46,
+          "endLine": 54,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getBrokerageWithdraw",
+          "startLine": 56,
+          "endLine": 76,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createBrokerageWithdraw",
+          "startLine": 78,
+          "endLine": 82,
+          "params": [
+            "createReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppBrokerageWithdrawController",
+          "startLine": 33,
+          "endLine": 84,
+          "methods": [
+            "getBrokerageWithdrawPage",
+            "getBrokerageWithdraw",
+            "createBrokerageWithdraw"
+          ],
+          "properties": [
+            "brokerageWithdrawService",
+            "payTransferApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getBrokerageWithdrawPage",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getBrokerageWithdraw",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "createBrokerageWithdraw",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "AppBrokerageWithdrawController",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "brokerageWithdrawService.getBrokerageWithdrawPage",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "BeanUtils.toBean(pageReqVO, BrokerageWithdrawPageReqVO.class).setUserId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "success",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "withdrawVO.setTypeName(DictFrameworkUtils.parseDictDataLabel(DictTypeConstants.BROKERAGE_WITHDRAW_TYPE, withdrawVO.getType())).setStatusName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "withdrawVO.setTypeName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "withdrawVO.getType",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "withdrawVO.getStatus",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "brokerageWithdrawService.getBrokerageWithdraw",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "withdraw.getUserId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "getLoginUserId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "Objects.equals",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "withdraw.getStatus",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.AUDIT_SUCCESS.getStatus",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "Objects.equals",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "withdraw.getType",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "BrokerageWithdrawTypeEnum.WECHAT_API.getType",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "withdraw.getPayTransferId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "payTransferApi.getTransfer(withdraw.getPayTransferId()).getCheckedData",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "payTransferApi.getTransfer",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "withdraw.getPayTransferId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "withdrawVO.setTransferChannelPackageInfo(transfer.getChannelPackageInfo()).setTransferChannelMchId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "withdrawVO.setTransferChannelPackageInfo",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "transfer.getChannelPackageInfo",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "transfer.getChannelMchId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "brokerageWithdrawService.createBrokerageWithdraw",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "getLoginUserId",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/brokerage/vo/withdraw/AppBrokerageWithdrawCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 72,
+          "endLine": 86,
+          "params": [
+            "validator"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppBrokerageWithdrawCreateReqVO",
+          "startLine": 17,
+          "endLine": 88,
+          "methods": [
+            "validate"
+          ],
+          "properties": [
+            "type",
+            "price",
+            "userAccount",
+            "userName",
+            "qrCodeUrl",
+            "bankName",
+            "bankAddress",
+            "transferChannelCode"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "AppBrokerageWithdrawCreateReqVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.WALLET.getType().equals",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.WALLET.getType",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validate",
+          "callee": "ValidationUtils.validate",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.BANK.getType().equals",
+          "lineNumber": 75
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.BANK.getType",
+          "lineNumber": 75
+        },
+        {
+          "caller": "validate",
+          "callee": "ValidationUtils.validate",
+          "lineNumber": 76
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.WECHAT_QR.getType().equals",
+          "lineNumber": 77
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.WECHAT_QR.getType",
+          "lineNumber": 77
+        },
+        {
+          "caller": "validate",
+          "callee": "ValidationUtils.validate",
+          "lineNumber": 78
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.WECHAT_API.getType().equals",
+          "lineNumber": 79
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.WECHAT_API.getType",
+          "lineNumber": 79
+        },
+        {
+          "caller": "validate",
+          "callee": "ValidationUtils.validate",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.ALIPAY_QR.getType().equals",
+          "lineNumber": 81
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.ALIPAY_QR.getType",
+          "lineNumber": 81
+        },
+        {
+          "caller": "validate",
+          "callee": "ValidationUtils.validate",
+          "lineNumber": 82
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.ALIPAY_API.getType().equals",
+          "lineNumber": 83
+        },
+        {
+          "caller": "validate",
+          "callee": "BrokerageWithdrawTypeEnum.ALIPAY_API.getType",
+          "lineNumber": 83
+        },
+        {
+          "caller": "validate",
+          "callee": "ValidationUtils.validate",
+          "lineNumber": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/brokerage/vo/withdraw/AppBrokerageWithdrawPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "AppBrokerageWithdrawPageReqVO",
+          "startLine": 12,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppBrokerageWithdrawPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/brokerage/vo/withdraw/AppBrokerageWithdrawRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "AppBrokerageWithdrawRespVO",
+          "startLine": 8,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "id",
+            "type",
+            "typeName",
+            "status",
+            "statusName",
+            "price",
+            "createTime",
+            "payTransferId",
+            "transferChannelPackageInfo",
+            "transferChannelMchId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppBrokerageWithdrawRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/brokerage/BrokerageWithdrawConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawConvert",
+          "startLine": 19,
+          "endLine": 38,
+          "methods": [
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawConvert",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "convertPage",
+          "callee": "vo.setUserNickname",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable(userMap.get(vo.getUserId())).map(MemberUserRespDTO::getNickname).orElse",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable(userMap.get(vo.getUserId())).map",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userMap.get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertPage",
+          "callee": "vo.getUserId",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageWithdrawDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 118,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawDO",
+          "startLine": 18,
+          "endLine": 130,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "price",
+            "feePrice",
+            "totalPrice",
+            "type",
+            "userName",
+            "userAccount",
+            "qrCodeUrl",
+            "bankName",
+            "bankAddress",
+            "status",
+            "auditReason",
+            "auditTime",
+            "remark",
+            "payTransferId",
+            "transferChannelCode",
+            "transferTime",
+            "transferErrorMsg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/mysql/brokerage/BrokerageWithdrawMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawMapper",
+          "startLine": 23,
+          "endLine": 64,
+          "methods": [
+            "selectPage",
+            "updateByIdAndStatus",
+            "selectCountAndSumPriceByUserIdAndStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawMapper",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>()\n                .eqIfPresent(BrokerageWithdrawDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(BrokerageWithdrawDO::getType, reqVO.getType())\n                .likeIfPresent(BrokerageWithdrawDO::getUserName, reqVO.getUserName())\n                .likeIfPresent(BrokerageWithdrawDO::getUserAccount, reqVO.getUserAccount())\n                .likeIfPresent(BrokerageWithdrawDO::getBankName, reqVO.getBankName())\n                .eqIfPresent(BrokerageWithdrawDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(BrokerageWithdrawDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>()\n                .eqIfPresent(BrokerageWithdrawDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(BrokerageWithdrawDO::getType, reqVO.getType())\n                .likeIfPresent(BrokerageWithdrawDO::getUserName, reqVO.getUserName())\n                .likeIfPresent(BrokerageWithdrawDO::getUserAccount, reqVO.getUserAccount())\n                .likeIfPresent(BrokerageWithdrawDO::getBankName, reqVO.getBankName())\n                .eqIfPresent(BrokerageWithdrawDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>()\n                .eqIfPresent(BrokerageWithdrawDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(BrokerageWithdrawDO::getType, reqVO.getType())\n                .likeIfPresent(BrokerageWithdrawDO::getUserName, reqVO.getUserName())\n                .likeIfPresent(BrokerageWithdrawDO::getUserAccount, reqVO.getUserAccount())\n                .likeIfPresent(BrokerageWithdrawDO::getBankName, reqVO.getBankName()).eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>()\n                .eqIfPresent(BrokerageWithdrawDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(BrokerageWithdrawDO::getType, reqVO.getType())\n                .likeIfPresent(BrokerageWithdrawDO::getUserName, reqVO.getUserName())\n                .likeIfPresent(BrokerageWithdrawDO::getUserAccount, reqVO.getUserAccount()).likeIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>()\n                .eqIfPresent(BrokerageWithdrawDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(BrokerageWithdrawDO::getType, reqVO.getType())\n                .likeIfPresent(BrokerageWithdrawDO::getUserName, reqVO.getUserName()).likeIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>()\n                .eqIfPresent(BrokerageWithdrawDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(BrokerageWithdrawDO::getType, reqVO.getType()).likeIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>()\n                .eqIfPresent(BrokerageWithdrawDO::getUserId, reqVO.getUserId()).eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>().eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BrokerageWithdrawDO>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getType",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getUserName",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getUserAccount",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getBankName",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "update",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<BrokerageWithdrawDO>()\n                .eq(BrokerageWithdrawDO::getId, id).eq",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<BrokerageWithdrawDO>().eq",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<BrokerageWithdrawDO>",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "selectMaps",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "new MPJLambdaWrapper<BrokerageWithdrawDO>()\n                .select(BrokerageWithdrawDO::getUserId)\n                .selectCount(BrokerageWithdrawDO::getId, BrokerageWithdrawSummaryRespBO::getCount)\n                .selectSum(BrokerageWithdrawDO::getPrice)\n                .in(BrokerageWithdrawDO::getUserId, userIds)\n                .in(BrokerageWithdrawDO::getStatus, status).groupBy",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "new MPJLambdaWrapper<BrokerageWithdrawDO>()\n                .select(BrokerageWithdrawDO::getUserId)\n                .selectCount(BrokerageWithdrawDO::getId, BrokerageWithdrawSummaryRespBO::getCount)\n                .selectSum(BrokerageWithdrawDO::getPrice)\n                .in(BrokerageWithdrawDO::getUserId, userIds).in",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "new MPJLambdaWrapper<BrokerageWithdrawDO>()\n                .select(BrokerageWithdrawDO::getUserId)\n                .selectCount(BrokerageWithdrawDO::getId, BrokerageWithdrawSummaryRespBO::getCount)\n                .selectSum(BrokerageWithdrawDO::getPrice).in",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "new MPJLambdaWrapper<BrokerageWithdrawDO>()\n                .select(BrokerageWithdrawDO::getUserId)\n                .selectCount(BrokerageWithdrawDO::getId, BrokerageWithdrawSummaryRespBO::getCount).selectSum",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "new MPJLambdaWrapper<BrokerageWithdrawDO>()\n                .select(BrokerageWithdrawDO::getUserId).selectCount",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "new MPJLambdaWrapper<BrokerageWithdrawDO>().select",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "new MPJLambdaWrapper<BrokerageWithdrawDO>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountAndSumPriceByUserIdAndStatus",
+          "callee": "BeanUtil.copyToList",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/job/brokerage/BrokerageRecordUnfreezeJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 22,
+          "endLine": 27,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrokerageRecordUnfreezeJob",
+          "startLine": 16,
+          "endLine": 29,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "brokerageRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "BrokerageRecordUnfreezeJob",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "brokerageRecordService.unfreezeRecord",
+          "lineNumber": 25
+        },
+        {
+          "caller": "execute",
+          "callee": "StrUtil.format",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/job/order/TradeOrderAutoCancelJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 21,
+          "endLine": 26,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TradeOrderAutoCancelJob",
+          "startLine": 15,
+          "endLine": 28,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "tradeOrderUpdateService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "TradeOrderAutoCancelJob",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "tradeOrderUpdateService.cancelOrderBySystem",
+          "lineNumber": 24
+        },
+        {
+          "caller": "execute",
+          "callee": "String.format",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

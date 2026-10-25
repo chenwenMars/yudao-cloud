@@ -1,0 +1,3986 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/MesDvCheckPlanSubjectController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "createCheckPlanSubject",
+          "startLine": 38,
+          "endLine": 43,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "deleteCheckPlanSubject",
+          "startLine": 45,
+          "endLine": 52,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCheckPlanSubjectListByPlan",
+          "startLine": 54,
+          "endLine": 79,
+          "params": [
+            "planId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvCheckPlanSubjectController",
+          "startLine": 27,
+          "endLine": 81,
+          "methods": [
+            "createCheckPlanSubject",
+            "deleteCheckPlanSubject",
+            "getCheckPlanSubjectListByPlan"
+          ],
+          "properties": [
+            "checkPlanSubjectService",
+            "subjectService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createCheckPlanSubject",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCheckPlanSubject",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckPlanSubjectListByPlan",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvCheckPlanSubjectController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCheckPlanSubject",
+          "callee": "success",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createCheckPlanSubject",
+          "callee": "checkPlanSubjectService.createCheckPlanSubject",
+          "lineNumber": 42
+        },
+        {
+          "caller": "deleteCheckPlanSubject",
+          "callee": "checkPlanSubjectService.deleteCheckPlanSubject",
+          "lineNumber": 50
+        },
+        {
+          "caller": "deleteCheckPlanSubject",
+          "callee": "success",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "checkPlanSubjectService.getCheckPlanSubjectListByPlanId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "subjectService.getSubjectMap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "respList.forEach",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "subjectMap.get",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "resp.getSubjectId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "resp.setSubjectCode",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "subject.getCode",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "resp.setSubjectName",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "subject.getName",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "resp.setSubjectType",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "subject.getType",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "resp.setSubjectContent",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "subject.getContent",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "resp.setSubjectStandard",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "subject.getStandard",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getCheckPlanSubjectListByPlan",
+          "callee": "success",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/vo/MesDvCheckPlanPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MesDvCheckPlanPageReqVO",
+          "startLine": 14,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "type",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckPlanPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/vo/MesDvCheckPlanRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "MesDvCheckPlanRespVO",
+          "startLine": 10,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "type",
+            "startDate",
+            "endDate",
+            "cycleType",
+            "cycleCount",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckPlanRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/vo/MesDvCheckPlanSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "MesDvCheckPlanSaveReqVO",
+          "startLine": 10,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "type",
+            "startDate",
+            "endDate",
+            "cycleType",
+            "cycleCount",
+            "status",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckPlanSaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/vo/machinery/MesDvCheckPlanMachineryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MesDvCheckPlanMachineryRespVO",
+          "startLine": 8,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "machineryId",
+            "machineryCode",
+            "machineryName",
+            "machineryBrand",
+            "machinerySpecification",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckPlanMachineryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/vo/machinery/MesDvCheckPlanMachinerySaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "MesDvCheckPlanMachinerySaveReqVO",
+          "startLine": 7,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "machineryId",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckPlanMachinerySaveReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/vo/subject/MesDvCheckPlanSubjectRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "MesDvCheckPlanSubjectRespVO",
+          "startLine": 8,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "subjectId",
+            "subjectCode",
+            "subjectName",
+            "subjectType",
+            "subjectContent",
+            "subjectStandard",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckPlanSubjectRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkplan/vo/subject/MesDvCheckPlanSubjectSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "MesDvCheckPlanSubjectSaveReqVO",
+          "startLine": 7,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "subjectId",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckPlanSubjectSaveReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/MesDvCheckRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 150,
+      "nonEmptyLines": 134,
+      "functions": [
+        {
+          "name": "createCheckRecord",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateCheckRecord",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "submitCheckRecord",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteCheckRecord",
+          "startLine": 81,
+          "endLine": 88,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCheckRecord",
+          "startLine": 90,
+          "endLine": 100,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCheckRecordPage",
+          "startLine": 102,
+          "endLine": 108,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportCheckRecordExcel",
+          "startLine": 110,
+          "endLine": 120,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "buildCheckRecordRespVOList",
+          "startLine": 124,
+          "endLine": 148,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvCheckRecordController",
+          "startLine": 41,
+          "endLine": 150,
+          "methods": [
+            "createCheckRecord",
+            "updateCheckRecord",
+            "submitCheckRecord",
+            "deleteCheckRecord",
+            "getCheckRecord",
+            "getCheckRecordPage",
+            "exportCheckRecordExcel",
+            "buildCheckRecordRespVOList"
+          ],
+          "properties": [
+            "checkRecordService",
+            "checkPlanService",
+            "machineryService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createCheckRecord",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "updateCheckRecord",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "submitCheckRecord",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCheckRecord",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckRecord",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckRecordPage",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "exportCheckRecordExcel",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvCheckRecordController",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCheckRecord",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createCheckRecord",
+          "callee": "checkRecordService.createCheckRecord",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateCheckRecord",
+          "callee": "checkRecordService.updateCheckRecord",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateCheckRecord",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "submitCheckRecord",
+          "callee": "checkRecordService.submitCheckRecord",
+          "lineNumber": 77
+        },
+        {
+          "caller": "submitCheckRecord",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "deleteCheckRecord",
+          "callee": "checkRecordService.deleteCheckRecord",
+          "lineNumber": 86
+        },
+        {
+          "caller": "deleteCheckRecord",
+          "callee": "success",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getCheckRecord",
+          "callee": "checkRecordService.getCheckRecord",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getCheckRecord",
+          "callee": "success",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getCheckRecord",
+          "callee": "success",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCheckRecord",
+          "callee": "buildCheckRecordRespVOList(Collections.singletonList(checkRecord)).get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCheckRecord",
+          "callee": "buildCheckRecordRespVOList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCheckRecord",
+          "callee": "Collections.singletonList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getCheckRecordPage",
+          "callee": "checkRecordService.getCheckRecordPage",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getCheckRecordPage",
+          "callee": "success",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getCheckRecordPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getCheckRecordPage",
+          "callee": "buildCheckRecordRespVOList",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getCheckRecordPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getCheckRecordPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 107
+        },
+        {
+          "caller": "exportCheckRecordExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 116
+        },
+        {
+          "caller": "exportCheckRecordExcel",
+          "callee": "checkRecordService.getCheckRecordPage(pageReqVO).getList",
+          "lineNumber": 117
+        },
+        {
+          "caller": "exportCheckRecordExcel",
+          "callee": "checkRecordService.getCheckRecordPage",
+          "lineNumber": 117
+        },
+        {
+          "caller": "exportCheckRecordExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 118
+        },
+        {
+          "caller": "exportCheckRecordExcel",
+          "callee": "buildCheckRecordRespVOList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "checkPlanService.getCheckPlanMap",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "machineryService.getMachineryMap",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.getPlanId",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName()).setPlanCode(plan.getCode())\n                            .setPlanStartDate(plan.getStartDate()).setPlanEndDate(plan.getEndDate())\n                            .setPlanCycleType(plan.getCycleType()).setPlanCycleCount",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName()).setPlanCode(plan.getCode())\n                            .setPlanStartDate(plan.getStartDate()).setPlanEndDate(plan.getEndDate()).setPlanCycleType",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName()).setPlanCode(plan.getCode())\n                            .setPlanStartDate(plan.getStartDate()).setPlanEndDate",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName()).setPlanCode(plan.getCode()).setPlanStartDate",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName()).setPlanCode",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setPlanName",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "plan.getName",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "plan.getCode",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "plan.getStartDate",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "plan.getEndDate",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "plan.getCycleType",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "plan.getCycleCount",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.getMachineryId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName(machinery.getName())\n                    .setMachineryBrand(machinery.getBrand()).setMachinerySpecification",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName(machinery.getName()).setMachineryBrand",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setMachineryCode",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "machinery.getCode",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "machinery.getName",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "machinery.getBrand",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "machinery.getSpecification",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.getUserId",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "vo.setNickname",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildCheckRecordRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 146
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/MesDvCheckRecordLineController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "createCheckRecordLine",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateCheckRecordLine",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteCheckRecordLine",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCheckRecordLine",
+          "startLine": 66,
+          "endLine": 76,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCheckRecordLinePage",
+          "startLine": 78,
+          "endLine": 84,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getCheckRecordLineListByRecordId",
+          "startLine": 86,
+          "endLine": 94,
+          "params": [
+            "recordId"
+          ]
+        },
+        {
+          "name": "buildCheckRecordLineRespVOList",
+          "startLine": 98,
+          "endLine": 110,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvCheckRecordLineController",
+          "startLine": 31,
+          "endLine": 112,
+          "methods": [
+            "createCheckRecordLine",
+            "updateCheckRecordLine",
+            "deleteCheckRecordLine",
+            "getCheckRecordLine",
+            "getCheckRecordLinePage",
+            "getCheckRecordLineListByRecordId",
+            "buildCheckRecordLineRespVOList"
+          ],
+          "properties": [
+            "checkRecordLineService",
+            "subjectService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createCheckRecordLine",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateCheckRecordLine",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCheckRecordLine",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckRecordLine",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckRecordLinePage",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckRecordLineListByRecordId",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvCheckRecordLineController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCheckRecordLine",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createCheckRecordLine",
+          "callee": "checkRecordLineService.createCheckRecordLine",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateCheckRecordLine",
+          "callee": "checkRecordLineService.updateCheckRecordLine",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateCheckRecordLine",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteCheckRecordLine",
+          "callee": "checkRecordLineService.deleteCheckRecordLine",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteCheckRecordLine",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getCheckRecordLine",
+          "callee": "checkRecordLineService.getCheckRecordLine",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getCheckRecordLine",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getCheckRecordLine",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getCheckRecordLine",
+          "callee": "buildCheckRecordLineRespVOList(Collections.singletonList(line)).get",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getCheckRecordLine",
+          "callee": "buildCheckRecordLineRespVOList",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getCheckRecordLine",
+          "callee": "Collections.singletonList",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getCheckRecordLinePage",
+          "callee": "checkRecordLineService.getCheckRecordLinePage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getCheckRecordLinePage",
+          "callee": "success",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCheckRecordLinePage",
+          "callee": "new PageResult<>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCheckRecordLinePage",
+          "callee": "buildCheckRecordLineRespVOList",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCheckRecordLinePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCheckRecordLinePage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCheckRecordLineListByRecordId",
+          "callee": "checkRecordLineService.getCheckRecordLineListByRecordId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getCheckRecordLineListByRecordId",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getCheckRecordLineListByRecordId",
+          "callee": "buildCheckRecordLineRespVOList",
+          "lineNumber": 93
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 99
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 100
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "subjectService.getSubjectMap",
+          "lineNumber": 103
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "vo.getSubjectId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "vo\n                        .setSubjectCode(subject.getCode()).setSubjectName(subject.getName())\n                        .setSubjectType(subject.getType()).setSubjectContent(subject.getContent()).setSubjectStandard",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "vo\n                        .setSubjectCode(subject.getCode()).setSubjectName(subject.getName())\n                        .setSubjectType(subject.getType()).setSubjectContent",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "vo\n                        .setSubjectCode(subject.getCode()).setSubjectName(subject.getName()).setSubjectType",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "vo\n                        .setSubjectCode(subject.getCode()).setSubjectName",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "vo.setSubjectCode",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "subject.getCode",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "subject.getName",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "subject.getType",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "subject.getContent",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildCheckRecordLineRespVOList",
+          "callee": "subject.getStandard",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/vo/MesDvCheckRecordPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MesDvCheckRecordPageReqVO",
+          "startLine": 14,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "planId",
+            "machineryId",
+            "userId",
+            "status",
+            "checkTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckRecordPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/vo/MesDvCheckRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 70,
+      "classes": [
+        {
+          "name": "MesDvCheckRecordRespVO",
+          "startLine": 13,
+          "endLine": 93,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "planName",
+            "planCode",
+            "planStartDate",
+            "planEndDate",
+            "planCycleType",
+            "planCycleCount",
+            "machineryId",
+            "machineryCode",
+            "machineryName",
+            "machineryBrand",
+            "machinerySpecification",
+            "checkTime",
+            "userId",
+            "nickname",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckRecordRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/vo/MesDvCheckRecordSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MesDvCheckRecordSaveReqVO",
+          "startLine": 9,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "machineryId",
+            "checkTime",
+            "userId",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckRecordSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/vo/line/MesDvCheckRecordLinePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "MesDvCheckRecordLinePageReqVO",
+          "startLine": 9,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "recordId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckRecordLinePageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/vo/line/MesDvCheckRecordLineRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "MesDvCheckRecordLineRespVO",
+          "startLine": 13,
+          "endLine": 65,
+          "methods": [],
+          "properties": [
+            "id",
+            "recordId",
+            "subjectId",
+            "subjectCode",
+            "subjectName",
+            "subjectType",
+            "subjectContent",
+            "subjectStandard",
+            "checkStatus",
+            "checkResult",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckRecordLineRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/checkrecord/vo/line/MesDvCheckRecordLineSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MesDvCheckRecordLineSaveReqVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "recordId",
+            "subjectId",
+            "checkStatus",
+            "checkResult",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvCheckRecordLineSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/MesDvMachineryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 168,
+      "nonEmptyLines": 151,
+      "functions": [
+        {
+          "name": "createMachinery",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMachinery",
+          "startLine": 63,
+          "endLine": 69,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMachinery",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMachinery",
+          "startLine": 80,
+          "endLine": 90,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMachineryPage",
+          "startLine": 92,
+          "endLine": 98,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportMachineryExcel",
+          "startLine": 100,
+          "endLine": 111,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "getMachinerySimpleList",
+          "startLine": 113,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "importTemplate",
+          "startLine": 121,
+          "endLine": 132,
+          "params": [
+            "response"
+          ]
+        },
+        {
+          "name": "importExcel",
+          "startLine": 134,
+          "endLine": 146,
+          "params": [
+            "file",
+            "updateSupport"
+          ]
+        },
+        {
+          "name": "buildMachineryRespVOList",
+          "startLine": 150,
+          "endLine": 166,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvMachineryController",
+          "startLine": 43,
+          "endLine": 168,
+          "methods": [
+            "createMachinery",
+            "updateMachinery",
+            "deleteMachinery",
+            "getMachinery",
+            "getMachineryPage",
+            "exportMachineryExcel",
+            "getMachinerySimpleList",
+            "importTemplate",
+            "importExcel",
+            "buildMachineryRespVOList"
+          ],
+          "properties": [
+            "machineryService",
+            "machineryTypeService",
+            "workshopService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMachinery",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "updateMachinery",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMachinery",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getMachinery",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getMachineryPage",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "exportMachineryExcel",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "getMachinerySimpleList",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "importTemplate",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "importExcel",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvMachineryController",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMachinery",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createMachinery",
+          "callee": "machineryService.createMachinery",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateMachinery",
+          "callee": "machineryService.updateMachinery",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateMachinery",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deleteMachinery",
+          "callee": "machineryService.deleteMachinery",
+          "lineNumber": 76
+        },
+        {
+          "caller": "deleteMachinery",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMachinery",
+          "callee": "machineryService.getMachinery",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getMachinery",
+          "callee": "success",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getMachinery",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMachinery",
+          "callee": "buildMachineryRespVOList(Collections.singletonList(machinery)).get",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMachinery",
+          "callee": "buildMachineryRespVOList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMachinery",
+          "callee": "Collections.singletonList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMachineryPage",
+          "callee": "machineryService.getMachineryPage",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getMachineryPage",
+          "callee": "success",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getMachineryPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getMachineryPage",
+          "callee": "buildMachineryRespVOList",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getMachineryPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getMachineryPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 97
+        },
+        {
+          "caller": "exportMachineryExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 106
+        },
+        {
+          "caller": "exportMachineryExcel",
+          "callee": "machineryService.getMachineryPage(pageReqVO).getList",
+          "lineNumber": 107
+        },
+        {
+          "caller": "exportMachineryExcel",
+          "callee": "machineryService.getMachineryPage",
+          "lineNumber": 107
+        },
+        {
+          "caller": "exportMachineryExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 109
+        },
+        {
+          "caller": "exportMachineryExcel",
+          "callee": "buildMachineryRespVOList",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getMachinerySimpleList",
+          "callee": "machineryService.getMachineryList",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getMachinerySimpleList",
+          "callee": "success",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getMachinerySimpleList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 118
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "Collections.singletonList",
+          "lineNumber": 125
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code(\"EQ-001\").name(\"示例设备\")\n                        .brand(\"示例品牌\").specification(\"型号A\").machineryTypeCode(\"MT-001\")\n                        .workshopCode(\"WS-001\").status(0).build",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code(\"EQ-001\").name(\"示例设备\")\n                        .brand(\"示例品牌\").specification(\"型号A\").machineryTypeCode(\"MT-001\")\n                        .workshopCode(\"WS-001\").status",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code(\"EQ-001\").name(\"示例设备\")\n                        .brand(\"示例品牌\").specification(\"型号A\").machineryTypeCode(\"MT-001\").workshopCode",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code(\"EQ-001\").name(\"示例设备\")\n                        .brand(\"示例品牌\").specification(\"型号A\").machineryTypeCode",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code(\"EQ-001\").name(\"示例设备\")\n                        .brand(\"示例品牌\").specification",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code(\"EQ-001\").name(\"示例设备\").brand",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code(\"EQ-001\").name",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder().code",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "MesDvMachineryImportExcelVO.builder",
+          "lineNumber": 126
+        },
+        {
+          "caller": "importTemplate",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 131
+        },
+        {
+          "caller": "importExcel",
+          "callee": "ExcelUtils.read",
+          "lineNumber": 144
+        },
+        {
+          "caller": "importExcel",
+          "callee": "success",
+          "lineNumber": 145
+        },
+        {
+          "caller": "importExcel",
+          "callee": "machineryService.importMachineryList",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "machineryTypeService.getMachineryTypeMap",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "workshopService.getWorkshopMap",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "vo.getMachineryTypeId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "vo.setMachineryTypeName",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "machineryType.getName",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "vo.getWorkshopId",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "vo.setWorkshopName",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildMachineryRespVOList",
+          "callee": "workshop.getName",
+          "lineNumber": 164
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/MesDvMachineryTypeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "createMachineryType",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMachineryType",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMachineryType",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMachineryType",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMachineryTypeList",
+          "startLine": 67,
+          "endLine": 73,
+          "params": [
+            "listReqVO"
+          ]
+        },
+        {
+          "name": "getMachineryTypeSimpleList",
+          "startLine": 75,
+          "endLine": 83,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvMachineryTypeController",
+          "startLine": 25,
+          "endLine": 85,
+          "methods": [
+            "createMachineryType",
+            "updateMachineryType",
+            "deleteMachineryType",
+            "getMachineryType",
+            "getMachineryTypeList",
+            "getMachineryTypeSimpleList"
+          ],
+          "properties": [
+            "machineryTypeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMachineryType",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "updateMachineryType",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMachineryType",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getMachineryType",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getMachineryTypeList",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getMachineryTypeSimpleList",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvMachineryTypeController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMachineryType",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createMachineryType",
+          "callee": "machineryTypeService.createMachineryType",
+          "lineNumber": 38
+        },
+        {
+          "caller": "updateMachineryType",
+          "callee": "machineryTypeService.updateMachineryType",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateMachineryType",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "deleteMachineryType",
+          "callee": "machineryTypeService.deleteMachineryType",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteMachineryType",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getMachineryType",
+          "callee": "machineryTypeService.getMachineryType",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getMachineryType",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getMachineryType",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getMachineryTypeList",
+          "callee": "machineryTypeService.getMachineryTypeList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getMachineryTypeList",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMachineryTypeList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "machineryTypeService.getMachineryTypeList",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeListReqVO().setStatus",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeListReqVO",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "convertList",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeRespVO()\n                .setId(machineryType.getId()).setName(machineryType.getName()).setParentId(machineryType.getParentId())\n                .setCode(machineryType.getCode()).setRemark",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeRespVO()\n                .setId(machineryType.getId()).setName(machineryType.getName()).setParentId(machineryType.getParentId()).setCode",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeRespVO()\n                .setId(machineryType.getId()).setName(machineryType.getName()).setParentId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeRespVO()\n                .setId(machineryType.getId()).setName",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeRespVO().setId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "new MesDvMachineryTypeRespVO",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "machineryType.getId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "machineryType.getName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "machineryType.getParentId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "machineryType.getCode",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMachineryTypeSimpleList",
+          "callee": "machineryType.getRemark",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/MesDvMachineryImportExcelVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "MesDvMachineryImportExcelVO",
+          "startLine": 15,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "brand",
+            "specification",
+            "machineryTypeCode",
+            "workshopCode",
+            "status",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachineryImportExcelVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/MesDvMachineryImportRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "MesDvMachineryImportRespVO",
+          "startLine": 10,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "createCodes",
+            "updateCodes",
+            "failureCodes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachineryImportRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/MesDvMachineryPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "MesDvMachineryPageReqVO",
+          "startLine": 11,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "brand",
+            "machineryTypeId",
+            "machineryTypeIds",
+            "workshopId",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachineryPageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/MesDvMachineryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "MesDvMachineryRespVO",
+          "startLine": 13,
+          "endLine": 73,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "brand",
+            "specification",
+            "machineryTypeId",
+            "machineryTypeName",
+            "workshopId",
+            "workshopName",
+            "status",
+            "lastMaintenTime",
+            "lastCheckTime",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachineryRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/MesDvMachinerySaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "MesDvMachinerySaveReqVO",
+          "startLine": 10,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "brand",
+            "specification",
+            "machineryTypeId",
+            "workshopId",
+            "status",
+            "lastMaintenTime",
+            "lastCheckTime",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachinerySaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/type/MesDvMachineryTypeListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "MesDvMachineryTypeListReqVO",
+          "startLine": 7,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "name",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachineryTypeListReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/type/MesDvMachineryTypeRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "MesDvMachineryTypeRespVO",
+          "startLine": 10,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "parentId",
+            "status",
+            "sort",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachineryTypeRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/machinery/vo/type/MesDvMachineryTypeSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "MesDvMachineryTypeSaveReqVO",
+          "startLine": 8,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "parentId",
+            "status",
+            "sort",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMachineryTypeSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/MesDvMaintenRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 153,
+      "nonEmptyLines": 137,
+      "functions": [
+        {
+          "name": "createMaintenRecord",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMaintenRecord",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMaintenRecord",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecord",
+          "startLine": 81,
+          "endLine": 91,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecordPage",
+          "startLine": 93,
+          "endLine": 99,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportMaintenRecordExcel",
+          "startLine": 101,
+          "endLine": 112,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "submitMaintenRecord",
+          "startLine": 114,
+          "endLine": 121,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "buildMaintenRecordRespVOList",
+          "startLine": 125,
+          "endLine": 151,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordController",
+          "startLine": 41,
+          "endLine": 153,
+          "methods": [
+            "createMaintenRecord",
+            "updateMaintenRecord",
+            "deleteMaintenRecord",
+            "getMaintenRecord",
+            "getMaintenRecordPage",
+            "exportMaintenRecordExcel",
+            "submitMaintenRecord",
+            "buildMaintenRecordRespVOList"
+          ],
+          "properties": [
+            "maintenRecordService",
+            "checkPlanService",
+            "machineryService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMaintenRecord",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "updateMaintenRecord",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMaintenRecord",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecord",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordPage",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "exportMaintenRecordExcel",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "submitMaintenRecord",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvMaintenRecordController",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMaintenRecord",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createMaintenRecord",
+          "callee": "maintenRecordService.createMaintenRecord",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateMaintenRecord",
+          "callee": "maintenRecordService.updateMaintenRecord",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateMaintenRecord",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteMaintenRecord",
+          "callee": "maintenRecordService.deleteMaintenRecord",
+          "lineNumber": 77
+        },
+        {
+          "caller": "deleteMaintenRecord",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMaintenRecord",
+          "callee": "maintenRecordService.getMaintenRecord",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMaintenRecord",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getMaintenRecord",
+          "callee": "success",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMaintenRecord",
+          "callee": "buildMaintenRecordRespVOList(Collections.singletonList(maintenRecord)).get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMaintenRecord",
+          "callee": "buildMaintenRecordRespVOList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMaintenRecord",
+          "callee": "Collections.singletonList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMaintenRecordPage",
+          "callee": "maintenRecordService.getMaintenRecordPage",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getMaintenRecordPage",
+          "callee": "success",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMaintenRecordPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMaintenRecordPage",
+          "callee": "buildMaintenRecordRespVOList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMaintenRecordPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMaintenRecordPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportMaintenRecordExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 107
+        },
+        {
+          "caller": "exportMaintenRecordExcel",
+          "callee": "maintenRecordService.getMaintenRecordPage(pageReqVO).getList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "exportMaintenRecordExcel",
+          "callee": "maintenRecordService.getMaintenRecordPage",
+          "lineNumber": 108
+        },
+        {
+          "caller": "exportMaintenRecordExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 110
+        },
+        {
+          "caller": "exportMaintenRecordExcel",
+          "callee": "buildMaintenRecordRespVOList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "maintenRecordService.submitMaintenRecord",
+          "lineNumber": 119
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "success",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "checkPlanService.getCheckPlanMap",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "machineryService.getMachineryMap",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.getPlanId",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName())\n                            .setPlanCode(plan.getCode())\n                            .setPlanStartDate(plan.getStartDate())\n                            .setPlanEndDate(plan.getEndDate())\n                            .setPlanCycleType(plan.getCycleType()).setPlanCycleCount",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName())\n                            .setPlanCode(plan.getCode())\n                            .setPlanStartDate(plan.getStartDate())\n                            .setPlanEndDate(plan.getEndDate()).setPlanCycleType",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName())\n                            .setPlanCode(plan.getCode())\n                            .setPlanStartDate(plan.getStartDate()).setPlanEndDate",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName())\n                            .setPlanCode(plan.getCode()).setPlanStartDate",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setPlanName(plan.getName()).setPlanCode",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setPlanName",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "plan.getName",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "plan.getCode",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "plan.getStartDate",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "plan.getEndDate",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "plan.getCycleType",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "plan.getCycleCount",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.getMachineryId",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName(machinery.getName())\n                    .setMachineryBrand(machinery.getBrand()).setMachinerySpecification",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName(machinery.getName()).setMachineryBrand",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setMachineryCode",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "machinery.getCode",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "machinery.getName",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "machinery.getBrand",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "machinery.getSpecification",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 148
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.getUserId",
+          "lineNumber": 148
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "vo.setNickname",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildMaintenRecordRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 149
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/MesDvMaintenRecordLineController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 131,
+      "nonEmptyLines": 116,
+      "functions": [
+        {
+          "name": "createMaintenRecordLine",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMaintenRecordLine",
+          "startLine": 55,
+          "endLine": 61,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMaintenRecordLine",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecordLine",
+          "startLine": 72,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecordLinePage",
+          "startLine": 84,
+          "endLine": 90,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getMaintenRecordLineListByRecordId",
+          "startLine": 92,
+          "endLine": 100,
+          "params": [
+            "recordId"
+          ]
+        },
+        {
+          "name": "exportMaintenRecordLineExcel",
+          "startLine": 102,
+          "endLine": 113,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "buildMaintenRecordLineRespVOList",
+          "startLine": 117,
+          "endLine": 129,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordLineController",
+          "startLine": 37,
+          "endLine": 131,
+          "methods": [
+            "createMaintenRecordLine",
+            "updateMaintenRecordLine",
+            "deleteMaintenRecordLine",
+            "getMaintenRecordLine",
+            "getMaintenRecordLinePage",
+            "getMaintenRecordLineListByRecordId",
+            "exportMaintenRecordLineExcel",
+            "buildMaintenRecordLineRespVOList"
+          ],
+          "properties": [
+            "maintenRecordLineService",
+            "subjectService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMaintenRecordLine",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "updateMaintenRecordLine",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMaintenRecordLine",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordLine",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordLinePage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordLineListByRecordId",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "exportMaintenRecordLineExcel",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvMaintenRecordLineController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMaintenRecordLine",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createMaintenRecordLine",
+          "callee": "maintenRecordLineService.createMaintenRecordLine",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateMaintenRecordLine",
+          "callee": "maintenRecordLineService.updateMaintenRecordLine",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateMaintenRecordLine",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteMaintenRecordLine",
+          "callee": "maintenRecordLineService.deleteMaintenRecordLine",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deleteMaintenRecordLine",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getMaintenRecordLine",
+          "callee": "maintenRecordLineService.getMaintenRecordLine",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMaintenRecordLine",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getMaintenRecordLine",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMaintenRecordLine",
+          "callee": "buildMaintenRecordLineRespVOList(Collections.singletonList(maintenRecordLine)).get",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMaintenRecordLine",
+          "callee": "buildMaintenRecordLineRespVOList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMaintenRecordLine",
+          "callee": "Collections.singletonList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMaintenRecordLinePage",
+          "callee": "maintenRecordLineService.getMaintenRecordLinePage",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getMaintenRecordLinePage",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMaintenRecordLinePage",
+          "callee": "new PageResult<>",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMaintenRecordLinePage",
+          "callee": "buildMaintenRecordLineRespVOList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMaintenRecordLinePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMaintenRecordLinePage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMaintenRecordLineListByRecordId",
+          "callee": "maintenRecordLineService.getMaintenRecordLineListByRecordId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMaintenRecordLineListByRecordId",
+          "callee": "success",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getMaintenRecordLineListByRecordId",
+          "callee": "buildMaintenRecordLineRespVOList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "exportMaintenRecordLineExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 108
+        },
+        {
+          "caller": "exportMaintenRecordLineExcel",
+          "callee": "maintenRecordLineService.getMaintenRecordLinePage(pageReqVO).getList",
+          "lineNumber": 109
+        },
+        {
+          "caller": "exportMaintenRecordLineExcel",
+          "callee": "maintenRecordLineService.getMaintenRecordLinePage",
+          "lineNumber": 109
+        },
+        {
+          "caller": "exportMaintenRecordLineExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 111
+        },
+        {
+          "caller": "exportMaintenRecordLineExcel",
+          "callee": "buildMaintenRecordLineRespVOList",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "subjectService.getSubjectMap",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "vo.getSubjectId",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "vo\n                        .setSubjectName(subject.getName()).setSubjectContent(subject.getContent()).setSubjectStandard",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "vo\n                        .setSubjectName(subject.getName()).setSubjectContent",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "vo.setSubjectName",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "subject.getName",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "subject.getContent",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildMaintenRecordLineRespVOList",
+          "callee": "subject.getStandard",
+          "lineNumber": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/vo/MesDvMaintenRecordPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordPageReqVO",
+          "startLine": 14,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "planId",
+            "machineryId",
+            "userId",
+            "maintenTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/vo/MesDvMaintenRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 70,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordRespVO",
+          "startLine": 13,
+          "endLine": 93,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "planName",
+            "planCode",
+            "planStartDate",
+            "planEndDate",
+            "planCycleType",
+            "planCycleCount",
+            "machineryId",
+            "machineryCode",
+            "machineryName",
+            "machineryBrand",
+            "machinerySpecification",
+            "maintenTime",
+            "userId",
+            "nickname",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/vo/MesDvMaintenRecordSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordSaveReqVO",
+          "startLine": 9,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "machineryId",
+            "maintenTime",
+            "userId",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/vo/line/MesDvMaintenRecordLinePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordLinePageReqVO",
+          "startLine": 9,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "recordId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordLinePageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/vo/line/MesDvMaintenRecordLineRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordLineRespVO",
+          "startLine": 13,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "recordId",
+            "subjectId",
+            "subjectName",
+            "subjectContent",
+            "subjectStandard",
+            "status",
+            "result",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordLineRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/maintenrecord/vo/line/MesDvMaintenRecordLineSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordLineSaveReqVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "recordId",
+            "subjectId",
+            "status",
+            "result",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordLineSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/repair/MesDvRepairController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 170,
+      "nonEmptyLines": 151,
+      "functions": [
+        {
+          "name": "createRepair",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateRepair",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteRepair",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRepair",
+          "startLine": 81,
+          "endLine": 91,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRepairPage",
+          "startLine": 93,
+          "endLine": 99,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportRepairExcel",
+          "startLine": 101,
+          "endLine": 112,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "submitRepair",
+          "startLine": 116,
+          "endLine": 123,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "confirmRepair",
+          "startLine": 125,
+          "endLine": 131,
+          "params": [
+            "confirmReqVO"
+          ]
+        },
+        {
+          "name": "finishRepair",
+          "startLine": 133,
+          "endLine": 144,
+          "params": [
+            "id",
+            "result"
+          ]
+        },
+        {
+          "name": "buildRepairRespVOList",
+          "startLine": 148,
+          "endLine": 168,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvRepairController",
+          "startLine": 43,
+          "endLine": 170,
+          "methods": [
+            "createRepair",
+            "updateRepair",
+            "deleteRepair",
+            "getRepair",
+            "getRepairPage",
+            "exportRepairExcel",
+            "submitRepair",
+            "confirmRepair",
+            "finishRepair",
+            "buildRepairRespVOList"
+          ],
+          "properties": [
+            "repairService",
+            "machineryService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRepair",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "updateRepair",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "deleteRepair",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getRepair",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getRepairPage",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "exportRepairExcel",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "submitRepair",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "confirmRepair",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "finishRepair",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvRepairController",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRepair",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createRepair",
+          "callee": "repairService.createRepair",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateRepair",
+          "callee": "repairService.updateRepair",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateRepair",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteRepair",
+          "callee": "repairService.deleteRepair",
+          "lineNumber": 77
+        },
+        {
+          "caller": "deleteRepair",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getRepair",
+          "callee": "repairService.getRepair",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getRepair",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getRepair",
+          "callee": "success",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getRepair",
+          "callee": "buildRepairRespVOList(Collections.singletonList(repair)).get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getRepair",
+          "callee": "buildRepairRespVOList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getRepair",
+          "callee": "Collections.singletonList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getRepairPage",
+          "callee": "repairService.getRepairPage",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getRepairPage",
+          "callee": "success",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getRepairPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getRepairPage",
+          "callee": "buildRepairRespVOList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getRepairPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getRepairPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportRepairExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 107
+        },
+        {
+          "caller": "exportRepairExcel",
+          "callee": "repairService.getRepairPage(pageReqVO).getList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "exportRepairExcel",
+          "callee": "repairService.getRepairPage",
+          "lineNumber": 108
+        },
+        {
+          "caller": "exportRepairExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 110
+        },
+        {
+          "caller": "exportRepairExcel",
+          "callee": "buildRepairRespVOList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "repairService.submitRepair",
+          "lineNumber": 121
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "getLoginUserId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "success",
+          "lineNumber": 122
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "repairService.confirmRepair",
+          "lineNumber": 129
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "success",
+          "lineNumber": 130
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "repairService.finishRepair",
+          "lineNumber": 142
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "getLoginUserId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "success",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "machineryService.getMachineryMap",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "Stream.of",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "repair.getAcceptedUserId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "repair.getConfirmUserId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo.getMachineryId",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName(machinery.getName())\n                    .setMachineryBrand(machinery.getBrand()).setMachinerySpecification",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName(machinery.getName()).setMachineryBrand",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo\n                    .setMachineryCode(machinery.getCode()).setMachineryName",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo.setMachineryCode",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "machinery.getCode",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "machinery.getName",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "machinery.getBrand",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "machinery.getSpecification",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo.getAcceptedUserId",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo.setAcceptedUserNickname",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo.getConfirmUserId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "vo.setConfirmUserNickname",
+          "lineNumber": 166
+        },
+        {
+          "caller": "buildRepairRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 166
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    }
+  ]
+}

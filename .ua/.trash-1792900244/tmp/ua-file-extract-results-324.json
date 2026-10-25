@@ -1,0 +1,1196 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "yudao-module-report/pom.xml",
+    "yudao-module-report/yudao-module-report-api/pom.xml",
+    "yudao-module-report/yudao-module-report-server/pom.xml",
+    "yudao-module-report/yudao-module-report-server/src/test/resources/logback.xml",
+    "yudao-module-system/pom.xml",
+    "yudao-module-system/yudao-module-system-api/pom.xml"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 14,
+      "failed": 0,
+      "skipped": 5
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/test/resources/sql/clean.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 14,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/test/resources/sql/create_tables.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 592,
+      "nonEmptyLines": 560,
+      "definitions": [
+        {
+          "name": "pms_project",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "status",
+            "type",
+            "level",
+            "description",
+            "open_status",
+            "icon",
+            "sort",
+            "start_time",
+            "end_time",
+            "archive_time",
+            "recycle_time",
+            "access_time",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 1,
+          "endLine": 23
+        },
+        {
+          "name": "pms_project_template",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "description",
+            "project_type",
+            "status",
+            "sort",
+            "item_types",
+            "statuses",
+            "boards",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 25,
+          "endLine": 42
+        },
+        {
+          "name": "pms_knowledge_library_template",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "description",
+            "cover_url",
+            "status",
+            "sort",
+            "documents",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 44,
+          "endLine": 59
+        },
+        {
+          "name": "pms_project_member",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "user_id",
+            "level",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 61,
+          "endLine": 73
+        },
+        {
+          "name": "pms_project_group",
+          "kind": "table",
+          "fields": [
+            "id",
+            "user_id",
+            "name",
+            "sort",
+            "type",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 75,
+          "endLine": 88
+        },
+        {
+          "name": "pms_project_group_relation",
+          "kind": "table",
+          "fields": [
+            "id",
+            "user_id",
+            "group_id",
+            "project_id",
+            "sort",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 90,
+          "endLine": 103
+        },
+        {
+          "name": "pms_project_favorite",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "user_id",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 105,
+          "endLine": 116
+        },
+        {
+          "name": "pms_project_announcement",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "content",
+            "file_urls",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 118,
+          "endLine": 130
+        },
+        {
+          "name": "pms_iteration",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "name",
+            "owner_user_id",
+            "status",
+            "start_time",
+            "end_time",
+            "finish_time",
+            "target",
+            "description",
+            "sort",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 132,
+          "endLine": 151
+        },
+        {
+          "name": "pms_work_item_status",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "work_item_type",
+            "name",
+            "status_type",
+            "description",
+            "board_name",
+            "system_code",
+            "default_status",
+            "sort",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 153,
+          "endLine": 171
+        },
+        {
+          "name": "pms_work_item_board",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "work_item_type",
+            "name",
+            "sort",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 173,
+          "endLine": 186
+        },
+        {
+          "name": "pms_work_item",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "type",
+            "serial_number",
+            "name",
+            "description",
+            "priority",
+            "assignee_user_id",
+            "status_id",
+            "status",
+            "lifecycle_status",
+            "archive_time",
+            "recycle_time",
+            "iteration_id",
+            "parent_id",
+            "related_requirement_id",
+            "defect_type",
+            "start_time",
+            "end_time",
+            "estimated_hours",
+            "progress",
+            "file_urls",
+            "label_ids",
+            "sort",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 188,
+          "endLine": 220
+        },
+        {
+          "name": "pms_work_item_member",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "work_item_id",
+            "user_id",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 222,
+          "endLine": 234
+        },
+        {
+          "name": "pms_work_item_user_sort",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "work_item_id",
+            "user_id",
+            "sort",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 236,
+          "endLine": 249
+        },
+        {
+          "name": "pms_work_item_work_log",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "work_item_id",
+            "actual_hours",
+            "remaining_hours",
+            "description",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 251,
+          "endLine": 265
+        },
+        {
+          "name": "pms_work_item_label",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "color",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 267,
+          "endLine": 278
+        },
+        {
+          "name": "pms_work_item_comment",
+          "kind": "table",
+          "fields": [
+            "id",
+            "work_item_id",
+            "user_id",
+            "main_id",
+            "reply_user_id",
+            "content",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 280,
+          "endLine": 294
+        },
+        {
+          "name": "pms_work_item_activity",
+          "kind": "table",
+          "fields": [
+            "id",
+            "project_id",
+            "work_item_id",
+            "operator_user_id",
+            "content",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 296,
+          "endLine": 309
+        },
+        {
+          "name": "pms_knowledge_library",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "description",
+            "open_status",
+            "cover_url",
+            "status",
+            "delete_user_id",
+            "delete_time",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 311,
+          "endLine": 327
+        },
+        {
+          "name": "pms_knowledge_library_member",
+          "kind": "table",
+          "fields": [
+            "id",
+            "library_id",
+            "user_id",
+            "dept_id",
+            "level",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 329,
+          "endLine": 342
+        },
+        {
+          "name": "pms_knowledge_folder",
+          "kind": "table",
+          "fields": [
+            "id",
+            "library_id",
+            "permission_id",
+            "parent_id",
+            "title",
+            "status",
+            "delete_user_id",
+            "delete_time",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 344,
+          "endLine": 360
+        },
+        {
+          "name": "pms_knowledge_document",
+          "kind": "table",
+          "fields": [
+            "id",
+            "library_id",
+            "permission_id",
+            "folder_id",
+            "parent_id",
+            "title",
+            "content",
+            "type",
+            "file_type",
+            "file_size",
+            "status",
+            "label_ids",
+            "delete_user_id",
+            "delete_time",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 362,
+          "endLine": 384
+        },
+        {
+          "name": "pms_knowledge_content_permission",
+          "kind": "table",
+          "fields": [
+            "id",
+            "library_id",
+            "open_status",
+            "open_level",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 386,
+          "endLine": 398
+        },
+        {
+          "name": "pms_knowledge_content_permission_member",
+          "kind": "table",
+          "fields": [
+            "id",
+            "permission_id",
+            "user_id",
+            "dept_id",
+            "level",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 400,
+          "endLine": 413
+        },
+        {
+          "name": "pms_knowledge_document_comment",
+          "kind": "table",
+          "fields": [
+            "id",
+            "document_id",
+            "user_id",
+            "main_id",
+            "reply_user_id",
+            "content",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 415,
+          "endLine": 429
+        },
+        {
+          "name": "pms_knowledge_recycle_record",
+          "kind": "table",
+          "fields": [
+            "id",
+            "library_id",
+            "type",
+            "entity_id",
+            "name",
+            "delete_user_id",
+            "delete_time",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 431,
+          "endLine": 446
+        },
+        {
+          "name": "pms_knowledge_favorite",
+          "kind": "table",
+          "fields": [
+            "id",
+            "library_id",
+            "type",
+            "entity_id",
+            "user_id",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 456,
+          "endLine": 469
+        },
+        {
+          "name": "pms_knowledge_document_like",
+          "kind": "table",
+          "fields": [
+            "id",
+            "document_id",
+            "user_id",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 481,
+          "endLine": 492
+        },
+        {
+          "name": "pms_knowledge_view_record",
+          "kind": "table",
+          "fields": [
+            "id",
+            "library_id",
+            "type",
+            "entity_id",
+            "user_id",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 498,
+          "endLine": 511
+        },
+        {
+          "name": "pms_knowledge_document_share",
+          "kind": "table",
+          "fields": [
+            "id",
+            "document_id",
+            "share_user_ids",
+            "token",
+            "status",
+            "close_user_id",
+            "close_time",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 521,
+          "endLine": 537
+        },
+        {
+          "name": "pms_knowledge_document_label",
+          "kind": "table",
+          "fields": [
+            "id",
+            "name",
+            "color",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 541,
+          "endLine": 552
+        },
+        {
+          "name": "pms_knowledge_group",
+          "kind": "table",
+          "fields": [
+            "id",
+            "user_id",
+            "name",
+            "sort",
+            "type",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 554,
+          "endLine": 567
+        },
+        {
+          "name": "pms_knowledge_group_relation",
+          "kind": "table",
+          "fields": [
+            "id",
+            "user_id",
+            "group_id",
+            "library_id",
+            "sort",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 573,
+          "endLine": 586
+        },
+        {
+          "name": "idx_tenant_type_entity",
+          "kind": "index",
+          "fields": [],
+          "startLine": 447,
+          "endLine": 447
+        },
+        {
+          "name": "idx_tenant_delete_time_id",
+          "kind": "index",
+          "fields": [],
+          "startLine": 449,
+          "endLine": 449
+        },
+        {
+          "name": "idx_tenant_library_delete_time",
+          "kind": "index",
+          "fields": [],
+          "startLine": 451,
+          "endLine": 451
+        },
+        {
+          "name": "idx_tenant_delete_user_type",
+          "kind": "index",
+          "fields": [],
+          "startLine": 453,
+          "endLine": 453
+        },
+        {
+          "name": "idx_favorite_tenant_user_create_time_id",
+          "kind": "index",
+          "fields": [],
+          "startLine": 470,
+          "endLine": 470
+        },
+        {
+          "name": "idx_favorite_tenant_user_library_create_time_id",
+          "kind": "index",
+          "fields": [],
+          "startLine": 472,
+          "endLine": 472
+        },
+        {
+          "name": "idx_favorite_tenant_user_type_entity",
+          "kind": "index",
+          "fields": [],
+          "startLine": 474,
+          "endLine": 474
+        },
+        {
+          "name": "idx_favorite_tenant_library",
+          "kind": "index",
+          "fields": [],
+          "startLine": 476,
+          "endLine": 476
+        },
+        {
+          "name": "idx_favorite_tenant_type_entity",
+          "kind": "index",
+          "fields": [],
+          "startLine": 478,
+          "endLine": 478
+        },
+        {
+          "name": "idx_like_tenant_document_create_time",
+          "kind": "index",
+          "fields": [],
+          "startLine": 493,
+          "endLine": 493
+        },
+        {
+          "name": "idx_like_tenant_user_document",
+          "kind": "index",
+          "fields": [],
+          "startLine": 495,
+          "endLine": 495
+        },
+        {
+          "name": "idx_view_tenant_user_create_time_id",
+          "kind": "index",
+          "fields": [],
+          "startLine": 512,
+          "endLine": 512
+        },
+        {
+          "name": "idx_view_tenant_user_type_entity",
+          "kind": "index",
+          "fields": [],
+          "startLine": 514,
+          "endLine": 514
+        },
+        {
+          "name": "idx_view_tenant_library_create_time_id",
+          "kind": "index",
+          "fields": [],
+          "startLine": 516,
+          "endLine": 516
+        },
+        {
+          "name": "idx_view_tenant_type_entity",
+          "kind": "index",
+          "fields": [],
+          "startLine": 518,
+          "endLine": 518
+        },
+        {
+          "name": "idx_share_tenant_document",
+          "kind": "index",
+          "fields": [],
+          "startLine": 538,
+          "endLine": 538
+        },
+        {
+          "name": "idx_group_tenant_user_type",
+          "kind": "index",
+          "fields": [],
+          "startLine": 568,
+          "endLine": 568
+        },
+        {
+          "name": "idx_group_tenant_user_sort",
+          "kind": "index",
+          "fields": [],
+          "startLine": 570,
+          "endLine": 570
+        },
+        {
+          "name": "idx_group_relation_tenant_user_group_library",
+          "kind": "index",
+          "fields": [],
+          "startLine": 587,
+          "endLine": 587
+        },
+        {
+          "name": "idx_group_relation_tenant_user_library",
+          "kind": "index",
+          "fields": [],
+          "startLine": 589,
+          "endLine": 589
+        },
+        {
+          "name": "idx_group_relation_tenant_library",
+          "kind": "index",
+          "fields": [],
+          "startLine": 591,
+          "endLine": 591
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 54
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-api/src/main/java/cn/iocoder/yudao/module/report/api/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/ReportServerApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ReportServerApplication",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "ReportServerApplication",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/controller/admin/ajreport/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/controller/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/convert/ajreport/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/dal/dataobject/ajreport/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/dal/mysql/ajreport/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/framework/jmreport/core/web/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/framework/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 6,
+          "endLine": 9,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/framework/rpc/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/framework/security/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/service/ajreport/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/test/resources/application-unit-test.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 52,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "mybatis-plus",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "yudao",
+          "level": 1,
+          "line": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/test/resources/sql/clean.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/test/resources/sql/create_tables.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 14,
+      "nonEmptyLines": 14,
+      "definitions": [
+        {
+          "name": "report_go_view_project",
+          "kind": "table",
+          "fields": [],
+          "startLine": 1,
+          "endLine": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,2077 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 26,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 26,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 26,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/ArticleCategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "createArticleCategory",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateArticleCategory",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteArticleCategory",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getArticleCategory",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSimpleDeptList",
+          "startLine": 66,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "getArticleCategoryPage",
+          "startLine": 76,
+          "endLine": 82,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ArticleCategoryController",
+          "startLine": 24,
+          "endLine": 84,
+          "methods": [
+            "createArticleCategory",
+            "updateArticleCategory",
+            "deleteArticleCategory",
+            "getArticleCategory",
+            "getSimpleDeptList",
+            "getArticleCategoryPage"
+          ],
+          "properties": [
+            "articleCategoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createArticleCategory",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "updateArticleCategory",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "deleteArticleCategory",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "getArticleCategory",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleDeptList",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getArticleCategoryPage",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "ArticleCategoryController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createArticleCategory",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createArticleCategory",
+          "callee": "articleCategoryService.createArticleCategory",
+          "lineNumber": 37
+        },
+        {
+          "caller": "updateArticleCategory",
+          "callee": "articleCategoryService.updateArticleCategory",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateArticleCategory",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "deleteArticleCategory",
+          "callee": "articleCategoryService.deleteArticleCategory",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteArticleCategory",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getArticleCategory",
+          "callee": "articleCategoryService.getArticleCategory",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getArticleCategory",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getArticleCategory",
+          "callee": "ArticleCategoryConvert.INSTANCE.convert",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getSimpleDeptList",
+          "callee": "articleCategoryService.getArticleCategoryListByStatus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getSimpleDeptList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getSimpleDeptList",
+          "callee": "list.sort",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getSimpleDeptList",
+          "callee": "Comparator.comparing(ArticleCategoryDO::getSort).reversed",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getSimpleDeptList",
+          "callee": "Comparator.comparing",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getSimpleDeptList",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getSimpleDeptList",
+          "callee": "ArticleCategoryConvert.INSTANCE.convertList03",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getArticleCategoryPage",
+          "callee": "articleCategoryService.getArticleCategoryPage",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getArticleCategoryPage",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getArticleCategoryPage",
+          "callee": "ArticleCategoryConvert.INSTANCE.convertPage",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/ArticleController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "createArticle",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateArticle",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteArticle",
+          "startLine": 47,
+          "endLine": 54,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getArticle",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getArticlePage",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ArticleController",
+          "startLine": 23,
+          "endLine": 73,
+          "methods": [
+            "createArticle",
+            "updateArticle",
+            "deleteArticle",
+            "getArticle",
+            "getArticlePage"
+          ],
+          "properties": [
+            "articleService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createArticle",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "updateArticle",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "deleteArticle",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getArticle",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getArticlePage",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "ArticleController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createArticle",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createArticle",
+          "callee": "articleService.createArticle",
+          "lineNumber": 36
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "articleService.updateArticle",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "success",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deleteArticle",
+          "callee": "articleService.deleteArticle",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteArticle",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getArticle",
+          "callee": "articleService.getArticle",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getArticle",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getArticle",
+          "callee": "ArticleConvert.INSTANCE.convert",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "articleService.getArticlePage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "ArticleConvert.INSTANCE.convertPage",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/article/ArticleCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "ArticleCreateReqVO",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCreateReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/article/ArticlePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "ArticlePageReqVO",
+          "startLine": 14,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "categoryId",
+            "spuId",
+            "title",
+            "author",
+            "status",
+            "recommendHot",
+            "recommendBanner",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticlePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/article/ArticleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "ArticleRespVO",
+          "startLine": 10,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "id",
+            "browseCount",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/article/ArticleUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "ArticleUpdateReqVO",
+          "startLine": 9,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleUpdateReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/category/ArticleCategoryCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "ArticleCategoryCreateReqVO",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryCreateReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/category/ArticleCategoryPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "ArticleCategoryPageReqVO",
+          "startLine": 14,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "name",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/category/ArticleCategoryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ArticleCategoryRespVO",
+          "startLine": 10,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/category/ArticleCategorySimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "ArticleCategorySimpleRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "id",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategorySimpleRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/article/vo/category/ArticleCategoryUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "ArticleCategoryUpdateReqVO",
+          "startLine": 9,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryUpdateReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/article/AppArticleCategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "getArticleCategoryList",
+          "startLine": 30,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppArticleCategoryController",
+          "startLine": 21,
+          "endLine": 39,
+          "methods": [
+            "getArticleCategoryList"
+          ],
+          "properties": [
+            "articleCategoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getArticleCategoryList",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "AppArticleCategoryController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getArticleCategoryList",
+          "callee": "articleCategoryService.getArticleCategoryListByStatus",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getArticleCategoryList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getArticleCategoryList",
+          "callee": "categoryList.sort",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getArticleCategoryList",
+          "callee": "Comparator.comparing",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getArticleCategoryList",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getArticleCategoryList",
+          "callee": "ArticleCategoryConvert.INSTANCE.convertList04",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/article/AppArticleController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "getArticleList",
+          "startLine": 36,
+          "endLine": 48,
+          "params": [
+            "recommendHot",
+            "recommendBanner"
+          ]
+        },
+        {
+          "name": "getArticlePage",
+          "startLine": 50,
+          "endLine": 55,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getArticle",
+          "startLine": 57,
+          "endLine": 69,
+          "params": [
+            "id",
+            "title"
+          ]
+        },
+        {
+          "name": "addBrowseCount",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppArticleController",
+          "startLine": 27,
+          "endLine": 80,
+          "methods": [
+            "getArticleList",
+            "getArticlePage",
+            "getArticle",
+            "addBrowseCount"
+          ],
+          "properties": [
+            "articleService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getArticleList",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getArticlePage",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getArticle",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "addBrowseCount",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "AppArticleController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getArticleList",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getArticleList",
+          "callee": "ArticleConvert.INSTANCE.convertList03",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getArticleList",
+          "callee": "articleService.getArticleCategoryListByRecommend",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "ArticleConvert.INSTANCE.convertPage02",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "articleService.getArticlePage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getArticle",
+          "callee": "articleService.getArticle",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getArticle",
+          "callee": "articleService.getLastArticleByTitle",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getArticle",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getArticle",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 68
+        },
+        {
+          "caller": "addBrowseCount",
+          "callee": "articleService.addArticleBrowseCount",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addBrowseCount",
+          "callee": "success",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/article/vo/article/AppArticlePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "AppArticlePageReqVO",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "categoryId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppArticlePageReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/article/vo/article/AppArticleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "AppArticleRespVO",
+          "startLine": 8,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "author",
+            "categoryId",
+            "picUrl",
+            "introduction",
+            "content",
+            "createTime",
+            "browseCount",
+            "spuId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppArticleRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/article/vo/category/AppArticleCategoryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "AppArticleCategoryRespVO",
+          "startLine": 6,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "picUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppArticleCategoryRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/article/ArticleCategoryConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "ArticleCategoryConvert",
+          "startLine": 20,
+          "endLine": 39,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertList03",
+            "convertList04"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/article/ArticleConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "ArticleConvert",
+          "startLine": 19,
+          "endLine": 40,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convert01",
+            "convertPage02",
+            "convertList03"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleConvert",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/article/ArticleCategoryDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "ArticleCategoryDO",
+          "startLine": 15,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "picUrl",
+            "status",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/article/ArticleDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 77,
+      "classes": [
+        {
+          "name": "ArticleDO",
+          "startLine": 15,
+          "endLine": 81,
+          "methods": [],
+          "properties": [
+            "id",
+            "categoryId",
+            "spuId",
+            "title",
+            "author",
+            "picUrl",
+            "introduction",
+            "browseCount",
+            "sort",
+            "status",
+            "recommendHot",
+            "recommendBanner",
+            "content"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/article/ArticleCategoryMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "ArticleCategoryMapper",
+          "startLine": 17,
+          "endLine": 32,
+          "methods": [
+            "selectPage",
+            "selectListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleCategoryDO>()\n                .likeIfPresent(ArticleCategoryDO::getName, reqVO.getName())\n                .eqIfPresent(ArticleCategoryDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(ArticleCategoryDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleCategoryDO>()\n                .likeIfPresent(ArticleCategoryDO::getName, reqVO.getName())\n                .eqIfPresent(ArticleCategoryDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleCategoryDO>()\n                .likeIfPresent(ArticleCategoryDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleCategoryDO>().likeIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleCategoryDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/article/ArticleMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "ArticleMapper",
+          "startLine": 19,
+          "endLine": 56,
+          "methods": [
+            "selectPage",
+            "selectList",
+            "selectListByTitle",
+            "selectPage",
+            "updateBrowseCount"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId())\n                .eqIfPresent(ArticleDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(ArticleDO::getAuthor, reqVO.getAuthor())\n                .eqIfPresent(ArticleDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ArticleDO::getSpuId, reqVO.getSpuId())\n                .eqIfPresent(ArticleDO::getRecommendHot, reqVO.getRecommendHot())\n                .eqIfPresent(ArticleDO::getRecommendBanner, reqVO.getRecommendBanner())\n                .betweenIfPresent(ArticleDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId())\n                .eqIfPresent(ArticleDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(ArticleDO::getAuthor, reqVO.getAuthor())\n                .eqIfPresent(ArticleDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ArticleDO::getSpuId, reqVO.getSpuId())\n                .eqIfPresent(ArticleDO::getRecommendHot, reqVO.getRecommendHot())\n                .eqIfPresent(ArticleDO::getRecommendBanner, reqVO.getRecommendBanner()).betweenIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId())\n                .eqIfPresent(ArticleDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(ArticleDO::getAuthor, reqVO.getAuthor())\n                .eqIfPresent(ArticleDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ArticleDO::getSpuId, reqVO.getSpuId())\n                .eqIfPresent(ArticleDO::getRecommendHot, reqVO.getRecommendHot()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId())\n                .eqIfPresent(ArticleDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(ArticleDO::getAuthor, reqVO.getAuthor())\n                .eqIfPresent(ArticleDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ArticleDO::getSpuId, reqVO.getSpuId()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId())\n                .eqIfPresent(ArticleDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(ArticleDO::getAuthor, reqVO.getAuthor())\n                .eqIfPresent(ArticleDO::getStatus, reqVO.getStatus()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId())\n                .eqIfPresent(ArticleDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(ArticleDO::getAuthor, reqVO.getAuthor()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId())\n                .eqIfPresent(ArticleDO::getTitle, reqVO.getTitle()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getCategoryId, reqVO.getCategoryId()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>().eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCategoryId",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTitle",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getAuthor",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSpuId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getRecommendHot",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getRecommendBanner",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>()\n                .eqIfPresent(ArticleDO::getRecommendHot, recommendHot).eqIfPresent",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>().eqIfPresent",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByTitle",
+          "callee": "selectList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>().eqIfPresent",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ArticleDO>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getCategoryId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "update",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "new LambdaUpdateWrapper<ArticleDO>()\n                .eq(ArticleDO::getId, id).setSql",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "new LambdaUpdateWrapper<ArticleDO>().eq",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "new LambdaUpdateWrapper<ArticleDO>",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/article/ArticleCategoryService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "ArticleCategoryService",
+          "startLine": 17,
+          "endLine": 65,
+          "methods": [
+            "createArticleCategory",
+            "updateArticleCategory",
+            "deleteArticleCategory",
+            "getArticleCategory",
+            "getArticleCategoryPage",
+            "getArticleCategoryListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleCategoryService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/article/ArticleCategoryServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "createArticleCategory",
+          "startLine": 37,
+          "endLine": 44,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateArticleCategory",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteArticleCategory",
+          "startLine": 55,
+          "endLine": 67,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateArticleCategoryExists",
+          "startLine": 69,
+          "endLine": 73,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getArticleCategory",
+          "startLine": 75,
+          "endLine": 78,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getArticleCategoryPage",
+          "startLine": 80,
+          "endLine": 83,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getArticleCategoryListByStatus",
+          "startLine": 85,
+          "endLine": 88,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ArticleCategoryServiceImpl",
+          "startLine": 26,
+          "endLine": 90,
+          "methods": [
+            "createArticleCategory",
+            "updateArticleCategory",
+            "deleteArticleCategory",
+            "validateArticleCategoryExists",
+            "getArticleCategory",
+            "getArticleCategoryPage",
+            "getArticleCategoryListByStatus"
+          ],
+          "properties": [
+            "articleCategoryMapper",
+            "articleService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createArticleCategory",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "updateArticleCategory",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "deleteArticleCategory",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getArticleCategory",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getArticleCategoryPage",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getArticleCategoryListByStatus",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "ArticleCategoryServiceImpl",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createArticleCategory",
+          "callee": "ArticleCategoryConvert.INSTANCE.convert",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createArticleCategory",
+          "callee": "articleCategoryMapper.insert",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createArticleCategory",
+          "callee": "category.getId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateArticleCategory",
+          "callee": "validateArticleCategoryExists",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateArticleCategory",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateArticleCategory",
+          "callee": "ArticleCategoryConvert.INSTANCE.convert",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateArticleCategory",
+          "callee": "articleCategoryMapper.updateById",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteArticleCategory",
+          "callee": "validateArticleCategoryExists",
+          "lineNumber": 58
+        },
+        {
+          "caller": "deleteArticleCategory",
+          "callee": "articleService.getArticleCountByCategoryId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteArticleCategory",
+          "callee": "exception",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteArticleCategory",
+          "callee": "articleCategoryMapper.deleteById",
+          "lineNumber": 66
+        },
+        {
+          "caller": "validateArticleCategoryExists",
+          "callee": "articleCategoryMapper.selectById",
+          "lineNumber": 70
+        },
+        {
+          "caller": "validateArticleCategoryExists",
+          "callee": "exception",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getArticleCategory",
+          "callee": "articleCategoryMapper.selectById",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getArticleCategoryPage",
+          "callee": "articleCategoryMapper.selectPage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getArticleCategoryListByStatus",
+          "callee": "articleCategoryMapper.selectListByStatus",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/article/ArticleService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 86,
+      "classes": [
+        {
+          "name": "ArticleService",
+          "startLine": 18,
+          "endLine": 100,
+          "methods": [
+            "createArticle",
+            "updateArticle",
+            "deleteArticle",
+            "getArticle",
+            "getLastArticleByTitle",
+            "getArticlePage",
+            "getArticleCategoryListByRecommend",
+            "getArticlePage",
+            "getArticleCountByCategoryId",
+            "addArticleBrowseCount"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ArticleService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/article/ArticleServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "createArticle",
+          "startLine": 38,
+          "endLine": 49,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateArticle",
+          "startLine": 51,
+          "endLine": 61,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteArticle",
+          "startLine": 63,
+          "endLine": 69,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateArticleExists",
+          "startLine": 71,
+          "endLine": 75,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateArticleCategoryExists",
+          "startLine": 77,
+          "endLine": 82,
+          "params": [
+            "categoryId"
+          ]
+        },
+        {
+          "name": "getArticle",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getLastArticleByTitle",
+          "startLine": 89,
+          "endLine": 93,
+          "params": [
+            "title"
+          ]
+        },
+        {
+          "name": "getArticlePage",
+          "startLine": 95,
+          "endLine": 98,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getArticleCategoryListByRecommend",
+          "startLine": 100,
+          "endLine": 103,
+          "params": [
+            "recommendHot",
+            "recommendBanner"
+          ]
+        },
+        {
+          "name": "getArticlePage",
+          "startLine": 105,
+          "endLine": 108,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getArticleCountByCategoryId",
+          "startLine": 110,
+          "endLine": 113,
+          "params": [
+            "categoryId"
+          ]
+        },
+        {
+          "name": "addArticleBrowseCount",
+          "startLine": 115,
+          "endLine": 121,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ArticleServiceImpl",
+          "startLine": 28,
+          "endLine": 123,
+          "methods": [
+            "createArticle",
+            "updateArticle",
+            "deleteArticle",
+            "validateArticleExists",
+            "validateArticleCategoryExists",
+            "getArticle",
+            "getLastArticleByTitle",
+            "getArticlePage",
+            "getArticleCategoryListByRecommend",
+            "getArticlePage",
+            "getArticleCountByCategoryId",
+            "addArticleBrowseCount"
+          ],
+          "properties": [
+            "articleMapper",
+            "articleCategoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createArticle",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateArticle",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteArticle",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getArticle",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getLastArticleByTitle",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getArticlePage",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "getArticleCategoryListByRecommend",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "getArticlePage",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "getArticleCountByCategoryId",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "addArticleBrowseCount",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "ArticleServiceImpl",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createArticle",
+          "callee": "validateArticleCategoryExists",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createArticle",
+          "callee": "createReqVO.getCategoryId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createArticle",
+          "callee": "ArticleConvert.INSTANCE.convert",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createArticle",
+          "callee": "article.setBrowseCount",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createArticle",
+          "callee": "articleMapper.insert",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createArticle",
+          "callee": "article.getId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "validateArticleExists",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "validateArticleCategoryExists",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "updateReqVO.getCategoryId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "ArticleConvert.INSTANCE.convert",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateArticle",
+          "callee": "articleMapper.updateById",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteArticle",
+          "callee": "validateArticleExists",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteArticle",
+          "callee": "articleMapper.deleteById",
+          "lineNumber": 68
+        },
+        {
+          "caller": "validateArticleExists",
+          "callee": "articleMapper.selectById",
+          "lineNumber": 72
+        },
+        {
+          "caller": "validateArticleExists",
+          "callee": "exception",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validateArticleCategoryExists",
+          "callee": "articleCategoryService.getArticleCategory",
+          "lineNumber": 78
+        },
+        {
+          "caller": "validateArticleCategoryExists",
+          "callee": "exception",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getArticle",
+          "callee": "articleMapper.selectById",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getLastArticleByTitle",
+          "callee": "articleMapper.selectListByTitle",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getLastArticleByTitle",
+          "callee": "CollUtil.getLast",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "articleMapper.selectPage",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getArticleCategoryListByRecommend",
+          "callee": "articleMapper.selectList",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getArticlePage",
+          "callee": "articleMapper.selectPage",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getArticleCountByCategoryId",
+          "callee": "articleMapper.selectCount",
+          "lineNumber": 112
+        },
+        {
+          "caller": "addArticleBrowseCount",
+          "callee": "validateArticleExists",
+          "lineNumber": 118
+        },
+        {
+          "caller": "addArticleBrowseCount",
+          "callee": "articleMapper.updateBrowseCount",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 11,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,615 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 7,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 7,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/process/MesProProcessContentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "createProcessContent",
+          "startLine": 31,
+          "endLine": 36,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateProcessContent",
+          "startLine": 38,
+          "endLine": 44,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteProcessContent",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getProcessContent",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getProcessContentListByProcessId",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "processId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesProProcessContentController",
+          "startLine": 22,
+          "endLine": 73,
+          "methods": [
+            "createProcessContent",
+            "updateProcessContent",
+            "deleteProcessContent",
+            "getProcessContent",
+            "getProcessContentListByProcessId"
+          ],
+          "properties": [
+            "processContentService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createProcessContent",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "updateProcessContent",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "deleteProcessContent",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessContent",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessContentListByProcessId",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "MesProProcessContentController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createProcessContent",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createProcessContent",
+          "callee": "processContentService.createProcessContent",
+          "lineNumber": 35
+        },
+        {
+          "caller": "updateProcessContent",
+          "callee": "processContentService.updateProcessContent",
+          "lineNumber": 42
+        },
+        {
+          "caller": "updateProcessContent",
+          "callee": "success",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deleteProcessContent",
+          "callee": "processContentService.deleteProcessContent",
+          "lineNumber": 51
+        },
+        {
+          "caller": "deleteProcessContent",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getProcessContent",
+          "callee": "processContentService.getProcessContent",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getProcessContent",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getProcessContent",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getProcessContentListByProcessId",
+          "callee": "processContentService.getProcessContentListByProcessId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getProcessContentListByProcessId",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getProcessContentListByProcessId",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/process/vo/content/MesProProcessContentRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MesProProcessContentRespVO",
+          "startLine": 8,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "processId",
+            "sort",
+            "content",
+            "device",
+            "material",
+            "docUrl",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProProcessContentRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/process/vo/content/MesProProcessContentSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MesProProcessContentSaveReqVO",
+          "startLine": 7,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "id",
+            "processId",
+            "sort",
+            "content",
+            "device",
+            "material",
+            "docUrl",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProProcessContentSaveReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/dal/dataobject/pro/process/MesProProcessContentDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "MesProProcessContentDO",
+          "startLine": 14,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "id",
+            "processId",
+            "sort",
+            "content",
+            "device",
+            "material",
+            "docUrl",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProProcessContentDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/dal/mysql/pro/process/MesProProcessContentMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MesProProcessContentMapper",
+          "startLine": 15,
+          "endLine": 29,
+          "methods": [
+            "selectListByProcessId",
+            "deleteByProcessId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProProcessContentMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByProcessId",
+          "callee": "selectList",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectListByProcessId",
+          "callee": "new LambdaQueryWrapperX<MesProProcessContentDO>()\n                .eq(MesProProcessContentDO::getProcessId, processId).orderByAsc",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectListByProcessId",
+          "callee": "new LambdaQueryWrapperX<MesProProcessContentDO>().eq",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectListByProcessId",
+          "callee": "new LambdaQueryWrapperX<MesProProcessContentDO>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "deleteByProcessId",
+          "callee": "delete",
+          "lineNumber": 25
+        },
+        {
+          "caller": "deleteByProcessId",
+          "callee": "new LambdaQueryWrapperX<MesProProcessContentDO>().eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "deleteByProcessId",
+          "callee": "new LambdaQueryWrapperX<MesProProcessContentDO>",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/pro/process/MesProProcessContentService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "MesProProcessContentService",
+          "startLine": 14,
+          "endLine": 61,
+          "methods": [
+            "createProcessContent",
+            "updateProcessContent",
+            "deleteProcessContent",
+            "getProcessContent",
+            "getProcessContentListByProcessId",
+            "deleteProcessContentByProcessId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProProcessContentService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/pro/process/MesProProcessContentServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "createProcessContent",
+          "startLine": 33,
+          "endLine": 42,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateProcessContent",
+          "startLine": 44,
+          "endLine": 52,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteProcessContent",
+          "startLine": 54,
+          "endLine": 61,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateProcessContentExists",
+          "startLine": 63,
+          "endLine": 67,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getProcessContent",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getProcessContentListByProcessId",
+          "startLine": 74,
+          "endLine": 77,
+          "params": [
+            "processId"
+          ]
+        },
+        {
+          "name": "deleteProcessContentByProcessId",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "processId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesProProcessContentServiceImpl",
+          "startLine": 22,
+          "endLine": 84,
+          "methods": [
+            "createProcessContent",
+            "updateProcessContent",
+            "deleteProcessContent",
+            "validateProcessContentExists",
+            "getProcessContent",
+            "getProcessContentListByProcessId",
+            "deleteProcessContentByProcessId"
+          ],
+          "properties": [
+            "processContentMapper",
+            "processService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createProcessContent",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "updateProcessContent",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "deleteProcessContent",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessContent",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessContentListByProcessId",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "deleteProcessContentByProcessId",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "MesProProcessContentServiceImpl",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createProcessContent",
+          "callee": "processService.validateProcessExists",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createProcessContent",
+          "callee": "createReqVO.getProcessId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createProcessContent",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createProcessContent",
+          "callee": "processContentMapper.insert",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createProcessContent",
+          "callee": "content.getId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "updateProcessContent",
+          "callee": "validateProcessContentExists",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateProcessContent",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateProcessContent",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateProcessContent",
+          "callee": "processContentMapper.updateById",
+          "lineNumber": 51
+        },
+        {
+          "caller": "deleteProcessContent",
+          "callee": "validateProcessContentExists",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deleteProcessContent",
+          "callee": "processContentMapper.deleteById",
+          "lineNumber": 60
+        },
+        {
+          "caller": "validateProcessContentExists",
+          "callee": "processContentMapper.selectById",
+          "lineNumber": 64
+        },
+        {
+          "caller": "validateProcessContentExists",
+          "callee": "exception",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getProcessContent",
+          "callee": "processContentMapper.selectById",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getProcessContentListByProcessId",
+          "callee": "processContentMapper.selectListByProcessId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "deleteProcessContentByProcessId",
+          "callee": "processContentMapper.deleteByProcessId",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    }
+  ]
+}

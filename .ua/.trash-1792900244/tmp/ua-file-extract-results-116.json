@@ -1,0 +1,4735 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 34,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 34,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 34,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmCategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "createCategory",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateCategory",
+          "startLine": 43,
+          "endLine": 49,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateCategorySortBatch",
+          "startLine": 51,
+          "endLine": 58,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "deleteCategory",
+          "startLine": 60,
+          "endLine": 67,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCategory",
+          "startLine": 69,
+          "endLine": 76,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCategoryPage",
+          "startLine": 78,
+          "endLine": 84,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getCategorySimpleList",
+          "startLine": 86,
+          "endLine": 93,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmCategoryController",
+          "startLine": 27,
+          "endLine": 95,
+          "methods": [
+            "createCategory",
+            "updateCategory",
+            "updateCategorySortBatch",
+            "deleteCategory",
+            "getCategory",
+            "getCategoryPage",
+            "getCategorySimpleList"
+          ],
+          "properties": [
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createCategory",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "updateCategory",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "updateCategorySortBatch",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCategory",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getCategory",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getCategoryPage",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getCategorySimpleList",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "BpmCategoryController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCategory",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createCategory",
+          "callee": "categoryService.createCategory",
+          "lineNumber": 40
+        },
+        {
+          "caller": "updateCategory",
+          "callee": "categoryService.updateCategory",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateCategory",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateCategorySortBatch",
+          "callee": "categoryService.updateCategorySortBatch",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateCategorySortBatch",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deleteCategory",
+          "callee": "categoryService.deleteCategory",
+          "lineNumber": 65
+        },
+        {
+          "caller": "deleteCategory",
+          "callee": "success",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getCategory",
+          "callee": "categoryService.getCategory",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getCategory",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getCategory",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getCategoryPage",
+          "callee": "categoryService.getCategoryPage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getCategoryPage",
+          "callee": "success",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCategoryPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "categoryService.getCategoryListByStatus",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "list.sort",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "Comparator.comparingInt",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "success",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "convertList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "new BpmCategoryRespVO().setId(category.getId())\n                .setName(category.getName()).setCode",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "new BpmCategoryRespVO().setId(category.getId()).setName",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "new BpmCategoryRespVO().setId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "new BpmCategoryRespVO",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "category.getId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "category.getName",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getCategorySimpleList",
+          "callee": "category.getCode",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmFormController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "createForm",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateForm",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteForm",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getForm",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getFormSimpleList",
+          "startLine": 67,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "getFormPage",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmFormController",
+          "startLine": 25,
+          "endLine": 83,
+          "methods": [
+            "createForm",
+            "updateForm",
+            "deleteForm",
+            "getForm",
+            "getFormSimpleList",
+            "getFormPage"
+          ],
+          "properties": [
+            "formService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createForm",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "updateForm",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "deleteForm",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getForm",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getFormSimpleList",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getFormPage",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "BpmFormController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createForm",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createForm",
+          "callee": "formService.createForm",
+          "lineNumber": 38
+        },
+        {
+          "caller": "updateForm",
+          "callee": "formService.updateForm",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateForm",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "deleteForm",
+          "callee": "formService.deleteForm",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteForm",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getForm",
+          "callee": "formService.getForm",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getForm",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getForm",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "formService.getFormList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "convertList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "new BpmFormRespVO().setId(formDO.getId()).setName",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "new BpmFormRespVO().setId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "new BpmFormRespVO",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "formDO.getId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getFormSimpleList",
+          "callee": "formDO.getName",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getFormPage",
+          "callee": "formService.getFormPage",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getFormPage",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getFormPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmModelController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 246,
+      "nonEmptyLines": 223,
+      "functions": [
+        {
+          "name": "getModelList",
+          "startLine": 69,
+          "endLine": 107,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getModel",
+          "startLine": 109,
+          "endLine": 121,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "exportModel",
+          "startLine": 123,
+          "endLine": 129,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createModel",
+          "startLine": 131,
+          "endLine": 136,
+          "params": [
+            "createRetVO"
+          ]
+        },
+        {
+          "name": "importModel",
+          "startLine": 138,
+          "endLine": 166,
+          "params": [
+            "file",
+            "key",
+            "name"
+          ]
+        },
+        {
+          "name": "updateModel",
+          "startLine": 168,
+          "endLine": 174,
+          "params": [
+            "modelVO"
+          ]
+        },
+        {
+          "name": "updateModelSortBatch",
+          "startLine": 176,
+          "endLine": 182,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "deployModel",
+          "startLine": 184,
+          "endLine": 191,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateModelState",
+          "startLine": 193,
+          "endLine": 199,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateModelBpmn",
+          "startLine": 201,
+          "endLine": 208,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteModel",
+          "startLine": 210,
+          "endLine": 217,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "cleanModel",
+          "startLine": 219,
+          "endLine": 226,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSimpleModel",
+          "startLine": 230,
+          "endLine": 235,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "updateSimpleModel",
+          "startLine": 237,
+          "endLine": 244,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmModelController",
+          "startLine": 49,
+          "endLine": 246,
+          "methods": [
+            "getModelList",
+            "getModel",
+            "exportModel",
+            "createModel",
+            "importModel",
+            "updateModel",
+            "updateModelSortBatch",
+            "deployModel",
+            "updateModelState",
+            "updateModelBpmn",
+            "deleteModel",
+            "cleanModel",
+            "getSimpleModel",
+            "updateSimpleModel"
+          ],
+          "properties": [
+            "modelService",
+            "formService",
+            "categoryService",
+            "processDefinitionService",
+            "adminUserApi",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getModelList",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getModel",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "exportModel",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "createModel",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "importModel",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "updateModel",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "updateModelSortBatch",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "deployModel",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "updateModelState",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "updateModelBpmn",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "deleteModel",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "cleanModel",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleModel",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "updateSimpleModel",
+          "line": 237,
+          "isDefault": false
+        },
+        {
+          "name": "BpmModelController",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getModelList",
+          "callee": "modelService.getModelList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getModelList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getModelList",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getModelList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getModelList",
+          "callee": "convertSet",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getModelList",
+          "callee": "BpmModelConvert.INSTANCE.parseMetaInfo",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getModelList",
+          "callee": "metaInfo.getFormId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getModelList",
+          "callee": "formService.getFormMap",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getModelList",
+          "callee": "categoryService.getCategoryMap",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getModelList",
+          "callee": "convertSet",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getModelList",
+          "callee": "processDefinitionService.getDeploymentMap",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getModelList",
+          "callee": "convertSet",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getModelList",
+          "callee": "processDefinitionService.getProcessDefinitionListByDeploymentIds",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getModelList",
+          "callee": "deploymentMap.keySet",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getModelList",
+          "callee": "convertMap",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getModelList",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getModelList",
+          "callee": "BpmModelConvert.INSTANCE.parseMetaInfo",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getModelList",
+          "callee": "metaInfo.getStartUserIds().stream",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getModelList",
+          "callee": "metaInfo.getStartUserIds",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getModelList",
+          "callee": "Stream.empty",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getModelList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getModelList",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getModelList",
+          "callee": "BpmModelConvert.INSTANCE.parseMetaInfo",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getModelList",
+          "callee": "metaInfo.getStartDeptIds",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getModelList",
+          "callee": "metaInfo.getStartDeptIds().stream",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getModelList",
+          "callee": "metaInfo.getStartDeptIds",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getModelList",
+          "callee": "Stream.empty",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getModelList",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getModelList",
+          "callee": "success",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getModelList",
+          "callee": "BpmModelConvert.INSTANCE.buildModelList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getModel",
+          "callee": "modelService.getModel",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getModel",
+          "callee": "modelService.getModelBpmnXML",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getModel",
+          "callee": "modelService.getSimpleModel",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getModel",
+          "callee": "success",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getModel",
+          "callee": "BpmModelConvert.INSTANCE.buildModel",
+          "lineNumber": 120
+        },
+        {
+          "caller": "exportModel",
+          "callee": "success",
+          "lineNumber": 128
+        },
+        {
+          "caller": "exportModel",
+          "callee": "modelService.exportModel",
+          "lineNumber": 128
+        },
+        {
+          "caller": "createModel",
+          "callee": "success",
+          "lineNumber": 135
+        },
+        {
+          "caller": "createModel",
+          "callee": "modelService.createModel",
+          "lineNumber": 135
+        },
+        {
+          "caller": "importModel",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 151
+        },
+        {
+          "caller": "importModel",
+          "callee": "file.getBytes",
+          "lineNumber": 151
+        },
+        {
+          "caller": "importModel",
+          "callee": "exception",
+          "lineNumber": 153
+        },
+        {
+          "caller": "importModel",
+          "callee": "exception",
+          "lineNumber": 156
+        },
+        {
+          "caller": "importModel",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 158
+        },
+        {
+          "caller": "importModel",
+          "callee": "reqVO.setKey",
+          "lineNumber": 159
+        },
+        {
+          "caller": "importModel",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 161
+        },
+        {
+          "caller": "importModel",
+          "callee": "reqVO.setName",
+          "lineNumber": 162
+        },
+        {
+          "caller": "importModel",
+          "callee": "ValidationUtils.validate",
+          "lineNumber": 164
+        },
+        {
+          "caller": "importModel",
+          "callee": "success",
+          "lineNumber": 165
+        },
+        {
+          "caller": "importModel",
+          "callee": "modelService.importModel",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateModel",
+          "callee": "modelService.updateModel",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateModel",
+          "callee": "getLoginUserId",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateModel",
+          "callee": "success",
+          "lineNumber": 173
+        },
+        {
+          "caller": "updateModelSortBatch",
+          "callee": "modelService.updateModelSortBatch",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateModelSortBatch",
+          "callee": "getLoginUserId",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateModelSortBatch",
+          "callee": "success",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deployModel",
+          "callee": "modelService.deployModel",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deployModel",
+          "callee": "getLoginUserId",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deployModel",
+          "callee": "success",
+          "lineNumber": 190
+        },
+        {
+          "caller": "updateModelState",
+          "callee": "modelService.updateModelState",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateModelState",
+          "callee": "getLoginUserId",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateModelState",
+          "callee": "reqVO.getId",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateModelState",
+          "callee": "reqVO.getState",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateModelState",
+          "callee": "success",
+          "lineNumber": 198
+        },
+        {
+          "caller": "updateModelBpmn",
+          "callee": "modelService.updateModelBpmnXml",
+          "lineNumber": 206
+        },
+        {
+          "caller": "updateModelBpmn",
+          "callee": "reqVO.getId",
+          "lineNumber": 206
+        },
+        {
+          "caller": "updateModelBpmn",
+          "callee": "reqVO.getBpmnXml",
+          "lineNumber": 206
+        },
+        {
+          "caller": "updateModelBpmn",
+          "callee": "success",
+          "lineNumber": 207
+        },
+        {
+          "caller": "deleteModel",
+          "callee": "modelService.deleteModel",
+          "lineNumber": 215
+        },
+        {
+          "caller": "deleteModel",
+          "callee": "getLoginUserId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "deleteModel",
+          "callee": "success",
+          "lineNumber": 216
+        },
+        {
+          "caller": "cleanModel",
+          "callee": "modelService.cleanModel",
+          "lineNumber": 224
+        },
+        {
+          "caller": "cleanModel",
+          "callee": "getLoginUserId",
+          "lineNumber": 224
+        },
+        {
+          "caller": "cleanModel",
+          "callee": "success",
+          "lineNumber": 225
+        },
+        {
+          "caller": "getSimpleModel",
+          "callee": "success",
+          "lineNumber": 234
+        },
+        {
+          "caller": "getSimpleModel",
+          "callee": "modelService.getSimpleModel",
+          "lineNumber": 234
+        },
+        {
+          "caller": "updateSimpleModel",
+          "callee": "modelService.updateSimpleModel",
+          "lineNumber": 242
+        },
+        {
+          "caller": "updateSimpleModel",
+          "callee": "getLoginUserId",
+          "lineNumber": 242
+        },
+        {
+          "caller": "updateSimpleModel",
+          "callee": "success",
+          "lineNumber": 243
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 15,
+        "functionCount": 14,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmProcessDefinitionController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 121,
+      "functions": [
+        {
+          "name": "getProcessDefinitionPage",
+          "startLine": 52,
+          "endLine": 76,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getProcessDefinitionList",
+          "startLine": 78,
+          "endLine": 102,
+          "params": [
+            "suspensionState"
+          ]
+        },
+        {
+          "name": "getSimpleProcessDefinitionList",
+          "startLine": 104,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "getProcessDefinition",
+          "startLine": 115,
+          "endLine": 131,
+          "params": [
+            "id",
+            "key"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmProcessDefinitionController",
+          "startLine": 39,
+          "endLine": 133,
+          "methods": [
+            "getProcessDefinitionPage",
+            "getProcessDefinitionList",
+            "getSimpleProcessDefinitionList",
+            "getProcessDefinition"
+          ],
+          "properties": [
+            "processDefinitionService",
+            "formService",
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getProcessDefinitionPage",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessDefinitionList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleProcessDefinitionList",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessDefinition",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "BpmProcessDefinitionController",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "processDefinitionService.getProcessDefinitionPage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "success",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "categoryService.getCategoryMap",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "convertSet",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "processDefinitionService.getDeploymentMap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "convertSet",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "convertSet",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "formService.getFormMap",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "convertSet",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "processDefinitionMap.values",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getProcessDefinitionPage",
+          "callee": "BpmProcessDefinitionConvert.INSTANCE.buildProcessDefinitionPage",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "processDefinitionService.getProcessDefinitionListBySuspensionState",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "convertSet",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "getLoginUserId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "list.removeIf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "processDefinitionMap.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "processDefinition.getId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "Boolean.FALSE.equals",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "processDefinitionInfo.getVisible",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "processDefinitionService.canUserStartProcessDefinition",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "success",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getProcessDefinitionList",
+          "callee": "BpmProcessDefinitionConvert.INSTANCE.buildProcessDefinitionList",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "processDefinitionService.getProcessDefinitionListBySuspensionState",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "SuspensionState.ACTIVE.getStateCode",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "success",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "convertList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "new BpmProcessDefinitionRespVO()\n                .setId(definition.getId()).setName(definition.getName()).setKey",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "new BpmProcessDefinitionRespVO()\n                .setId(definition.getId()).setName",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "new BpmProcessDefinitionRespVO().setId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "new BpmProcessDefinitionRespVO",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "definition.getId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "definition.getName",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getSimpleProcessDefinitionList",
+          "callee": "definition.getKey",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "processDefinitionService.getProcessDefinition",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "processDefinitionService.getActiveProcessDefinition",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "success",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "processDefinitionService.getProcessDefinitionInfo",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "processDefinition.getId",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "processDefinitionService.getProcessDefinitionBpmnModel",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "processDefinition.getId",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "success",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getProcessDefinition",
+          "callee": "BpmProcessDefinitionConvert.INSTANCE.buildProcessDefinition",
+          "lineNumber": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/category/BpmCategoryPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "BpmCategoryPageReqVO",
+          "startLine": 14,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "name",
+            "code",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmCategoryPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/category/BpmCategoryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "BpmCategoryRespVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "code",
+            "description",
+            "status",
+            "sort",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmCategoryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/category/BpmCategorySaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "BpmCategorySaveReqVO",
+          "startLine": 10,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "code",
+            "status",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmCategorySaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/form/BpmFormFieldVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "BpmFormFieldVO",
+          "startLine": 10,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "type",
+            "field",
+            "title",
+            "children"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmFormFieldVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/form/BpmFormPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "BpmFormPageReqVO",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmFormPageReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/form/BpmFormRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "BpmFormRespVO",
+          "startLine": 10,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "conf",
+            "fields",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmFormRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/form/BpmFormSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "BpmFormSaveReqVO",
+          "startLine": 9,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "conf",
+            "fields",
+            "status",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmFormSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/model/BpmModelMetaInfoVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 200,
+      "nonEmptyLines": 150,
+      "classes": [
+        {
+          "name": "BpmModelMetaInfoVO",
+          "startLine": 28,
+          "endLine": 200,
+          "methods": [],
+          "properties": [
+            "icon",
+            "description",
+            "type",
+            "formType",
+            "formId",
+            "formCustomCreatePath",
+            "formCustomViewPath",
+            "visible",
+            "startUserIds",
+            "startDeptIds",
+            "managerUserIds",
+            "sort",
+            "allowCancelRunningProcess",
+            "allowWithdrawTask",
+            "processIdRule",
+            "autoApprovalType",
+            "titleSetting",
+            "summarySetting",
+            "processBeforeTriggerSetting",
+            "processAfterTriggerSetting",
+            "taskBeforeTriggerSetting",
+            "taskAfterTriggerSetting",
+            "printTemplateSetting"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmModelMetaInfoVO",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/model/BpmModelRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "BpmModelRespVO",
+          "startLine": 13,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "key",
+            "name",
+            "icon",
+            "category",
+            "categoryName",
+            "formName",
+            "createTime",
+            "startUsers",
+            "startDepts",
+            "bpmnXml",
+            "simpleModel",
+            "processDefinition"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmModelRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/model/BpmModelSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "BpmModelSaveReqVO",
+          "startLine": 9,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "id",
+            "key",
+            "name",
+            "category",
+            "bpmnXml",
+            "simpleModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmModelSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/model/simple/BpmSimpleModelNodeVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 529,
+      "nonEmptyLines": 404,
+      "classes": [
+        {
+          "name": "BpmSimpleModelNodeVO",
+          "startLine": 21,
+          "endLine": 529,
+          "methods": [],
+          "properties": [
+            "id",
+            "type",
+            "name",
+            "showText",
+            "childNode",
+            "candidateStrategy",
+            "candidateParam",
+            "approveType",
+            "approveMethod",
+            "approveRatio",
+            "fieldsPermission",
+            "buttonsSetting",
+            "signEnable",
+            "reasonRequire",
+            "skipExpression",
+            "rejectHandler",
+            "timeoutHandler",
+            "assignStartUserHandlerType",
+            "assignEmptyHandler",
+            "taskCreateListener",
+            "taskAssignListener",
+            "taskCompleteListener",
+            "delaySetting",
+            "conditionNodes",
+            "conditionSetting",
+            "routerGroups",
+            "routerDefaultFlowId",
+            "triggerSetting",
+            "attachNodeId",
+            "childProcessSetting"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmSimpleModelNodeVO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/model/simple/BpmSimpleModelUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "BpmSimpleModelUpdateReqVO",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "id",
+            "simpleModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmSimpleModelUpdateReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/process/BpmProcessDefinitionPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "BpmProcessDefinitionPageReqVO",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "key"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessDefinitionPageReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/process/BpmProcessDefinitionRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "BpmProcessDefinitionRespVO",
+          "startLine": 10,
+          "endLine": 71,
+          "methods": [],
+          "properties": [
+            "id",
+            "version",
+            "name",
+            "key",
+            "category",
+            "categoryName",
+            "modelType",
+            "modelId",
+            "formConf",
+            "formFields",
+            "formName",
+            "suspensionState",
+            "deploymentTime",
+            "bpmnXml",
+            "simpleModel",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessDefinitionRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/oa/BpmOALeaveController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "createLeave",
+          "startLine": 38,
+          "endLine": 43,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "getLeave",
+          "startLine": 45,
+          "endLine": 52,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getLeavePage",
+          "startLine": 54,
+          "endLine": 60,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmOALeaveController",
+          "startLine": 29,
+          "endLine": 62,
+          "methods": [
+            "createLeave",
+            "getLeave",
+            "getLeavePage"
+          ],
+          "properties": [
+            "leaveService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createLeave",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getLeave",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "getLeavePage",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "BpmOALeaveController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createLeave",
+          "callee": "success",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createLeave",
+          "callee": "leaveService.createLeave",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createLeave",
+          "callee": "getLoginUserId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getLeave",
+          "callee": "leaveService.getLeave",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getLeave",
+          "callee": "success",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getLeave",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getLeavePage",
+          "callee": "leaveService.getLeavePage",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getLeavePage",
+          "callee": "getLoginUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getLeavePage",
+          "callee": "success",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getLeavePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/oa/vo/BpmOALeaveCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "isEndTimeValid",
+          "startLine": 38,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmOALeaveCreateReqVO",
+          "startLine": 15,
+          "endLine": 43,
+          "methods": [
+            "isEndTimeValid"
+          ],
+          "properties": [
+            "startTime",
+            "endTime",
+            "type",
+            "reason",
+            "startUserSelectAssignees"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isEndTimeValid",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "BpmOALeaveCreateReqVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isEndTimeValid",
+          "callee": "getEndTime().isBefore",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isEndTimeValid",
+          "callee": "getEndTime",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isEndTimeValid",
+          "callee": "getStartTime",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/oa/vo/BpmOALeavePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "BpmOALeavePageReqVO",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "status",
+            "type",
+            "reason",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmOALeavePageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/oa/vo/BpmOALeaveRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "BpmOALeaveRespVO",
+          "startLine": 8,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "id",
+            "type",
+            "reason",
+            "createTime",
+            "startTime",
+            "endTime",
+            "processInstanceId",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmOALeaveRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/BpmProcessInstanceController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 226,
+      "nonEmptyLines": 206,
+      "functions": [
+        {
+          "name": "getProcessInstanceMyPage",
+          "startLine": 65,
+          "endLine": 93,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getProcessInstanceManagerPage",
+          "startLine": 95,
+          "endLine": 122,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "createProcessInstance",
+          "startLine": 124,
+          "endLine": 129,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "getProcessInstance",
+          "startLine": 131,
+          "endLine": 153,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "cancelProcessInstanceByStartUser",
+          "startLine": 155,
+          "endLine": 162,
+          "params": [
+            "cancelReqVO"
+          ]
+        },
+        {
+          "name": "cancelProcessInstanceByManager",
+          "startLine": 164,
+          "endLine": 171,
+          "params": [
+            "cancelReqVO"
+          ]
+        },
+        {
+          "name": "getApprovalDetail",
+          "startLine": 173,
+          "endLine": 183,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getNextApprovalNodes",
+          "startLine": 185,
+          "endLine": 194,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getProcessInstanceBpmnModelView",
+          "startLine": 196,
+          "endLine": 203,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getProcessInstancePrintData",
+          "startLine": 205,
+          "endLine": 224,
+          "params": [
+            "processInstanceId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmProcessInstanceController",
+          "startLine": 45,
+          "endLine": 226,
+          "methods": [
+            "getProcessInstanceMyPage",
+            "getProcessInstanceManagerPage",
+            "createProcessInstance",
+            "getProcessInstance",
+            "cancelProcessInstanceByStartUser",
+            "cancelProcessInstanceByManager",
+            "getApprovalDetail",
+            "getNextApprovalNodes",
+            "getProcessInstanceBpmnModelView",
+            "getProcessInstancePrintData"
+          ],
+          "properties": [
+            "processInstanceService",
+            "taskService",
+            "processDefinitionService",
+            "categoryService",
+            "adminUserApi",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getProcessInstanceMyPage",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessInstanceManagerPage",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "createProcessInstance",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessInstance",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "cancelProcessInstanceByStartUser",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "cancelProcessInstanceByManager",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "getApprovalDetail",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "getNextApprovalNodes",
+          "line": 185,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessInstanceBpmnModelView",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "getProcessInstancePrintData",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "BpmProcessInstanceController",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "processInstanceService.getProcessInstancePage",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "taskService.getTaskMapByProcessInstanceIds",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "convertList",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "processDefinitionService.getProcessDefinitionMap",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "convertSet",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "categoryService.getCategoryMap",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "convertSet",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "processDefinitionMap.values",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "convertSet",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "convertSet",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "processInstance.getStartUserId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "userIds.addAll",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "taskMap.values",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "tasks.stream().map(Task::getAssignee).filter(StrUtil::isNotBlank).map",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "tasks.stream().map(Task::getAssignee).filter",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "tasks.stream().map",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "tasks.stream",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "convertSet",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "userMap.values",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "success",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getProcessInstanceMyPage",
+          "callee": "BpmProcessInstanceConvert.INSTANCE.buildProcessInstancePage",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "processInstanceService.getProcessInstancePage",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "success",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "taskService.getTaskMapByProcessInstanceIds",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "convertList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "processDefinitionService.getProcessDefinitionMap",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "categoryService.getCategoryMap",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "processDefinitionMap.values",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "processInstance.getStartUserId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "userMap.values",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "success",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getProcessInstanceManagerPage",
+          "callee": "BpmProcessInstanceConvert.INSTANCE.buildProcessInstancePage",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createProcessInstance",
+          "callee": "success",
+          "lineNumber": 128
+        },
+        {
+          "caller": "createProcessInstance",
+          "callee": "processInstanceService.createProcessInstance",
+          "lineNumber": 128
+        },
+        {
+          "caller": "createProcessInstance",
+          "callee": "getLoginUserId",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "processInstanceService.getHistoricProcessInstance",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "success",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "processDefinitionService.getProcessDefinition",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "processInstance.getProcessDefinitionId",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "processDefinitionService.getProcessDefinitionInfo",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "processInstance.getProcessDefinitionId",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "adminUserApi.getUser(NumberUtils.parseLong(processInstance.getStartUserId())).getCheckedData",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "adminUserApi.getUser",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "processInstance.getStartUserId",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "startUser.getDeptId",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "deptApi.getDept(startUser.getDeptId()).getCheckedData",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "deptApi.getDept",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "startUser.getDeptId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "success",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getProcessInstance",
+          "callee": "BpmProcessInstanceConvert.INSTANCE.buildProcessInstance",
+          "lineNumber": 151
+        },
+        {
+          "caller": "cancelProcessInstanceByStartUser",
+          "callee": "processInstanceService.cancelProcessInstanceByStartUser",
+          "lineNumber": 160
+        },
+        {
+          "caller": "cancelProcessInstanceByStartUser",
+          "callee": "getLoginUserId",
+          "lineNumber": 160
+        },
+        {
+          "caller": "cancelProcessInstanceByStartUser",
+          "callee": "success",
+          "lineNumber": 161
+        },
+        {
+          "caller": "cancelProcessInstanceByManager",
+          "callee": "processInstanceService.cancelProcessInstanceByAdmin",
+          "lineNumber": 169
+        },
+        {
+          "caller": "cancelProcessInstanceByManager",
+          "callee": "getLoginUserId",
+          "lineNumber": 169
+        },
+        {
+          "caller": "cancelProcessInstanceByManager",
+          "callee": "success",
+          "lineNumber": 170
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "reqVO.getProcessVariablesStr",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "reqVO.setProcessVariables",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "reqVO.getProcessVariablesStr",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "success",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "processInstanceService.getApprovalDetail",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getApprovalDetail",
+          "callee": "getLoginUserId",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 190
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "reqVO.getProcessVariablesStr",
+          "lineNumber": 190
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "reqVO.setProcessVariables",
+          "lineNumber": 191
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 191
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "reqVO.getProcessVariablesStr",
+          "lineNumber": 191
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "success",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "processInstanceService.getNextApprovalNodes",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getNextApprovalNodes",
+          "callee": "getLoginUserId",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getProcessInstanceBpmnModelView",
+          "callee": "success",
+          "lineNumber": 202
+        },
+        {
+          "caller": "getProcessInstanceBpmnModelView",
+          "callee": "processInstanceService.getProcessInstanceBpmnModelView",
+          "lineNumber": 202
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "processInstanceService.getHistoricProcessInstance",
+          "lineNumber": 211
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "exception",
+          "lineNumber": 213
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "adminUserApi.getUser(Long.valueOf(historicProcessInstance.getStartUserId())).getCheckedData",
+          "lineNumber": 215
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "adminUserApi.getUser",
+          "lineNumber": 215
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "Long.valueOf",
+          "lineNumber": 215
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "historicProcessInstance.getStartUserId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "deptApi.getDept(startUser.getDeptId()).getCheckedData",
+          "lineNumber": 216
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "deptApi.getDept",
+          "lineNumber": 216
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "startUser.getDeptId",
+          "lineNumber": 216
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "taskService.getFinishedTaskListByProcessInstanceIdWithoutCancel",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 218
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "convertSet",
+          "lineNumber": 219
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "Long.valueOf",
+          "lineNumber": 219
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "item.getAssignee",
+          "lineNumber": 219
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "success",
+          "lineNumber": 220
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "BpmProcessInstanceConvert.INSTANCE.buildProcessInstancePrintData",
+          "lineNumber": 220
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "processDefinitionService.getProcessDefinitionInfo",
+          "lineNumber": 221
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "historicProcessInstance.getProcessDefinitionId",
+          "lineNumber": 221
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "new UserSimpleBaseVO().setNickname(startUser.getNickname()).setDeptName",
+          "lineNumber": 223
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "new UserSimpleBaseVO().setNickname",
+          "lineNumber": 223
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "new UserSimpleBaseVO",
+          "lineNumber": 223
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "startUser.getNickname",
+          "lineNumber": 223
+        },
+        {
+          "caller": "getProcessInstancePrintData",
+          "callee": "dept.getName",
+          "lineNumber": 223
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/BpmProcessInstanceCopyController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "getProcessInstanceCopyPage",
+          "startLine": 54,
+          "endLine": 87,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmProcessInstanceCopyController",
+          "startLine": 38,
+          "endLine": 89,
+          "methods": [
+            "getProcessInstanceCopyPage"
+          ],
+          "properties": [
+            "processInstanceCopyService",
+            "processInstanceService",
+            "processDefinitionService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getProcessInstanceCopyPage",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "BpmProcessInstanceCopyController",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "processInstanceCopyService.getProcessInstanceCopyPage",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "processInstanceService.getHistoricProcessInstanceMap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "convertSet",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "convertListByFlatMap",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "Stream.of",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copy.getStartUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copy.getUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "convertSet",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "convertPage",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copy.getUserId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copyVO.setCreateUser",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copy.getStartUserId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copyVO.setStartUser",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copyVO.getProcessInstanceId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copyVO.setSummary",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "FlowableUtils.getSummary",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "processDefinitionInfoMap.get",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "processInstance.getProcessDefinitionId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "processInstance.getProcessVariables",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "copyVO.setProcessInstanceStartTime",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "DateUtils.of",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getProcessInstanceCopyPage",
+          "callee": "processInstance.getStartTime",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/BpmTaskController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 273,
+      "nonEmptyLines": 246,
+      "functions": [
+        {
+          "name": "getTaskTodoPage",
+          "startLine": 66,
+          "endLine": 83,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getTaskDonePage",
+          "startLine": 85,
+          "endLine": 104,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getTaskManagerPage",
+          "startLine": 106,
+          "endLine": 129,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getTaskListByProcessInstanceId",
+          "startLine": 131,
+          "endLine": 154,
+          "params": [
+            "processInstanceId"
+          ]
+        },
+        {
+          "name": "approveTask",
+          "startLine": 156,
+          "endLine": 162,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "rejectTask",
+          "startLine": 164,
+          "endLine": 170,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getTaskListByReturn",
+          "startLine": 172,
+          "endLine": 180,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "returnTask",
+          "startLine": 182,
+          "endLine": 188,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "delegateTask",
+          "startLine": 190,
+          "endLine": 196,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "transferTask",
+          "startLine": 198,
+          "endLine": 204,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "createSignTask",
+          "startLine": 206,
+          "endLine": 212,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteSignTask",
+          "startLine": 214,
+          "endLine": 220,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "copyTask",
+          "startLine": 222,
+          "endLine": 228,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "withdrawTask",
+          "startLine": 230,
+          "endLine": 236,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "getTaskListByParentTaskId",
+          "startLine": 238,
+          "endLine": 253,
+          "params": [
+            "parentTaskId"
+          ]
+        },
+        {
+          "name": "getTaskAttachmentMap",
+          "startLine": 261,
+          "endLine": 271,
+          "params": [
+            "taskList"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskController",
+          "startLine": 46,
+          "endLine": 273,
+          "methods": [
+            "getTaskTodoPage",
+            "getTaskDonePage",
+            "getTaskManagerPage",
+            "getTaskListByProcessInstanceId",
+            "approveTask",
+            "rejectTask",
+            "getTaskListByReturn",
+            "returnTask",
+            "delegateTask",
+            "transferTask",
+            "createSignTask",
+            "deleteSignTask",
+            "copyTask",
+            "withdrawTask",
+            "getTaskListByParentTaskId",
+            "getTaskAttachmentMap"
+          ],
+          "properties": [
+            "taskService",
+            "processInstanceService",
+            "formService",
+            "processDefinitionService",
+            "adminUserApi",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTaskTodoPage",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getTaskDonePage",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "getTaskManagerPage",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getTaskListByProcessInstanceId",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "approveTask",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "rejectTask",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "getTaskListByReturn",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "returnTask",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "delegateTask",
+          "line": 190,
+          "isDefault": false
+        },
+        {
+          "name": "transferTask",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "createSignTask",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "deleteSignTask",
+          "line": 214,
+          "isDefault": false
+        },
+        {
+          "name": "copyTask",
+          "line": 222,
+          "isDefault": false
+        },
+        {
+          "name": "withdrawTask",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "getTaskListByParentTaskId",
+          "line": 238,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskController",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "taskService.getTaskTodoPage",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "processInstanceService.getProcessInstanceMap",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "convertSet",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "convertSet",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "processInstanceMap.values",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "Long.valueOf",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "instance.getStartUserId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "convertSet",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTaskTodoPage",
+          "callee": "BpmTaskConvert.INSTANCE.buildTodoTaskPage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "taskService.getTaskDonePage",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "getLoginUserId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "success",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "PageResult.empty",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "processInstanceService.getHistoricProcessInstanceMap",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "convertSet",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "convertSet",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "processInstanceMap.values",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "Long.valueOf",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "instance.getStartUserId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "convertSet",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "getTaskAttachmentMap",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "success",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getTaskDonePage",
+          "callee": "BpmTaskConvert.INSTANCE.buildTaskPage",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "taskService.getTaskPage",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "success",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "processInstanceService.getHistoricProcessInstanceMap",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "processInstanceMap.values",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "Long.valueOf",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "instance.getStartUserId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "userIds.addAll",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "task.getAssignee",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "userMap.values",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "processDefinitionService.getProcessDefinitionInfoMap",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "convertSet",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "getTaskAttachmentMap",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "success",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getTaskManagerPage",
+          "callee": "BpmTaskConvert.INSTANCE.buildTaskPage",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "taskService.getTaskListByProcessInstanceId",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "success",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "Collections.emptyList",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "Stream.of",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "task.getAssignee",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "task.getOwner",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "convertSet",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "userMap.values",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "formService.getFormMap",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "convertSet",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "task.getFormKey",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "getTaskAttachmentMap",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "success",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getTaskListByProcessInstanceId",
+          "callee": "BpmTaskConvert.INSTANCE.buildTaskListByProcessInstanceId",
+          "lineNumber": 152
+        },
+        {
+          "caller": "approveTask",
+          "callee": "taskService.approveTask",
+          "lineNumber": 160
+        },
+        {
+          "caller": "approveTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 160
+        },
+        {
+          "caller": "approveTask",
+          "callee": "success",
+          "lineNumber": 161
+        },
+        {
+          "caller": "rejectTask",
+          "callee": "taskService.rejectTask",
+          "lineNumber": 168
+        },
+        {
+          "caller": "rejectTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "rejectTask",
+          "callee": "success",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "taskService.getUserTaskListByReturn",
+          "lineNumber": 177
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "success",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "convertList",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "new BpmTaskRespVO().setName(userTask.getName()).setTaskDefinitionKey",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "new BpmTaskRespVO().setName",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "new BpmTaskRespVO",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "userTask.getName",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getTaskListByReturn",
+          "callee": "userTask.getId",
+          "lineNumber": 179
+        },
+        {
+          "caller": "returnTask",
+          "callee": "taskService.returnTask",
+          "lineNumber": 186
+        },
+        {
+          "caller": "returnTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 186
+        },
+        {
+          "caller": "returnTask",
+          "callee": "success",
+          "lineNumber": 187
+        },
+        {
+          "caller": "delegateTask",
+          "callee": "taskService.delegateTask",
+          "lineNumber": 194
+        },
+        {
+          "caller": "delegateTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 194
+        },
+        {
+          "caller": "delegateTask",
+          "callee": "success",
+          "lineNumber": 195
+        },
+        {
+          "caller": "transferTask",
+          "callee": "taskService.transferTask",
+          "lineNumber": 202
+        },
+        {
+          "caller": "transferTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 202
+        },
+        {
+          "caller": "transferTask",
+          "callee": "success",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createSignTask",
+          "callee": "taskService.createSignTask",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createSignTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createSignTask",
+          "callee": "success",
+          "lineNumber": 211
+        },
+        {
+          "caller": "deleteSignTask",
+          "callee": "taskService.deleteSignTask",
+          "lineNumber": 218
+        },
+        {
+          "caller": "deleteSignTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "deleteSignTask",
+          "callee": "success",
+          "lineNumber": 219
+        },
+        {
+          "caller": "copyTask",
+          "callee": "taskService.copyTask",
+          "lineNumber": 226
+        },
+        {
+          "caller": "copyTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 226
+        },
+        {
+          "caller": "copyTask",
+          "callee": "success",
+          "lineNumber": 227
+        },
+        {
+          "caller": "withdrawTask",
+          "callee": "taskService.withdrawTask",
+          "lineNumber": 234
+        },
+        {
+          "caller": "withdrawTask",
+          "callee": "getLoginUserId",
+          "lineNumber": 234
+        },
+        {
+          "caller": "withdrawTask",
+          "callee": "success",
+          "lineNumber": 235
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "taskService.getTaskListByParentTaskId",
+          "lineNumber": 243
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 244
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "success",
+          "lineNumber": 245
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "Collections.emptyList",
+          "lineNumber": 245
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 248
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 248
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "Stream.of",
+          "lineNumber": 249
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 249
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "user.getAssignee",
+          "lineNumber": 249
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 249
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "user.getOwner",
+          "lineNumber": 249
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 250
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "convertSet",
+          "lineNumber": 251
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "userMap.values",
+          "lineNumber": 251
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "success",
+          "lineNumber": 252
+        },
+        {
+          "caller": "getTaskListByParentTaskId",
+          "callee": "BpmTaskConvert.INSTANCE.buildTaskListByParentTaskId",
+          "lineNumber": 252
+        },
+        {
+          "caller": "getTaskAttachmentMap",
+          "callee": "convertMultiMap",
+          "lineNumber": 263
+        },
+        {
+          "caller": "getTaskAttachmentMap",
+          "callee": "new ArrayList<>",
+          "lineNumber": 266
+        },
+        {
+          "caller": "getTaskAttachmentMap",
+          "callee": "processTaskMap.forEach",
+          "lineNumber": 267
+        },
+        {
+          "caller": "getTaskAttachmentMap",
+          "callee": "attachments.addAll",
+          "lineNumber": 267
+        },
+        {
+          "caller": "getTaskAttachmentMap",
+          "callee": "taskService.getAttachments",
+          "lineNumber": 267
+        },
+        {
+          "caller": "getTaskAttachmentMap",
+          "callee": "convertSet",
+          "lineNumber": 268
+        },
+        {
+          "caller": "getTaskAttachmentMap",
+          "callee": "convertMultiMap",
+          "lineNumber": 270
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 16,
+        "functionCount": 16,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/cc/BpmProcessInstanceCopyRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "BpmProcessInstanceCopyRespVO",
+          "startLine": 11,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "id",
+            "startUser",
+            "processInstanceId",
+            "processInstanceName",
+            "processInstanceStartTime",
+            "activityId",
+            "activityName",
+            "taskId",
+            "reason",
+            "createUser",
+            "createTime",
+            "summary"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessInstanceCopyRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/instance/BpmApprovalDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 81,
+      "classes": [
+        {
+          "name": "BpmApprovalDetailRespVO",
+          "startLine": 15,
+          "endLine": 115,
+          "methods": [],
+          "properties": [
+            "status",
+            "activityNodes",
+            "formFieldsPermission",
+            "todoTask",
+            "processDefinition",
+            "processInstance"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmApprovalDetailRespVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/instance/BpmProcessInstanceBpmnModelViewRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "BpmProcessInstanceBpmnModelViewRespVO",
+          "startLine": 11,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "processInstance",
+            "tasks",
+            "bpmnXml",
+            "simpleModel",
+            "unfinishedTaskActivityIds",
+            "finishedTaskActivityIds",
+            "finishedSequenceFlowActivityIds",
+            "rejectedTaskActivityIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessInstanceBpmnModelViewRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/instance/BpmProcessInstanceCancelReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "BpmProcessInstanceCancelReqVO",
+          "startLine": 8,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id",
+            "reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessInstanceCancelReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/instance/BpmProcessInstanceCopyPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "BpmProcessInstanceCopyPageReqVO",
+          "startLine": 12,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "processInstanceName",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessInstanceCopyPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/instance/BpmProcessInstancePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "BpmProcessInstancePageReqVO",
+          "startLine": 14,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "name",
+            "processDefinitionKey",
+            "status",
+            "category",
+            "createTime",
+            "endTime",
+            "startUserId",
+            "formFieldsParams"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessInstancePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/instance/BpmProcessInstanceRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 63,
+      "classes": [
+        {
+          "name": "BpmProcessInstanceRespVO",
+          "startLine": 14,
+          "endLine": 86,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "summary",
+            "category",
+            "categoryName",
+            "status",
+            "startTime",
+            "endTime",
+            "durationInMillis",
+            "formVariables",
+            "businessKey",
+            "startUser",
+            "processDefinitionId",
+            "processDefinition",
+            "tasks"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessInstanceRespVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/instance/BpmProcessPrintDataRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "BpmProcessPrintDataRespVO",
+          "startLine": 8,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "processInstance",
+            "printTemplateEnable",
+            "printTemplateHtml",
+            "tasks"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmProcessPrintDataRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/vo/task/BpmTaskPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "BpmTaskPageReqVO",
+          "startLine": 13,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "name",
+            "category",
+            "processDefinitionKey",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmTaskPageReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

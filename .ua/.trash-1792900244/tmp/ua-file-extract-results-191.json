@@ -1,0 +1,878 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 8,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 8,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mes/yudao-module-mes-api/src/main/java/cn/iocoder/yudao/module/mes/enums/dv/MesDvMachineryStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvMachineryStatusEnum",
+          "startLine": 14,
+          "endLine": 38,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvMachineryStatusEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/home/MesHomeStatisticsController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "getHomeSummary",
+          "startLine": 34,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "getWorkOrderStatusDistribution",
+          "startLine": 41,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "getProductionTrend",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "days"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesHomeStatisticsController",
+          "startLine": 25,
+          "endLine": 57,
+          "methods": [
+            "getHomeSummary",
+            "getWorkOrderStatusDistribution",
+            "getProductionTrend"
+          ],
+          "properties": [
+            "homeStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getHomeSummary",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getWorkOrderStatusDistribution",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getProductionTrend",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "MesHomeStatisticsController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getHomeSummary",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "homeStatisticsService.getHomeSummary",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "homeStatisticsService.getWorkOrderStatusDistribution",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "homeStatisticsService.getProductionTrend",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/home/vo/MesHomeProductionTrendRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "MesHomeProductionTrendRespVO",
+          "startLine": 10,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "date",
+            "quantity",
+            "qualifiedQuantity",
+            "unqualifiedQuantity"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesHomeProductionTrendRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/home/vo/MesHomeSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "MesHomeSummaryRespVO",
+          "startLine": 8,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "workOrderActiveCount",
+            "workOrderPrepareCount",
+            "workOrderFinishedCount",
+            "todayOutput",
+            "yesterdayOutput",
+            "todayQualifiedQuantity",
+            "todayUnqualifiedQuantity",
+            "machineryTotal",
+            "machineryProducing",
+            "machineryStop",
+            "machineryMaintenance",
+            "andonActiveCount",
+            "repairActiveCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesHomeSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/home/vo/MesHomeWorkOrderStatusRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "MesHomeWorkOrderStatusRespVO",
+          "startLine": 8,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "status",
+            "statusName",
+            "count"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesHomeWorkOrderStatusRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/dal/mysql/home/MesHomeStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "MesHomeStatisticsMapper",
+          "startLine": 16,
+          "endLine": 67,
+          "methods": [
+            "selectWorkOrderCountGroupByStatus",
+            "selectFeedbackSummary",
+            "selectMachineryCountGroupByStatus",
+            "selectAndonActiveCount",
+            "selectRepairActiveCount",
+            "selectDailyFeedbackTrend"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesHomeStatisticsMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/home/MesHomeStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "MesHomeStatisticsService",
+          "startLine": 14,
+          "endLine": 38,
+          "methods": [
+            "getHomeSummary",
+            "getWorkOrderStatusDistribution",
+            "getProductionTrend"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesHomeStatisticsService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/home/MesHomeStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 168,
+      "nonEmptyLines": 149,
+      "functions": [
+        {
+          "name": "getHomeSummary",
+          "startLine": 30,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "getWorkOrderStatusDistribution",
+          "startLine": 96,
+          "endLine": 111,
+          "params": []
+        },
+        {
+          "name": "getProductionTrend",
+          "startLine": 113,
+          "endLine": 147,
+          "params": [
+            "days"
+          ]
+        },
+        {
+          "name": "getDecimal",
+          "startLine": 151,
+          "endLine": 156,
+          "params": [
+            "map",
+            "key"
+          ]
+        },
+        {
+          "name": "getDecimalFromObj",
+          "startLine": 158,
+          "endLine": 166,
+          "params": [
+            "obj"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesHomeStatisticsServiceImpl",
+          "startLine": 24,
+          "endLine": 168,
+          "methods": [
+            "getHomeSummary",
+            "getWorkOrderStatusDistribution",
+            "getProductionTrend",
+            "getDecimal",
+            "getDecimalFromObj"
+          ],
+          "properties": [
+            "homeStatisticsMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getHomeSummary",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "getWorkOrderStatusDistribution",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "getProductionTrend",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "MesHomeStatisticsServiceImpl",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getHomeSummary",
+          "callee": "new MesHomeSummaryRespVO",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "homeStatisticsMapper.selectWorkOrderCountGroupByStatus",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "((Number) stat.get(\"status\")).intValue",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "stat.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "((Number) stat.get(\"count\")).longValue",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "stat.get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "MesProWorkOrderStatusEnum.CONFIRMED.getStatus",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "MesProWorkOrderStatusEnum.PREPARE.getStatus",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "MesProWorkOrderStatusEnum.FINISHED.getStatus",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setWorkOrderActiveCount",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setWorkOrderPrepareCount",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setWorkOrderFinishedCount",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "LocalDateTimeUtils.getToday",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "LocalDateTimeUtils.getYesterday",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "homeStatisticsMapper.selectFeedbackSummary",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setTodayOutput",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "getDecimal",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setTodayQualifiedQuantity",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "getDecimal",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setTodayUnqualifiedQuantity",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "getDecimal",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "homeStatisticsMapper.selectFeedbackSummary",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setYesterdayOutput",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "getDecimal",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "homeStatisticsMapper.selectMachineryCountGroupByStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "((Number) stat.get(\"status\")).intValue",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "stat.get",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "((Number) stat.get(\"count\")).longValue",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "stat.get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "MesDvMachineryStatusEnum.PRODUCING.getStatus",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "MesDvMachineryStatusEnum.STOP.getStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "MesDvMachineryStatusEnum.MAINTENANCE.getStatus",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setMachineryTotal",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setMachineryProducing",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setMachineryStop",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setMachineryMaintenance",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setAndonActiveCount",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "homeStatisticsMapper.selectAndonActiveCount",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "summary.setRepairActiveCount",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getHomeSummary",
+          "callee": "homeStatisticsMapper.selectRepairActiveCount",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "homeStatisticsMapper.selectWorkOrderCountGroupByStatus",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "new ArrayList<>",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "MesProWorkOrderStatusEnum.values",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "((Number) stat.get(\"status\")).intValue",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "stat.get",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "statusEnum.getStatus",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "((Number) stat.get(\"count\")).longValue",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "stat.get",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "result.add",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "new MesHomeWorkOrderStatusRespVO",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "statusEnum.getStatus",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getWorkOrderStatusDistribution",
+          "callee": "statusEnum.getName",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "LocalDate.now().plusDays",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "LocalDate.now",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "endDate.minusDays",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "startDate.atStartOfDay",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "endDate.atStartOfDay",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "homeStatisticsMapper.selectDailyFeedbackTrend",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "new LinkedHashMap<>",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "dateMap.put",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "row.get",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "DateTimeFormatter.ofPattern",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "new ArrayList<>",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "d.isBefore",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "d.plusDays",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "d.format",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "dateMap.get",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "new MesHomeProductionTrendRespVO",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "vo.setDate",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "vo.setQuantity",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "getDecimalFromObj",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "row.get",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "vo.setQualifiedQuantity",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "getDecimalFromObj",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "row.get",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "vo.setUnqualifiedQuantity",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "getDecimalFromObj",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "row.get",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "vo.setQuantity",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "vo.setQualifiedQuantity",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "vo.setUnqualifiedQuantity",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getProductionTrend",
+          "callee": "result.add",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getDecimal",
+          "callee": "map.get",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getDecimal",
+          "callee": "map.get",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getDecimalFromObj",
+          "callee": "new BigDecimal",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getDecimalFromObj",
+          "callee": "obj.toString",
+          "lineNumber": 165
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    }
+  ]
+}

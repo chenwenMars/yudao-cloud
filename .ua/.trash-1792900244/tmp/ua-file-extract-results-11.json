@@ -1,0 +1,3684 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/number/MoneyUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 148,
+      "functions": [
+        {
+          "name": "calculateRatePrice",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "price",
+            "rate"
+          ]
+        },
+        {
+          "name": "calculateRatePriceFloor",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "price",
+            "rate"
+          ]
+        },
+        {
+          "name": "calculator",
+          "startLine": 56,
+          "endLine": 62,
+          "params": [
+            "price",
+            "count",
+            "percent"
+          ]
+        },
+        {
+          "name": "calculateRatePrice",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "price",
+            "rate",
+            "scale",
+            "roundingMode"
+          ]
+        },
+        {
+          "name": "fenToYuan",
+          "startLine": 83,
+          "endLine": 85,
+          "params": [
+            "fen"
+          ]
+        },
+        {
+          "name": "fenToYuanStr",
+          "startLine": 95,
+          "endLine": 97,
+          "params": [
+            "fen"
+          ]
+        },
+        {
+          "name": "priceScale",
+          "startLine": 107,
+          "endLine": 109,
+          "params": [
+            "price"
+          ]
+        },
+        {
+          "name": "priceAdd",
+          "startLine": 119,
+          "endLine": 130,
+          "params": []
+        },
+        {
+          "name": "priceMultiply",
+          "startLine": 141,
+          "endLine": 146,
+          "params": [
+            "price",
+            "count"
+          ]
+        },
+        {
+          "name": "priceMultiplyPercent",
+          "startLine": 157,
+          "endLine": 162,
+          "params": [
+            "price",
+            "percent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MoneyUtils",
+          "startLine": 14,
+          "endLine": 164,
+          "methods": [
+            "calculateRatePrice",
+            "calculateRatePriceFloor",
+            "calculator",
+            "calculateRatePrice",
+            "fenToYuan",
+            "fenToYuanStr",
+            "priceScale",
+            "priceAdd",
+            "priceMultiply",
+            "priceMultiplyPercent"
+          ],
+          "properties": [
+            "PRICE_SCALE",
+            "PERCENT_100"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PERCENT_100",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "calculateRatePrice",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "calculateRatePriceFloor",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "calculator",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "calculateRatePrice",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "fenToYuan",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "fenToYuanStr",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "priceScale",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "priceAdd",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "priceMultiply",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "priceMultiplyPercent",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "MoneyUtils",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "calculateRatePrice",
+          "callee": "calculateRatePrice(price, rate, 0, RoundingMode.HALF_UP).intValue",
+          "lineNumber": 34
+        },
+        {
+          "caller": "calculateRatePrice",
+          "callee": "calculateRatePrice",
+          "lineNumber": 34
+        },
+        {
+          "caller": "calculateRatePriceFloor",
+          "callee": "calculateRatePrice(price, rate, 0, RoundingMode.FLOOR).intValue",
+          "lineNumber": 45
+        },
+        {
+          "caller": "calculateRatePriceFloor",
+          "callee": "calculateRatePrice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "calculator",
+          "callee": "MoneyUtils.calculateRatePriceFloor",
+          "lineNumber": 61
+        },
+        {
+          "caller": "calculateRatePrice",
+          "callee": "NumberUtil.toBigDecimal(price).multiply(NumberUtil.toBigDecimal(rate)).divide",
+          "lineNumber": 73
+        },
+        {
+          "caller": "calculateRatePrice",
+          "callee": "NumberUtil.toBigDecimal(price).multiply",
+          "lineNumber": 73
+        },
+        {
+          "caller": "calculateRatePrice",
+          "callee": "NumberUtil.toBigDecimal",
+          "lineNumber": 73
+        },
+        {
+          "caller": "calculateRatePrice",
+          "callee": "NumberUtil.toBigDecimal",
+          "lineNumber": 73
+        },
+        {
+          "caller": "calculateRatePrice",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 74
+        },
+        {
+          "caller": "fenToYuan",
+          "callee": "new Money(0, fen).getAmount",
+          "lineNumber": 84
+        },
+        {
+          "caller": "fenToYuan",
+          "callee": "new Money",
+          "lineNumber": 84
+        },
+        {
+          "caller": "fenToYuanStr",
+          "callee": "new Money(0, fen).toString",
+          "lineNumber": 96
+        },
+        {
+          "caller": "fenToYuanStr",
+          "callee": "new Money",
+          "lineNumber": 96
+        },
+        {
+          "caller": "priceScale",
+          "callee": "(price == null ? BigDecimal.ZERO : price).setScale",
+          "lineNumber": 108
+        },
+        {
+          "caller": "priceAdd",
+          "callee": "priceScale",
+          "lineNumber": 122
+        },
+        {
+          "caller": "priceAdd",
+          "callee": "result.add",
+          "lineNumber": 126
+        },
+        {
+          "caller": "priceAdd",
+          "callee": "priceScale",
+          "lineNumber": 129
+        },
+        {
+          "caller": "priceMultiply",
+          "callee": "priceScale",
+          "lineNumber": 145
+        },
+        {
+          "caller": "priceMultiply",
+          "callee": "price.multiply",
+          "lineNumber": 145
+        },
+        {
+          "caller": "priceMultiplyPercent",
+          "callee": "price.multiply(percent).divide",
+          "lineNumber": 161
+        },
+        {
+          "caller": "priceMultiplyPercent",
+          "callee": "price.multiply",
+          "lineNumber": 161
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/org/dromara/trans/service/AutoTransable.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "AutoTransable",
+          "startLine": 17,
+          "endLine": 59,
+          "methods": [
+            "findByIds",
+            "selectByIds",
+            "select",
+            "selectById"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AutoTransable",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "findByIds",
+          "callee": "new ArrayList<>",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectByIds",
+          "callee": "this.findByIds",
+          "lineNumber": 39
+        },
+        {
+          "caller": "select",
+          "callee": "new ArrayList<>",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-test/src/main/java/cn/iocoder/yudao/framework/test/core/ut/BaseDbUnitTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "BaseDbUnitTest",
+          "startLine": 24,
+          "endLine": 47,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BaseDbUnitTest",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 8,
+          "endLine": 11,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/tool/function/UserProfileQueryToolFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "apply",
+          "startLine": 73,
+          "endLine": 90,
+          "params": [
+            "request",
+            "toolContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserProfileQueryToolFunction",
+          "startLine": 28,
+          "endLine": 92,
+          "methods": [
+            "apply"
+          ],
+          "properties": [
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "apply",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "UserProfileQueryToolFunction",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "toolContext.getContext().get",
+          "lineNumber": 75
+        },
+        {
+          "caller": "apply",
+          "callee": "toolContext.getContext",
+          "lineNumber": 75
+        },
+        {
+          "caller": "apply",
+          "callee": "new Response",
+          "lineNumber": 77
+        },
+        {
+          "caller": "apply",
+          "callee": "request.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "apply",
+          "callee": "toolContext.getContext().get",
+          "lineNumber": 80
+        },
+        {
+          "caller": "apply",
+          "callee": "toolContext.getContext",
+          "lineNumber": 80
+        },
+        {
+          "caller": "apply",
+          "callee": "new Response",
+          "lineNumber": 82
+        },
+        {
+          "caller": "apply",
+          "callee": "request.setId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "apply",
+          "callee": "loginUser.getId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "apply",
+          "callee": "TenantUtils.execute",
+          "lineNumber": 86
+        },
+        {
+          "caller": "apply",
+          "callee": "adminUserApi.getUser(request.getId()).getCheckedData",
+          "lineNumber": 87
+        },
+        {
+          "caller": "apply",
+          "callee": "adminUserApi.getUser",
+          "lineNumber": 87
+        },
+        {
+          "caller": "apply",
+          "callee": "request.getId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "apply",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/flowable/core/candidate/strategy/dept/BpmTaskCandidateDeptMemberStrategy.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "getStrategy",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "validateParam",
+          "startLine": 35,
+          "endLine": 39,
+          "params": [
+            "param"
+          ]
+        },
+        {
+          "name": "calculateUsers",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskCandidateDeptMemberStrategy",
+          "startLine": 22,
+          "endLine": 48,
+          "methods": [
+            "getStrategy",
+            "validateParam",
+            "calculateUsers"
+          ],
+          "properties": [
+            "deptApi",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStrategy",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "validateParam",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "calculateUsers",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskCandidateDeptMemberStrategy",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validateParam",
+          "callee": "StrUtils.splitToLongSet",
+          "lineNumber": 37
+        },
+        {
+          "caller": "validateParam",
+          "callee": "deptApi.validateDeptList(deptIds).checkError",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validateParam",
+          "callee": "deptApi.validateDeptList",
+          "lineNumber": 38
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "StrUtils.splitToLongSet",
+          "lineNumber": 43
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "adminUserApi.getUserListByDeptIds(deptIds).getCheckedData",
+          "lineNumber": 44
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "adminUserApi.getUserListByDeptIds",
+          "lineNumber": 44
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "convertSet",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/flowable/core/candidate/strategy/user/BpmTaskCandidatePostStrategy.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "getStrategy",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "validateParam",
+          "startLine": 35,
+          "endLine": 39,
+          "params": [
+            "param"
+          ]
+        },
+        {
+          "name": "calculateUsers",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskCandidatePostStrategy",
+          "startLine": 22,
+          "endLine": 48,
+          "methods": [
+            "getStrategy",
+            "validateParam",
+            "calculateUsers"
+          ],
+          "properties": [
+            "postApi",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStrategy",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "validateParam",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "calculateUsers",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskCandidatePostStrategy",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validateParam",
+          "callee": "StrUtils.splitToLongSet",
+          "lineNumber": 37
+        },
+        {
+          "caller": "validateParam",
+          "callee": "postApi.validPostList(postIds).checkError",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validateParam",
+          "callee": "postApi.validPostList",
+          "lineNumber": 38
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "StrUtils.splitToLongSet",
+          "lineNumber": 43
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "adminUserApi.getUserListByPostIds(postIds).getCheckedData",
+          "lineNumber": 44
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "adminUserApi.getUserListByPostIds",
+          "lineNumber": 44
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "convertSet",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/flowable/core/candidate/strategy/user/BpmTaskCandidateRoleStrategy.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "getStrategy",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "validateParam",
+          "startLine": 31,
+          "endLine": 35,
+          "params": [
+            "param"
+          ]
+        },
+        {
+          "name": "calculateUsers",
+          "startLine": 37,
+          "endLine": 41,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskCandidateRoleStrategy",
+          "startLine": 18,
+          "endLine": 43,
+          "methods": [
+            "getStrategy",
+            "validateParam",
+            "calculateUsers"
+          ],
+          "properties": [
+            "roleApi",
+            "permissionApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStrategy",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "validateParam",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "calculateUsers",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskCandidateRoleStrategy",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validateParam",
+          "callee": "StrUtils.splitToLongSet",
+          "lineNumber": 33
+        },
+        {
+          "caller": "validateParam",
+          "callee": "roleApi.validRoleList(roleIds).checkError",
+          "lineNumber": 34
+        },
+        {
+          "caller": "validateParam",
+          "callee": "roleApi.validRoleList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "StrUtils.splitToLongSet",
+          "lineNumber": 39
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "permissionApi.getUserRoleIdListByRoleIds(roleIds).getCheckedData",
+          "lineNumber": 40
+        },
+        {
+          "caller": "calculateUsers",
+          "callee": "permissionApi.getUserRoleIdListByRoleIds",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "crmReceivableStatusListener",
+          "startLine": 24,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "crmContractStatusListener",
+          "startLine": 30,
+          "endLine": 34,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 17,
+          "endLine": 36,
+          "methods": [
+            "crmReceivableStatusListener",
+            "crmContractStatusListener"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "crmReceivableStatusListener",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "crmContractStatusListener",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "RpcConfiguration",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "crmReceivableStatusListener",
+          "callee": "new CrmReceivableStatusListener",
+          "lineNumber": 27
+        },
+        {
+          "caller": "crmContractStatusListener",
+          "callee": "new CrmContractStatusListener",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/test/java/cn/iocoder/yudao/module/bpm/framework/flowable/core/candidate/strategy/dept/BpmTaskCandidateDeptMemberStrategyTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "testCalculateUsers",
+          "startLine": 32,
+          "endLine": 45,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskCandidateDeptMemberStrategyTest",
+          "startLine": 22,
+          "endLine": 47,
+          "methods": [
+            "testCalculateUsers"
+          ],
+          "properties": [
+            "strategy",
+            "deptApi",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCalculateUsers",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskCandidateDeptMemberStrategyTest",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCalculateUsers",
+          "callee": "when(adminUserApi.getUserListByDeptIds(eq(SetUtils.asSet(10L, 20L)))).thenReturn",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "when",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "adminUserApi.getUserListByDeptIds",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "eq",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "SetUtils.asSet",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "asList",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "randomPojo",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "o.setId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "randomPojo",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "o.setId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "strategy.calculateUsers",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "assertEquals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "Sets.newLinkedHashSet",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/test/java/cn/iocoder/yudao/module/bpm/framework/flowable/core/candidate/strategy/user/BpmTaskCandidatePostStrategyTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "testCalculateUsers",
+          "startLine": 33,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskCandidatePostStrategyTest",
+          "startLine": 22,
+          "endLine": 48,
+          "methods": [
+            "testCalculateUsers"
+          ],
+          "properties": [
+            "strategy",
+            "postApi",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCalculateUsers",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskCandidatePostStrategyTest",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCalculateUsers",
+          "callee": "convertList",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "asSet",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "new AdminUserRespDTO().setId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "new AdminUserRespDTO",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "when(adminUserApi.getUserListByPostIds(eq(asSet(1L, 2L)))).thenReturn",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "when",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "adminUserApi.getUserListByPostIds",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "eq",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "asSet",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "strategy.calculateUsersByTask",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "assertEquals",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "asSet",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/test/java/cn/iocoder/yudao/module/bpm/framework/flowable/core/candidate/strategy/user/BpmTaskCandidateRoleStrategyTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "testCalculateUsers",
+          "startLine": 30,
+          "endLine": 42,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskCandidateRoleStrategyTest",
+          "startLine": 19,
+          "endLine": 44,
+          "methods": [
+            "testCalculateUsers"
+          ],
+          "properties": [
+            "strategy",
+            "roleApi",
+            "permissionApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCalculateUsers",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskCandidateRoleStrategyTest",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCalculateUsers",
+          "callee": "when(permissionApi.getUserRoleIdListByRoleIds(eq(asSet(1L, 2L)))).thenReturn",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "when",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "permissionApi.getUserRoleIdListByRoleIds",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "eq",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "asSet",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "asSet",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "strategy.calculateUsersByTask",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "assertEquals",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testCalculateUsers",
+          "callee": "asSet",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 11,
+          "endLine": 16,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 7,
+          "endLine": 10,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 9,
+          "endLine": 12,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/friend/ImFriendRequestController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 128,
+      "functions": [
+        {
+          "name": "applyFriend",
+          "startLine": 55,
+          "endLine": 60,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "agreeFriendRequest",
+          "startLine": 62,
+          "endLine": 69,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "refuseFriendRequest",
+          "startLine": 71,
+          "endLine": 79,
+          "params": [
+            "id",
+            "handleContent"
+          ]
+        },
+        {
+          "name": "getMyFriendRequestList",
+          "startLine": 81,
+          "endLine": 92,
+          "params": [
+            "maxId",
+            "limit"
+          ]
+        },
+        {
+          "name": "pullMyFriendRequestList",
+          "startLine": 94,
+          "endLine": 107,
+          "params": [
+            "lastUpdateTime",
+            "lastId",
+            "limit"
+          ]
+        },
+        {
+          "name": "getMyFriendRequest",
+          "startLine": 109,
+          "endLine": 121,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "buildList",
+          "startLine": 125,
+          "endLine": 141,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFriendRequestController",
+          "startLine": 43,
+          "endLine": 143,
+          "methods": [
+            "applyFriend",
+            "agreeFriendRequest",
+            "refuseFriendRequest",
+            "getMyFriendRequestList",
+            "pullMyFriendRequestList",
+            "getMyFriendRequest",
+            "buildList"
+          ],
+          "properties": [
+            "friendRequestService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "applyFriend",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "agreeFriendRequest",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "refuseFriendRequest",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getMyFriendRequestList",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "pullMyFriendRequestList",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "getMyFriendRequest",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "ImFriendRequestController",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "applyFriend",
+          "callee": "friendRequestService.applyFriend",
+          "lineNumber": 58
+        },
+        {
+          "caller": "applyFriend",
+          "callee": "getLoginUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "applyFriend",
+          "callee": "success",
+          "lineNumber": 59
+        },
+        {
+          "caller": "applyFriend",
+          "callee": "request.getId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "agreeFriendRequest",
+          "callee": "friendRequestService.agreeFriendRequest",
+          "lineNumber": 67
+        },
+        {
+          "caller": "agreeFriendRequest",
+          "callee": "getLoginUserId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "agreeFriendRequest",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "refuseFriendRequest",
+          "callee": "friendRequestService.refuseFriendRequest",
+          "lineNumber": 77
+        },
+        {
+          "caller": "refuseFriendRequest",
+          "callee": "getLoginUserId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "refuseFriendRequest",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMyFriendRequestList",
+          "callee": "friendRequestService.getMyFriendRequestList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMyFriendRequestList",
+          "callee": "getLoginUserId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMyFriendRequestList",
+          "callee": "success",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMyFriendRequestList",
+          "callee": "buildList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "pullMyFriendRequestList",
+          "callee": "friendRequestService.pullFriendRequestList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "pullMyFriendRequestList",
+          "callee": "getLoginUserId",
+          "lineNumber": 105
+        },
+        {
+          "caller": "pullMyFriendRequestList",
+          "callee": "success",
+          "lineNumber": 106
+        },
+        {
+          "caller": "pullMyFriendRequestList",
+          "callee": "buildList",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "friendRequestService.getFriendRequest",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "getLoginUserId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "request.getFromUserId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "request.getToUserId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "success",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "success",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "buildList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getMyFriendRequest",
+          "callee": "Collections.singletonList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildList",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildList",
+          "callee": "Stream.of",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildList",
+          "callee": "request.getFromUserId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildList",
+          "callee": "request.getToUserId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildList",
+          "callee": "convertList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildList",
+          "callee": "request.getFromUserId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildList",
+          "callee": "vo.setFromNickname(user.getNickname()).setFromAvatar",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildList",
+          "callee": "vo.setFromNickname",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildList",
+          "callee": "user.getNickname",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildList",
+          "callee": "user.getAvatar",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildList",
+          "callee": "request.getToUserId",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildList",
+          "callee": "vo.setToNickname(user.getNickname()).setToAvatar",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildList",
+          "callee": "vo.setToNickname",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildList",
+          "callee": "user.getNickname",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildList",
+          "callee": "user.getAvatar",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/friend/vo/request/ImFriendRequestRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "ImFriendRequestRespVO",
+          "startLine": 13,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "id",
+            "fromUserId",
+            "toUserId",
+            "handleResult",
+            "applyContent",
+            "handleContent",
+            "addSource",
+            "handleTime",
+            "createTime",
+            "updateTime",
+            "fromNickname",
+            "fromAvatar",
+            "toNickname",
+            "toAvatar"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFriendRequestRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/manager/group/ImGroupMemberManagerController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "getGroupMemberList",
+          "startLine": 41,
+          "endLine": 58,
+          "params": [
+            "groupId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImGroupMemberManagerController",
+          "startLine": 30,
+          "endLine": 60,
+          "methods": [
+            "getGroupMemberList"
+          ],
+          "properties": [
+            "groupMemberService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getGroupMemberList",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ImGroupMemberManagerController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getGroupMemberList",
+          "callee": "groupMemberService.getGroupMemberListByGroupId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "convertSet",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "vo.getUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "vo.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "vo.setNickname",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "user.getNickname",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getGroupMemberList",
+          "callee": "user.getAvatar",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/manager/group/vo/member/ImGroupMemberManagerRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "ImGroupMemberManagerRespVO",
+          "startLine": 8,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "userId",
+            "nickname",
+            "avatar",
+            "displayUserName",
+            "groupRemark",
+            "silent",
+            "status",
+            "role",
+            "joinTime",
+            "quitTime",
+            "muteEndTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupMemberManagerRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/manager/statistics/ImStatisticsManagerController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 146,
+      "functions": [
+        {
+          "name": "getOverview",
+          "startLine": 54,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "getMessageTrend",
+          "startLine": 78,
+          "endLine": 94,
+          "params": [
+            "days"
+          ]
+        },
+        {
+          "name": "getUserTrend",
+          "startLine": 96,
+          "endLine": 112,
+          "params": [
+            "days"
+          ]
+        },
+        {
+          "name": "getMessageTypeDistribution",
+          "startLine": 114,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "getGroupSizeDistribution",
+          "startLine": 126,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "getTopSenders",
+          "startLine": 136,
+          "endLine": 151,
+          "params": []
+        },
+        {
+          "name": "alignSeries",
+          "startLine": 156,
+          "endLine": 158,
+          "params": [
+            "dates",
+            "dailyMap"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImStatisticsManagerController",
+          "startLine": 30,
+          "endLine": 160,
+          "methods": [
+            "getOverview",
+            "getMessageTrend",
+            "getUserTrend",
+            "getMessageTypeDistribution",
+            "getGroupSizeDistribution",
+            "getTopSenders",
+            "alignSeries"
+          ],
+          "properties": [
+            "GROUP_SIZE_BUCKETS",
+            "DISTRIBUTION_WINDOW_DAYS",
+            "TOP_SENDER_LIMIT",
+            "statisticsService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOverview",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getMessageTrend",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getUserTrend",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "getMessageTypeDistribution",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "getGroupSizeDistribution",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "getTopSenders",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "ImStatisticsManagerController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOverview",
+          "callee": "LocalDate.now().atStartOfDay",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getOverview",
+          "callee": "LocalDate.now",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getOverview",
+          "callee": "todayBegin.plusDays",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getOverview",
+          "callee": "todayBegin.minusDays",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getOverview",
+          "callee": "todayBegin.minusDays",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getOverview",
+          "callee": "todayBegin.minusDays",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getOverview",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount())\n                .setNewGroupToday(statisticsService.getNewGroupCount(todayBegin, tomorrowBegin))\n                .setActiveUserDaily(statisticsService.getActiveUserCount(todayBegin, tomorrowBegin))\n                .setActiveUserWeekly(statisticsService.getActiveUserCount(weekBegin, tomorrowBegin))\n                .setActiveUserMonthly(statisticsService.getActiveUserCount(monthBegin, tomorrowBegin))\n                .setPrivateMessageToday(statisticsService.getPrivateMessageCount(todayBegin, tomorrowBegin))\n                .setGroupMessageToday(statisticsService.getGroupMessageCount(todayBegin, tomorrowBegin))\n                .setPrivateMessageYesterday(statisticsService.getPrivateMessageCount(yesterdayBegin, todayBegin)).setGroupMessageYesterday",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount())\n                .setNewGroupToday(statisticsService.getNewGroupCount(todayBegin, tomorrowBegin))\n                .setActiveUserDaily(statisticsService.getActiveUserCount(todayBegin, tomorrowBegin))\n                .setActiveUserWeekly(statisticsService.getActiveUserCount(weekBegin, tomorrowBegin))\n                .setActiveUserMonthly(statisticsService.getActiveUserCount(monthBegin, tomorrowBegin))\n                .setPrivateMessageToday(statisticsService.getPrivateMessageCount(todayBegin, tomorrowBegin))\n                .setGroupMessageToday(statisticsService.getGroupMessageCount(todayBegin, tomorrowBegin)).setPrivateMessageYesterday",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount())\n                .setNewGroupToday(statisticsService.getNewGroupCount(todayBegin, tomorrowBegin))\n                .setActiveUserDaily(statisticsService.getActiveUserCount(todayBegin, tomorrowBegin))\n                .setActiveUserWeekly(statisticsService.getActiveUserCount(weekBegin, tomorrowBegin))\n                .setActiveUserMonthly(statisticsService.getActiveUserCount(monthBegin, tomorrowBegin))\n                .setPrivateMessageToday(statisticsService.getPrivateMessageCount(todayBegin, tomorrowBegin)).setGroupMessageToday",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount())\n                .setNewGroupToday(statisticsService.getNewGroupCount(todayBegin, tomorrowBegin))\n                .setActiveUserDaily(statisticsService.getActiveUserCount(todayBegin, tomorrowBegin))\n                .setActiveUserWeekly(statisticsService.getActiveUserCount(weekBegin, tomorrowBegin))\n                .setActiveUserMonthly(statisticsService.getActiveUserCount(monthBegin, tomorrowBegin)).setPrivateMessageToday",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount())\n                .setNewGroupToday(statisticsService.getNewGroupCount(todayBegin, tomorrowBegin))\n                .setActiveUserDaily(statisticsService.getActiveUserCount(todayBegin, tomorrowBegin))\n                .setActiveUserWeekly(statisticsService.getActiveUserCount(weekBegin, tomorrowBegin)).setActiveUserMonthly",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount())\n                .setNewGroupToday(statisticsService.getNewGroupCount(todayBegin, tomorrowBegin))\n                .setActiveUserDaily(statisticsService.getActiveUserCount(todayBegin, tomorrowBegin)).setActiveUserWeekly",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount())\n                .setNewGroupToday(statisticsService.getNewGroupCount(todayBegin, tomorrowBegin)).setActiveUserDaily",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin))\n                .setTotalGroup(statisticsService.getTotalGroupCount()).setNewGroupToday",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount())\n                .setNewUserToday(statisticsService.getNewUserCount(todayBegin, tomorrowBegin)).setTotalGroup",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO()\n                .setTotalUser(statisticsService.getTotalUserCount()).setNewUserToday",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO().setTotalUser",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "new ImStatisticsManagerOverviewRespVO",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getTotalUserCount",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getNewUserCount",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getTotalGroupCount",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getNewGroupCount",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getActiveUserCount",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getActiveUserCount",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getActiveUserCount",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getPrivateMessageCount",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getGroupMessageCount",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getPrivateMessageCount",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getOverview",
+          "callee": "statisticsService.getGroupMessageCount",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "LocalDateTimeUtils.getLatestDays",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "dates.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "dates.get(days - 1).plusDays",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "dates.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "statisticsService.getPrivateMessageDailyCountMap",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "statisticsService.getGroupMessageDailyCountMap",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "new LinkedHashMap<>",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "series.put",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "alignSeries",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "series.put",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "alignSeries",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "new ImStatisticsManagerTrendRespVO().setDates(dates).setSeries",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "new ImStatisticsManagerTrendRespVO().setDates",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getMessageTrend",
+          "callee": "new ImStatisticsManagerTrendRespVO",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "LocalDateTimeUtils.getLatestDays",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "dates.get",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "dates.get(days - 1).plusDays",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "dates.get",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "statisticsService.getNewUserDailyCountMap",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "statisticsService.getActiveUserDailyCountMap",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "new LinkedHashMap<>",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "series.put",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "alignSeries",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "series.put",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "alignSeries",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "success",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "new ImStatisticsManagerTrendRespVO().setDates(dates).setSeries",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "new ImStatisticsManagerTrendRespVO().setDates",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getUserTrend",
+          "callee": "new ImStatisticsManagerTrendRespVO",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "LocalDate.now().plusDays(1).atStartOfDay",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "LocalDate.now().plusDays",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "LocalDate.now",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "endTime.minusDays",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "statisticsService.getMessageTypeCountMap",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "success",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "convertList",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "typeCountMap.entrySet",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "new ImStatisticsManagerMessageTypeRespVO()\n                .setType(entry.getKey()).setValue",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "new ImStatisticsManagerMessageTypeRespVO().setType",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "new ImStatisticsManagerMessageTypeRespVO",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "entry.getKey",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getMessageTypeDistribution",
+          "callee": "entry.getValue",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getGroupSizeDistribution",
+          "callee": "statisticsService.getGroupSizeCountMap",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getGroupSizeDistribution",
+          "callee": "success",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getGroupSizeDistribution",
+          "callee": "convertList",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getGroupSizeDistribution",
+          "callee": "new ImStatisticsManagerGroupSizeRespVO()\n                .setRange(bucket).setCount",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getGroupSizeDistribution",
+          "callee": "new ImStatisticsManagerGroupSizeRespVO().setRange",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getGroupSizeDistribution",
+          "callee": "new ImStatisticsManagerGroupSizeRespVO",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getGroupSizeDistribution",
+          "callee": "groupSizeMap.getOrDefault",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "LocalDate.now().plusDays(1).atStartOfDay",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "LocalDate.now().plusDays",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "LocalDate.now",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "endTime.minusDays",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "statisticsService.getTopSenderCountMap",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "topSenderMap.keySet",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "success",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "convertList",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "topSenderMap.entrySet",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "new ImStatisticsManagerTopSenderRespVO()\n                    .setUserId(entry.getKey()).setMessageCount",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "new ImStatisticsManagerTopSenderRespVO().setUserId",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "new ImStatisticsManagerTopSenderRespVO",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "entry.getKey",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "entry.getValue",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "entry.getKey",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "item.setNickname",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getTopSenders",
+          "callee": "user.getNickname",
+          "lineNumber": 148
+        },
+        {
+          "caller": "alignSeries",
+          "callee": "convertList",
+          "lineNumber": 157
+        },
+        {
+          "caller": "alignSeries",
+          "callee": "dailyMap.getOrDefault",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/statistics/ImStatisticsManagerService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 72,
+      "classes": [
+        {
+          "name": "ImStatisticsManagerService",
+          "startLine": 14,
+          "endLine": 92,
+          "methods": [
+            "getTotalUserCount",
+            "getNewUserCount",
+            "getActiveUserCount",
+            "getNewUserDailyCountMap",
+            "getActiveUserDailyCountMap",
+            "getTotalGroupCount",
+            "getNewGroupCount",
+            "getGroupSizeCountMap",
+            "getPrivateMessageCount",
+            "getGroupMessageCount",
+            "getPrivateMessageDailyCountMap",
+            "getGroupMessageDailyCountMap",
+            "getMessageTypeCountMap",
+            "getTopSenderCountMap"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImStatisticsManagerService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/api/file/FileApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 64,
+      "classes": [
+        {
+          "name": "FileApi",
+          "startLine": 16,
+          "endLine": 73,
+          "methods": [
+            "createFile",
+            "createFile",
+            "createFile",
+            "createFile",
+            "presignGetUrl"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileApi",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFile",
+          "callee": "createFile",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createFile",
+          "callee": "createFile",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createFile",
+          "callee": "createFile(new FileCreateReqDTO().setName(name).setDirectory(directory).setType(type).setContent(content)).getCheckedData",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createFile",
+          "callee": "createFile",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createFile",
+          "callee": "new FileCreateReqDTO().setName(name).setDirectory(directory).setType(type).setContent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createFile",
+          "callee": "new FileCreateReqDTO().setName(name).setDirectory(directory).setType",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createFile",
+          "callee": "new FileCreateReqDTO().setName(name).setDirectory",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createFile",
+          "callee": "new FileCreateReqDTO().setName",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createFile",
+          "callee": "new FileCreateReqDTO",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-api/src/main/java/cn/iocoder/yudao/module/mes/enums/pro/MesProAndonLevelEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesProAndonLevelEnum",
+          "startLine": 14,
+          "endLine": 38,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "level",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "MesProAndonLevelEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/MesMdWorkstationWorkerController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "createWorkstationWorker",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateWorkstationWorker",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteWorkstationWorker",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWorkstationWorkerList",
+          "startLine": 65,
+          "endLine": 73,
+          "params": [
+            "workstationId"
+          ]
+        },
+        {
+          "name": "buildWorkstationWorkerRespVOList",
+          "startLine": 77,
+          "endLine": 89,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesMdWorkstationWorkerController",
+          "startLine": 29,
+          "endLine": 91,
+          "methods": [
+            "createWorkstationWorker",
+            "updateWorkstationWorker",
+            "deleteWorkstationWorker",
+            "getWorkstationWorkerList",
+            "buildWorkstationWorkerRespVOList"
+          ],
+          "properties": [
+            "workstationWorkerService",
+            "postApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createWorkstationWorker",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateWorkstationWorker",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWorkstationWorker",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getWorkstationWorkerList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "MesMdWorkstationWorkerController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWorkstationWorker",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createWorkstationWorker",
+          "callee": "workstationWorkerService.createWorkstationWorker",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "workstationWorkerService.updateWorkstationWorker",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteWorkstationWorker",
+          "callee": "workstationWorkerService.deleteWorkstationWorker",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteWorkstationWorker",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getWorkstationWorkerList",
+          "callee": "workstationWorkerService.getWorkstationWorkerListByWorkstationId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getWorkstationWorkerList",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getWorkstationWorkerList",
+          "callee": "buildWorkstationWorkerRespVOList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 78
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "postApi.getPostMap",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "vo.getPostId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "vo.setPostName",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildWorkstationWorkerRespVOList",
+          "callee": "post.getName",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/vo/worker/MesMdWorkstationWorkerRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "MesMdWorkstationWorkerRespVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "workstationId",
+            "postId",
+            "postName",
+            "quantity",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesMdWorkstationWorkerRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/workstation/vo/worker/MesMdWorkstationWorkerSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "MesMdWorkstationWorkerSaveReqVO",
+          "startLine": 7,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "id",
+            "workstationId",
+            "postId",
+            "quantity",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesMdWorkstationWorkerSaveReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/andon/MesProAndonConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "createAndonConfig",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateAndonConfig",
+          "startLine": 55,
+          "endLine": 61,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteAndonConfig",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAndonConfig",
+          "startLine": 72,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAndonConfigPage",
+          "startLine": 84,
+          "endLine": 90,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getAndonConfigList",
+          "startLine": 92,
+          "endLine": 98,
+          "params": []
+        },
+        {
+          "name": "buildConfigRespVOList",
+          "startLine": 102,
+          "endLine": 118,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesProAndonConfigController",
+          "startLine": 34,
+          "endLine": 120,
+          "methods": [
+            "createAndonConfig",
+            "updateAndonConfig",
+            "deleteAndonConfig",
+            "getAndonConfig",
+            "getAndonConfigPage",
+            "getAndonConfigList",
+            "buildConfigRespVOList"
+          ],
+          "properties": [
+            "andonConfigService",
+            "adminUserApi",
+            "roleApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createAndonConfig",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "updateAndonConfig",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAndonConfig",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getAndonConfig",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getAndonConfigPage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getAndonConfigList",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "MesProAndonConfigController",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createAndonConfig",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createAndonConfig",
+          "callee": "andonConfigService.createAndonConfig",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateAndonConfig",
+          "callee": "andonConfigService.updateAndonConfig",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateAndonConfig",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteAndonConfig",
+          "callee": "andonConfigService.deleteAndonConfig",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deleteAndonConfig",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getAndonConfig",
+          "callee": "andonConfigService.getAndonConfig",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getAndonConfig",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getAndonConfig",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getAndonConfig",
+          "callee": "buildConfigRespVOList(ListUtil.of(config)).get",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getAndonConfig",
+          "callee": "buildConfigRespVOList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getAndonConfig",
+          "callee": "ListUtil.of",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getAndonConfigPage",
+          "callee": "andonConfigService.getAndonConfigPage",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getAndonConfigPage",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getAndonConfigPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getAndonConfigPage",
+          "callee": "buildConfigRespVOList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getAndonConfigPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getAndonConfigPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getAndonConfigList",
+          "callee": "andonConfigService.getAndonConfigList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getAndonConfigList",
+          "callee": "success",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getAndonConfigList",
+          "callee": "buildConfigRespVOList",
+          "lineNumber": 97
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 103
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "roleApi.getRoleMap",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 110
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 113
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "vo.getHandlerUserId",
+          "lineNumber": 113
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "vo.setHandlerUserNickname",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "vo.getHandlerRoleId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "vo.setHandlerRoleName",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildConfigRespVOList",
+          "callee": "role.getName",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/andon/vo/config/MesProAndonConfigPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "MesProAndonConfigPageReqVO",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "reason",
+            "level"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProAndonConfigPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/andon/vo/config/MesProAndonConfigRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MesProAndonConfigRespVO",
+          "startLine": 8,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "reason",
+            "level",
+            "handlerRoleId",
+            "handlerRoleName",
+            "handlerUserId",
+            "handlerUserNickname",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProAndonConfigRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/andon/vo/config/MesProAndonConfigSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MesProAndonConfigSaveReqVO",
+          "startLine": 8,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "id",
+            "reason",
+            "level",
+            "handlerRoleId",
+            "handlerUserId",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProAndonConfigSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/dal/dataobject/md/workstation/MesMdWorkstationWorkerDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "MesMdWorkstationWorkerDO",
+          "startLine": 14,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "id",
+            "workstationId",
+            "postId",
+            "quantity",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesMdWorkstationWorkerDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/dal/dataobject/pro/andon/MesProAndonConfigDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "MesProAndonConfigDO",
+          "startLine": 16,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "id",
+            "reason",
+            "level",
+            "handlerRoleId",
+            "handlerUserId",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProAndonConfigDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/dal/mysql/md/workstation/MesMdWorkstationWorkerMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "MesMdWorkstationWorkerMapper",
+          "startLine": 15,
+          "endLine": 32,
+          "methods": [
+            "selectListByWorkstationId",
+            "selectByWorkstationIdAndPostId",
+            "deleteByWorkstationId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesMdWorkstationWorkerMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByWorkstationId",
+          "callee": "selectList",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectByWorkstationIdAndPostId",
+          "callee": "selectOne",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByWorkstationIdAndPostId",
+          "callee": "new LambdaQueryWrapper<MesMdWorkstationWorkerDO>()\n                .eq(MesMdWorkstationWorkerDO::getWorkstationId, workstationId).eq",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByWorkstationIdAndPostId",
+          "callee": "new LambdaQueryWrapper<MesMdWorkstationWorkerDO>().eq",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByWorkstationIdAndPostId",
+          "callee": "new LambdaQueryWrapper<MesMdWorkstationWorkerDO>",
+          "lineNumber": 23
+        },
+        {
+          "caller": "deleteByWorkstationId",
+          "callee": "delete",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/dal/mysql/pro/andon/MesProAndonConfigMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "MesProAndonConfigMapper",
+          "startLine": 15,
+          "endLine": 25,
+          "methods": [
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProAndonConfigMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MesProAndonConfigDO>()\n                .likeIfPresent(MesProAndonConfigDO::getReason, reqVO.getReason())\n                .eqIfPresent(MesProAndonConfigDO::getLevel, reqVO.getLevel()).orderByDesc",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MesProAndonConfigDO>()\n                .likeIfPresent(MesProAndonConfigDO::getReason, reqVO.getReason()).eqIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MesProAndonConfigDO>().likeIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MesProAndonConfigDO>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getReason",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getLevel",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 10,
+          "endLine": 13,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

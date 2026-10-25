@@ -1,0 +1,5779 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 27,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 27,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 27,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/account/MpAccountServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 229,
+      "nonEmptyLines": 198,
+      "functions": [
+        {
+          "name": "initLocalCache",
+          "startLine": 66,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "refreshLocalCache",
+          "startLine": 94,
+          "endLine": 110,
+          "params": []
+        },
+        {
+          "name": "createAccount",
+          "startLine": 112,
+          "endLine": 124,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateAccount",
+          "startLine": 126,
+          "endLine": 139,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteAccount",
+          "startLine": 141,
+          "endLine": 150,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateAccountExists",
+          "startLine": 152,
+          "endLine": 158,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateAppIdUnique",
+          "startLine": 160,
+          "endLine": 174,
+          "params": [
+            "id",
+            "appId"
+          ]
+        },
+        {
+          "name": "getAccount",
+          "startLine": 176,
+          "endLine": 179,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAccountFromCache",
+          "startLine": 181,
+          "endLine": 184,
+          "params": [
+            "appId"
+          ]
+        },
+        {
+          "name": "getAccountPage",
+          "startLine": 186,
+          "endLine": 189,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getAccountList",
+          "startLine": 191,
+          "endLine": 194,
+          "params": []
+        },
+        {
+          "name": "generateAccountQrCode",
+          "startLine": 196,
+          "endLine": 213,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "clearAccountQuota",
+          "startLine": 215,
+          "endLine": 227,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpAccountServiceImpl",
+          "startLine": 45,
+          "endLine": 229,
+          "methods": [
+            "initLocalCache",
+            "refreshLocalCache",
+            "createAccount",
+            "updateAccount",
+            "deleteAccount",
+            "validateAccountExists",
+            "validateAppIdUnique",
+            "getAccount",
+            "getAccountFromCache",
+            "getAccountPage",
+            "getAccountList",
+            "generateAccountQrCode",
+            "clearAccountQuota"
+          ],
+          "properties": [
+            "accountCache",
+            "mpAccountMapper",
+            "mpServiceFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "initLocalCache",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "refreshLocalCache",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "createAccount",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "updateAccount",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAccount",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "validateAppIdUnique",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "getAccount",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "getAccountFromCache",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "getAccountPage",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "getAccountList",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "generateAccountQrCode",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "clearAccountQuota",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "MpAccountServiceImpl",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initLocalCache",
+          "callee": "TenantUtils.executeIgnore",
+          "lineNumber": 70
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "Collections.emptyList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "mpAccountMapper.selectList",
+          "lineNumber": 74
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "ex.getMessage().contains",
+          "lineNumber": 76
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "ex.getMessage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "log.error",
+          "lineNumber": 79
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "log.info",
+          "lineNumber": 81
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "accounts.size",
+          "lineNumber": 81
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "mpServiceFactory.init",
+          "lineNumber": 84
+        },
+        {
+          "caller": "initLocalCache",
+          "callee": "convertMap",
+          "lineNumber": 85
+        },
+        {
+          "caller": "refreshLocalCache",
+          "callee": "TenantUtils.executeIgnore",
+          "lineNumber": 97
+        },
+        {
+          "caller": "refreshLocalCache",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 99
+        },
+        {
+          "caller": "refreshLocalCache",
+          "callee": "initLocalCache",
+          "lineNumber": 100
+        },
+        {
+          "caller": "refreshLocalCache",
+          "callee": "getMaxValue",
+          "lineNumber": 105
+        },
+        {
+          "caller": "refreshLocalCache",
+          "callee": "accountCache.values",
+          "lineNumber": 105
+        },
+        {
+          "caller": "refreshLocalCache",
+          "callee": "mpAccountMapper.selectCountByUpdateTimeGt",
+          "lineNumber": 106
+        },
+        {
+          "caller": "refreshLocalCache",
+          "callee": "initLocalCache",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createAccount",
+          "callee": "validateAppIdUnique",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createAccount",
+          "callee": "createReqVO.getAppId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createAccount",
+          "callee": "MpAccountConvert.INSTANCE.convert",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createAccount",
+          "callee": "mpAccountMapper.insert",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createAccount",
+          "callee": "initLocalCache",
+          "lineNumber": 122
+        },
+        {
+          "caller": "createAccount",
+          "callee": "account.getId",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "validateAccountExists",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "validateAppIdUnique",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "updateReqVO.getAppId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "MpAccountConvert.INSTANCE.convert",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "mpAccountMapper.updateById",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateAccount",
+          "callee": "initLocalCache",
+          "lineNumber": 138
+        },
+        {
+          "caller": "deleteAccount",
+          "callee": "validateAccountExists",
+          "lineNumber": 144
+        },
+        {
+          "caller": "deleteAccount",
+          "callee": "mpAccountMapper.deleteById",
+          "lineNumber": 146
+        },
+        {
+          "caller": "deleteAccount",
+          "callee": "initLocalCache",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateAccountExists",
+          "callee": "mpAccountMapper.selectById",
+          "lineNumber": 153
+        },
+        {
+          "caller": "validateAccountExists",
+          "callee": "ServiceExceptionUtil.exception",
+          "lineNumber": 155
+        },
+        {
+          "caller": "validateAppIdUnique",
+          "callee": "TenantUtils.executeIgnore",
+          "lineNumber": 163
+        },
+        {
+          "caller": "validateAppIdUnique",
+          "callee": "mpAccountMapper.selectByAppId",
+          "lineNumber": 164
+        },
+        {
+          "caller": "validateAppIdUnique",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 170
+        },
+        {
+          "caller": "validateAppIdUnique",
+          "callee": "account.getId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "validateAppIdUnique",
+          "callee": "exception",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getAccount",
+          "callee": "mpAccountMapper.selectById",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getAccountFromCache",
+          "callee": "accountCache.get",
+          "lineNumber": 183
+        },
+        {
+          "caller": "getAccountPage",
+          "callee": "mpAccountMapper.selectPage",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getAccountList",
+          "callee": "mpAccountMapper.selectList",
+          "lineNumber": 193
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "validateAccountExists",
+          "lineNumber": 199
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 202
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "account.getAppId",
+          "lineNumber": 202
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "mpService.getQrcodeService().qrCodeCreateLastTicket",
+          "lineNumber": 205
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "mpService.getQrcodeService",
+          "lineNumber": 205
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "mpService.getQrcodeService().qrCodePictureUrl",
+          "lineNumber": 206
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "mpService.getQrcodeService",
+          "lineNumber": 206
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "qrCodeTicket.getTicket",
+          "lineNumber": 206
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "exception",
+          "lineNumber": 208
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 208
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "e.getError",
+          "lineNumber": 208
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "mpAccountMapper.updateById",
+          "lineNumber": 212
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "new MpAccountDO().setId(id).setQrCodeUrl",
+          "lineNumber": 212
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "new MpAccountDO().setId",
+          "lineNumber": 212
+        },
+        {
+          "caller": "generateAccountQrCode",
+          "callee": "new MpAccountDO",
+          "lineNumber": 212
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "validateAccountExists",
+          "lineNumber": 218
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 221
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "account.getAppId",
+          "lineNumber": 221
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "mpService.clearQuota",
+          "lineNumber": 223
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "account.getAppId",
+          "lineNumber": 223
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "exception",
+          "lineNumber": 225
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 225
+        },
+        {
+          "caller": "clearAccountQuota",
+          "callee": "e.getError",
+          "lineNumber": 225
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 13,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/menu/MenuHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 28,
+          "endLine": 32,
+          "params": [
+            "wxMessage",
+            "context",
+            "weixinService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MenuHandler",
+          "startLine": 22,
+          "endLine": 34,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "mpMenuService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "MenuHandler",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "mpMenuService.reply",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handle",
+          "callee": "MpContextHolder.getAppId",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getEventKey",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/message/MessageAutoReplyHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 29,
+          "endLine": 39,
+          "params": [
+            "wxMessage",
+            "context",
+            "weixinService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MessageAutoReplyHandler",
+          "startLine": 22,
+          "endLine": 41,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "mpAutoReplyService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "MessageAutoReplyHandler",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "MpAutoReplyDO.REQUEST_MESSAGE_TYPE.contains",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getMsgType",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handle",
+          "callee": "mpAutoReplyService.replyForMessage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handle",
+          "callee": "MpContextHolder.getAppId",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/message/MessageReceiveHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 28,
+          "endLine": 34,
+          "params": [
+            "wxMessage",
+            "context",
+            "wxMpService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MessageReceiveHandler",
+          "startLine": 21,
+          "endLine": 36,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "mpMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "MessageReceiveHandler",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "log.info",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handle",
+          "callee": "mpMessageService.receiveMessage",
+          "lineNumber": 32
+        },
+        {
+          "caller": "handle",
+          "callee": "MpContextHolder.getAppId",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/other/KfSessionHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 20,
+          "endLine": 24,
+          "params": [
+            "wxMessage",
+            "context",
+            "wxMpService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "KfSessionHandler",
+          "startLine": 17,
+          "endLine": 26,
+          "methods": [
+            "handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "KfSessionHandler",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "new UnsupportedOperationException",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/other/NullHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 18,
+          "endLine": 22,
+          "params": [
+            "wxMessage",
+            "context",
+            "wxMpService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NullHandler",
+          "startLine": 15,
+          "endLine": 24,
+          "methods": [
+            "handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "NullHandler",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "new UnsupportedOperationException",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/other/ScanHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 19,
+          "endLine": 23,
+          "params": [
+            "wxMpXmlMessage",
+            "context",
+            "wxMpService",
+            "wxSessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ScanHandler",
+          "startLine": 16,
+          "endLine": 25,
+          "methods": [
+            "handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "ScanHandler",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "new UnsupportedOperationException",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/other/StoreCheckNotifyHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 18,
+          "endLine": 22,
+          "params": [
+            "wxMessage",
+            "context",
+            "wxMpService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "StoreCheckNotifyHandler",
+          "startLine": 15,
+          "endLine": 24,
+          "methods": [
+            "handle"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "StoreCheckNotifyHandler",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "new UnsupportedOperationException",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/user/LocationHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 34,
+          "endLine": 46,
+          "params": [
+            "wxMessage",
+            "context",
+            "wxMpService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LocationHandler",
+          "startLine": 27,
+          "endLine": 48,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "mpAutoReplyService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "LocationHandler",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getMsgType",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handle",
+          "callee": "log.info",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getLatitude",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getLongitude",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getPrecision",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handle",
+          "callee": "mpAutoReplyService.replyForMessage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handle",
+          "callee": "MpContextHolder.getAppId",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/user/SubscribeHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 35,
+          "endLine": 59,
+          "params": [
+            "wxMessage",
+            "context",
+            "weixinService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SubscribeHandler",
+          "startLine": 26,
+          "endLine": 61,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "mpUserService",
+            "mpAutoReplyService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "SubscribeHandler",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "log.info",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handle",
+          "callee": "weixinService.getUserService().userInfo",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handle",
+          "callee": "weixinService.getUserService",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handle",
+          "callee": "log.error",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 44
+        },
+        {
+          "caller": "handle",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handle",
+          "callee": "e.getError().getErrorCode",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handle",
+          "callee": "e.getError",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handle",
+          "callee": "WxMpErrorMsgEnum.CODE_48001.getCode",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handle",
+          "callee": "new WxMpUser",
+          "lineNumber": 47
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMpUser.setOpenId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMpUser.setSubscribe",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMpUser.setSubscribeTime",
+          "lineNumber": 50
+        },
+        {
+          "caller": "handle",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 50
+        },
+        {
+          "caller": "handle",
+          "callee": "mpUserService.saveUser",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handle",
+          "callee": "MpContextHolder.getAppId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handle",
+          "callee": "mpAutoReplyService.replyForSubscribe",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handle",
+          "callee": "MpContextHolder.getAppId",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/handler/user/UnsubscribeHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "handle",
+          "startLine": 30,
+          "endLine": 37,
+          "params": [
+            "wxMessage",
+            "context",
+            "wxMpService",
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UnsubscribeHandler",
+          "startLine": 22,
+          "endLine": 39,
+          "methods": [
+            "handle"
+          ],
+          "properties": [
+            "mpUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handle",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "UnsubscribeHandler",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "log.info",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handle",
+          "callee": "mpUserService.updateUserUnsubscribe",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handle",
+          "callee": "MpContextHolder.getAppId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handle",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/material/MpMaterialService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 73,
+      "classes": [
+        {
+          "name": "MpMaterialService",
+          "startLine": 21,
+          "endLine": 84,
+          "methods": [
+            "downloadMaterialUrl",
+            "uploadTemporaryMaterial",
+            "uploadPermanentMaterial",
+            "uploadNewsImage",
+            "getMaterialPage",
+            "getMaterialListByMediaId",
+            "deleteMaterial"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpMaterialService",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/material/MpMaterialServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 224,
+      "nonEmptyLines": 200,
+      "functions": [
+        {
+          "name": "downloadMaterialUrl",
+          "startLine": 61,
+          "endLine": 81,
+          "params": [
+            "accountId",
+            "mediaId",
+            "type"
+          ]
+        },
+        {
+          "name": "uploadTemporaryMaterial",
+          "startLine": 83,
+          "endLine": 112,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "uploadPermanentMaterial",
+          "startLine": 114,
+          "endLine": 145,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "uploadNewsImage",
+          "startLine": 147,
+          "endLine": 162,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getMaterialPage",
+          "startLine": 164,
+          "endLine": 167,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getMaterialListByMediaId",
+          "startLine": 169,
+          "endLine": 172,
+          "params": [
+            "mediaIds"
+          ]
+        },
+        {
+          "name": "deleteMaterial",
+          "startLine": 174,
+          "endLine": 193,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "downloadMedia",
+          "startLine": 204,
+          "endLine": 217,
+          "params": [
+            "accountId",
+            "mediaId"
+          ]
+        },
+        {
+          "name": "uploadFile",
+          "startLine": 219,
+          "endLine": 222,
+          "params": [
+            "mediaId",
+            "file"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpMaterialServiceImpl",
+          "startLine": 42,
+          "endLine": 224,
+          "methods": [
+            "downloadMaterialUrl",
+            "uploadTemporaryMaterial",
+            "uploadPermanentMaterial",
+            "uploadNewsImage",
+            "getMaterialPage",
+            "getMaterialListByMediaId",
+            "deleteMaterial",
+            "downloadMedia",
+            "uploadFile"
+          ],
+          "properties": [
+            "mpMaterialMapper",
+            "fileApi",
+            "mpAccountService",
+            "mpServiceFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "downloadMaterialUrl",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "uploadTemporaryMaterial",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "uploadPermanentMaterial",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "uploadNewsImage",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "getMaterialPage",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "getMaterialListByMediaId",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMaterial",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "downloadMedia",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "MpMaterialServiceImpl",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "downloadMaterialUrl",
+          "callee": "mpMaterialMapper.selectByAccountIdAndMediaId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "downloadMaterialUrl",
+          "callee": "material.getUrl",
+          "lineNumber": 66
+        },
+        {
+          "caller": "downloadMaterialUrl",
+          "callee": "downloadMedia",
+          "lineNumber": 70
+        },
+        {
+          "caller": "downloadMaterialUrl",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 74
+        },
+        {
+          "caller": "downloadMaterialUrl",
+          "callee": "MpMaterialConvert.INSTANCE.convert(mediaId, type, url, account, null).setPermanent",
+          "lineNumber": 75
+        },
+        {
+          "caller": "downloadMaterialUrl",
+          "callee": "MpMaterialConvert.INSTANCE.convert",
+          "lineNumber": 75
+        },
+        {
+          "caller": "downloadMaterialUrl",
+          "callee": "mpMaterialMapper.insert",
+          "lineNumber": 77
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 85
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getAccountId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "FileUtil.newFile",
+          "lineNumber": 93
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "FileUtil.getTmpDirPath",
+          "lineNumber": 93
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getFile().getOriginalFilename",
+          "lineNumber": 93
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getFile",
+          "lineNumber": 93
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getFile().transferTo",
+          "lineNumber": 94
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getFile",
+          "lineNumber": 94
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "mpService.getMaterialService().mediaUpload",
+          "lineNumber": 96
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "mpService.getMaterialService",
+          "lineNumber": 96
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getType",
+          "lineNumber": 96
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "ObjUtil.defaultIfNull",
+          "lineNumber": 98
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "result.getMediaId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "result.getThumbMediaId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "uploadFile",
+          "lineNumber": 99
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "exception",
+          "lineNumber": 101
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 101
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "e.getError",
+          "lineNumber": 101
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "FileUtil.del",
+          "lineNumber": 103
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 107
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getAccountId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "MpMaterialConvert.INSTANCE.convert(mediaId, reqVO.getType(), url, account,\n                        reqVO.getFile().getName()).setPermanent",
+          "lineNumber": 108
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "MpMaterialConvert.INSTANCE.convert",
+          "lineNumber": 108
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getType",
+          "lineNumber": 108
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getFile().getName",
+          "lineNumber": 109
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "reqVO.getFile",
+          "lineNumber": 109
+        },
+        {
+          "caller": "uploadTemporaryMaterial",
+          "callee": "mpMaterialMapper.insert",
+          "lineNumber": 110
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 116
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getAccountId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "StrUtil.blankToDefault",
+          "lineNumber": 118
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getName",
+          "lineNumber": 118
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getFile().getName",
+          "lineNumber": 118
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getFile",
+          "lineNumber": 118
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "FileUtil.newFile",
+          "lineNumber": 125
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "FileUtil.getTmpDirPath",
+          "lineNumber": 125
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getFile().getOriginalFilename",
+          "lineNumber": 125
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getFile",
+          "lineNumber": 125
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getFile().transferTo",
+          "lineNumber": 126
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getFile",
+          "lineNumber": 126
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "mpService.getMaterialService().materialFileUpload",
+          "lineNumber": 128
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "mpService.getMaterialService",
+          "lineNumber": 128
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getType",
+          "lineNumber": 128
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "MpMaterialConvert.INSTANCE.convert",
+          "lineNumber": 129
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getTitle",
+          "lineNumber": 129
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getIntroduction",
+          "lineNumber": 129
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "ObjUtil.defaultIfNull",
+          "lineNumber": 131
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "result.getMediaId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "result.getMediaId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "uploadFile",
+          "lineNumber": 132
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "exception",
+          "lineNumber": 134
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 134
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "e.getError",
+          "lineNumber": 134
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "FileUtil.del",
+          "lineNumber": 136
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 140
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getAccountId",
+          "lineNumber": 140
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "MpMaterialConvert.INSTANCE.convert(mediaId, reqVO.getType(), url, account,\n                        name, reqVO.getTitle(), reqVO.getIntroduction(), result.getUrl()).setPermanent",
+          "lineNumber": 141
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "MpMaterialConvert.INSTANCE.convert",
+          "lineNumber": 141
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getType",
+          "lineNumber": 141
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getTitle",
+          "lineNumber": 142
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "reqVO.getIntroduction",
+          "lineNumber": 142
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "result.getUrl",
+          "lineNumber": 142
+        },
+        {
+          "caller": "uploadPermanentMaterial",
+          "callee": "mpMaterialMapper.insert",
+          "lineNumber": 143
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 149
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "reqVO.getAccountId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "FileUtil.newFile",
+          "lineNumber": 153
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "FileUtil.getTmpDirPath",
+          "lineNumber": 153
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "reqVO.getFile().getOriginalFilename",
+          "lineNumber": 153
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "reqVO.getFile",
+          "lineNumber": 153
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "reqVO.getFile().transferTo",
+          "lineNumber": 154
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "reqVO.getFile",
+          "lineNumber": 154
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "mpService.getMaterialService().mediaImgUpload(file).getUrl",
+          "lineNumber": 156
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "mpService.getMaterialService().mediaImgUpload",
+          "lineNumber": 156
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "mpService.getMaterialService",
+          "lineNumber": 156
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "exception",
+          "lineNumber": 158
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 158
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "e.getError",
+          "lineNumber": 158
+        },
+        {
+          "caller": "uploadNewsImage",
+          "callee": "FileUtil.del",
+          "lineNumber": 160
+        },
+        {
+          "caller": "getMaterialPage",
+          "callee": "mpMaterialMapper.selectPage",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getMaterialListByMediaId",
+          "callee": "mpMaterialMapper.selectListByMediaId",
+          "lineNumber": 171
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "mpMaterialMapper.selectById",
+          "lineNumber": 176
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "exception",
+          "lineNumber": 178
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "material.getPermanent",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 183
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "material.getAppId",
+          "lineNumber": 183
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "mpService.getMaterialService().materialDelete",
+          "lineNumber": 185
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "mpService.getMaterialService",
+          "lineNumber": 185
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "material.getMediaId",
+          "lineNumber": 185
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "exception",
+          "lineNumber": 187
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 187
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "e.getError",
+          "lineNumber": 187
+        },
+        {
+          "caller": "deleteMaterial",
+          "callee": "mpMaterialMapper.deleteById",
+          "lineNumber": 192
+        },
+        {
+          "caller": "downloadMedia",
+          "callee": "mpServiceFactory.getMpService",
+          "lineNumber": 205
+        },
+        {
+          "caller": "downloadMedia",
+          "callee": "mpService.getMaterialService().mediaDownload",
+          "lineNumber": 209
+        },
+        {
+          "caller": "downloadMedia",
+          "callee": "mpService.getMaterialService",
+          "lineNumber": 209
+        },
+        {
+          "caller": "downloadMedia",
+          "callee": "uploadFile",
+          "lineNumber": 211
+        },
+        {
+          "caller": "downloadMedia",
+          "callee": "log.error",
+          "lineNumber": 213
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "FileTypeUtil.getType",
+          "lineNumber": 220
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "fileApi.createFile",
+          "lineNumber": 221
+        },
+        {
+          "caller": "uploadFile",
+          "callee": "FileUtil.readBytes",
+          "lineNumber": 221
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/menu/MpMenuService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "MpMenuService",
+          "startLine": 15,
+          "endLine": 49,
+          "methods": [
+            "saveMenu",
+            "deleteMenuByAccountId",
+            "reply",
+            "getMenuListByAccountId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpMenuService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/menu/MpMenuServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 171,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "saveMenu",
+          "startLine": 59,
+          "endLine": 88,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "validateMenu",
+          "startLine": 95,
+          "endLine": 102,
+          "params": [
+            "menu"
+          ]
+        },
+        {
+          "name": "createMenu",
+          "startLine": 112,
+          "endLine": 131,
+          "params": [
+            "wxMenu",
+            "parentMenu",
+            "account"
+          ]
+        },
+        {
+          "name": "deleteMenuByAccountId",
+          "startLine": 133,
+          "endLine": 145,
+          "params": [
+            "accountId"
+          ]
+        },
+        {
+          "name": "reply",
+          "startLine": 147,
+          "endLine": 164,
+          "params": [
+            "appId",
+            "key",
+            "openid"
+          ]
+        },
+        {
+          "name": "getMenuListByAccountId",
+          "startLine": 166,
+          "endLine": 169,
+          "params": [
+            "accountId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpMenuServiceImpl",
+          "startLine": 38,
+          "endLine": 171,
+          "methods": [
+            "saveMenu",
+            "validateMenu",
+            "createMenu",
+            "deleteMenuByAccountId",
+            "reply",
+            "getMenuListByAccountId"
+          ],
+          "properties": [
+            "mpMessageService",
+            "mpAccountService",
+            "mpServiceFactory",
+            "validator",
+            "mpMenuMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "saveMenu",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMenuByAccountId",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "reply",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "getMenuListByAccountId",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "MpMenuServiceImpl",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "saveMenu",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 62
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getAccountId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 63
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getAccountId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getMenus().forEach",
+          "lineNumber": 66
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getMenus",
+          "lineNumber": 66
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "new WxMenu",
+          "lineNumber": 69
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "wxMenu.setButtons",
+          "lineNumber": 70
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "MpMenuConvert.INSTANCE.convert",
+          "lineNumber": 70
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getMenus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "mpService.getMenuService().menuCreate",
+          "lineNumber": 72
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "mpService.getMenuService",
+          "lineNumber": 72
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "exception",
+          "lineNumber": 74
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 74
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "e.getError",
+          "lineNumber": 74
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "mpMenuMapper.deleteByAccountId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getAccountId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getMenus().forEach",
+          "lineNumber": 79
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createReqVO.getMenus",
+          "lineNumber": 79
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createMenu",
+          "lineNumber": 81
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 83
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "menu.getChildren",
+          "lineNumber": 83
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "menu.getChildren().forEach",
+          "lineNumber": 86
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "menu.getChildren",
+          "lineNumber": 86
+        },
+        {
+          "caller": "saveMenu",
+          "callee": "createMenu",
+          "lineNumber": 86
+        },
+        {
+          "caller": "validateMenu",
+          "callee": "MpUtils.validateButton",
+          "lineNumber": 96
+        },
+        {
+          "caller": "validateMenu",
+          "callee": "menu.getType",
+          "lineNumber": 96
+        },
+        {
+          "caller": "validateMenu",
+          "callee": "menu.getReplyMessageType",
+          "lineNumber": 96
+        },
+        {
+          "caller": "validateMenu",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 98
+        },
+        {
+          "caller": "validateMenu",
+          "callee": "menu.getChildren",
+          "lineNumber": 98
+        },
+        {
+          "caller": "validateMenu",
+          "callee": "menu.getChildren().forEach",
+          "lineNumber": 101
+        },
+        {
+          "caller": "validateMenu",
+          "callee": "menu.getChildren",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createMenu",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 114
+        },
+        {
+          "caller": "createMenu",
+          "callee": "wxMenu.getChildren",
+          "lineNumber": 114
+        },
+        {
+          "caller": "createMenu",
+          "callee": "new MpMenuDO().setName",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createMenu",
+          "callee": "new MpMenuDO",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createMenu",
+          "callee": "wxMenu.getName",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createMenu",
+          "callee": "MpMenuConvert.INSTANCE.convert02",
+          "lineNumber": 116
+        },
+        {
+          "caller": "createMenu",
+          "callee": "menu.setAccountId(account.getId()).setAppId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createMenu",
+          "callee": "menu.setAccountId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createMenu",
+          "callee": "account.getId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createMenu",
+          "callee": "account.getAppId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createMenu",
+          "callee": "menu.setParentId",
+          "lineNumber": 123
+        },
+        {
+          "caller": "createMenu",
+          "callee": "parentMenu.getId",
+          "lineNumber": 123
+        },
+        {
+          "caller": "createMenu",
+          "callee": "menu.setParentId",
+          "lineNumber": 125
+        },
+        {
+          "caller": "createMenu",
+          "callee": "mpMenuMapper.insert",
+          "lineNumber": 129
+        },
+        {
+          "caller": "deleteMenuByAccountId",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 135
+        },
+        {
+          "caller": "deleteMenuByAccountId",
+          "callee": "mpService.getMenuService().menuDelete",
+          "lineNumber": 138
+        },
+        {
+          "caller": "deleteMenuByAccountId",
+          "callee": "mpService.getMenuService",
+          "lineNumber": 138
+        },
+        {
+          "caller": "deleteMenuByAccountId",
+          "callee": "exception",
+          "lineNumber": 140
+        },
+        {
+          "caller": "deleteMenuByAccountId",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 140
+        },
+        {
+          "caller": "deleteMenuByAccountId",
+          "callee": "e.getError",
+          "lineNumber": 140
+        },
+        {
+          "caller": "deleteMenuByAccountId",
+          "callee": "mpMenuMapper.deleteByAccountId",
+          "lineNumber": 144
+        },
+        {
+          "caller": "reply",
+          "callee": "mpMenuMapper.selectByAppIdAndMenuKey",
+          "lineNumber": 150
+        },
+        {
+          "caller": "reply",
+          "callee": "log.error",
+          "lineNumber": 152
+        },
+        {
+          "caller": "reply",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 156
+        },
+        {
+          "caller": "reply",
+          "callee": "menu.getReplyMessageType",
+          "lineNumber": 156
+        },
+        {
+          "caller": "reply",
+          "callee": "log.error",
+          "lineNumber": 157
+        },
+        {
+          "caller": "reply",
+          "callee": "MpMenuConvert.INSTANCE.convert",
+          "lineNumber": 162
+        },
+        {
+          "caller": "reply",
+          "callee": "mpMessageService.sendOutMessage",
+          "lineNumber": 163
+        },
+        {
+          "caller": "getMenuListByAccountId",
+          "callee": "mpMenuMapper.selectListByAccountId",
+          "lineNumber": 168
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 5,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/message/MpAutoReplyService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 64,
+      "classes": [
+        {
+          "name": "MpAutoReplyService",
+          "startLine": 16,
+          "endLine": 75,
+          "methods": [
+            "getAutoReplyPage",
+            "getAutoReply",
+            "createAutoReply",
+            "updateAutoReply",
+            "deleteAutoReply",
+            "replyForMessage",
+            "replyForSubscribe"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpAutoReplyService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/message/MpAutoReplyServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 202,
+      "nonEmptyLines": 178,
+      "functions": [
+        {
+          "name": "getAutoReplyPage",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getAutoReply",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createAutoReply",
+          "startLine": 64,
+          "endLine": 79,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateAutoReply",
+          "startLine": 81,
+          "endLine": 95,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "validateAutoReplyConflict",
+          "startLine": 111,
+          "endLine": 135,
+          "params": [
+            "id",
+            "accountId",
+            "type",
+            "requestKeyword",
+            "requestMessageType"
+          ]
+        },
+        {
+          "name": "deleteAutoReply",
+          "startLine": 137,
+          "endLine": 144,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateAutoReplyExists",
+          "startLine": 146,
+          "endLine": 152,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "replyForMessage",
+          "startLine": 154,
+          "endLine": 179,
+          "params": [
+            "appId",
+            "wxMessage"
+          ]
+        },
+        {
+          "name": "replyForSubscribe",
+          "startLine": 181,
+          "endLine": 191,
+          "params": [
+            "appId",
+            "wxMessage"
+          ]
+        },
+        {
+          "name": "buildDefaultSubscribeAutoReply",
+          "startLine": 193,
+          "endLine": 200,
+          "params": [
+            "appId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpAutoReplyServiceImpl",
+          "startLine": 38,
+          "endLine": 202,
+          "methods": [
+            "getAutoReplyPage",
+            "getAutoReply",
+            "createAutoReply",
+            "updateAutoReply",
+            "validateAutoReplyConflict",
+            "deleteAutoReply",
+            "validateAutoReplyExists",
+            "replyForMessage",
+            "replyForSubscribe",
+            "buildDefaultSubscribeAutoReply"
+          ],
+          "properties": [
+            "mpMessageService",
+            "mpAccountService",
+            "validator",
+            "mpAutoReplyMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAutoReplyPage",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getAutoReply",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "createAutoReply",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "updateAutoReply",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAutoReply",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "replyForMessage",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "replyForSubscribe",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "MpAutoReplyServiceImpl",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAutoReplyPage",
+          "callee": "mpAutoReplyMapper.selectPage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getAutoReply",
+          "callee": "mpAutoReplyMapper.selectById",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "createReqVO.getResponseMessageType",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "MpUtils.validateMessage",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "createReqVO.getResponseMessageType",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "validateAutoReplyConflict",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "createReqVO.getAccountId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "createReqVO.getType",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "createReqVO.getRequestKeyword",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "createReqVO.getRequestMessageType",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "createReqVO.getAccountId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "MpAutoReplyConvert.INSTANCE.convert(createReqVO).setAppId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "MpAutoReplyConvert.INSTANCE.convert",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "account.getAppId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "mpAutoReplyMapper.insert",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createAutoReply",
+          "callee": "autoReply.getId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "updateReqVO.getResponseMessageType",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "MpUtils.validateMessage",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "updateReqVO.getResponseMessageType",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "validateAutoReplyExists",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "validateAutoReplyConflict",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "autoReply.getAccountId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "updateReqVO.getType",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "updateReqVO.getRequestKeyword",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "updateReqVO.getRequestMessageType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "MpAutoReplyConvert.INSTANCE.convert(updateReqVO)\n                .setAccountId(null).setAppId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "MpAutoReplyConvert.INSTANCE.convert(updateReqVO).setAccountId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "MpAutoReplyConvert.INSTANCE.convert",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateAutoReply",
+          "callee": "mpAutoReplyMapper.updateById",
+          "lineNumber": 94
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "MpAutoReplyTypeEnum.SUBSCRIBE.getType().equals",
+          "lineNumber": 116
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "MpAutoReplyTypeEnum.SUBSCRIBE.getType",
+          "lineNumber": 116
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "mpAutoReplyMapper.selectByAccountIdAndSubscribe",
+          "lineNumber": 117
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "MpAutoReplyTypeEnum.MESSAGE.getType().equals",
+          "lineNumber": 119
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "MpAutoReplyTypeEnum.MESSAGE.getType",
+          "lineNumber": 119
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "mpAutoReplyMapper.selectByAccountIdAndMessage",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "MpAutoReplyTypeEnum.KEYWORD.getType().equals",
+          "lineNumber": 122
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "MpAutoReplyTypeEnum.KEYWORD.getType",
+          "lineNumber": 122
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "mpAutoReplyMapper.selectByAccountIdAndKeyword",
+          "lineNumber": 123
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 132
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "autoReply.getId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "validateAutoReplyConflict",
+          "callee": "exception",
+          "lineNumber": 133
+        },
+        {
+          "caller": "deleteAutoReply",
+          "callee": "validateAutoReplyExists",
+          "lineNumber": 140
+        },
+        {
+          "caller": "deleteAutoReply",
+          "callee": "mpAutoReplyMapper.deleteById",
+          "lineNumber": 143
+        },
+        {
+          "caller": "validateAutoReplyExists",
+          "callee": "mpAutoReplyMapper.selectById",
+          "lineNumber": 147
+        },
+        {
+          "caller": "validateAutoReplyExists",
+          "callee": "exception",
+          "lineNumber": 149
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "wxMessage.getMsgType().equals",
+          "lineNumber": 159
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "wxMessage.getMsgType",
+          "lineNumber": 159
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "mpAutoReplyMapper.selectListByAppIdAndKeywordAll",
+          "lineNumber": 161
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "wxMessage.getContent",
+          "lineNumber": 161
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 162
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "mpAutoReplyMapper.selectListByAppIdAndKeywordLike",
+          "lineNumber": 164
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "wxMessage.getContent",
+          "lineNumber": 164
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 168
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "mpAutoReplyMapper.selectListByAppIdAndMessage",
+          "lineNumber": 169
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "wxMessage.getMsgType",
+          "lineNumber": 169
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 171
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 174
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "MpAutoReplyConvert.INSTANCE.convert",
+          "lineNumber": 177
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 177
+        },
+        {
+          "caller": "replyForMessage",
+          "callee": "mpMessageService.sendOutMessage",
+          "lineNumber": 178
+        },
+        {
+          "caller": "replyForSubscribe",
+          "callee": "mpAutoReplyMapper.selectListByAppIdAndSubscribe",
+          "lineNumber": 184
+        },
+        {
+          "caller": "replyForSubscribe",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 185
+        },
+        {
+          "caller": "replyForSubscribe",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 185
+        },
+        {
+          "caller": "replyForSubscribe",
+          "callee": "buildDefaultSubscribeAutoReply",
+          "lineNumber": 186
+        },
+        {
+          "caller": "replyForSubscribe",
+          "callee": "MpAutoReplyConvert.INSTANCE.convert",
+          "lineNumber": 189
+        },
+        {
+          "caller": "replyForSubscribe",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 189
+        },
+        {
+          "caller": "replyForSubscribe",
+          "callee": "mpMessageService.sendOutMessage",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "mpAccountService.getAccountFromCache",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "Assert.notNull",
+          "lineNumber": 195
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "new MpAutoReplyDO().setAppId(appId).setAccountId(account.getId())\n                .setType(MpAutoReplyTypeEnum.SUBSCRIBE.getType())\n                .setResponseMessageType(WxConsts.XmlMsgType.TEXT).setResponseContent",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "new MpAutoReplyDO().setAppId(appId).setAccountId(account.getId())\n                .setType(MpAutoReplyTypeEnum.SUBSCRIBE.getType()).setResponseMessageType",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "new MpAutoReplyDO().setAppId(appId).setAccountId(account.getId()).setType",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "new MpAutoReplyDO().setAppId(appId).setAccountId",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "new MpAutoReplyDO().setAppId",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "new MpAutoReplyDO",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "account.getId",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildDefaultSubscribeAutoReply",
+          "callee": "MpAutoReplyTypeEnum.SUBSCRIBE.getType",
+          "lineNumber": 198
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 8,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/message/MpMessageService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "MpMessageService",
+          "startLine": 19,
+          "endLine": 59,
+          "methods": [
+            "getMessagePage",
+            "receiveMessage",
+            "sendOutMessage",
+            "sendKefuMessage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpMessageService",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/message/MpMessageServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 172,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "getMessagePage",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "receiveMessage",
+          "startLine": 74,
+          "endLine": 107,
+          "params": [
+            "weixinService",
+            "appId",
+            "wxMessage"
+          ]
+        },
+        {
+          "name": "sendOutMessage",
+          "startLine": 109,
+          "endLine": 128,
+          "params": [
+            "sendReqBO"
+          ]
+        },
+        {
+          "name": "sendKefuMessage",
+          "startLine": 130,
+          "endLine": 154,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "downloadMessageMedia",
+          "startLine": 161,
+          "endLine": 170,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpMessageServiceImpl",
+          "startLine": 46,
+          "endLine": 172,
+          "methods": [
+            "getMessagePage",
+            "receiveMessage",
+            "sendOutMessage",
+            "sendKefuMessage",
+            "downloadMessageMedia"
+          ],
+          "properties": [
+            "mpAccountService",
+            "mpUserService",
+            "mpMaterialService",
+            "mpMessageMapper",
+            "mpServiceFactory",
+            "validator"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMessagePage",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "receiveMessage",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "sendOutMessage",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "sendKefuMessage",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "MpMessageServiceImpl",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMessagePage",
+          "callee": "mpMessageMapper.selectPage",
+          "lineNumber": 71
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "mpAccountService.getAccountFromCache",
+          "lineNumber": 78
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "Assert.notNull",
+          "lineNumber": 79
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "mpUserService.getUser",
+          "lineNumber": 82
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 82
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "ThreadUtil.sleep",
+          "lineNumber": 86
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "mpUserService.getUser",
+          "lineNumber": 87
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 87
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "log.warn",
+          "lineNumber": 91
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 91
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "log.warn",
+          "lineNumber": 96
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 96
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "weixinService.getUserService().userInfo",
+          "lineNumber": 97
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "weixinService.getUserService",
+          "lineNumber": 97
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 97
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "mpUserService.saveUser",
+          "lineNumber": 98
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "Assert.notNull",
+          "lineNumber": 100
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "wxMessage.getFromUser",
+          "lineNumber": 100
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert(wxMessage, account, user).setSendFrom",
+          "lineNumber": 103
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert",
+          "lineNumber": 103
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "MpMessageSendFromEnum.USER_TO_MP.getFrom",
+          "lineNumber": 104
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "downloadMessageMedia",
+          "lineNumber": 105
+        },
+        {
+          "caller": "receiveMessage",
+          "callee": "mpMessageMapper.insert",
+          "lineNumber": 106
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "MpUtils.validateMessage",
+          "lineNumber": 112
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "sendReqBO.getType",
+          "lineNumber": 112
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "mpAccountService.getAccountFromCache",
+          "lineNumber": 115
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "sendReqBO.getAppId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "Assert.notNull",
+          "lineNumber": 116
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "sendReqBO.getAppId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "mpUserService.getUser",
+          "lineNumber": 117
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "sendReqBO.getAppId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "sendReqBO.getOpenid",
+          "lineNumber": 117
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "Assert.notNull",
+          "lineNumber": 118
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "sendReqBO.getAppId",
+          "lineNumber": 118
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "sendReqBO.getOpenid",
+          "lineNumber": 118
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert(sendReqBO, account, user).setSendFrom",
+          "lineNumber": 121
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert",
+          "lineNumber": 121
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "MpMessageSendFromEnum.MP_TO_USER.getFrom",
+          "lineNumber": 122
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "downloadMessageMedia",
+          "lineNumber": 123
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "mpMessageMapper.insert",
+          "lineNumber": 124
+        },
+        {
+          "caller": "sendOutMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert02",
+          "lineNumber": 127
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "MpUtils.validateMessage",
+          "lineNumber": 133
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "sendReqVO.getType",
+          "lineNumber": 133
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "mpUserService.getRequiredUser",
+          "lineNumber": 136
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "sendReqVO.getUserId",
+          "lineNumber": 136
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 137
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "user.getAccountId",
+          "lineNumber": 137
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert",
+          "lineNumber": 140
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 141
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "user.getAppId",
+          "lineNumber": 141
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "mpService.getKefuService().sendKefuMessageWithResponse",
+          "lineNumber": 143
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "mpService.getKefuService",
+          "lineNumber": 143
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "exception",
+          "lineNumber": 145
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 145
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "e.getError",
+          "lineNumber": 145
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert(wxMessage, account, user).setSendFrom",
+          "lineNumber": 149
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "MpMessageConvert.INSTANCE.convert",
+          "lineNumber": 149
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "MpMessageSendFromEnum.MP_TO_USER.getFrom",
+          "lineNumber": 150
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "downloadMessageMedia",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "mpMessageMapper.insert",
+          "lineNumber": 152
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 162
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.getMediaId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.setMediaUrl",
+          "lineNumber": 163
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "mpMaterialService.downloadMaterialUrl",
+          "lineNumber": 163
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.getAccountId",
+          "lineNumber": 163
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.getMediaId",
+          "lineNumber": 164
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "MpUtils.getMediaFileType",
+          "lineNumber": 164
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.getType",
+          "lineNumber": 164
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 166
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.getThumbMediaId",
+          "lineNumber": 166
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.setThumbMediaUrl",
+          "lineNumber": 167
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "mpMaterialService.downloadMaterialUrl",
+          "lineNumber": 167
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.getAccountId",
+          "lineNumber": 167
+        },
+        {
+          "caller": "downloadMessageMedia",
+          "callee": "message.getThumbMediaId",
+          "lineNumber": 168
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/message/MpMessageTemplateService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "MpMessageTemplateService",
+          "startLine": 14,
+          "endLine": 53,
+          "methods": [
+            "deleteMessageTemplate",
+            "getMessageTemplate",
+            "getMessageTemplateList",
+            "syncMessageTemplate",
+            "sendMessageTempalte"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpMessageTemplateService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/message/MpMessageTemplateServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 176,
+      "nonEmptyLines": 154,
+      "functions": [
+        {
+          "name": "deleteMessageTemplate",
+          "startLine": 59,
+          "endLine": 74,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateMsgTemplateExists",
+          "startLine": 76,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMessageTemplate",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMessageTemplateList",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "listReqVO"
+          ]
+        },
+        {
+          "name": "syncMessageTemplate",
+          "startLine": 94,
+          "endLine": 133,
+          "params": [
+            "accountId"
+          ]
+        },
+        {
+          "name": "sendMessageTempalte",
+          "startLine": 135,
+          "endLine": 151,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "buildTemplateMessage",
+          "startLine": 153,
+          "endLine": 174,
+          "params": [
+            "msgTemplateDO",
+            "user",
+            "sendReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpMessageTemplateServiceImpl",
+          "startLine": 41,
+          "endLine": 176,
+          "methods": [
+            "deleteMessageTemplate",
+            "validateMsgTemplateExists",
+            "getMessageTemplate",
+            "getMessageTemplateList",
+            "syncMessageTemplate",
+            "sendMessageTempalte",
+            "buildTemplateMessage"
+          ],
+          "properties": [
+            "mpServiceFactory",
+            "messageTemplateMapper",
+            "mpAccountService",
+            "mpUserService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "deleteMessageTemplate",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getMessageTemplate",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getMessageTemplateList",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "syncMessageTemplate",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "sendMessageTempalte",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "MpMessageTemplateServiceImpl",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "validateMsgTemplateExists",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "mpServiceFactory.getRequiredMpService(template.getAppId())\n                    .getTemplateMsgService().delPrivateTemplate",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "mpServiceFactory.getRequiredMpService(template.getAppId()).getTemplateMsgService",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "template.getAppId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "template.getTemplateId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "exception",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "e.getError",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteMessageTemplate",
+          "callee": "messageTemplateMapper.deleteById",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validateMsgTemplateExists",
+          "callee": "messageTemplateMapper.selectById",
+          "lineNumber": 77
+        },
+        {
+          "caller": "validateMsgTemplateExists",
+          "callee": "exception",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getMessageTemplate",
+          "callee": "messageTemplateMapper.selectById",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMessageTemplateList",
+          "callee": "messageTemplateMapper.selectList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 97
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "mpServiceFactory.getRequiredMpService(accountId)\n                    .getTemplateMsgService().getAllPrivateTemplate",
+          "lineNumber": 102
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "mpServiceFactory.getRequiredMpService(accountId).getTemplateMsgService",
+          "lineNumber": 102
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 102
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "exception",
+          "lineNumber": 105
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 105
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "e.getError",
+          "lineNumber": 105
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "convertMap",
+          "lineNumber": 109
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "messageTemplateMapper.selectList",
+          "lineNumber": 110
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new LambdaQueryWrapperX<MpMessageTemplateDO>().eq",
+          "lineNumber": 110
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new LambdaQueryWrapperX<MpMessageTemplateDO>",
+          "lineNumber": 110
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "account.getAppId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplates.forEach",
+          "lineNumber": 113
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "templateMap.remove",
+          "lineNumber": 114
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getTemplateId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId(account.getId()).setAppId(account.getAppId())\n                        .setTemplateId(wxTemplate.getTemplateId()).setTitle(wxTemplate.getTitle())\n                        .setContent(wxTemplate.getContent()).setExample(wxTemplate.getExample())\n                        .setPrimaryIndustry(wxTemplate.getPrimaryIndustry()).setDeputyIndustry",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId(account.getId()).setAppId(account.getAppId())\n                        .setTemplateId(wxTemplate.getTemplateId()).setTitle(wxTemplate.getTitle())\n                        .setContent(wxTemplate.getContent()).setExample(wxTemplate.getExample()).setPrimaryIndustry",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId(account.getId()).setAppId(account.getAppId())\n                        .setTemplateId(wxTemplate.getTemplateId()).setTitle(wxTemplate.getTitle())\n                        .setContent(wxTemplate.getContent()).setExample",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId(account.getId()).setAppId(account.getAppId())\n                        .setTemplateId(wxTemplate.getTemplateId()).setTitle(wxTemplate.getTitle()).setContent",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId(account.getId()).setAppId(account.getAppId())\n                        .setTemplateId(wxTemplate.getTemplateId()).setTitle",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId(account.getId()).setAppId(account.getAppId()).setTemplateId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId(account.getId()).setAppId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setAccountId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "account.getId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "account.getAppId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getTemplateId",
+          "lineNumber": 118
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getTitle",
+          "lineNumber": 118
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getContent",
+          "lineNumber": 119
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getExample",
+          "lineNumber": 119
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getPrimaryIndustry",
+          "lineNumber": 120
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getDeputyIndustry",
+          "lineNumber": 120
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "messageTemplateMapper.insert",
+          "lineNumber": 121
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "messageTemplateMapper.updateById",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setId(template.getId())\n                    .setTitle(wxTemplate.getTitle()).setContent(wxTemplate.getContent()).setExample(wxTemplate.getExample())\n                    .setPrimaryIndustry(wxTemplate.getPrimaryIndustry()).setDeputyIndustry",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setId(template.getId())\n                    .setTitle(wxTemplate.getTitle()).setContent(wxTemplate.getContent()).setExample(wxTemplate.getExample()).setPrimaryIndustry",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setId(template.getId())\n                    .setTitle(wxTemplate.getTitle()).setContent(wxTemplate.getContent()).setExample",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setId(template.getId())\n                    .setTitle(wxTemplate.getTitle()).setContent",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setId(template.getId()).setTitle",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO().setId",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "new MpMessageTemplateDO",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "template.getId",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getTitle",
+          "lineNumber": 126
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getContent",
+          "lineNumber": 126
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getExample",
+          "lineNumber": 126
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getPrimaryIndustry",
+          "lineNumber": 127
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "wxTemplate.getDeputyIndustry",
+          "lineNumber": 127
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 130
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "messageTemplateMapper.deleteByIds",
+          "lineNumber": 131
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "convertList",
+          "lineNumber": 131
+        },
+        {
+          "caller": "syncMessageTemplate",
+          "callee": "templateMap.values",
+          "lineNumber": 131
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "mpUserService.getRequiredUser",
+          "lineNumber": 138
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "sendReqVO.getUserId",
+          "lineNumber": 138
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "validateMsgTemplateExists",
+          "lineNumber": 139
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "sendReqVO.getId",
+          "lineNumber": 139
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "buildTemplateMessage",
+          "lineNumber": 142
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "mpServiceFactory.getRequiredMpService(template.getAppId())\n                    .getTemplateMsgService().sendTemplateMsg",
+          "lineNumber": 144
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "mpServiceFactory.getRequiredMpService(template.getAppId()).getTemplateMsgService",
+          "lineNumber": 144
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 144
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "template.getAppId",
+          "lineNumber": 144
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "exception",
+          "lineNumber": 147
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 147
+        },
+        {
+          "caller": "sendMessageTempalte",
+          "callee": "e.getError",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "new ArrayList<>",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "WxMpTemplateMessage.builder()\n                .templateId(msgTemplateDO.getTemplateId())\n                .data(data).toUser",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "WxMpTemplateMessage.builder()\n                .templateId(msgTemplateDO.getTemplateId()).data",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "WxMpTemplateMessage.builder().templateId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "WxMpTemplateMessage.builder",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "msgTemplateDO.getTemplateId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "user.getOpenid",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "sendReqVO.getUrl",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "builder.url",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "sendReqVO.getUrl",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "sendReqVO.getMiniprogram",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "builder.miniProgram",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "sendReqVO.getMiniprogram",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "sendReqVO.getData",
+          "lineNumber": 170
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "sendReqVO.getData().forEach",
+          "lineNumber": 171
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "sendReqVO.getData",
+          "lineNumber": 171
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "data.add",
+          "lineNumber": 171
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "new WxMpTemplateData",
+          "lineNumber": 171
+        },
+        {
+          "caller": "buildTemplateMessage",
+          "callee": "builder.build",
+          "lineNumber": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 6,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/message/bo/MpMessageSendOutReqBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 97,
+      "classes": [
+        {
+          "name": "MpMessageSendOutReqBO",
+          "startLine": 21,
+          "endLine": 110,
+          "methods": [],
+          "properties": [
+            "appId",
+            "openid",
+            "type",
+            "content",
+            "mediaId",
+            "thumbMediaId",
+            "title",
+            "description",
+            "articles",
+            "musicUrl",
+            "hqMusicUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "type",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "MpMessageSendOutReqBO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/statistics/MpStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "getUserSummary",
+          "startLine": 33,
+          "endLine": 42,
+          "params": [
+            "accountId",
+            "date"
+          ]
+        },
+        {
+          "name": "getUserCumulate",
+          "startLine": 44,
+          "endLine": 53,
+          "params": [
+            "accountId",
+            "date"
+          ]
+        },
+        {
+          "name": "getUpstreamMessage",
+          "startLine": 55,
+          "endLine": 64,
+          "params": [
+            "accountId",
+            "date"
+          ]
+        },
+        {
+          "name": "getInterfaceSummary",
+          "startLine": 66,
+          "endLine": 75,
+          "params": [
+            "accountId",
+            "date"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpStatisticsServiceImpl",
+          "startLine": 26,
+          "endLine": 77,
+          "methods": [
+            "getUserSummary",
+            "getUserCumulate",
+            "getUpstreamMessage",
+            "getInterfaceSummary"
+          ],
+          "properties": [
+            "mpServiceFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUserSummary",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "getUserCumulate",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getUpstreamMessage",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getInterfaceSummary",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "MpStatisticsServiceImpl",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUserSummary",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "mpService.getDataCubeService().getUserSummary",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "mpService.getDataCubeService",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "DateUtil.date",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "DateUtil.date",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "exception",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "e.getError",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "mpService.getDataCubeService().getUserCumulate",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "mpService.getDataCubeService",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "DateUtil.date",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "DateUtil.date",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "exception",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "e.getError",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "mpService.getDataCubeService().getUpstreamMsg",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "mpService.getDataCubeService",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "DateUtil.date",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "DateUtil.date",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "exception",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "e.getError",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "mpService.getDataCubeService().getInterfaceSummary",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "mpService.getDataCubeService",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "DateUtil.date",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "DateUtil.date",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "exception",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "e.getError",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/tag/MpTagService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "MpTagService",
+          "startLine": 17,
+          "endLine": 65,
+          "methods": [
+            "createTag",
+            "updateTag",
+            "deleteTag",
+            "getTagPage",
+            "get",
+            "getTagList",
+            "syncTag"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpTagService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/tag/MpTagServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 140,
+      "functions": [
+        {
+          "name": "createTag",
+          "startLine": 52,
+          "endLine": 70,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateTag",
+          "startLine": 72,
+          "endLine": 87,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteTag",
+          "startLine": 89,
+          "endLine": 104,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateTagExists",
+          "startLine": 106,
+          "endLine": 112,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getTagPage",
+          "startLine": 114,
+          "endLine": 117,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "get",
+          "startLine": 119,
+          "endLine": 122,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getTagList",
+          "startLine": 124,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "syncTag",
+          "startLine": 129,
+          "endLine": 162,
+          "params": [
+            "accountId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpTagServiceImpl",
+          "startLine": 37,
+          "endLine": 164,
+          "methods": [
+            "createTag",
+            "updateTag",
+            "deleteTag",
+            "validateTagExists",
+            "getTagPage",
+            "get",
+            "getTagList",
+            "syncTag"
+          ],
+          "properties": [
+            "mpTagMapper",
+            "mpAccountService",
+            "mpServiceFactory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTag",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "updateTag",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "deleteTag",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getTagPage",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "getTagList",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "syncTag",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "MpTagServiceImpl",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTag",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTag",
+          "callee": "createReqVO.getAccountId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTag",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createTag",
+          "callee": "createReqVO.getAccountId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createTag",
+          "callee": "mpService.getUserTagService().tagCreate",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createTag",
+          "callee": "mpService.getUserTagService",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createTag",
+          "callee": "createReqVO.getName",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createTag",
+          "callee": "exception",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createTag",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createTag",
+          "callee": "e.getError",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createTag",
+          "callee": "MpTagConvert.INSTANCE.convert",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createTag",
+          "callee": "mpTagMapper.insert",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createTag",
+          "callee": "tag.getId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateTag",
+          "callee": "validateTagExists",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateTag",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateTag",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateTag",
+          "callee": "tag.getAccountId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateTag",
+          "callee": "mpService.getUserTagService().tagUpdate",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateTag",
+          "callee": "mpService.getUserTagService",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateTag",
+          "callee": "tag.getTagId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateTag",
+          "callee": "updateReqVO.getName",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateTag",
+          "callee": "exception",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateTag",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateTag",
+          "callee": "e.getError",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateTag",
+          "callee": "mpTagMapper.updateById",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateTag",
+          "callee": "new MpTagDO().setId(tag.getId()).setName",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateTag",
+          "callee": "new MpTagDO().setId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateTag",
+          "callee": "new MpTagDO",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateTag",
+          "callee": "tag.getId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateTag",
+          "callee": "updateReqVO.getName",
+          "lineNumber": 86
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "validateTagExists",
+          "lineNumber": 92
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 95
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "tag.getAccountId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "mpService.getUserTagService().tagDelete",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "mpService.getUserTagService",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "tag.getTagId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "exception",
+          "lineNumber": 99
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 99
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "e.getError",
+          "lineNumber": 99
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "mpTagMapper.deleteById",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "tag.getId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "validateTagExists",
+          "callee": "mpTagMapper.selectById",
+          "lineNumber": 107
+        },
+        {
+          "caller": "validateTagExists",
+          "callee": "exception",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getTagPage",
+          "callee": "mpTagMapper.selectPage",
+          "lineNumber": 116
+        },
+        {
+          "caller": "get",
+          "callee": "mpTagMapper.selectById",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getTagList",
+          "callee": "mpTagMapper.selectList",
+          "lineNumber": 126
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 132
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 135
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpService.getUserTagService().tagGet",
+          "lineNumber": 138
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpService.getUserTagService",
+          "lineNumber": 138
+        },
+        {
+          "caller": "syncTag",
+          "callee": "exception",
+          "lineNumber": 140
+        },
+        {
+          "caller": "syncTag",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 140
+        },
+        {
+          "caller": "syncTag",
+          "callee": "e.getError",
+          "lineNumber": 140
+        },
+        {
+          "caller": "syncTag",
+          "callee": "convertMap",
+          "lineNumber": 144
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpTagMapper.selectListByAccountId",
+          "lineNumber": 144
+        },
+        {
+          "caller": "syncTag",
+          "callee": "wxTags.forEach",
+          "lineNumber": 146
+        },
+        {
+          "caller": "syncTag",
+          "callee": "tagMap.remove",
+          "lineNumber": 147
+        },
+        {
+          "caller": "syncTag",
+          "callee": "wxTag.getId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "syncTag",
+          "callee": "MpTagConvert.INSTANCE.convert",
+          "lineNumber": 150
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpTagMapper.insert",
+          "lineNumber": 151
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpTagMapper.updateById",
+          "lineNumber": 155
+        },
+        {
+          "caller": "syncTag",
+          "callee": "new MpTagDO().setId(tag.getId())\n                    .setName(wxTag.getName()).setCount",
+          "lineNumber": 155
+        },
+        {
+          "caller": "syncTag",
+          "callee": "new MpTagDO().setId(tag.getId()).setName",
+          "lineNumber": 155
+        },
+        {
+          "caller": "syncTag",
+          "callee": "new MpTagDO().setId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "syncTag",
+          "callee": "new MpTagDO",
+          "lineNumber": 155
+        },
+        {
+          "caller": "syncTag",
+          "callee": "tag.getId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "syncTag",
+          "callee": "wxTag.getName",
+          "lineNumber": 156
+        },
+        {
+          "caller": "syncTag",
+          "callee": "wxTag.getCount",
+          "lineNumber": 156
+        },
+        {
+          "caller": "syncTag",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 159
+        },
+        {
+          "caller": "syncTag",
+          "callee": "mpTagMapper.deleteByIds",
+          "lineNumber": 160
+        },
+        {
+          "caller": "syncTag",
+          "callee": "convertList",
+          "lineNumber": 160
+        },
+        {
+          "caller": "syncTag",
+          "callee": "tagMap.values",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/user/MpUserService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "classes": [
+        {
+          "name": "MpUserService",
+          "startLine": 20,
+          "endLine": 102,
+          "methods": [
+            "getUser",
+            "getUser",
+            "getRequiredUser",
+            "getUserList",
+            "getUserPage",
+            "saveUser",
+            "syncUser",
+            "updateUserUnsubscribe",
+            "updateUser"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpUserService",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getRequiredUser",
+          "callee": "getUser",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getRequiredUser",
+          "callee": "exception",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/user/MpUserServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 215,
+      "nonEmptyLines": 189,
+      "functions": [
+        {
+          "name": "getUser",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getUser",
+          "startLine": 63,
+          "endLine": 66,
+          "params": [
+            "appId",
+            "openId"
+          ]
+        },
+        {
+          "name": "getUserList",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getUserPage",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "saveUser",
+          "startLine": 78,
+          "endLine": 93,
+          "params": [
+            "appId",
+            "wxMpUser"
+          ]
+        },
+        {
+          "name": "syncUser",
+          "startLine": 95,
+          "endLine": 114,
+          "params": [
+            "accountId"
+          ]
+        },
+        {
+          "name": "syncUser0",
+          "startLine": 116,
+          "endLine": 134,
+          "params": [
+            "account",
+            "nextOpenid"
+          ]
+        },
+        {
+          "name": "batchSaveUser",
+          "startLine": 136,
+          "endLine": 161,
+          "params": [
+            "account",
+            "wxUsers"
+          ]
+        },
+        {
+          "name": "updateUserUnsubscribe",
+          "startLine": 163,
+          "endLine": 172,
+          "params": [
+            "appId",
+            "openid"
+          ]
+        },
+        {
+          "name": "updateUser",
+          "startLine": 174,
+          "endLine": 185,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "validateUserExists",
+          "startLine": 187,
+          "endLine": 193,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateUserTag",
+          "startLine": 195,
+          "endLine": 213,
+          "params": [
+            "appId",
+            "openid",
+            "tagIds"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpUserServiceImpl",
+          "startLine": 42,
+          "endLine": 215,
+          "methods": [
+            "getUser",
+            "getUser",
+            "getUserList",
+            "getUserPage",
+            "saveUser",
+            "syncUser",
+            "syncUser0",
+            "batchSaveUser",
+            "updateUserUnsubscribe",
+            "updateUser",
+            "validateUserExists",
+            "updateUserTag"
+          ],
+          "properties": [
+            "mpAccountService",
+            "mpServiceFactory",
+            "mpUserMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUser",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getUser",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getUserList",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getUserPage",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "saveUser",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "syncUser",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserUnsubscribe",
+          "line": 163,
+          "isDefault": false
+        },
+        {
+          "name": "updateUser",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "MpUserServiceImpl",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUser",
+          "callee": "mpUserMapper.selectById",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUser",
+          "callee": "mpUserMapper.selectByAppIdAndOpenid",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getUserList",
+          "callee": "mpUserMapper.selectByIds",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "mpUserMapper.selectPage",
+          "lineNumber": 75
+        },
+        {
+          "caller": "saveUser",
+          "callee": "mpAccountService.getAccountFromCache",
+          "lineNumber": 81
+        },
+        {
+          "caller": "saveUser",
+          "callee": "MpUserConvert.INSTANCE.convert",
+          "lineNumber": 82
+        },
+        {
+          "caller": "saveUser",
+          "callee": "mpUserMapper.selectByAppIdAndOpenid",
+          "lineNumber": 85
+        },
+        {
+          "caller": "saveUser",
+          "callee": "wxMpUser.getOpenId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "saveUser",
+          "callee": "mpUserMapper.insert",
+          "lineNumber": 87
+        },
+        {
+          "caller": "saveUser",
+          "callee": "user.setId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "saveUser",
+          "callee": "dbUser.getId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "saveUser",
+          "callee": "mpUserMapper.updateById",
+          "lineNumber": 90
+        },
+        {
+          "caller": "syncUser",
+          "callee": "mpAccountService.getRequiredAccount",
+          "lineNumber": 98
+        },
+        {
+          "caller": "syncUser",
+          "callee": "log.info",
+          "lineNumber": 102
+        },
+        {
+          "caller": "syncUser",
+          "callee": "syncUser0",
+          "lineNumber": 104
+        },
+        {
+          "caller": "syncUser",
+          "callee": "log.error",
+          "lineNumber": 106
+        },
+        {
+          "caller": "syncUser",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 110
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 118
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "account.getId",
+          "lineNumber": 118
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "mpService.getUserService().userList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "mpService.getUserService",
+          "lineNumber": 119
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 120
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "wxUserList.getOpenids",
+          "lineNumber": 120
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "CollUtil.split",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "wxUserList.getOpenids",
+          "lineNumber": 125
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "log.info",
+          "lineNumber": 127
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "mpService.getUserService().userInfoList",
+          "lineNumber": 128
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "mpService.getUserService",
+          "lineNumber": 128
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "batchSaveUser",
+          "lineNumber": 129
+        },
+        {
+          "caller": "syncUser0",
+          "callee": "wxUserList.getNextOpenid",
+          "lineNumber": 133
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 137
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "mpUserMapper.selectListByAppIdAndOpenid",
+          "lineNumber": 141
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "account.getAppId",
+          "lineNumber": 141
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 142
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "CollectionUtils.convertMap",
+          "lineNumber": 143
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "MpUserConvert.INSTANCE.convertList",
+          "lineNumber": 146
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "new ArrayList<>",
+          "lineNumber": 147
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "openId2Users.get",
+          "lineNumber": 149
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "user.getOpenid",
+          "lineNumber": 149
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "newUsers.add",
+          "lineNumber": 151
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "user.setId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "dbUser.getId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "mpUserMapper.updateById",
+          "lineNumber": 154
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 158
+        },
+        {
+          "caller": "batchSaveUser",
+          "callee": "mpUserMapper.insertBatch",
+          "lineNumber": 159
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "mpUserMapper.selectByAppIdAndOpenid",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "log.error",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "mpUserMapper.updateById",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "new MpUserDO().setId(dbUser.getId()).setSubscribeStatus(CommonStatusEnum.DISABLE.getStatus()).setUnsubscribeTime",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "new MpUserDO().setId(dbUser.getId()).setSubscribeStatus",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "new MpUserDO().setId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "new MpUserDO",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "dbUser.getId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "CommonStatusEnum.DISABLE.getStatus",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateUserUnsubscribe",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateUser",
+          "callee": "validateUserExists",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateUserTag",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateUser",
+          "callee": "user.getAppId",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateUser",
+          "callee": "user.getOpenid",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateReqVO.getTagIds",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateUser",
+          "callee": "MpUserConvert.INSTANCE.convert(updateReqVO).setId",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateUser",
+          "callee": "MpUserConvert.INSTANCE.convert",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateUser",
+          "callee": "user.getId",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateUser",
+          "callee": "mpUserMapper.updateById",
+          "lineNumber": 184
+        },
+        {
+          "caller": "validateUserExists",
+          "callee": "mpUserMapper.selectById",
+          "lineNumber": 188
+        },
+        {
+          "caller": "validateUserExists",
+          "callee": "exception",
+          "lineNumber": 190
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "mpServiceFactory.getRequiredMpService",
+          "lineNumber": 196
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "mpService.getUserTagService().userTagList",
+          "lineNumber": 199
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "mpService.getUserTagService",
+          "lineNumber": 199
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "mpService.getUserTagService().batchUntagging",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "mpService.getUserTagService",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 204
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "mpService.getUserTagService().batchTagging",
+          "lineNumber": 208
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "mpService.getUserTagService",
+          "lineNumber": 208
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "exception",
+          "lineNumber": 211
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "e.getError().getErrorMsg",
+          "lineNumber": 211
+        },
+        {
+          "caller": "updateUserTag",
+          "callee": "e.getError",
+          "lineNumber": 211
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 9,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    }
+  ]
+}

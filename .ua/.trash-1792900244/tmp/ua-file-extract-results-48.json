@@ -1,0 +1,5052 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/channel/ImChannelMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "ImChannelMapper",
+          "startLine": 17,
+          "endLine": 39,
+          "methods": [
+            "selectByCode",
+            "selectListByStatusOrderBySort",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImChannelMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByCode",
+          "callee": "selectOne",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "selectList",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>()\n                .eq(ImChannelDO::getStatus, status).orderByAsc",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>().eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>()\n                .likeIfPresent(ImChannelDO::getCode, reqVO.getCode())\n                .likeIfPresent(ImChannelDO::getName, reqVO.getName())\n                .eqIfPresent(ImChannelDO::getStatus, reqVO.getStatus())\n                .orderByAsc(ImChannelDO::getSort).orderByDesc",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>()\n                .likeIfPresent(ImChannelDO::getCode, reqVO.getCode())\n                .likeIfPresent(ImChannelDO::getName, reqVO.getName())\n                .eqIfPresent(ImChannelDO::getStatus, reqVO.getStatus()).orderByAsc",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>()\n                .likeIfPresent(ImChannelDO::getCode, reqVO.getCode())\n                .likeIfPresent(ImChannelDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>()\n                .likeIfPresent(ImChannelDO::getCode, reqVO.getCode()).likeIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>().likeIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCode",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/channel/ImChannelMaterialMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "ImChannelMaterialMapper",
+          "startLine": 17,
+          "endLine": 39,
+          "methods": [
+            "selectCountByChannelId",
+            "selectListByChannelId",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImChannelMaterialMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectCountByChannelId",
+          "callee": "selectCount",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByChannelId",
+          "callee": "selectList",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByChannelId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>()\n                .eq(ImChannelMaterialDO::getChannelId, channelId).orderByDesc",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByChannelId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>().eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByChannelId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>()\n                .eqIfPresent(ImChannelMaterialDO::getChannelId, reqVO.getChannelId())\n                .eqIfPresent(ImChannelMaterialDO::getType, reqVO.getType())\n                .likeIfPresent(ImChannelMaterialDO::getTitle, reqVO.getTitle())\n                .betweenIfPresent(ImChannelMaterialDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>()\n                .eqIfPresent(ImChannelMaterialDO::getChannelId, reqVO.getChannelId())\n                .eqIfPresent(ImChannelMaterialDO::getType, reqVO.getType())\n                .likeIfPresent(ImChannelMaterialDO::getTitle, reqVO.getTitle()).betweenIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>()\n                .eqIfPresent(ImChannelMaterialDO::getChannelId, reqVO.getChannelId())\n                .eqIfPresent(ImChannelMaterialDO::getType, reqVO.getType()).likeIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>()\n                .eqIfPresent(ImChannelMaterialDO::getChannelId, reqVO.getChannelId()).eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>().eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMaterialDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getChannelId",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getType",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTitle",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/conversation/ImConversationReadMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "ImConversationReadMapper",
+          "startLine": 19,
+          "endLine": 83,
+          "methods": [
+            "selectByUserIdAndConversation",
+            "selectListByConversation",
+            "selectListByUserIdAndConversations",
+            "selectPullListByUserId",
+            "updateReadMessageIdToLarger"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImConversationReadMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByUserIdAndConversation",
+          "callee": "selectOne",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByUserIdAndConversation",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>()\n                .eq(ImConversationReadDO::getUserId, userId)\n                .eq(ImConversationReadDO::getConversationType, conversationType).eq",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByUserIdAndConversation",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>()\n                .eq(ImConversationReadDO::getUserId, userId).eq",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByUserIdAndConversation",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>().eq",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByUserIdAndConversation",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectListByConversation",
+          "callee": "selectList",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListByConversation",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>()\n                .eq(ImConversationReadDO::getConversationType, conversationType).eq",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListByConversation",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>().eq",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListByConversation",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListByUserIdAndConversations",
+          "callee": "selectList",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectListByUserIdAndConversations",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>()\n                .eq(ImConversationReadDO::getUserId, userId)\n                .eq(ImConversationReadDO::getConversationType, conversationType).in",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectListByUserIdAndConversations",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>()\n                .eq(ImConversationReadDO::getUserId, userId).eq",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectListByUserIdAndConversations",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>().eq",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectListByUserIdAndConversations",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>().eq",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImConversationReadDO>",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "LocalDateTimeUtil.of",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.and",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.gt(ImConversationReadDO::getUpdateTime, lastTime).or",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.gt",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "n.eq(ImConversationReadDO::getUpdateTime, lastTime).gt",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "n.eq",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "selectList",
+          "lineNumber": 60
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc(ImConversationReadDO::getUpdateTime).orderByAsc(ImConversationReadDO::getId).last",
+          "lineNumber": 60
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc(ImConversationReadDO::getUpdateTime).orderByAsc",
+          "lineNumber": 60
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateReadMessageIdToLarger",
+          "callee": "update",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateReadMessageIdToLarger",
+          "callee": "Wrappers.<ImConversationReadDO>lambdaUpdate()\n                .set(ImConversationReadDO::getMessageId, messageId)\n                .set(ImConversationReadDO::getReadTime, readTime)\n                .set(ImConversationReadDO::getUpdateTime, readTime)\n                .eq(ImConversationReadDO::getId, id).lt",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateReadMessageIdToLarger",
+          "callee": "Wrappers.<ImConversationReadDO>lambdaUpdate()\n                .set(ImConversationReadDO::getMessageId, messageId)\n                .set(ImConversationReadDO::getReadTime, readTime)\n                .set(ImConversationReadDO::getUpdateTime, readTime).eq",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateReadMessageIdToLarger",
+          "callee": "Wrappers.<ImConversationReadDO>lambdaUpdate()\n                .set(ImConversationReadDO::getMessageId, messageId)\n                .set(ImConversationReadDO::getReadTime, readTime).set",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateReadMessageIdToLarger",
+          "callee": "Wrappers.<ImConversationReadDO>lambdaUpdate()\n                .set(ImConversationReadDO::getMessageId, messageId).set",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateReadMessageIdToLarger",
+          "callee": "Wrappers.<ImConversationReadDO>lambdaUpdate().set",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateReadMessageIdToLarger",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/face/ImFaceUserItemMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "ImFaceUserItemMapper",
+          "startLine": 17,
+          "endLine": 45,
+          "methods": [
+            "selectListByUserId",
+            "selectByUserIdAndUrl",
+            "selectCountByUserId",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFaceUserItemMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByUserId",
+          "callee": "selectList",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>()\n                .eq(ImFaceUserItemDO::getUserId, userId)\n                .orderByAsc(ImFaceUserItemDO::getSort).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>()\n                .eq(ImFaceUserItemDO::getUserId, userId).orderByAsc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>().eq",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectByUserIdAndUrl",
+          "callee": "selectOne",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectByUserIdAndUrl",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>()\n                .eq(ImFaceUserItemDO::getUserId, userId).eq",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectByUserIdAndUrl",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>().eq",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectByUserIdAndUrl",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectCountByUserId",
+          "callee": "selectCount",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>()\n                .eqIfPresent(ImFaceUserItemDO::getUserId, reqVO.getUserId())\n                .likeIfPresent(ImFaceUserItemDO::getName, reqVO.getName())\n                .betweenIfPresent(ImFaceUserItemDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>()\n                .eqIfPresent(ImFaceUserItemDO::getUserId, reqVO.getUserId())\n                .likeIfPresent(ImFaceUserItemDO::getName, reqVO.getName()).betweenIfPresent",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>()\n                .eqIfPresent(ImFaceUserItemDO::getUserId, reqVO.getUserId()).likeIfPresent",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>().eqIfPresent",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFaceUserItemDO>",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/friend/ImFriendMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 98,
+      "classes": [
+        {
+          "name": "ImFriendMapper",
+          "startLine": 21,
+          "endLine": 110,
+          "methods": [
+            "selectByUserIdAndFriendUserId",
+            "selectListByUserId",
+            "selectPullListByUserId",
+            "selectListByUserIdAndStatus",
+            "selectListByUserIdAndFriendUserIdsAndStatus",
+            "selectListByUserIdsAndFriendUserIdAndStatus",
+            "selectPage",
+            "updateReAddFields"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFriendMapper",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByUserIdAndFriendUserId",
+          "callee": "selectOne",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectByUserIdAndFriendUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eq(ImFriendDO::getUserId, userId).eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectByUserIdAndFriendUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>().eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectByUserIdAndFriendUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "selectList",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eq(ImFriendDO::getUserId, userId).orderByDesc",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>().eq",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>().eq",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "LocalDateTimeUtil.of",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.and",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.gt(ImFriendDO::getUpdateTime, lastTime).or",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.gt",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "n.eq(ImFriendDO::getUpdateTime, lastTime).gt",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "n.eq",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "selectList",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc(ImFriendDO::getUpdateTime).orderByAsc(ImFriendDO::getId).last",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc(ImFriendDO::getUpdateTime).orderByAsc",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eq(ImFriendDO::getUserId, userId)\n                .eq(ImFriendDO::getStatus, status).orderByDesc",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eq(ImFriendDO::getUserId, userId).eq",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>().eq",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectListByUserIdAndFriendUserIdsAndStatus",
+          "callee": "selectList",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectListByUserIdAndFriendUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eq(ImFriendDO::getUserId, userId)\n                .in(ImFriendDO::getFriendUserId, friendUserIds).eq",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectListByUserIdAndFriendUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eq(ImFriendDO::getUserId, userId).in",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectListByUserIdAndFriendUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>().eq",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectListByUserIdAndFriendUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectListByUserIdsAndFriendUserIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectListByUserIdsAndFriendUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .in(ImFriendDO::getUserId, userIds)\n                .eq(ImFriendDO::getFriendUserId, friendUserId).eq",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectListByUserIdsAndFriendUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .in(ImFriendDO::getUserId, userIds).eq",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectListByUserIdsAndFriendUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>().in",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectListByUserIdsAndFriendUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eqIfPresent(ImFriendDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImFriendDO::getFriendUserId, reqVO.getFriendUserId())\n                .eqIfPresent(ImFriendDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ImFriendDO::getSilent, reqVO.getSilent())\n                .betweenIfPresent(ImFriendDO::getAddTime, reqVO.getAddTime()).orderByDesc",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eqIfPresent(ImFriendDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImFriendDO::getFriendUserId, reqVO.getFriendUserId())\n                .eqIfPresent(ImFriendDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ImFriendDO::getSilent, reqVO.getSilent()).betweenIfPresent",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eqIfPresent(ImFriendDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImFriendDO::getFriendUserId, reqVO.getFriendUserId())\n                .eqIfPresent(ImFriendDO::getStatus, reqVO.getStatus()).eqIfPresent",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eqIfPresent(ImFriendDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImFriendDO::getFriendUserId, reqVO.getFriendUserId()).eqIfPresent",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>()\n                .eqIfPresent(ImFriendDO::getUserId, reqVO.getUserId()).eqIfPresent",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>().eqIfPresent",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendDO>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getFriendUserId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSilent",
+          "lineNumber": 87
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getAddTime",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "update",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status)\n                .set(ImFriendDO::getAddTime, addTime)\n                .set(ImFriendDO::getUpdateTime, updateTime)\n                .set(ImFriendDO::getSilent, silent)\n                .set(ImFriendDO::getPinned, pinned)\n                .set(ImFriendDO::getBlocked, blocked)\n                .set(ImFriendDO::getDisplayName, displayName)\n                .set(ImFriendDO::getAddSource, addSource).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status)\n                .set(ImFriendDO::getAddTime, addTime)\n                .set(ImFriendDO::getUpdateTime, updateTime)\n                .set(ImFriendDO::getSilent, silent)\n                .set(ImFriendDO::getPinned, pinned)\n                .set(ImFriendDO::getBlocked, blocked)\n                .set(ImFriendDO::getDisplayName, displayName).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status)\n                .set(ImFriendDO::getAddTime, addTime)\n                .set(ImFriendDO::getUpdateTime, updateTime)\n                .set(ImFriendDO::getSilent, silent)\n                .set(ImFriendDO::getPinned, pinned)\n                .set(ImFriendDO::getBlocked, blocked).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status)\n                .set(ImFriendDO::getAddTime, addTime)\n                .set(ImFriendDO::getUpdateTime, updateTime)\n                .set(ImFriendDO::getSilent, silent)\n                .set(ImFriendDO::getPinned, pinned).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status)\n                .set(ImFriendDO::getAddTime, addTime)\n                .set(ImFriendDO::getUpdateTime, updateTime)\n                .set(ImFriendDO::getSilent, silent).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status)\n                .set(ImFriendDO::getAddTime, addTime)\n                .set(ImFriendDO::getUpdateTime, updateTime).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status)\n                .set(ImFriendDO::getAddTime, addTime).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id)\n                .set(ImFriendDO::getStatus, status).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate()\n                .eq(ImFriendDO::getId, id).set",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.<ImFriendDO>lambdaUpdate().eq",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateReAddFields",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/friend/ImFriendRequestMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "ImFriendRequestMapper",
+          "startLine": 21,
+          "endLine": 110,
+          "methods": [
+            "selectByFromUserIdAndToUserId",
+            "selectMyList",
+            "selectPullListByUserId",
+            "updateByIdAndHandleResult",
+            "updateByIdReset",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFriendRequestMapper",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByFromUserIdAndToUserId",
+          "callee": "selectOne",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectByFromUserIdAndToUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getFromUserId, fromUserId).eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectByFromUserIdAndToUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>().eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectByFromUserIdAndToUserId",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "new LambdaQueryWrapperX<>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "wrapper.and",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "w.eq(ImFriendRequestDO::getFromUserId, userId)\n                        .or().eq",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "w.eq(ImFriendRequestDO::getFromUserId, userId).or",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "w.eq",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "wrapper.and",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "w.lt(ImFriendRequestDO::getUpdateTime, maxRequestUpdateTime).or",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "w.lt",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "n.eq(ImFriendRequestDO::getUpdateTime, maxRequestUpdateTime).lt",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "n.eq",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "wrapper.orderByDesc(ImFriendRequestDO::getUpdateTime)\n                .orderByDesc(ImFriendRequestDO::getId).last",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "wrapper.orderByDesc(ImFriendRequestDO::getUpdateTime).orderByDesc",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "wrapper.orderByDesc",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectMyList",
+          "callee": "selectList",
+          "lineNumber": 52
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "new LambdaQueryWrapperX<>",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.and",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.eq(ImFriendRequestDO::getFromUserId, userId)\n                .or().eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.eq(ImFriendRequestDO::getFromUserId, userId).or",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "LocalDateTimeUtil.of",
+          "lineNumber": 69
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.and",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.gt(ImFriendRequestDO::getUpdateTime, lastTime).or",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "w.gt",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "n.eq(ImFriendRequestDO::getUpdateTime, lastTime).gt",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "n.eq",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "selectList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc(ImFriendRequestDO::getUpdateTime).orderByAsc(ImFriendRequestDO::getId).last",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc(ImFriendRequestDO::getUpdateTime).orderByAsc",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPullListByUserId",
+          "callee": "query.orderByAsc",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "update",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id).eq",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>().eq",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "update",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id)\n                .set(ImFriendRequestDO::getApplyContent, applyContent)\n                .set(ImFriendRequestDO::getDisplayName, displayName)\n                .set(ImFriendRequestDO::getAddSource, addSource)\n                .set(ImFriendRequestDO::getHandleResult, ImFriendRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImFriendRequestDO::getHandleContent, null)\n                .set(ImFriendRequestDO::getHandleTime, null).set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id)\n                .set(ImFriendRequestDO::getApplyContent, applyContent)\n                .set(ImFriendRequestDO::getDisplayName, displayName)\n                .set(ImFriendRequestDO::getAddSource, addSource)\n                .set(ImFriendRequestDO::getHandleResult, ImFriendRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImFriendRequestDO::getHandleContent, null).set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id)\n                .set(ImFriendRequestDO::getApplyContent, applyContent)\n                .set(ImFriendRequestDO::getDisplayName, displayName)\n                .set(ImFriendRequestDO::getAddSource, addSource)\n                .set(ImFriendRequestDO::getHandleResult, ImFriendRequestHandleResultEnum.UNHANDLED.getResult()).set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id)\n                .set(ImFriendRequestDO::getApplyContent, applyContent)\n                .set(ImFriendRequestDO::getDisplayName, displayName)\n                .set(ImFriendRequestDO::getAddSource, addSource).set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id)\n                .set(ImFriendRequestDO::getApplyContent, applyContent)\n                .set(ImFriendRequestDO::getDisplayName, displayName).set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id)\n                .set(ImFriendRequestDO::getApplyContent, applyContent).set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>()\n                .eq(ImFriendRequestDO::getId, id).set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>().eq",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImFriendRequestDO>",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateByIdReset",
+          "callee": "ImFriendRequestHandleResultEnum.UNHANDLED.getResult",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>()\n                .eqIfPresent(ImFriendRequestDO::getFromUserId, reqVO.getFromUserId())\n                .eqIfPresent(ImFriendRequestDO::getToUserId, reqVO.getToUserId())\n                .eqIfPresent(ImFriendRequestDO::getHandleResult, reqVO.getHandleResult())\n                .eqIfPresent(ImFriendRequestDO::getAddSource, reqVO.getAddSource())\n                .betweenIfPresent(ImFriendRequestDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>()\n                .eqIfPresent(ImFriendRequestDO::getFromUserId, reqVO.getFromUserId())\n                .eqIfPresent(ImFriendRequestDO::getToUserId, reqVO.getToUserId())\n                .eqIfPresent(ImFriendRequestDO::getHandleResult, reqVO.getHandleResult())\n                .eqIfPresent(ImFriendRequestDO::getAddSource, reqVO.getAddSource()).betweenIfPresent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>()\n                .eqIfPresent(ImFriendRequestDO::getFromUserId, reqVO.getFromUserId())\n                .eqIfPresent(ImFriendRequestDO::getToUserId, reqVO.getToUserId())\n                .eqIfPresent(ImFriendRequestDO::getHandleResult, reqVO.getHandleResult()).eqIfPresent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>()\n                .eqIfPresent(ImFriendRequestDO::getFromUserId, reqVO.getFromUserId())\n                .eqIfPresent(ImFriendRequestDO::getToUserId, reqVO.getToUserId()).eqIfPresent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>()\n                .eqIfPresent(ImFriendRequestDO::getFromUserId, reqVO.getFromUserId()).eqIfPresent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>().eqIfPresent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFriendRequestDO>",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getFromUserId",
+          "lineNumber": 102
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getToUserId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getHandleResult",
+          "lineNumber": 104
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getAddSource",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/group/ImGroupMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "ImGroupMapper",
+          "startLine": 15,
+          "endLine": 34,
+          "methods": [
+            "selectByIdForUpdate",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByIdForUpdate",
+          "callee": "selectOne",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectByIdForUpdate",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>()\n                .eq(ImGroupDO::getId, id).last",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectByIdForUpdate",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>().eq",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectByIdForUpdate",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>()\n                .likeIfPresent(ImGroupDO::getName, reqVO.getName())\n                .eqIfPresent(ImGroupDO::getOwnerUserId, reqVO.getOwnerUserId())\n                .eqIfPresent(ImGroupDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ImGroupDO::getBanned, reqVO.getBanned())\n                .betweenIfPresent(ImGroupDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>()\n                .likeIfPresent(ImGroupDO::getName, reqVO.getName())\n                .eqIfPresent(ImGroupDO::getOwnerUserId, reqVO.getOwnerUserId())\n                .eqIfPresent(ImGroupDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ImGroupDO::getBanned, reqVO.getBanned()).betweenIfPresent",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>()\n                .likeIfPresent(ImGroupDO::getName, reqVO.getName())\n                .eqIfPresent(ImGroupDO::getOwnerUserId, reqVO.getOwnerUserId())\n                .eqIfPresent(ImGroupDO::getStatus, reqVO.getStatus()).eqIfPresent",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>()\n                .likeIfPresent(ImGroupDO::getName, reqVO.getName())\n                .eqIfPresent(ImGroupDO::getOwnerUserId, reqVO.getOwnerUserId()).eqIfPresent",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>()\n                .likeIfPresent(ImGroupDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>().likeIfPresent",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupDO>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getOwnerUserId",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getBanned",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/group/ImGroupMemberMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 119,
+      "classes": [
+        {
+          "name": "ImGroupMemberMapper",
+          "startLine": 22,
+          "endLine": 137,
+          "methods": [
+            "selectListByGroupId",
+            "selectByGroupIdAndUserId",
+            "selectListByGroupIdAndUserIds",
+            "selectListByGroupIdAndStatus",
+            "selectListByGroupIdAndStatusAndRoles",
+            "selectListByUserIdAndStatus",
+            "selectListByUserId",
+            "updateByGroupIdAndStatus",
+            "updateByGroupIdAndUserIdsAndStatus",
+            "updateListByGroupIdAndUserIds",
+            "selectCountByGroupIdAndRoleAndStatus",
+            "selectCountMapByGroupIdsAndStatus",
+            "updateMuteEndTimeNull",
+            "updateRejoinFields"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupMemberMapper",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByGroupId",
+          "callee": "selectList",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectListByGroupId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectListByGroupId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "selectOne",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).eq",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListByGroupIdAndUserIds",
+          "callee": "selectList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByGroupIdAndUserIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).in",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByGroupIdAndUserIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByGroupIdAndUserIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByGroupIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByGroupIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).eq",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByGroupIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByGroupIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByGroupIdAndStatusAndRoles",
+          "callee": "selectList",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectListByGroupIdAndStatusAndRoles",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId)\n                .eq(ImGroupMemberDO::getStatus, status).in",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectListByGroupIdAndStatusAndRoles",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).eq",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectListByGroupIdAndStatusAndRoles",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectListByGroupIdAndStatusAndRoles",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getUserId, userId).eq",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectListByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectListByUserId",
+          "callee": "selectList",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateByGroupIdAndStatus",
+          "callee": "update",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateByGroupIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).eq",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateByGroupIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateByGroupIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateByGroupIdAndUserIdsAndStatus",
+          "callee": "update",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateByGroupIdAndUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId)\n                .in(ImGroupMemberDO::getUserId, userIds).eq",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateByGroupIdAndUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).in",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateByGroupIdAndUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateByGroupIdAndUserIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateListByGroupIdAndUserIds",
+          "callee": "update",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateListByGroupIdAndUserIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).in",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateListByGroupIdAndUserIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updateListByGroupIdAndUserIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectCountByGroupIdAndRoleAndStatus",
+          "callee": "selectCount",
+          "lineNumber": 89
+        },
+        {
+          "caller": "selectCountByGroupIdAndRoleAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId)\n                .eq(ImGroupMemberDO::getRole, role).eq",
+          "lineNumber": 89
+        },
+        {
+          "caller": "selectCountByGroupIdAndRoleAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>()\n                .eq(ImGroupMemberDO::getGroupId, groupId).eq",
+          "lineNumber": 89
+        },
+        {
+          "caller": "selectCountByGroupIdAndRoleAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>().eq",
+          "lineNumber": 89
+        },
+        {
+          "caller": "selectCountByGroupIdAndRoleAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImGroupMemberDO>",
+          "lineNumber": 89
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 99
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "Collections.emptyMap",
+          "lineNumber": 100
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "selectMaps",
+          "lineNumber": 102
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "Wrappers.<ImGroupMemberDO>query()\n                .select(\"group_id AS groupId\", \"COUNT(*) AS cnt\")\n                .in(\"group_id\", groupIds)\n                .eq(\"status\", status).groupBy",
+          "lineNumber": 102
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "Wrappers.<ImGroupMemberDO>query()\n                .select(\"group_id AS groupId\", \"COUNT(*) AS cnt\")\n                .in(\"group_id\", groupIds).eq",
+          "lineNumber": 102
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "Wrappers.<ImGroupMemberDO>query()\n                .select(\"group_id AS groupId\", \"COUNT(*) AS cnt\").in",
+          "lineNumber": 102
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "Wrappers.<ImGroupMemberDO>query().select",
+          "lineNumber": 102
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "Wrappers.query",
+          "lineNumber": 102
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "new HashMap<>",
+          "lineNumber": 108
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "rows.size",
+          "lineNumber": 108
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "rows.forEach",
+          "lineNumber": 109
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "result.put",
+          "lineNumber": 109
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "((Number) row.get(\"groupId\")).longValue",
+          "lineNumber": 110
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "row.get",
+          "lineNumber": 110
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "((Number) row.get(\"cnt\")).longValue",
+          "lineNumber": 111
+        },
+        {
+          "caller": "selectCountMapByGroupIdsAndStatus",
+          "callee": "row.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateMuteEndTimeNull",
+          "callee": "update",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateMuteEndTimeNull",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id).set",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateMuteEndTimeNull",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate().eq",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateMuteEndTimeNull",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "update",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id)\n                .set(ImGroupMemberDO::getStatus, status)\n                .set(ImGroupMemberDO::getJoinTime, joinTime)\n                .set(ImGroupMemberDO::getRole, role)\n                .set(ImGroupMemberDO::getAddSource, addSource)\n                .set(ImGroupMemberDO::getInviterUserId, inviterUserId)\n                .set(ImGroupMemberDO::getQuitTime, null)\n                .set(ImGroupMemberDO::getMuteEndTime, null).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id)\n                .set(ImGroupMemberDO::getStatus, status)\n                .set(ImGroupMemberDO::getJoinTime, joinTime)\n                .set(ImGroupMemberDO::getRole, role)\n                .set(ImGroupMemberDO::getAddSource, addSource)\n                .set(ImGroupMemberDO::getInviterUserId, inviterUserId)\n                .set(ImGroupMemberDO::getQuitTime, null).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id)\n                .set(ImGroupMemberDO::getStatus, status)\n                .set(ImGroupMemberDO::getJoinTime, joinTime)\n                .set(ImGroupMemberDO::getRole, role)\n                .set(ImGroupMemberDO::getAddSource, addSource)\n                .set(ImGroupMemberDO::getInviterUserId, inviterUserId).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id)\n                .set(ImGroupMemberDO::getStatus, status)\n                .set(ImGroupMemberDO::getJoinTime, joinTime)\n                .set(ImGroupMemberDO::getRole, role)\n                .set(ImGroupMemberDO::getAddSource, addSource).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id)\n                .set(ImGroupMemberDO::getStatus, status)\n                .set(ImGroupMemberDO::getJoinTime, joinTime)\n                .set(ImGroupMemberDO::getRole, role).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id)\n                .set(ImGroupMemberDO::getStatus, status)\n                .set(ImGroupMemberDO::getJoinTime, joinTime).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id)\n                .set(ImGroupMemberDO::getStatus, status).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate()\n                .eq(ImGroupMemberDO::getId, id).set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.<ImGroupMemberDO>lambdaUpdate().eq",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateRejoinFields",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/group/ImGroupRequestMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 104,
+      "classes": [
+        {
+          "name": "ImGroupRequestMapper",
+          "startLine": 22,
+          "endLine": 116,
+          "methods": [
+            "selectByGroupIdAndUserId",
+            "selectListByGroupIdsAndHandleResult",
+            "selectListByGroupId",
+            "selectPullListByGroupIds",
+            "updateByIdAndHandleResult",
+            "updateApplyByIdReset",
+            "updateInviteByIdReset",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupRequestMapper",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "selectOne",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getGroupId, groupId).eq",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>().eq",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectByGroupIdAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectListByGroupIdsAndHandleResult",
+          "callee": "selectList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByGroupIdsAndHandleResult",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .in(ImGroupRequestDO::getGroupId, groupIds)\n                .eq(ImGroupRequestDO::getHandleResult, handleResult)\n                .orderByDesc(ImGroupRequestDO::getUpdateTime).orderByDesc",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByGroupIdsAndHandleResult",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .in(ImGroupRequestDO::getGroupId, groupIds)\n                .eq(ImGroupRequestDO::getHandleResult, handleResult).orderByDesc",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByGroupIdsAndHandleResult",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .in(ImGroupRequestDO::getGroupId, groupIds).eq",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByGroupIdsAndHandleResult",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>().in",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByGroupIdsAndHandleResult",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByGroupId",
+          "callee": "selectList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectListByGroupId",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getGroupId, groupId)\n                .orderByDesc(ImGroupRequestDO::getUpdateTime).orderByDesc",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectListByGroupId",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getGroupId, groupId).orderByDesc",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectListByGroupId",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>().eq",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectListByGroupId",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>().in",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "LocalDateTimeUtil.of",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "query.and",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "w.gt(ImGroupRequestDO::getUpdateTime, lastTime).or",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "w.gt",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "n.eq(ImGroupRequestDO::getUpdateTime, lastTime).gt",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "n.eq",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "selectList",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "query.orderByAsc(ImGroupRequestDO::getUpdateTime).orderByAsc(ImGroupRequestDO::getId).last",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "query.orderByAsc(ImGroupRequestDO::getUpdateTime).orderByAsc",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectPullListByGroupIds",
+          "callee": "query.orderByAsc",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "update",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id).eq",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>().eq",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateByIdAndHandleResult",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "update",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getApplyContent, applyContent)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImGroupRequestDO::getInviterUserId, null)\n                .set(ImGroupRequestDO::getHandleUserId, null)\n                .set(ImGroupRequestDO::getHandleContent, null)\n                .set(ImGroupRequestDO::getHandleTime, null).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getApplyContent, applyContent)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImGroupRequestDO::getInviterUserId, null)\n                .set(ImGroupRequestDO::getHandleUserId, null)\n                .set(ImGroupRequestDO::getHandleContent, null).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getApplyContent, applyContent)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImGroupRequestDO::getInviterUserId, null)\n                .set(ImGroupRequestDO::getHandleUserId, null).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getApplyContent, applyContent)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImGroupRequestDO::getInviterUserId, null).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getApplyContent, applyContent)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult()).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getApplyContent, applyContent)\n                .set(ImGroupRequestDO::getAddSource, addSource).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getApplyContent, applyContent).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id).set",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>().eq",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateApplyByIdReset",
+          "callee": "ImGroupRequestHandleResultEnum.UNHANDLED.getResult",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "update",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getInviterUserId, inviterUserId)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImGroupRequestDO::getHandleUserId, null)\n                .set(ImGroupRequestDO::getHandleContent, null)\n                .set(ImGroupRequestDO::getHandleTime, null).set",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getInviterUserId, inviterUserId)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImGroupRequestDO::getHandleUserId, null)\n                .set(ImGroupRequestDO::getHandleContent, null).set",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getInviterUserId, inviterUserId)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult())\n                .set(ImGroupRequestDO::getHandleUserId, null).set",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getInviterUserId, inviterUserId)\n                .set(ImGroupRequestDO::getAddSource, addSource)\n                .set(ImGroupRequestDO::getHandleResult, ImGroupRequestHandleResultEnum.UNHANDLED.getResult()).set",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getInviterUserId, inviterUserId)\n                .set(ImGroupRequestDO::getAddSource, addSource).set",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id)\n                .set(ImGroupRequestDO::getInviterUserId, inviterUserId).set",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>()\n                .eq(ImGroupRequestDO::getId, id).set",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>().eq",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "new LambdaUpdateWrapper<ImGroupRequestDO>",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateInviteByIdReset",
+          "callee": "ImGroupRequestHandleResultEnum.UNHANDLED.getResult",
+          "lineNumber": 98
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eqIfPresent(ImGroupRequestDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupRequestDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImGroupRequestDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImGroupRequestDO::getHandleResult, reqVO.getHandleResult())\n                .eqIfPresent(ImGroupRequestDO::getAddSource, reqVO.getAddSource())\n                .betweenIfPresent(ImGroupRequestDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eqIfPresent(ImGroupRequestDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupRequestDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImGroupRequestDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImGroupRequestDO::getHandleResult, reqVO.getHandleResult())\n                .eqIfPresent(ImGroupRequestDO::getAddSource, reqVO.getAddSource()).betweenIfPresent",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eqIfPresent(ImGroupRequestDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupRequestDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImGroupRequestDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImGroupRequestDO::getHandleResult, reqVO.getHandleResult()).eqIfPresent",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eqIfPresent(ImGroupRequestDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupRequestDO::getUserId, reqVO.getUserId())\n                .eqIfPresent(ImGroupRequestDO::getInviterUserId, reqVO.getInviterUserId()).eqIfPresent",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eqIfPresent(ImGroupRequestDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupRequestDO::getUserId, reqVO.getUserId()).eqIfPresent",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>()\n                .eqIfPresent(ImGroupRequestDO::getGroupId, reqVO.getGroupId()).eqIfPresent",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>().eqIfPresent",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupRequestDO>",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getGroupId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getInviterUserId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getHandleResult",
+          "lineNumber": 110
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getAddSource",
+          "lineNumber": 111
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/message/ImChannelMessageMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "ImChannelMessageMapper",
+          "startLine": 18,
+          "endLine": 53,
+          "methods": [
+            "selectListByUserAndMinId",
+            "selectCountByMaterialId",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImChannelMessageMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "selectList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>()\n                .gt(ImChannelMessageDO::getId, minId)\n                .and(w -> w.isNull(ImChannelMessageDO::getReceiverUserIds)\n                        .or().eq(ImChannelMessageDO::getReceiverUserIds, \"\")\n                        .or().apply(MyBatisUtils.findInSet(\"receiver_user_ids\"), userId))\n                .orderByAsc(ImChannelMessageDO::getId).last",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>()\n                .gt(ImChannelMessageDO::getId, minId)\n                .and(w -> w.isNull(ImChannelMessageDO::getReceiverUserIds)\n                        .or().eq(ImChannelMessageDO::getReceiverUserIds, \"\")\n                        .or().apply(MyBatisUtils.findInSet(\"receiver_user_ids\"), userId)).orderByAsc",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>()\n                .gt(ImChannelMessageDO::getId, minId).and",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>().gt",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "w.isNull(ImChannelMessageDO::getReceiverUserIds)\n                        .or().eq(ImChannelMessageDO::getReceiverUserIds, \"\")\n                        .or().apply",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "w.isNull(ImChannelMessageDO::getReceiverUserIds)\n                        .or().eq(ImChannelMessageDO::getReceiverUserIds, \"\").or",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "w.isNull(ImChannelMessageDO::getReceiverUserIds)\n                        .or().eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "w.isNull(ImChannelMessageDO::getReceiverUserIds).or",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "w.isNull",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByUserAndMinId",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectCountByMaterialId",
+          "callee": "selectCount",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>()\n                .eqIfPresent(ImChannelMessageDO::getChannelId, reqVO.getChannelId())\n                .eqIfPresent(ImChannelMessageDO::getMaterialId, reqVO.getMaterialId())\n                .betweenIfPresent(ImChannelMessageDO::getSendTime, reqVO.getSendTime()).orderByDesc",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>()\n                .eqIfPresent(ImChannelMessageDO::getChannelId, reqVO.getChannelId())\n                .eqIfPresent(ImChannelMessageDO::getMaterialId, reqVO.getMaterialId()).betweenIfPresent",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>()\n                .eqIfPresent(ImChannelMessageDO::getChannelId, reqVO.getChannelId()).eqIfPresent",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>().eqIfPresent",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImChannelMessageDO>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getChannelId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getMaterialId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSendTime",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/message/ImGroupMessageMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 95,
+      "classes": [
+        {
+          "name": "ImGroupMessageMapper",
+          "startLine": 23,
+          "endLine": 104,
+          "methods": [
+            "selectListByMinId",
+            "selectHistoryListByUser",
+            "selectBySenderIdAndClientMessageId",
+            "selectListByGroupIdAndPendingReceipt",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupMessageMapper",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByMinId",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.in(\"group_id\", groupIds)\n                .gt(\"id\", minId)\n                .gt(\"send_time\", minSendTime)\n                .apply(MyBatisUtils.findInSet(\"receiver_user_ids\"), userId).orderByAsc",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.in(\"group_id\", groupIds)\n                .gt(\"id\", minId)\n                .gt(\"send_time\", minSendTime).apply",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.in(\"group_id\", groupIds)\n                .gt(\"id\", minId).gt",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.in(\"group_id\", groupIds).gt",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.in",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.limitN",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "selectList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "wrapper.eq(\"group_id\", groupId)\n                .lt(maxId != null, \"id\", maxId)\n                .apply(MyBatisUtils.findInSet(\"receiver_user_ids\"), userId).orderByDesc",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "wrapper.eq(\"group_id\", groupId)\n                .lt(maxId != null, \"id\", maxId).apply",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "wrapper.eq(\"group_id\", groupId).lt",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "wrapper.eq",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "wrapper.limitN",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectHistoryListByUser",
+          "callee": "selectList",
+          "lineNumber": 64
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "selectOne",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eq(ImGroupMessageDO::getSenderId, senderId).eq",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>().eq",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "selectList",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eq(ImGroupMessageDO::getGroupId, groupId)\n                .eq(ImGroupMessageDO::getReceiptStatus, ImMessageReceiptStatusEnum.PENDING.getStatus())\n                .gt(minId != null, ImGroupMessageDO::getId, minId)\n                .le(ImGroupMessageDO::getId, maxId).ne",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eq(ImGroupMessageDO::getGroupId, groupId)\n                .eq(ImGroupMessageDO::getReceiptStatus, ImMessageReceiptStatusEnum.PENDING.getStatus())\n                .gt(minId != null, ImGroupMessageDO::getId, minId).le",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eq(ImGroupMessageDO::getGroupId, groupId)\n                .eq(ImGroupMessageDO::getReceiptStatus, ImMessageReceiptStatusEnum.PENDING.getStatus()).gt",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eq(ImGroupMessageDO::getGroupId, groupId).eq",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>().eq",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "ImMessageReceiptStatusEnum.PENDING.getStatus",
+          "lineNumber": 87
+        },
+        {
+          "caller": "selectListByGroupIdAndPendingReceipt",
+          "callee": "ImMessageStatusEnum.RECALL.getStatus",
+          "lineNumber": 90
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eqIfPresent(ImGroupMessageDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupMessageDO::getSenderId, reqVO.getSenderId())\n                .eqIfPresent(ImGroupMessageDO::getType, reqVO.getType())\n                .likeIfPresent(ImGroupMessageDO::getContent, reqVO.getContent())\n                .eqIfPresent(ImGroupMessageDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(ImGroupMessageDO::getSendTime, reqVO.getSendTime()).orderByDesc",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eqIfPresent(ImGroupMessageDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupMessageDO::getSenderId, reqVO.getSenderId())\n                .eqIfPresent(ImGroupMessageDO::getType, reqVO.getType())\n                .likeIfPresent(ImGroupMessageDO::getContent, reqVO.getContent())\n                .eqIfPresent(ImGroupMessageDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eqIfPresent(ImGroupMessageDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupMessageDO::getSenderId, reqVO.getSenderId())\n                .eqIfPresent(ImGroupMessageDO::getType, reqVO.getType())\n                .likeIfPresent(ImGroupMessageDO::getContent, reqVO.getContent()).eqIfPresent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eqIfPresent(ImGroupMessageDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupMessageDO::getSenderId, reqVO.getSenderId())\n                .eqIfPresent(ImGroupMessageDO::getType, reqVO.getType()).likeIfPresent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eqIfPresent(ImGroupMessageDO::getGroupId, reqVO.getGroupId())\n                .eqIfPresent(ImGroupMessageDO::getSenderId, reqVO.getSenderId()).eqIfPresent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>()\n                .eqIfPresent(ImGroupMessageDO::getGroupId, reqVO.getGroupId()).eqIfPresent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>().eqIfPresent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImGroupMessageDO>",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getGroupId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSenderId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getType",
+          "lineNumber": 97
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getContent",
+          "lineNumber": 98
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 99
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSendTime",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/message/ImPrivateMessageMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 90,
+      "classes": [
+        {
+          "name": "ImPrivateMessageMapper",
+          "startLine": 19,
+          "endLine": 99,
+          "methods": [
+            "selectListByMinId",
+            "selectHistoryList",
+            "selectBySenderIdAndClientMessageId",
+            "updateBySenderIdAndReceiverIdAndIdLeAndReceiptStatus",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImPrivateMessageMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByMinId",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.and(w -> w.eq(\"sender_id\", userId)\n                        .or()\n                        .eq(\"receiver_id\", userId))\n                .gt(\"id\", minId)\n                .gt(\"send_time\", minSendTime).orderByAsc",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.and(w -> w.eq(\"sender_id\", userId)\n                        .or()\n                        .eq(\"receiver_id\", userId))\n                .gt(\"id\", minId).gt",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.and(w -> w.eq(\"sender_id\", userId)\n                        .or()\n                        .eq(\"receiver_id\", userId)).gt",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.and",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "w.eq(\"sender_id\", userId)\n                        .or().eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "w.eq(\"sender_id\", userId).or",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "w.eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "wrapper.limitN",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectListByMinId",
+          "callee": "selectList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "new QueryWrapperX<>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "wrapper.and(w -> w.eq(\"sender_id\", userId).eq(\"receiver_id\", receiverId)\n                        .or()\n                        .eq(\"sender_id\", receiverId).eq(\"receiver_id\", userId))\n                .lt(maxId != null, \"id\", maxId).orderByDesc",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "wrapper.and(w -> w.eq(\"sender_id\", userId).eq(\"receiver_id\", receiverId)\n                        .or()\n                        .eq(\"sender_id\", receiverId).eq(\"receiver_id\", userId)).lt",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "wrapper.and",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "w.eq(\"sender_id\", userId).eq(\"receiver_id\", receiverId)\n                        .or()\n                        .eq(\"sender_id\", receiverId).eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "w.eq(\"sender_id\", userId).eq(\"receiver_id\", receiverId)\n                        .or().eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "w.eq(\"sender_id\", userId).eq(\"receiver_id\", receiverId).or",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "w.eq(\"sender_id\", userId).eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "w.eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "wrapper.limitN",
+          "lineNumber": 60
+        },
+        {
+          "caller": "selectHistoryList",
+          "callee": "selectList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "selectOne",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>()\n                .eq(ImPrivateMessageDO::getSenderId, senderId).eq",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>().eq",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectBySenderIdAndClientMessageId",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateBySenderIdAndReceiverIdAndIdLeAndReceiptStatus",
+          "callee": "update",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateBySenderIdAndReceiverIdAndIdLeAndReceiptStatus",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>()\n                .eq(ImPrivateMessageDO::getSenderId, senderId)\n                .eq(ImPrivateMessageDO::getReceiverId, receiverId)\n                .le(ImPrivateMessageDO::getId, maxMessageId).eq",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateBySenderIdAndReceiverIdAndIdLeAndReceiptStatus",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>()\n                .eq(ImPrivateMessageDO::getSenderId, senderId)\n                .eq(ImPrivateMessageDO::getReceiverId, receiverId).le",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateBySenderIdAndReceiverIdAndIdLeAndReceiptStatus",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>()\n                .eq(ImPrivateMessageDO::getSenderId, senderId).eq",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateBySenderIdAndReceiverIdAndIdLeAndReceiptStatus",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>().eq",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateBySenderIdAndReceiverIdAndIdLeAndReceiptStatus",
+          "callee": "new LambdaQueryWrapperX<ImPrivateMessageDO>",
+          "lineNumber": 72
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<>",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSenderId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getReceiverId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.and",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectPage",
+          "callee": "w.eq(ImPrivateMessageDO::getSenderId, reqVO.getSenderId())\n                            .eq(ImPrivateMessageDO::getReceiverId, reqVO.getReceiverId())\n                            .or()\n                            .eq(ImPrivateMessageDO::getSenderId, reqVO.getReceiverId()).eq",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectPage",
+          "callee": "w.eq(ImPrivateMessageDO::getSenderId, reqVO.getSenderId())\n                            .eq(ImPrivateMessageDO::getReceiverId, reqVO.getReceiverId())\n                            .or().eq",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectPage",
+          "callee": "w.eq(ImPrivateMessageDO::getSenderId, reqVO.getSenderId())\n                            .eq(ImPrivateMessageDO::getReceiverId, reqVO.getReceiverId()).or",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectPage",
+          "callee": "w.eq(ImPrivateMessageDO::getSenderId, reqVO.getSenderId()).eq",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectPage",
+          "callee": "w.eq",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSenderId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getReceiverId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getReceiverId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSenderId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.eqIfPresent(ImPrivateMessageDO::getSenderId, reqVO.getSenderId()).eqIfPresent",
+          "lineNumber": 88
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.eqIfPresent",
+          "lineNumber": 88
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSenderId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getReceiverId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query\n                .eqIfPresent(ImPrivateMessageDO::getType, reqVO.getType())\n                .likeIfPresent(ImPrivateMessageDO::getContent, reqVO.getContent())\n                .eqIfPresent(ImPrivateMessageDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(ImPrivateMessageDO::getSendTime, reqVO.getSendTime()).orderByDesc",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query\n                .eqIfPresent(ImPrivateMessageDO::getType, reqVO.getType())\n                .likeIfPresent(ImPrivateMessageDO::getContent, reqVO.getContent())\n                .eqIfPresent(ImPrivateMessageDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query\n                .eqIfPresent(ImPrivateMessageDO::getType, reqVO.getType())\n                .likeIfPresent(ImPrivateMessageDO::getContent, reqVO.getContent()).eqIfPresent",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query\n                .eqIfPresent(ImPrivateMessageDO::getType, reqVO.getType()).likeIfPresent",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.eqIfPresent",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getType",
+          "lineNumber": 92
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getContent",
+          "lineNumber": 93
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSendTime",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/rtc/ImRtcCallMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "ImRtcCallMapper",
+          "startLine": 20,
+          "endLine": 64,
+          "methods": [
+            "selectByRoom",
+            "selectLastOneByGroupIdAndStatusIn",
+            "updateByIdAndStatus",
+            "updateByIdAndStatusIn",
+            "selectListByStatusInAndStartTimeBefore",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImRtcCallMapper",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByRoom",
+          "callee": "selectOne",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectLastOneByGroupIdAndStatusIn",
+          "callee": "selectLastOne",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectLastOneByGroupIdAndStatusIn",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .eq(ImRtcCallDO::getGroupId, groupId).in",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectLastOneByGroupIdAndStatusIn",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>().eq",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectLastOneByGroupIdAndStatusIn",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>",
+          "lineNumber": 28
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "update",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "Wrappers.<ImRtcCallDO>lambdaUpdate()\n                .eq(ImRtcCallDO::getId, id).eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "Wrappers.<ImRtcCallDO>lambdaUpdate().eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatusIn",
+          "callee": "update",
+          "lineNumber": 41
+        },
+        {
+          "caller": "updateByIdAndStatusIn",
+          "callee": "Wrappers.<ImRtcCallDO>lambdaUpdate()\n                .eq(ImRtcCallDO::getId, id).in",
+          "lineNumber": 41
+        },
+        {
+          "caller": "updateByIdAndStatusIn",
+          "callee": "Wrappers.<ImRtcCallDO>lambdaUpdate().eq",
+          "lineNumber": 41
+        },
+        {
+          "caller": "updateByIdAndStatusIn",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectListByStatusInAndStartTimeBefore",
+          "callee": "selectList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectListByStatusInAndStartTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .in(ImRtcCallDO::getStatus, statuses).lt",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectListByStatusInAndStartTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>().in",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectListByStatusInAndStartTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .eqIfPresent(ImRtcCallDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImRtcCallDO::getConversationType, reqVO.getConversationType())\n                .eqIfPresent(ImRtcCallDO::getMediaType, reqVO.getMediaType())\n                .eqIfPresent(ImRtcCallDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ImRtcCallDO::getEndReason, reqVO.getEndReason())\n                .betweenIfPresent(ImRtcCallDO::getStartTime, reqVO.getStartTime()).orderByDesc",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .eqIfPresent(ImRtcCallDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImRtcCallDO::getConversationType, reqVO.getConversationType())\n                .eqIfPresent(ImRtcCallDO::getMediaType, reqVO.getMediaType())\n                .eqIfPresent(ImRtcCallDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(ImRtcCallDO::getEndReason, reqVO.getEndReason()).betweenIfPresent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .eqIfPresent(ImRtcCallDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImRtcCallDO::getConversationType, reqVO.getConversationType())\n                .eqIfPresent(ImRtcCallDO::getMediaType, reqVO.getMediaType())\n                .eqIfPresent(ImRtcCallDO::getStatus, reqVO.getStatus()).eqIfPresent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .eqIfPresent(ImRtcCallDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImRtcCallDO::getConversationType, reqVO.getConversationType())\n                .eqIfPresent(ImRtcCallDO::getMediaType, reqVO.getMediaType()).eqIfPresent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .eqIfPresent(ImRtcCallDO::getInviterUserId, reqVO.getInviterUserId())\n                .eqIfPresent(ImRtcCallDO::getConversationType, reqVO.getConversationType()).eqIfPresent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>()\n                .eqIfPresent(ImRtcCallDO::getInviterUserId, reqVO.getInviterUserId()).eqIfPresent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>().eqIfPresent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImRtcCallDO>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getInviterUserId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getConversationType",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getMediaType",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getEndReason",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStartTime",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/rtc/ImRtcParticipantMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 62,
+      "classes": [
+        {
+          "name": "ImRtcParticipantMapper",
+          "startLine": 18,
+          "endLine": 75,
+          "methods": [
+            "selectByRoomAndUserId",
+            "selectListByRoom",
+            "selectListByCallId",
+            "selectListByStatusAndInviteTimeBefore",
+            "selectListByRoomAndStatusAndInviteTimeBefore",
+            "selectLastOneByUserIdAndStatus",
+            "selectLastOneByUserIdAndStatusInAndRoomNot",
+            "updateByIdAndStatus",
+            "updateByRoomAndStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImRtcParticipantMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByRoomAndUserId",
+          "callee": "selectOne",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectByRoomAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>()\n                .eq(ImRtcParticipantDO::getRoom, room).eq",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectByRoomAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>().eq",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectByRoomAndUserId",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectListByRoom",
+          "callee": "selectList",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectListByCallId",
+          "callee": "selectList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByStatusAndInviteTimeBefore",
+          "callee": "selectList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByStatusAndInviteTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>()\n                .eq(ImRtcParticipantDO::getStatus, status).lt",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByStatusAndInviteTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>().eq",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByStatusAndInviteTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByRoomAndStatusAndInviteTimeBefore",
+          "callee": "selectList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByRoomAndStatusAndInviteTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>()\n                .eq(ImRtcParticipantDO::getRoom, room)\n                .eq(ImRtcParticipantDO::getStatus, status).lt",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByRoomAndStatusAndInviteTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>()\n                .eq(ImRtcParticipantDO::getRoom, room).eq",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByRoomAndStatusAndInviteTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>().eq",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectListByRoomAndStatusAndInviteTimeBefore",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatus",
+          "callee": "selectLastOne",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>()\n                .eq(ImRtcParticipantDO::getUserId, userId).in",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>().eq",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatusInAndRoomNot",
+          "callee": "selectLastOne",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatusInAndRoomNot",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>()\n                .eq(ImRtcParticipantDO::getUserId, userId)\n                .in(ImRtcParticipantDO::getStatus, statuses).ne",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatusInAndRoomNot",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>()\n                .eq(ImRtcParticipantDO::getUserId, userId).in",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatusInAndRoomNot",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>().eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectLastOneByUserIdAndStatusInAndRoomNot",
+          "callee": "new LambdaQueryWrapperX<ImRtcParticipantDO>",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "update",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "Wrappers.<ImRtcParticipantDO>lambdaUpdate()\n                .eq(ImRtcParticipantDO::getId, id).eq",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "Wrappers.<ImRtcParticipantDO>lambdaUpdate().eq",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateByRoomAndStatus",
+          "callee": "update",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateByRoomAndStatus",
+          "callee": "Wrappers.<ImRtcParticipantDO>lambdaUpdate()\n                .eq(ImRtcParticipantDO::getRoom, room).eq",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateByRoomAndStatus",
+          "callee": "Wrappers.<ImRtcParticipantDO>lambdaUpdate().eq",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateByRoomAndStatus",
+          "callee": "Wrappers.lambdaUpdate",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/statistics/ImStatisticsManagerMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 191,
+      "nonEmptyLines": 169,
+      "classes": [
+        {
+          "name": "ImStatisticsManagerMapper",
+          "startLine": 18,
+          "endLine": 191,
+          "methods": [
+            "selectTotalUserCount",
+            "selectNewUserCount",
+            "selectActiveUserCount",
+            "selectNewUserDailyCount",
+            "selectActiveUserDailyCount",
+            "selectTotalGroupCount",
+            "selectNewGroupCount",
+            "selectGroupSizeDistribution",
+            "selectPrivateMessageCount",
+            "selectGroupMessageCount",
+            "selectPrivateMessageDailyCount",
+            "selectGroupMessageDailyCount",
+            "selectMessageTypeDistribution",
+            "selectTopSenders"
+          ],
+          "properties": [
+            "NORMAL_MESSAGE_CONDITION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImStatisticsManagerMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/redis/rtc/ImRtcCallLockRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "lockPrivate",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "userIdA",
+            "userIdB",
+            "callable"
+          ]
+        },
+        {
+          "name": "lockGroup",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "groupId",
+            "callable"
+          ]
+        },
+        {
+          "name": "doLock",
+          "startLine": 62,
+          "endLine": 78,
+          "params": [
+            "lockKey",
+            "callable"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcCallLockRedisDAO",
+          "startLine": 24,
+          "endLine": 80,
+          "methods": [
+            "lockPrivate",
+            "lockGroup",
+            "doLock"
+          ],
+          "properties": [
+            "LOCK_WAIT_MS",
+            "LOCK_LEASE_MS",
+            "redissonClient"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "lockPrivate",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "lockGroup",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcCallLockRedisDAO",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "lockPrivate",
+          "callee": "String.format",
+          "lineNumber": 44
+        },
+        {
+          "caller": "lockPrivate",
+          "callee": "ImConversationTypeEnum.PRIVATE.getType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "lockPrivate",
+          "callee": "Math.min",
+          "lineNumber": 45
+        },
+        {
+          "caller": "lockPrivate",
+          "callee": "Math.max",
+          "lineNumber": 45
+        },
+        {
+          "caller": "lockPrivate",
+          "callee": "doLock",
+          "lineNumber": 46
+        },
+        {
+          "caller": "lockGroup",
+          "callee": "String.format",
+          "lineNumber": 53
+        },
+        {
+          "caller": "lockGroup",
+          "callee": "ImConversationTypeEnum.GROUP.getType",
+          "lineNumber": 53
+        },
+        {
+          "caller": "lockGroup",
+          "callee": "doLock",
+          "lineNumber": 54
+        },
+        {
+          "caller": "doLock",
+          "callee": "redissonClient.getLock",
+          "lineNumber": 63
+        },
+        {
+          "caller": "doLock",
+          "callee": "lock.tryLock",
+          "lineNumber": 64
+        },
+        {
+          "caller": "doLock",
+          "callee": "log.error",
+          "lineNumber": 66
+        },
+        {
+          "caller": "doLock",
+          "callee": "exception",
+          "lineNumber": 67
+        },
+        {
+          "caller": "doLock",
+          "callee": "callable.call",
+          "lineNumber": 70
+        },
+        {
+          "caller": "doLock",
+          "callee": "lock.isHeldByCurrentThread",
+          "lineNumber": 72
+        },
+        {
+          "caller": "doLock",
+          "callee": "lock.unlock",
+          "lineNumber": 73
+        },
+        {
+          "caller": "doLock",
+          "callee": "log.error",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/ErrorCodeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 108,
+      "nonEmptyLines": 95,
+      "classes": [
+        {
+          "name": "ErrorCodeConstants",
+          "startLine": 10,
+          "endLine": 108,
+          "methods": [],
+          "properties": [
+            "MESSAGE_NOT_EXISTS",
+            "MESSAGE_RECALL_DENIED",
+            "MESSAGE_ALREADY_RECALLED",
+            "MESSAGE_SENSITIVE_WORD_BLOCKED",
+            "MESSAGE_PULL_SIZE_EXCEEDED",
+            "MESSAGE_RECALL_TIMEOUT",
+            "MESSAGE_QUOTE_INVALID",
+            "MESSAGE_NOT_IN_GROUP",
+            "MESSAGE_PRIVATE_READ_DISABLED",
+            "MESSAGE_GROUP_READ_DISABLED",
+            "MESSAGE_CONTENT_INVALID",
+            "GROUP_NOT_EXISTS",
+            "GROUP_BANNED",
+            "GROUP_DISSOLVED",
+            "GROUP_NOT_OWNER",
+            "GROUP_NOT_OWNER_OR_ADMIN",
+            "GROUP_TRANSFER_OWNER_TO_SELF",
+            "GROUP_MESSAGE_PIN_MAX_LIMIT",
+            "GROUP_MESSAGE_ALREADY_PINNED",
+            "GROUP_MESSAGE_NOT_PINNED",
+            "GROUP_MESSAGE_PIN_DIRECTED_DENIED",
+            "GROUP_MEMBER_NOT_IN_GROUP",
+            "GROUP_OWNER_CANNOT_QUIT",
+            "GROUP_CANNOT_REMOVE_SELF",
+            "GROUP_MEMBER_EXCEED",
+            "GROUP_INVITE_NOT_FRIEND",
+            "GROUP_ADMIN_TARGET_NOT_IN_GROUP",
+            "GROUP_ADMIN_TARGET_IS_OWNER",
+            "GROUP_ADMIN_MAX_LIMIT",
+            "GROUP_REMOVE_OWNER_DENIED",
+            "GROUP_REMOVE_ADMIN_DENIED",
+            "GROUP_MUTED_CANNOT_SEND",
+            "GROUP_MEMBER_MUTED_CANNOT_SEND",
+            "GROUP_MUTE_MEMBER_SELF",
+            "GROUP_MUTE_OWNER_DENIED",
+            "GROUP_MUTE_ADMIN_DENIED",
+            "FRIEND_NOT_FRIEND",
+            "FRIEND_ADD_SELF",
+            "FRIEND_NOT_BLOCKED",
+            "FRIEND_BLOCKED_BY_PEER",
+            "GROUP_REQUEST_NOT_EXISTS",
+            "GROUP_REQUEST_HANDLED",
+            "GROUP_REQUEST_NOT_TO_ME",
+            "GROUP_REQUEST_ALREADY_MEMBER",
+            "FRIEND_REQUEST_NOT_EXISTS",
+            "FRIEND_REQUEST_HANDLED",
+            "FRIEND_REQUEST_NOT_TO_ME",
+            "FRIEND_REQUEST_ALREADY_FRIEND",
+            "FRIEND_REQUEST_BLOCKED_BY_PEER",
+            "SENSITIVE_WORD_NOT_EXISTS",
+            "SENSITIVE_WORD_DUPLICATED",
+            "FACE_PACK_NOT_EXISTS",
+            "FACE_PACK_HAS_ITEMS",
+            "FACE_PACK_ITEM_NOT_EXISTS",
+            "FACE_USER_ITEM_NOT_EXISTS",
+            "FACE_USER_ITEM_NOT_OWN",
+            "FACE_USER_ITEM_DUPLICATED",
+            "FACE_USER_ITEM_MAX_LIMIT",
+            "IM_CHANNEL_NOT_EXISTS",
+            "IM_CHANNEL_CODE_DUPLICATED",
+            "IM_CHANNEL_HAS_MATERIAL",
+            "IM_CHANNEL_MATERIAL_NOT_EXISTS",
+            "IM_CHANNEL_MATERIAL_USED",
+            "IM_CHANNEL_MESSAGE_NOT_EXISTS",
+            "RTC_NOT_ENABLED",
+            "RTC_SESSION_NOT_EXISTS",
+            "RTC_PEER_BUSY",
+            "RTC_SELF_BUSY",
+            "RTC_NOT_PARTICIPANT",
+            "RTC_INVITE_SELF",
+            "RTC_PRIVATE_INVITEE_REQUIRED",
+            "RTC_GROUP_REQUIRED",
+            "RTC_INVITE_BUSY",
+            "RTC_GROUP_CALL_ACTIVE",
+            "RTC_GROUP_INVITEE_OVER_LIMIT",
+            "RTC_GROUP_INVITEE_REQUIRED"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErrorCodeConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/ImContentTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 422,
+      "nonEmptyLines": 401,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 384,
+          "endLine": 387,
+          "params": []
+        },
+        {
+          "name": "validate",
+          "startLine": 395,
+          "endLine": 399,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isFriendNotification",
+          "startLine": 404,
+          "endLine": 406,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isGroupRequestNotification",
+          "startLine": 411,
+          "endLine": 413,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isRtcNotification",
+          "startLine": 418,
+          "endLine": 420,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImContentTypeEnum",
+          "startLine": 18,
+          "endLine": 422,
+          "methods": [
+            "array",
+            "validate",
+            "isFriendNotification",
+            "isGroupRequestNotification",
+            "isRtcNotification"
+          ],
+          "properties": [
+            "ARRAYS",
+            "FRIEND_NOTIFICATION_TYPES",
+            "GROUP_REQUEST_NOTIFICATION_TYPES",
+            "RTC_NOTIFICATION_TYPES",
+            "type",
+            "name",
+            "persistent",
+            "normal"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 338,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 384,
+          "isDefault": false
+        },
+        {
+          "name": "validate",
+          "line": 395,
+          "isDefault": false
+        },
+        {
+          "name": "isFriendNotification",
+          "line": 404,
+          "isDefault": false
+        },
+        {
+          "name": "isGroupRequestNotification",
+          "line": 411,
+          "isDefault": false
+        },
+        {
+          "name": "isRtcNotification",
+          "line": 418,
+          "isDefault": false
+        },
+        {
+          "name": "ImContentTypeEnum",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 396
+        },
+        {
+          "caller": "validate",
+          "callee": "item.type.equals",
+          "lineNumber": 396
+        },
+        {
+          "caller": "validate",
+          "callee": "values",
+          "lineNumber": 396
+        },
+        {
+          "caller": "validate",
+          "callee": "Assert.notNull",
+          "lineNumber": 397
+        },
+        {
+          "caller": "isFriendNotification",
+          "callee": "FRIEND_NOTIFICATION_TYPES.contains",
+          "lineNumber": 405
+        },
+        {
+          "caller": "isGroupRequestNotification",
+          "callee": "GROUP_REQUEST_NOTIFICATION_TYPES.contains",
+          "lineNumber": 412
+        },
+        {
+          "caller": "isRtcNotification",
+          "callee": "RTC_NOTIFICATION_TYPES.contains",
+          "lineNumber": 419
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/ImConversationTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "isNone",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isPrivate",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isGroup",
+          "startLine": 48,
+          "endLine": 50,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isChannel",
+          "startLine": 52,
+          "endLine": 54,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImConversationTypeEnum",
+          "startLine": 15,
+          "endLine": 56,
+          "methods": [
+            "array",
+            "isNone",
+            "isPrivate",
+            "isGroup",
+            "isChannel"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "isNone",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "isPrivate",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "isGroup",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "isChannel",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "ImConversationTypeEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isNone",
+          "callee": "Objects.equals",
+          "lineNumber": 41
+        },
+        {
+          "caller": "isPrivate",
+          "callee": "Objects.equals",
+          "lineNumber": 45
+        },
+        {
+          "caller": "isGroup",
+          "callee": "Objects.equals",
+          "lineNumber": 49
+        },
+        {
+          "caller": "isChannel",
+          "callee": "Objects.equals",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/channel/ImChannelMaterialTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 32,
+          "endLine": 35,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImChannelMaterialTypeEnum",
+          "startLine": 14,
+          "endLine": 37,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ImChannelMaterialTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/friend/ImFriendAddSourceEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFriendAddSourceEnum",
+          "startLine": 16,
+          "endLine": 41,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "source",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ImFriendAddSourceEnum",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/friend/ImFriendRequestHandleResultEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "isUnhandled",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "result"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFriendRequestHandleResultEnum",
+          "startLine": 15,
+          "endLine": 46,
+          "methods": [
+            "array",
+            "isUnhandled"
+          ],
+          "properties": [
+            "ARRAYS",
+            "result",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "isUnhandled",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "ImFriendRequestHandleResultEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isUnhandled",
+          "callee": "Objects.equals",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/friend/ImFriendStateEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 38,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "isNone",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "isFriend",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "isBlocked",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "state"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFriendStateEnum",
+          "startLine": 19,
+          "endLine": 55,
+          "methods": [
+            "array",
+            "isNone",
+            "isFriend",
+            "isBlocked"
+          ],
+          "properties": [
+            "ARRAYS",
+            "state",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isNone",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "isFriend",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "isBlocked",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "ImFriendStateEnum",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isNone",
+          "callee": "Objects.equals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isFriend",
+          "callee": "Objects.equals",
+          "lineNumber": 48
+        },
+        {
+          "caller": "isBlocked",
+          "callee": "Objects.equals",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/group/ImGroupAddSourceEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImGroupAddSourceEnum",
+          "startLine": 16,
+          "endLine": 41,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "source",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ImGroupAddSourceEnum",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/group/ImGroupMemberRoleEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "isOwner",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "isAdmin",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "role"
+          ]
+        },
+        {
+          "name": "isOwnerOrAdmin",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "role"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImGroupMemberRoleEnum",
+          "startLine": 15,
+          "endLine": 51,
+          "methods": [
+            "array",
+            "isOwner",
+            "isAdmin",
+            "isOwnerOrAdmin"
+          ],
+          "properties": [
+            "ARRAYS",
+            "role",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "isOwner",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "isOwnerOrAdmin",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "ImGroupMemberRoleEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isOwner",
+          "callee": "Objects.equals",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isAdmin",
+          "callee": "Objects.equals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isOwnerOrAdmin",
+          "callee": "isOwner",
+          "lineNumber": 48
+        },
+        {
+          "caller": "isOwnerOrAdmin",
+          "callee": "isAdmin",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/group/ImGroupRequestHandleResultEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "isUnhandled",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "result"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImGroupRequestHandleResultEnum",
+          "startLine": 17,
+          "endLine": 48,
+          "methods": [
+            "array",
+            "isUnhandled"
+          ],
+          "properties": [
+            "ARRAYS",
+            "result",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "isUnhandled",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "ImGroupRequestHandleResultEnum",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isUnhandled",
+          "callee": "Objects.equals",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/message/ImMessageReceiptStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImMessageReceiptStatusEnum",
+          "startLine": 14,
+          "endLine": 39,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "ImMessageReceiptStatusEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/message/ImMessageStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImMessageStatusEnum",
+          "startLine": 14,
+          "endLine": 38,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "ImMessageStatusEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/rtc/ImRtcCallEndReasonEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcCallEndReasonEnum",
+          "startLine": 14,
+          "endLine": 41,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "reason",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcCallEndReasonEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/rtc/ImRtcCallMediaTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "isVoice",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isVideo",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcCallMediaTypeEnum",
+          "startLine": 15,
+          "endLine": 46,
+          "methods": [
+            "array",
+            "isVoice",
+            "isVideo"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "isVoice",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isVideo",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcCallMediaTypeEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isVoice",
+          "callee": "Objects.equals",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isVideo",
+          "callee": "Objects.equals",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/rtc/ImRtcCallStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "isCreated",
+          "startLine": 48,
+          "endLine": 50,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isRunning",
+          "startLine": 52,
+          "endLine": 54,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isEnded",
+          "startLine": 56,
+          "endLine": 58,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcCallStatusEnum",
+          "startLine": 19,
+          "endLine": 60,
+          "methods": [
+            "array",
+            "isCreated",
+            "isRunning",
+            "isEnded"
+          ],
+          "properties": [
+            "ARRAYS",
+            "ACTIVE_STATUSES",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "ACTIVE_STATUSES",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "isCreated",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "isRunning",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "isEnded",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcCallStatusEnum",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isCreated",
+          "callee": "Objects.equals",
+          "lineNumber": 49
+        },
+        {
+          "caller": "isRunning",
+          "callee": "Objects.equals",
+          "lineNumber": 53
+        },
+        {
+          "caller": "isEnded",
+          "callee": "Objects.equals",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/rtc/ImRtcParticipantRoleEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcParticipantRoleEnum",
+          "startLine": 14,
+          "endLine": 38,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "role",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcParticipantRoleEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/enums/rtc/ImRtcParticipantStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 49,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "isInviting",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isJoined",
+          "startLine": 58,
+          "endLine": 60,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcParticipantStatusEnum",
+          "startLine": 23,
+          "endLine": 62,
+          "methods": [
+            "array",
+            "isInviting",
+            "isJoined"
+          ],
+          "properties": [
+            "ARRAYS",
+            "ACTIVE_STATUSES",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "ACTIVE_STATUSES",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "isInviting",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "isJoined",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcParticipantStatusEnum",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isInviting",
+          "callee": "Objects.equals",
+          "lineNumber": 55
+        },
+        {
+          "caller": "isJoined",
+          "callee": "Objects.equals",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/framework/config/ImProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 195,
+      "nonEmptyLines": 158,
+      "classes": [
+        {
+          "name": "ImProperties",
+          "startLine": 19,
+          "endLine": 195,
+          "methods": [],
+          "properties": [
+            "friend",
+            "group",
+            "face",
+            "message",
+            "rtc"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImProperties",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/framework/rtc/config/ImRtcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "liveKitClient",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "imProperties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcConfiguration",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [
+            "liveKitClient"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "liveKitClient",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "liveKitClient",
+          "callee": "new LiveKitClient",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,6075 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 34,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 34,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 34,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockCheckService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "ErpStockCheckService",
+          "startLine": 18,
+          "endLine": 84,
+          "methods": [
+            "createStockCheck",
+            "updateStockCheck",
+            "updateStockCheckStatus",
+            "deleteStockCheck",
+            "getStockCheck",
+            "getStockCheckPage",
+            "getStockCheckItemListByCheckId",
+            "getStockCheckItemListByCheckIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpStockCheckService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockCheckServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 232,
+      "nonEmptyLines": 205,
+      "functions": [
+        {
+          "name": "createStockCheck",
+          "startLine": 60,
+          "endLine": 81,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateStockCheck",
+          "startLine": 83,
+          "endLine": 101,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateStockCheckStatus",
+          "startLine": 103,
+          "endLine": 142,
+          "params": [
+            "id",
+            "status"
+          ]
+        },
+        {
+          "name": "validateStockCheckItems",
+          "startLine": 144,
+          "endLine": 155,
+          "params": [
+            "list"
+          ]
+        },
+        {
+          "name": "updateStockCheckItemList",
+          "startLine": 157,
+          "endLine": 174,
+          "params": [
+            "id",
+            "newList"
+          ]
+        },
+        {
+          "name": "deleteStockCheck",
+          "startLine": 176,
+          "endLine": 197,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "validateStockCheckExists",
+          "startLine": 199,
+          "endLine": 205,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockCheck",
+          "startLine": 207,
+          "endLine": 210,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockCheckPage",
+          "startLine": 212,
+          "endLine": 215,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getStockCheckItemListByCheckId",
+          "startLine": 219,
+          "endLine": 222,
+          "params": [
+            "checkId"
+          ]
+        },
+        {
+          "name": "getStockCheckItemListByCheckIds",
+          "startLine": 224,
+          "endLine": 230,
+          "params": [
+            "checkIds"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpStockCheckServiceImpl",
+          "startLine": 41,
+          "endLine": 232,
+          "methods": [
+            "createStockCheck",
+            "updateStockCheck",
+            "updateStockCheckStatus",
+            "validateStockCheckItems",
+            "updateStockCheckItemList",
+            "deleteStockCheck",
+            "validateStockCheckExists",
+            "getStockCheck",
+            "getStockCheckPage",
+            "getStockCheckItemListByCheckId",
+            "getStockCheckItemListByCheckIds"
+          ],
+          "properties": [
+            "stockCheckMapper",
+            "stockCheckItemMapper",
+            "noRedisDAO",
+            "productService",
+            "warehouseService",
+            "stockRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createStockCheck",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockCheck",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockCheckStatus",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "deleteStockCheck",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "getStockCheck",
+          "line": 207,
+          "isDefault": false
+        },
+        {
+          "name": "getStockCheckPage",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "getStockCheckItemListByCheckId",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "getStockCheckItemListByCheckIds",
+          "line": 224,
+          "isDefault": false
+        },
+        {
+          "name": "ErpStockCheckServiceImpl",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createStockCheck",
+          "callee": "validateStockCheckItems",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "createReqVO.getItems",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "noRedisDAO.generate",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "stockCheckMapper.selectByNo",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "exception",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus())\n                .setTotalCount(getSumValue(stockCheckItems, ErpStockCheckItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus()).setTotalCount",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "in\n                .setNo(no).setStatus",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "in.setNo",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "ErpAuditStatus.PROCESS.getStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "getSumValue",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "getSumValue",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "stockCheckMapper.insert",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "stockCheckItems.forEach",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "o.setCheckId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "stockCheck.getId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "stockCheckItemMapper.insertBatch",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createStockCheck",
+          "callee": "stockCheck.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "validateStockCheckExists",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "stockCheck.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "exception",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "stockCheck.getNo",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "validateStockCheckItems",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "updateReqVO.getItems",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "in\n                .setTotalCount(getSumValue(stockCheckItems, ErpStockCheckItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "in.setTotalCount",
+          "lineNumber": 95
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "getSumValue",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "getSumValue",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "stockCheckMapper.updateById",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "updateStockCheckItemList",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateStockCheck",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "validateStockCheckExists",
+          "lineNumber": 108
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheck.getStatus().equals",
+          "lineNumber": 110
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheck.getStatus",
+          "lineNumber": 110
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "exception",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckMapper.updateByIdAndStatus",
+          "lineNumber": 115
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheck.getStatus",
+          "lineNumber": 115
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "new ErpStockCheckDO().setStatus",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "new ErpStockCheckDO",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "exception",
+          "lineNumber": 118
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItemMapper.selectListByCheckId",
+          "lineNumber": 122
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItems.forEach",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getCount().compareTo",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getCount",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getCount",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getCount().negate",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getCount",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "count.compareTo",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "ErpStockRecordBizTypeEnum.CHECK_MORE_IN.getType",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "ErpStockRecordBizTypeEnum.CHECK_LESS_OUT.getType",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "count.compareTo",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "ErpStockRecordBizTypeEnum.CHECK_MORE_IN_CANCEL.getType",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "ErpStockRecordBizTypeEnum.CHECK_LESS_OUT_CANCEL.getType",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockRecordService.createStockRecord",
+          "lineNumber": 138
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "new ErpStockRecordCreateReqBO",
+          "lineNumber": 138
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getProductId",
+          "lineNumber": 139
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getWarehouseId",
+          "lineNumber": 139
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getCheckId",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheckItem.getId",
+          "lineNumber": 140
+        },
+        {
+          "caller": "updateStockCheckStatus",
+          "callee": "stockCheck.getNo",
+          "lineNumber": 140
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "productService.validProductList",
+          "lineNumber": 146
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "convertSet",
+          "lineNumber": 147
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "convertMap",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "warehouseService.validWarehouseList",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "convertSet",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "convertList",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "item\n                .setProductUnitId(productMap.get(item.getProductId()).getUnitId()).setTotalPrice",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "item.setProductUnitId",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "productMap.get(item.getProductId()).getUnitId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "productMap.get",
+          "lineNumber": 153
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "item.getProductId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "MoneyUtils.priceMultiply",
+          "lineNumber": 154
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "item.getProductPrice",
+          "lineNumber": 154
+        },
+        {
+          "caller": "validateStockCheckItems",
+          "callee": "item.getCount",
+          "lineNumber": 154
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "stockCheckItemMapper.selectListByCheckId",
+          "lineNumber": 159
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList",
+          "lineNumber": 160
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "oldVal.getId().equals",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "oldVal.getId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "newVal.getId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get(0).forEach",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "o.setCheckId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "stockCheckItemMapper.insertBatch",
+          "lineNumber": 166
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "stockCheckItemMapper.updateBatch",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "stockCheckItemMapper.deleteByIds",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "convertList",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateStockCheckItemList",
+          "callee": "diffList.get",
+          "lineNumber": 172
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockCheckMapper.selectByIds",
+          "lineNumber": 180
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockChecks.forEach",
+          "lineNumber": 184
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 185
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 185
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockCheck.getStatus",
+          "lineNumber": 185
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "exception",
+          "lineNumber": 186
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockCheck.getNo",
+          "lineNumber": 186
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockChecks.forEach",
+          "lineNumber": 191
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockCheckMapper.deleteById",
+          "lineNumber": 193
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockCheck.getId",
+          "lineNumber": 193
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockCheckItemMapper.deleteByCheckId",
+          "lineNumber": 195
+        },
+        {
+          "caller": "deleteStockCheck",
+          "callee": "stockCheck.getId",
+          "lineNumber": 195
+        },
+        {
+          "caller": "validateStockCheckExists",
+          "callee": "stockCheckMapper.selectById",
+          "lineNumber": 200
+        },
+        {
+          "caller": "validateStockCheckExists",
+          "callee": "exception",
+          "lineNumber": 202
+        },
+        {
+          "caller": "getStockCheck",
+          "callee": "stockCheckMapper.selectById",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getStockCheckPage",
+          "callee": "stockCheckMapper.selectPage",
+          "lineNumber": 214
+        },
+        {
+          "caller": "getStockCheckItemListByCheckId",
+          "callee": "stockCheckItemMapper.selectListByCheckId",
+          "lineNumber": 221
+        },
+        {
+          "caller": "getStockCheckItemListByCheckIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 226
+        },
+        {
+          "caller": "getStockCheckItemListByCheckIds",
+          "callee": "Collections.emptyList",
+          "lineNumber": 227
+        },
+        {
+          "caller": "getStockCheckItemListByCheckIds",
+          "callee": "stockCheckItemMapper.selectListByCheckIds",
+          "lineNumber": 229
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 9,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockInService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "ErpStockInService",
+          "startLine": 18,
+          "endLine": 84,
+          "methods": [
+            "createStockIn",
+            "updateStockIn",
+            "updateStockInStatus",
+            "deleteStockIn",
+            "getStockIn",
+            "getStockInPage",
+            "getStockInItemListByInId",
+            "getStockInItemListByInIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpStockInService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockInServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 228,
+      "nonEmptyLines": 202,
+      "functions": [
+        {
+          "name": "createStockIn",
+          "startLine": 62,
+          "endLine": 85,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateStockIn",
+          "startLine": 87,
+          "endLine": 107,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateStockInStatus",
+          "startLine": 109,
+          "endLine": 137,
+          "params": [
+            "id",
+            "status"
+          ]
+        },
+        {
+          "name": "validateStockInItems",
+          "startLine": 139,
+          "endLine": 151,
+          "params": [
+            "list"
+          ]
+        },
+        {
+          "name": "updateStockInItemList",
+          "startLine": 153,
+          "endLine": 170,
+          "params": [
+            "id",
+            "newList"
+          ]
+        },
+        {
+          "name": "deleteStockIn",
+          "startLine": 172,
+          "endLine": 193,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "validateStockInExists",
+          "startLine": 195,
+          "endLine": 201,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockIn",
+          "startLine": 203,
+          "endLine": 206,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockInPage",
+          "startLine": 208,
+          "endLine": 211,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getStockInItemListByInId",
+          "startLine": 215,
+          "endLine": 218,
+          "params": [
+            "inId"
+          ]
+        },
+        {
+          "name": "getStockInItemListByInIds",
+          "startLine": 220,
+          "endLine": 226,
+          "params": [
+            "inIds"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpStockInServiceImpl",
+          "startLine": 41,
+          "endLine": 228,
+          "methods": [
+            "createStockIn",
+            "updateStockIn",
+            "updateStockInStatus",
+            "validateStockInItems",
+            "updateStockInItemList",
+            "deleteStockIn",
+            "validateStockInExists",
+            "getStockIn",
+            "getStockInPage",
+            "getStockInItemListByInId",
+            "getStockInItemListByInIds"
+          ],
+          "properties": [
+            "stockInMapper",
+            "stockInItemMapper",
+            "noRedisDAO",
+            "productService",
+            "warehouseService",
+            "supplierService",
+            "stockRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createStockIn",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockIn",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockInStatus",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "deleteStockIn",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "getStockIn",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "getStockInPage",
+          "line": 208,
+          "isDefault": false
+        },
+        {
+          "name": "getStockInItemListByInId",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "getStockInItemListByInIds",
+          "line": 220,
+          "isDefault": false
+        },
+        {
+          "name": "ErpStockInServiceImpl",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createStockIn",
+          "callee": "validateStockInItems",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "createReqVO.getItems",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "supplierService.validateSupplier",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "createReqVO.getSupplierId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "noRedisDAO.generate",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "stockInMapper.selectByNo",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "exception",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus())\n                .setTotalCount(getSumValue(stockInItems, ErpStockInItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus()).setTotalCount",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "in\n                .setNo(no).setStatus",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "in.setNo",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "ErpAuditStatus.PROCESS.getStatus",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "getSumValue",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "getSumValue",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "stockInMapper.insert",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "stockInItems.forEach",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "o.setInId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "stockIn.getId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "stockInItemMapper.insertBatch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createStockIn",
+          "callee": "stockIn.getId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "validateStockInExists",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "stockIn.getStatus",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "exception",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "stockIn.getNo",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "supplierService.validateSupplier",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "updateReqVO.getSupplierId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "validateStockInItems",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "updateReqVO.getItems",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "in\n                .setTotalCount(getSumValue(stockInItems, ErpStockInItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "in.setTotalCount",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "getSumValue",
+          "lineNumber": 102
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "getSumValue",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "stockInMapper.updateById",
+          "lineNumber": 104
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "updateStockInItemList",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateStockIn",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 112
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 112
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "validateStockInExists",
+          "lineNumber": 114
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockIn.getStatus().equals",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockIn.getStatus",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "exception",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInMapper.updateByIdAndStatus",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockIn.getStatus",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "new ErpStockInDO().setStatus",
+          "lineNumber": 122
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "new ErpStockInDO",
+          "lineNumber": 122
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "exception",
+          "lineNumber": 124
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItemMapper.selectListByInId",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "ErpStockRecordBizTypeEnum.OTHER_IN.getType",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "ErpStockRecordBizTypeEnum.OTHER_IN_CANCEL.getType",
+          "lineNumber": 130
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItems.forEach",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItem.getCount",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItem.getCount().negate",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItem.getCount",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockRecordService.createStockRecord",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "new ErpStockRecordCreateReqBO",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItem.getProductId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItem.getWarehouseId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItem.getInId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockInItem.getId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockInStatus",
+          "callee": "stockIn.getNo",
+          "lineNumber": 135
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "productService.validProductList",
+          "lineNumber": 141
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "convertSet",
+          "lineNumber": 142
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "convertMap",
+          "lineNumber": 143
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "warehouseService.validWarehouseList",
+          "lineNumber": 145
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "convertSet",
+          "lineNumber": 145
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "convertList",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "item\n                .setProductUnitId(productMap.get(item.getProductId()).getUnitId()).setTotalPrice",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "item.setProductUnitId",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "productMap.get(item.getProductId()).getUnitId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "productMap.get",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "item.getProductId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "MoneyUtils.priceMultiply",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "item.getProductPrice",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockInItems",
+          "callee": "item.getCount",
+          "lineNumber": 150
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "stockInItemMapper.selectListByInId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList",
+          "lineNumber": 156
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "oldVal.getId().equals",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "oldVal.getId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "newVal.getId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 160
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get",
+          "lineNumber": 160
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get(0).forEach",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "o.setInId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "stockInItemMapper.insertBatch",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "stockInItemMapper.updateBatch",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "stockInItemMapper.deleteByIds",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "convertList",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockInItemList",
+          "callee": "diffList.get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockInMapper.selectByIds",
+          "lineNumber": 176
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 177
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockIns.forEach",
+          "lineNumber": 180
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockIn.getStatus",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "exception",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockIn.getNo",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockIns.forEach",
+          "lineNumber": 187
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockInMapper.deleteById",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockIn.getId",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockInItemMapper.deleteByInId",
+          "lineNumber": 191
+        },
+        {
+          "caller": "deleteStockIn",
+          "callee": "stockIn.getId",
+          "lineNumber": 191
+        },
+        {
+          "caller": "validateStockInExists",
+          "callee": "stockInMapper.selectById",
+          "lineNumber": 196
+        },
+        {
+          "caller": "validateStockInExists",
+          "callee": "exception",
+          "lineNumber": 198
+        },
+        {
+          "caller": "getStockIn",
+          "callee": "stockInMapper.selectById",
+          "lineNumber": 205
+        },
+        {
+          "caller": "getStockInPage",
+          "callee": "stockInMapper.selectPage",
+          "lineNumber": 210
+        },
+        {
+          "caller": "getStockInItemListByInId",
+          "callee": "stockInItemMapper.selectListByInId",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getStockInItemListByInIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 222
+        },
+        {
+          "caller": "getStockInItemListByInIds",
+          "callee": "Collections.emptyList",
+          "lineNumber": 223
+        },
+        {
+          "caller": "getStockInItemListByInIds",
+          "callee": "stockInItemMapper.selectListByInIds",
+          "lineNumber": 225
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 9,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockMoveService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "ErpStockMoveService",
+          "startLine": 18,
+          "endLine": 84,
+          "methods": [
+            "createStockMove",
+            "updateStockMove",
+            "updateStockMoveStatus",
+            "deleteStockMove",
+            "getStockMove",
+            "getStockMovePage",
+            "getStockMoveItemListByMoveId",
+            "getStockMoveItemListByMoveIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpStockMoveService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockMoveServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 229,
+      "nonEmptyLines": 202,
+      "functions": [
+        {
+          "name": "createStockMove",
+          "startLine": 61,
+          "endLine": 82,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateStockMove",
+          "startLine": 84,
+          "endLine": 102,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateStockMoveStatus",
+          "startLine": 104,
+          "endLine": 138,
+          "params": [
+            "id",
+            "status"
+          ]
+        },
+        {
+          "name": "validateStockMoveItems",
+          "startLine": 140,
+          "endLine": 152,
+          "params": [
+            "list"
+          ]
+        },
+        {
+          "name": "updateStockMoveItemList",
+          "startLine": 154,
+          "endLine": 171,
+          "params": [
+            "id",
+            "newList"
+          ]
+        },
+        {
+          "name": "deleteStockMove",
+          "startLine": 173,
+          "endLine": 194,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "validateStockMoveExists",
+          "startLine": 196,
+          "endLine": 202,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockMove",
+          "startLine": 204,
+          "endLine": 207,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockMovePage",
+          "startLine": 209,
+          "endLine": 212,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getStockMoveItemListByMoveId",
+          "startLine": 216,
+          "endLine": 219,
+          "params": [
+            "moveId"
+          ]
+        },
+        {
+          "name": "getStockMoveItemListByMoveIds",
+          "startLine": 221,
+          "endLine": 227,
+          "params": [
+            "moveIds"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpStockMoveServiceImpl",
+          "startLine": 42,
+          "endLine": 229,
+          "methods": [
+            "createStockMove",
+            "updateStockMove",
+            "updateStockMoveStatus",
+            "validateStockMoveItems",
+            "updateStockMoveItemList",
+            "deleteStockMove",
+            "validateStockMoveExists",
+            "getStockMove",
+            "getStockMovePage",
+            "getStockMoveItemListByMoveId",
+            "getStockMoveItemListByMoveIds"
+          ],
+          "properties": [
+            "stockMoveMapper",
+            "stockMoveItemMapper",
+            "noRedisDAO",
+            "productService",
+            "warehouseService",
+            "stockRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createStockMove",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockMove",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockMoveStatus",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "deleteStockMove",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "getStockMove",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "getStockMovePage",
+          "line": 209,
+          "isDefault": false
+        },
+        {
+          "name": "getStockMoveItemListByMoveId",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "getStockMoveItemListByMoveIds",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "ErpStockMoveServiceImpl",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createStockMove",
+          "callee": "validateStockMoveItems",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "createReqVO.getItems",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "noRedisDAO.generate",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "stockMoveMapper.selectByNo",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "exception",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus())\n                .setTotalCount(getSumValue(stockMoveItems, ErpStockMoveItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus()).setTotalCount",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "in\n                .setNo(no).setStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "in.setNo",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "ErpAuditStatus.PROCESS.getStatus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "getSumValue",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "getSumValue",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "stockMoveMapper.insert",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "stockMoveItems.forEach",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "o.setMoveId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "stockMove.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "stockMoveItemMapper.insertBatch",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createStockMove",
+          "callee": "stockMove.getId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "validateStockMoveExists",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "stockMove.getStatus",
+          "lineNumber": 89
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "exception",
+          "lineNumber": 90
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "stockMove.getNo",
+          "lineNumber": 90
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "validateStockMoveItems",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "updateReqVO.getItems",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "in\n                .setTotalCount(getSumValue(stockMoveItems, ErpStockMoveItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "in.setTotalCount",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "getSumValue",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "getSumValue",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "stockMoveMapper.updateById",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "updateStockMoveItemList",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updateStockMove",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 107
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 107
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "validateStockMoveExists",
+          "lineNumber": 109
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMove.getStatus().equals",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMove.getStatus",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "exception",
+          "lineNumber": 112
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveMapper.updateByIdAndStatus",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMove.getStatus",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "new ErpStockMoveDO().setStatus",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "new ErpStockMoveDO",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "exception",
+          "lineNumber": 119
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItemMapper.selectListByMoveId",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "ErpStockRecordBizTypeEnum.MOVE_OUT.getType",
+          "lineNumber": 124
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "ErpStockRecordBizTypeEnum.MOVE_OUT_CANCEL.getType",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "ErpStockRecordBizTypeEnum.MOVE_IN.getType",
+          "lineNumber": 126
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "ErpStockRecordBizTypeEnum.MOVE_IN_CANCEL.getType",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItems.forEach",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getCount().negate",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getCount",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getCount",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getCount",
+          "lineNumber": 130
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getCount().negate",
+          "lineNumber": 130
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getCount",
+          "lineNumber": 130
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockRecordService.createStockRecord",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "new ErpStockRecordCreateReqBO",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getProductId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getFromWarehouseId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getMoveId",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getId",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMove.getNo",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockRecordService.createStockRecord",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "new ErpStockRecordCreateReqBO",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getProductId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getToWarehouseId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getMoveId",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMoveItem.getId",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateStockMoveStatus",
+          "callee": "stockMove.getNo",
+          "lineNumber": 136
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "productService.validProductList",
+          "lineNumber": 142
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "convertSet",
+          "lineNumber": 143
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "convertMap",
+          "lineNumber": 144
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "warehouseService.validWarehouseList",
+          "lineNumber": 146
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 146
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "Stream.of",
+          "lineNumber": 147
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "item.getFromWarehouseId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "item.getToWarehouseId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "convertList",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "item\n                .setProductUnitId(productMap.get(item.getProductId()).getUnitId()).setTotalPrice",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "item.setProductUnitId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "productMap.get(item.getProductId()).getUnitId",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "productMap.get",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "item.getProductId",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "MoneyUtils.priceMultiply",
+          "lineNumber": 151
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "item.getProductPrice",
+          "lineNumber": 151
+        },
+        {
+          "caller": "validateStockMoveItems",
+          "callee": "item.getCount",
+          "lineNumber": 151
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "stockMoveItemMapper.selectListByMoveId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "oldVal.getId().equals",
+          "lineNumber": 158
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "oldVal.getId",
+          "lineNumber": 158
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "newVal.getId",
+          "lineNumber": 158
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get(0).forEach",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "o.setMoveId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "stockMoveItemMapper.insertBatch",
+          "lineNumber": 163
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get",
+          "lineNumber": 163
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "stockMoveItemMapper.updateBatch",
+          "lineNumber": 166
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "stockMoveItemMapper.deleteByIds",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "convertList",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateStockMoveItemList",
+          "callee": "diffList.get",
+          "lineNumber": 169
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMoveMapper.selectByIds",
+          "lineNumber": 177
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 178
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMoves.forEach",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMove.getStatus",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "exception",
+          "lineNumber": 183
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMove.getNo",
+          "lineNumber": 183
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMoves.forEach",
+          "lineNumber": 188
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMoveMapper.deleteById",
+          "lineNumber": 190
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMove.getId",
+          "lineNumber": 190
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMoveItemMapper.deleteByMoveId",
+          "lineNumber": 192
+        },
+        {
+          "caller": "deleteStockMove",
+          "callee": "stockMove.getId",
+          "lineNumber": 192
+        },
+        {
+          "caller": "validateStockMoveExists",
+          "callee": "stockMoveMapper.selectById",
+          "lineNumber": 197
+        },
+        {
+          "caller": "validateStockMoveExists",
+          "callee": "exception",
+          "lineNumber": 199
+        },
+        {
+          "caller": "getStockMove",
+          "callee": "stockMoveMapper.selectById",
+          "lineNumber": 206
+        },
+        {
+          "caller": "getStockMovePage",
+          "callee": "stockMoveMapper.selectPage",
+          "lineNumber": 211
+        },
+        {
+          "caller": "getStockMoveItemListByMoveId",
+          "callee": "stockMoveItemMapper.selectListByMoveId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "getStockMoveItemListByMoveIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 223
+        },
+        {
+          "caller": "getStockMoveItemListByMoveIds",
+          "callee": "Collections.emptyList",
+          "lineNumber": 224
+        },
+        {
+          "caller": "getStockMoveItemListByMoveIds",
+          "callee": "stockMoveItemMapper.selectListByMoveIds",
+          "lineNumber": 226
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 9,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockOutService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "ErpStockOutService",
+          "startLine": 18,
+          "endLine": 84,
+          "methods": [
+            "createStockOut",
+            "updateStockOut",
+            "updateStockOutStatus",
+            "deleteStockOut",
+            "getStockOut",
+            "getStockOutPage",
+            "getStockOutItemListByOutId",
+            "getStockOutItemListByOutIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpStockOutService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockOutServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 228,
+      "nonEmptyLines": 201,
+      "functions": [
+        {
+          "name": "createStockOut",
+          "startLine": 63,
+          "endLine": 86,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateStockOut",
+          "startLine": 88,
+          "endLine": 108,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateStockOutStatus",
+          "startLine": 110,
+          "endLine": 138,
+          "params": [
+            "id",
+            "status"
+          ]
+        },
+        {
+          "name": "validateStockOutItems",
+          "startLine": 140,
+          "endLine": 151,
+          "params": [
+            "list"
+          ]
+        },
+        {
+          "name": "updateStockOutItemList",
+          "startLine": 153,
+          "endLine": 170,
+          "params": [
+            "id",
+            "newList"
+          ]
+        },
+        {
+          "name": "deleteStockOut",
+          "startLine": 172,
+          "endLine": 193,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "validateStockOutExists",
+          "startLine": 195,
+          "endLine": 201,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockOut",
+          "startLine": 203,
+          "endLine": 206,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockOutPage",
+          "startLine": 208,
+          "endLine": 211,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getStockOutItemListByOutId",
+          "startLine": 215,
+          "endLine": 218,
+          "params": [
+            "outId"
+          ]
+        },
+        {
+          "name": "getStockOutItemListByOutIds",
+          "startLine": 220,
+          "endLine": 226,
+          "params": [
+            "outIds"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpStockOutServiceImpl",
+          "startLine": 42,
+          "endLine": 228,
+          "methods": [
+            "createStockOut",
+            "updateStockOut",
+            "updateStockOutStatus",
+            "validateStockOutItems",
+            "updateStockOutItemList",
+            "deleteStockOut",
+            "validateStockOutExists",
+            "getStockOut",
+            "getStockOutPage",
+            "getStockOutItemListByOutId",
+            "getStockOutItemListByOutIds"
+          ],
+          "properties": [
+            "stockOutMapper",
+            "stockOutItemMapper",
+            "noRedisDAO",
+            "productService",
+            "warehouseService",
+            "customerService",
+            "stockRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createStockOut",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockOut",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockOutStatus",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "deleteStockOut",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "getStockOut",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "getStockOutPage",
+          "line": 208,
+          "isDefault": false
+        },
+        {
+          "name": "getStockOutItemListByOutId",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "getStockOutItemListByOutIds",
+          "line": 220,
+          "isDefault": false
+        },
+        {
+          "name": "ErpStockOutServiceImpl",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createStockOut",
+          "callee": "validateStockOutItems",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "createReqVO.getItems",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "customerService.validateCustomer",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "createReqVO.getCustomerId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "noRedisDAO.generate",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "stockOutMapper.selectByNo",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "exception",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus())\n                .setTotalCount(getSumValue(stockOutItems, ErpStockOutItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "in\n                .setNo(no).setStatus(ErpAuditStatus.PROCESS.getStatus()).setTotalCount",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "in\n                .setNo(no).setStatus",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "in.setNo",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "ErpAuditStatus.PROCESS.getStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "getSumValue",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "getSumValue",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "stockOutMapper.insert",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "stockOutItems.forEach",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "o.setOutId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "stockOut.getId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "stockOutItemMapper.insertBatch",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createStockOut",
+          "callee": "stockOut.getId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "validateStockOutExists",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "stockOut.getStatus",
+          "lineNumber": 93
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "exception",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "stockOut.getNo",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "customerService.validateCustomer",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "updateReqVO.getCustomerId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "validateStockOutItems",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "updateReqVO.getItems",
+          "lineNumber": 99
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 102
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "in\n                .setTotalCount(getSumValue(stockOutItems, ErpStockOutItemDO::getCount, BigDecimal::add)).setTotalPrice",
+          "lineNumber": 102
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "in.setTotalCount",
+          "lineNumber": 102
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "getSumValue",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "getSumValue",
+          "lineNumber": 104
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "stockOutMapper.updateById",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "updateStockOutItemList",
+          "lineNumber": 107
+        },
+        {
+          "caller": "updateStockOut",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 113
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 113
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "validateStockOutExists",
+          "lineNumber": 115
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOut.getStatus().equals",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOut.getStatus",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "exception",
+          "lineNumber": 118
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutMapper.updateByIdAndStatus",
+          "lineNumber": 122
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOut.getStatus",
+          "lineNumber": 122
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "new ErpStockOutDO().setStatus",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "new ErpStockOutDO",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "exception",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItemMapper.selectListByOutId",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "ErpStockRecordBizTypeEnum.OTHER_OUT.getType",
+          "lineNumber": 130
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "ErpStockRecordBizTypeEnum.OTHER_OUT_CANCEL.getType",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItems.forEach",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItem.getCount().negate",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItem.getCount",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItem.getCount",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockRecordService.createStockRecord",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "new ErpStockRecordCreateReqBO",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItem.getProductId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItem.getWarehouseId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItem.getOutId",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOutItem.getId",
+          "lineNumber": 136
+        },
+        {
+          "caller": "updateStockOutStatus",
+          "callee": "stockOut.getNo",
+          "lineNumber": 136
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "productService.validProductList",
+          "lineNumber": 142
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "convertSet",
+          "lineNumber": 143
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "convertMap",
+          "lineNumber": 144
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "warehouseService.validWarehouseList",
+          "lineNumber": 146
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "convertSet",
+          "lineNumber": 146
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "convertList",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "item\n                .setProductUnitId(productMap.get(item.getProductId()).getUnitId()).setTotalPrice",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "item.setProductUnitId",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "productMap.get(item.getProductId()).getUnitId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "productMap.get",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "item.getProductId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "MoneyUtils.priceMultiply",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "item.getProductPrice",
+          "lineNumber": 150
+        },
+        {
+          "caller": "validateStockOutItems",
+          "callee": "item.getCount",
+          "lineNumber": 150
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "stockOutItemMapper.selectListByOutId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList",
+          "lineNumber": 156
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "oldVal.getId().equals",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "oldVal.getId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "newVal.getId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 160
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get",
+          "lineNumber": 160
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get(0).forEach",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "o.setOutId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "stockOutItemMapper.insertBatch",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get",
+          "lineNumber": 164
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "stockOutItemMapper.updateBatch",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get",
+          "lineNumber": 165
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "stockOutItemMapper.deleteByIds",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "convertList",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateStockOutItemList",
+          "callee": "diffList.get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOutMapper.selectByIds",
+          "lineNumber": 176
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 177
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOuts.forEach",
+          "lineNumber": 180
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "ErpAuditStatus.APPROVE.getStatus().equals",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "ErpAuditStatus.APPROVE.getStatus",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOut.getStatus",
+          "lineNumber": 181
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "exception",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOut.getNo",
+          "lineNumber": 182
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOuts.forEach",
+          "lineNumber": 187
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOutMapper.deleteById",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOut.getId",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOutItemMapper.deleteByOutId",
+          "lineNumber": 191
+        },
+        {
+          "caller": "deleteStockOut",
+          "callee": "stockOut.getId",
+          "lineNumber": 191
+        },
+        {
+          "caller": "validateStockOutExists",
+          "callee": "stockOutMapper.selectById",
+          "lineNumber": 196
+        },
+        {
+          "caller": "validateStockOutExists",
+          "callee": "exception",
+          "lineNumber": 198
+        },
+        {
+          "caller": "getStockOut",
+          "callee": "stockOutMapper.selectById",
+          "lineNumber": 205
+        },
+        {
+          "caller": "getStockOutPage",
+          "callee": "stockOutMapper.selectPage",
+          "lineNumber": 210
+        },
+        {
+          "caller": "getStockOutItemListByOutId",
+          "callee": "stockOutItemMapper.selectListByOutId",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getStockOutItemListByOutIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 222
+        },
+        {
+          "caller": "getStockOutItemListByOutIds",
+          "callee": "Collections.emptyList",
+          "lineNumber": 223
+        },
+        {
+          "caller": "getStockOutItemListByOutIds",
+          "callee": "stockOutItemMapper.selectListByOutIds",
+          "lineNumber": 225
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 9,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockRecordService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "ErpStockRecordService",
+          "startLine": 14,
+          "endLine": 39,
+          "methods": [
+            "getStockRecord",
+            "getStockRecordPage",
+            "createStockRecord"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpStockRecordService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockRecordServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "getStockRecord",
+          "startLine": 31,
+          "endLine": 34,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStockRecordPage",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "createStockRecord",
+          "startLine": 41,
+          "endLine": 51,
+          "params": [
+            "createReqBO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpStockRecordServiceImpl",
+          "startLine": 21,
+          "endLine": 53,
+          "methods": [
+            "getStockRecord",
+            "getStockRecordPage",
+            "createStockRecord"
+          ],
+          "properties": [
+            "stockRecordMapper",
+            "stockService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStockRecord",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "getStockRecordPage",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "createStockRecord",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "ErpStockRecordServiceImpl",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getStockRecord",
+          "callee": "stockRecordMapper.selectById",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getStockRecordPage",
+          "callee": "stockRecordMapper.selectPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createStockRecord",
+          "callee": "stockService.updateStockCountIncrement",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createStockRecord",
+          "callee": "createReqBO.getProductId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createStockRecord",
+          "callee": "createReqBO.getWarehouseId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createStockRecord",
+          "callee": "createReqBO.getCount",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createStockRecord",
+          "callee": "BeanUtils.toBean(createReqBO, ErpStockRecordDO.class).setTotalCount",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createStockRecord",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createStockRecord",
+          "callee": "stockRecordMapper.insert",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 52,
+      "classes": [
+        {
+          "name": "ErpStockService",
+          "startLine": 14,
+          "endLine": 61,
+          "methods": [
+            "getStock",
+            "getStock",
+            "getStockCount",
+            "getStockPage",
+            "updateStockCountIncrement"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpStockService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "getStock",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getStock",
+          "startLine": 47,
+          "endLine": 50,
+          "params": [
+            "productId",
+            "warehouseId"
+          ]
+        },
+        {
+          "name": "getStockCount",
+          "startLine": 52,
+          "endLine": 56,
+          "params": [
+            "productId"
+          ]
+        },
+        {
+          "name": "getStockPage",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "updateStockCountIncrement",
+          "startLine": 63,
+          "endLine": 87,
+          "params": [
+            "productId",
+            "warehouseId",
+            "count"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpStockServiceImpl",
+          "startLine": 23,
+          "endLine": 89,
+          "methods": [
+            "getStock",
+            "getStock",
+            "getStockCount",
+            "getStockPage",
+            "updateStockCountIncrement"
+          ],
+          "properties": [
+            "NEGATIVE_STOCK_COUNT_ENABLE",
+            "productService",
+            "warehouseService",
+            "stockMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStock",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getStock",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getStockCount",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getStockPage",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "updateStockCountIncrement",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "ErpStockServiceImpl",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getStock",
+          "callee": "stockMapper.selectById",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getStock",
+          "callee": "stockMapper.selectByProductIdAndWarehouseId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getStockCount",
+          "callee": "stockMapper.selectSumByProductId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getStockPage",
+          "callee": "stockMapper.selectPage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stockMapper.selectByProductIdAndWarehouseId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "new ErpStockDO().setProductId(productId).setWarehouseId(warehouseId).setCount",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "new ErpStockDO().setProductId(productId).setWarehouseId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "new ErpStockDO().setProductId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "new ErpStockDO",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stockMapper.insert",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stock.getCount().add(count).compareTo",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stock.getCount().add",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stock.getCount",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "exception",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "productService.getProduct(productId).getName",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "productService.getProduct",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "warehouseService.getWarehouse(warehouseId).getName",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "warehouseService.getWarehouse",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stock.getCount",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stockMapper.updateCountIncrement",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stock.getId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "exception",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "productService.getProduct(productId).getName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "productService.getProduct",
+          "lineNumber": 81
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "warehouseService.getWarehouse(warehouseId).getName",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "warehouseService.getWarehouse",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stock.getCount().add",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateStockCountIncrement",
+          "callee": "stock.getCount",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpWarehouseService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 87,
+      "classes": [
+        {
+          "name": "ErpWarehouseService",
+          "startLine": 20,
+          "endLine": 102,
+          "methods": [
+            "createWarehouse",
+            "updateWarehouse",
+            "updateWarehouseDefaultStatus",
+            "deleteWarehouse",
+            "getWarehouse",
+            "validWarehouseList",
+            "getWarehouseListByStatus",
+            "getWarehouseList",
+            "getWarehouseMap",
+            "getWarehousePage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpWarehouseService",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWarehouseMap",
+          "callee": "convertMap",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getWarehouseMap",
+          "callee": "getWarehouseList",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpWarehouseServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "createWarehouse",
+          "startLine": 37,
+          "endLine": 44,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateWarehouse",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateWarehouseDefaultStatus",
+          "startLine": 55,
+          "endLine": 70,
+          "params": [
+            "id",
+            "defaultStatus"
+          ]
+        },
+        {
+          "name": "deleteWarehouse",
+          "startLine": 72,
+          "endLine": 78,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateWarehouseExists",
+          "startLine": 80,
+          "endLine": 84,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWarehouse",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validWarehouseList",
+          "startLine": 91,
+          "endLine": 108,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getWarehouseListByStatus",
+          "startLine": 110,
+          "endLine": 113,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getWarehouseList",
+          "startLine": 115,
+          "endLine": 118,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getWarehousePage",
+          "startLine": 120,
+          "endLine": 123,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErpWarehouseServiceImpl",
+          "startLine": 30,
+          "endLine": 125,
+          "methods": [
+            "createWarehouse",
+            "updateWarehouse",
+            "updateWarehouseDefaultStatus",
+            "deleteWarehouse",
+            "validateWarehouseExists",
+            "getWarehouse",
+            "validWarehouseList",
+            "getWarehouseListByStatus",
+            "getWarehouseList",
+            "getWarehousePage"
+          ],
+          "properties": [
+            "warehouseMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createWarehouse",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "updateWarehouse",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "updateWarehouseDefaultStatus",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWarehouse",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getWarehouse",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "validWarehouseList",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getWarehouseListByStatus",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "getWarehouseList",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "getWarehousePage",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "ErpWarehouseServiceImpl",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWarehouse",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createWarehouse",
+          "callee": "warehouseMapper.insert",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createWarehouse",
+          "callee": "warehouse.getId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateWarehouse",
+          "callee": "validateWarehouseExists",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateWarehouse",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateWarehouse",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateWarehouse",
+          "callee": "warehouseMapper.updateById",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "validateWarehouseExists",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "warehouseMapper.selectByDefaultStatus",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "warehouseMapper.updateById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "new ErpWarehouseDO().setId(warehouse.getId()).setDefaultStatus",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "new ErpWarehouseDO().setId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "new ErpWarehouseDO",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "warehouse.getId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "warehouseMapper.updateById",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "new ErpWarehouseDO().setId(id).setDefaultStatus",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "new ErpWarehouseDO().setId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateWarehouseDefaultStatus",
+          "callee": "new ErpWarehouseDO",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteWarehouse",
+          "callee": "validateWarehouseExists",
+          "lineNumber": 75
+        },
+        {
+          "caller": "deleteWarehouse",
+          "callee": "warehouseMapper.deleteById",
+          "lineNumber": 77
+        },
+        {
+          "caller": "validateWarehouseExists",
+          "callee": "warehouseMapper.selectById",
+          "lineNumber": 81
+        },
+        {
+          "caller": "validateWarehouseExists",
+          "callee": "exception",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getWarehouse",
+          "callee": "warehouseMapper.selectById",
+          "lineNumber": 88
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 93
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 94
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "warehouseMapper.selectByIds",
+          "lineNumber": 96
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "convertMap",
+          "lineNumber": 97
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "warehouseMap.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "warehouseMap.get",
+          "lineNumber": 100
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "exception",
+          "lineNumber": 101
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "CommonStatusEnum.isDisable",
+          "lineNumber": 103
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "warehouse.getStatus",
+          "lineNumber": 103
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "exception",
+          "lineNumber": 104
+        },
+        {
+          "caller": "validWarehouseList",
+          "callee": "warehouse.getName",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getWarehouseListByStatus",
+          "callee": "warehouseMapper.selectListByStatus",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getWarehouseList",
+          "callee": "warehouseMapper.selectByIds",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getWarehousePage",
+          "callee": "warehouseMapper.selectPage",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-erp/yudao-module-erp-server/src/main/java/cn/iocoder/yudao/module/erp/service/stock/bo/ErpStockRecordCreateReqBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "ErpStockRecordCreateReqBO",
+          "startLine": 15,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "productId",
+            "warehouseId",
+            "count",
+            "bizType",
+            "bizId",
+            "bizItemId",
+            "bizNo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErpStockRecordCreateReqBO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/group/vo/ImGroupPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "ImGroupPageReqVO",
+          "startLine": 11,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "name",
+            "ownerUserId",
+            "notice",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupPageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/privates/ImPrivateMessagePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ImPrivateMessagePageReqVO",
+          "startLine": 11,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "receiverId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImPrivateMessagePageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/erp/Demo03StudentErpController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 208,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "createDemo03Student",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDemo03Student",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDemo03Student",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteDemo03StudentList",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getDemo03Student",
+          "startLine": 74,
+          "endLine": 81,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDemo03StudentPage",
+          "startLine": 83,
+          "endLine": 89,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportDemo03StudentExcel",
+          "startLine": 91,
+          "endLine": 102,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "getDemo03CoursePage",
+          "startLine": 106,
+          "endLine": 113,
+          "params": [
+            "pageReqVO",
+            "studentId"
+          ]
+        },
+        {
+          "name": "createDemo03Course",
+          "startLine": 115,
+          "endLine": 120,
+          "params": [
+            "demo03Course"
+          ]
+        },
+        {
+          "name": "updateDemo03Course",
+          "startLine": 122,
+          "endLine": 128,
+          "params": [
+            "demo03Course"
+          ]
+        },
+        {
+          "name": "deleteDemo03Course",
+          "startLine": 130,
+          "endLine": 137,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteDemo03CourseList",
+          "startLine": 139,
+          "endLine": 146,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getDemo03Course",
+          "startLine": 148,
+          "endLine": 154,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDemo03GradePage",
+          "startLine": 158,
+          "endLine": 165,
+          "params": [
+            "pageReqVO",
+            "studentId"
+          ]
+        },
+        {
+          "name": "createDemo03Grade",
+          "startLine": 167,
+          "endLine": 172,
+          "params": [
+            "demo03Grade"
+          ]
+        },
+        {
+          "name": "updateDemo03Grade",
+          "startLine": 174,
+          "endLine": 180,
+          "params": [
+            "demo03Grade"
+          ]
+        },
+        {
+          "name": "deleteDemo03Grade",
+          "startLine": 182,
+          "endLine": 189,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteDemo03GradeList",
+          "startLine": 191,
+          "endLine": 198,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getDemo03Grade",
+          "startLine": 200,
+          "endLine": 206,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Demo03StudentErpController",
+          "startLine": 32,
+          "endLine": 208,
+          "methods": [
+            "createDemo03Student",
+            "updateDemo03Student",
+            "deleteDemo03Student",
+            "deleteDemo03StudentList",
+            "getDemo03Student",
+            "getDemo03StudentPage",
+            "exportDemo03StudentExcel",
+            "getDemo03CoursePage",
+            "createDemo03Course",
+            "updateDemo03Course",
+            "deleteDemo03Course",
+            "deleteDemo03CourseList",
+            "getDemo03Course",
+            "getDemo03GradePage",
+            "createDemo03Grade",
+            "updateDemo03Grade",
+            "deleteDemo03Grade",
+            "deleteDemo03GradeList",
+            "getDemo03Grade"
+          ],
+          "properties": [
+            "demo03StudentErpService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDemo03Student",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateDemo03Student",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03Student",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03StudentList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03Student",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03StudentPage",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "exportDemo03StudentExcel",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03CoursePage",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "createDemo03Course",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "updateDemo03Course",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03Course",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03CourseList",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03Course",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03GradePage",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "createDemo03Grade",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "updateDemo03Grade",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03Grade",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03GradeList",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03Grade",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "Demo03StudentErpController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDemo03Student",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createDemo03Student",
+          "callee": "demo03StudentErpService.createDemo03Student",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateDemo03Student",
+          "callee": "demo03StudentErpService.updateDemo03Student",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDemo03Student",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteDemo03Student",
+          "callee": "demo03StudentErpService.deleteDemo03Student",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteDemo03Student",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteDemo03StudentList",
+          "callee": "demo03StudentErpService.deleteDemo03StudentList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteDemo03StudentList",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "demo03StudentErpService.getDemo03Student",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "demo03StudentErpService.getDemo03StudentPage",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 88
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 97
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "demo03StudentErpService.getDemo03StudentPage(pageReqVO).getList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "demo03StudentErpService.getDemo03StudentPage",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 100
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getDemo03CoursePage",
+          "callee": "success",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getDemo03CoursePage",
+          "callee": "demo03StudentErpService.getDemo03CoursePage",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createDemo03Course",
+          "callee": "success",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createDemo03Course",
+          "callee": "demo03StudentErpService.createDemo03Course",
+          "lineNumber": 119
+        },
+        {
+          "caller": "updateDemo03Course",
+          "callee": "demo03StudentErpService.updateDemo03Course",
+          "lineNumber": 126
+        },
+        {
+          "caller": "updateDemo03Course",
+          "callee": "success",
+          "lineNumber": 127
+        },
+        {
+          "caller": "deleteDemo03Course",
+          "callee": "demo03StudentErpService.deleteDemo03Course",
+          "lineNumber": 135
+        },
+        {
+          "caller": "deleteDemo03Course",
+          "callee": "success",
+          "lineNumber": 136
+        },
+        {
+          "caller": "deleteDemo03CourseList",
+          "callee": "demo03StudentErpService.deleteDemo03CourseList",
+          "lineNumber": 144
+        },
+        {
+          "caller": "deleteDemo03CourseList",
+          "callee": "success",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getDemo03Course",
+          "callee": "success",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getDemo03Course",
+          "callee": "demo03StudentErpService.getDemo03Course",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getDemo03GradePage",
+          "callee": "success",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getDemo03GradePage",
+          "callee": "demo03StudentErpService.getDemo03GradePage",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createDemo03Grade",
+          "callee": "success",
+          "lineNumber": 171
+        },
+        {
+          "caller": "createDemo03Grade",
+          "callee": "demo03StudentErpService.createDemo03Grade",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateDemo03Grade",
+          "callee": "demo03StudentErpService.updateDemo03Grade",
+          "lineNumber": 178
+        },
+        {
+          "caller": "updateDemo03Grade",
+          "callee": "success",
+          "lineNumber": 179
+        },
+        {
+          "caller": "deleteDemo03Grade",
+          "callee": "demo03StudentErpService.deleteDemo03Grade",
+          "lineNumber": 187
+        },
+        {
+          "caller": "deleteDemo03Grade",
+          "callee": "success",
+          "lineNumber": 188
+        },
+        {
+          "caller": "deleteDemo03GradeList",
+          "callee": "demo03StudentErpService.deleteDemo03GradeList",
+          "lineNumber": 196
+        },
+        {
+          "caller": "deleteDemo03GradeList",
+          "callee": "success",
+          "lineNumber": 197
+        },
+        {
+          "caller": "getDemo03Grade",
+          "callee": "success",
+          "lineNumber": 205
+        },
+        {
+          "caller": "getDemo03Grade",
+          "callee": "demo03StudentErpService.getDemo03Grade",
+          "lineNumber": 205
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 20,
+        "functionCount": 19,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/erp/vo/Demo03StudentErpPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "Demo03StudentErpPageReqVO",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "name",
+            "sex",
+            "description",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentErpPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/erp/vo/Demo03StudentErpSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "Demo03StudentErpSaveReqVO",
+          "startLine": 10,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "sex",
+            "birthday",
+            "description"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentErpSaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/inner/Demo03StudentInnerController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "createDemo03Student",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDemo03Student",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDemo03Student",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteDemo03StudentList",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getDemo03Student",
+          "startLine": 74,
+          "endLine": 81,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDemo03StudentPage",
+          "startLine": 83,
+          "endLine": 89,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportDemo03StudentExcel",
+          "startLine": 91,
+          "endLine": 102,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "getDemo03CourseListByStudentId",
+          "startLine": 106,
+          "endLine": 112,
+          "params": [
+            "studentId"
+          ]
+        },
+        {
+          "name": "getDemo03GradeByStudentId",
+          "startLine": 116,
+          "endLine": 122,
+          "params": [
+            "studentId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Demo03StudentInnerController",
+          "startLine": 32,
+          "endLine": 124,
+          "methods": [
+            "createDemo03Student",
+            "updateDemo03Student",
+            "deleteDemo03Student",
+            "deleteDemo03StudentList",
+            "getDemo03Student",
+            "getDemo03StudentPage",
+            "exportDemo03StudentExcel",
+            "getDemo03CourseListByStudentId",
+            "getDemo03GradeByStudentId"
+          ],
+          "properties": [
+            "demo03StudentInnerService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDemo03Student",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateDemo03Student",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03Student",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03StudentList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03Student",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03StudentPage",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "exportDemo03StudentExcel",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03CourseListByStudentId",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03GradeByStudentId",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "Demo03StudentInnerController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDemo03Student",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createDemo03Student",
+          "callee": "demo03StudentInnerService.createDemo03Student",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateDemo03Student",
+          "callee": "demo03StudentInnerService.updateDemo03Student",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDemo03Student",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteDemo03Student",
+          "callee": "demo03StudentInnerService.deleteDemo03Student",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteDemo03Student",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteDemo03StudentList",
+          "callee": "demo03StudentInnerService.deleteDemo03StudentList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteDemo03StudentList",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "demo03StudentInnerService.getDemo03Student",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "demo03StudentInnerService.getDemo03StudentPage",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 88
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 97
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "demo03StudentInnerService.getDemo03StudentPage(pageReqVO).getList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "demo03StudentInnerService.getDemo03StudentPage",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 100
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getDemo03CourseListByStudentId",
+          "callee": "success",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getDemo03CourseListByStudentId",
+          "callee": "demo03StudentInnerService.getDemo03CourseListByStudentId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getDemo03GradeByStudentId",
+          "callee": "success",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getDemo03GradeByStudentId",
+          "callee": "demo03StudentInnerService.getDemo03GradeByStudentId",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/inner/vo/Demo03StudentInnerPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "Demo03StudentInnerPageReqVO",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "name",
+            "sex",
+            "description",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentInnerPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/inner/vo/Demo03StudentInnerSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "Demo03StudentInnerSaveReqVO",
+          "startLine": 13,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "sex",
+            "birthday",
+            "description",
+            "demo03Courses",
+            "demo03Grade"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentInnerSaveReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/normal/Demo03StudentNormalController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "createDemo03Student",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDemo03Student",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDemo03Student",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteDemo03StudentList",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getDemo03Student",
+          "startLine": 74,
+          "endLine": 81,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDemo03StudentPage",
+          "startLine": 83,
+          "endLine": 89,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportDemo03StudentExcel",
+          "startLine": 91,
+          "endLine": 102,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "getDemo03CourseListByStudentId",
+          "startLine": 106,
+          "endLine": 112,
+          "params": [
+            "studentId"
+          ]
+        },
+        {
+          "name": "getDemo03GradeByStudentId",
+          "startLine": 116,
+          "endLine": 122,
+          "params": [
+            "studentId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Demo03StudentNormalController",
+          "startLine": 32,
+          "endLine": 124,
+          "methods": [
+            "createDemo03Student",
+            "updateDemo03Student",
+            "deleteDemo03Student",
+            "deleteDemo03StudentList",
+            "getDemo03Student",
+            "getDemo03StudentPage",
+            "exportDemo03StudentExcel",
+            "getDemo03CourseListByStudentId",
+            "getDemo03GradeByStudentId"
+          ],
+          "properties": [
+            "demo03StudentNormalService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDemo03Student",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateDemo03Student",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03Student",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDemo03StudentList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03Student",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03StudentPage",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "exportDemo03StudentExcel",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03CourseListByStudentId",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getDemo03GradeByStudentId",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "Demo03StudentNormalController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDemo03Student",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createDemo03Student",
+          "callee": "demo03StudentNormalService.createDemo03Student",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateDemo03Student",
+          "callee": "demo03StudentNormalService.updateDemo03Student",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDemo03Student",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteDemo03Student",
+          "callee": "demo03StudentNormalService.deleteDemo03Student",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteDemo03Student",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteDemo03StudentList",
+          "callee": "demo03StudentNormalService.deleteDemo03StudentList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteDemo03StudentList",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "demo03StudentNormalService.getDemo03Student",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDemo03Student",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "demo03StudentNormalService.getDemo03StudentPage",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getDemo03StudentPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 88
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 97
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "demo03StudentNormalService.getDemo03StudentPage(pageReqVO).getList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "demo03StudentNormalService.getDemo03StudentPage",
+          "lineNumber": 98
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 100
+        },
+        {
+          "caller": "exportDemo03StudentExcel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getDemo03CourseListByStudentId",
+          "callee": "success",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getDemo03CourseListByStudentId",
+          "callee": "demo03StudentNormalService.getDemo03CourseListByStudentId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getDemo03GradeByStudentId",
+          "callee": "success",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getDemo03GradeByStudentId",
+          "callee": "demo03StudentNormalService.getDemo03GradeByStudentId",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/normal/vo/Demo03StudentNormalPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "Demo03StudentNormalPageReqVO",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "name",
+            "sex",
+            "description",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentNormalPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/demo/demo03/normal/vo/Demo03StudentNormalSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "Demo03StudentNormalSaveReqVO",
+          "startLine": 13,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "sex",
+            "birthday",
+            "description",
+            "demo03Courses",
+            "demo03Grade"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentNormalSaveReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/demo/demo03/Demo03CourseDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "Demo03CourseDO",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "studentId",
+            "name",
+            "score"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03CourseDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/demo/demo03/Demo03GradeDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "Demo03GradeDO",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "studentId",
+            "name",
+            "teacher"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03GradeDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/demo/demo03/Demo03StudentDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "Demo03StudentDO",
+          "startLine": 16,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "sex",
+            "birthday",
+            "description"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/demo/demo03/erp/Demo03CourseErpMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "Demo03CourseErpMapper",
+          "startLine": 17,
+          "endLine": 34,
+          "methods": [
+            "selectPage",
+            "deleteByStudentId",
+            "deleteByStudentIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03CourseErpMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03CourseDO>()\n                .eq(Demo03CourseDO::getStudentId, studentId).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03CourseDO>().eq",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03CourseDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "deleteByStudentId",
+          "callee": "delete",
+          "lineNumber": 27
+        },
+        {
+          "caller": "deleteByStudentIds",
+          "callee": "deleteBatch",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/demo/demo03/erp/Demo03GradeErpMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "Demo03GradeErpMapper",
+          "startLine": 17,
+          "endLine": 38,
+          "methods": [
+            "selectPage",
+            "selectByStudentId",
+            "deleteByStudentId",
+            "deleteByStudentIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03GradeErpMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03GradeDO>()\n                .eq(Demo03GradeDO::getStudentId, studentId).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03GradeDO>().eq",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03GradeDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectByStudentId",
+          "callee": "selectOne",
+          "lineNumber": 27
+        },
+        {
+          "caller": "deleteByStudentId",
+          "callee": "delete",
+          "lineNumber": 31
+        },
+        {
+          "caller": "deleteByStudentIds",
+          "callee": "deleteBatch",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/demo/demo03/erp/Demo03StudentErpMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "Demo03StudentErpMapper",
+          "startLine": 15,
+          "endLine": 27,
+          "methods": [
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03StudentErpMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03StudentDO>()\n                .likeIfPresent(Demo03StudentDO::getName, reqVO.getName())\n                .eqIfPresent(Demo03StudentDO::getSex, reqVO.getSex())\n                .eqIfPresent(Demo03StudentDO::getDescription, reqVO.getDescription())\n                .betweenIfPresent(Demo03StudentDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03StudentDO>()\n                .likeIfPresent(Demo03StudentDO::getName, reqVO.getName())\n                .eqIfPresent(Demo03StudentDO::getSex, reqVO.getSex())\n                .eqIfPresent(Demo03StudentDO::getDescription, reqVO.getDescription()).betweenIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03StudentDO>()\n                .likeIfPresent(Demo03StudentDO::getName, reqVO.getName())\n                .eqIfPresent(Demo03StudentDO::getSex, reqVO.getSex()).eqIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03StudentDO>()\n                .likeIfPresent(Demo03StudentDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03StudentDO>().likeIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<Demo03StudentDO>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getSex",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getDescription",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/demo/demo03/inner/Demo03CourseInnerMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "Demo03CourseInnerMapper",
+          "startLine": 14,
+          "endLine": 29,
+          "methods": [
+            "selectListByStudentId",
+            "deleteByStudentId",
+            "deleteByStudentIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03CourseInnerMapper",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByStudentId",
+          "callee": "selectList",
+          "lineNumber": 18
+        },
+        {
+          "caller": "deleteByStudentId",
+          "callee": "delete",
+          "lineNumber": 22
+        },
+        {
+          "caller": "deleteByStudentIds",
+          "callee": "deleteBatch",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/demo/demo03/inner/Demo03GradeInnerMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "Demo03GradeInnerMapper",
+          "startLine": 14,
+          "endLine": 29,
+          "methods": [
+            "selectByStudentId",
+            "deleteByStudentId",
+            "deleteByStudentIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Demo03GradeInnerMapper",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByStudentId",
+          "callee": "selectOne",
+          "lineNumber": 18
+        },
+        {
+          "caller": "deleteByStudentId",
+          "callee": "delete",
+          "lineNumber": 22
+        },
+        {
+          "caller": "deleteByStudentIds",
+          "callee": "deleteBatch",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

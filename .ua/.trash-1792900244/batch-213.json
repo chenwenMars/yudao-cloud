@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "项目入口文档，介绍芋道 Cloud 的平台定位、前后端项目关系、内置业务模块、技术栈与演示入口。",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "platform-overview"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:SQLServer数据库表设计最佳实践.md",
+      "type": "document",
+      "name": "SQLServer数据库表设计最佳实践.md",
+      "filePath": "SQLServer数据库表设计最佳实践.md",
+      "summary": "汇总 SQL Server 数据库表设计规范，覆盖命名、类型、主键与索引、约束、空值、规范化、审计字段、大表分区及评审清单。",
+      "tags": [
+        "documentation",
+        "business-domain",
+        "workflow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:arch-yudao-candidate.json",
+      "type": "config",
+      "name": "arch-yudao-candidate.json",
+      "filePath": "arch-yudao-candidate.json",
+      "summary": "描述芋道 Cloud 架构图的结构化候选数据，包含组件、业务与基础设施边界、连接关系及说明卡片，并指定 HTML 输出文件。",
+      "tags": [
+        "configuration",
+        "architecture-model",
+        "diagram-source"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "pom.xml",
+      "summary": "Maven 根聚合 POM，声明各业务和基础设施模块，并集中管理 Java、Spring Boot、编译器及测试插件版本。",
+      "tags": [
+        "configuration",
+        "maven",
+        "build-system"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-cloud-architecture.html",
+      "type": "file",
+      "name": "yudao-cloud-architecture.html",
+      "filePath": "yudao-cloud-architecture.html",
+      "summary": "由 Archify 生成的交互式芋道 Cloud 微服务架构图页面，展示前端、服务层、业务域和基础设施组件，支持主题与图表操作。",
+      "tags": [
+        "architecture-diagram",
+        "markup",
+        "interactive"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:arch-yudao-candidate.json",
+      "target": "file:yudao-cloud-architecture.html",
+      "type": "generates",
+      "direction": "forward",
+      "weight": 0.9
+    }
+  ]
+}

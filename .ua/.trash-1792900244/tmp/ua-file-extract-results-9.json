@@ -1,0 +1,2350 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/pojo/SortingField.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "SortingField",
+          "startLine": 14,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "ORDER_ASC",
+            "ORDER_DESC",
+            "field",
+            "order"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ORDER_ASC",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "ORDER_DESC",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "SortingField",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/type/IntegerListTypeHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "setParameter",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "ps",
+            "i",
+            "strings",
+            "jdbcType"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 32,
+          "endLine": 36,
+          "params": [
+            "rs",
+            "columnName"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 38,
+          "endLine": 42,
+          "params": [
+            "rs",
+            "columnIndex"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "cs",
+            "columnIndex"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 50,
+          "endLine": 55,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IntegerListTypeHandler",
+          "startLine": 21,
+          "endLine": 56,
+          "methods": [
+            "setParameter",
+            "getResult",
+            "getResult",
+            "getResult",
+            "getResult"
+          ],
+          "properties": [
+            "COMMA"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setParameter",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "getResult",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getResult",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getResult",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "IntegerListTypeHandler",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setParameter",
+          "callee": "ps.setString",
+          "lineNumber": 29
+        },
+        {
+          "caller": "setParameter",
+          "callee": "CollUtil.join",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getResult",
+          "callee": "rs.getString",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getResult",
+          "callee": "getResult",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getResult",
+          "callee": "rs.getString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getResult",
+          "callee": "getResult",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getResult",
+          "callee": "cs.getString",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getResult",
+          "callee": "getResult",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getResult",
+          "callee": "StrUtils.splitToInteger",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/test/java/cn/iocoder/yudao/framework/mybatis/core/util/MyBatisUtilsTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 182,
+      "nonEmptyLines": 153,
+      "functions": [
+        {
+          "name": "testBuildPage_sortingFields",
+          "startLine": 26,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "testAddOrder_queryWrapper",
+          "startLine": 48,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "testAddOrder_lambdaQueryWrapper",
+          "startLine": 64,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "startLine": 80,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "testOrderDirection",
+          "startLine": 95,
+          "endLine": 102,
+          "params": []
+        },
+        {
+          "name": "testFindInSet",
+          "startLine": 104,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "testFindInSet_invalidColumnName",
+          "startLine": 118,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "testFindInSet_invalidParamIndex",
+          "startLine": 126,
+          "endLine": 130,
+          "params": []
+        },
+        {
+          "name": "testFindInSet_multipleValues",
+          "startLine": 132,
+          "endLine": 138,
+          "params": []
+        },
+        {
+          "name": "testFindInSet_applyBindsValue",
+          "startLine": 140,
+          "endLine": 154,
+          "params": []
+        },
+        {
+          "name": "testFindInSet_applyBindsMultipleValues",
+          "startLine": 156,
+          "endLine": 175,
+          "params": []
+        },
+        {
+          "name": "assertOrderItem",
+          "startLine": 177,
+          "endLine": 180,
+          "params": [
+            "orderItem",
+            "column",
+            "asc"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MyBatisUtilsTest",
+          "startLine": 24,
+          "endLine": 182,
+          "methods": [
+            "testBuildPage_sortingFields",
+            "testAddOrder_queryWrapper",
+            "testAddOrder_lambdaQueryWrapper",
+            "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+            "testOrderDirection",
+            "testFindInSet",
+            "testFindInSet_invalidColumnName",
+            "testFindInSet_invalidParamIndex",
+            "testFindInSet_multipleValues",
+            "testFindInSet_applyBindsValue",
+            "testFindInSet_applyBindsMultipleValues",
+            "assertOrderItem"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "testBuildPage_sortingFields",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "testAddOrder_queryWrapper",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "testAddOrder_lambdaQueryWrapper",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "testOrderDirection",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "testFindInSet",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "testFindInSet_invalidColumnName",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "testFindInSet_invalidParamIndex",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "testFindInSet_multipleValues",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "testFindInSet_applyBindsValue",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "testFindInSet_applyBindsMultipleValues",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "MyBatisUtilsTest",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "new PageParam",
+          "lineNumber": 29
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "pageParam.setPageNo",
+          "lineNumber": 30
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "pageParam.setPageSize",
+          "lineNumber": 31
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "Arrays.asList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "new SortingField",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "new SortingField",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "new SortingField",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "MyBatisUtils.buildPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "assertEquals",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.getCurrent",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "assertEquals",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.getSize",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "assertEquals",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.orders().size",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.orders",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "assertOrderItem",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.orders().get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.orders",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "assertOrderItem",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.orders().get",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testBuildPage_sortingFields",
+          "callee": "page.orders",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "new QueryWrapper<>",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "Arrays.asList",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "new SortingField",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "new SortingField",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "new SortingField",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "MyBatisUtils.addOrder",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "assertEquals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testAddOrder_queryWrapper",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "new LambdaQueryWrapper<>",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "Arrays.asList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "new SortingField",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "new SortingField",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "new SortingField",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "MyBatisUtils.addOrder",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "assertEquals",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "callee": "new LambdaQueryWrapper<>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "callee": "Arrays.asList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "callee": "new SortingField",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "callee": "new SortingField",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "callee": "MyBatisUtils.addOrder",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "callee": "assertEquals",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testAddOrder_lambdaQueryWrapper_invalidSortingFields",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "assertTrue",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "MyBatisUtils.isAscOrder",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "assertFalse",
+          "lineNumber": 98
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "MyBatisUtils.isAscOrder",
+          "lineNumber": 98
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "assertEquals",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "MyBatisUtils.getOrderDirection",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "assertEquals",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "MyBatisUtils.getOrderDirection",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "assertEquals",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testOrderDirection",
+          "callee": "MyBatisUtils.getOrderDirection",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "assertEquals",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "assertEquals",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "assertEquals",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "assertEquals",
+          "lineNumber": 112
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "assertEquals",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testFindInSet",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 115
+        },
+        {
+          "caller": "testFindInSet_invalidColumnName",
+          "callee": "assertThrows",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testFindInSet_invalidColumnName",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testFindInSet_invalidColumnName",
+          "callee": "assertThrows",
+          "lineNumber": 122
+        },
+        {
+          "caller": "testFindInSet_invalidColumnName",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testFindInSet_invalidParamIndex",
+          "callee": "assertThrows",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testFindInSet_invalidParamIndex",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 129
+        },
+        {
+          "caller": "testFindInSet_multipleValues",
+          "callee": "assertEquals",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testFindInSet_multipleValues",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testFindInSet_multipleValues",
+          "callee": "Arrays.asList",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testFindInSet_multipleValues",
+          "callee": "assertThrows",
+          "lineNumber": 136
+        },
+        {
+          "caller": "testFindInSet_multipleValues",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 137
+        },
+        {
+          "caller": "testFindInSet_multipleValues",
+          "callee": "Collections.emptyList",
+          "lineNumber": 137
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "new QueryWrapper<>",
+          "lineNumber": 143
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "query.apply",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "assertEquals",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "assertFalse",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "query.getSqlSegment().contains",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "assertEquals",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "query.getParamNameValuePairs().get",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testFindInSet_applyBindsValue",
+          "callee": "query.getParamNameValuePairs",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "new QueryWrapper<>",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.apply",
+          "lineNumber": 164
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 164
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 165
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "assertEquals",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "assertFalse",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getSqlSegment().contains",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "assertFalse",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getSqlSegment().contains",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getSqlSegment",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "assertEquals",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getParamNameValuePairs().get",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getParamNameValuePairs",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "assertEquals",
+          "lineNumber": 174
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getParamNameValuePairs().get",
+          "lineNumber": 174
+        },
+        {
+          "caller": "testFindInSet_applyBindsMultipleValues",
+          "callee": "query.getParamNameValuePairs",
+          "lineNumber": 174
+        },
+        {
+          "caller": "assertOrderItem",
+          "callee": "assertEquals",
+          "lineNumber": 178
+        },
+        {
+          "caller": "assertOrderItem",
+          "callee": "orderItem.getColumn",
+          "lineNumber": 178
+        },
+        {
+          "caller": "assertOrderItem",
+          "callee": "assertEquals",
+          "lineNumber": 179
+        },
+        {
+          "caller": "assertOrderItem",
+          "callee": "orderItem.isAsc",
+          "lineNumber": 179
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/api/category/ProductCategoryApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "ProductCategoryApi",
+          "startLine": 14,
+          "endLine": 25,
+          "methods": [
+            "validateCategoryList"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductCategoryApi",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/api/comment/ProductCommentApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "ProductCommentApi",
+          "startLine": 14,
+          "endLine": 24,
+          "methods": [
+            "createComment"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductCommentApi",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/api/property/dto/ProductPropertyValueDetailRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "ProductPropertyValueDetailRespDTO",
+          "startLine": 6,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "propertyId",
+            "propertyName",
+            "valueId",
+            "valueName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductPropertyValueDetailRespDTO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/api/sku/ProductSkuApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "ProductSkuApi",
+          "startLine": 23,
+          "endLine": 58,
+          "methods": [
+            "getSku",
+            "getSkuList",
+            "getSkuMap",
+            "getSkuListBySpuId",
+            "updateSkuStock"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSkuApi",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSkuMap",
+          "callee": "convertMap",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getSkuMap",
+          "callee": "getSkuList(ids).getCheckedData",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getSkuMap",
+          "callee": "getSkuList",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/api/sku/dto/ProductSkuRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "ProductSkuRespDTO",
+          "startLine": 9,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "properties",
+            "price",
+            "marketPrice",
+            "costPrice",
+            "barCode",
+            "picUrl",
+            "stock",
+            "weight",
+            "volume",
+            "firstBrokeragePrice",
+            "secondBrokeragePrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSkuRespDTO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/api/spu/ProductSpuApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "ProductSpuApi",
+          "startLine": 19,
+          "endLine": 50,
+          "methods": [
+            "getSpuList",
+            "getSpuMap",
+            "validateSpuList",
+            "getSpu"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSpuApi",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSpuMap",
+          "callee": "convertMap",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getSpuMap",
+          "callee": "getSpuList(ids).getCheckedData",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getSpuMap",
+          "callee": "getSpuList",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/api/spu/dto/ProductSpuRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 93,
+      "classes": [
+        {
+          "name": "ProductSpuRespDTO",
+          "startLine": 16,
+          "endLine": 112,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "unit",
+            "categoryId",
+            "picUrl",
+            "status",
+            "specType",
+            "price",
+            "marketPrice",
+            "costPrice",
+            "stock",
+            "deliveryTypes",
+            "deliveryTemplateId",
+            "giveIntegral",
+            "subCommissionType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSpuRespDTO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-api/src/main/java/cn/iocoder/yudao/module/product/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 8,
+          "endLine": 11,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/bargain/BargainActivityApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "BargainActivityApi",
+          "startLine": 13,
+          "endLine": 28,
+          "methods": [
+            "updateBargainActivityStock"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainActivityApi",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/bargain/BargainRecordApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "BargainRecordApi",
+          "startLine": 15,
+          "endLine": 41,
+          "methods": [
+            "validateJoinBargain",
+            "updateBargainRecordOrderId"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainRecordApi",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/bargain/dto/BargainValidateJoinRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "BargainValidateJoinRespDTO",
+          "startLine": 8,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "activityId",
+            "name",
+            "bargainPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BargainValidateJoinRespDTO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/combination/CombinationRecordApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 62,
+      "classes": [
+        {
+          "name": "CombinationRecordApi",
+          "startLine": 21,
+          "endLine": 71,
+          "methods": [
+            "validateCombinationRecord",
+            "createCombinationRecord",
+            "getCombinationRecordByOrderId",
+            "validateJoinCombination"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationRecordApi",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/combination/dto/CombinationRecordCreateReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "CombinationRecordCreateReqDTO",
+          "startLine": 11,
+          "endLine": 54,
+          "methods": [],
+          "properties": [
+            "activityId",
+            "spuId",
+            "skuId",
+            "count",
+            "orderId",
+            "userId",
+            "headId",
+            "combinationPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationRecordCreateReqDTO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/combination/dto/CombinationRecordCreateRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "CombinationRecordCreateRespDTO",
+          "startLine": 10,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "combinationActivityId",
+            "combinationHeadId",
+            "combinationRecordId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationRecordCreateRespDTO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/combination/dto/CombinationRecordRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "CombinationRecordRespDTO",
+          "startLine": 13,
+          "endLine": 110,
+          "methods": [],
+          "properties": [
+            "id",
+            "activityId",
+            "combinationPrice",
+            "spuId",
+            "spuName",
+            "picUrl",
+            "skuId",
+            "count",
+            "userId",
+            "nickname",
+            "avatar",
+            "headId",
+            "status",
+            "orderId",
+            "userSize",
+            "userCount",
+            "virtualGroup",
+            "expireTime",
+            "startTime",
+            "endTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationRecordRespDTO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/combination/dto/CombinationValidateJoinRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "CombinationValidateJoinRespDTO",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "activityId",
+            "name",
+            "combinationPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombinationValidateJoinRespDTO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/coupon/CouponApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "CouponApi",
+          "startLine": 18,
+          "endLine": 56,
+          "methods": [
+            "getCouponListByUserId",
+            "useCoupon",
+            "returnUsedCoupon",
+            "takeCouponsByAdmin",
+            "invalidateCouponsByAdmin"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponApi",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/coupon/dto/CouponRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 99,
+      "classes": [
+        {
+          "name": "CouponRespDTO",
+          "startLine": 16,
+          "endLine": 109,
+          "methods": [],
+          "properties": [
+            "id",
+            "templateId",
+            "name",
+            "status",
+            "userId",
+            "takeType",
+            "usePrice",
+            "validStartTime",
+            "validEndTime",
+            "productScope",
+            "productScopeValues",
+            "discountType",
+            "discountPercent",
+            "discountPrice",
+            "discountLimitPrice",
+            "useOrderId",
+            "useTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponRespDTO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/coupon/dto/CouponUseReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "CouponUseReqDTO",
+          "startLine": 12,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "orderId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponUseReqDTO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/discount/DiscountActivityApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "DiscountActivityApi",
+          "startLine": 16,
+          "endLine": 27,
+          "methods": [
+            "getMatchDiscountProductListBySkuIds"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DiscountActivityApi",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/discount/dto/DiscountProductRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 52,
+      "classes": [
+        {
+          "name": "DiscountProductRespDTO",
+          "startLine": 12,
+          "endLine": 58,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "skuId",
+            "discountType",
+            "discountPercent",
+            "discountPrice",
+            "activityId",
+            "activityName",
+            "activityStartTime",
+            "activityEndTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DiscountProductRespDTO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/point/PointActivityApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "PointActivityApi",
+          "startLine": 15,
+          "endLine": 54,
+          "methods": [
+            "validateJoinPointActivity",
+            "updatePointStockDecr",
+            "updatePointStockIncr"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PointActivityApi",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/point/dto/PointValidateJoinRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "PointValidateJoinRespDTO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "count",
+            "point",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PointValidateJoinRespDTO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/reward/RewardActivityApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "RewardActivityApi",
+          "startLine": 16,
+          "endLine": 27,
+          "methods": [
+            "getMatchRewardActivityListBySpuIds"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RewardActivityApi",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/reward/dto/RewardActivityMatchRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 107,
+      "classes": [
+        {
+          "name": "RewardActivityMatchRespDTO",
+          "startLine": 18,
+          "endLine": 117,
+          "methods": [],
+          "properties": [
+            "spuIds",
+            "id",
+            "name",
+            "status",
+            "startTime",
+            "endTime",
+            "remark",
+            "conditionType",
+            "productScope",
+            "productScopeValues",
+            "rules"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RewardActivityMatchRespDTO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/seckill/SeckillActivityApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "SeckillActivityApi",
+          "startLine": 15,
+          "endLine": 54,
+          "methods": [
+            "updateSeckillStockDecr",
+            "updateSeckillStockIncr",
+            "validateJoinSeckill"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SeckillActivityApi",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/seckill/dto/SeckillValidateJoinRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "SeckillValidateJoinRespDTO",
+          "startLine": 8,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "name",
+            "totalLimitCount",
+            "seckillPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SeckillValidateJoinRespDTO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/enums/ErrorCodeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 141,
+      "nonEmptyLines": 118,
+      "classes": [
+        {
+          "name": "ErrorCodeConstants",
+          "startLine": 10,
+          "endLine": 141,
+          "methods": [],
+          "properties": [
+            "DISCOUNT_ACTIVITY_NOT_EXISTS",
+            "DISCOUNT_ACTIVITY_SPU_CONFLICTS",
+            "DISCOUNT_ACTIVITY_UPDATE_FAIL_STATUS_CLOSED",
+            "DISCOUNT_ACTIVITY_DELETE_FAIL_STATUS_NOT_CLOSED",
+            "DISCOUNT_ACTIVITY_CLOSE_FAIL_STATUS_CLOSED",
+            "BANNER_NOT_EXISTS",
+            "COUPON_TEMPLATE_NOT_EXISTS",
+            "COUPON_TEMPLATE_TOTAL_COUNT_TOO_SMALL",
+            "COUPON_TEMPLATE_NOT_ENOUGH",
+            "COUPON_TEMPLATE_USER_ALREADY_TAKE",
+            "COUPON_TEMPLATE_EXPIRED",
+            "COUPON_TEMPLATE_CANNOT_TAKE",
+            "COUPON_NOT_EXISTS",
+            "COUPON_DELETE_FAIL_USED",
+            "COUPON_STATUS_NOT_UNUSED",
+            "COUPON_VALID_TIME_NOT_NOW",
+            "COUPON_STATUS_NOT_USED",
+            "REWARD_ACTIVITY_NOT_EXISTS",
+            "REWARD_ACTIVITY_SPU_CONFLICTS",
+            "REWARD_ACTIVITY_UPDATE_FAIL_STATUS_CLOSED",
+            "REWARD_ACTIVITY_DELETE_FAIL_STATUS_NOT_CLOSED",
+            "REWARD_ACTIVITY_CLOSE_FAIL_STATUS_CLOSED",
+            "REWARD_ACTIVITY_SCOPE_EXISTS",
+            "POINT_ACTIVITY_NOT_EXISTS",
+            "POINT_ACTIVITY_SPU_CONFLICTS",
+            "POINT_ACTIVITY_UPDATE_FAIL_STATUS_CLOSED",
+            "POINT_ACTIVITY_DELETE_FAIL_STATUS_NOT_CLOSED_OR_END",
+            "POINT_ACTIVITY_CLOSE_FAIL_STATUS_CLOSED",
+            "POINT_ACTIVITY_JOIN_ACTIVITY_STATUS_CLOSED",
+            "POINT_ACTIVITY_JOIN_ACTIVITY_SINGLE_LIMIT_COUNT_EXCEED",
+            "POINT_ACTIVITY_JOIN_ACTIVITY_PRODUCT_NOT_EXISTS",
+            "POINT_ACTIVITY_UPDATE_STOCK_FAIL",
+            "SECKILL_ACTIVITY_NOT_EXISTS",
+            "SECKILL_ACTIVITY_SPU_CONFLICTS",
+            "SECKILL_ACTIVITY_UPDATE_FAIL_STATUS_CLOSED",
+            "SECKILL_ACTIVITY_DELETE_FAIL_STATUS_NOT_CLOSED_OR_END",
+            "SECKILL_ACTIVITY_CLOSE_FAIL_STATUS_CLOSED",
+            "SECKILL_ACTIVITY_UPDATE_STOCK_FAIL",
+            "SECKILL_JOIN_ACTIVITY_TIME_ERROR",
+            "SECKILL_JOIN_ACTIVITY_STATUS_CLOSED",
+            "SECKILL_JOIN_ACTIVITY_SINGLE_LIMIT_COUNT_EXCEED",
+            "SECKILL_JOIN_ACTIVITY_PRODUCT_NOT_EXISTS",
+            "SECKILL_CONFIG_NOT_EXISTS",
+            "SECKILL_CONFIG_TIME_CONFLICTS",
+            "SECKILL_CONFIG_DISABLE",
+            "COMBINATION_ACTIVITY_NOT_EXISTS",
+            "COMBINATION_ACTIVITY_SPU_CONFLICTS",
+            "COMBINATION_ACTIVITY_STATUS_DISABLE_NOT_UPDATE",
+            "COMBINATION_ACTIVITY_DELETE_FAIL_STATUS_NOT_CLOSED_OR_END",
+            "COMBINATION_ACTIVITY_STATUS_DISABLE",
+            "COMBINATION_JOIN_ACTIVITY_PRODUCT_NOT_EXISTS",
+            "COMBINATION_ACTIVITY_UPDATE_STOCK_FAIL",
+            "COMBINATION_RECORD_NOT_EXISTS",
+            "COMBINATION_RECORD_EXISTS",
+            "COMBINATION_RECORD_HEAD_NOT_EXISTS",
+            "COMBINATION_RECORD_USER_FULL",
+            "COMBINATION_RECORD_FAILED_HAVE_JOINED",
+            "COMBINATION_RECORD_FAILED_TIME_NOT_START",
+            "COMBINATION_RECORD_FAILED_TIME_END",
+            "COMBINATION_RECORD_FAILED_SINGLE_LIMIT_COUNT_EXCEED",
+            "COMBINATION_RECORD_FAILED_TOTAL_LIMIT_COUNT_EXCEED",
+            "COMBINATION_RECORD_FAILED_ORDER_STATUS_UNPAID",
+            "BARGAIN_ACTIVITY_NOT_EXISTS",
+            "BARGAIN_ACTIVITY_SPU_CONFLICTS",
+            "BARGAIN_ACTIVITY_STATUS_DISABLE",
+            "BARGAIN_ACTIVITY_DELETE_FAIL_STATUS_NOT_CLOSED_OR_END",
+            "BARGAIN_ACTIVITY_STOCK_NOT_ENOUGH",
+            "BARGAIN_ACTIVITY_STATUS_CLOSED",
+            "BARGAIN_ACTIVITY_TIME_END",
+            "BARGAIN_RECORD_NOT_EXISTS",
+            "BARGAIN_RECORD_CREATE_FAIL_EXISTS",
+            "BARGAIN_RECORD_CREATE_FAIL_LIMIT",
+            "BARGAIN_JOIN_RECORD_NOT_SUCCESS",
+            "BARGAIN_JOIN_RECORD_ALREADY_ORDER",
+            "BARGAIN_HELP_CREATE_FAIL_RECORD_NOT_IN_PROCESS",
+            "BARGAIN_HELP_CREATE_FAIL_RECORD_SELF",
+            "BARGAIN_HELP_CREATE_FAIL_LIMIT",
+            "BARGAIN_HELP_CREATE_FAIL_CONFLICT",
+            "BARGAIN_HELP_CREATE_FAIL_HELP_EXISTS",
+            "ARTICLE_CATEGORY_NOT_EXISTS",
+            "ARTICLE_CATEGORY_DELETE_FAIL_HAVE_ARTICLES",
+            "ARTICLE_NOT_EXISTS",
+            "DIY_TEMPLATE_NOT_EXISTS",
+            "DIY_TEMPLATE_NAME_USED",
+            "DIY_TEMPLATE_USED_CANNOT_DELETE",
+            "DIY_PAGE_NOT_EXISTS",
+            "DIY_PAGE_NAME_USED",
+            "KEFU_CONVERSATION_NOT_EXISTS",
+            "KEFU_MESSAGE_NOT_EXISTS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErrorCodeConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/enums/bargain/BargainRecordStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BargainRecordStatusEnum",
+          "startLine": 14,
+          "endLine": 39,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "BargainRecordStatusEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

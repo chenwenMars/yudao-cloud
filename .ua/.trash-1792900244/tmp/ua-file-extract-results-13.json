@@ -1,0 +1,4748 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-monitor/src/main/java/cn/iocoder/yudao/framework/tracer/core/filter/TraceFilter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "doFilterInternal",
+          "startLine": 24,
+          "endLine": 31,
+          "params": [
+            "request",
+            "response",
+            "chain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TraceFilter",
+          "startLine": 17,
+          "endLine": 33,
+          "methods": [
+            "doFilterInternal"
+          ],
+          "properties": [
+            "HEADER_NAME_TRACE_ID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TraceFilter",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "doFilterInternal",
+          "callee": "response.addHeader",
+          "lineNumber": 28
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "TracerUtils.getTraceId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "doFilterInternal",
+          "callee": "chain.doFilter",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-monitor/src/main/java/cn/iocoder/yudao/framework/tracer/core/util/TracerFrameworkUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "onError",
+          "startLine": 22,
+          "endLine": 41,
+          "params": [
+            "throwable",
+            "span"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TracerFrameworkUtils",
+          "startLine": 14,
+          "endLine": 43,
+          "methods": [
+            "onError"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "onError",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "TracerFrameworkUtils",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onError",
+          "callee": "span.getSpanContext().isValid",
+          "lineNumber": 24
+        },
+        {
+          "caller": "onError",
+          "callee": "span.getSpanContext",
+          "lineNumber": 24
+        },
+        {
+          "caller": "onError",
+          "callee": "span.setStatus",
+          "lineNumber": 29
+        },
+        {
+          "caller": "onError",
+          "callee": "span.recordException",
+          "lineNumber": 34
+        },
+        {
+          "caller": "onError",
+          "callee": "throwable.getCause",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onError",
+          "callee": "throwable.getCause().getMessage",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onError",
+          "callee": "throwable.getCause",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onError",
+          "callee": "throwable.getMessage",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onError",
+          "callee": "span.setStatus",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onError",
+          "callee": "new StringWriter",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onError",
+          "callee": "throwable.printStackTrace",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onError",
+          "callee": "new PrintWriter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onError",
+          "callee": "span.setAttribute",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onError",
+          "callee": "sw.toString",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/type/LongSetTypeHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "setParameter",
+          "startLine": 28,
+          "endLine": 32,
+          "params": [
+            "ps",
+            "i",
+            "strings",
+            "jdbcType"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "rs",
+            "columnName"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 40,
+          "endLine": 44,
+          "params": [
+            "rs",
+            "columnIndex"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "cs",
+            "columnIndex"
+          ]
+        },
+        {
+          "name": "getResult",
+          "startLine": 52,
+          "endLine": 57,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LongSetTypeHandler",
+          "startLine": 22,
+          "endLine": 58,
+          "methods": [
+            "setParameter",
+            "getResult",
+            "getResult",
+            "getResult",
+            "getResult"
+          ],
+          "properties": [
+            "COMMA"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setParameter",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "getResult",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getResult",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "getResult",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "LongSetTypeHandler",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setParameter",
+          "callee": "ps.setString",
+          "lineNumber": 31
+        },
+        {
+          "caller": "setParameter",
+          "callee": "CollUtil.join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getResult",
+          "callee": "rs.getString",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getResult",
+          "callee": "getResult",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getResult",
+          "callee": "rs.getString",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getResult",
+          "callee": "getResult",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getResult",
+          "callee": "cs.getString",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getResult",
+          "callee": "getResult",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getResult",
+          "callee": "StrUtils.splitToLongSet",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/util/MyBatisUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 215,
+      "functions": [
+        {
+          "name": "buildPage",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "pageParam"
+          ]
+        },
+        {
+          "name": "buildPage",
+          "startLine": 47,
+          "endLine": 62,
+          "params": [
+            "pageParam",
+            "sortingFields"
+          ]
+        },
+        {
+          "name": "addOrder",
+          "startLine": 64,
+          "endLine": 100,
+          "params": [
+            "wrapper",
+            "sortingFields"
+          ]
+        },
+        {
+          "name": "isAscOrder",
+          "startLine": 102,
+          "endLine": 104,
+          "params": [
+            "order"
+          ]
+        },
+        {
+          "name": "getOrderDirection",
+          "startLine": 106,
+          "endLine": 108,
+          "params": [
+            "order"
+          ]
+        },
+        {
+          "name": "buildSafeOrderColumn",
+          "startLine": 110,
+          "endLine": 116,
+          "params": [
+            "field"
+          ]
+        },
+        {
+          "name": "addInterceptor",
+          "startLine": 126,
+          "endLine": 130,
+          "params": [
+            "interceptor",
+            "inner",
+            "index"
+          ]
+        },
+        {
+          "name": "getTableName",
+          "startLine": 140,
+          "endLine": 146,
+          "params": [
+            "table"
+          ]
+        },
+        {
+          "name": "buildColumn",
+          "startLine": 156,
+          "endLine": 161,
+          "params": [
+            "tableName",
+            "tableAlias",
+            "column"
+          ]
+        },
+        {
+          "name": "findInSet",
+          "startLine": 169,
+          "endLine": 171,
+          "params": [
+            "columnName"
+          ]
+        },
+        {
+          "name": "findInSetWithParamIndex",
+          "startLine": 180,
+          "endLine": 182,
+          "params": [
+            "columnName",
+            "paramIndex"
+          ]
+        },
+        {
+          "name": "findInSet",
+          "startLine": 193,
+          "endLine": 195,
+          "params": [
+            "columnName",
+            "values"
+          ]
+        },
+        {
+          "name": "findInSet",
+          "startLine": 197,
+          "endLine": 204,
+          "params": [
+            "dbType",
+            "columnName",
+            "values"
+          ]
+        },
+        {
+          "name": "findInSet",
+          "startLine": 206,
+          "endLine": 209,
+          "params": [
+            "columnName",
+            "paramIndex"
+          ]
+        },
+        {
+          "name": "findInSet",
+          "startLine": 211,
+          "endLine": 221,
+          "params": [
+            "dbType",
+            "columnName",
+            "paramIndex"
+          ]
+        },
+        {
+          "name": "isSafeColumnName",
+          "startLine": 223,
+          "endLine": 225,
+          "params": [
+            "columnName"
+          ]
+        },
+        {
+          "name": "toUnderlineCase",
+          "startLine": 236,
+          "endLine": 239,
+          "params": [
+            "func"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MyBatisUtils",
+          "startLine": 33,
+          "endLine": 241,
+          "methods": [
+            "buildPage",
+            "buildPage",
+            "addOrder",
+            "isAscOrder",
+            "getOrderDirection",
+            "buildSafeOrderColumn",
+            "addInterceptor",
+            "getTableName",
+            "buildColumn",
+            "findInSet",
+            "findInSetWithParamIndex",
+            "findInSet",
+            "findInSet",
+            "findInSet",
+            "findInSet",
+            "isSafeColumnName",
+            "toUnderlineCase"
+          ],
+          "properties": [
+            "MYSQL_ESCAPE_CHARACTER",
+            "SAFE_COLUMN_NAME_PATTERN",
+            "FIND_IN_SET_VALUE_PLACEHOLDER",
+            "FIND_IN_SET_COLUMN_PLACEHOLDER"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildPage",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "buildPage",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "addOrder",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "isAscOrder",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderDirection",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptor",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "getTableName",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "buildColumn",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "findInSet",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "findInSetWithParamIndex",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "findInSet",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "toUnderlineCase",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "MyBatisUtils",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildPage",
+          "callee": "buildPage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "buildPage",
+          "callee": "new Page<>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "buildPage",
+          "callee": "pageParam.getPageNo",
+          "lineNumber": 49
+        },
+        {
+          "caller": "buildPage",
+          "callee": "pageParam.getPageSize",
+          "lineNumber": 49
+        },
+        {
+          "caller": "buildPage",
+          "callee": "page.setOptimizeJoinOfCountSql",
+          "lineNumber": 50
+        },
+        {
+          "caller": "buildPage",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildPage",
+          "callee": "buildSafeOrderColumn",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildPage",
+          "callee": "sortingField.getField",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildPage",
+          "callee": "page.addOrder",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildPage",
+          "callee": "new OrderItem().setAsc(isAscOrder(sortingField.getOrder())).setColumn",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildPage",
+          "callee": "new OrderItem().setAsc",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildPage",
+          "callee": "new OrderItem",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildPage",
+          "callee": "isAscOrder",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildPage",
+          "callee": "sortingField.getOrder",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addOrder",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 66
+        },
+        {
+          "caller": "addOrder",
+          "callee": "buildSafeOrderColumn",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addOrder",
+          "callee": "sortingField.getField",
+          "lineNumber": 72
+        },
+        {
+          "caller": "addOrder",
+          "callee": "query.orderBy",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addOrder",
+          "callee": "isAscOrder",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addOrder",
+          "callee": "sortingField.getOrder",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addOrder",
+          "callee": "new StringBuilder",
+          "lineNumber": 81
+        },
+        {
+          "caller": "addOrder",
+          "callee": "buildSafeOrderColumn",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addOrder",
+          "callee": "sortingField.getField",
+          "lineNumber": 83
+        },
+        {
+          "caller": "addOrder",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 87
+        },
+        {
+          "caller": "addOrder",
+          "callee": "orderBy.append",
+          "lineNumber": 88
+        },
+        {
+          "caller": "addOrder",
+          "callee": "orderBy.append(columnName).append(\" \").append",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addOrder",
+          "callee": "orderBy.append(columnName).append",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addOrder",
+          "callee": "orderBy.append",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addOrder",
+          "callee": "getOrderDirection",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addOrder",
+          "callee": "sortingField.getOrder",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addOrder",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 92
+        },
+        {
+          "caller": "addOrder",
+          "callee": "lambdaQuery.last",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addOrder",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 97
+        },
+        {
+          "caller": "addOrder",
+          "callee": "wrapper.getClass().getName",
+          "lineNumber": 97
+        },
+        {
+          "caller": "addOrder",
+          "callee": "wrapper.getClass",
+          "lineNumber": 97
+        },
+        {
+          "caller": "isAscOrder",
+          "callee": "SortingField.ORDER_ASC.equals",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getOrderDirection",
+          "callee": "isAscOrder",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildSafeOrderColumn",
+          "callee": "StrUtil.toUnderlineCase",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildSafeOrderColumn",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildSafeOrderColumn",
+          "callee": "SAFE_COLUMN_NAME_PATTERN.matcher(columnName).matches",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildSafeOrderColumn",
+          "callee": "SAFE_COLUMN_NAME_PATTERN.matcher",
+          "lineNumber": 112
+        },
+        {
+          "caller": "addInterceptor",
+          "callee": "new ArrayList<>",
+          "lineNumber": 127
+        },
+        {
+          "caller": "addInterceptor",
+          "callee": "interceptor.getInterceptors",
+          "lineNumber": 127
+        },
+        {
+          "caller": "addInterceptor",
+          "callee": "inners.add",
+          "lineNumber": 128
+        },
+        {
+          "caller": "addInterceptor",
+          "callee": "interceptor.setInterceptors",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getTableName",
+          "callee": "table.getName",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getTableName",
+          "callee": "tableName.startsWith",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getTableName",
+          "callee": "tableName.endsWith",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getTableName",
+          "callee": "tableName.substring",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getTableName",
+          "callee": "tableName.length",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildColumn",
+          "callee": "tableAlias.getName",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildColumn",
+          "callee": "new Column",
+          "lineNumber": 160
+        },
+        {
+          "caller": "findInSet",
+          "callee": "findInSet",
+          "lineNumber": 170
+        },
+        {
+          "caller": "findInSetWithParamIndex",
+          "callee": "findInSet",
+          "lineNumber": 181
+        },
+        {
+          "caller": "findInSet",
+          "callee": "findInSet",
+          "lineNumber": 194
+        },
+        {
+          "caller": "findInSet",
+          "callee": "JdbcUtils.getDbType",
+          "lineNumber": 194
+        },
+        {
+          "caller": "findInSet",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 198
+        },
+        {
+          "caller": "findInSet",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 199
+        },
+        {
+          "caller": "findInSet",
+          "callee": "IntStream.range(0, values.size())\n                .mapToObj(index -> findInSet(dbType, columnName, index)).collect",
+          "lineNumber": 201
+        },
+        {
+          "caller": "findInSet",
+          "callee": "IntStream.range(0, values.size()).mapToObj",
+          "lineNumber": 201
+        },
+        {
+          "caller": "findInSet",
+          "callee": "IntStream.range",
+          "lineNumber": 201
+        },
+        {
+          "caller": "findInSet",
+          "callee": "values.size",
+          "lineNumber": 201
+        },
+        {
+          "caller": "findInSet",
+          "callee": "findInSet",
+          "lineNumber": 202
+        },
+        {
+          "caller": "findInSet",
+          "callee": "Collectors.joining",
+          "lineNumber": 203
+        },
+        {
+          "caller": "findInSet",
+          "callee": "JdbcUtils.getDbType",
+          "lineNumber": 207
+        },
+        {
+          "caller": "findInSet",
+          "callee": "findInSet",
+          "lineNumber": 208
+        },
+        {
+          "caller": "findInSet",
+          "callee": "isSafeColumnName",
+          "lineNumber": 212
+        },
+        {
+          "caller": "findInSet",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 213
+        },
+        {
+          "caller": "findInSet",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 216
+        },
+        {
+          "caller": "findInSet",
+          "callee": "DbTypeEnum.getFindInSetTemplate(dbType)\n                .replace(FIND_IN_SET_COLUMN_PLACEHOLDER, columnName).replace",
+          "lineNumber": 218
+        },
+        {
+          "caller": "findInSet",
+          "callee": "DbTypeEnum.getFindInSetTemplate(dbType).replace",
+          "lineNumber": 218
+        },
+        {
+          "caller": "findInSet",
+          "callee": "DbTypeEnum.getFindInSetTemplate",
+          "lineNumber": 218
+        },
+        {
+          "caller": "isSafeColumnName",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 224
+        },
+        {
+          "caller": "isSafeColumnName",
+          "callee": "SAFE_COLUMN_NAME_PATTERN.matcher(columnName).matches",
+          "lineNumber": 224
+        },
+        {
+          "caller": "isSafeColumnName",
+          "callee": "SAFE_COLUMN_NAME_PATTERN.matcher",
+          "lineNumber": 224
+        },
+        {
+          "caller": "toUnderlineCase",
+          "callee": "LambdaUtil.getFieldName",
+          "lineNumber": 237
+        },
+        {
+          "caller": "toUnderlineCase",
+          "callee": "StrUtil.toUnderlineCase",
+          "lineNumber": 238
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 13,
+        "functionCount": 17,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/config/YudaoIdempotentConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "idempotentAspect",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "keyResolvers",
+            "idempotentRedisDAO"
+          ]
+        },
+        {
+          "name": "idempotentRedisDAO",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "stringRedisTemplate"
+          ]
+        },
+        {
+          "name": "defaultIdempotentKeyResolver",
+          "startLine": 31,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "userIdempotentKeyResolver",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "expressionIdempotentKeyResolver",
+          "startLine": 41,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoIdempotentConfiguration",
+          "startLine": 16,
+          "endLine": 46,
+          "methods": [
+            "idempotentAspect",
+            "idempotentRedisDAO",
+            "defaultIdempotentKeyResolver",
+            "userIdempotentKeyResolver",
+            "expressionIdempotentKeyResolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "idempotentAspect",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "idempotentRedisDAO",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "defaultIdempotentKeyResolver",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "userIdempotentKeyResolver",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "expressionIdempotentKeyResolver",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoIdempotentConfiguration",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "idempotentAspect",
+          "callee": "new IdempotentAspect",
+          "lineNumber": 21
+        },
+        {
+          "caller": "idempotentRedisDAO",
+          "callee": "new IdempotentRedisDAO",
+          "lineNumber": 26
+        },
+        {
+          "caller": "defaultIdempotentKeyResolver",
+          "callee": "new DefaultIdempotentKeyResolver",
+          "lineNumber": 33
+        },
+        {
+          "caller": "userIdempotentKeyResolver",
+          "callee": "new UserIdempotentKeyResolver",
+          "lineNumber": 38
+        },
+        {
+          "caller": "expressionIdempotentKeyResolver",
+          "callee": "new ExpressionIdempotentKeyResolver",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/core/annotation/Idempotent.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/core/aop/IdempotentAspect.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "IdempotentAspect",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "keyResolvers",
+            "idempotentRedisDAO"
+          ]
+        },
+        {
+          "name": "aroundPointCut",
+          "startLine": 39,
+          "endLine": 66,
+          "params": [
+            "joinPoint",
+            "idempotent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IdempotentAspect",
+          "startLine": 23,
+          "endLine": 68,
+          "methods": [
+            "IdempotentAspect",
+            "aroundPointCut"
+          ],
+          "properties": [
+            "keyResolvers",
+            "idempotentRedisDAO"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IdempotentAspect",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "aroundPointCut",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "IdempotentAspect",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "IdempotentAspect",
+          "callee": "CollectionUtils.convertMap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "keyResolvers.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "idempotent.keyResolver",
+          "lineNumber": 42
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "Assert.notNull",
+          "lineNumber": 43
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "keyResolver.resolver",
+          "lineNumber": 45
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "idempotentRedisDAO.setIfAbsent",
+          "lineNumber": 48
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "idempotent.timeout",
+          "lineNumber": 48
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "idempotent.timeUnit",
+          "lineNumber": 48
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "log.info",
+          "lineNumber": 51
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 51
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 51
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "joinPoint.getArgs",
+          "lineNumber": 51
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "new ServiceException",
+          "lineNumber": 52
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "GlobalErrorCodeConstants.REPEATED_REQUESTS.getCode",
+          "lineNumber": 52
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "idempotent.message",
+          "lineNumber": 52
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "joinPoint.proceed",
+          "lineNumber": 57
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "idempotent.deleteKeyWhenException",
+          "lineNumber": 61
+        },
+        {
+          "caller": "aroundPointCut",
+          "callee": "idempotentRedisDAO.delete",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/core/keyresolver/IdempotentKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "IdempotentKeyResolver",
+          "startLine": 11,
+          "endLine": 22,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IdempotentKeyResolver",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/core/keyresolver/impl/DefaultIdempotentKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 18,
+          "endLine": 23,
+          "params": [
+            "joinPoint",
+            "idempotent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultIdempotentKeyResolver",
+          "startLine": 16,
+          "endLine": 25,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultIdempotentKeyResolver",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 20
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 20
+        },
+        {
+          "caller": "resolver",
+          "callee": "StrUtils.joinMethodArgs",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "SecureUtil.md5",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/core/keyresolver/impl/ExpressionIdempotentKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 28,
+          "endLine": 45,
+          "params": [
+            "joinPoint",
+            "idempotent"
+          ]
+        },
+        {
+          "name": "getMethod",
+          "startLine": 47,
+          "endLine": 62,
+          "params": [
+            "point"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ExpressionIdempotentKeyResolver",
+          "startLine": 22,
+          "endLine": 64,
+          "methods": [
+            "resolver",
+            "getMethod"
+          ],
+          "properties": [
+            "parameterNameDiscoverer",
+            "expressionParser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ExpressionIdempotentKeyResolver",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "getMethod",
+          "lineNumber": 31
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getArgs",
+          "lineNumber": 32
+        },
+        {
+          "caller": "resolver",
+          "callee": "this.parameterNameDiscoverer.getParameterNames",
+          "lineNumber": 33
+        },
+        {
+          "caller": "resolver",
+          "callee": "new StandardEvaluationContext",
+          "lineNumber": 35
+        },
+        {
+          "caller": "resolver",
+          "callee": "ArrayUtil.isNotEmpty",
+          "lineNumber": 36
+        },
+        {
+          "caller": "resolver",
+          "callee": "evaluationContext.setVariable",
+          "lineNumber": 38
+        },
+        {
+          "caller": "resolver",
+          "callee": "expressionParser.parseExpression",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolver",
+          "callee": "idempotent.keyArg",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolver",
+          "callee": "expression.getValue",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getSignature",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getMethod",
+          "callee": "signature.getMethod",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getMethod",
+          "callee": "method.getDeclaringClass().isInterface",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getMethod",
+          "callee": "method.getDeclaringClass",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getTarget().getClass().getDeclaredMethod",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getTarget().getClass",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getTarget",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getSignature().getName",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getSignature",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMethod",
+          "callee": "method.getParameterTypes",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMethod",
+          "callee": "new RuntimeException",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/core/keyresolver/impl/UserIdempotentKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 19,
+          "endLine": 26,
+          "params": [
+            "joinPoint",
+            "idempotent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserIdempotentKeyResolver",
+          "startLine": 17,
+          "endLine": 28,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "UserIdempotentKeyResolver",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "StrUtils.joinMethodArgs",
+          "lineNumber": 22
+        },
+        {
+          "caller": "resolver",
+          "callee": "WebFrameworkUtils.getLoginUserId",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolver",
+          "callee": "WebFrameworkUtils.getLoginUserType",
+          "lineNumber": 24
+        },
+        {
+          "caller": "resolver",
+          "callee": "SecureUtil.md5",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/idempotent/core/redis/IdempotentRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "setIfAbsent",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "key",
+            "timeout",
+            "timeUnit"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "formatKey",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "key"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IdempotentRedisDAO",
+          "startLine": 13,
+          "endLine": 41,
+          "methods": [
+            "setIfAbsent",
+            "delete",
+            "formatKey"
+          ],
+          "properties": [
+            "IDEMPOTENT",
+            "redisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setIfAbsent",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "delete",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "IdempotentRedisDAO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setIfAbsent",
+          "callee": "formatKey",
+          "lineNumber": 28
+        },
+        {
+          "caller": "setIfAbsent",
+          "callee": "redisTemplate.opsForValue().setIfAbsent",
+          "lineNumber": 29
+        },
+        {
+          "caller": "setIfAbsent",
+          "callee": "redisTemplate.opsForValue",
+          "lineNumber": 29
+        },
+        {
+          "caller": "delete",
+          "callee": "formatKey",
+          "lineNumber": 33
+        },
+        {
+          "caller": "delete",
+          "callee": "redisTemplate.delete",
+          "lineNumber": 34
+        },
+        {
+          "caller": "formatKey",
+          "callee": "String.format",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/config/YudaoRateLimiterConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "rateLimiterAspect",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "keyResolvers",
+            "rateLimiterRedisDAO"
+          ]
+        },
+        {
+          "name": "rateLimiterRedisDAO",
+          "startLine": 22,
+          "endLine": 26,
+          "params": [
+            "redissonClient"
+          ]
+        },
+        {
+          "name": "defaultRateLimiterKeyResolver",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "userRateLimiterKeyResolver",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "clientIpRateLimiterKeyResolver",
+          "startLine": 40,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "serverNodeRateLimiterKeyResolver",
+          "startLine": 45,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "expressionRateLimiterKeyResolver",
+          "startLine": 50,
+          "endLine": 53,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoRateLimiterConfiguration",
+          "startLine": 14,
+          "endLine": 55,
+          "methods": [
+            "rateLimiterAspect",
+            "rateLimiterRedisDAO",
+            "defaultRateLimiterKeyResolver",
+            "userRateLimiterKeyResolver",
+            "clientIpRateLimiterKeyResolver",
+            "serverNodeRateLimiterKeyResolver",
+            "expressionRateLimiterKeyResolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rateLimiterAspect",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "rateLimiterRedisDAO",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "defaultRateLimiterKeyResolver",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "userRateLimiterKeyResolver",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "clientIpRateLimiterKeyResolver",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "serverNodeRateLimiterKeyResolver",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "expressionRateLimiterKeyResolver",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoRateLimiterConfiguration",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rateLimiterAspect",
+          "callee": "new RateLimiterAspect",
+          "lineNumber": 19
+        },
+        {
+          "caller": "rateLimiterRedisDAO",
+          "callee": "new RateLimiterRedisDAO",
+          "lineNumber": 25
+        },
+        {
+          "caller": "defaultRateLimiterKeyResolver",
+          "callee": "new DefaultRateLimiterKeyResolver",
+          "lineNumber": 32
+        },
+        {
+          "caller": "userRateLimiterKeyResolver",
+          "callee": "new UserRateLimiterKeyResolver",
+          "lineNumber": 37
+        },
+        {
+          "caller": "clientIpRateLimiterKeyResolver",
+          "callee": "new ClientIpRateLimiterKeyResolver",
+          "lineNumber": 42
+        },
+        {
+          "caller": "serverNodeRateLimiterKeyResolver",
+          "callee": "new ServerNodeRateLimiterKeyResolver",
+          "lineNumber": 47
+        },
+        {
+          "caller": "expressionRateLimiterKeyResolver",
+          "callee": "new ExpressionRateLimiterKeyResolver",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/annotation/RateLimiter.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 54,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/aop/RateLimiterAspect.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "RateLimiterAspect",
+          "startLine": 35,
+          "endLine": 38,
+          "params": [
+            "keyResolvers",
+            "rateLimiterRedisDAO"
+          ]
+        },
+        {
+          "name": "beforePointCut",
+          "startLine": 40,
+          "endLine": 57,
+          "params": [
+            "joinPoint",
+            "rateLimiter"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RateLimiterAspect",
+          "startLine": 24,
+          "endLine": 59,
+          "methods": [
+            "RateLimiterAspect",
+            "beforePointCut"
+          ],
+          "properties": [
+            "keyResolvers",
+            "rateLimiterRedisDAO"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RateLimiterAspect",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "beforePointCut",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "RateLimiterAspect",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RateLimiterAspect",
+          "callee": "CollectionUtils.convertMap",
+          "lineNumber": 36
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "keyResolvers.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "rateLimiter.keyResolver",
+          "lineNumber": 43
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "Assert.notNull",
+          "lineNumber": 44
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "keyResolver.resolver",
+          "lineNumber": 46
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "rateLimiterRedisDAO.tryAcquire",
+          "lineNumber": 49
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "rateLimiter.count",
+          "lineNumber": 50
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "rateLimiter.time",
+          "lineNumber": 50
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "rateLimiter.timeUnit",
+          "lineNumber": 50
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "log.info",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "joinPoint.getArgs",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "StrUtil.blankToDefault",
+          "lineNumber": 53
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "rateLimiter.message",
+          "lineNumber": 53
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "GlobalErrorCodeConstants.TOO_MANY_REQUESTS.getMsg",
+          "lineNumber": 54
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "new ServiceException",
+          "lineNumber": 55
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "GlobalErrorCodeConstants.TOO_MANY_REQUESTS.getCode",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/keyresolver/RateLimiterKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "RateLimiterKeyResolver",
+          "startLine": 11,
+          "endLine": 22,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RateLimiterKeyResolver",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/keyresolver/impl/ClientIpRateLimiterKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 19,
+          "endLine": 25,
+          "params": [
+            "joinPoint",
+            "rateLimiter"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ClientIpRateLimiterKeyResolver",
+          "startLine": 17,
+          "endLine": 27,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "ClientIpRateLimiterKeyResolver",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "StrUtils.joinMethodArgs",
+          "lineNumber": 22
+        },
+        {
+          "caller": "resolver",
+          "callee": "ServletUtils.getClientIP",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolver",
+          "callee": "SecureUtil.md5",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/keyresolver/impl/DefaultRateLimiterKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 18,
+          "endLine": 23,
+          "params": [
+            "joinPoint",
+            "rateLimiter"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultRateLimiterKeyResolver",
+          "startLine": 16,
+          "endLine": 25,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultRateLimiterKeyResolver",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 20
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 20
+        },
+        {
+          "caller": "resolver",
+          "callee": "StrUtils.joinMethodArgs",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "SecureUtil.md5",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/keyresolver/impl/ExpressionRateLimiterKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 28,
+          "endLine": 45,
+          "params": [
+            "joinPoint",
+            "rateLimiter"
+          ]
+        },
+        {
+          "name": "getMethod",
+          "startLine": 47,
+          "endLine": 62,
+          "params": [
+            "point"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ExpressionRateLimiterKeyResolver",
+          "startLine": 22,
+          "endLine": 64,
+          "methods": [
+            "resolver",
+            "getMethod"
+          ],
+          "properties": [
+            "parameterNameDiscoverer",
+            "expressionParser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "ExpressionRateLimiterKeyResolver",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "getMethod",
+          "lineNumber": 31
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getArgs",
+          "lineNumber": 32
+        },
+        {
+          "caller": "resolver",
+          "callee": "this.parameterNameDiscoverer.getParameterNames",
+          "lineNumber": 33
+        },
+        {
+          "caller": "resolver",
+          "callee": "new StandardEvaluationContext",
+          "lineNumber": 35
+        },
+        {
+          "caller": "resolver",
+          "callee": "ArrayUtil.isNotEmpty",
+          "lineNumber": 36
+        },
+        {
+          "caller": "resolver",
+          "callee": "evaluationContext.setVariable",
+          "lineNumber": 38
+        },
+        {
+          "caller": "resolver",
+          "callee": "expressionParser.parseExpression",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolver",
+          "callee": "rateLimiter.keyArg",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolver",
+          "callee": "expression.getValue",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getSignature",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getMethod",
+          "callee": "signature.getMethod",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getMethod",
+          "callee": "method.getDeclaringClass().isInterface",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getMethod",
+          "callee": "method.getDeclaringClass",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getTarget().getClass().getDeclaredMethod",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getTarget().getClass",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getTarget",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getSignature().getName",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMethod",
+          "callee": "point.getSignature",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMethod",
+          "callee": "method.getParameterTypes",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMethod",
+          "callee": "new RuntimeException",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/keyresolver/impl/ServerNodeRateLimiterKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 19,
+          "endLine": 25,
+          "params": [
+            "joinPoint",
+            "rateLimiter"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ServerNodeRateLimiterKeyResolver",
+          "startLine": 17,
+          "endLine": 27,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "ServerNodeRateLimiterKeyResolver",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "StrUtils.joinMethodArgs",
+          "lineNumber": 22
+        },
+        {
+          "caller": "resolver",
+          "callee": "String.format",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolver",
+          "callee": "SystemUtil.getHostInfo().getAddress",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolver",
+          "callee": "SystemUtil.getHostInfo",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolver",
+          "callee": "SystemUtil.getCurrentPID",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolver",
+          "callee": "SecureUtil.md5",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/keyresolver/impl/UserRateLimiterKeyResolver.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "resolver",
+          "startLine": 19,
+          "endLine": 26,
+          "params": [
+            "joinPoint",
+            "rateLimiter"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UserRateLimiterKeyResolver",
+          "startLine": 17,
+          "endLine": 28,
+          "methods": [
+            "resolver"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolver",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "UserRateLimiterKeyResolver",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolver",
+          "callee": "StrUtils.joinMethodArgs",
+          "lineNumber": 22
+        },
+        {
+          "caller": "resolver",
+          "callee": "WebFrameworkUtils.getLoginUserId",
+          "lineNumber": 23
+        },
+        {
+          "caller": "resolver",
+          "callee": "WebFrameworkUtils.getLoginUserType",
+          "lineNumber": 24
+        },
+        {
+          "caller": "resolver",
+          "callee": "SecureUtil.md5",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/ratelimiter/core/redis/RateLimiterRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "tryAcquire",
+          "startLine": 29,
+          "endLine": 34,
+          "params": [
+            "key",
+            "count",
+            "time",
+            "timeUnit"
+          ]
+        },
+        {
+          "name": "formatKey",
+          "startLine": 36,
+          "endLine": 38,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "getRRateLimiter",
+          "startLine": 40,
+          "endLine": 64,
+          "params": [
+            "key",
+            "count",
+            "time",
+            "timeUnit"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RateLimiterRedisDAO",
+          "startLine": 15,
+          "endLine": 66,
+          "methods": [
+            "tryAcquire",
+            "formatKey",
+            "getRRateLimiter"
+          ],
+          "properties": [
+            "RATE_LIMITER",
+            "redissonClient"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "tryAcquire",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "RateLimiterRedisDAO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tryAcquire",
+          "callee": "getRRateLimiter",
+          "lineNumber": 31
+        },
+        {
+          "caller": "tryAcquire",
+          "callee": "rateLimiter.tryAcquire",
+          "lineNumber": 33
+        },
+        {
+          "caller": "formatKey",
+          "callee": "String.format",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "formatKey",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "redissonClient.getRateLimiter",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "timeUnit.toSeconds",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "Duration.ofSeconds",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "rateLimiter.getConfig",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "rateLimiter.trySetRate",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "rateLimiter.expire",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "config.getRateType",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "Objects.equals",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "config.getRate",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "Objects.equals",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "config.getRateInterval",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "TimeUnit.SECONDS.toMillis",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "rateLimiter.setRate",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getRRateLimiter",
+          "callee": "rateLimiter.expire",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/signature/config/YudaoApiSignatureAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "signatureAspect",
+          "startLine": 18,
+          "endLine": 21,
+          "params": [
+            "signatureRedisDAO"
+          ]
+        },
+        {
+          "name": "signatureRedisDAO",
+          "startLine": 23,
+          "endLine": 26,
+          "params": [
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoApiSignatureAutoConfiguration",
+          "startLine": 15,
+          "endLine": 28,
+          "methods": [
+            "signatureAspect",
+            "signatureRedisDAO"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "signatureAspect",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "signatureRedisDAO",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoApiSignatureAutoConfiguration",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "signatureAspect",
+          "callee": "new ApiSignatureAspect",
+          "lineNumber": 20
+        },
+        {
+          "caller": "signatureRedisDAO",
+          "callee": "new ApiSignatureRedisDAO",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/signature/core/annotation/ApiSignature.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/signature/core/aop/ApiSignatureAspect.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 174,
+      "nonEmptyLines": 157,
+      "functions": [
+        {
+          "name": "beforePointCut",
+          "startLine": 40,
+          "endLine": 52,
+          "params": [
+            "joinPoint",
+            "signature"
+          ]
+        },
+        {
+          "name": "verifySignature",
+          "startLine": 54,
+          "endLine": 80,
+          "params": [
+            "signature",
+            "request"
+          ]
+        },
+        {
+          "name": "verifyHeaders",
+          "startLine": 94,
+          "endLine": 123,
+          "params": [
+            "signature",
+            "request"
+          ]
+        },
+        {
+          "name": "buildSignatureString",
+          "startLine": 135,
+          "endLine": 143,
+          "params": [
+            "signature",
+            "request",
+            "appSecret"
+          ]
+        },
+        {
+          "name": "getRequestHeaderMap",
+          "startLine": 152,
+          "endLine": 158,
+          "params": [
+            "signature",
+            "request"
+          ]
+        },
+        {
+          "name": "getRequestParameterMap",
+          "startLine": 166,
+          "endLine": 172,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApiSignatureAspect",
+          "startLine": 33,
+          "endLine": 174,
+          "methods": [
+            "beforePointCut",
+            "verifySignature",
+            "verifyHeaders",
+            "buildSignatureString",
+            "getRequestHeaderMap",
+            "getRequestParameterMap"
+          ],
+          "properties": [
+            "signatureRedisDAO"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "beforePointCut",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "verifySignature",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "ApiSignatureAspect",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "beforePointCut",
+          "callee": "verifySignature",
+          "lineNumber": 43
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 43
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 43
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "log.error",
+          "lineNumber": 48
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "joinPoint.getSignature().toString",
+          "lineNumber": 48
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "joinPoint.getSignature",
+          "lineNumber": 48
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "joinPoint.getArgs",
+          "lineNumber": 49
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "new ServiceException",
+          "lineNumber": 50
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "BAD_REQUEST.getCode",
+          "lineNumber": 50
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "StrUtil.blankToDefault",
+          "lineNumber": 51
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "signature.message",
+          "lineNumber": 51
+        },
+        {
+          "caller": "beforePointCut",
+          "callee": "BAD_REQUEST.getMsg",
+          "lineNumber": 51
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "verifyHeaders",
+          "lineNumber": 56
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "request.getHeader",
+          "lineNumber": 60
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signature.appId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signatureRedisDAO.getAppSecret",
+          "lineNumber": 61
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "Assert.notNull",
+          "lineNumber": 62
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "request.getHeader",
+          "lineNumber": 65
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signature.sign",
+          "lineNumber": 65
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "buildSignatureString",
+          "lineNumber": 66
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "DigestUtil.sha256Hex",
+          "lineNumber": 67
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 68
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "request.getHeader",
+          "lineNumber": 73
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signature.nonce",
+          "lineNumber": 73
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "BooleanUtil.isFalse",
+          "lineNumber": 74
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signatureRedisDAO.setNonce",
+          "lineNumber": 74
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signature.timeout",
+          "lineNumber": 74
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signature.timeUnit",
+          "lineNumber": 74
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "request.getHeader",
+          "lineNumber": 75
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "signature.timestamp",
+          "lineNumber": 75
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "log.info",
+          "lineNumber": 76
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "new ServiceException",
+          "lineNumber": 77
+        },
+        {
+          "caller": "verifySignature",
+          "callee": "GlobalErrorCodeConstants.REPEATED_REQUESTS.getCode",
+          "lineNumber": 77
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "request.getHeader",
+          "lineNumber": 96
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signature.appId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 97
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "request.getHeader",
+          "lineNumber": 100
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signature.timestamp",
+          "lineNumber": 100
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 101
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "request.getHeader",
+          "lineNumber": 104
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signature.nonce",
+          "lineNumber": 104
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "StrUtil.length",
+          "lineNumber": 105
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "request.getHeader",
+          "lineNumber": 108
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signature.sign",
+          "lineNumber": 108
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 109
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signature.timeUnit().toMillis",
+          "lineNumber": 114
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signature.timeUnit",
+          "lineNumber": 114
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signature.timeout",
+          "lineNumber": 114
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "Long.parseLong",
+          "lineNumber": 115
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "Math.abs",
+          "lineNumber": 116
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 116
+        },
+        {
+          "caller": "verifyHeaders",
+          "callee": "signatureRedisDAO.getNonce",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildSignatureString",
+          "callee": "getRequestParameterMap",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildSignatureString",
+          "callee": "getRequestHeaderMap",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildSignatureString",
+          "callee": "StrUtil.nullToDefault",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildSignatureString",
+          "callee": "ServletUtils.getBody",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildSignatureString",
+          "callee": "MapUtil.join",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildSignatureString",
+          "callee": "MapUtil.join",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "new TreeMap<>",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "sortedMap.put",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "signature.appId",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "request.getHeader",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "signature.appId",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "sortedMap.put",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "signature.timestamp",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "request.getHeader",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "signature.timestamp",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "sortedMap.put",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "signature.nonce",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "request.getHeader",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getRequestHeaderMap",
+          "callee": "signature.nonce",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getRequestParameterMap",
+          "callee": "new TreeMap<>",
+          "lineNumber": 167
+        },
+        {
+          "caller": "getRequestParameterMap",
+          "callee": "request.getParameterMap().entrySet",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getRequestParameterMap",
+          "callee": "request.getParameterMap",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getRequestParameterMap",
+          "callee": "sortedMap.put",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getRequestParameterMap",
+          "callee": "entry.getKey",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getRequestParameterMap",
+          "callee": "entry.getValue",
+          "lineNumber": 169
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/main/java/cn/iocoder/yudao/framework/signature/core/redis/ApiSignatureRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "getNonce",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "appId",
+            "nonce"
+          ]
+        },
+        {
+          "name": "setNonce",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "appId",
+            "nonce",
+            "time",
+            "timeUnit"
+          ]
+        },
+        {
+          "name": "formatNonceKey",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "appId",
+            "nonce"
+          ]
+        },
+        {
+          "name": "getAppSecret",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "appId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApiSignatureRedisDAO",
+          "startLine": 13,
+          "endLine": 57,
+          "methods": [
+            "getNonce",
+            "setNonce",
+            "formatNonceKey",
+            "getAppSecret"
+          ],
+          "properties": [
+            "stringRedisTemplate",
+            "SIGNATURE_NONCE",
+            "SIGNATURE_APPID"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getNonce",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "setNonce",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "getAppSecret",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ApiSignatureRedisDAO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getNonce",
+          "callee": "stringRedisTemplate.opsForValue().get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getNonce",
+          "callee": "stringRedisTemplate.opsForValue",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getNonce",
+          "callee": "formatNonceKey",
+          "lineNumber": 40
+        },
+        {
+          "caller": "setNonce",
+          "callee": "stringRedisTemplate.opsForValue().setIfAbsent",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setNonce",
+          "callee": "stringRedisTemplate.opsForValue",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setNonce",
+          "callee": "formatNonceKey",
+          "lineNumber": 44
+        },
+        {
+          "caller": "formatNonceKey",
+          "callee": "String.format",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getAppSecret",
+          "callee": "stringRedisTemplate.opsForHash().get",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getAppSecret",
+          "callee": "stringRedisTemplate.opsForHash",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-protection/src/test/java/cn/iocoder/yudao/framework/signature/core/ApiSignatureTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "testSignatureGet",
+          "startLine": 37,
+          "endLine": 72,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApiSignatureTest",
+          "startLine": 28,
+          "endLine": 74,
+          "methods": [
+            "testSignatureGet"
+          ],
+          "properties": [
+            "apiSignatureAspect",
+            "signatureRedisDAO"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testSignatureGet",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "ApiSignatureTest",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testSignatureGet",
+          "callee": "System.currentTimeMillis",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "IdUtil.randomUUID",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "DigestUtil.sha256Hex",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "mock",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(apiSignature.appId()).thenReturn",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "apiSignature.appId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(apiSignature.timestamp()).thenReturn",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "apiSignature.timestamp",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(apiSignature.nonce()).thenReturn",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "apiSignature.nonce",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(apiSignature.sign()).thenReturn",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "apiSignature.sign",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(apiSignature.timeout()).thenReturn",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "apiSignature.timeout",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(apiSignature.timeUnit()).thenReturn",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "apiSignature.timeUnit",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "mock",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(request.getHeader(eq(\"appId\"))).thenReturn",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "request.getHeader",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(request.getHeader(eq(\"timestamp\"))).thenReturn",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "request.getHeader",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "String.valueOf",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(request.getHeader(eq(\"nonce\"))).thenReturn",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "request.getHeader",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(request.getHeader(eq(\"sign\"))).thenReturn",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "request.getHeader",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(request.getParameterMap()).thenReturn",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "request.getParameterMap",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "MapUtil.<String, String[]>builder()\n                .put(\"v1\", new String[]{\"k1\"}).put(\"k1\", new String[]{\"v1\"}).build",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "MapUtil.<String, String[]>builder()\n                .put(\"v1\", new String[]{\"k1\"}).put",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "MapUtil.<String, String[]>builder().put",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "MapUtil.builder",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(request.getContentType()).thenReturn",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "request.getContentType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(request.getReader()).thenReturn",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "request.getReader",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "new BufferedReader",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "new StringReader",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(signatureRedisDAO.getAppSecret(eq(appId))).thenReturn",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "signatureRedisDAO.getAppSecret",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when(signatureRedisDAO.setNonce(eq(appId), eq(nonce), eq(120), eq(TimeUnit.SECONDS))).thenReturn",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "when",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "signatureRedisDAO.setNonce",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "apiSignatureAspect.verifySignature",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testSignatureGet",
+          "callee": "assertTrue",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-redis/src/main/java/cn/iocoder/yudao/framework/redis/config/YudaoCacheAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "redisCacheConfiguration",
+          "startLine": 37,
+          "endLine": 68,
+          "params": [
+            "cacheProperties"
+          ]
+        },
+        {
+          "name": "redisCacheManager",
+          "startLine": 70,
+          "endLine": 84,
+          "params": [
+            "redisTemplate",
+            "redisCacheConfiguration",
+            "yudaoCacheProperties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoCacheAutoConfiguration",
+          "startLine": 27,
+          "endLine": 86,
+          "methods": [
+            "redisCacheConfiguration",
+            "redisCacheManager"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "redisCacheConfiguration",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "redisCacheManager",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoCacheAutoConfiguration",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "RedisCacheConfiguration.defaultCacheConfig",
+          "lineNumber": 40
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "config.computePrefixWith",
+          "lineNumber": 44
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "cacheProperties.getRedis().getKeyPrefix",
+          "lineNumber": 45
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "cacheProperties.getRedis",
+          "lineNumber": 45
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "StringUtils.hasText",
+          "lineNumber": 46
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "keyPrefix.lastIndexOf",
+          "lineNumber": 47
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "config.serializeValuesWith",
+          "lineNumber": 53
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "RedisSerializationContext.SerializationPair.fromSerializer",
+          "lineNumber": 54
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "buildRedisSerializer",
+          "lineNumber": 54
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "cacheProperties.getRedis",
+          "lineNumber": 57
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "redisProperties.getTimeToLive",
+          "lineNumber": 58
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "config.entryTtl",
+          "lineNumber": 59
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "redisProperties.getTimeToLive",
+          "lineNumber": 59
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "redisProperties.isCacheNullValues",
+          "lineNumber": 61
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "config.disableCachingNullValues",
+          "lineNumber": 62
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "redisProperties.isUseKeyPrefix",
+          "lineNumber": 64
+        },
+        {
+          "caller": "redisCacheConfiguration",
+          "callee": "config.disableKeyPrefix",
+          "lineNumber": 65
+        },
+        {
+          "caller": "redisCacheManager",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 75
+        },
+        {
+          "caller": "redisCacheManager",
+          "callee": "redisTemplate.getConnectionFactory",
+          "lineNumber": 75
+        },
+        {
+          "caller": "redisCacheManager",
+          "callee": "RedisCacheWriter.nonLockingRedisCacheWriter",
+          "lineNumber": 76
+        },
+        {
+          "caller": "redisCacheManager",
+          "callee": "BatchStrategies.scan",
+          "lineNumber": 77
+        },
+        {
+          "caller": "redisCacheManager",
+          "callee": "yudaoCacheProperties.getRedisScanBatchSize",
+          "lineNumber": 77
+        },
+        {
+          "caller": "redisCacheManager",
+          "callee": "new TimeoutRedisCacheManager",
+          "lineNumber": 79
+        },
+        {
+          "caller": "redisCacheManager",
+          "callee": "cacheManager.setTransactionAware",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-redis/src/main/java/cn/iocoder/yudao/framework/redis/config/YudaoCacheProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "YudaoCacheProperties",
+          "startLine": 12,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "REDIS_SCAN_BATCH_SIZE_DEFAULT",
+            "redisScanBatchSize"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "YudaoCacheProperties",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-redis/src/main/java/cn/iocoder/yudao/framework/redis/core/TimeoutRedisCacheManager.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "TimeoutRedisCacheManager",
+          "startLine": 25,
+          "endLine": 27,
+          "params": [
+            "cacheWriter",
+            "defaultCacheConfiguration"
+          ]
+        },
+        {
+          "name": "createRedisCache",
+          "startLine": 29,
+          "endLine": 52,
+          "params": [
+            "name",
+            "cacheConfig"
+          ]
+        },
+        {
+          "name": "parseDuration",
+          "startLine": 60,
+          "endLine": 74,
+          "params": [
+            "ttlStr"
+          ]
+        },
+        {
+          "name": "removeDurationSuffix",
+          "startLine": 82,
+          "endLine": 84,
+          "params": [
+            "ttlStr"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TimeoutRedisCacheManager",
+          "startLine": 21,
+          "endLine": 86,
+          "methods": [
+            "TimeoutRedisCacheManager",
+            "createRedisCache",
+            "parseDuration",
+            "removeDurationSuffix"
+          ],
+          "properties": [
+            "SPLIT"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TimeoutRedisCacheManager",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "TimeoutRedisCacheManager",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRedisCache",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "super.createRedisCache",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "StrUtil.splitToArray",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "super.createRedisCache",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "StrUtil.subBefore",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "StrUtil.subAfter",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "parseDuration",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "cacheConfig.entryTtl",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createRedisCache",
+          "callee": "super.createRedisCache",
+          "lineNumber": 51
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "StrUtil.subSuf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "Duration.ofDays",
+          "lineNumber": 64
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "removeDurationSuffix",
+          "lineNumber": 64
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "Duration.ofHours",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "removeDurationSuffix",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "Duration.ofMinutes",
+          "lineNumber": 68
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "removeDurationSuffix",
+          "lineNumber": 68
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "Duration.ofSeconds",
+          "lineNumber": 70
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "removeDurationSuffix",
+          "lineNumber": 70
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "Duration.ofSeconds",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseDuration",
+          "callee": "Long.parseLong",
+          "lineNumber": 72
+        },
+        {
+          "caller": "removeDurationSuffix",
+          "callee": "NumberUtil.parseLong",
+          "lineNumber": 83
+        },
+        {
+          "caller": "removeDurationSuffix",
+          "callee": "StrUtil.sub",
+          "lineNumber": 83
+        },
+        {
+          "caller": "removeDurationSuffix",
+          "callee": "ttlStr.length",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/operatelog/config/YudaoOperateLogConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "iLogRecordServiceImpl",
+          "startLine": 21,
+          "endLine": 25,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoOperateLogConfiguration",
+          "startLine": 16,
+          "endLine": 27,
+          "methods": [
+            "iLogRecordServiceImpl"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "iLogRecordServiceImpl",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoOperateLogConfiguration",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "iLogRecordServiceImpl",
+          "callee": "new LogRecordServiceImpl",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/operatelog/config/YudaoOperateLogRpcAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "YudaoOperateLogRpcAutoConfiguration",
+          "startLine": 12,
+          "endLine": 15,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "YudaoOperateLogRpcAutoConfiguration",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/operatelog/core/service/LogRecordServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "record",
+          "startLine": 31,
+          "endLine": 49,
+          "params": [
+            "logRecord"
+          ]
+        },
+        {
+          "name": "fillUserFields",
+          "startLine": 51,
+          "endLine": 59,
+          "params": [
+            "reqDTO"
+          ]
+        },
+        {
+          "name": "fillModuleFields",
+          "startLine": 61,
+          "endLine": 67,
+          "params": [
+            "reqDTO",
+            "logRecord"
+          ]
+        },
+        {
+          "name": "fillRequestFields",
+          "startLine": 69,
+          "endLine": 80,
+          "params": [
+            "reqDTO"
+          ]
+        },
+        {
+          "name": "queryLog",
+          "startLine": 82,
+          "endLine": 85,
+          "params": [
+            "bizNo",
+            "type"
+          ]
+        },
+        {
+          "name": "queryLogByBizNo",
+          "startLine": 87,
+          "endLine": 90,
+          "params": [
+            "bizNo",
+            "type",
+            "subType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LogRecordServiceImpl",
+          "startLine": 25,
+          "endLine": 92,
+          "methods": [
+            "record",
+            "fillUserFields",
+            "fillModuleFields",
+            "fillRequestFields",
+            "queryLog",
+            "queryLogByBizNo"
+          ],
+          "properties": [
+            "operateLogApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "record",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "fillModuleFields",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "queryLog",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "queryLogByBizNo",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "LogRecordServiceImpl",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "record",
+          "callee": "new OperateLogCreateReqDTO",
+          "lineNumber": 33
+        },
+        {
+          "caller": "record",
+          "callee": "reqDTO.setTraceId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "record",
+          "callee": "TracerUtils.getTraceId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "record",
+          "callee": "fillUserFields",
+          "lineNumber": 37
+        },
+        {
+          "caller": "record",
+          "callee": "fillModuleFields",
+          "lineNumber": 39
+        },
+        {
+          "caller": "record",
+          "callee": "fillRequestFields",
+          "lineNumber": 41
+        },
+        {
+          "caller": "record",
+          "callee": "operateLogApi.createOperateLogAsync",
+          "lineNumber": 44
+        },
+        {
+          "caller": "record",
+          "callee": "log.error",
+          "lineNumber": 47
+        },
+        {
+          "caller": "record",
+          "callee": "reqDTO.getRequestUrl",
+          "lineNumber": 47
+        },
+        {
+          "caller": "fillUserFields",
+          "callee": "SecurityFrameworkUtils.getLoginUser",
+          "lineNumber": 53
+        },
+        {
+          "caller": "fillUserFields",
+          "callee": "reqDTO.setUserId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fillUserFields",
+          "callee": "loginUser.getId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fillUserFields",
+          "callee": "reqDTO.setUserType",
+          "lineNumber": 58
+        },
+        {
+          "caller": "fillUserFields",
+          "callee": "loginUser.getUserType",
+          "lineNumber": 58
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "reqDTO.setType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "logRecord.getType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "reqDTO.setSubType",
+          "lineNumber": 63
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "logRecord.getSubType",
+          "lineNumber": 63
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "reqDTO.setBizId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "Long.parseLong",
+          "lineNumber": 64
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "logRecord.getBizNo",
+          "lineNumber": 64
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "reqDTO.setAction",
+          "lineNumber": 65
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "logRecord.getAction",
+          "lineNumber": 65
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "reqDTO.setExtra",
+          "lineNumber": 66
+        },
+        {
+          "caller": "fillModuleFields",
+          "callee": "logRecord.getExtra",
+          "lineNumber": 66
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "ServletUtils.getRequest",
+          "lineNumber": 71
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "reqDTO.setRequestMethod",
+          "lineNumber": 76
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "request.getMethod",
+          "lineNumber": 76
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "reqDTO.setRequestUrl",
+          "lineNumber": 77
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "request.getRequestURI",
+          "lineNumber": 77
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "reqDTO.setUserIp",
+          "lineNumber": 78
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "ServletUtils.getClientIP",
+          "lineNumber": 78
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "reqDTO.setUserAgent",
+          "lineNumber": 79
+        },
+        {
+          "caller": "fillRequestFields",
+          "callee": "ServletUtils.getUserAgent",
+          "lineNumber": 79
+        },
+        {
+          "caller": "queryLog",
+          "callee": "new UnsupportedOperationException",
+          "lineNumber": 84
+        },
+        {
+          "caller": "queryLogByBizNo",
+          "callee": "new UnsupportedOperationException",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 5,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/config/AuthorizeRequestsCustomizer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "buildAdminApi",
+          "startLine": 22,
+          "endLine": 24,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "buildAppApi",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AuthorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 35,
+          "methods": [
+            "buildAdminApi",
+            "buildAppApi",
+            "getOrder"
+          ],
+          "properties": [
+            "webProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOrder",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "AuthorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildAdminApi",
+          "callee": "webProperties.getAdminApi().getPrefix",
+          "lineNumber": 23
+        },
+        {
+          "caller": "buildAdminApi",
+          "callee": "webProperties.getAdminApi",
+          "lineNumber": 23
+        },
+        {
+          "caller": "buildAppApi",
+          "callee": "webProperties.getAppApi().getPrefix",
+          "lineNumber": 27
+        },
+        {
+          "caller": "buildAppApi",
+          "callee": "webProperties.getAppApi",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/config/SecurityProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "SecurityProperties",
+          "startLine": 12,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "tokenHeader",
+            "tokenParameter",
+            "mockEnable",
+            "mockSecret",
+            "permitAllUrls",
+            "passwordEncoderLength"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SecurityProperties",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

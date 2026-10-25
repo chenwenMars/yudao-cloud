@@ -1,0 +1,2820 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 28,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 28,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 28,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/dataobject/trade/TradeStatisticsDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 79,
+      "classes": [
+        {
+          "name": "TradeStatisticsDO",
+          "startLine": 18,
+          "endLine": 89,
+          "methods": [],
+          "properties": [
+            "id",
+            "time",
+            "orderCreateCount",
+            "orderPayCount",
+            "orderPayPrice",
+            "afterSaleCount",
+            "afterSaleRefundPrice",
+            "brokerageSettlementPrice",
+            "walletPayPrice",
+            "rechargePayCount",
+            "rechargePayPrice",
+            "rechargeRefundCount",
+            "rechargeRefundPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeStatisticsDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/mysql/member/MemberStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "MemberStatisticsMapper",
+          "startLine": 19,
+          "endLine": 42,
+          "methods": [
+            "selectSummaryListByAreaId",
+            "selectSummaryListBySex",
+            "selectSummaryListByRegisterTerminal",
+            "selectUserCount",
+            "selectListByCreateTimeBetween"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberStatisticsMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/mysql/pay/PayWalletStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "PayWalletStatisticsMapper",
+          "startLine": 16,
+          "endLine": 38,
+          "methods": [
+            "selectRechargeSummaryByPayTimeBetween",
+            "selectRechargeSummaryByRefundTimeBetween",
+            "selectPriceSummaryByBizTypeAndCreateTimeBetween",
+            "selectRechargeSummaryGroupByWalletId",
+            "selectRechargePriceSummary"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletStatisticsMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/mysql/product/ProductStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "ProductStatisticsMapper",
+          "startLine": 25,
+          "endLine": 82,
+          "methods": [
+            "selectPageGroupBySpuId",
+            "selectListByTimeBetween",
+            "selectVoByTimeBetween",
+            "buildWrapper",
+            "selectStatisticsResultPageByTimeBetween",
+            "selectCountByTimeBetween"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductStatisticsMapper",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPageGroupBySpuId",
+          "callee": "selectPage",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPageGroupBySpuId",
+          "callee": "buildWrapper(reqVO)\n                .groupBy(ProductStatisticsDO::getSpuId).select",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPageGroupBySpuId",
+          "callee": "buildWrapper(reqVO).groupBy",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPageGroupBySpuId",
+          "callee": "buildWrapper",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectListByTimeBetween",
+          "callee": "selectList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByTimeBetween",
+          "callee": "buildWrapper(reqVO)\n                .groupBy(ProductStatisticsDO::getTime).select",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByTimeBetween",
+          "callee": "buildWrapper(reqVO).groupBy",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectListByTimeBetween",
+          "callee": "buildWrapper",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectVoByTimeBetween",
+          "callee": "selectJoinOne",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectVoByTimeBetween",
+          "callee": "buildWrapper",
+          "lineNumber": 42
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount))\n                .selectSum(ProductStatisticsDO::getFavoriteCount, toUnderlineCase(ProductStatisticsDO::getFavoriteCount))\n                .selectSum(ProductStatisticsDO::getCartCount, toUnderlineCase(ProductStatisticsDO::getCartCount))\n                .selectSum(ProductStatisticsDO::getOrderCount, toUnderlineCase(ProductStatisticsDO::getOrderCount))\n                .selectSum(ProductStatisticsDO::getOrderPayCount, toUnderlineCase(ProductStatisticsDO::getOrderPayCount))\n                .selectSum(ProductStatisticsDO::getOrderPayPrice, toUnderlineCase(ProductStatisticsDO::getOrderPayPrice))\n                .selectSum(ProductStatisticsDO::getAfterSaleCount, toUnderlineCase(ProductStatisticsDO::getAfterSaleCount))\n                .selectSum(ProductStatisticsDO::getAfterSaleRefundPrice, toUnderlineCase(ProductStatisticsDO::getAfterSaleRefundPrice)).selectAvg",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount))\n                .selectSum(ProductStatisticsDO::getFavoriteCount, toUnderlineCase(ProductStatisticsDO::getFavoriteCount))\n                .selectSum(ProductStatisticsDO::getCartCount, toUnderlineCase(ProductStatisticsDO::getCartCount))\n                .selectSum(ProductStatisticsDO::getOrderCount, toUnderlineCase(ProductStatisticsDO::getOrderCount))\n                .selectSum(ProductStatisticsDO::getOrderPayCount, toUnderlineCase(ProductStatisticsDO::getOrderPayCount))\n                .selectSum(ProductStatisticsDO::getOrderPayPrice, toUnderlineCase(ProductStatisticsDO::getOrderPayPrice))\n                .selectSum(ProductStatisticsDO::getAfterSaleCount, toUnderlineCase(ProductStatisticsDO::getAfterSaleCount)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount))\n                .selectSum(ProductStatisticsDO::getFavoriteCount, toUnderlineCase(ProductStatisticsDO::getFavoriteCount))\n                .selectSum(ProductStatisticsDO::getCartCount, toUnderlineCase(ProductStatisticsDO::getCartCount))\n                .selectSum(ProductStatisticsDO::getOrderCount, toUnderlineCase(ProductStatisticsDO::getOrderCount))\n                .selectSum(ProductStatisticsDO::getOrderPayCount, toUnderlineCase(ProductStatisticsDO::getOrderPayCount))\n                .selectSum(ProductStatisticsDO::getOrderPayPrice, toUnderlineCase(ProductStatisticsDO::getOrderPayPrice)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount))\n                .selectSum(ProductStatisticsDO::getFavoriteCount, toUnderlineCase(ProductStatisticsDO::getFavoriteCount))\n                .selectSum(ProductStatisticsDO::getCartCount, toUnderlineCase(ProductStatisticsDO::getCartCount))\n                .selectSum(ProductStatisticsDO::getOrderCount, toUnderlineCase(ProductStatisticsDO::getOrderCount))\n                .selectSum(ProductStatisticsDO::getOrderPayCount, toUnderlineCase(ProductStatisticsDO::getOrderPayCount)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount))\n                .selectSum(ProductStatisticsDO::getFavoriteCount, toUnderlineCase(ProductStatisticsDO::getFavoriteCount))\n                .selectSum(ProductStatisticsDO::getCartCount, toUnderlineCase(ProductStatisticsDO::getCartCount))\n                .selectSum(ProductStatisticsDO::getOrderCount, toUnderlineCase(ProductStatisticsDO::getOrderCount)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount))\n                .selectSum(ProductStatisticsDO::getFavoriteCount, toUnderlineCase(ProductStatisticsDO::getFavoriteCount))\n                .selectSum(ProductStatisticsDO::getCartCount, toUnderlineCase(ProductStatisticsDO::getCartCount)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount))\n                .selectSum(ProductStatisticsDO::getFavoriteCount, toUnderlineCase(ProductStatisticsDO::getFavoriteCount)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount))\n                .selectSum(ProductStatisticsDO::getBrowseUserCount, toUnderlineCase(ProductStatisticsDO::getBrowseUserCount)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes())\n                .selectSum(ProductStatisticsDO::getBrowseCount, toUnderlineCase(ProductStatisticsDO::getBrowseCount)).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>()\n                .betweenIfPresent(ProductStatisticsDO::getTime, reqVO.getTimes()).selectSum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>().betweenIfPresent",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "new MPJLambdaWrapperX<ProductStatisticsDO>",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "reqVO.getTimes",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 55
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 57
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 59
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 60
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 61
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 62
+        },
+        {
+          "caller": "buildWrapper",
+          "callee": "toUnderlineCase",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectCountByTimeBetween",
+          "callee": "selectCount",
+          "lineNumber": 79
+        },
+        {
+          "caller": "selectCountByTimeBetween",
+          "callee": "new LambdaQueryWrapperX<ProductStatisticsDO>().between",
+          "lineNumber": 79
+        },
+        {
+          "caller": "selectCountByTimeBetween",
+          "callee": "new LambdaQueryWrapperX<ProductStatisticsDO>",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/mysql/trade/AfterSaleStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AfterSaleStatisticsMapper",
+          "startLine": 16,
+          "endLine": 24,
+          "methods": [
+            "selectSummaryByRefundTimeBetween",
+            "selectCountByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AfterSaleStatisticsMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/mysql/trade/BrokerageStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "BrokerageStatisticsMapper",
+          "startLine": 15,
+          "endLine": 25,
+          "methods": [
+            "selectSummaryPriceByStatusAndUnfreezeTimeBetween",
+            "selectWithdrawCountByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageStatisticsMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/mysql/trade/TradeOrderStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "TradeOrderStatisticsMapper",
+          "startLine": 19,
+          "endLine": 65,
+          "methods": [
+            "selectSummaryListByAreaId",
+            "selectCountByCreateTimeBetween",
+            "selectCountByPayTimeBetween",
+            "selectSummaryPriceByPayTimeBetween",
+            "selectUserCountByCreateTimeBetween",
+            "selectUserCountByPayTimeBetween",
+            "selectListByPayTimeBetweenAndGroupByDay",
+            "selectListByPayTimeBetweenAndGroupByMonth",
+            "selectCountByStatusAndDeliveryType",
+            "selectPaySummaryByPayStatusAndPayTimeBetween"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeOrderStatisticsMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/dal/mysql/trade/TradeStatisticsMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "TradeStatisticsMapper",
+          "startLine": 19,
+          "endLine": 41,
+          "methods": [
+            "selectOrderCreateCountSumAndOrderPayPriceSumByTimeBetween",
+            "selectVoByTimeBetween",
+            "selectListByTimeBetween",
+            "selectExpensePriceByTimeBetween",
+            "selectByTimeBetween"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeStatisticsMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByTimeBetween",
+          "callee": "selectList",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectListByTimeBetween",
+          "callee": "new LambdaQueryWrapperX<TradeStatisticsDO>().between",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectListByTimeBetween",
+          "callee": "new LambdaQueryWrapperX<TradeStatisticsDO>",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectByTimeBetween",
+          "callee": "selectOne",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectByTimeBetween",
+          "callee": "new LambdaQueryWrapperX<TradeStatisticsDO>().between",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectByTimeBetween",
+          "callee": "new LambdaQueryWrapperX<TradeStatisticsDO>",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/infra/ApiAccessLogStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "ApiAccessLogStatisticsService",
+          "startLine": 10,
+          "endLine": 32,
+          "methods": [
+            "getUserCount",
+            "getIpCount"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApiAccessLogStatisticsService",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/member/MemberStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 59,
+      "classes": [
+        {
+          "name": "MemberStatisticsService",
+          "startLine": 14,
+          "endLine": 70,
+          "methods": [
+            "getMemberSummary",
+            "getMemberAnalyseComparisonData",
+            "getMemberAreaStatisticsList",
+            "getMemberSexStatisticsList",
+            "getMemberTerminalStatisticsList",
+            "getMemberRegisterCountList",
+            "getUserCountComparison"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberStatisticsService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/member/MemberStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 124,
+      "functions": [
+        {
+          "name": "getMemberSummary",
+          "startLine": 52,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "getMemberAreaStatisticsList",
+          "startLine": 61,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "getMemberAnalyseComparisonData",
+          "startLine": 85,
+          "endLine": 95,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getMemberAnalyseData",
+          "startLine": 97,
+          "endLine": 104,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getMemberSexStatisticsList",
+          "startLine": 106,
+          "endLine": 109,
+          "params": []
+        },
+        {
+          "name": "getMemberTerminalStatisticsList",
+          "startLine": 111,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "getMemberRegisterCountList",
+          "startLine": 116,
+          "endLine": 119,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getUserCountComparison",
+          "startLine": 121,
+          "endLine": 132,
+          "params": []
+        },
+        {
+          "name": "getUserCount",
+          "startLine": 134,
+          "endLine": 138,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemberStatisticsServiceImpl",
+          "startLine": 36,
+          "endLine": 140,
+          "methods": [
+            "getMemberSummary",
+            "getMemberAreaStatisticsList",
+            "getMemberAnalyseComparisonData",
+            "getMemberAnalyseData",
+            "getMemberSexStatisticsList",
+            "getMemberTerminalStatisticsList",
+            "getMemberRegisterCountList",
+            "getUserCountComparison",
+            "getUserCount"
+          ],
+          "properties": [
+            "memberStatisticsMapper",
+            "payWalletStatisticsService",
+            "tradeStatisticsService",
+            "tradeOrderStatisticsService",
+            "apiAccessLogStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMemberSummary",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberAreaStatisticsList",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberAnalyseComparisonData",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberSexStatisticsList",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberTerminalStatisticsList",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberRegisterCountList",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "getUserCountComparison",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "MemberStatisticsServiceImpl",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMemberSummary",
+          "callee": "payWalletStatisticsService.getUserRechargeSummary",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getMemberSummary",
+          "callee": "tradeStatisticsService.getExpensePrice",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getMemberSummary",
+          "callee": "memberStatisticsMapper.selectUserCount",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getMemberSummary",
+          "callee": "MemberStatisticsConvert.INSTANCE.convert",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "convertMap",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "memberStatisticsMapper.selectSummaryListByAreaId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "AreaUtils.getParentIdByType",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "vo.getAreaId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "convertMap",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "tradeOrderStatisticsService.getSummaryListByAreaId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "AreaUtils.getParentIdByType",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "bo.getAreaId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "new MemberAreaStatisticsRespBO()\n                        .setOrderCreateUserCount(ObjectUtil.defaultIfNull(a.getOrderCreateUserCount(), 0)\n                                + ObjectUtil.defaultIfNull(b.getOrderCreateUserCount(), 0))\n                        .setOrderPayUserCount(ObjectUtil.defaultIfNull(a.getOrderPayUserCount(), 0)\n                                + ObjectUtil.defaultIfNull(b.getOrderPayUserCount(), 0)).setOrderPayPrice",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "new MemberAreaStatisticsRespBO()\n                        .setOrderCreateUserCount(ObjectUtil.defaultIfNull(a.getOrderCreateUserCount(), 0)\n                                + ObjectUtil.defaultIfNull(b.getOrderCreateUserCount(), 0)).setOrderPayUserCount",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "new MemberAreaStatisticsRespBO().setOrderCreateUserCount",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "new MemberAreaStatisticsRespBO",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "a.getOrderCreateUserCount",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "b.getOrderCreateUserCount",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "a.getOrderPayUserCount",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "b.getOrderPayUserCount",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "a.getOrderPayPrice",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "b.getOrderPayPrice",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "AreaUtils.getByType",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "areaList.add",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "new Area().setId(null).setName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "new Area().setId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "new Area",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMemberAreaStatisticsList",
+          "callee": "MemberStatisticsConvert.INSTANCE.convertList",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "getMemberAnalyseData",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "beginTime.minusDays",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "referenceEndDate.minus",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "Duration.between",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "getMemberAnalyseData",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getMemberAnalyseComparisonData",
+          "callee": "new DataComparisonRespVO<>",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "Optional.ofNullable(payWalletStatisticsService.getUserRechargeSummary(beginTime, endTime))\n                .map(RechargeSummaryRespBO::getRechargeUserCount).orElse",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "Optional.ofNullable(payWalletStatisticsService.getUserRechargeSummary(beginTime, endTime)).map",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "payWalletStatisticsService.getUserRechargeSummary",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "new MemberAnalyseDataRespVO()\n                .setRegisterUserCount(memberStatisticsMapper.selectUserCount(beginTime, endTime))\n                .setVisitUserCount(apiAccessLogStatisticsService.getUserCount(UserTypeEnum.MEMBER.getValue(), beginTime, endTime)).setRechargeUserCount",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "new MemberAnalyseDataRespVO()\n                .setRegisterUserCount(memberStatisticsMapper.selectUserCount(beginTime, endTime)).setVisitUserCount",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "new MemberAnalyseDataRespVO().setRegisterUserCount",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "new MemberAnalyseDataRespVO",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "memberStatisticsMapper.selectUserCount",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "apiAccessLogStatisticsService.getUserCount",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getMemberAnalyseData",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getMemberSexStatisticsList",
+          "callee": "memberStatisticsMapper.selectSummaryListBySex",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getMemberTerminalStatisticsList",
+          "callee": "memberStatisticsMapper.selectSummaryListByRegisterTerminal",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getMemberRegisterCountList",
+          "callee": "memberStatisticsMapper.selectListByCreateTimeBetween",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "beginOfToday.minusDays",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "new DataComparisonRespVO<MemberCountRespVO>()\n                .setValue(getUserCount(beginOfToday, endOfToday)).setReference",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "new DataComparisonRespVO<MemberCountRespVO>().setValue",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "new DataComparisonRespVO<MemberCountRespVO>",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "getUserCount",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getUserCountComparison",
+          "callee": "getUserCount",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getUserCount",
+          "callee": "new MemberCountRespVO()\n                .setRegisterUserCount(memberStatisticsMapper.selectUserCount(beginTime, endTime)).setVisitUserCount",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getUserCount",
+          "callee": "new MemberCountRespVO().setRegisterUserCount",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getUserCount",
+          "callee": "new MemberCountRespVO",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getUserCount",
+          "callee": "memberStatisticsMapper.selectUserCount",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getUserCount",
+          "callee": "apiAccessLogStatisticsService.getIpCount",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getUserCount",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 137
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/member/bo/MemberAreaStatisticsRespBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "MemberAreaStatisticsRespBO",
+          "startLine": 6,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "areaId",
+            "areaName",
+            "userCount",
+            "orderCreateUserCount",
+            "orderPayUserCount",
+            "orderPayPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberAreaStatisticsRespBO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/pay/PayWalletStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "PayWalletStatisticsService",
+          "startLine": 13,
+          "endLine": 40,
+          "methods": [
+            "getWalletSummary",
+            "getUserRechargeSummary",
+            "getRechargePriceSummary"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletStatisticsService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/pay/PayWalletStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "getWalletSummary",
+          "startLine": 26,
+          "endLine": 39,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getUserRechargeSummary",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getRechargePriceSummary",
+          "startLine": 46,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayWalletStatisticsServiceImpl",
+          "startLine": 19,
+          "endLine": 51,
+          "methods": [
+            "getWalletSummary",
+            "getUserRechargeSummary",
+            "getRechargePriceSummary"
+          ],
+          "properties": [
+            "payWalletStatisticsMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getWalletSummary",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getUserRechargeSummary",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getRechargePriceSummary",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "PayWalletStatisticsServiceImpl",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWalletSummary",
+          "callee": "payWalletStatisticsMapper.selectRechargeSummaryByPayTimeBetween",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "payWalletStatisticsMapper.selectRechargeSummaryByRefundTimeBetween",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "PayRefundStatusEnum.SUCCESS.getStatus",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "payWalletStatisticsMapper.selectPriceSummaryByBizTypeAndCreateTimeBetween",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "PayWalletBizTypeEnum.PAYMENT.getType",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "paySummary.setWalletPayPrice(walletPayPrice)\n                .setRechargeRefundCount(refundSummary.getRechargeRefundCount()).setRechargeRefundPrice",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "paySummary.setWalletPayPrice(walletPayPrice).setRechargeRefundCount",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "paySummary.setWalletPayPrice",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "refundSummary.getRechargeRefundCount",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getWalletSummary",
+          "callee": "refundSummary.getRechargeRefundPrice",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getUserRechargeSummary",
+          "callee": "payWalletStatisticsMapper.selectRechargeSummaryGroupByWalletId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getRechargePriceSummary",
+          "callee": "payWalletStatisticsMapper.selectRechargePriceSummary",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/pay/bo/RechargeSummaryRespBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "RechargeSummaryRespBO",
+          "startLine": 9,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "rechargeUserCount",
+            "rechargePrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RechargeSummaryRespBO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/product/ProductStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "ProductStatisticsService",
+          "startLine": 17,
+          "endLine": 51,
+          "methods": [
+            "getProductStatisticsRankPage",
+            "getProductStatisticsAnalyse",
+            "getProductStatisticsList",
+            "statisticsProduct"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductStatisticsService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/product/ProductStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "getProductStatisticsRankPage",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "reqVO",
+            "pageParam"
+          ]
+        },
+        {
+          "name": "getProductStatisticsAnalyse",
+          "startLine": 49,
+          "endLine": 61,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getProductStatisticsList",
+          "startLine": 63,
+          "endLine": 66,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "statisticsProduct",
+          "startLine": 68,
+          "endLine": 75,
+          "params": [
+            "days"
+          ]
+        },
+        {
+          "name": "statisticsProduct",
+          "startLine": 83,
+          "endLine": 115,
+          "params": [
+            "date"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProductStatisticsServiceImpl",
+          "startLine": 35,
+          "endLine": 117,
+          "methods": [
+            "getProductStatisticsRankPage",
+            "getProductStatisticsAnalyse",
+            "getProductStatisticsList",
+            "statisticsProduct",
+            "statisticsProduct"
+          ],
+          "properties": [
+            "productStatisticsMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getProductStatisticsRankPage",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "getProductStatisticsAnalyse",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getProductStatisticsList",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "statisticsProduct",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "ProductStatisticsServiceImpl",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getProductStatisticsRankPage",
+          "callee": "PageUtils.buildDefaultSortingField",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getProductStatisticsRankPage",
+          "callee": "productStatisticsMapper.selectPageGroupBySpuId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "ArrayUtil.get",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "reqVO.getTimes",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "ArrayUtil.get",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "reqVO.getTimes",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "productStatisticsMapper.selectVoByTimeBetween",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "beginTime.minus",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "Duration.between",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "new ProductStatisticsReqVO",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "productStatisticsMapper.selectVoByTimeBetween",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getProductStatisticsAnalyse",
+          "callee": "new DataComparisonRespVO<>",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getProductStatisticsList",
+          "callee": "productStatisticsMapper.selectListByTimeBetween",
+          "lineNumber": 65
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 70
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "IntStream.rangeClosed(1, days)\n                .mapToObj(day -> statisticsProduct(today.minusDays(day)))\n                .sorted().collect",
+          "lineNumber": 71
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "IntStream.rangeClosed(1, days)\n                .mapToObj(day -> statisticsProduct(today.minusDays(day))).sorted",
+          "lineNumber": 71
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "IntStream.rangeClosed(1, days).mapToObj",
+          "lineNumber": 71
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "IntStream.rangeClosed",
+          "lineNumber": 71
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "statisticsProduct",
+          "lineNumber": 72
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "today.minusDays",
+          "lineNumber": 72
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "Collectors.joining",
+          "lineNumber": 74
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 85
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 86
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "DatePattern.NORM_DATE_FORMATTER.format",
+          "lineNumber": 87
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "productStatisticsMapper.selectCountByTimeBetween",
+          "lineNumber": 89
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "new StopWatch",
+          "lineNumber": 94
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "stopWatch.start",
+          "lineNumber": 95
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "productStatisticsMapper.selectStatisticsResultPageByTimeBetween",
+          "lineNumber": 99
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "Page.of",
+          "lineNumber": 100
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 101
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "page.getRecords",
+          "lineNumber": 101
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "page.getRecords",
+          "lineNumber": 105
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "record.setTime",
+          "lineNumber": 106
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "date.toLocalDate",
+          "lineNumber": 106
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "record.getBrowseUserCount",
+          "lineNumber": 107
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 107
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "record.getBrowseUserCount",
+          "lineNumber": 107
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "record.setBrowseConvertPercent",
+          "lineNumber": 108
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "record.getOrderPayCount",
+          "lineNumber": 108
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "record.getBrowseUserCount",
+          "lineNumber": 108
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "productStatisticsMapper.insertBatch",
+          "lineNumber": 112
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "page.getRecords",
+          "lineNumber": 112
+        },
+        {
+          "caller": "statisticsProduct",
+          "callee": "stopWatch.prettyPrint",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/AfterSaleStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "AfterSaleStatisticsService",
+          "startLine": 13,
+          "endLine": 32,
+          "methods": [
+            "getAfterSaleSummary",
+            "getCountByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AfterSaleStatisticsService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/AfterSaleStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "getAfterSaleSummary",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getCountByStatus",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AfterSaleStatisticsServiceImpl",
+          "startLine": 17,
+          "endLine": 34,
+          "methods": [
+            "getAfterSaleSummary",
+            "getCountByStatus"
+          ],
+          "properties": [
+            "afterSaleStatisticsMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAfterSaleSummary",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "getCountByStatus",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "AfterSaleStatisticsServiceImpl",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAfterSaleSummary",
+          "callee": "afterSaleStatisticsMapper.selectSummaryByRefundTimeBetween",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getCountByStatus",
+          "callee": "afterSaleStatisticsMapper.selectCountByStatus",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getCountByStatus",
+          "callee": "status.getStatus",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/BrokerageStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "BrokerageStatisticsService",
+          "startLine": 12,
+          "endLine": 31,
+          "methods": [
+            "getBrokerageSettlementPriceSummary",
+            "getWithdrawCountByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageStatisticsService",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/TradeOrderStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "TradeOrderStatisticsService",
+          "startLine": 16,
+          "endLine": 83,
+          "methods": [
+            "getOrderSummary",
+            "getSummaryListByAreaId",
+            "getOrderUserCount",
+            "getPayUserCount",
+            "getOrderPayPrice",
+            "getCountByStatusAndDeliveryType",
+            "getOrderComparison",
+            "getOrderCountTrendComparison"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeOrderStatisticsService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/TradeOrderStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 108,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "getOrderSummary",
+          "startLine": 36,
+          "endLine": 42,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getSummaryListByAreaId",
+          "startLine": 44,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "getOrderUserCount",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getPayUserCount",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getOrderPayPrice",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getCountByStatusAndDeliveryType",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "status",
+            "deliveryType"
+          ]
+        },
+        {
+          "name": "getOrderComparison",
+          "startLine": 69,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "getPayPriceSummary",
+          "startLine": 76,
+          "endLine": 81,
+          "params": [
+            "date"
+          ]
+        },
+        {
+          "name": "getOrderCountTrendComparison",
+          "startLine": 83,
+          "endLine": 97,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getOrderCountTrend",
+          "startLine": 99,
+          "endLine": 106,
+          "params": [
+            "timeRangeType",
+            "beginTime",
+            "endTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TradeOrderStatisticsServiceImpl",
+          "startLine": 29,
+          "endLine": 108,
+          "methods": [
+            "getOrderSummary",
+            "getSummaryListByAreaId",
+            "getOrderUserCount",
+            "getPayUserCount",
+            "getOrderPayPrice",
+            "getCountByStatusAndDeliveryType",
+            "getOrderComparison",
+            "getPayPriceSummary",
+            "getOrderCountTrendComparison",
+            "getOrderCountTrend"
+          ],
+          "properties": [
+            "tradeOrderStatisticsMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOrderSummary",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getSummaryListByAreaId",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderUserCount",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getPayUserCount",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderPayPrice",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getCountByStatusAndDeliveryType",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderComparison",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderCountTrendComparison",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "TradeOrderStatisticsServiceImpl",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOrderSummary",
+          "callee": "new TradeOrderSummaryRespBO()\n                .setOrderCreateCount(tradeOrderStatisticsMapper.selectCountByCreateTimeBetween(beginTime, endTime))\n                .setOrderPayCount(tradeOrderStatisticsMapper.selectCountByPayTimeBetween(beginTime, endTime)).setOrderPayPrice",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getOrderSummary",
+          "callee": "new TradeOrderSummaryRespBO()\n                .setOrderCreateCount(tradeOrderStatisticsMapper.selectCountByCreateTimeBetween(beginTime, endTime)).setOrderPayCount",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getOrderSummary",
+          "callee": "new TradeOrderSummaryRespBO().setOrderCreateCount",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getOrderSummary",
+          "callee": "new TradeOrderSummaryRespBO",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getOrderSummary",
+          "callee": "tradeOrderStatisticsMapper.selectCountByCreateTimeBetween",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getOrderSummary",
+          "callee": "tradeOrderStatisticsMapper.selectCountByPayTimeBetween",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getOrderSummary",
+          "callee": "tradeOrderStatisticsMapper.selectSummaryPriceByPayTimeBetween",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getSummaryListByAreaId",
+          "callee": "tradeOrderStatisticsMapper.selectSummaryListByAreaId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getOrderUserCount",
+          "callee": "tradeOrderStatisticsMapper.selectUserCountByCreateTimeBetween",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getPayUserCount",
+          "callee": "tradeOrderStatisticsMapper.selectUserCountByPayTimeBetween",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getOrderPayPrice",
+          "callee": "tradeOrderStatisticsMapper.selectSummaryPriceByPayTimeBetween",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getCountByStatusAndDeliveryType",
+          "callee": "tradeOrderStatisticsMapper.selectCountByStatusAndDeliveryType",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "new DataComparisonRespVO<TradeOrderSummaryRespVO>()\n                .setValue(getPayPriceSummary(LocalDateTime.now())).setReference",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "new DataComparisonRespVO<TradeOrderSummaryRespVO>().setValue",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "new DataComparisonRespVO<TradeOrderSummaryRespVO>",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "getPayPriceSummary",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "getPayPriceSummary",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getOrderComparison",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getPayPriceSummary",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getPayPriceSummary",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getPayPriceSummary",
+          "callee": "tradeOrderStatisticsMapper.selectPaySummaryByPayStatusAndPayTimeBetween",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "getOrderCountTrend",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getType",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getBeginTime",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getEndTime",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getBeginTime().minusDays",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getBeginTime",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "referenceEndTime.minus",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "Duration.between",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getBeginTime",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getEndTime",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "getOrderCountTrend",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "reqVO.getType",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "IntStream.range(0, value.size())\n                .mapToObj(index -> new DataComparisonRespVO<TradeOrderTrendRespVO>()\n                        .setValue(CollUtil.get(value, index))\n                        .setReference(CollUtil.get(reference, index))).collect",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "IntStream.range(0, value.size()).mapToObj",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "IntStream.range",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "value.size",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "new DataComparisonRespVO<TradeOrderTrendRespVO>()\n                        .setValue(CollUtil.get(value, index)).setReference",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "new DataComparisonRespVO<TradeOrderTrendRespVO>().setValue",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "new DataComparisonRespVO<TradeOrderTrendRespVO>",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "CollUtil.get",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "CollUtil.get",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getOrderCountTrendComparison",
+          "callee": "Collectors.toList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getOrderCountTrend",
+          "callee": "TimeRangeTypeEnum.YEAR.getType().equals",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getOrderCountTrend",
+          "callee": "TimeRangeTypeEnum.YEAR.getType",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getOrderCountTrend",
+          "callee": "tradeOrderStatisticsMapper.selectListByPayTimeBetweenAndGroupByMonth",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getOrderCountTrend",
+          "callee": "tradeOrderStatisticsMapper.selectListByPayTimeBetweenAndGroupByDay",
+          "lineNumber": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 9,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/TradeStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "TradeStatisticsService",
+          "startLine": 16,
+          "endLine": 67,
+          "methods": [
+            "getTradeStatisticsAnalyse",
+            "getExpensePrice",
+            "getTradeStatisticsList",
+            "statisticsTrade",
+            "getTradeSummaryByDays",
+            "getTradeSummaryByMonths"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeStatisticsService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/TradeStatisticsServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 120,
+      "functions": [
+        {
+          "name": "getTradeSummaryByDays",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "days"
+          ]
+        },
+        {
+          "name": "getTradeSummaryByMonths",
+          "startLine": 55,
+          "endLine": 60,
+          "params": [
+            "months"
+          ]
+        },
+        {
+          "name": "getTradeStatisticsAnalyse",
+          "startLine": 62,
+          "endLine": 71,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getExpensePrice",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "getTradeStatisticsList",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "beginTime",
+            "endTime"
+          ]
+        },
+        {
+          "name": "statisticsTrade",
+          "startLine": 83,
+          "endLine": 90,
+          "params": [
+            "days"
+          ]
+        },
+        {
+          "name": "statisticsTrade",
+          "startLine": 98,
+          "endLine": 133,
+          "params": [
+            "date"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TradeStatisticsServiceImpl",
+          "startLine": 32,
+          "endLine": 135,
+          "methods": [
+            "getTradeSummaryByDays",
+            "getTradeSummaryByMonths",
+            "getTradeStatisticsAnalyse",
+            "getExpensePrice",
+            "getTradeStatisticsList",
+            "statisticsTrade",
+            "statisticsTrade"
+          ],
+          "properties": [
+            "tradeStatisticsMapper",
+            "tradeOrderStatisticsService",
+            "afterSaleStatisticsService",
+            "brokerageStatisticsService",
+            "payWalletStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTradeSummaryByDays",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "getTradeSummaryByMonths",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getTradeStatisticsAnalyse",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "getExpensePrice",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getTradeStatisticsList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "statisticsTrade",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "TradeStatisticsServiceImpl",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTradeSummaryByDays",
+          "callee": "LocalDateTime.now().plusDays",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getTradeSummaryByDays",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getTradeSummaryByDays",
+          "callee": "tradeStatisticsMapper.selectOrderCreateCountSumAndOrderPayPriceSumByTimeBetween",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getTradeSummaryByDays",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getTradeSummaryByDays",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getTradeSummaryByMonths",
+          "callee": "LocalDateTime.now().plusMonths",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getTradeSummaryByMonths",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getTradeSummaryByMonths",
+          "callee": "tradeStatisticsMapper.selectOrderCreateCountSumAndOrderPayPriceSumByTimeBetween",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getTradeSummaryByMonths",
+          "callee": "LocalDateTimeUtils.beginOfMonth",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getTradeSummaryByMonths",
+          "callee": "LocalDateTimeUtils.endOfMonth",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getTradeStatisticsAnalyse",
+          "callee": "tradeStatisticsMapper.selectVoByTimeBetween",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getTradeStatisticsAnalyse",
+          "callee": "beginTime.minus",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getTradeStatisticsAnalyse",
+          "callee": "Duration.between",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getTradeStatisticsAnalyse",
+          "callee": "tradeStatisticsMapper.selectVoByTimeBetween",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTradeStatisticsAnalyse",
+          "callee": "TradeStatisticsConvert.INSTANCE.convert",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getExpensePrice",
+          "callee": "tradeStatisticsMapper.selectExpensePriceByTimeBetween",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getTradeStatisticsList",
+          "callee": "tradeStatisticsMapper.selectListByTimeBetween",
+          "lineNumber": 80
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 85
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "IntStream.rangeClosed(1, days)\n                .mapToObj(day -> statisticsTrade(today.minusDays(day)))\n                .sorted().collect",
+          "lineNumber": 86
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "IntStream.rangeClosed(1, days)\n                .mapToObj(day -> statisticsTrade(today.minusDays(day))).sorted",
+          "lineNumber": 86
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "IntStream.rangeClosed(1, days).mapToObj",
+          "lineNumber": 86
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "IntStream.rangeClosed",
+          "lineNumber": 86
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "statisticsTrade",
+          "lineNumber": 87
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "today.minusDays",
+          "lineNumber": 87
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "Collectors.joining",
+          "lineNumber": 89
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 100
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 101
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "DatePattern.NORM_DATE_FORMATTER.format",
+          "lineNumber": 102
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "tradeStatisticsMapper.selectByTimeBetween",
+          "lineNumber": 104
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "new StopWatch",
+          "lineNumber": 110
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.start",
+          "lineNumber": 112
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "tradeOrderStatisticsService.getOrderSummary",
+          "lineNumber": 113
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.stop",
+          "lineNumber": 114
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.start",
+          "lineNumber": 116
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "afterSaleStatisticsService.getAfterSaleSummary",
+          "lineNumber": 117
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.stop",
+          "lineNumber": 118
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.start",
+          "lineNumber": 120
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "brokerageStatisticsService.getBrokerageSettlementPriceSummary",
+          "lineNumber": 121
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.stop",
+          "lineNumber": 122
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.start",
+          "lineNumber": 124
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "payWalletStatisticsService.getWalletSummary",
+          "lineNumber": 125
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.stop",
+          "lineNumber": 126
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "TradeStatisticsConvert.INSTANCE.convert",
+          "lineNumber": 129
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "tradeStatisticsMapper.insert",
+          "lineNumber": 131
+        },
+        {
+          "caller": "statisticsTrade",
+          "callee": "stopWatch.prettyPrint",
+          "lineNumber": 132
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/bo/AfterSaleSummaryRespBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AfterSaleSummaryRespBO",
+          "startLine": 10,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "afterSaleCount",
+            "afterSaleRefundPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AfterSaleSummaryRespBO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/bo/TradeOrderSummaryRespBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "TradeOrderSummaryRespBO",
+          "startLine": 10,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "orderCreateCount",
+            "orderPayCount",
+            "orderPayPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeOrderSummaryRespBO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/bo/TradeSummaryRespBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "TradeSummaryRespBO",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "count",
+            "summary"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeSummaryRespBO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/service/trade/bo/WalletSummaryRespBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "WalletSummaryRespBO",
+          "startLine": 10,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "walletPayPrice",
+            "rechargePayCount",
+            "rechargePayPrice",
+            "rechargeRefundCount",
+            "rechargeRefundPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WalletSummaryRespBO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

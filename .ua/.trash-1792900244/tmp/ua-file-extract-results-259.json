@@ -1,0 +1,1155 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [
+    "yudao-module-ai/yudao-module-ai-server/pom.xml",
+    "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/AiChatMessageController.http",
+    "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/AiImageController.http",
+    "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeController.http",
+    "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeDocumentController.http",
+    "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeSegmentController.http",
+    "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/music/AiMusicController.http",
+    "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/workflow/AiWorkflowController.http"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 17,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 17,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/AiServerApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 21,
+          "endLine": 31,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiServerApplication",
+          "startLine": 15,
+          "endLine": 33,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "AiServerApplication",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/vo/document/AiKnowledgeDocumentRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "AiKnowledgeDocumentRespVO",
+          "startLine": 8,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "id",
+            "knowledgeId",
+            "name",
+            "url",
+            "content",
+            "contentLength",
+            "tokens",
+            "segmentMaxTokens",
+            "retrievalCount",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiKnowledgeDocumentRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/vo/segment/AiKnowledgeSegmentRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "AiKnowledgeSegmentRespVO",
+          "startLine": 6,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "id",
+            "documentId",
+            "knowledgeId",
+            "vectorId",
+            "content",
+            "contentLength",
+            "tokens",
+            "retrievalCount",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiKnowledgeSegmentRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/vo/segment/AiKnowledgeSegmentSearchReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "AiKnowledgeSegmentSearchReqVO",
+          "startLine": 9,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "knowledgeId",
+            "content",
+            "topK",
+            "similarityThreshold"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiKnowledgeSegmentSearchReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/vo/segment/AiKnowledgeSegmentSearchRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AiKnowledgeSegmentSearchRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "documentName",
+            "score"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiKnowledgeSegmentSearchRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/music/vo/AiMusicRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "AiMusicRespVO",
+          "startLine": 9,
+          "endLine": 70,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "title",
+            "lyric",
+            "imageUrl",
+            "audioUrl",
+            "videoUrl",
+            "status",
+            "gptDescriptionPrompt",
+            "prompt",
+            "platform",
+            "model",
+            "generateMode",
+            "tags",
+            "duration",
+            "publicStatus",
+            "taskId",
+            "errorMessage",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiMusicRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/workflow/vo/AiWorkflowRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "AiWorkflowRespVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "remark",
+            "status",
+            "graph",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiWorkflowRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/app/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/framework/ai/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/framework/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/framework/rpc/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/framework/security/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/tool/function/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/tool/method/Person.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "Person",
+          "startLine": 9,
+          "endLine": 19,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Person",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/tool/method/PersonServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 336,
+      "nonEmptyLines": 318,
+      "functions": [
+        {
+          "name": "initializeData",
+          "startLine": 143,
+          "endLine": 149,
+          "params": []
+        },
+        {
+          "name": "loadDataFromCsv",
+          "startLine": 157,
+          "endLine": 193,
+          "params": []
+        },
+        {
+          "name": "createPerson",
+          "startLine": 195,
+          "endLine": 219,
+          "params": [
+            "personData"
+          ]
+        },
+        {
+          "name": "getPersonById",
+          "startLine": 221,
+          "endLine": 230,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAllPersons",
+          "startLine": 232,
+          "endLine": 242,
+          "params": []
+        },
+        {
+          "name": "updatePerson",
+          "startLine": 244,
+          "endLine": 271,
+          "params": [
+            "id",
+            "updatedPersonData"
+          ]
+        },
+        {
+          "name": "deletePerson",
+          "startLine": 273,
+          "endLine": 282,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "searchByJobTitle",
+          "startLine": 284,
+          "endLine": 300,
+          "params": [
+            "jobTitleQuery"
+          ]
+        },
+        {
+          "name": "filterBySex",
+          "startLine": 302,
+          "endLine": 317,
+          "params": [
+            "sex"
+          ]
+        },
+        {
+          "name": "filterByAge",
+          "startLine": 319,
+          "endLine": 334,
+          "params": [
+            "age"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PersonServiceImpl",
+          "startLine": 24,
+          "endLine": 336,
+          "methods": [
+            "initializeData",
+            "loadDataFromCsv",
+            "createPerson",
+            "getPersonById",
+            "getAllPersons",
+            "updatePerson",
+            "deletePerson",
+            "searchByJobTitle",
+            "filterBySex",
+            "filterByAge"
+          ],
+          "properties": [
+            "personStore",
+            "idGenerator",
+            "CSV_DATA"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createPerson",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "getPersonById",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "getAllPersons",
+          "line": 232,
+          "isDefault": false
+        },
+        {
+          "name": "updatePerson",
+          "line": 244,
+          "isDefault": false
+        },
+        {
+          "name": "deletePerson",
+          "line": 273,
+          "isDefault": false
+        },
+        {
+          "name": "searchByJobTitle",
+          "line": 284,
+          "isDefault": false
+        },
+        {
+          "name": "filterBySex",
+          "line": 302,
+          "isDefault": false
+        },
+        {
+          "name": "filterByAge",
+          "line": 319,
+          "isDefault": false
+        },
+        {
+          "name": "PersonServiceImpl",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initializeData",
+          "callee": "log.info",
+          "lineNumber": 145
+        },
+        {
+          "caller": "initializeData",
+          "callee": "loadDataFromCsv",
+          "lineNumber": 146
+        },
+        {
+          "caller": "initializeData",
+          "callee": "new AtomicInteger",
+          "lineNumber": 147
+        },
+        {
+          "caller": "initializeData",
+          "callee": "log.info",
+          "lineNumber": 148
+        },
+        {
+          "caller": "initializeData",
+          "callee": "personStore.size",
+          "lineNumber": 148
+        },
+        {
+          "caller": "initializeData",
+          "callee": "idGenerator.get",
+          "lineNumber": 148
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "new AtomicInteger",
+          "lineNumber": 158
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "personStore.clear",
+          "lineNumber": 160
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "CSV_DATA.lines().skip",
+          "lineNumber": 161
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "CSV_DATA.lines",
+          "lineNumber": 161
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "lines.forEach",
+          "lineNumber": 162
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "line.split",
+          "lineNumber": 165
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "Integer.parseInt",
+          "lineNumber": 167
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[0].trim",
+          "lineNumber": 167
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[1].trim",
+          "lineNumber": 168
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[2].trim",
+          "lineNumber": 169
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[3].trim",
+          "lineNumber": 170
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[4].trim",
+          "lineNumber": 171
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[5].trim",
+          "lineNumber": 172
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[6].trim",
+          "lineNumber": 173
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "Integer.parseInt",
+          "lineNumber": 174
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "fields[7].trim",
+          "lineNumber": 174
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "new Person",
+          "lineNumber": 176
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "personStore.put",
+          "lineNumber": 177
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "currentMaxId.updateAndGet",
+          "lineNumber": 178
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "Math.max",
+          "lineNumber": 178
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "log.warn",
+          "lineNumber": 180
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "log.warn",
+          "lineNumber": 183
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "e.getMessage",
+          "lineNumber": 183
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "log.error",
+          "lineNumber": 185
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "e.getMessage",
+          "lineNumber": 185
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "log.error",
+          "lineNumber": 189
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "e.getMessage",
+          "lineNumber": 189
+        },
+        {
+          "caller": "loadDataFromCsv",
+          "callee": "currentMaxId.get",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createPerson",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 202
+        },
+        {
+          "caller": "createPerson",
+          "callee": "idGenerator.incrementAndGet",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createPerson",
+          "callee": "new Person",
+          "lineNumber": 206
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personData.firstName",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personData.lastName",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personData.email",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personData.sex",
+          "lineNumber": 211
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personData.ipAddress",
+          "lineNumber": 212
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personData.jobTitle",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personData.age",
+          "lineNumber": 214
+        },
+        {
+          "caller": "createPerson",
+          "callee": "personStore.put",
+          "lineNumber": 216
+        },
+        {
+          "caller": "createPerson",
+          "callee": "log.debug",
+          "lineNumber": 217
+        },
+        {
+          "caller": "getPersonById",
+          "callee": "personStore.get",
+          "lineNumber": 227
+        },
+        {
+          "caller": "getPersonById",
+          "callee": "log.debug",
+          "lineNumber": 228
+        },
+        {
+          "caller": "getPersonById",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 229
+        },
+        {
+          "caller": "getAllPersons",
+          "callee": "personStore.values().stream().toList",
+          "lineNumber": 239
+        },
+        {
+          "caller": "getAllPersons",
+          "callee": "personStore.values().stream",
+          "lineNumber": 239
+        },
+        {
+          "caller": "getAllPersons",
+          "callee": "personStore.values",
+          "lineNumber": 239
+        },
+        {
+          "caller": "getAllPersons",
+          "callee": "log.debug",
+          "lineNumber": 240
+        },
+        {
+          "caller": "getAllPersons",
+          "callee": "allPersons.size",
+          "lineNumber": 240
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 251
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "personStore.computeIfPresent",
+          "lineNumber": 254
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "new Person",
+          "lineNumber": 256
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "updatedPersonData.firstName",
+          "lineNumber": 258
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "updatedPersonData.lastName",
+          "lineNumber": 259
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "updatedPersonData.email",
+          "lineNumber": 260
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "updatedPersonData.sex",
+          "lineNumber": 261
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "updatedPersonData.ipAddress",
+          "lineNumber": 262
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "updatedPersonData.jobTitle",
+          "lineNumber": 263
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "updatedPersonData.age",
+          "lineNumber": 264
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "log.debug",
+          "lineNumber": 268
+        },
+        {
+          "caller": "updatePerson",
+          "callee": "log.trace",
+          "lineNumber": 269
+        },
+        {
+          "caller": "deletePerson",
+          "callee": "personStore.remove",
+          "lineNumber": 279
+        },
+        {
+          "caller": "deletePerson",
+          "callee": "log.debug",
+          "lineNumber": 280
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "jobTitleQuery.isBlank",
+          "lineNumber": 290
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "log.debug",
+          "lineNumber": 291
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "Collections.emptyList",
+          "lineNumber": 292
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "jobTitleQuery.toLowerCase",
+          "lineNumber": 294
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "personStore.values().stream()\n                .filter(person -> person.jobTitle() != null && person.jobTitle().toLowerCase().contains(lowerCaseQuery)).collect",
+          "lineNumber": 295
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "personStore.values().stream().filter",
+          "lineNumber": 295
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "personStore.values().stream",
+          "lineNumber": 295
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "personStore.values",
+          "lineNumber": 295
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "person.jobTitle",
+          "lineNumber": 296
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "person.jobTitle().toLowerCase().contains",
+          "lineNumber": 296
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "person.jobTitle().toLowerCase",
+          "lineNumber": 296
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "person.jobTitle",
+          "lineNumber": 296
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "Collectors.toList",
+          "lineNumber": 297
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "log.debug",
+          "lineNumber": 298
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "results.size",
+          "lineNumber": 298
+        },
+        {
+          "caller": "searchByJobTitle",
+          "callee": "Collections.unmodifiableList",
+          "lineNumber": 299
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "sex.isBlank",
+          "lineNumber": 308
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "log.debug",
+          "lineNumber": 309
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "Collections.emptyList",
+          "lineNumber": 310
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "personStore.values().stream()\n                .filter(person -> person.sex() != null && person.sex().equalsIgnoreCase(sex)).collect",
+          "lineNumber": 312
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "personStore.values().stream().filter",
+          "lineNumber": 312
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "personStore.values().stream",
+          "lineNumber": 312
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "personStore.values",
+          "lineNumber": 312
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "person.sex",
+          "lineNumber": 313
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "person.sex().equalsIgnoreCase",
+          "lineNumber": 313
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "person.sex",
+          "lineNumber": 313
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "Collectors.toList",
+          "lineNumber": 314
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "log.debug",
+          "lineNumber": 315
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "results.size",
+          "lineNumber": 315
+        },
+        {
+          "caller": "filterBySex",
+          "callee": "Collections.unmodifiableList",
+          "lineNumber": 316
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "log.debug",
+          "lineNumber": 326
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "Collections.emptyList",
+          "lineNumber": 327
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "personStore.values().stream()\n                .filter(person -> person.age() == age).collect",
+          "lineNumber": 329
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "personStore.values().stream().filter",
+          "lineNumber": 329
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "personStore.values().stream",
+          "lineNumber": 329
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "personStore.values",
+          "lineNumber": 329
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "person.age",
+          "lineNumber": 330
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "Collectors.toList",
+          "lineNumber": 331
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "log.debug",
+          "lineNumber": 332
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "results.size",
+          "lineNumber": 332
+        },
+        {
+          "caller": "filterByAge",
+          "callee": "Collections.unmodifiableList",
+          "lineNumber": 333
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    }
+  ]
+}

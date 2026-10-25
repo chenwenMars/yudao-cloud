@@ -1,0 +1,764 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 8,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 8,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/IotDeviceGroupController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "createDeviceGroup",
+          "startLine": 38,
+          "endLine": 43,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDeviceGroup",
+          "startLine": 45,
+          "endLine": 51,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDeviceGroup",
+          "startLine": 53,
+          "endLine": 60,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDeviceGroup",
+          "startLine": 62,
+          "endLine": 69,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDeviceGroupPage",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getSimpleDeviceGroupList",
+          "startLine": 80,
+          "endLine": 86,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotDeviceGroupController",
+          "startLine": 27,
+          "endLine": 88,
+          "methods": [
+            "createDeviceGroup",
+            "updateDeviceGroup",
+            "deleteDeviceGroup",
+            "getDeviceGroup",
+            "getDeviceGroupPage",
+            "getSimpleDeviceGroupList"
+          ],
+          "properties": [
+            "deviceGroupService",
+            "deviceService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDeviceGroup",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateDeviceGroup",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDeviceGroup",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "getDeviceGroup",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "getDeviceGroupPage",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleDeviceGroupList",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "IotDeviceGroupController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDeviceGroup",
+          "callee": "success",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createDeviceGroup",
+          "callee": "deviceGroupService.createDeviceGroup",
+          "lineNumber": 42
+        },
+        {
+          "caller": "updateDeviceGroup",
+          "callee": "deviceGroupService.updateDeviceGroup",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateDeviceGroup",
+          "callee": "success",
+          "lineNumber": 50
+        },
+        {
+          "caller": "deleteDeviceGroup",
+          "callee": "deviceGroupService.deleteDeviceGroup",
+          "lineNumber": 58
+        },
+        {
+          "caller": "deleteDeviceGroup",
+          "callee": "success",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getDeviceGroup",
+          "callee": "deviceGroupService.getDeviceGroup",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getDeviceGroup",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getDeviceGroup",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getDeviceGroupPage",
+          "callee": "deviceGroupService.getDeviceGroupPage",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getDeviceGroupPage",
+          "callee": "success",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getDeviceGroupPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getDeviceGroupPage",
+          "callee": "group.setDeviceCount",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getDeviceGroupPage",
+          "callee": "deviceService.getDeviceCountByGroupId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getDeviceGroupPage",
+          "callee": "group.getId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "deviceGroupService.getDeviceGroupListByStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "success",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "convertList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "new IotDeviceGroupRespVO().setId(group.getId()).setName",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "new IotDeviceGroupRespVO().setId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "new IotDeviceGroupRespVO",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "group.getId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleDeviceGroupList",
+          "callee": "group.getName",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/vo/group/IotDeviceGroupPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "IotDeviceGroupPageReqVO",
+          "startLine": 12,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "name",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceGroupPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/vo/group/IotDeviceGroupRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "IotDeviceGroupRespVO",
+          "startLine": 8,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status",
+            "description",
+            "createTime",
+            "deviceCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceGroupRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/vo/group/IotDeviceGroupSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "IotDeviceGroupSaveReqVO",
+          "startLine": 8,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status",
+            "description"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceGroupSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceGroupDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "IotDeviceGroupDO",
+          "startLine": 17,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status",
+            "description"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceGroupDO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/device/IotDeviceGroupMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "IotDeviceGroupMapper",
+          "startLine": 17,
+          "endLine": 35,
+          "methods": [
+            "selectPage",
+            "selectListByStatus",
+            "selectByName"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceGroupMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceGroupDO>()\n                .likeIfPresent(IotDeviceGroupDO::getName, reqVO.getName())\n                .betweenIfPresent(IotDeviceGroupDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceGroupDO>()\n                .likeIfPresent(IotDeviceGroupDO::getName, reqVO.getName()).betweenIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceGroupDO>().likeIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceGroupDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectByName",
+          "callee": "selectOne",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/service/device/IotDeviceGroupService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 83,
+      "classes": [
+        {
+          "name": "IotDeviceGroupService",
+          "startLine": 21,
+          "endLine": 97,
+          "methods": [
+            "createDeviceGroup",
+            "updateDeviceGroup",
+            "deleteDeviceGroup",
+            "validateDeviceGroupExists",
+            "validateDeviceGroupExists",
+            "getDeviceGroup",
+            "getDeviceGroupByName",
+            "getDeviceGroupPage",
+            "getDeviceGroupListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceGroupService",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validateDeviceGroupExists",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 51
+        },
+        {
+          "caller": "validateDeviceGroupExists",
+          "callee": "ListUtil.empty",
+          "lineNumber": 52
+        },
+        {
+          "caller": "validateDeviceGroupExists",
+          "callee": "convertList",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/service/device/IotDeviceGroupServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "createDeviceGroup",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDeviceGroup",
+          "startLine": 43,
+          "endLine": 50,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDeviceGroup",
+          "startLine": 52,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateDeviceGroupExists",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDeviceGroup",
+          "startLine": 74,
+          "endLine": 77,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDeviceGroupByName",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getDeviceGroupPage",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getDeviceGroupListByStatus",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotDeviceGroupServiceImpl",
+          "startLine": 24,
+          "endLine": 94,
+          "methods": [
+            "createDeviceGroup",
+            "updateDeviceGroup",
+            "deleteDeviceGroup",
+            "validateDeviceGroupExists",
+            "getDeviceGroup",
+            "getDeviceGroupByName",
+            "getDeviceGroupPage",
+            "getDeviceGroupListByStatus"
+          ],
+          "properties": [
+            "deviceGroupMapper",
+            "deviceService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDeviceGroup",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "updateDeviceGroup",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDeviceGroup",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "validateDeviceGroupExists",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getDeviceGroup",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getDeviceGroupByName",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "getDeviceGroupPage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getDeviceGroupListByStatus",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "IotDeviceGroupServiceImpl",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDeviceGroup",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createDeviceGroup",
+          "callee": "deviceGroupMapper.insert",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createDeviceGroup",
+          "callee": "deviceGroup.getId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "updateDeviceGroup",
+          "callee": "validateDeviceGroupExists",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateDeviceGroup",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateDeviceGroup",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateDeviceGroup",
+          "callee": "deviceGroupMapper.updateById",
+          "lineNumber": 49
+        },
+        {
+          "caller": "deleteDeviceGroup",
+          "callee": "validateDeviceGroupExists",
+          "lineNumber": 55
+        },
+        {
+          "caller": "deleteDeviceGroup",
+          "callee": "deviceService.getDeviceCountByGroupId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deleteDeviceGroup",
+          "callee": "exception",
+          "lineNumber": 58
+        },
+        {
+          "caller": "deleteDeviceGroup",
+          "callee": "deviceGroupMapper.deleteById",
+          "lineNumber": 62
+        },
+        {
+          "caller": "validateDeviceGroupExists",
+          "callee": "deviceGroupMapper.selectById",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validateDeviceGroupExists",
+          "callee": "exception",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getDeviceGroup",
+          "callee": "deviceGroupMapper.selectById",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getDeviceGroupByName",
+          "callee": "deviceGroupMapper.selectByName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getDeviceGroupPage",
+          "callee": "deviceGroupMapper.selectPage",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getDeviceGroupListByStatus",
+          "callee": "deviceGroupMapper.selectListByStatus",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    }
+  ]
+}

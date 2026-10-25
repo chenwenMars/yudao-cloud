@@ -1,0 +1,3371 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/CommonStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "isEnable",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isDisable",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CommonStatusEnum",
+          "startLine": 15,
+          "endLine": 46,
+          "methods": [
+            "array",
+            "isEnable",
+            "isDisable"
+          ],
+          "properties": [
+            "ARRAYS",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "isEnable",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isDisable",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "CommonStatusEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isEnable",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isDisable",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/cache/CacheUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "buildAsyncReloadingCache",
+          "startLine": 37,
+          "endLine": 44,
+          "params": [
+            "duration",
+            "loader"
+          ]
+        },
+        {
+          "name": "buildCache",
+          "startLine": 53,
+          "endLine": 59,
+          "params": [
+            "duration",
+            "loader"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CacheUtils",
+          "startLine": 15,
+          "endLine": 61,
+          "methods": [
+            "buildAsyncReloadingCache",
+            "buildCache"
+          ],
+          "properties": [
+            "CACHE_MAX_SIZE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildAsyncReloadingCache",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "buildCache",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "CacheUtils",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildAsyncReloadingCache",
+          "callee": "CacheBuilder.newBuilder()\n                .maximumSize(CACHE_MAX_SIZE)\n                // 只阻塞当前数据加载线程，其他线程返回旧值\n                .refreshAfterWrite(duration).build",
+          "lineNumber": 38
+        },
+        {
+          "caller": "buildAsyncReloadingCache",
+          "callee": "CacheBuilder.newBuilder()\n                .maximumSize(CACHE_MAX_SIZE).refreshAfterWrite",
+          "lineNumber": 38
+        },
+        {
+          "caller": "buildAsyncReloadingCache",
+          "callee": "CacheBuilder.newBuilder().maximumSize",
+          "lineNumber": 38
+        },
+        {
+          "caller": "buildAsyncReloadingCache",
+          "callee": "CacheBuilder.newBuilder",
+          "lineNumber": 38
+        },
+        {
+          "caller": "buildAsyncReloadingCache",
+          "callee": "CacheLoader.asyncReloading",
+          "lineNumber": 43
+        },
+        {
+          "caller": "buildAsyncReloadingCache",
+          "callee": "Executors.newCachedThreadPool",
+          "lineNumber": 43
+        },
+        {
+          "caller": "buildCache",
+          "callee": "CacheBuilder.newBuilder()\n                .maximumSize(CACHE_MAX_SIZE)\n                // 只阻塞当前数据加载线程，其他线程返回旧值\n                .refreshAfterWrite(duration).build",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildCache",
+          "callee": "CacheBuilder.newBuilder()\n                .maximumSize(CACHE_MAX_SIZE).refreshAfterWrite",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildCache",
+          "callee": "CacheBuilder.newBuilder().maximumSize",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildCache",
+          "callee": "CacheBuilder.newBuilder",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/validation/InEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/dict/validation/InDict.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 26,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-test/src/main/java/cn/iocoder/yudao/framework/test/core/util/AssertUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "assertPojoEquals",
+          "startLine": 33,
+          "endLine": 56,
+          "params": [
+            "expected",
+            "actual"
+          ]
+        },
+        {
+          "name": "isPojoEquals",
+          "startLine": 68,
+          "endLine": 83,
+          "params": [
+            "expected",
+            "actual"
+          ]
+        },
+        {
+          "name": "assertServiceException",
+          "startLine": 92,
+          "endLine": 99,
+          "params": [
+            "executable",
+            "errorCode"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AssertUtils",
+          "startLine": 22,
+          "endLine": 101,
+          "methods": [
+            "assertPojoEquals",
+            "isPojoEquals",
+            "assertServiceException"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "assertPojoEquals",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "isPojoEquals",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "assertServiceException",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "AssertUtils",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "assertPojoEquals",
+          "callee": "ReflectUtil.getFields",
+          "lineNumber": 34
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "expected.getClass",
+          "lineNumber": 34
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "Arrays.stream(expectedFields).forEach",
+          "lineNumber": 35
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "Arrays.stream",
+          "lineNumber": 35
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "expectedField.isSynthetic",
+          "lineNumber": 37
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "ArrayUtil.contains",
+          "lineNumber": 41
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "expectedField.getName",
+          "lineNumber": 41
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "ReflectUtil.getField",
+          "lineNumber": 45
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "actual.getClass",
+          "lineNumber": 45
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "expectedField.getName",
+          "lineNumber": 45
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 50
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "ReflectUtil.getFieldValue",
+          "lineNumber": 51
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "ReflectUtil.getFieldValue",
+          "lineNumber": 52
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "String.format",
+          "lineNumber": 53
+        },
+        {
+          "caller": "assertPojoEquals",
+          "callee": "expectedField.getName",
+          "lineNumber": 53
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "ReflectUtil.getFields",
+          "lineNumber": 69
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "expected.getClass",
+          "lineNumber": 69
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "Arrays.stream(expectedFields).allMatch",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "Arrays.stream",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "ArrayUtil.contains",
+          "lineNumber": 72
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "expectedField.getName",
+          "lineNumber": 72
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "ReflectUtil.getField",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "actual.getClass",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "expectedField.getName",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "Objects.equals",
+          "lineNumber": 80
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "ReflectUtil.getFieldValue",
+          "lineNumber": 80
+        },
+        {
+          "caller": "isPojoEquals",
+          "callee": "ReflectUtil.getFieldValue",
+          "lineNumber": 81
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "assertThrows",
+          "lineNumber": 94
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 96
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "errorCode.getCode",
+          "lineNumber": 96
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "serviceException.getCode",
+          "lineNumber": 96
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "ServiceExceptionUtil.doFormat",
+          "lineNumber": 97
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "errorCode.getCode",
+          "lineNumber": 97
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "errorCode.getMsg",
+          "lineNumber": 97
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "Assertions.assertEquals",
+          "lineNumber": 98
+        },
+        {
+          "caller": "assertServiceException",
+          "callee": "serviceException.getMessage",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/AiChatRoleEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "AiChatRoleEnum",
+          "startLine": 11,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "name",
+            "systemMessage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatRoleEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/AiDocumentSplitStrategyEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "AiDocumentSplitStrategyEnum",
+          "startLine": 11,
+          "endLine": 53,
+          "methods": [],
+          "properties": [
+            "code",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiDocumentSplitStrategyEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/DictTypeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "DictTypeConstants",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "AI_WRITE_FORMAT",
+            "AI_WRITE_LENGTH",
+            "AI_WRITE_LANGUAGE",
+            "AI_WRITE_TONE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/ErrorCodeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 52,
+      "classes": [
+        {
+          "name": "ErrorCodeConstants",
+          "startLine": 10,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "API_KEY_NOT_EXISTS",
+            "API_KEY_DISABLE",
+            "API_CONFIG_PLACEHOLDER_NOT_RESOLVED",
+            "MODEL_NOT_EXISTS",
+            "MODEL_DISABLE",
+            "MODEL_DEFAULT_NOT_EXISTS",
+            "MODEL_USE_TYPE_ERROR",
+            "CHAT_ROLE_NOT_EXISTS",
+            "CHAT_ROLE_DISABLE",
+            "CHAT_CONVERSATION_NOT_EXISTS",
+            "CHAT_CONVERSATION_MODEL_ERROR",
+            "CHAT_MESSAGE_NOT_EXIST",
+            "CHAT_STREAM_ERROR",
+            "IMAGE_NOT_EXISTS",
+            "IMAGE_MIDJOURNEY_SUBMIT_FAIL",
+            "IMAGE_CUSTOM_ID_NOT_EXISTS",
+            "MUSIC_NOT_EXISTS",
+            "WRITE_NOT_EXISTS",
+            "WRITE_STREAM_ERROR",
+            "MIND_MAP_NOT_EXISTS",
+            "KNOWLEDGE_NOT_EXISTS",
+            "KNOWLEDGE_DOCUMENT_NOT_EXISTS",
+            "KNOWLEDGE_DOCUMENT_FILE_EMPTY",
+            "KNOWLEDGE_DOCUMENT_FILE_DOWNLOAD_FAIL",
+            "KNOWLEDGE_DOCUMENT_FILE_READ_FAIL",
+            "KNOWLEDGE_SEGMENT_NOT_EXISTS",
+            "KNOWLEDGE_SEGMENT_CONTENT_TOO_LONG",
+            "TOOL_NOT_EXISTS",
+            "TOOL_NAME_NOT_EXISTS",
+            "WORKFLOW_NOT_EXISTS",
+            "WORKFLOW_CODE_EXISTS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErrorCodeConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/image/AiImageStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "valueOfStatus",
+          "startLine": 28,
+          "endLine": 35,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiImageStatusEnum",
+          "startLine": 11,
+          "endLine": 37,
+          "methods": [
+            "valueOfStatus"
+          ],
+          "properties": [
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "valueOfStatus",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "AiImageStatusEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOfStatus",
+          "callee": "AiImageStatusEnum.values",
+          "lineNumber": 29
+        },
+        {
+          "caller": "valueOfStatus",
+          "callee": "statusEnum.getStatus().equals",
+          "lineNumber": 30
+        },
+        {
+          "caller": "valueOfStatus",
+          "callee": "statusEnum.getStatus",
+          "lineNumber": 30
+        },
+        {
+          "caller": "valueOfStatus",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/model/AiModelTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiModelTypeEnum",
+          "startLine": 14,
+          "endLine": 41,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "type",
+            "name",
+            "ARRAYS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "AiModelTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/model/AiPlatformEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "validatePlatform",
+          "startLine": 59,
+          "endLine": 66,
+          "params": [
+            "platform"
+          ]
+        },
+        {
+          "name": "array",
+          "startLine": 68,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiPlatformEnum",
+          "startLine": 14,
+          "endLine": 73,
+          "methods": [
+            "validatePlatform",
+            "array"
+          ],
+          "properties": [
+            "platform",
+            "name",
+            "ARRAYS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "validatePlatform",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "AiPlatformEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validatePlatform",
+          "callee": "AiPlatformEnum.values",
+          "lineNumber": 60
+        },
+        {
+          "caller": "validatePlatform",
+          "callee": "platformEnum.getPlatform().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "validatePlatform",
+          "callee": "platformEnum.getPlatform",
+          "lineNumber": 61
+        },
+        {
+          "caller": "validatePlatform",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/music/AiMusicGenerateModeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 32,
+          "endLine": 35,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiMusicGenerateModeEnum",
+          "startLine": 14,
+          "endLine": 37,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "mode",
+            "name",
+            "ARRAYS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "AiMusicGenerateModeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/music/AiMusicStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiMusicStatusEnum",
+          "startLine": 14,
+          "endLine": 39,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "status",
+            "name",
+            "ARRAYS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "AiMusicStatusEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-api/src/main/java/cn/iocoder/yudao/module/ai/enums/write/AiWriteTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 37,
+          "endLine": 40,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiWriteTypeEnum",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "type",
+            "name",
+            "prompt",
+            "ARRAYS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "AiWriteTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/AiChatConversationController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 116,
+      "functions": [
+        {
+          "name": "createChatConversationMy",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateChatConversationMy",
+          "startLine": 49,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "getChatConversationMyList",
+          "startLine": 56,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "getChatConversationMy",
+          "startLine": 64,
+          "endLine": 74,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteChatConversationMy",
+          "startLine": 76,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteChatConversationMyByUnpinned",
+          "startLine": 84,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "getChatConversationPage",
+          "startLine": 93,
+          "endLine": 107,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getChatConversation",
+          "startLine": 109,
+          "endLine": 121,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteChatConversationByAdmin",
+          "startLine": 123,
+          "endLine": 130,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiChatConversationController",
+          "startLine": 32,
+          "endLine": 132,
+          "methods": [
+            "createChatConversationMy",
+            "updateChatConversationMy",
+            "getChatConversationMyList",
+            "getChatConversationMy",
+            "deleteChatConversationMy",
+            "deleteChatConversationMyByUnpinned",
+            "getChatConversationPage",
+            "getChatConversation",
+            "deleteChatConversationByAdmin"
+          ],
+          "properties": [
+            "chatConversationService",
+            "chatMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createChatConversationMy",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "updateChatConversationMy",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getChatConversationMyList",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getChatConversationMy",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "deleteChatConversationMy",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "deleteChatConversationMyByUnpinned",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getChatConversationPage",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "getChatConversation",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "deleteChatConversationByAdmin",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "AiChatConversationController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createChatConversationMy",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createChatConversationMy",
+          "callee": "chatConversationService.createChatConversationMy",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createChatConversationMy",
+          "callee": "getLoginUserId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateChatConversationMy",
+          "callee": "chatConversationService.updateChatConversationMy",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateChatConversationMy",
+          "callee": "getLoginUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateChatConversationMy",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getChatConversationMyList",
+          "callee": "chatConversationService.getChatConversationListByUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getChatConversationMyList",
+          "callee": "getLoginUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getChatConversationMyList",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getChatConversationMyList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getChatConversationMy",
+          "callee": "chatConversationService.getChatConversation",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getChatConversationMy",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getChatConversationMy",
+          "callee": "conversation.getUserId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getChatConversationMy",
+          "callee": "getLoginUserId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getChatConversationMy",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getChatConversationMy",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 73
+        },
+        {
+          "caller": "deleteChatConversationMy",
+          "callee": "chatConversationService.deleteChatConversationMy",
+          "lineNumber": 80
+        },
+        {
+          "caller": "deleteChatConversationMy",
+          "callee": "getLoginUserId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "deleteChatConversationMy",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "deleteChatConversationMyByUnpinned",
+          "callee": "chatConversationService.deleteChatConversationMyByUnpinned",
+          "lineNumber": 87
+        },
+        {
+          "caller": "deleteChatConversationMyByUnpinned",
+          "callee": "getLoginUserId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "deleteChatConversationMyByUnpinned",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "chatConversationService.getChatConversationPage",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "success",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "chatMessageService.getChatMessageCountMap",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "convertList",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "success",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "conversation.setMessageCount",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "messageCountMap.getOrDefault",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getChatConversationPage",
+          "callee": "conversation.getId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getChatConversation",
+          "callee": "chatConversationService.getChatConversation",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getChatConversation",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getChatConversation",
+          "callee": "respVO.setMessageCount",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getChatConversation",
+          "callee": "chatMessageService.getChatMessageCount",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getChatConversation",
+          "callee": "success",
+          "lineNumber": 120
+        },
+        {
+          "caller": "deleteChatConversationByAdmin",
+          "callee": "chatConversationService.deleteChatConversationByAdmin",
+          "lineNumber": 128
+        },
+        {
+          "caller": "deleteChatConversationByAdmin",
+          "callee": "success",
+          "lineNumber": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/AiChatMessageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 171,
+      "nonEmptyLines": 155,
+      "functions": [
+        {
+          "name": "sendMessage",
+          "startLine": 59,
+          "endLine": 63,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "sendChatMessageStream",
+          "startLine": 65,
+          "endLine": 69,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "getChatMessageListByConversationId",
+          "startLine": 71,
+          "endLine": 112,
+          "params": [
+            "conversationId"
+          ]
+        },
+        {
+          "name": "deleteChatMessage",
+          "startLine": 114,
+          "endLine": 120,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteChatMessageByConversationId",
+          "startLine": 122,
+          "endLine": 128,
+          "params": [
+            "conversationId"
+          ]
+        },
+        {
+          "name": "getChatMessagePage",
+          "startLine": 132,
+          "endLine": 146,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getChatMessage",
+          "startLine": 148,
+          "endLine": 160,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteChatMessageByAdmin",
+          "startLine": 162,
+          "endLine": 169,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiChatMessageController",
+          "startLine": 42,
+          "endLine": 171,
+          "methods": [
+            "sendMessage",
+            "sendChatMessageStream",
+            "getChatMessageListByConversationId",
+            "deleteChatMessage",
+            "deleteChatMessageByConversationId",
+            "getChatMessagePage",
+            "getChatMessage",
+            "deleteChatMessageByAdmin"
+          ],
+          "properties": [
+            "chatMessageService",
+            "chatConversationService",
+            "chatRoleService",
+            "knowledgeSegmentService",
+            "knowledgeDocumentService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendMessage",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "sendChatMessageStream",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getChatMessageListByConversationId",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "deleteChatMessage",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "deleteChatMessageByConversationId",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "getChatMessagePage",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "getChatMessage",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "deleteChatMessageByAdmin",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "AiChatMessageController",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendMessage",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "chatMessageService.sendMessage",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendChatMessageStream",
+          "callee": "chatMessageService.sendChatMessageStream",
+          "lineNumber": 68
+        },
+        {
+          "caller": "sendChatMessageStream",
+          "callee": "getLoginUserId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "chatConversationService.getChatConversation",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "conversation.getUserId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "getLoginUserId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "Collections.emptyList",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "chatMessageService.getChatMessageListByConversationId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "success",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "Collections.emptyList",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "knowledgeSegmentService.getKnowledgeSegmentMap",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "convertListByFlatMap",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "message.getSegmentIds",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "message.getSegmentIds().stream",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "message.getSegmentIds",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "knowledgeDocumentService.getKnowledgeDocumentMap",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "convertList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "segmentMap.values",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "messageList.size",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "messageList.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "message.getSegmentIds",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "messageVOList.get(i).setSegments",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "messageVOList.get",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "convertList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "message.getSegmentIds",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "segmentMap.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "documentMap.get",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "segment.getDocumentId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "new AiChatMessageRespVO.KnowledgeSegment().setId(segment.getId()).setContent(segment.getContent())\n                        .setDocumentId(segment.getDocumentId()).setDocumentName",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "new AiChatMessageRespVO.KnowledgeSegment().setId(segment.getId()).setContent(segment.getContent()).setDocumentId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "new AiChatMessageRespVO.KnowledgeSegment().setId(segment.getId()).setContent",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "new AiChatMessageRespVO.KnowledgeSegment().setId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "new AiChatMessageRespVO.KnowledgeSegment",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "segment.getId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "segment.getContent",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "segment.getDocumentId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "document.getName",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getChatMessageListByConversationId",
+          "callee": "success",
+          "lineNumber": 111
+        },
+        {
+          "caller": "deleteChatMessage",
+          "callee": "chatMessageService.deleteChatMessage",
+          "lineNumber": 118
+        },
+        {
+          "caller": "deleteChatMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 118
+        },
+        {
+          "caller": "deleteChatMessage",
+          "callee": "success",
+          "lineNumber": 119
+        },
+        {
+          "caller": "deleteChatMessageByConversationId",
+          "callee": "chatMessageService.deleteChatMessageByConversationId",
+          "lineNumber": 126
+        },
+        {
+          "caller": "deleteChatMessageByConversationId",
+          "callee": "getLoginUserId",
+          "lineNumber": 126
+        },
+        {
+          "caller": "deleteChatMessageByConversationId",
+          "callee": "success",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "chatMessageService.getChatMessagePage",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "success",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "PageResult.empty",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "chatRoleService.getChatRoleMap",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "convertSet",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "success",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "respVO.getRoleId",
+          "lineNumber": 144
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "respVO.setRoleName",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getChatMessagePage",
+          "callee": "role.getName",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "chatMessageService.getChatMessage",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "respVO.getRoleId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "chatRoleService.getChatRole",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "respVO.getRoleId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "respVO.setRoleName",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "role.getName",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getChatMessage",
+          "callee": "success",
+          "lineNumber": 159
+        },
+        {
+          "caller": "deleteChatMessageByAdmin",
+          "callee": "chatMessageService.deleteChatMessageByAdmin",
+          "lineNumber": 167
+        },
+        {
+          "caller": "deleteChatMessageByAdmin",
+          "callee": "success",
+          "lineNumber": 168
+        }
+      ],
+      "metrics": {
+        "importCount": 19,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/conversation/AiChatConversationCreateMyReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AiChatConversationCreateMyReqVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "roleId",
+            "knowledgeId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatConversationCreateMyReqVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/conversation/AiChatConversationPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AiChatConversationPageReqVO",
+          "startLine": 12,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "userId",
+            "title",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatConversationPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/conversation/AiChatConversationRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "AiChatConversationRespVO",
+          "startLine": 13,
+          "endLine": 71,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "title",
+            "pinned",
+            "roleId",
+            "modelId",
+            "model",
+            "modelName",
+            "systemMessage",
+            "temperature",
+            "maxTokens",
+            "maxContexts",
+            "createTime",
+            "roleAvatar",
+            "roleName",
+            "messageCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatConversationRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/conversation/AiChatConversationUpdateMyReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "AiChatConversationUpdateMyReqVO",
+          "startLine": 7,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "pinned",
+            "modelId",
+            "knowledgeId",
+            "systemMessage",
+            "temperature",
+            "maxTokens",
+            "maxContexts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatConversationUpdateMyReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/message/AiChatMessagePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "AiChatMessagePageReqVO",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "conversationId",
+            "userId",
+            "content",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatMessagePageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/message/AiChatMessageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "AiChatMessageRespVO",
+          "startLine": 10,
+          "endLine": 85,
+          "methods": [],
+          "properties": [
+            "id",
+            "conversationId",
+            "replyId",
+            "type",
+            "userId",
+            "roleId",
+            "model",
+            "modelId",
+            "content",
+            "reasoningContent",
+            "useContext",
+            "segmentIds",
+            "segments",
+            "webSearchPages",
+            "attachmentUrls",
+            "createTime",
+            "roleName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatMessageRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/message/AiChatMessageSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "AiChatMessageSendReqVO",
+          "startLine": 10,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "conversationId",
+            "content",
+            "useContext",
+            "useSearch",
+            "attachmentUrls"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatMessageSendReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/vo/message/AiChatMessageSendRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "AiChatMessageSendRespVO",
+          "startLine": 10,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "send",
+            "receive"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiChatMessageSendRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/AiImageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 148,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "getImagePageMy",
+          "startLine": 39,
+          "endLine": 44,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getImagePagePublic",
+          "startLine": 46,
+          "endLine": 51,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getImageMy",
+          "startLine": 53,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getImageListMyByIds",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "drawImage",
+          "startLine": 73,
+          "endLine": 77,
+          "params": [
+            "drawReqVO"
+          ]
+        },
+        {
+          "name": "deleteImageMy",
+          "startLine": 79,
+          "endLine": 85,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "midjourneyImagine",
+          "startLine": 89,
+          "endLine": 94,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "midjourneyNotify",
+          "startLine": 96,
+          "endLine": 103,
+          "params": [
+            "notify"
+          ]
+        },
+        {
+          "name": "midjourneyAction",
+          "startLine": 105,
+          "endLine": 110,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getImagePage",
+          "startLine": 114,
+          "endLine": 120,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getImage",
+          "startLine": 122,
+          "endLine": 129,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateImage",
+          "startLine": 131,
+          "endLine": 137,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteImage",
+          "startLine": 139,
+          "endLine": 146,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiImageController",
+          "startLine": 30,
+          "endLine": 148,
+          "methods": [
+            "getImagePageMy",
+            "getImagePagePublic",
+            "getImageMy",
+            "getImageListMyByIds",
+            "drawImage",
+            "deleteImageMy",
+            "midjourneyImagine",
+            "midjourneyNotify",
+            "midjourneyAction",
+            "getImagePage",
+            "getImage",
+            "updateImage",
+            "deleteImage"
+          ],
+          "properties": [
+            "imageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getImagePageMy",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "getImagePagePublic",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getImageMy",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "getImageListMyByIds",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "drawImage",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "deleteImageMy",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "midjourneyImagine",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "midjourneyNotify",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "midjourneyAction",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "getImagePage",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "getImage",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "updateImage",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "deleteImage",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "AiImageController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getImagePageMy",
+          "callee": "imageService.getImagePageMy",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getImagePageMy",
+          "callee": "getLoginUserId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getImagePageMy",
+          "callee": "success",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getImagePageMy",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getImagePagePublic",
+          "callee": "imageService.getImagePagePublic",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getImagePagePublic",
+          "callee": "success",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getImagePagePublic",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getImageMy",
+          "callee": "imageService.getImage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getImageMy",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getImageMy",
+          "callee": "getLoginUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getImageMy",
+          "callee": "image.getUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getImageMy",
+          "callee": "success",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getImageMy",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getImageMy",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getImageListMyByIds",
+          "callee": "imageService.getImageList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getImageListMyByIds",
+          "callee": "imageList.removeIf",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getImageListMyByIds",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getImageListMyByIds",
+          "callee": "getLoginUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getImageListMyByIds",
+          "callee": "item.getUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getImageListMyByIds",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getImageListMyByIds",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 70
+        },
+        {
+          "caller": "drawImage",
+          "callee": "success",
+          "lineNumber": 76
+        },
+        {
+          "caller": "drawImage",
+          "callee": "imageService.drawImage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "drawImage",
+          "callee": "getLoginUserId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "deleteImageMy",
+          "callee": "imageService.deleteImageMy",
+          "lineNumber": 83
+        },
+        {
+          "caller": "deleteImageMy",
+          "callee": "getLoginUserId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "deleteImageMy",
+          "callee": "success",
+          "lineNumber": 84
+        },
+        {
+          "caller": "midjourneyImagine",
+          "callee": "imageService.midjourneyImagine",
+          "lineNumber": 92
+        },
+        {
+          "caller": "midjourneyImagine",
+          "callee": "getLoginUserId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "midjourneyImagine",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "midjourneyNotify",
+          "callee": "imageService.midjourneyNotify",
+          "lineNumber": 101
+        },
+        {
+          "caller": "midjourneyNotify",
+          "callee": "success",
+          "lineNumber": 102
+        },
+        {
+          "caller": "midjourneyAction",
+          "callee": "imageService.midjourneyAction",
+          "lineNumber": 108
+        },
+        {
+          "caller": "midjourneyAction",
+          "callee": "getLoginUserId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "midjourneyAction",
+          "callee": "success",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getImagePage",
+          "callee": "imageService.getImagePage",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getImagePage",
+          "callee": "success",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getImagePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getImage",
+          "callee": "imageService.getImage",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getImage",
+          "callee": "success",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getImage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateImage",
+          "callee": "imageService.updateImage",
+          "lineNumber": 135
+        },
+        {
+          "caller": "updateImage",
+          "callee": "success",
+          "lineNumber": 136
+        },
+        {
+          "caller": "deleteImage",
+          "callee": "imageService.deleteImage",
+          "lineNumber": 144
+        },
+        {
+          "caller": "deleteImage",
+          "callee": "success",
+          "lineNumber": 145
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/vo/AiImageDrawReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "AiImageDrawReqVO",
+          "startLine": 13,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "modelId",
+            "prompt",
+            "height",
+            "width",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiImageDrawReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/vo/AiImagePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "AiImagePageReqVO",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "userId",
+            "platform",
+            "prompt",
+            "status",
+            "publicStatus",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiImagePageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/vo/AiImagePublicPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "AiImagePublicPageReqVO",
+          "startLine": 7,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "prompt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiImagePublicPageReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/vo/AiImageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "AiImageRespVO",
+          "startLine": 11,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "platform",
+            "model",
+            "prompt",
+            "width",
+            "height",
+            "status",
+            "publicStatus",
+            "picUrl",
+            "errorMessage",
+            "options",
+            "buttons",
+            "finishTime",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiImageRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/vo/AiImageUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "AiImageUpdateReqVO",
+          "startLine": 7,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "id",
+            "publicStatus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiImageUpdateReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/vo/midjourney/AiMidjourneyActionReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "AiMidjourneyActionReqVO",
+          "startLine": 8,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id",
+            "customId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiMidjourneyActionReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/image/vo/midjourney/AiMidjourneyImagineReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "AiMidjourneyImagineReqVO",
+          "startLine": 8,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "prompt",
+            "modelId",
+            "width",
+            "height",
+            "version",
+            "referImageUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiMidjourneyImagineReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "getKnowledgePage",
+          "startLine": 35,
+          "endLine": 41,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getKnowledge",
+          "startLine": 43,
+          "endLine": 50,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createKnowledge",
+          "startLine": 52,
+          "endLine": 57,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateKnowledge",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteKnowledge",
+          "startLine": 67,
+          "endLine": 74,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getKnowledgeSimpleList",
+          "startLine": 76,
+          "endLine": 82,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiKnowledgeController",
+          "startLine": 26,
+          "endLine": 84,
+          "methods": [
+            "getKnowledgePage",
+            "getKnowledge",
+            "createKnowledge",
+            "updateKnowledge",
+            "deleteKnowledge",
+            "getKnowledgeSimpleList"
+          ],
+          "properties": [
+            "knowledgeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getKnowledgePage",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "getKnowledge",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "createKnowledge",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "updateKnowledge",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "deleteKnowledge",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getKnowledgeSimpleList",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "AiKnowledgeController",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getKnowledgePage",
+          "callee": "knowledgeService.getKnowledgePage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getKnowledgePage",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getKnowledgePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getKnowledge",
+          "callee": "knowledgeService.getKnowledge",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getKnowledge",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getKnowledge",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createKnowledge",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createKnowledge",
+          "callee": "knowledgeService.createKnowledge",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateKnowledge",
+          "callee": "knowledgeService.updateKnowledge",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateKnowledge",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deleteKnowledge",
+          "callee": "knowledgeService.deleteKnowledge",
+          "lineNumber": 72
+        },
+        {
+          "caller": "deleteKnowledge",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "knowledgeService.getKnowledgeSimpleListByStatus",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "convertList",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "new AiKnowledgeRespVO()\n                .setId(knowledge.getId()).setName",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "new AiKnowledgeRespVO().setId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "new AiKnowledgeRespVO",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "knowledge.getId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getKnowledgeSimpleList",
+          "callee": "knowledge.getName",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeDocumentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "getKnowledgeDocumentPage",
+          "startLine": 31,
+          "endLine": 38,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getKnowledgeDocument",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createKnowledgeDocument",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "createKnowledgeDocumentList",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateKnowledgeDocument",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateKnowledgeDocumentStatus",
+          "startLine": 73,
+          "endLine": 80,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteKnowledgeDocument",
+          "startLine": 82,
+          "endLine": 88,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AiKnowledgeDocumentController",
+          "startLine": 22,
+          "endLine": 90,
+          "methods": [
+            "getKnowledgeDocumentPage",
+            "getKnowledgeDocument",
+            "createKnowledgeDocument",
+            "createKnowledgeDocumentList",
+            "updateKnowledgeDocument",
+            "updateKnowledgeDocumentStatus",
+            "deleteKnowledgeDocument"
+          ],
+          "properties": [
+            "documentService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getKnowledgeDocumentPage",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "getKnowledgeDocument",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "createKnowledgeDocument",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "createKnowledgeDocumentList",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "updateKnowledgeDocument",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "updateKnowledgeDocumentStatus",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "deleteKnowledgeDocument",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "AiKnowledgeDocumentController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getKnowledgeDocumentPage",
+          "callee": "documentService.getKnowledgeDocumentPage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getKnowledgeDocumentPage",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getKnowledgeDocumentPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getKnowledgeDocument",
+          "callee": "documentService.getKnowledgeDocument",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getKnowledgeDocument",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getKnowledgeDocument",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createKnowledgeDocument",
+          "callee": "documentService.createKnowledgeDocument",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createKnowledgeDocument",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createKnowledgeDocumentList",
+          "callee": "documentService.createKnowledgeDocumentList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createKnowledgeDocumentList",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateKnowledgeDocument",
+          "callee": "documentService.updateKnowledgeDocument",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateKnowledgeDocument",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateKnowledgeDocumentStatus",
+          "callee": "documentService.updateKnowledgeDocumentStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateKnowledgeDocumentStatus",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "deleteKnowledgeDocument",
+          "callee": "documentService.deleteKnowledgeDocument",
+          "lineNumber": 86
+        },
+        {
+          "caller": "deleteKnowledgeDocument",
+          "callee": "success",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    }
+  ]
+}

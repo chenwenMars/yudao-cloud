@@ -1,0 +1,1457 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 33,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 33,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/thingmodel/vo/IotThingModelTSLRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "IotThingModelTSLRespVO",
+          "startLine": 11,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "productId",
+            "productKey",
+            "properties",
+            "events",
+            "services"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotThingModelTSLRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/convert/thingmodel/IotThingModelConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "IotThingModelConvert",
+          "startLine": 16,
+          "endLine": 50,
+          "methods": [
+            "convert",
+            "convertToProperty",
+            "convertToEvent",
+            "convertToService"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotThingModelConvert",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertToProperty",
+          "callee": "Objects.equals",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convertToProperty",
+          "callee": "bean.getType",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convertToProperty",
+          "callee": "IotThingModelTypeEnum.PROPERTY.getType",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convertToProperty",
+          "callee": "bean.getProperty",
+          "lineNumber": 29
+        },
+        {
+          "caller": "convertToEvent",
+          "callee": "Objects.equals",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertToEvent",
+          "callee": "bean.getType",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertToEvent",
+          "callee": "IotThingModelTypeEnum.EVENT.getType",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertToEvent",
+          "callee": "bean.getEvent",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertToService",
+          "callee": "Objects.equals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertToService",
+          "callee": "bean.getType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertToService",
+          "callee": "IotThingModelTypeEnum.SERVICE.getType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertToService",
+          "callee": "bean.getService",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertConfigDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 95,
+      "classes": [
+        {
+          "name": "IotAlertConfigDO",
+          "startLine": 27,
+          "endLine": 102,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "level",
+            "status",
+            "sceneRuleIds",
+            "receiveUserIds",
+            "receiveTypes",
+            "smsTemplateCode",
+            "mailTemplateCode",
+            "notifyTemplateCode"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotAlertConfigDO",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/alert/IotAlertRecordDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 83,
+      "classes": [
+        {
+          "name": "IotAlertRecordDO",
+          "startLine": 23,
+          "endLine": 89,
+          "methods": [],
+          "properties": [
+            "id",
+            "configId",
+            "configName",
+            "configLevel",
+            "sceneRuleId",
+            "productId",
+            "deviceId",
+            "deviceMessage",
+            "processStatus",
+            "processRemark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotAlertRecordDO",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 130,
+      "classes": [
+        {
+          "name": "IotDeviceDO",
+          "startLine": 26,
+          "endLine": 142,
+          "methods": [],
+          "properties": [
+            "DEVICE_ID_ALL",
+            "id",
+            "deviceName",
+            "nickname",
+            "serialNumber",
+            "picUrl",
+            "groupIds",
+            "productId",
+            "productKey",
+            "deviceType",
+            "gatewayId",
+            "state",
+            "onlineTime",
+            "offlineTime",
+            "activeTime",
+            "firmwareId",
+            "deviceSecret",
+            "latitude",
+            "longitude",
+            "config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEVICE_ID_ALL",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "IotDeviceDO",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceMessageDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "IotDeviceMessageDO",
+          "startLine": 18,
+          "endLine": 109,
+          "methods": [],
+          "properties": [
+            "id",
+            "reportTime",
+            "ts",
+            "deviceId",
+            "tenantId",
+            "serverId",
+            "upstream",
+            "reply",
+            "identifier",
+            "requestId",
+            "method",
+            "params",
+            "data",
+            "code",
+            "msg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceMessageDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceModbusConfigDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 80,
+      "classes": [
+        {
+          "name": "IotDeviceModbusConfigDO",
+          "startLine": 20,
+          "endLine": 85,
+          "methods": [],
+          "properties": [
+            "id",
+            "productId",
+            "deviceId",
+            "ip",
+            "port",
+            "slaveId",
+            "timeout",
+            "retryInterval",
+            "mode",
+            "frameFormat",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceModbusConfigDO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDeviceModbusPointDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 96,
+      "classes": [
+        {
+          "name": "IotDeviceModbusPointDO",
+          "startLine": 22,
+          "endLine": 103,
+          "methods": [],
+          "properties": [
+            "id",
+            "deviceId",
+            "thingModelId",
+            "identifier",
+            "name",
+            "functionCode",
+            "registerAddress",
+            "registerCount",
+            "byteOrder",
+            "rawDataType",
+            "scale",
+            "pollInterval",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceModbusPointDO",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/device/IotDevicePropertyDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "IotDevicePropertyDO",
+          "startLine": 19,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "value",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDevicePropertyDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaFirmwareDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 66,
+      "classes": [
+        {
+          "name": "IotOtaFirmwareDO",
+          "startLine": 20,
+          "endLine": 72,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "version",
+            "productId",
+            "fileUrl",
+            "fileSize",
+            "fileDigestAlgorithm",
+            "fileDigestValue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotOtaFirmwareDO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaTaskDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 63,
+      "classes": [
+        {
+          "name": "IotOtaTaskDO",
+          "startLine": 19,
+          "endLine": 70,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "firmwareId",
+            "status",
+            "deviceScope",
+            "deviceTotalCount",
+            "deviceSuccessCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotOtaTaskDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/ota/IotOtaTaskRecordDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 73,
+      "classes": [
+        {
+          "name": "IotOtaTaskRecordDO",
+          "startLine": 20,
+          "endLine": 82,
+          "methods": [],
+          "properties": [
+            "DESCRIPTION_CANCEL_BY_TASK",
+            "DESCRIPTION_CANCEL_BY_RECORD",
+            "id",
+            "firmwareId",
+            "taskId",
+            "deviceId",
+            "fromFirmwareId",
+            "status",
+            "progress",
+            "description"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DESCRIPTION_CANCEL_BY_TASK",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "DESCRIPTION_CANCEL_BY_RECORD",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "IotOtaTaskRecordDO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/product/IotProductCategoryDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "IotProductCategoryDO",
+          "startLine": 17,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "sort",
+            "status",
+            "description"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotProductCategoryDO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/product/IotProductDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 96,
+      "nonEmptyLines": 91,
+      "classes": [
+        {
+          "name": "IotProductDO",
+          "startLine": 17,
+          "endLine": 96,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "productKey",
+            "productSecret",
+            "registerEnabled",
+            "categoryId",
+            "icon",
+            "picUrl",
+            "description",
+            "status",
+            "deviceType",
+            "netType",
+            "protocolType",
+            "serializeType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotProductDO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/IotDataRuleDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 97,
+      "classes": [
+        {
+          "name": "IotDataRuleDO",
+          "startLine": 29,
+          "endLine": 109,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "status",
+            "sourceConfigs",
+            "sinkIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataRuleDO",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/IotDataSinkDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "IotDataSinkDO",
+          "startLine": 22,
+          "endLine": 62,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "status",
+            "type",
+            "config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkDO",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/IotSceneRuleDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 251,
+      "nonEmptyLines": 224,
+      "classes": [
+        {
+          "name": "IotSceneRuleDO",
+          "startLine": 32,
+          "endLine": 251,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "status",
+            "lastTriggerTime",
+            "triggers",
+            "actions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotSceneRuleDO",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotAbstractDataSinkConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "IotAbstractDataSinkConfig",
+          "startLine": 16,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotAbstractDataSinkConfig",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkDatabaseConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "IotDataSinkDatabaseConfig",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "jdbcUrl",
+            "username",
+            "password",
+            "tableName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkDatabaseConfig",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkHttpConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "IotDataSinkHttpConfig",
+          "startLine": 12,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "url",
+            "method",
+            "headers",
+            "query",
+            "body"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkHttpConfig",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkKafkaConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "IotDataSinkKafkaConfig",
+          "startLine": 10,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "bootstrapServers",
+            "username",
+            "password",
+            "ssl",
+            "topic"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkKafkaConfig",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkMqttConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "IotDataSinkMqttConfig",
+          "startLine": 10,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "url",
+            "username",
+            "password",
+            "clientId",
+            "topic"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkMqttConfig",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkRabbitMQConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "IotDataSinkRabbitMQConfig",
+          "startLine": 10,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "host",
+            "port",
+            "virtualHost",
+            "username",
+            "password",
+            "exchange",
+            "routingKey",
+            "queue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkRabbitMQConfig",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkRedisConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "IotDataSinkRedisConfig",
+          "startLine": 12,
+          "endLine": 64,
+          "methods": [],
+          "properties": [
+            "host",
+            "port",
+            "password",
+            "database",
+            "dataStructure",
+            "topic",
+            "hashField",
+            "scoreField"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkRedisConfig",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkRocketMQConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "IotDataSinkRocketMQConfig",
+          "startLine": 10,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "nameServer",
+            "accessKey",
+            "secretKey",
+            "group",
+            "topic",
+            "tags"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkRocketMQConfig",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkTcpConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 78,
+      "classes": [
+        {
+          "name": "IotDataSinkTcpConfig",
+          "startLine": 10,
+          "endLine": 92,
+          "methods": [],
+          "properties": [
+            "DEFAULT_CONNECT_TIMEOUT_MS",
+            "DEFAULT_READ_TIMEOUT_MS",
+            "DEFAULT_SSL",
+            "DEFAULT_DATA_FORMAT",
+            "DEFAULT_HEARTBEAT_INTERVAL_MS",
+            "DEFAULT_RECONNECT_INTERVAL_MS",
+            "DEFAULT_MAX_RECONNECT_ATTEMPTS",
+            "host",
+            "port",
+            "connectTimeoutMs",
+            "readTimeoutMs",
+            "ssl",
+            "sslCertPath",
+            "dataFormat",
+            "heartbeatIntervalMs",
+            "reconnectIntervalMs",
+            "maxReconnectAttempts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_CONNECT_TIMEOUT_MS",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_READ_TIMEOUT_MS",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_SSL",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_DATA_FORMAT",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_HEARTBEAT_INTERVAL_MS",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_RECONNECT_INTERVAL_MS",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_MAX_RECONNECT_ATTEMPTS",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "IotDataSinkTcpConfig",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/rule/config/IotDataSinkWebSocketConfig.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 114,
+      "classes": [
+        {
+          "name": "IotDataSinkWebSocketConfig",
+          "startLine": 13,
+          "endLine": 132,
+          "methods": [],
+          "properties": [
+            "DEFAULT_CONNECT_TIMEOUT_MS",
+            "DEFAULT_SEND_TIMEOUT_MS",
+            "DEFAULT_HEARTBEAT_INTERVAL_MS",
+            "DEFAULT_HEARTBEAT_MESSAGE",
+            "DEFAULT_VERIFY_SSL_CERT",
+            "DEFAULT_DATA_FORMAT",
+            "DEFAULT_RECONNECT_INTERVAL_MS",
+            "DEFAULT_MAX_RECONNECT_ATTEMPTS",
+            "DEFAULT_ENABLE_COMPRESSION",
+            "DEFAULT_SEND_RETRY_COUNT",
+            "DEFAULT_SEND_RETRY_INTERVAL_MS",
+            "serverUrl",
+            "connectTimeoutMs",
+            "sendTimeoutMs",
+            "heartbeatIntervalMs",
+            "heartbeatMessage",
+            "subprotocols",
+            "customHeaders",
+            "verifySslCert",
+            "dataFormat",
+            "reconnectIntervalMs",
+            "maxReconnectAttempts",
+            "enableCompression",
+            "sendRetryCount",
+            "sendRetryIntervalMs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_CONNECT_TIMEOUT_MS",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_SEND_TIMEOUT_MS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_HEARTBEAT_INTERVAL_MS",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_HEARTBEAT_MESSAGE",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_VERIFY_SSL_CERT",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_DATA_FORMAT",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_RECONNECT_INTERVAL_MS",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_MAX_RECONNECT_ATTEMPTS",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_ENABLE_COMPRESSION",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_SEND_RETRY_COUNT",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_SEND_RETRY_INTERVAL_MS",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "IotDataSinkWebSocketConfig",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/IotThingModelDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 81,
+      "classes": [
+        {
+          "name": "IotThingModelDO",
+          "startLine": 26,
+          "endLine": 91,
+          "methods": [],
+          "properties": [
+            "id",
+            "identifier",
+            "name",
+            "description",
+            "productId",
+            "productKey",
+            "type",
+            "property",
+            "event",
+            "service"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotThingModelDO",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/ThingModelEvent.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "ThingModelEvent",
+          "startLine": 17,
+          "endLine": 55,
+          "methods": [],
+          "properties": [
+            "identifier",
+            "name",
+            "required",
+            "type",
+            "outputParams",
+            "method"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelEvent",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/ThingModelParam.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 58,
+      "classes": [
+        {
+          "name": "ThingModelParam",
+          "startLine": 18,
+          "endLine": 63,
+          "methods": [],
+          "properties": [
+            "identifier",
+            "name",
+            "direction",
+            "paraOrder",
+            "dataType",
+            "dataSpecs",
+            "dataSpecsList"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelParam",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/ThingModelProperty.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 58,
+      "classes": [
+        {
+          "name": "ThingModelProperty",
+          "startLine": 20,
+          "endLine": 63,
+          "methods": [],
+          "properties": [
+            "identifier",
+            "name",
+            "accessMode",
+            "required",
+            "dataType",
+            "dataSpecs",
+            "dataSpecsList"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelProperty",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/ThingModelService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "ThingModelService",
+          "startLine": 17,
+          "endLine": 62,
+          "methods": [],
+          "properties": [
+            "identifier",
+            "name",
+            "required",
+            "callType",
+            "inputParams",
+            "outputParams",
+            "method"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/dataType/ThingModelBoolOrEnumDataSpecs.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "ThingModelBoolOrEnumDataSpecs",
+          "startLine": 17,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "name",
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelBoolOrEnumDataSpecs",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,1158 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [
+    "yudao-module-mes/yudao-module-mes-server/src/main/resources/mapper/home/MesHomeStatisticsMapper.xml",
+    "yudao-module-mes/yudao-module-mes-server/src/main/resources/mapper/qc/pendinginspect/MesQcPendingInspectMapper.xml",
+    "yudao-module-mes/yudao-module-mes-server/src/main/resources/mapper/wm/batch/MesWmBatchMapper.xml",
+    "yudao-module-mes/yudao-module-mes-server/src/test/resources/logback.xml",
+    "yudao-module-mp/pom.xml",
+    "yudao-module-mp/yudao-module-mp-api/pom.xml",
+    "yudao-module-mp/yudao-module-mp-server/pom.xml",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/material/MpMaterialController.http",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/menu/MpMenuController.http",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/message/MpAutoReplyController.http",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/message/MpMessageController.http",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/message/MpMessageTemplateController.http",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/news/MpDraftController.http",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/news/MpFreePublishController.http",
+    "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/tag/MpTagController.http"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 7,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/framework/security/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/test/resources/application-unit-test.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 49,
+      "nonEmptyLines": 38,
+      "sections": [
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "mybatis",
+          "level": 1,
+          "line": 31
+        },
+        {
+          "heading": "yudao",
+          "level": 1,
+          "line": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/test/resources/sql/clean.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 23,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/test/resources/sql/create_tables.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 832,
+      "nonEmptyLines": 801,
+      "definitions": [
+        {
+          "name": "mes_cal_plan",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "calendar_type",
+            "start_date",
+            "end_date",
+            "shift_type",
+            "shift_method",
+            "shift_count",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 4,
+          "endLine": 23
+        },
+        {
+          "name": "mes_cal_plan_shift",
+          "kind": "table",
+          "fields": [
+            "id",
+            "plan_id",
+            "sort",
+            "name",
+            "start_time",
+            "end_time",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 28,
+          "endLine": 43
+        },
+        {
+          "name": "mes_cal_plan_team",
+          "kind": "table",
+          "fields": [
+            "id",
+            "plan_id",
+            "team_id",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 48,
+          "endLine": 60
+        },
+        {
+          "name": "mes_cal_team_shift",
+          "kind": "table",
+          "fields": [
+            "id",
+            "plan_id",
+            "team_id",
+            "shift_id",
+            "day",
+            "sort",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 65,
+          "endLine": 80
+        },
+        {
+          "name": "mes_md_auto_code_rule",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "description",
+            "max_length",
+            "padded",
+            "padded_char",
+            "padded_method",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 85,
+          "endLine": 103
+        },
+        {
+          "name": "mes_md_auto_code_part",
+          "kind": "table",
+          "fields": [
+            "id",
+            "rule_id",
+            "sort",
+            "type",
+            "length",
+            "date_format",
+            "fix_character",
+            "serial_start_no",
+            "serial_step",
+            "cycle_flag",
+            "cycle_method",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 108,
+          "endLine": 128
+        },
+        {
+          "name": "mes_md_auto_code_record",
+          "kind": "table",
+          "fields": [
+            "id",
+            "rule_id",
+            "result",
+            "serial_no",
+            "input_char",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 133,
+          "endLine": 146
+        },
+        {
+          "name": "mes_wm_arrival_notice",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "purchase_order_code",
+            "vendor_id",
+            "arrival_date",
+            "contact_name",
+            "contact_telephone",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 151,
+          "endLine": 169
+        },
+        {
+          "name": "mes_wm_outsource_receipt",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "work_order_id",
+            "vendor_id",
+            "receipt_date",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 174,
+          "endLine": 190
+        },
+        {
+          "name": "mes_qc_iqc",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "template_id",
+            "source_doc_type",
+            "source_doc_id",
+            "source_line_id",
+            "source_doc_code",
+            "vendor_id",
+            "vendor_batch",
+            "item_id",
+            "received_quantity",
+            "check_quantity",
+            "qualified_quantity",
+            "unqualified_quantity",
+            "critical_rate",
+            "major_rate",
+            "minor_rate",
+            "critical_quantity",
+            "major_quantity",
+            "minor_quantity",
+            "check_result",
+            "receive_date",
+            "inspect_date",
+            "inspector_user_id",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 195,
+          "endLine": 230
+        },
+        {
+          "name": "mes_qc_ipqc",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "type",
+            "template_id",
+            "source_doc_type",
+            "source_doc_id",
+            "source_line_id",
+            "source_doc_code",
+            "work_order_id",
+            "task_id",
+            "workstation_id",
+            "process_id",
+            "item_id",
+            "check_quantity",
+            "qualified_quantity",
+            "unqualified_quantity",
+            "labor_scrap_quantity",
+            "material_scrap_quantity",
+            "other_scrap_quantity",
+            "critical_rate",
+            "major_rate",
+            "minor_rate",
+            "critical_quantity",
+            "major_quantity",
+            "minor_quantity",
+            "check_result",
+            "inspect_date",
+            "inspector_user_id",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 235,
+          "endLine": 274
+        },
+        {
+          "name": "mes_pro_feedback",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "type",
+            "channel",
+            "feedback_time",
+            "workstation_id",
+            "route_id",
+            "process_id",
+            "work_order_id",
+            "task_id",
+            "item_id",
+            "expire_date",
+            "lot_number",
+            "scheduled_quantity",
+            "feedback_quantity",
+            "qualified_quantity",
+            "unqualified_quantity",
+            "uncheck_quantity",
+            "labor_scrap_quantity",
+            "material_scrap_quantity",
+            "other_scrap_quantity",
+            "feedback_user_id",
+            "approve_user_id",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 279,
+          "endLine": 312
+        },
+        {
+          "name": "mes_wm_product_produce",
+          "kind": "table",
+          "fields": [
+            "id",
+            "work_order_id",
+            "feedback_id",
+            "task_id",
+            "workstation_id",
+            "process_id",
+            "produce_date",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 317,
+          "endLine": 334
+        },
+        {
+          "name": "mes_wm_product_produce_line",
+          "kind": "table",
+          "fields": [
+            "id",
+            "produce_id",
+            "feedback_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "batch_code",
+            "expire_date",
+            "lot_number",
+            "quality_status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 339,
+          "endLine": 358
+        },
+        {
+          "name": "mes_wm_product_produce_detail",
+          "kind": "table",
+          "fields": [
+            "id",
+            "produce_id",
+            "line_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "batch_code",
+            "warehouse_id",
+            "location_id",
+            "area_id",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 363,
+          "endLine": 382
+        },
+        {
+          "name": "mes_qc_oqc",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "template_id",
+            "source_doc_type",
+            "source_doc_id",
+            "source_line_id",
+            "source_doc_code",
+            "client_id",
+            "batch_code",
+            "item_id",
+            "min_check_quantity",
+            "max_unqualified_quantity",
+            "out_quantity",
+            "check_quantity",
+            "qualified_quantity",
+            "unqualified_quantity",
+            "critical_rate",
+            "major_rate",
+            "minor_rate",
+            "critical_quantity",
+            "major_quantity",
+            "minor_quantity",
+            "check_result",
+            "out_date",
+            "inspect_date",
+            "inspector_user_id",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 387,
+          "endLine": 424
+        },
+        {
+          "name": "mes_qc_rqc",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "template_id",
+            "source_doc_type",
+            "source_doc_id",
+            "source_line_id",
+            "source_doc_code",
+            "type",
+            "item_id",
+            "batch_code",
+            "check_quantity",
+            "qualified_quantity",
+            "unqualified_quantity",
+            "critical_rate",
+            "major_rate",
+            "minor_rate",
+            "critical_quantity",
+            "major_quantity",
+            "minor_quantity",
+            "check_result",
+            "inspect_date",
+            "inspector_user_id",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 429,
+          "endLine": 462
+        },
+        {
+          "name": "mes_wm_product_sales_line",
+          "kind": "table",
+          "fields": [
+            "id",
+            "sales_id",
+            "notice_line_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "batch_code",
+            "material_stock_id",
+            "oqc_check_flag",
+            "oqc_id",
+            "quality_status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 467,
+          "endLine": 487
+        },
+        {
+          "name": "mes_wm_return_issue_line",
+          "kind": "table",
+          "fields": [
+            "id",
+            "issue_id",
+            "material_stock_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "batch_code",
+            "rqc_id",
+            "rqc_check_flag",
+            "quality_status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 492,
+          "endLine": 511
+        },
+        {
+          "name": "mes_wm_return_sales_line",
+          "kind": "table",
+          "fields": [
+            "id",
+            "return_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "batch_code",
+            "rqc_id",
+            "rqc_check_flag",
+            "quality_status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 516,
+          "endLine": 534
+        },
+        {
+          "name": "mes_wm_item_receipt",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "iqc_id",
+            "notice_id",
+            "vendor_id",
+            "purchase_order_code",
+            "receipt_date",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 539,
+          "endLine": 557
+        },
+        {
+          "name": "mes_wm_item_receipt_line",
+          "kind": "table",
+          "fields": [
+            "id",
+            "receipt_id",
+            "arrival_notice_line_id",
+            "item_id",
+            "received_quantity",
+            "batch_id",
+            "batch_code",
+            "production_date",
+            "expire_date",
+            "lot_number",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 562,
+          "endLine": 581
+        },
+        {
+          "name": "mes_wm_item_receipt_detail",
+          "kind": "table",
+          "fields": [
+            "id",
+            "line_id",
+            "receipt_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "warehouse_id",
+            "location_id",
+            "area_id",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 586,
+          "endLine": 604
+        },
+        {
+          "name": "mes_wm_item_consume",
+          "kind": "table",
+          "fields": [
+            "id",
+            "work_order_id",
+            "task_id",
+            "workstation_id",
+            "process_id",
+            "feedback_id",
+            "consume_date",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 609,
+          "endLine": 626
+        },
+        {
+          "name": "mes_wm_item_consume_line",
+          "kind": "table",
+          "fields": [
+            "id",
+            "consume_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "batch_code",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 631,
+          "endLine": 646
+        },
+        {
+          "name": "mes_wm_item_consume_detail",
+          "kind": "table",
+          "fields": [
+            "id",
+            "consume_id",
+            "line_id",
+            "material_stock_id",
+            "item_id",
+            "quantity",
+            "batch_id",
+            "batch_code",
+            "warehouse_id",
+            "location_id",
+            "area_id",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 651,
+          "endLine": 671
+        },
+        {
+          "name": "mes_wm_batch",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "item_id",
+            "produce_date",
+            "expire_date",
+            "receipt_date",
+            "vendor_id",
+            "client_id",
+            "sales_order_code",
+            "purchase_order_code",
+            "work_order_id",
+            "task_id",
+            "workstation_id",
+            "tool_id",
+            "mold_id",
+            "lot_number",
+            "quality_status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 676,
+          "endLine": 702
+        },
+        {
+          "name": "mes_wm_material_stock",
+          "kind": "table",
+          "fields": [
+            "id",
+            "item_type_id",
+            "item_id",
+            "batch_id",
+            "batch_code",
+            "warehouse_id",
+            "location_id",
+            "area_id",
+            "vendor_id",
+            "quantity",
+            "receipt_time",
+            "frozen",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 707,
+          "endLine": 727
+        },
+        {
+          "name": "mes_pro_task",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "name",
+            "work_order_id",
+            "workstation_id",
+            "route_id",
+            "process_id",
+            "item_id",
+            "quantity",
+            "produced_quantity",
+            "qualify_quantity",
+            "unqualify_quantity",
+            "changed_quantity",
+            "client_id",
+            "start_time",
+            "duration",
+            "end_time",
+            "color_code",
+            "finish_date",
+            "cancel_date",
+            "status",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 732,
+          "endLine": 762
+        },
+        {
+          "name": "mes_pro_route_process",
+          "kind": "table",
+          "fields": [
+            "id",
+            "route_id",
+            "process_id",
+            "sort",
+            "next_process_id",
+            "link_type",
+            "prepare_time",
+            "wait_time",
+            "color_code",
+            "key_flag",
+            "check_flag",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 767,
+          "endLine": 787
+        },
+        {
+          "name": "mes_wm_product_sales_detail",
+          "kind": "table",
+          "fields": [
+            "id",
+            "line_id",
+            "sales_id",
+            "item_id",
+            "quantity",
+            "material_stock_id",
+            "batch_id",
+            "batch_code",
+            "warehouse_id",
+            "location_id",
+            "area_id",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 792,
+          "endLine": 812
+        },
+        {
+          "name": "mes_qc_indicator_result",
+          "kind": "table",
+          "fields": [
+            "id",
+            "code",
+            "qc_id",
+            "qc_type",
+            "item_id",
+            "sn",
+            "remark",
+            "creator",
+            "create_time",
+            "updater",
+            "update_time",
+            "deleted",
+            "tenant_id"
+          ],
+          "startLine": 817,
+          "endLine": 832
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 32
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-api/src/main/java/cn/iocoder/yudao/module/mp/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/MpServerApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpServerApplication",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "MpServerApplication",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/account/vo/MpAccountBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "MpAccountBaseVO",
+          "startLine": 14,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "name",
+            "account",
+            "appId",
+            "appSecret",
+            "token",
+            "aesKey",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpAccountBaseVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/statistics/vo/MpStatisticsGetReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "MpStatisticsGetReqVO",
+          "startLine": 12,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "accountId",
+            "date"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpStatisticsGetReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/tag/vo/MpTagBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "MpTagBaseVO",
+          "startLine": 14,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpTagBaseVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

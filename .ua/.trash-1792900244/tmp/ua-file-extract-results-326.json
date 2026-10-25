@@ -1,0 +1,1849 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [
+    "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/UserProfileController.http",
+    "yudao-module-system/yudao-module-system-server/src/main/resources/META-INF/services/com.anji.captcha.service.CaptchaCacheService"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 23,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 22,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/vo/user/UserUpdatePasswordReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "UserUpdatePasswordReqVO",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "id",
+            "password"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserUpdatePasswordReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/app/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/convert/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/convert/《芋道 Spring Boot 对象转换 MapStruct 入门》.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/captcha/config/YudaoCaptchaConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "captchaCacheService",
+          "startLine": 23,
+          "endLine": 32,
+          "params": [
+            "config",
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoCaptchaConfiguration",
+          "startLine": 19,
+          "endLine": 34,
+          "methods": [
+            "captchaCacheService"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "captchaCacheService",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoCaptchaConfiguration",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "captchaCacheService",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 27
+        },
+        {
+          "caller": "captchaCacheService",
+          "callee": "config.getCacheType().name",
+          "lineNumber": 27
+        },
+        {
+          "caller": "captchaCacheService",
+          "callee": "config.getCacheType",
+          "lineNumber": 27
+        },
+        {
+          "caller": "captchaCacheService",
+          "callee": "((RedisCaptchaServiceImpl) captchaCacheService).setStringRedisTemplate",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/captcha/core/PictureWordCaptchaServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 212,
+      "nonEmptyLines": 187,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "destroy",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "captchaType",
+          "startLine": 50,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "get",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "captchaVO"
+          ]
+        },
+        {
+          "name": "check",
+          "startLine": 64,
+          "endLine": 104,
+          "params": [
+            "captchaVO"
+          ]
+        },
+        {
+          "name": "verification",
+          "startLine": 106,
+          "endLine": 124,
+          "params": [
+            "captchaVO"
+          ]
+        },
+        {
+          "name": "getImageData",
+          "startLine": 127,
+          "endLine": 179,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "getCodeValue",
+          "startLine": 181,
+          "endLine": 183,
+          "params": [
+            "text",
+            "secretKey"
+          ]
+        },
+        {
+          "name": "getCodeByCodeValue",
+          "startLine": 185,
+          "endLine": 187,
+          "params": [
+            "codeValue"
+          ]
+        },
+        {
+          "name": "getSecretKeyByCodeValue",
+          "startLine": 189,
+          "endLine": 191,
+          "params": [
+            "codeValue"
+          ]
+        },
+        {
+          "name": "getRandomColor",
+          "startLine": 193,
+          "endLine": 200,
+          "params": [
+            "min",
+            "max"
+          ]
+        },
+        {
+          "name": "generateRandomText",
+          "startLine": 208,
+          "endLine": 210,
+          "params": [
+            "length"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PictureWordCaptchaServiceImpl",
+          "startLine": 25,
+          "endLine": 212,
+          "methods": [
+            "init",
+            "destroy",
+            "captchaType",
+            "get",
+            "check",
+            "verification",
+            "getImageData",
+            "getCodeValue",
+            "getCodeByCodeValue",
+            "getSecretKeyByCodeValue",
+            "getRandomColor",
+            "generateRandomText"
+          ],
+          "properties": [
+            "CHARACTERS",
+            "LENGTH",
+            "WIDTH",
+            "HEIGHT",
+            "LINES"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "init",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "destroy",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "captchaType",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "check",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "verification",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "generateRandomText",
+          "line": 208,
+          "isDefault": false
+        },
+        {
+          "name": "PictureWordCaptchaServiceImpl",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "super.init",
+          "lineNumber": 42
+        },
+        {
+          "caller": "destroy",
+          "callee": "logger.info",
+          "lineNumber": 47
+        },
+        {
+          "caller": "destroy",
+          "callee": "captchaType",
+          "lineNumber": 47
+        },
+        {
+          "caller": "get",
+          "callee": "generateRandomText",
+          "lineNumber": 57
+        },
+        {
+          "caller": "get",
+          "callee": "getImageData",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get",
+          "callee": "ResponseModel.successData",
+          "lineNumber": 61
+        },
+        {
+          "caller": "check",
+          "callee": "super.check",
+          "lineNumber": 66
+        },
+        {
+          "caller": "check",
+          "callee": "validatedReq",
+          "lineNumber": 67
+        },
+        {
+          "caller": "check",
+          "callee": "String.format",
+          "lineNumber": 72
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.getToken",
+          "lineNumber": 72
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache(cacheType).exists",
+          "lineNumber": 73
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 73
+        },
+        {
+          "caller": "check",
+          "callee": "ResponseModel.errorMsg",
+          "lineNumber": 74
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache(cacheType).get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 77
+        },
+        {
+          "caller": "check",
+          "callee": "getCodeByCodeValue",
+          "lineNumber": 78
+        },
+        {
+          "caller": "check",
+          "callee": "getSecretKeyByCodeValue",
+          "lineNumber": 79
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache(cacheType).delete",
+          "lineNumber": 81
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 81
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.getPointJson",
+          "lineNumber": 84
+        },
+        {
+          "caller": "check",
+          "callee": "Strings.CI.equals",
+          "lineNumber": 85
+        },
+        {
+          "caller": "check",
+          "callee": "afterValidateFail",
+          "lineNumber": 86
+        },
+        {
+          "caller": "check",
+          "callee": "ResponseModel.errorMsg",
+          "lineNumber": 87
+        },
+        {
+          "caller": "check",
+          "callee": "AESUtil.aesEncrypt",
+          "lineNumber": 93
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.getToken().concat(\"---\").concat",
+          "lineNumber": 93
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.getToken().concat",
+          "lineNumber": 93
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.getToken",
+          "lineNumber": 93
+        },
+        {
+          "caller": "check",
+          "callee": "logger.error",
+          "lineNumber": 95
+        },
+        {
+          "caller": "check",
+          "callee": "afterValidateFail",
+          "lineNumber": 96
+        },
+        {
+          "caller": "check",
+          "callee": "ResponseModel.errorMsg",
+          "lineNumber": 97
+        },
+        {
+          "caller": "check",
+          "callee": "e.getMessage",
+          "lineNumber": 97
+        },
+        {
+          "caller": "check",
+          "callee": "String.format",
+          "lineNumber": 99
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache(cacheType).set",
+          "lineNumber": 100
+        },
+        {
+          "caller": "check",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 100
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.getToken",
+          "lineNumber": 100
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.setResult",
+          "lineNumber": 101
+        },
+        {
+          "caller": "check",
+          "callee": "captchaVO.resetClientFlag",
+          "lineNumber": 102
+        },
+        {
+          "caller": "check",
+          "callee": "ResponseModel.successData",
+          "lineNumber": 103
+        },
+        {
+          "caller": "verification",
+          "callee": "super.verification",
+          "lineNumber": 108
+        },
+        {
+          "caller": "verification",
+          "callee": "validatedReq",
+          "lineNumber": 109
+        },
+        {
+          "caller": "verification",
+          "callee": "String.format",
+          "lineNumber": 113
+        },
+        {
+          "caller": "verification",
+          "callee": "captchaVO.getCaptchaVerification",
+          "lineNumber": 113
+        },
+        {
+          "caller": "verification",
+          "callee": "CaptchaServiceFactory.getCache(cacheType).exists",
+          "lineNumber": 114
+        },
+        {
+          "caller": "verification",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 114
+        },
+        {
+          "caller": "verification",
+          "callee": "ResponseModel.errorMsg",
+          "lineNumber": 115
+        },
+        {
+          "caller": "verification",
+          "callee": "CaptchaServiceFactory.getCache(cacheType).delete",
+          "lineNumber": 118
+        },
+        {
+          "caller": "verification",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 118
+        },
+        {
+          "caller": "verification",
+          "callee": "logger.error",
+          "lineNumber": 120
+        },
+        {
+          "caller": "verification",
+          "callee": "ResponseModel.errorMsg",
+          "lineNumber": 121
+        },
+        {
+          "caller": "verification",
+          "callee": "e.getMessage",
+          "lineNumber": 121
+        },
+        {
+          "caller": "verification",
+          "callee": "ResponseModel.success",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getImageData",
+          "callee": "new CaptchaVO",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getImageData",
+          "callee": "new BufferedImage",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getImageData",
+          "callee": "image.createGraphics",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.setColor",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getImageData",
+          "callee": "getRandomColor",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.fillRect",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.setColor",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getImageData",
+          "callee": "getRandomColor",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.drawLine",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.setFont",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getImageData",
+          "callee": "new Font",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getImageData",
+          "callee": "text.length",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.setColor",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getImageData",
+          "callee": "getRandomColor",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getImageData",
+          "callee": "new AffineTransform",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getImageData",
+          "callee": "affineTransform.setToRotation",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getImageData",
+          "callee": "Math.toRadians",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.setTransform",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.drawString",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getImageData",
+          "callee": "text.charAt",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 160
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getImageData",
+          "callee": "image.setRGB",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getImageData",
+          "callee": "getRandomColor(0, 255).getRGB",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getImageData",
+          "callee": "getRandomColor",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getImageData",
+          "callee": "g.dispose",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getImageData",
+          "callee": "AESUtil.getKey",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getImageData",
+          "callee": "dataVO.setSecretKey",
+          "lineNumber": 170
+        },
+        {
+          "caller": "getImageData",
+          "callee": "dataVO.setOriginalImageBase64",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getImageData",
+          "callee": "ImageUtils.getImageToBase64Str(image).replaceAll",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getImageData",
+          "callee": "ImageUtils.getImageToBase64Str",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getImageData",
+          "callee": "dataVO.setToken",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getImageData",
+          "callee": "RandomUtils.getUUID",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getImageData",
+          "callee": "String.format",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getImageData",
+          "callee": "dataVO.getToken",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getImageData",
+          "callee": "CaptchaServiceFactory.getCache(cacheType).set",
+          "lineNumber": 177
+        },
+        {
+          "caller": "getImageData",
+          "callee": "CaptchaServiceFactory.getCache",
+          "lineNumber": 177
+        },
+        {
+          "caller": "getImageData",
+          "callee": "getCodeValue",
+          "lineNumber": 177
+        },
+        {
+          "caller": "getCodeByCodeValue",
+          "callee": "codeValue.split",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getSecretKeyByCodeValue",
+          "callee": "codeValue.split",
+          "lineNumber": 190
+        },
+        {
+          "caller": "getRandomColor",
+          "callee": "Math.min",
+          "lineNumber": 194
+        },
+        {
+          "caller": "getRandomColor",
+          "callee": "Math.max",
+          "lineNumber": 195
+        },
+        {
+          "caller": "getRandomColor",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 196
+        },
+        {
+          "caller": "getRandomColor",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 197
+        },
+        {
+          "caller": "getRandomColor",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 198
+        },
+        {
+          "caller": "getRandomColor",
+          "callee": "new Color",
+          "lineNumber": 199
+        },
+        {
+          "caller": "generateRandomText",
+          "callee": "RandomUtil.randomString",
+          "lineNumber": 209
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/captcha/core/RedisCaptchaServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "type",
+          "startLine": 19,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "set",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "key",
+            "value",
+            "expiresInSeconds"
+          ]
+        },
+        {
+          "name": "exists",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "get",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "increment",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "key",
+            "val"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisCaptchaServiceImpl",
+          "startLine": 14,
+          "endLine": 49,
+          "methods": [
+            "type",
+            "set",
+            "exists",
+            "delete",
+            "get",
+            "increment"
+          ],
+          "properties": [
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "type",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "set",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "exists",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "delete",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "increment",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "RedisCaptchaServiceImpl",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "set",
+          "callee": "stringRedisTemplate.opsForValue().set",
+          "lineNumber": 26
+        },
+        {
+          "caller": "set",
+          "callee": "stringRedisTemplate.opsForValue",
+          "lineNumber": 26
+        },
+        {
+          "caller": "exists",
+          "callee": "stringRedisTemplate.hasKey",
+          "lineNumber": 31
+        },
+        {
+          "caller": "delete",
+          "callee": "stringRedisTemplate.delete",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get",
+          "callee": "stringRedisTemplate.opsForValue().get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get",
+          "callee": "stringRedisTemplate.opsForValue",
+          "lineNumber": 41
+        },
+        {
+          "caller": "increment",
+          "callee": "stringRedisTemplate.opsForValue().increment",
+          "lineNumber": 46
+        },
+        {
+          "caller": "increment",
+          "callee": "stringRedisTemplate.opsForValue",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/captcha/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/datapermission/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/justauth/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/operatelog/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/rpc/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/security/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/weixin/config/YudaoWxClientConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 100,
+      "functions": [
+        {
+          "name": "wxMpConfigStorage",
+          "startLine": 41,
+          "endLine": 51,
+          "params": [
+            "properties",
+            "applicationContext"
+          ]
+        },
+        {
+          "name": "wxMaConfig",
+          "startLine": 53,
+          "endLine": 63,
+          "params": [
+            "properties",
+            "applicationContext"
+          ]
+        },
+        {
+          "name": "applyWxMpConfig",
+          "startLine": 65,
+          "endLine": 87,
+          "params": [
+            "config",
+            "properties"
+          ]
+        },
+        {
+          "name": "applyWxMaConfig",
+          "startLine": 89,
+          "endLine": 109,
+          "params": [
+            "config",
+            "properties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoWxClientConfiguration",
+          "startLine": 37,
+          "endLine": 111,
+          "methods": [
+            "wxMpConfigStorage",
+            "wxMaConfig",
+            "applyWxMpConfig",
+            "applyWxMaConfig"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "wxMpConfigStorage",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "wxMaConfig",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoWxClientConfiguration",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "applicationContext.getBean",
+          "lineNumber": 46
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "new RedisTemplateWxRedisOps",
+          "lineNumber": 47
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "new WxMpRedisConfigImpl",
+          "lineNumber": 48
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "properties.getConfigStorage().getKeyPrefix",
+          "lineNumber": 48
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "properties.getConfigStorage",
+          "lineNumber": 48
+        },
+        {
+          "caller": "wxMpConfigStorage",
+          "callee": "applyWxMpConfig",
+          "lineNumber": 49
+        },
+        {
+          "caller": "wxMaConfig",
+          "callee": "applicationContext.getBean",
+          "lineNumber": 58
+        },
+        {
+          "caller": "wxMaConfig",
+          "callee": "new RedisTemplateWxRedisOps",
+          "lineNumber": 59
+        },
+        {
+          "caller": "wxMaConfig",
+          "callee": "new WxMaRedisBetterConfigImpl",
+          "lineNumber": 60
+        },
+        {
+          "caller": "wxMaConfig",
+          "callee": "properties.getConfigStorage().getKeyPrefix",
+          "lineNumber": 60
+        },
+        {
+          "caller": "wxMaConfig",
+          "callee": "properties.getConfigStorage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "wxMaConfig",
+          "callee": "applyWxMaConfig",
+          "lineNumber": 61
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setAppId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getAppId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setSecret",
+          "lineNumber": 67
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getSecret",
+          "lineNumber": 67
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setToken",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getToken",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setAesKey",
+          "lineNumber": 69
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getAesKey",
+          "lineNumber": 69
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setUseStableAccessToken",
+          "lineNumber": 70
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.isUseStableAccessToken",
+          "lineNumber": 70
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getConfigStorage",
+          "lineNumber": 72
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyHost",
+          "lineNumber": 73
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyHost",
+          "lineNumber": 73
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyUsername",
+          "lineNumber": 74
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyUsername",
+          "lineNumber": 74
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyPassword",
+          "lineNumber": 75
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyPassword",
+          "lineNumber": 75
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyPort",
+          "lineNumber": 76
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHttpProxyPort",
+          "lineNumber": 77
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "storage.getHttpProxyPort",
+          "lineNumber": 77
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "StringUtils.isNotEmpty",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getApiHost",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "new WxMpHostConfig",
+          "lineNumber": 81
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "hostConfig.setApiHost",
+          "lineNumber": 82
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getApiHost",
+          "lineNumber": 82
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 82
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "hostConfig.setOpenHost",
+          "lineNumber": 83
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getOpenHost",
+          "lineNumber": 83
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 83
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "hostConfig.setMpHost",
+          "lineNumber": 84
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts().getMpHost",
+          "lineNumber": 84
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "properties.getHosts",
+          "lineNumber": 84
+        },
+        {
+          "caller": "applyWxMpConfig",
+          "callee": "config.setHostConfig",
+          "lineNumber": 85
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getConfigStorage",
+          "lineNumber": 90
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setAppid",
+          "lineNumber": 91
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "StringUtils.trimToNull",
+          "lineNumber": 91
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getAppid",
+          "lineNumber": 91
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setSecret",
+          "lineNumber": 92
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "StringUtils.trimToNull",
+          "lineNumber": 92
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getSecret",
+          "lineNumber": 92
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setToken",
+          "lineNumber": 93
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "StringUtils.trimToNull",
+          "lineNumber": 93
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getToken",
+          "lineNumber": 93
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setAesKey",
+          "lineNumber": 94
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "StringUtils.trimToNull",
+          "lineNumber": 94
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getAesKey",
+          "lineNumber": 94
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setMsgDataFormat",
+          "lineNumber": 95
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "StringUtils.trimToNull",
+          "lineNumber": 95
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getMsgDataFormat",
+          "lineNumber": 95
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.useStableAccessToken",
+          "lineNumber": 96
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.isUseStableAccessToken",
+          "lineNumber": 96
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setApiHostUrl",
+          "lineNumber": 97
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "StringUtils.trimToNull",
+          "lineNumber": 97
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getApiHostUrl",
+          "lineNumber": 97
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setAccessTokenUrl",
+          "lineNumber": 98
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "StringUtils.trimToNull",
+          "lineNumber": 98
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "properties.getAccessTokenUrl",
+          "lineNumber": 98
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setHttpProxyHost",
+          "lineNumber": 100
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "storage.getHttpProxyHost",
+          "lineNumber": 100
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setHttpProxyUsername",
+          "lineNumber": 101
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "storage.getHttpProxyUsername",
+          "lineNumber": 101
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setHttpProxyPassword",
+          "lineNumber": 102
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "storage.getHttpProxyPassword",
+          "lineNumber": 102
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "storage.getHttpProxyPort",
+          "lineNumber": 103
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setHttpProxyPort",
+          "lineNumber": 104
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "storage.getHttpProxyPort",
+          "lineNumber": 104
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setRetrySleepMillis",
+          "lineNumber": 107
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "Math.max",
+          "lineNumber": 107
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "storage.getRetrySleepMillis",
+          "lineNumber": 107
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "config.setMaxRetryTimes",
+          "lineNumber": 108
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "Math.max",
+          "lineNumber": 108
+        },
+        {
+          "caller": "applyWxMaConfig",
+          "callee": "storage.getMaxRetryTimes",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/weixin/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/job/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/member/MemberServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "getMemberUserMobile",
+          "startLine": 22,
+          "endLine": 29,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMemberUserEmail",
+          "startLine": 31,
+          "endLine": 38,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMemberUser",
+          "startLine": 40,
+          "endLine": 45,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMemberUserApi",
+          "startLine": 47,
+          "endLine": 52,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemberServiceImpl",
+          "startLine": 14,
+          "endLine": 54,
+          "methods": [
+            "getMemberUserMobile",
+            "getMemberUserEmail",
+            "getMemberUser",
+            "getMemberUserApi"
+          ],
+          "properties": [
+            "basePackage",
+            "memberUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMemberUserMobile",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberUserEmail",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "MemberServiceImpl",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMemberUserMobile",
+          "callee": "getMemberUser",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getMemberUserMobile",
+          "callee": "ReflectUtil.invoke",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getMemberUserEmail",
+          "callee": "getMemberUser",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getMemberUserEmail",
+          "callee": "ReflectUtil.invoke",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getMemberUser",
+          "callee": "ReflectUtil.invoke",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getMemberUser",
+          "callee": "getMemberUserApi",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getMemberUserApi",
+          "callee": "SpringUtil.getBean",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getMemberUserApi",
+          "callee": "ClassUtil.loadClass",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getMemberUserApi",
+          "callee": "String.format",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/member/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/util/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

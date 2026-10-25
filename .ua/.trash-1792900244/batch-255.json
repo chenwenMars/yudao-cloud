@@ -1,0 +1,1072 @@
+{
+  "nodes": [
+    {
+      "id": "config:yudao-framework/yudao-spring-boot-starter-biz-ip/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-ip/pom.xml",
+      "summary": "提供 IP 地址归属地与行政区划编码查询相关资源。",
+      "tags": [
+        "java",
+        "framework",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/java/cn/iocoder/yudao/framework/ip/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/java/cn/iocoder/yudao/framework/ip/package-info.java",
+      "summary": "IP 拓展，支持如下功能： 1. IP 功能：查询 IP 对应的城市信息 基于 https://gitee.com/lionsoul/ip2region 实现 2. 城市功能：查询城市编码对应的城市信息 基于 https://github.com/modood/Administrative-divisions-of-China 实现 @author 芋道源码",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/resources/area.csv",
+      "type": "file",
+      "name": "area.csv",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/resources/area.csv",
+      "summary": "提供行政区划编码与名称的 CSV 查找数据，包含地区类型和父级编码字段。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/resources/ip2region.xdb",
+      "type": "file",
+      "name": "ip2region.xdb",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/resources/ip2region.xdb",
+      "summary": "提供 ip2region 使用的二进制 IP 归属地数据库文件，供地址定位能力查询。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:yudao-framework/yudao-spring-boot-starter-biz-tenant/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-tenant/pom.xml",
+      "summary": "实现多租户隔离能力及其与 Web、数据访问、异步任务和消息队列的集成。",
+      "tags": [
+        "java",
+        "framework",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "type": "file",
+      "name": "TenantKafkaEnvironmentPostProcessor.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "summary": "在 Spring 环境初始化阶段处理 Kafka 配置，使多租户消息上下文可与 Kafka 集成。",
+      "tags": [
+        "java",
+        "framework",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java:TenantKafkaEnvironmentPostProcessor",
+      "type": "class",
+      "name": "TenantKafkaEnvironmentPostProcessor",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "lineRange": [
+        16,
+        37
+      ],
+      "summary": "TenantKafkaEnvironmentPostProcessor：在 Spring 环境初始化阶段处理 Kafka 配置，使多租户消息上下文可与 Kafka 集成。",
+      "tags": [
+        "java",
+        "framework",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java:postProcessEnvironment",
+      "type": "function",
+      "name": "postProcessEnvironment",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "lineRange": [
+        21,
+        35
+      ],
+      "summary": "处理post process environment相关逻辑。",
+      "tags": [
+        "java",
+        "framework",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/package-info.java",
+      "summary": "多租户，支持如下层面： 1. DB：基于 MyBatis Plus 多租户的功能实现。 2. Redis：通过在 Redis Key 上拼接租户编号的方式，进行隔离。 3. Web：请求 HTTP API 时，解析 Header 的 tenant-id 租户编号，添加到租户上下文。 4. Security：校验当前登陆的用户，是否越权访问其它租户的数据。 5. Job：在 JobHandler 执行任务时，会按照每个租户，都独立并行执行一次。 6. MQ：在 Producer",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/resources/META-INF/spring.factories",
+      "type": "file",
+      "name": "spring.factories",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/resources/META-INF/spring.factories",
+      "summary": "通过 Spring Boot EnvironmentPostProcessor 注册机制加载租户或开发环境处理器。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "实现多租户隔离能力及其与 Web、数据访问、异步任务和消息队列的集成。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:yudao-framework/yudao-spring-boot-starter-env/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-env/pom.xml",
+      "summary": "支持开发环境拓展与环境上下文处理。",
+      "tags": [
+        "java",
+        "framework",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-env/src/main/java/cn/iocoder/yudao/framework/env/core/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-env/src/main/java/cn/iocoder/yudao/framework/env/core/package-info.java",
+      "summary": "声明 env 相关 Java 包。",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-env/src/main/java/cn/iocoder/yudao/framework/env/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-env/src/main/java/cn/iocoder/yudao/framework/env/package-info.java",
+      "summary": "开发环境拓展，实现类似阿里的特性环境的能力 1. https://segmentfault.com/a/1190000018022987 @author 芋道源码",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-env/src/main/resources/META-INF/spring.factories",
+      "type": "file",
+      "name": "spring.factories",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-env/src/main/resources/META-INF/spring.factories",
+      "summary": "通过 Spring Boot EnvironmentPostProcessor 注册机制加载租户或开发环境处理器。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-env/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-env/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "支持开发环境拓展与环境上下文处理。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:yudao-framework/yudao-spring-boot-starter-excel/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/pom.xml",
+      "summary": "提供 Excel 导入导出、单元格格式和字典翻译支持。",
+      "tags": [
+        "java",
+        "framework",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/dict/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/dict/package-info.java",
+      "summary": "字典数据模块，提供 {@link cn.iocoder.yudao.framework.dict.core.DictFrameworkUtils} 工具类 通过将字典缓存在内存中，保证性能",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "type": "file",
+      "name": "PoiExcelUtils.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "summary": "提供基于 Apache POI 的 Excel 单元格读取、内容写入、表头合并、批注和样式创建工具。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:PoiExcelUtils",
+      "type": "class",
+      "name": "PoiExcelUtils",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        34,
+        226
+      ],
+      "summary": "PoiExcelUtils：提供基于 Apache POI 的 Excel 单元格读取、内容写入、表头合并、批注和样式创建工具。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getCellText",
+      "type": "function",
+      "name": "getCellText",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        52,
+        59
+      ],
+      "summary": "读取或查询cell text。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getDecimal",
+      "type": "function",
+      "name": "getDecimal",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        69,
+        72
+      ],
+      "summary": "读取或查询decimal。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:isEmptyRow",
+      "type": "function",
+      "name": "isEmptyRow",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        82,
+        92
+      ],
+      "summary": "处理is empty row相关逻辑。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeText",
+      "type": "function",
+      "name": "writeText",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        99,
+        103
+      ],
+      "summary": "生成或写入text。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeNumber",
+      "type": "function",
+      "name": "writeNumber",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        108,
+        114
+      ],
+      "summary": "生成或写入number。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeFormula",
+      "type": "function",
+      "name": "writeFormula",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        119,
+        123
+      ],
+      "summary": "生成或写入formula。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:mergeHeader",
+      "type": "function",
+      "name": "mergeHeader",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        128,
+        136
+      ],
+      "summary": "生成或写入header。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:addComment",
+      "type": "function",
+      "name": "addComment",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        144,
+        154
+      ],
+      "summary": "生成或写入comment。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createBorderStyle",
+      "type": "function",
+      "name": "createBorderStyle",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        161,
+        168
+      ],
+      "summary": "生成或写入border style。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createDataStyle",
+      "type": "function",
+      "name": "createDataStyle",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        177,
+        186
+      ],
+      "summary": "生成或写入data style。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createNumberStyle",
+      "type": "function",
+      "name": "createNumberStyle",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        191,
+        196
+      ],
+      "summary": "生成或写入number style。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createHeaderStyle",
+      "type": "function",
+      "name": "createHeaderStyle",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        201,
+        211
+      ],
+      "summary": "生成或写入header style。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createTitleStyle",
+      "type": "function",
+      "name": "createTitleStyle",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "lineRange": [
+        216,
+        224
+      ],
+      "summary": "生成或写入title style。",
+      "tags": [
+        "utility",
+        "excel",
+        "apache-poi"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/package-info.java",
+      "summary": "基于 FastExcel 实现 Excel 相关的操作",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "提供 Excel 导入导出、单元格格式和字典翻译支持。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "type": "file",
+      "name": "ExcelUtilsTest.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "summary": "验证 Excel 读取工具的最大行数限制行为。",
+      "tags": [
+        "test",
+        "unit-test",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java:ExcelUtilsTest",
+      "type": "class",
+      "name": "ExcelUtilsTest",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "lineRange": [
+        19,
+        61
+      ],
+      "summary": "ExcelUtilsTest：验证 Excel 读取工具的最大行数限制行为。",
+      "tags": [
+        "test",
+        "unit-test",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java:testRead_maxRowCount",
+      "type": "function",
+      "name": "testRead_maxRowCount",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "lineRange": [
+        21,
+        37
+      ],
+      "summary": "验证read max row count。",
+      "tags": [
+        "test",
+        "unit-test",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java",
+      "type": "file",
+      "name": "XxlJobProperties.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java",
+      "summary": "承载 XXL-JOB 执行器的配置属性。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java:XxlJobProperties",
+      "type": "class",
+      "name": "XxlJobProperties",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java",
+      "lineRange": [
+        14,
+        99
+      ],
+      "summary": "XxlJobProperties：承载 XXL-JOB 执行器的配置属性。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "type": "file",
+      "name": "YudaoAsyncAutoConfiguration.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "summary": "自动配置 Spring Async 线程池处理器，用于异步线程上下文传递相关增强。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java:YudaoAsyncAutoConfiguration",
+      "type": "class",
+      "name": "YudaoAsyncAutoConfiguration",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "lineRange": [
+        15,
+        45
+      ],
+      "summary": "YudaoAsyncAutoConfiguration：自动配置 Spring Async 线程池处理器，用于异步线程上下文传递相关增强。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java:threadPoolTaskExecutorBeanPostProcessor",
+      "type": "function",
+      "name": "threadPoolTaskExecutorBeanPostProcessor",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "lineRange": [
+        19,
+        43
+      ],
+      "summary": "处理thread pool task executor bean post processor相关逻辑。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "type": "file",
+      "name": "YudaoXxlJobAutoConfiguration.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "summary": "自动配置 XXL-JOB 执行器 Bean。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java:YudaoXxlJobAutoConfiguration",
+      "type": "class",
+      "name": "YudaoXxlJobAutoConfiguration",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "lineRange": [
+        20,
+        47
+      ],
+      "summary": "YudaoXxlJobAutoConfiguration：自动配置 XXL-JOB 执行器 Bean。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java:xxlJobExecutor",
+      "type": "function",
+      "name": "xxlJobExecutor",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "lineRange": [
+        28,
+        45
+      ],
+      "summary": "处理xxl job executor相关逻辑。",
+      "tags": [
+        "configuration",
+        "autoconfiguration",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/package-info.java",
+      "summary": "1. 定时任务，基于 XXL-Job 实现。 2. 异步任务，采用 Spring Async 异步执行。",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "framework"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "type": "file",
+      "name": "org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "filePath": "yudao-framework/yudao-spring-boot-starter-job/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+      "summary": "配置 XXL-JOB 定时任务与 Spring Async 异步执行能力。",
+      "tags": [
+        "configuration",
+        "spring-boot",
+        "resource-registration"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java:TenantKafkaEnvironmentPostProcessor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java:TenantKafkaEnvironmentPostProcessor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java:postProcessEnvironment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java:postProcessEnvironment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:PoiExcelUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:PoiExcelUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getCellText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getCellText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getDecimal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getDecimal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:isEmptyRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:isEmptyRow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeNumber",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeFormula",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:writeFormula",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:mergeHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:mergeHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:addComment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:addComment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createBorderStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createBorderStyle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createDataStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createDataStyle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createNumberStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createNumberStyle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createHeaderStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createHeaderStyle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createTitleStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createTitleStyle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getDecimal",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getCellText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:isEmptyRow",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:getCellText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createDataStyle",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createBorderStyle",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createHeaderStyle",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java:createBorderStyle",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java:ExcelUtilsTest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java:ExcelUtilsTest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java:testRead_maxRowCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java:testRead_maxRowCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java:XxlJobProperties",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java:XxlJobProperties",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java:YudaoAsyncAutoConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java:YudaoAsyncAutoConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java:threadPoolTaskExecutorBeanPostProcessor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java:threadPoolTaskExecutorBeanPostProcessor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java:YudaoXxlJobAutoConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "target": "class:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java:YudaoXxlJobAutoConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java:xxlJobExecutor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "target": "function:yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java:xxlJobExecutor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

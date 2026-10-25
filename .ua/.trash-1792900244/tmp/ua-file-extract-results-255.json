@@ -1,0 +1,1223 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 13,
+  "filesSkipped": [
+    "yudao-framework/yudao-spring-boot-starter-biz-ip/pom.xml",
+    "yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/resources/area.csv",
+    "yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/resources/ip2region.xdb",
+    "yudao-framework/yudao-spring-boot-starter-biz-tenant/pom.xml",
+    "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/resources/META-INF/spring.factories",
+    "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-framework/yudao-spring-boot-starter-env/pom.xml",
+    "yudao-framework/yudao-spring-boot-starter-env/src/main/resources/META-INF/spring.factories",
+    "yudao-framework/yudao-spring-boot-starter-env/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-framework/yudao-spring-boot-starter-excel/pom.xml",
+    "yudao-framework/yudao-spring-boot-starter-excel/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports",
+    "yudao-framework/yudao-spring-boot-starter-job/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 13,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 13,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-biz-ip/src/main/java/cn/iocoder/yudao/framework/ip/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/kafka/TenantKafkaEnvironmentPostProcessor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "postProcessEnvironment",
+          "startLine": 21,
+          "endLine": 35,
+          "params": [
+            "environment",
+            "application"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TenantKafkaEnvironmentPostProcessor",
+          "startLine": 16,
+          "endLine": 37,
+          "methods": [
+            "postProcessEnvironment"
+          ],
+          "properties": [
+            "PROPERTY_KEY_INTERCEPTOR_CLASSES"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "postProcessEnvironment",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "TenantKafkaEnvironmentPostProcessor",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "environment.getProperty",
+          "lineNumber": 25
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 26
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "TenantKafkaProducerInterceptor.class.getName",
+          "lineNumber": 27
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "TenantKafkaProducerInterceptor.class.getName",
+          "lineNumber": 29
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "environment.getSystemProperties().put",
+          "lineNumber": 31
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "environment.getSystemProperties",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-env/src/main/java/cn/iocoder/yudao/framework/env/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-env/src/main/java/cn/iocoder/yudao/framework/env/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/dict/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/core/util/PoiExcelUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 226,
+      "nonEmptyLines": 205,
+      "functions": [
+        {
+          "name": "getCellText",
+          "startLine": 52,
+          "endLine": 59,
+          "params": [
+            "row",
+            "column",
+            "evaluator"
+          ]
+        },
+        {
+          "name": "getDecimal",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "row",
+            "column",
+            "evaluator"
+          ]
+        },
+        {
+          "name": "isEmptyRow",
+          "startLine": 82,
+          "endLine": 92,
+          "params": [
+            "row",
+            "evaluator",
+            "columns"
+          ]
+        },
+        {
+          "name": "writeText",
+          "startLine": 99,
+          "endLine": 103,
+          "params": [
+            "row",
+            "column",
+            "value",
+            "style"
+          ]
+        },
+        {
+          "name": "writeNumber",
+          "startLine": 108,
+          "endLine": 114,
+          "params": [
+            "row",
+            "column",
+            "value",
+            "style"
+          ]
+        },
+        {
+          "name": "writeFormula",
+          "startLine": 119,
+          "endLine": 123,
+          "params": [
+            "row",
+            "column",
+            "formula",
+            "style"
+          ]
+        },
+        {
+          "name": "mergeHeader",
+          "startLine": 128,
+          "endLine": 136,
+          "params": [
+            "sheet",
+            "firstRow",
+            "secondRow",
+            "beginColumn",
+            "endColumn",
+            "title",
+            "style"
+          ]
+        },
+        {
+          "name": "addComment",
+          "startLine": 144,
+          "endLine": 154,
+          "params": [
+            "cell",
+            "text"
+          ]
+        },
+        {
+          "name": "createBorderStyle",
+          "startLine": 161,
+          "endLine": 168,
+          "params": [
+            "workbook"
+          ]
+        },
+        {
+          "name": "createDataStyle",
+          "startLine": 177,
+          "endLine": 186,
+          "params": [
+            "workbook",
+            "locked",
+            "fillColor"
+          ]
+        },
+        {
+          "name": "createNumberStyle",
+          "startLine": 191,
+          "endLine": 196,
+          "params": [
+            "workbook",
+            "base",
+            "format"
+          ]
+        },
+        {
+          "name": "createHeaderStyle",
+          "startLine": 201,
+          "endLine": 211,
+          "params": [
+            "workbook",
+            "fillColor"
+          ]
+        },
+        {
+          "name": "createTitleStyle",
+          "startLine": 216,
+          "endLine": 224,
+          "params": [
+            "workbook"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PoiExcelUtils",
+          "startLine": 34,
+          "endLine": 226,
+          "methods": [
+            "getCellText",
+            "getDecimal",
+            "isEmptyRow",
+            "writeText",
+            "writeNumber",
+            "writeFormula",
+            "mergeHeader",
+            "addComment",
+            "createBorderStyle",
+            "createDataStyle",
+            "createNumberStyle",
+            "createHeaderStyle",
+            "createTitleStyle"
+          ],
+          "properties": [
+            "DATA_FORMATTER"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCellText",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getDecimal",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "isEmptyRow",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "writeText",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "writeNumber",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "writeFormula",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "mergeHeader",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "addComment",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "createBorderStyle",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "createDataStyle",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "createNumberStyle",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "createHeaderStyle",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "createTitleStyle",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "PoiExcelUtils",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCellText",
+          "callee": "row.getCell",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getCellText",
+          "callee": "DATA_FORMATTER.formatCellValue",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getCellText",
+          "callee": "row.getCell",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getCellText",
+          "callee": "DATA_FORMATTER.formatCellValue",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getCellText",
+          "callee": "row.getCell",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getDecimal",
+          "callee": "getCellText(row, column, evaluator).replace",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getDecimal",
+          "callee": "getCellText",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getDecimal",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getDecimal",
+          "callee": "NumberUtil.toBigDecimal",
+          "lineNumber": 71
+        },
+        {
+          "caller": "isEmptyRow",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 87
+        },
+        {
+          "caller": "isEmptyRow",
+          "callee": "getCellText",
+          "lineNumber": 87
+        },
+        {
+          "caller": "writeText",
+          "callee": "row.createCell",
+          "lineNumber": 100
+        },
+        {
+          "caller": "writeText",
+          "callee": "cell.setCellValue",
+          "lineNumber": 101
+        },
+        {
+          "caller": "writeText",
+          "callee": "StrUtil.nullToEmpty",
+          "lineNumber": 101
+        },
+        {
+          "caller": "writeText",
+          "callee": "cell.setCellStyle",
+          "lineNumber": 102
+        },
+        {
+          "caller": "writeNumber",
+          "callee": "row.createCell",
+          "lineNumber": 109
+        },
+        {
+          "caller": "writeNumber",
+          "callee": "cell.setCellValue",
+          "lineNumber": 111
+        },
+        {
+          "caller": "writeNumber",
+          "callee": "value.doubleValue",
+          "lineNumber": 111
+        },
+        {
+          "caller": "writeNumber",
+          "callee": "cell.setCellStyle",
+          "lineNumber": 113
+        },
+        {
+          "caller": "writeFormula",
+          "callee": "row.createCell",
+          "lineNumber": 120
+        },
+        {
+          "caller": "writeFormula",
+          "callee": "cell.setCellFormula",
+          "lineNumber": 121
+        },
+        {
+          "caller": "writeFormula",
+          "callee": "cell.setCellStyle",
+          "lineNumber": 122
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "sheet.addMergedRegion",
+          "lineNumber": 130
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "new CellRangeAddress",
+          "lineNumber": 130
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "firstRow.getRowNum",
+          "lineNumber": 130
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "secondRow.getRowNum",
+          "lineNumber": 130
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "firstRow.createCell",
+          "lineNumber": 132
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "cell.setCellValue",
+          "lineNumber": 133
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "cell.setCellStyle",
+          "lineNumber": 134
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "secondRow.createCell(beginColumn).setCellStyle",
+          "lineNumber": 135
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "secondRow.createCell",
+          "lineNumber": 135
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getSheet().getWorkbook().getCreationHelper",
+          "lineNumber": 145
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getSheet().getWorkbook",
+          "lineNumber": 145
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getSheet",
+          "lineNumber": 145
+        },
+        {
+          "caller": "addComment",
+          "callee": "helper.createClientAnchor",
+          "lineNumber": 146
+        },
+        {
+          "caller": "addComment",
+          "callee": "anchor.setCol1",
+          "lineNumber": 147
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getColumnIndex",
+          "lineNumber": 147
+        },
+        {
+          "caller": "addComment",
+          "callee": "anchor.setCol2",
+          "lineNumber": 148
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getColumnIndex",
+          "lineNumber": 148
+        },
+        {
+          "caller": "addComment",
+          "callee": "anchor.setRow1",
+          "lineNumber": 149
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getRowIndex",
+          "lineNumber": 149
+        },
+        {
+          "caller": "addComment",
+          "callee": "anchor.setRow2",
+          "lineNumber": 150
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getRowIndex",
+          "lineNumber": 150
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getSheet().createDrawingPatriarch().createCellComment",
+          "lineNumber": 151
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getSheet().createDrawingPatriarch",
+          "lineNumber": 151
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.getSheet",
+          "lineNumber": 151
+        },
+        {
+          "caller": "addComment",
+          "callee": "comment.setString",
+          "lineNumber": 152
+        },
+        {
+          "caller": "addComment",
+          "callee": "helper.createRichTextString",
+          "lineNumber": 152
+        },
+        {
+          "caller": "addComment",
+          "callee": "cell.setCellComment",
+          "lineNumber": 153
+        },
+        {
+          "caller": "createBorderStyle",
+          "callee": "workbook.createCellStyle",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createBorderStyle",
+          "callee": "style.setBorderTop",
+          "lineNumber": 163
+        },
+        {
+          "caller": "createBorderStyle",
+          "callee": "style.setBorderRight",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createBorderStyle",
+          "callee": "style.setBorderBottom",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createBorderStyle",
+          "callee": "style.setBorderLeft",
+          "lineNumber": 166
+        },
+        {
+          "caller": "createDataStyle",
+          "callee": "createBorderStyle",
+          "lineNumber": 178
+        },
+        {
+          "caller": "createDataStyle",
+          "callee": "style.setLocked",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createDataStyle",
+          "callee": "style.setFillForegroundColor",
+          "lineNumber": 181
+        },
+        {
+          "caller": "createDataStyle",
+          "callee": "fillColor.getIndex",
+          "lineNumber": 181
+        },
+        {
+          "caller": "createDataStyle",
+          "callee": "style.setFillPattern",
+          "lineNumber": 182
+        },
+        {
+          "caller": "createDataStyle",
+          "callee": "style.setVerticalAlignment",
+          "lineNumber": 184
+        },
+        {
+          "caller": "createNumberStyle",
+          "callee": "workbook.createCellStyle",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createNumberStyle",
+          "callee": "style.cloneStyleFrom",
+          "lineNumber": 193
+        },
+        {
+          "caller": "createNumberStyle",
+          "callee": "style.setDataFormat",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createNumberStyle",
+          "callee": "workbook.createDataFormat().getFormat",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createNumberStyle",
+          "callee": "workbook.createDataFormat",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "createBorderStyle",
+          "lineNumber": 202
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "style.setFillForegroundColor",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "fillColor.getIndex",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "style.setFillPattern",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "style.setAlignment",
+          "lineNumber": 205
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "style.setVerticalAlignment",
+          "lineNumber": 206
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "workbook.createFont",
+          "lineNumber": 207
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "font.setBold",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createHeaderStyle",
+          "callee": "style.setFont",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createTitleStyle",
+          "callee": "workbook.createCellStyle",
+          "lineNumber": 217
+        },
+        {
+          "caller": "createTitleStyle",
+          "callee": "style.setAlignment",
+          "lineNumber": 218
+        },
+        {
+          "caller": "createTitleStyle",
+          "callee": "workbook.createFont",
+          "lineNumber": 219
+        },
+        {
+          "caller": "createTitleStyle",
+          "callee": "font.setBold",
+          "lineNumber": 220
+        },
+        {
+          "caller": "createTitleStyle",
+          "callee": "font.setFontHeightInPoints",
+          "lineNumber": 221
+        },
+        {
+          "caller": "createTitleStyle",
+          "callee": "style.setFont",
+          "lineNumber": 222
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-excel/src/main/java/cn/iocoder/yudao/framework/excel/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-excel/src/test/java/cn/iocoder/yudao/framework/excel/core/util/ExcelUtilsTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "testRead_maxRowCount",
+          "startLine": 21,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ExcelUtilsTest",
+          "startLine": 19,
+          "endLine": 61,
+          "methods": [
+            "testRead_maxRowCount"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "testRead_maxRowCount",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ExcelUtilsTest",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "new ByteArrayOutputStream",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "FastExcelFactory.write(outputStream, TestRow.class).sheet().doWrite",
+          "lineNumber": 25
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "FastExcelFactory.write(outputStream, TestRow.class).sheet",
+          "lineNumber": 25
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "FastExcelFactory.write",
+          "lineNumber": 25
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "Arrays.asList",
+          "lineNumber": 25
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "new TestRow",
+          "lineNumber": 26
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "new TestRow",
+          "lineNumber": 26
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "new TestRow",
+          "lineNumber": 26
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "new MockMultipartFile",
+          "lineNumber": 27
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "outputStream.toByteArray",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "ExcelUtils.read",
+          "lineNumber": 31
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "assertEquals",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "rows.size",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "assertEquals",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "rows.get(0).getName",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "rows.get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "assertEquals",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "rows.get(1).getName",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testRead_maxRowCount",
+          "callee": "rows.get",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/XxlJobProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 86,
+      "classes": [
+        {
+          "name": "XxlJobProperties",
+          "startLine": 14,
+          "endLine": 99,
+          "methods": [],
+          "properties": [
+            "enabled",
+            "accessToken",
+            "admin",
+            "executor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "XxlJobProperties",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoAsyncAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "threadPoolTaskExecutorBeanPostProcessor",
+          "startLine": 19,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoAsyncAutoConfiguration",
+          "startLine": 15,
+          "endLine": 45,
+          "methods": [
+            "threadPoolTaskExecutorBeanPostProcessor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "threadPoolTaskExecutorBeanPostProcessor",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoAsyncAutoConfiguration",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "threadPoolTaskExecutorBeanPostProcessor",
+          "callee": "new BeanPostProcessor",
+          "lineNumber": 21
+        },
+        {
+          "caller": "postProcessBeforeInitialization",
+          "callee": "executor.setTaskDecorator",
+          "lineNumber": 29
+        },
+        {
+          "caller": "postProcessBeforeInitialization",
+          "callee": "executor.setTaskDecorator",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/config/YudaoXxlJobAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "xxlJobExecutor",
+          "startLine": 28,
+          "endLine": 45,
+          "params": [
+            "properties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoXxlJobAutoConfiguration",
+          "startLine": 20,
+          "endLine": 47,
+          "methods": [
+            "xxlJobExecutor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "xxlJobExecutor",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoXxlJobAutoConfiguration",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "log.info",
+          "lineNumber": 31
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "properties.getAdmin",
+          "lineNumber": 32
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "properties.getExecutor",
+          "lineNumber": 33
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "new XxlJobSpringExecutor",
+          "lineNumber": 36
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "xxlJobExecutor.setIp",
+          "lineNumber": 37
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "executor.getIp",
+          "lineNumber": 37
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "xxlJobExecutor.setPort",
+          "lineNumber": 38
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "executor.getPort",
+          "lineNumber": 38
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "xxlJobExecutor.setAppname",
+          "lineNumber": 39
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "executor.getAppName",
+          "lineNumber": 39
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "xxlJobExecutor.setLogPath",
+          "lineNumber": 40
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "executor.getLogPath",
+          "lineNumber": 40
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "xxlJobExecutor.setLogRetentionDays",
+          "lineNumber": 41
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "executor.getLogRetentionDays",
+          "lineNumber": 41
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "xxlJobExecutor.setAdminAddresses",
+          "lineNumber": 42
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "admin.getAddresses",
+          "lineNumber": 42
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "xxlJobExecutor.setAccessToken",
+          "lineNumber": 43
+        },
+        {
+          "caller": "xxlJobExecutor",
+          "callee": "properties.getAccessToken",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

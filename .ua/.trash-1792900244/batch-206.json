@@ -1,0 +1,42 @@
+{
+  "nodes": [
+    {
+      "id": "service:yudao-module-mp/yudao-module-mp-server/Dockerfile",
+      "type": "service",
+      "name": "Dockerfile",
+      "filePath": "yudao-module-mp/yudao-module-mp-server/Dockerfile",
+      "summary": "为公众号服务构建 Java 21 运行容器：复制 yudao-module-mp-server.jar 为 app.jar，设置上海时区与 512 MB JVM 初始及最大堆，并通过 java 命令启动；镜像声明暴露 48086 端口。",
+      "tags": [
+        "容器化",
+        "基础设施",
+        "公众号服务",
+        "java-21"
+      ],
+      "complexity": "simple",
+      "languageNotes": "基础镜像为 eclipse-temurin:21-jre，JAVA_OPTS 可通过容器环境变量覆盖。文件注释提到 48080 端口，但实际 EXPOSE 指令为 48086。"
+    },
+    {
+      "id": "service:yudao-module-mp/yudao-module-mp-server/Dockerfile:eclipse-temurin",
+      "type": "service",
+      "name": "eclipse-temurin",
+      "filePath": "yudao-module-mp/yudao-module-mp-server/Dockerfile",
+      "summary": "Docker 构建阶段使用 eclipse-temurin:21-jre 作为 公众号服务 的 Java 21 运行时基础镜像。",
+      "tags": [
+        "运行时镜像",
+        "容器基础设施",
+        "java-21"
+      ],
+      "complexity": "simple",
+      "languageNotes": "该阶段声明暴露 48086 端口。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:yudao-module-mp/yudao-module-mp-server/Dockerfile",
+      "target": "service:yudao-module-mp/yudao-module-mp-server/Dockerfile:eclipse-temurin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "config:yudao-module-member/yudao-module-member-server/src/main/resources/application-dev.yaml",
+      "type": "config",
+      "name": "application-dev.yaml",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/main/resources/application-dev.yaml",
+      "summary": "配置会员服务的开发环境参数，覆盖 Spring 数据源与外部依赖、分布式任务、锁和监控等环境相关设置。",
+      "tags": [
+        "开发环境",
+        "Spring配置",
+        "会员服务"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "YAML 多文档内容导致提取器回退到正则方式提取配置段；完整运行时绑定未验证。"
+    },
+    {
+      "id": "config:yudao-module-member/yudao-module-member-server/src/main/resources/application-local.yaml",
+      "type": "config",
+      "name": "application-local.yaml",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/main/resources/application-local.yaml",
+      "summary": "配置会员服务的本地环境参数，覆盖 Spring 数据源与外部依赖、分布式任务、锁和监控等环境相关设置，并包含本地日志设置。",
+      "tags": [
+        "本地环境",
+        "Spring配置",
+        "会员服务"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "YAML 多文档内容导致提取器回退到正则方式提取配置段；完整运行时绑定未验证。"
+    },
+    {
+      "id": "config:yudao-module-member/yudao-module-member-server/src/main/resources/application.yaml",
+      "type": "config",
+      "name": "application.yaml",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/main/resources/application.yaml",
+      "summary": "定义会员服务的通用 Spring Boot 配置，涵盖服务端、日志、API 文档、MyBatis、定时任务及项目扩展参数。",
+      "tags": [
+        "应用配置",
+        "Spring Boot",
+        "会员服务"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:yudao-module-member/yudao-module-member-server/src/main/resources/logback-spring.xml",
+      "type": "config",
+      "name": "logback-spring.xml",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/main/resources/logback-spring.xml",
+      "summary": "配置控制台日志和按日期及文件大小滚动的文件日志，并通过异步 appender 输出；另预留 SkyWalking 日志收集配置。",
+      "tags": [
+        "日志配置",
+        "Logback",
+        "可观测性"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "结构提取器未解析 XML；此摘要根据可读源文件中的 appender、滚动策略和 root logger 配置。"
+    }
+  ],
+  "edges": []
+}

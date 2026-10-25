@@ -1,0 +1,4440 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 33,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 33,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/dataType/ThingModelDataSpecs.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "ThingModelDataSpecs",
+          "startLine": 15,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "dataType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelDataSpecs",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/dataType/ThingModelDateOrTextDataSpecs.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "ThingModelDateOrTextDataSpecs",
+          "startLine": 15,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "length",
+            "defaultValue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelDateOrTextDataSpecs",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/alert/IotAlertConfigMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "IotAlertConfigMapper",
+          "startLine": 18,
+          "endLine": 39,
+          "methods": [
+            "selectPage",
+            "selectListByStatus",
+            "selectListBySceneRuleIdAndStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotAlertConfigMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>()\n                .likeIfPresent(IotAlertConfigDO::getName, reqVO.getName())\n                .eqIfPresent(IotAlertConfigDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(IotAlertConfigDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>()\n                .likeIfPresent(IotAlertConfigDO::getName, reqVO.getName())\n                .eqIfPresent(IotAlertConfigDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>()\n                .likeIfPresent(IotAlertConfigDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>().likeIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListBySceneRuleIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>()\n                .eq(IotAlertConfigDO::getStatus, status).apply",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>().eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotAlertConfigDO>",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleIdAndStatus",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/alert/IotAlertRecordMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "IotAlertRecordMapper",
+          "startLine": 19,
+          "endLine": 46,
+          "methods": [
+            "selectPage",
+            "selectListBySceneRuleId",
+            "updateList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotAlertRecordMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eqIfPresent(IotAlertRecordDO::getConfigId, reqVO.getConfigId())\n                .eqIfPresent(IotAlertRecordDO::getConfigLevel, reqVO.getConfigLevel())\n                .eqIfPresent(IotAlertRecordDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotAlertRecordDO::getDeviceId, reqVO.getDeviceId())\n                .eqIfPresent(IotAlertRecordDO::getProcessStatus, reqVO.getProcessStatus())\n                .betweenIfPresent(IotAlertRecordDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eqIfPresent(IotAlertRecordDO::getConfigId, reqVO.getConfigId())\n                .eqIfPresent(IotAlertRecordDO::getConfigLevel, reqVO.getConfigLevel())\n                .eqIfPresent(IotAlertRecordDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotAlertRecordDO::getDeviceId, reqVO.getDeviceId())\n                .eqIfPresent(IotAlertRecordDO::getProcessStatus, reqVO.getProcessStatus()).betweenIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eqIfPresent(IotAlertRecordDO::getConfigId, reqVO.getConfigId())\n                .eqIfPresent(IotAlertRecordDO::getConfigLevel, reqVO.getConfigLevel())\n                .eqIfPresent(IotAlertRecordDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotAlertRecordDO::getDeviceId, reqVO.getDeviceId()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eqIfPresent(IotAlertRecordDO::getConfigId, reqVO.getConfigId())\n                .eqIfPresent(IotAlertRecordDO::getConfigLevel, reqVO.getConfigLevel())\n                .eqIfPresent(IotAlertRecordDO::getProductId, reqVO.getProductId()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eqIfPresent(IotAlertRecordDO::getConfigId, reqVO.getConfigId())\n                .eqIfPresent(IotAlertRecordDO::getConfigLevel, reqVO.getConfigLevel()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eqIfPresent(IotAlertRecordDO::getConfigId, reqVO.getConfigId()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>().eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getConfigId",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getConfigLevel",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getProductId",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getDeviceId",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getProcessStatus",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectListBySceneRuleId",
+          "callee": "selectList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleId",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eq(IotAlertRecordDO::getSceneRuleId, sceneRuleId)\n                .eqIfPresent(IotAlertRecordDO::getDeviceId, deviceId)\n                .eqIfPresent(IotAlertRecordDO::getProcessStatus, processStatus).orderByDesc",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleId",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eq(IotAlertRecordDO::getSceneRuleId, sceneRuleId)\n                .eqIfPresent(IotAlertRecordDO::getDeviceId, deviceId).eqIfPresent",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleId",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>()\n                .eq(IotAlertRecordDO::getSceneRuleId, sceneRuleId).eqIfPresent",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleId",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>().eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListBySceneRuleId",
+          "callee": "new LambdaQueryWrapperX<IotAlertRecordDO>",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateList",
+          "callee": "update",
+          "lineNumber": 42
+        },
+        {
+          "caller": "updateList",
+          "callee": "new LambdaUpdateWrapper<IotAlertRecordDO>().in",
+          "lineNumber": 42
+        },
+        {
+          "caller": "updateList",
+          "callee": "new LambdaUpdateWrapper<IotAlertRecordDO>",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/device/IotDeviceMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 176,
+      "nonEmptyLines": 153,
+      "classes": [
+        {
+          "name": "IotDeviceMapper",
+          "startLine": 27,
+          "endLine": 176,
+          "methods": [
+            "selectPage",
+            "selectByDeviceName",
+            "selectByProductKeyAndDeviceName",
+            "selectCountByGatewayId",
+            "selectCountByProductId",
+            "selectListByCondition",
+            "selectListByState",
+            "selectListByProductId",
+            "selectCountByGroupId",
+            "selectCountByCreateTime",
+            "selectByProductKeyAndDeviceNames",
+            "selectBySerialNumber",
+            "selectDeviceCountMapByProductId",
+            "selectDeviceCountGroupByState",
+            "selectListByHasLocation",
+            "selectListByGatewayId",
+            "selectUnboundSubDevicePage",
+            "updateGatewayIdBatch"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceMapper",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotDeviceDO::getDeviceType, reqVO.getDeviceType())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname())\n                .eqIfPresent(IotDeviceDO::getState, reqVO.getStatus())\n                .eqIfPresent(IotDeviceDO::getGatewayId, reqVO.getGatewayId())\n                .apply(ObjectUtil.isNotNull(reqVO.getGroupId()), MyBatisUtils.findInSet(\"group_ids\"), reqVO.getGroupId()).orderByDesc",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotDeviceDO::getDeviceType, reqVO.getDeviceType())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname())\n                .eqIfPresent(IotDeviceDO::getState, reqVO.getStatus())\n                .eqIfPresent(IotDeviceDO::getGatewayId, reqVO.getGatewayId()).apply",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotDeviceDO::getDeviceType, reqVO.getDeviceType())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname())\n                .eqIfPresent(IotDeviceDO::getState, reqVO.getStatus()).eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotDeviceDO::getDeviceType, reqVO.getDeviceType())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname()).eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId())\n                .eqIfPresent(IotDeviceDO::getDeviceType, reqVO.getDeviceType()).likeIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId()).eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName()).eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>().likeIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getDeviceName",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getProductId",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getDeviceType",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getNickname",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getGatewayId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectPage",
+          "callee": "ObjectUtil.isNotNull",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getGroupId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getGroupId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectByDeviceName",
+          "callee": "selectOne",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectByProductKeyAndDeviceName",
+          "callee": "selectOne",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectCountByGatewayId",
+          "callee": "selectCount",
+          "lineNumber": 52
+        },
+        {
+          "caller": "selectCountByProductId",
+          "callee": "selectCount",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectListByCondition",
+          "callee": "selectList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectListByCondition",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .eqIfPresent(IotDeviceDO::getDeviceType, deviceType).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectListByCondition",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>().eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectListByCondition",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectListByState",
+          "callee": "selectList",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectListByProductId",
+          "callee": "selectList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectCountByGroupId",
+          "callee": "selectCount",
+          "lineNumber": 75
+        },
+        {
+          "caller": "selectCountByGroupId",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>().apply",
+          "lineNumber": 75
+        },
+        {
+          "caller": "selectCountByGroupId",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>",
+          "lineNumber": 75
+        },
+        {
+          "caller": "selectCountByGroupId",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "selectCount",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>().geIfPresent",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectByProductKeyAndDeviceNames",
+          "callee": "selectList",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectByProductKeyAndDeviceNames",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .eq(IotDeviceDO::getProductKey, productKey).in",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectByProductKeyAndDeviceNames",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>().eq",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectByProductKeyAndDeviceNames",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectBySerialNumber",
+          "callee": "selectOne",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "selectMaps",
+          "lineNumber": 100
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "new QueryWrapper<IotDeviceDO>()\n                .select(\"product_id AS productId\", \"COUNT(1) AS deviceCount\").groupBy",
+          "lineNumber": 100
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "new QueryWrapper<IotDeviceDO>().select",
+          "lineNumber": 100
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "new QueryWrapper<IotDeviceDO>",
+          "lineNumber": 100
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "result.stream().collect",
+          "lineNumber": 103
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "result.stream",
+          "lineNumber": 103
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "Collectors.toMap",
+          "lineNumber": 103
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "Long.valueOf",
+          "lineNumber": 104
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "map.get(\"productId\").toString",
+          "lineNumber": 104
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "map.get",
+          "lineNumber": 104
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "Integer.valueOf",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "map.get(\"deviceCount\").toString",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectDeviceCountMapByProductId",
+          "callee": "map.get",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "selectMaps",
+          "lineNumber": 115
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "new QueryWrapper<IotDeviceDO>()\n                .select(\"state\", \"COUNT(1) AS deviceCount\").groupBy",
+          "lineNumber": 115
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "new QueryWrapper<IotDeviceDO>().select",
+          "lineNumber": 115
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "new QueryWrapper<IotDeviceDO>",
+          "lineNumber": 115
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "result.stream().collect",
+          "lineNumber": 118
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "result.stream",
+          "lineNumber": 118
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "Collectors.toMap",
+          "lineNumber": 118
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "Integer.valueOf",
+          "lineNumber": 119
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "map.get(\"state\").toString",
+          "lineNumber": 119
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "map.get",
+          "lineNumber": 119
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "Long.valueOf",
+          "lineNumber": 120
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "map.get(\"deviceCount\").toString",
+          "lineNumber": 120
+        },
+        {
+          "caller": "selectDeviceCountGroupByState",
+          "callee": "map.get",
+          "lineNumber": 120
+        },
+        {
+          "caller": "selectListByHasLocation",
+          "callee": "selectList",
+          "lineNumber": 130
+        },
+        {
+          "caller": "selectListByHasLocation",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .isNotNull(IotDeviceDO::getLatitude).isNotNull",
+          "lineNumber": 130
+        },
+        {
+          "caller": "selectListByHasLocation",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>().isNotNull",
+          "lineNumber": 130
+        },
+        {
+          "caller": "selectListByHasLocation",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>",
+          "lineNumber": 130
+        },
+        {
+          "caller": "selectListByGatewayId",
+          "callee": "selectList",
+          "lineNumber": 144
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "selectPage",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId())\n                // 仅查询子设备 + 未绑定网关\n                .eq(IotDeviceDO::getDeviceType, IotProductDeviceTypeEnum.GATEWAY_SUB.getType())\n                .isNull(IotDeviceDO::getGatewayId).orderByDesc",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId())\n                // 仅查询子设备 + 未绑定网关\n                .eq(IotDeviceDO::getDeviceType, IotProductDeviceTypeEnum.GATEWAY_SUB.getType()).isNull",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname())\n                .eqIfPresent(IotDeviceDO::getProductId, reqVO.getProductId()).eq",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName())\n                .likeIfPresent(IotDeviceDO::getNickname, reqVO.getNickname()).eqIfPresent",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>()\n                .likeIfPresent(IotDeviceDO::getDeviceName, reqVO.getDeviceName()).likeIfPresent",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>().likeIfPresent",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceDO>",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "reqVO.getDeviceName",
+          "lineNumber": 155
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "reqVO.getNickname",
+          "lineNumber": 156
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "reqVO.getProductId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "selectUnboundSubDevicePage",
+          "callee": "IotProductDeviceTypeEnum.GATEWAY_SUB.getType",
+          "lineNumber": 159
+        },
+        {
+          "caller": "updateGatewayIdBatch",
+          "callee": "update",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateGatewayIdBatch",
+          "callee": "new LambdaUpdateWrapper<IotDeviceDO>()\n                .set(IotDeviceDO::getGatewayId, gatewayId).in",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateGatewayIdBatch",
+          "callee": "new LambdaUpdateWrapper<IotDeviceDO>().set",
+          "lineNumber": 171
+        },
+        {
+          "caller": "updateGatewayIdBatch",
+          "callee": "new LambdaUpdateWrapper<IotDeviceDO>",
+          "lineNumber": 171
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/device/IotDeviceModbusConfigMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "IotDeviceModbusConfigMapper",
+          "startLine": 16,
+          "endLine": 30,
+          "methods": [
+            "selectByDeviceId",
+            "selectList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceModbusConfigMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByDeviceId",
+          "callee": "selectOne",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusConfigDO>()\n                .eqIfPresent(IotDeviceModbusConfigDO::getStatus, reqDTO.getStatus())\n                .eqIfPresent(IotDeviceModbusConfigDO::getMode, reqDTO.getMode()).inIfPresent",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusConfigDO>()\n                .eqIfPresent(IotDeviceModbusConfigDO::getStatus, reqDTO.getStatus()).eqIfPresent",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusConfigDO>().eqIfPresent",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusConfigDO>",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqDTO.getStatus",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqDTO.getMode",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqDTO.getDeviceIds",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/device/IotDeviceModbusPointMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "IotDeviceModbusPointMapper",
+          "startLine": 18,
+          "endLine": 47,
+          "methods": [
+            "selectPage",
+            "selectListByDeviceIdsAndStatus",
+            "selectByDeviceIdAndIdentifier",
+            "updateByThingModelId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceModbusPointMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>()\n                .eqIfPresent(IotDeviceModbusPointDO::getDeviceId, reqVO.getDeviceId())\n                .likeIfPresent(IotDeviceModbusPointDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotDeviceModbusPointDO::getName, reqVO.getName())\n                .eqIfPresent(IotDeviceModbusPointDO::getFunctionCode, reqVO.getFunctionCode())\n                .eqIfPresent(IotDeviceModbusPointDO::getStatus, reqVO.getStatus()).orderByDesc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>()\n                .eqIfPresent(IotDeviceModbusPointDO::getDeviceId, reqVO.getDeviceId())\n                .likeIfPresent(IotDeviceModbusPointDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotDeviceModbusPointDO::getName, reqVO.getName())\n                .eqIfPresent(IotDeviceModbusPointDO::getFunctionCode, reqVO.getFunctionCode()).eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>()\n                .eqIfPresent(IotDeviceModbusPointDO::getDeviceId, reqVO.getDeviceId())\n                .likeIfPresent(IotDeviceModbusPointDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotDeviceModbusPointDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>()\n                .eqIfPresent(IotDeviceModbusPointDO::getDeviceId, reqVO.getDeviceId())\n                .likeIfPresent(IotDeviceModbusPointDO::getIdentifier, reqVO.getIdentifier()).likeIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>()\n                .eqIfPresent(IotDeviceModbusPointDO::getDeviceId, reqVO.getDeviceId()).likeIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>().eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getDeviceId",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getIdentifier",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getFunctionCode",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectListByDeviceIdsAndStatus",
+          "callee": "selectList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByDeviceIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>()\n                .in(IotDeviceModbusPointDO::getDeviceId, deviceIds).eq",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByDeviceIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>().in",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByDeviceIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectByDeviceIdAndIdentifier",
+          "callee": "selectOne",
+          "lineNumber": 38
+        },
+        {
+          "caller": "updateByThingModelId",
+          "callee": "update",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateByThingModelId",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>().eq",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateByThingModelId",
+          "callee": "new LambdaQueryWrapperX<IotDeviceModbusPointDO>",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/ota/IotOtaFirmwareMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "IotOtaFirmwareMapper",
+          "startLine": 10,
+          "endLine": 26,
+          "methods": [
+            "selectByProductIdAndVersion",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotOtaFirmwareMapper",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByProductIdAndVersion",
+          "callee": "selectOne",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaFirmwareDO>()\n                .likeIfPresent(IotOtaFirmwareDO::getName, pageReqVO.getName())\n                .eqIfPresent(IotOtaFirmwareDO::getProductId, pageReqVO.getProductId())\n                .betweenIfPresent(IotOtaFirmwareDO::getCreateTime, pageReqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaFirmwareDO>()\n                .likeIfPresent(IotOtaFirmwareDO::getName, pageReqVO.getName())\n                .eqIfPresent(IotOtaFirmwareDO::getProductId, pageReqVO.getProductId()).betweenIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaFirmwareDO>()\n                .likeIfPresent(IotOtaFirmwareDO::getName, pageReqVO.getName()).eqIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaFirmwareDO>().likeIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaFirmwareDO>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getProductId",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getCreateTime",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/ota/IotOtaTaskMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "IotOtaTaskMapper",
+          "startLine": 12,
+          "endLine": 39,
+          "methods": [
+            "selectByFirmwareIdAndName",
+            "selectCountByFirmwareIdAndStatus",
+            "selectPage",
+            "updateByIdAndStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotOtaTaskMapper",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByFirmwareIdAndName",
+          "callee": "selectOne",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectCountByFirmwareIdAndStatus",
+          "callee": "selectCount",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectCountByFirmwareIdAndStatus",
+          "callee": "new LambdaQueryWrapper<IotOtaTaskDO>()\n                .eq(IotOtaTaskDO::getFirmwareId, firmwareId).eq",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectCountByFirmwareIdAndStatus",
+          "callee": "new LambdaQueryWrapper<IotOtaTaskDO>().eq",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectCountByFirmwareIdAndStatus",
+          "callee": "new LambdaQueryWrapper<IotOtaTaskDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskDO>()\n                .eqIfPresent(IotOtaTaskDO::getFirmwareId, pageReqVO.getFirmwareId())\n                .likeIfPresent(IotOtaTaskDO::getName, pageReqVO.getName()).orderByDesc",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskDO>()\n                .eqIfPresent(IotOtaTaskDO::getFirmwareId, pageReqVO.getFirmwareId()).likeIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskDO>().eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskDO>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getFirmwareId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 29
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "update",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskDO>()\n                .eq(IotOtaTaskDO::getId, id).eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskDO>().eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskDO>",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/ota/IotOtaTaskRecordMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 66,
+      "classes": [
+        {
+          "name": "IotOtaTaskRecordMapper",
+          "startLine": 15,
+          "endLine": 80,
+          "methods": [
+            "selectListByFirmwareIdAndTaskId",
+            "selectPage",
+            "selectListByTaskIdAndStatus",
+            "selectCountByTaskIdAndStatus",
+            "updateByIdAndStatus",
+            "updateByIdAndStatus",
+            "updateListByIdAndStatus",
+            "selectListByDeviceIdAndStatus",
+            "selectListByDeviceIdAndStatus",
+            "selectListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotOtaTaskRecordMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByFirmwareIdAndTaskId",
+          "callee": "selectList",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectListByFirmwareIdAndTaskId",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>()\n                .eqIfPresent(IotOtaTaskRecordDO::getFirmwareId, firmwareId)\n                .eqIfPresent(IotOtaTaskRecordDO::getTaskId, taskId).select",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectListByFirmwareIdAndTaskId",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>()\n                .eqIfPresent(IotOtaTaskRecordDO::getFirmwareId, firmwareId).eqIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectListByFirmwareIdAndTaskId",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>().eqIfPresent",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectListByFirmwareIdAndTaskId",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>()\n                .eqIfPresent(IotOtaTaskRecordDO::getTaskId, pageReqVO.getTaskId()).eqIfPresent",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>().eqIfPresent",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getTaskId",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getStatus",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectListByTaskIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByTaskIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>()\n               .eq(IotOtaTaskRecordDO::getTaskId, taskId).in",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByTaskIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>().eq",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByTaskIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectCountByTaskIdAndStatus",
+          "callee": "selectCount",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectCountByTaskIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>()\n                .eq(IotOtaTaskRecordDO::getTaskId, taskId).in",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectCountByTaskIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>().eq",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectCountByTaskIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>",
+          "lineNumber": 38
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "update",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>()\n                .eq(IotOtaTaskRecordDO::getId, id).eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>().eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "update",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>()\n                .eq(IotOtaTaskRecordDO::getId, id).in",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>().eq",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateListByIdAndStatus",
+          "callee": "update",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateListByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>()\n                .in(IotOtaTaskRecordDO::getId, ids).in",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateListByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>().in",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateListByIdAndStatus",
+          "callee": "new LambdaUpdateWrapper<IotOtaTaskRecordDO>",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>()\n                .inIfPresent(IotOtaTaskRecordDO::getDeviceId, deviceIds).inIfPresent",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>().inIfPresent",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>()\n                .eqIfPresent(IotOtaTaskRecordDO::getDeviceId, deviceId).inIfPresent",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>().eqIfPresent",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectListByDeviceIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<IotOtaTaskRecordDO>",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/product/IotProductCategoryMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "IotProductCategoryMapper",
+          "startLine": 19,
+          "endLine": 38,
+          "methods": [
+            "selectPage",
+            "selectListByStatus",
+            "selectCountByCreateTime"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotProductCategoryMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductCategoryDO>()\n                .likeIfPresent(IotProductCategoryDO::getName, reqVO.getName())\n                .betweenIfPresent(IotProductCategoryDO::getCreateTime, reqVO.getCreateTime()).orderByAsc",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductCategoryDO>()\n                .likeIfPresent(IotProductCategoryDO::getName, reqVO.getName()).betweenIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductCategoryDO>().likeIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductCategoryDO>",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "selectCount",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "new LambdaQueryWrapperX<IotProductCategoryDO>().geIfPresent",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "new LambdaQueryWrapperX<IotProductCategoryDO>",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/product/IotProductMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "IotProductMapper",
+          "startLine": 20,
+          "endLine": 50,
+          "methods": [
+            "selectPage",
+            "selectList",
+            "selectByProductKey",
+            "selectListByStatus",
+            "selectCountByCreateTime"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotProductMapper",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>()\n                .likeIfPresent(IotProductDO::getName, reqVO.getName())\n                .likeIfPresent(IotProductDO::getProductKey, reqVO.getProductKey()).orderByDesc",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>()\n                .likeIfPresent(IotProductDO::getName, reqVO.getName()).likeIfPresent",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>().likeIfPresent",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getProductKey",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>()\n                .eqIfPresent(IotProductDO::getDeviceType, deviceType).orderByDesc",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>().eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectByProductKey",
+          "callee": "selectOne",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectByProductKey",
+          "callee": "new LambdaQueryWrapper<IotProductDO>().apply",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectByProductKey",
+          "callee": "new LambdaQueryWrapper<IotProductDO>",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectByProductKey",
+          "callee": "productKey.toLowerCase",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "selectCount",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>().geIfPresent",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectCountByCreateTime",
+          "callee": "new LambdaQueryWrapperX<IotProductDO>",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/rule/IotDataRuleMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "IotDataRuleMapper",
+          "startLine": 18,
+          "endLine": 42,
+          "methods": [
+            "selectPage",
+            "selectListBySinkId",
+            "selectListByStatus",
+            "selectByName"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataRuleMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataRuleDO>()\n                .likeIfPresent(IotDataRuleDO::getName, reqVO.getName())\n                .eqIfPresent(IotDataRuleDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(IotDataRuleDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataRuleDO>()\n                .likeIfPresent(IotDataRuleDO::getName, reqVO.getName())\n                .eqIfPresent(IotDataRuleDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataRuleDO>()\n                .likeIfPresent(IotDataRuleDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataRuleDO>().likeIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataRuleDO>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListBySinkId",
+          "callee": "selectList",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListBySinkId",
+          "callee": "new LambdaQueryWrapperX<IotDataRuleDO>().apply",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListBySinkId",
+          "callee": "new LambdaQueryWrapperX<IotDataRuleDO>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListBySinkId",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectByName",
+          "callee": "selectOne",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/rule/IotDataSinkMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "IotDataSinkMapper",
+          "startLine": 17,
+          "endLine": 37,
+          "methods": [
+            "selectPage",
+            "selectListByStatus",
+            "selectByName"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDataSinkMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataSinkDO>()\n                .likeIfPresent(IotDataSinkDO::getName, reqVO.getName())\n                .eqIfPresent(IotDataSinkDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(IotDataSinkDO::getType, reqVO.getType())\n                .betweenIfPresent(IotDataSinkDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataSinkDO>()\n                .likeIfPresent(IotDataSinkDO::getName, reqVO.getName())\n                .eqIfPresent(IotDataSinkDO::getStatus, reqVO.getStatus())\n                .eqIfPresent(IotDataSinkDO::getType, reqVO.getType()).betweenIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataSinkDO>()\n                .likeIfPresent(IotDataSinkDO::getName, reqVO.getName())\n                .eqIfPresent(IotDataSinkDO::getStatus, reqVO.getStatus()).eqIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataSinkDO>()\n                .likeIfPresent(IotDataSinkDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataSinkDO>().likeIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotDataSinkDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getType",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectByName",
+          "callee": "selectOne",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/rule/IotSceneRuleMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "IotSceneRuleMapper",
+          "startLine": 17,
+          "endLine": 33,
+          "methods": [
+            "selectPage",
+            "selectListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotSceneRuleMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotSceneRuleDO>()\n                .likeIfPresent(IotSceneRuleDO::getName, reqVO.getName())\n                .likeIfPresent(IotSceneRuleDO::getDescription, reqVO.getDescription())\n                .eqIfPresent(IotSceneRuleDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(IotSceneRuleDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotSceneRuleDO>()\n                .likeIfPresent(IotSceneRuleDO::getName, reqVO.getName())\n                .likeIfPresent(IotSceneRuleDO::getDescription, reqVO.getDescription())\n                .eqIfPresent(IotSceneRuleDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotSceneRuleDO>()\n                .likeIfPresent(IotSceneRuleDO::getName, reqVO.getName())\n                .likeIfPresent(IotSceneRuleDO::getDescription, reqVO.getDescription()).eqIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotSceneRuleDO>()\n                .likeIfPresent(IotSceneRuleDO::getName, reqVO.getName()).likeIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotSceneRuleDO>().likeIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotSceneRuleDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getDescription",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/mysql/thingmodel/IotThingModelMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "IotThingModelMapper",
+          "startLine": 19,
+          "endLine": 65,
+          "methods": [
+            "selectPage",
+            "selectList",
+            "selectByProductIdAndIdentifier",
+            "selectListByProductId",
+            "selectListByProductIdAndIdentifiers",
+            "selectListByProductIdAndType",
+            "selectByProductIdAndName"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotThingModelMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotThingModelDO::getName, reqVO.getName())\n                .eqIfPresent(IotThingModelDO::getType, reqVO.getType())\n                .eqIfPresent(IotThingModelDO::getProductId, reqVO.getProductId()).orderByDesc",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotThingModelDO::getName, reqVO.getName())\n                .eqIfPresent(IotThingModelDO::getType, reqVO.getType()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotThingModelDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier()).likeIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>().eqIfPresent",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getIdentifier",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getType",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getProductId",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotThingModelDO::getName, reqVO.getName())\n                .eqIfPresent(IotThingModelDO::getType, reqVO.getType())\n                .eqIfPresent(IotThingModelDO::getProductId, reqVO.getProductId()).orderByDesc",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotThingModelDO::getName, reqVO.getName())\n                .eqIfPresent(IotThingModelDO::getType, reqVO.getType()).eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier())\n                .likeIfPresent(IotThingModelDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eqIfPresent(IotThingModelDO::getIdentifier, reqVO.getIdentifier()).likeIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>().eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getIdentifier",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getName",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getType",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getProductId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectByProductIdAndIdentifier",
+          "callee": "selectOne",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectListByProductId",
+          "callee": "selectList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectListByProductIdAndIdentifiers",
+          "callee": "selectList",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectListByProductIdAndIdentifiers",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>()\n                .eq(IotThingModelDO::getProductId, productId).in",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectListByProductIdAndIdentifiers",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>().eq",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectListByProductIdAndIdentifiers",
+          "callee": "new LambdaQueryWrapperX<IotThingModelDO>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectListByProductIdAndType",
+          "callee": "selectList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectByProductIdAndName",
+          "callee": "selectOne",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/redis/RedisKeyConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 82,
+      "classes": [
+        {
+          "name": "RedisKeyConstants",
+          "startLine": 10,
+          "endLine": 95,
+          "methods": [],
+          "properties": [
+            "DEVICE_PROPERTY",
+            "DEVICE_REPORT_TIMES",
+            "DEVICE_SERVER_ID",
+            "DEVICE",
+            "PRODUCT",
+            "THING_MODEL_LIST",
+            "DATA_RULE_LIST",
+            "DATA_SINK",
+            "SCENE_RULE_LIST",
+            "WEBSOCKET_CONNECT_LOCK"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisKeyConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/redis/device/DevicePropertyRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "get",
+          "startLine": 25,
+          "endLine": 34,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "putAll",
+          "startLine": 36,
+          "endLine": 44,
+          "params": [
+            "id",
+            "properties"
+          ]
+        },
+        {
+          "name": "formatKey",
+          "startLine": 46,
+          "endLine": 48,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DevicePropertyRedisDAO",
+          "startLine": 19,
+          "endLine": 50,
+          "methods": [
+            "get",
+            "putAll",
+            "formatKey"
+          ],
+          "properties": [
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "putAll",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "DevicePropertyRedisDAO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get",
+          "callee": "formatKey",
+          "lineNumber": 26
+        },
+        {
+          "caller": "get",
+          "callee": "stringRedisTemplate.opsForHash().entries",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get",
+          "callee": "stringRedisTemplate.opsForHash",
+          "lineNumber": 27
+        },
+        {
+          "caller": "get",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 28
+        },
+        {
+          "caller": "get",
+          "callee": "Collections.emptyMap",
+          "lineNumber": 29
+        },
+        {
+          "caller": "get",
+          "callee": "convertMap",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get",
+          "callee": "entries.entrySet",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get",
+          "callee": "entry.getKey",
+          "lineNumber": 32
+        },
+        {
+          "caller": "get",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 33
+        },
+        {
+          "caller": "get",
+          "callee": "entry.getValue",
+          "lineNumber": 33
+        },
+        {
+          "caller": "putAll",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 37
+        },
+        {
+          "caller": "putAll",
+          "callee": "formatKey",
+          "lineNumber": 40
+        },
+        {
+          "caller": "putAll",
+          "callee": "stringRedisTemplate.opsForHash().putAll",
+          "lineNumber": 41
+        },
+        {
+          "caller": "putAll",
+          "callee": "stringRedisTemplate.opsForHash",
+          "lineNumber": 41
+        },
+        {
+          "caller": "putAll",
+          "callee": "convertMap",
+          "lineNumber": 41
+        },
+        {
+          "caller": "putAll",
+          "callee": "properties.entrySet",
+          "lineNumber": 41
+        },
+        {
+          "caller": "putAll",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 43
+        },
+        {
+          "caller": "putAll",
+          "callee": "entry.getValue",
+          "lineNumber": 43
+        },
+        {
+          "caller": "formatKey",
+          "callee": "String.format",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/redis/device/DeviceReportTimeRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "update",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "deviceId",
+            "reportTime"
+          ]
+        },
+        {
+          "name": "range",
+          "startLine": 30,
+          "endLine": 34,
+          "params": [
+            "maxReportTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeviceReportTimeRedisDAO",
+          "startLine": 19,
+          "endLine": 36,
+          "methods": [
+            "update",
+            "range"
+          ],
+          "properties": [
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "update",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "range",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "DeviceReportTimeRedisDAO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update",
+          "callee": "stringRedisTemplate.opsForZSet().add",
+          "lineNumber": 26
+        },
+        {
+          "caller": "update",
+          "callee": "stringRedisTemplate.opsForZSet",
+          "lineNumber": 26
+        },
+        {
+          "caller": "update",
+          "callee": "String.valueOf",
+          "lineNumber": 26
+        },
+        {
+          "caller": "update",
+          "callee": "LocalDateTimeUtil.toEpochMilli",
+          "lineNumber": 27
+        },
+        {
+          "caller": "range",
+          "callee": "stringRedisTemplate.opsForZSet().rangeByScore",
+          "lineNumber": 31
+        },
+        {
+          "caller": "range",
+          "callee": "stringRedisTemplate.opsForZSet",
+          "lineNumber": 31
+        },
+        {
+          "caller": "range",
+          "callee": "LocalDateTimeUtil.toEpochMilli",
+          "lineNumber": 32
+        },
+        {
+          "caller": "range",
+          "callee": "convertSet",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/redis/device/DeviceServerIdRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "update",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "deviceId",
+            "serverId"
+          ]
+        },
+        {
+          "name": "get",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "deviceId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeviceServerIdRedisDAO",
+          "startLine": 13,
+          "endLine": 30,
+          "methods": [
+            "update",
+            "get"
+          ],
+          "properties": [
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "update",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "DeviceServerIdRedisDAO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "update",
+          "callee": "stringRedisTemplate.opsForHash().put",
+          "lineNumber": 20
+        },
+        {
+          "caller": "update",
+          "callee": "stringRedisTemplate.opsForHash",
+          "lineNumber": 20
+        },
+        {
+          "caller": "update",
+          "callee": "String.valueOf",
+          "lineNumber": 21
+        },
+        {
+          "caller": "get",
+          "callee": "stringRedisTemplate.opsForHash().get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "get",
+          "callee": "stringRedisTemplate.opsForHash",
+          "lineNumber": 25
+        },
+        {
+          "caller": "get",
+          "callee": "String.valueOf",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/tdengine/IotDeviceMessageMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 68,
+      "classes": [
+        {
+          "name": "IotDeviceMessageMapper",
+          "startLine": 18,
+          "endLine": 79,
+          "methods": [
+            "createSTable",
+            "showSTable",
+            "insert",
+            "selectPage",
+            "selectCountByCreateTime",
+            "selectListByRequestIdsAndReply",
+            "selectDeviceMessageCountGroupByDate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceMessageMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/tdengine/IotDevicePropertyMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 76,
+      "classes": [
+        {
+          "name": "IotDevicePropertyMapper",
+          "startLine": 20,
+          "endLine": 89,
+          "methods": [
+            "getProductPropertySTableFieldList",
+            "createProductPropertySTable",
+            "alterProductPropertySTable",
+            "alterProductPropertySTableAddField",
+            "alterProductPropertySTableModifyField",
+            "alterProductPropertySTableDropField",
+            "insert",
+            "selectListByHistory"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDevicePropertyMapper",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldFields.removeIf",
+          "lineNumber": 34
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "StrUtil.equalsAny",
+          "lineNumber": 34
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "field.getField",
+          "lineNumber": 34
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newFields.stream().filter( // 新增的字段\n                        newField -> oldFields.stream().noneMatch(oldField -> oldField.getField().equals(newField.getField()))).collect",
+          "lineNumber": 36
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newFields.stream().filter",
+          "lineNumber": 36
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newFields.stream",
+          "lineNumber": 36
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldFields.stream().noneMatch",
+          "lineNumber": 37
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldFields.stream",
+          "lineNumber": 37
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldField.getField().equals",
+          "lineNumber": 37
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldField.getField",
+          "lineNumber": 37
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newField.getField",
+          "lineNumber": 37
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "Collectors.toList",
+          "lineNumber": 38
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldFields.stream().filter( // 删除的字段\n                        oldField -> newFields.stream().noneMatch(n -> n.getField().equals(oldField.getField()))).collect",
+          "lineNumber": 39
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldFields.stream().filter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldFields.stream",
+          "lineNumber": 39
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newFields.stream().noneMatch",
+          "lineNumber": 40
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newFields.stream",
+          "lineNumber": 40
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "n.getField().equals",
+          "lineNumber": 40
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "n.getField",
+          "lineNumber": 40
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldField.getField",
+          "lineNumber": 40
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "Collectors.toList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "new ArrayList<>",
+          "lineNumber": 42
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "new ArrayList<>",
+          "lineNumber": 43
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newFields.forEach",
+          "lineNumber": 44
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "CollUtil.findOne",
+          "lineNumber": 45
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "field.getField().equals",
+          "lineNumber": 45
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "field.getField",
+          "lineNumber": 45
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newField.getField",
+          "lineNumber": 45
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 49
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldField.getType",
+          "lineNumber": 49
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newField.getType",
+          "lineNumber": 49
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "modifyTypeFields.add",
+          "lineNumber": 50
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newField.getLength",
+          "lineNumber": 53
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newField.getLength",
+          "lineNumber": 54
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldField.getLength",
+          "lineNumber": 54
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "modifyLengthFields.add",
+          "lineNumber": 55
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "newField.getLength",
+          "lineNumber": 56
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "oldField.getLength",
+          "lineNumber": 56
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "modifyTypeFields.add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "addFields.forEach",
+          "lineNumber": 64
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "alterProductPropertySTableAddField",
+          "lineNumber": 64
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "dropFields.forEach",
+          "lineNumber": 65
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "alterProductPropertySTableDropField",
+          "lineNumber": 65
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "modifyLengthFields.forEach",
+          "lineNumber": 66
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "alterProductPropertySTableModifyField",
+          "lineNumber": 66
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "modifyTypeFields.forEach",
+          "lineNumber": 67
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "alterProductPropertySTableDropField",
+          "lineNumber": 68
+        },
+        {
+          "caller": "alterProductPropertySTable",
+          "callee": "alterProductPropertySTableAddField",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/iot/config/YudaoIotProperties.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "YudaoIotProperties",
+          "startLine": 13,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "keepAliveTime",
+            "keepAliveFactor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "YudaoIotProperties",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/job/config/IotJobConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "iotSchedulerManager",
+          "startLine": 18,
+          "endLine": 22,
+          "params": [
+            "dataSource",
+            "applicationContext"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotJobConfiguration",
+          "startLine": 15,
+          "endLine": 24,
+          "methods": [
+            "iotSchedulerManager"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "iotSchedulerManager",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "IotJobConfiguration",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "iotSchedulerManager",
+          "callee": "new IotSchedulerManager",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/job/core/IotSchedulerManager.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 186,
+      "nonEmptyLines": 167,
+      "functions": [
+        {
+          "name": "IotSchedulerManager",
+          "startLine": 30,
+          "endLine": 57,
+          "params": [
+            "dataSource",
+            "applicationContext"
+          ]
+        },
+        {
+          "name": "start",
+          "startLine": 59,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "stop",
+          "startLine": 69,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "addOrUpdateJob",
+          "startLine": 87,
+          "endLine": 95,
+          "params": [
+            "jobClass",
+            "jobName",
+            "cronExpression",
+            "jobDataMap"
+          ]
+        },
+        {
+          "name": "addJob",
+          "startLine": 106,
+          "endLine": 117,
+          "params": [
+            "jobClass",
+            "jobName",
+            "cronExpression",
+            "jobDataMap"
+          ]
+        },
+        {
+          "name": "updateJob",
+          "startLine": 126,
+          "endLine": 132,
+          "params": [
+            "jobName",
+            "cronExpression"
+          ]
+        },
+        {
+          "name": "deleteJob",
+          "startLine": 140,
+          "endLine": 146,
+          "params": [
+            "jobName"
+          ]
+        },
+        {
+          "name": "pauseJob",
+          "startLine": 154,
+          "endLine": 156,
+          "params": [
+            "jobName"
+          ]
+        },
+        {
+          "name": "resumeJob",
+          "startLine": 164,
+          "endLine": 167,
+          "params": [
+            "jobName"
+          ]
+        },
+        {
+          "name": "triggerJob",
+          "startLine": 175,
+          "endLine": 177,
+          "params": [
+            "jobName"
+          ]
+        },
+        {
+          "name": "buildTrigger",
+          "startLine": 179,
+          "endLine": 184,
+          "params": [
+            "jobName",
+            "cronExpression"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotSchedulerManager",
+          "startLine": 21,
+          "endLine": 186,
+          "methods": [
+            "IotSchedulerManager",
+            "start",
+            "stop",
+            "addOrUpdateJob",
+            "addJob",
+            "updateJob",
+            "deleteJob",
+            "pauseJob",
+            "resumeJob",
+            "triggerJob",
+            "buildTrigger"
+          ],
+          "properties": [
+            "SCHEDULER_NAME",
+            "schedulerFactoryBean",
+            "scheduler"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotSchedulerManager",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "start",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "stop",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "addOrUpdateJob",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "addJob",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "updateJob",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "deleteJob",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "pauseJob",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "resumeJob",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "triggerJob",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "IotSchedulerManager",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "new SchedulerFactoryBean",
+          "lineNumber": 33
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "new SpringBeanJobFactory",
+          "lineNumber": 34
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "jobFactory.setApplicationContext",
+          "lineNumber": 35
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "schedulerFactoryBean.setJobFactory",
+          "lineNumber": 36
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "schedulerFactoryBean.setAutoStartup",
+          "lineNumber": 37
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "schedulerFactoryBean.setSchedulerName",
+          "lineNumber": 38
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "schedulerFactoryBean.setDataSource",
+          "lineNumber": 39
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "schedulerFactoryBean.setWaitForJobsToCompleteOnShutdown",
+          "lineNumber": 40
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "new Properties",
+          "lineNumber": 41
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "schedulerFactoryBean.setQuartzProperties",
+          "lineNumber": 42
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 45
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 46
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 48
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 49
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 50
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 51
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 53
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 54
+        },
+        {
+          "caller": "IotSchedulerManager",
+          "callee": "properties.put",
+          "lineNumber": 55
+        },
+        {
+          "caller": "start",
+          "callee": "log.info",
+          "lineNumber": 60
+        },
+        {
+          "caller": "start",
+          "callee": "schedulerFactoryBean.afterPropertiesSet",
+          "lineNumber": 62
+        },
+        {
+          "caller": "start",
+          "callee": "schedulerFactoryBean.start",
+          "lineNumber": 63
+        },
+        {
+          "caller": "start",
+          "callee": "schedulerFactoryBean.getScheduler",
+          "lineNumber": 65
+        },
+        {
+          "caller": "start",
+          "callee": "log.info",
+          "lineNumber": 66
+        },
+        {
+          "caller": "stop",
+          "callee": "log.info",
+          "lineNumber": 70
+        },
+        {
+          "caller": "stop",
+          "callee": "schedulerFactoryBean.stop",
+          "lineNumber": 71
+        },
+        {
+          "caller": "stop",
+          "callee": "log.info",
+          "lineNumber": 73
+        },
+        {
+          "caller": "addOrUpdateJob",
+          "callee": "scheduler.checkExists",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addOrUpdateJob",
+          "callee": "new JobKey",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addOrUpdateJob",
+          "callee": "this.updateJob",
+          "lineNumber": 91
+        },
+        {
+          "caller": "addOrUpdateJob",
+          "callee": "this.addJob",
+          "lineNumber": 93
+        },
+        {
+          "caller": "addJob",
+          "callee": "JobBuilder.newJob(jobClass)\n                .usingJobData(new JobDataMap(jobDataMap))\n                .withIdentity(jobName).build",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addJob",
+          "callee": "JobBuilder.newJob(jobClass)\n                .usingJobData(new JobDataMap(jobDataMap)).withIdentity",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addJob",
+          "callee": "JobBuilder.newJob(jobClass).usingJobData",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addJob",
+          "callee": "JobBuilder.newJob",
+          "lineNumber": 110
+        },
+        {
+          "caller": "addJob",
+          "callee": "new JobDataMap",
+          "lineNumber": 111
+        },
+        {
+          "caller": "addJob",
+          "callee": "this.buildTrigger",
+          "lineNumber": 114
+        },
+        {
+          "caller": "addJob",
+          "callee": "scheduler.scheduleJob",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateJob",
+          "callee": "this.buildTrigger",
+          "lineNumber": 129
+        },
+        {
+          "caller": "updateJob",
+          "callee": "scheduler.rescheduleJob",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateJob",
+          "callee": "new TriggerKey",
+          "lineNumber": 131
+        },
+        {
+          "caller": "deleteJob",
+          "callee": "scheduler.pauseTrigger",
+          "lineNumber": 142
+        },
+        {
+          "caller": "deleteJob",
+          "callee": "new TriggerKey",
+          "lineNumber": 142
+        },
+        {
+          "caller": "deleteJob",
+          "callee": "scheduler.unscheduleJob",
+          "lineNumber": 144
+        },
+        {
+          "caller": "deleteJob",
+          "callee": "new TriggerKey",
+          "lineNumber": 144
+        },
+        {
+          "caller": "deleteJob",
+          "callee": "scheduler.deleteJob",
+          "lineNumber": 145
+        },
+        {
+          "caller": "deleteJob",
+          "callee": "new JobKey",
+          "lineNumber": 145
+        },
+        {
+          "caller": "pauseJob",
+          "callee": "scheduler.pauseJob",
+          "lineNumber": 155
+        },
+        {
+          "caller": "pauseJob",
+          "callee": "new JobKey",
+          "lineNumber": 155
+        },
+        {
+          "caller": "resumeJob",
+          "callee": "scheduler.resumeJob",
+          "lineNumber": 165
+        },
+        {
+          "caller": "resumeJob",
+          "callee": "new JobKey",
+          "lineNumber": 165
+        },
+        {
+          "caller": "resumeJob",
+          "callee": "scheduler.resumeTrigger",
+          "lineNumber": 166
+        },
+        {
+          "caller": "resumeJob",
+          "callee": "new TriggerKey",
+          "lineNumber": 166
+        },
+        {
+          "caller": "triggerJob",
+          "callee": "scheduler.triggerJob",
+          "lineNumber": 176
+        },
+        {
+          "caller": "triggerJob",
+          "callee": "new JobKey",
+          "lineNumber": 176
+        },
+        {
+          "caller": "buildTrigger",
+          "callee": "TriggerBuilder.newTrigger()\n                .withIdentity(jobName)\n                .withSchedule(CronScheduleBuilder.cronSchedule(cronExpression)).build",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildTrigger",
+          "callee": "TriggerBuilder.newTrigger()\n                .withIdentity(jobName).withSchedule",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildTrigger",
+          "callee": "TriggerBuilder.newTrigger().withIdentity",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildTrigger",
+          "callee": "TriggerBuilder.newTrigger",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildTrigger",
+          "callee": "CronScheduleBuilder.cronSchedule",
+          "lineNumber": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 10,
+          "endLine": 15,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/tdengine/config/TDengineTableInitRunner.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "run",
+          "startLine": 22,
+          "endLine": 32,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TDengineTableInitRunner",
+          "startLine": 15,
+          "endLine": 34,
+          "methods": [
+            "run"
+          ],
+          "properties": [
+            "deviceMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "run",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "TDengineTableInitRunner",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run",
+          "callee": "deviceMessageService.defineDeviceMessageStable",
+          "lineNumber": 26
+        },
+        {
+          "caller": "run",
+          "callee": "log.error",
+          "lineNumber": 29
+        },
+        {
+          "caller": "run",
+          "callee": "System.exit",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/tdengine/core/TDengineTableField.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "TDengineTableField",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "field",
+            "type"
+          ]
+        },
+        {
+          "name": "buildFieldName",
+          "startLine": 71,
+          "endLine": 76,
+          "params": [
+            "field"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TDengineTableField",
+          "startLine": 13,
+          "endLine": 78,
+          "methods": [
+            "TDengineTableField",
+            "buildFieldName"
+          ],
+          "properties": [
+            "FIELD_TS",
+            "TYPE_TINYINT",
+            "TYPE_INT",
+            "TYPE_FLOAT",
+            "TYPE_DOUBLE",
+            "TYPE_BOOL",
+            "TYPE_NCHAR",
+            "TYPE_VARCHAR",
+            "TYPE_TIMESTAMP",
+            "LENGTH_VARCHAR",
+            "NOTE_TAG",
+            "field",
+            "type",
+            "length",
+            "note"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FIELD_TS",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_TINYINT",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_INT",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_FLOAT",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_DOUBLE",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_BOOL",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_NCHAR",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_VARCHAR",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_TIMESTAMP",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "LENGTH_VARCHAR",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "NOTE_TAG",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "TDengineTableField",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "buildFieldName",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "TDengineTableField",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildFieldName",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildFieldName",
+          "callee": "StrUtil.toUnderlineCase(field).toLowerCase",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildFieldName",
+          "callee": "StrUtil.toUnderlineCase",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 14,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/tdengine/core/annotation/TDengineDS.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/job/device/IotDeviceOfflineCheckJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 44,
+          "endLine": 66,
+          "params": [
+            "param"
+          ]
+        },
+        {
+          "name": "getTimeoutTime",
+          "startLine": 68,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotDeviceOfflineCheckJob",
+          "startLine": 31,
+          "endLine": 73,
+          "methods": [
+            "execute",
+            "getTimeoutTime"
+          ],
+          "properties": [
+            "iotProperties",
+            "deviceService",
+            "devicePropertyService",
+            "deviceMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "IotDeviceOfflineCheckJob",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "deviceService.getDeviceListByState",
+          "lineNumber": 48
+        },
+        {
+          "caller": "execute",
+          "callee": "IotDeviceStateEnum.ONLINE.getState",
+          "lineNumber": 48
+        },
+        {
+          "caller": "execute",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 49
+        },
+        {
+          "caller": "execute",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 50
+        },
+        {
+          "caller": "execute",
+          "callee": "Collections.emptyList",
+          "lineNumber": 50
+        },
+        {
+          "caller": "execute",
+          "callee": "devicePropertyService.getDeviceIdListByReportTime",
+          "lineNumber": 53
+        },
+        {
+          "caller": "execute",
+          "callee": "getTimeoutTime",
+          "lineNumber": 53
+        },
+        {
+          "caller": "execute",
+          "callee": "CollUtil.newArrayList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "execute",
+          "callee": "timeoutDeviceIds.contains",
+          "lineNumber": 58
+        },
+        {
+          "caller": "execute",
+          "callee": "device.getId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "execute",
+          "callee": "offlineDevices.add",
+          "lineNumber": 61
+        },
+        {
+          "caller": "execute",
+          "callee": "device.getProductKey",
+          "lineNumber": 61
+        },
+        {
+          "caller": "execute",
+          "callee": "device.getDeviceName",
+          "lineNumber": 61
+        },
+        {
+          "caller": "execute",
+          "callee": "deviceMessageService.sendDeviceMessage",
+          "lineNumber": 63
+        },
+        {
+          "caller": "execute",
+          "callee": "IotDeviceMessage.buildStateOffline().setDeviceId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "execute",
+          "callee": "IotDeviceMessage.buildStateOffline",
+          "lineNumber": 63
+        },
+        {
+          "caller": "execute",
+          "callee": "device.getId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "execute",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getTimeoutTime",
+          "callee": "LocalDateTime.now().minus",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTimeoutTime",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTimeoutTime",
+          "callee": "Duration.ofNanos",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getTimeoutTime",
+          "callee": "iotProperties.getKeepAliveTime().toNanos",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getTimeoutTime",
+          "callee": "iotProperties.getKeepAliveTime",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getTimeoutTime",
+          "callee": "iotProperties.getKeepAliveFactor",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/job/ota/IotOtaUpgradeJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 39,
+          "endLine": 84,
+          "params": [
+            "param"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotOtaUpgradeJob",
+          "startLine": 28,
+          "endLine": 86,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "otaTaskRecordService",
+            "otaFirmwareService",
+            "deviceService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "IotOtaUpgradeJob",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "otaTaskRecordService.getOtaRecordListByStatus",
+          "lineNumber": 43
+        },
+        {
+          "caller": "execute",
+          "callee": "IotOtaTaskRecordStatusEnum.PENDING.getStatus",
+          "lineNumber": 44
+        },
+        {
+          "caller": "execute",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 45
+        },
+        {
+          "caller": "execute",
+          "callee": "new HashMap<>",
+          "lineNumber": 53
+        },
+        {
+          "caller": "execute",
+          "callee": "deviceService.getDeviceFromCache",
+          "lineNumber": 57
+        },
+        {
+          "caller": "execute",
+          "callee": "record.getDeviceId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "execute",
+          "callee": "IotDeviceStateEnum.isNotOnline",
+          "lineNumber": 62
+        },
+        {
+          "caller": "execute",
+          "callee": "device.getState",
+          "lineNumber": 62
+        },
+        {
+          "caller": "execute",
+          "callee": "otaFirmwares.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "execute",
+          "callee": "record.getFirmwareId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "execute",
+          "callee": "otaFirmwareService.getOtaFirmware",
+          "lineNumber": 68
+        },
+        {
+          "caller": "execute",
+          "callee": "record.getFirmwareId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "execute",
+          "callee": "otaFirmwares.put",
+          "lineNumber": 69
+        },
+        {
+          "caller": "execute",
+          "callee": "record.getFirmwareId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "execute",
+          "callee": "otaTaskRecordService.pushOtaTaskRecord",
+          "lineNumber": 72
+        },
+        {
+          "caller": "execute",
+          "callee": "log.error",
+          "lineNumber": 80
+        },
+        {
+          "caller": "execute",
+          "callee": "record.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "execute",
+          "callee": "StrUtil.format",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/job/rule/IotSceneRuleJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "executeInternal",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "buildJobDataMap",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "sceneRuleId"
+          ]
+        },
+        {
+          "name": "buildJobName",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "sceneRuleId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotSceneRuleJob",
+          "startLine": 18,
+          "endLine": 58,
+          "methods": [
+            "executeInternal",
+            "buildJobDataMap",
+            "buildJobName"
+          ],
+          "properties": [
+            "JOB_DATA_KEY_RULE_SCENE_ID",
+            "sceneRuleService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JOB_DATA_KEY_RULE_SCENE_ID",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "buildJobDataMap",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "buildJobName",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "IotSceneRuleJob",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "executeInternal",
+          "callee": "context.getMergedJobDataMap().getLong",
+          "lineNumber": 32
+        },
+        {
+          "caller": "executeInternal",
+          "callee": "context.getMergedJobDataMap",
+          "lineNumber": 32
+        },
+        {
+          "caller": "executeInternal",
+          "callee": "sceneRuleService.executeSceneRuleByTimer",
+          "lineNumber": 35
+        },
+        {
+          "caller": "buildJobDataMap",
+          "callee": "MapUtil.of",
+          "lineNumber": 45
+        },
+        {
+          "caller": "buildJobName",
+          "callee": "String.format",
+          "lineNumber": 55
+        },
+        {
+          "caller": "buildJobName",
+          "callee": "IotSceneRuleJob.class.getSimpleName",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/mq/consumer/device/IotDeviceMessageSubscriber.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "init",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "getTopic",
+          "startLine": 48,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "getGroup",
+          "startLine": 53,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "onMessage",
+          "startLine": 58,
+          "endLine": 78,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "forceDeviceOnline",
+          "startLine": 80,
+          "endLine": 98,
+          "params": [
+            "message",
+            "device"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotDeviceMessageSubscriber",
+          "startLine": 29,
+          "endLine": 100,
+          "methods": [
+            "init",
+            "getTopic",
+            "getGroup",
+            "onMessage",
+            "forceDeviceOnline"
+          ],
+          "properties": [
+            "deviceService",
+            "devicePropertyService",
+            "deviceMessageService",
+            "messageBus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "init",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "getTopic",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "getGroup",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "onMessage",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "IotDeviceMessageSubscriber",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "messageBus.register",
+          "lineNumber": 45
+        },
+        {
+          "caller": "onMessage",
+          "callee": "IotDeviceMessageUtils.isUpstreamMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onMessage",
+          "callee": "log.error",
+          "lineNumber": 61
+        },
+        {
+          "caller": "onMessage",
+          "callee": "TenantUtils.execute",
+          "lineNumber": 65
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getTenantId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "onMessage",
+          "callee": "deviceService.validateDeviceExistsFromCache",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getDeviceId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onMessage",
+          "callee": "devicePropertyService.updateDeviceReportTimeAsync",
+          "lineNumber": 68
+        },
+        {
+          "caller": "onMessage",
+          "callee": "device.getId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "onMessage",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 68
+        },
+        {
+          "caller": "onMessage",
+          "callee": "devicePropertyService.updateDeviceServerIdAsync",
+          "lineNumber": 70
+        },
+        {
+          "caller": "onMessage",
+          "callee": "device.getId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getServerId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "onMessage",
+          "callee": "forceDeviceOnline",
+          "lineNumber": 73
+        },
+        {
+          "caller": "onMessage",
+          "callee": "deviceMessageService.handleUpstreamDeviceMessage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "ObjectUtil.equal",
+          "lineNumber": 82
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "device.getState",
+          "lineNumber": 82
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "IotDeviceStateEnum.ONLINE.getState",
+          "lineNumber": 82
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "Objects.equals",
+          "lineNumber": 86
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "message.getMethod",
+          "lineNumber": 86
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "IotDeviceMessageMethodEnum.STATE_UPDATE.getMethod",
+          "lineNumber": 86
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "deviceMessageService.sendDeviceMessage",
+          "lineNumber": 93
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "IotDeviceMessage.buildStateUpdateOnline().setDeviceId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "IotDeviceMessage.buildStateUpdateOnline",
+          "lineNumber": 93
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "device.getId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "forceDeviceOnline",
+          "callee": "log.error",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    }
+  ]
+}

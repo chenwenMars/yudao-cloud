@@ -1,0 +1,3036 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/employee/HrmEmployeeNotifyRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "HrmEmployeeNotifyRespVO",
+          "startLine": 7,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "successCount",
+            "skippedCount",
+            "failureCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeNotifyRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/employee/HrmEmployeePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 73,
+      "classes": [
+        {
+          "name": "HrmEmployeePageReqVO",
+          "startLine": 21,
+          "endLine": 100,
+          "methods": [],
+          "properties": [
+            "ids",
+            "excludeIds",
+            "search",
+            "name",
+            "jobNumber",
+            "mobile",
+            "deptId",
+            "deptIds",
+            "leaderEmployeeId",
+            "sex",
+            "entryTime",
+            "postName",
+            "regularTime",
+            "workAddress",
+            "channelId",
+            "type",
+            "entryStatus",
+            "status",
+            "statusCategory",
+            "surveyType",
+            "todoType",
+            "activeTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeePageReqVO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/employee/HrmEmployeeQuitReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "isApplyQuitTimeValid",
+          "startLine": 51,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "isSalarySettlementTimeValid",
+          "startLine": 58,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "isReasonValid",
+          "startLine": 65,
+          "endLine": 73,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeQuitReqVO",
+          "startLine": 18,
+          "endLine": 75,
+          "methods": [
+            "isApplyQuitTimeValid",
+            "isSalarySettlementTimeValid",
+            "isReasonValid"
+          ],
+          "properties": [
+            "employeeId",
+            "planQuitTime",
+            "applyQuitTime",
+            "salarySettlementTime",
+            "type",
+            "reason",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isApplyQuitTimeValid",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "isSalarySettlementTimeValid",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "isReasonValid",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeQuitReqVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isApplyQuitTimeValid",
+          "callee": "isBeforeOrEqual",
+          "lineNumber": 55
+        },
+        {
+          "caller": "isApplyQuitTimeValid",
+          "callee": "applyQuitTime.toLocalDate",
+          "lineNumber": 55
+        },
+        {
+          "caller": "isApplyQuitTimeValid",
+          "callee": "planQuitTime.toLocalDate",
+          "lineNumber": 55
+        },
+        {
+          "caller": "isSalarySettlementTimeValid",
+          "callee": "isAfterOrEqual",
+          "lineNumber": 62
+        },
+        {
+          "caller": "isSalarySettlementTimeValid",
+          "callee": "salarySettlementTime.toLocalDate",
+          "lineNumber": 62
+        },
+        {
+          "caller": "isSalarySettlementTimeValid",
+          "callee": "planQuitTime.toLocalDate",
+          "lineNumber": 62
+        },
+        {
+          "caller": "isReasonValid",
+          "callee": "HrmEmployeeQuitTypeEnum.RETIREMENT.getType().equals",
+          "lineNumber": 68
+        },
+        {
+          "caller": "isReasonValid",
+          "callee": "HrmEmployeeQuitTypeEnum.RETIREMENT.getType",
+          "lineNumber": 68
+        },
+        {
+          "caller": "isReasonValid",
+          "callee": "HrmEmployeeQuitReasonEnum.valueOf",
+          "lineNumber": 71
+        },
+        {
+          "caller": "isReasonValid",
+          "callee": "quitReason.getQuitType().equals",
+          "lineNumber": 72
+        },
+        {
+          "caller": "isReasonValid",
+          "callee": "quitReason.getQuitType",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/employee/HrmEmployeeRehireReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "isEntryTimeValid",
+          "startLine": 21,
+          "endLine": 25,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeRehireReqVO",
+          "startLine": 12,
+          "endLine": 27,
+          "methods": [
+            "isEntryTimeValid"
+          ],
+          "properties": [
+            "employeeId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isEntryTimeValid",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeRehireReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isEntryTimeValid",
+          "callee": "getEntryTime",
+          "lineNumber": 24
+        },
+        {
+          "caller": "isEntryTimeValid",
+          "callee": "beforeOrEqualNow",
+          "lineNumber": 24
+        },
+        {
+          "caller": "isEntryTimeValid",
+          "callee": "getEntryTime",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/employee/HrmEmployeeSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 207,
+      "nonEmptyLines": 161,
+      "functions": [
+        {
+          "name": "isIdNumberValid",
+          "startLine": 167,
+          "endLine": 172,
+          "params": []
+        },
+        {
+          "name": "isStatusValid",
+          "startLine": 174,
+          "endLine": 179,
+          "params": []
+        },
+        {
+          "name": "isStatusRequired",
+          "startLine": 181,
+          "endLine": 185,
+          "params": []
+        },
+        {
+          "name": "isJobNumberValid",
+          "startLine": 187,
+          "endLine": 192,
+          "params": []
+        },
+        {
+          "name": "isProbationValid",
+          "startLine": 194,
+          "endLine": 198,
+          "params": []
+        },
+        {
+          "name": "isCompanyAgeStartTimeValid",
+          "startLine": 200,
+          "endLine": 205,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeSaveReqVO",
+          "startLine": 29,
+          "endLine": 207,
+          "methods": [
+            "isIdNumberValid",
+            "isStatusValid",
+            "isStatusRequired",
+            "isJobNumberValid",
+            "isProbationValid",
+            "isCompanyAgeStartTimeValid"
+          ],
+          "properties": [
+            "id",
+            "name",
+            "jobNumber",
+            "userId",
+            "mobile",
+            "country",
+            "nation",
+            "idType",
+            "idNumber",
+            "sex",
+            "email",
+            "nativePlace",
+            "birthday",
+            "age",
+            "address",
+            "highestEducation",
+            "deptId",
+            "leaderEmployeeId",
+            "entryStatus",
+            "status",
+            "type",
+            "entryTime",
+            "probation",
+            "regularTime",
+            "leaveTime",
+            "postName",
+            "postLevel",
+            "workCity",
+            "workAddress",
+            "workDetailAddress",
+            "channelId",
+            "companyAgeStartTime",
+            "companyAge",
+            "candidateId",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isIdNumberValid",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "isStatusValid",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "isStatusRequired",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "isJobNumberValid",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "isProbationValid",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "isCompanyAgeStartTimeValid",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeSaveReqVO",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isIdNumberValid",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 170
+        },
+        {
+          "caller": "isIdNumberValid",
+          "callee": "HrmEmployeeIdTypeEnum.ID_CARD.getType",
+          "lineNumber": 170
+        },
+        {
+          "caller": "isIdNumberValid",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 171
+        },
+        {
+          "caller": "isIdNumberValid",
+          "callee": "IdcardUtil.isValidCard",
+          "lineNumber": 171
+        },
+        {
+          "caller": "isStatusValid",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 177
+        },
+        {
+          "caller": "isStatusValid",
+          "callee": "HrmEmployeeTypeEnum.INFORMAL.getType",
+          "lineNumber": 177
+        },
+        {
+          "caller": "isStatusValid",
+          "callee": "HrmEmployeeStatusEnum.INFORMAL_STATUSES.contains",
+          "lineNumber": 178
+        },
+        {
+          "caller": "isStatusRequired",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 184
+        },
+        {
+          "caller": "isStatusRequired",
+          "callee": "HrmEmployeeTypeEnum.INFORMAL.getType",
+          "lineNumber": 184
+        },
+        {
+          "caller": "isJobNumberValid",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 190
+        },
+        {
+          "caller": "isJobNumberValid",
+          "callee": "HrmEmployeeEntryStatusEnum.ACTIVE.getStatus",
+          "lineNumber": 190
+        },
+        {
+          "caller": "isJobNumberValid",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 191
+        },
+        {
+          "caller": "isProbationValid",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 197
+        },
+        {
+          "caller": "isProbationValid",
+          "callee": "HrmEmployeeTypeEnum.FORMAL.getType",
+          "lineNumber": 197
+        },
+        {
+          "caller": "isCompanyAgeStartTimeValid",
+          "callee": "isBeforeOrEqual",
+          "lineNumber": 204
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/employee/HrmEmployeeStatusCountRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "HrmEmployeeStatusCountRespVO",
+          "startLine": 7,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "status",
+            "count"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeStatusCountRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/file/HrmEmployeeFileRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "HrmEmployeeFileRespVO",
+          "startLine": 8,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "type",
+            "url",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeFileRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/file/HrmEmployeeFileSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "HrmEmployeeFileSaveReqVO",
+          "startLine": 13,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "employeeId",
+            "type",
+            "fileUrls"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeFileSaveReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/personalnote/HrmEmployeePersonalNoteCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "HrmEmployeePersonalNoteCreateReqVO",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "content",
+            "reminderTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeePersonalNoteCreateReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/quitinfo/HrmEmployeeQuitInfoRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "HrmEmployeeQuitInfoRespVO",
+          "startLine": 8,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "planQuitTime",
+            "applyQuitTime",
+            "salarySettlementTime",
+            "type",
+            "reason",
+            "remark",
+            "oldEmployeeStatus",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeQuitInfoRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/quitinfo/HrmEmployeeQuitInfoSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "HrmEmployeeQuitInfoSaveReqVO",
+          "startLine": 14,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "employeeId",
+            "planQuitTime",
+            "applyQuitTime",
+            "salarySettlementTime",
+            "type",
+            "reason",
+            "remark",
+            "oldEmployeeStatus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeQuitInfoSaveReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/salarycard/HrmEmployeeSalaryCardRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "HrmEmployeeSalaryCardRespVO",
+          "startLine": 8,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "bankCardNumber",
+            "bankAreaId",
+            "bankAreaName",
+            "bankName",
+            "bankBranchName",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeSalaryCardRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/salarycard/HrmEmployeeSalaryCardSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "HrmEmployeeSalaryCardSaveReqVO",
+          "startLine": 11,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "bankCardNumber",
+            "bankAreaId",
+            "bankName",
+            "bankBranchName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeSalaryCardSaveReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/trainingexperience/HrmEmployeeTrainingExperienceRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "HrmEmployeeTrainingExperienceRespVO",
+          "startLine": 8,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "course",
+            "organizationName",
+            "startTime",
+            "endTime",
+            "duration",
+            "result",
+            "certificateName",
+            "remark",
+            "sort",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeTrainingExperienceRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/trainingexperience/HrmEmployeeTrainingExperienceSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "isTimeRangeValid",
+          "startLine": 70,
+          "endLine": 74,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeTrainingExperienceSaveReqVO",
+          "startLine": 16,
+          "endLine": 76,
+          "methods": [
+            "isTimeRangeValid"
+          ],
+          "properties": [
+            "id",
+            "employeeId",
+            "course",
+            "organizationName",
+            "startTime",
+            "endTime",
+            "duration",
+            "result",
+            "certificateName",
+            "remark",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isTimeRangeValid",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeTrainingExperienceSaveReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isTimeRangeValid",
+          "callee": "isAfterOrEqual",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/workexperience/HrmEmployeeWorkExperienceRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "HrmEmployeeWorkExperienceRespVO",
+          "startLine": 8,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "workUnit",
+            "postName",
+            "startTime",
+            "endTime",
+            "reason",
+            "witnessName",
+            "witnessPhone",
+            "remark",
+            "sort",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeWorkExperienceRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/workexperience/HrmEmployeeWorkExperienceSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "isTimeRangeValid",
+          "startLine": 71,
+          "endLine": 75,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeWorkExperienceSaveReqVO",
+          "startLine": 16,
+          "endLine": 77,
+          "methods": [
+            "isTimeRangeValid"
+          ],
+          "properties": [
+            "id",
+            "employeeId",
+            "workUnit",
+            "postName",
+            "startTime",
+            "endTime",
+            "reason",
+            "witnessName",
+            "witnessPhone",
+            "remark",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isTimeRangeValid",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeWorkExperienceSaveReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isTimeRangeValid",
+          "callee": "isAfterOrEqual",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/home/HrmHomeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "getHrHomeStatisticsSummary",
+          "startLine": 36,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "getHrHomeCalendar",
+          "startLine": 43,
+          "endLine": 54,
+          "params": [
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "name": "getTeamHomeStatisticsSummary",
+          "startLine": 56,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "getTeamHomeCalendar",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "startDate",
+            "endDate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmHomeController",
+          "startLine": 27,
+          "endLine": 76,
+          "methods": [
+            "getHrHomeStatisticsSummary",
+            "getHrHomeCalendar",
+            "getTeamHomeStatisticsSummary",
+            "getTeamHomeCalendar"
+          ],
+          "properties": [
+            "homeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getHrHomeStatisticsSummary",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "getHrHomeCalendar",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "getTeamHomeStatisticsSummary",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getTeamHomeCalendar",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "HrmHomeController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getHrHomeStatisticsSummary",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getHrHomeStatisticsSummary",
+          "callee": "homeService.getHrHomeStatisticsSummary",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getHrHomeCalendar",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getHrHomeCalendar",
+          "callee": "homeService.getHrHomeCalendar",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getHrHomeCalendar",
+          "callee": "getLoginUserId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getTeamHomeStatisticsSummary",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getTeamHomeStatisticsSummary",
+          "callee": "homeService.getTeamHomeStatisticsSummary",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getTeamHomeStatisticsSummary",
+          "callee": "getLoginUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getTeamHomeCalendar",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getTeamHomeCalendar",
+          "callee": "homeService.getTeamHomeCalendar",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getTeamHomeCalendar",
+          "callee": "getLoginUserId",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/home/vo/HrmHomeCalendarItemRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "HrmHomeCalendarItemRespVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "personalNoteId",
+            "type",
+            "typeName",
+            "content",
+            "typeId",
+            "date",
+            "eventTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmHomeCalendarItemRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/home/vo/HrmHrHomeStatisticsRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 87,
+      "classes": [
+        {
+          "name": "HrmHrHomeStatisticsRespVO",
+          "startLine": 9,
+          "endLine": 130,
+          "methods": [],
+          "properties": [
+            "employeeSurvey",
+            "recruitSurvey",
+            "salarySurvey",
+            "todoSurvey"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmHrHomeStatisticsRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/home/vo/HrmTeamHomeStatisticsRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "HrmTeamHomeStatisticsRespVO",
+          "startLine": 8,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "leaderEmployeeId",
+            "teamOverview",
+            "teamSurvey"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmTeamHomeStatisticsRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/HrmInsuranceEmployeeInfoController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "getInsuranceEmployeeInfo",
+          "startLine": 39,
+          "endLine": 54,
+          "params": [
+            "employeeId"
+          ]
+        },
+        {
+          "name": "saveInsuranceEmployeeInfo",
+          "startLine": 56,
+          "endLine": 62,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateEmployeeScheme",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmInsuranceEmployeeInfoController",
+          "startLine": 28,
+          "endLine": 73,
+          "methods": [
+            "getInsuranceEmployeeInfo",
+            "saveInsuranceEmployeeInfo",
+            "updateEmployeeScheme"
+          ],
+          "properties": [
+            "insuranceEmployeeInfoService",
+            "insuranceSchemeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getInsuranceEmployeeInfo",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "saveInsuranceEmployeeInfo",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "updateEmployeeScheme",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "HrmInsuranceEmployeeInfoController",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "insuranceEmployeeInfoService.getInsuranceEmployeeInfoByEmployeeId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "respVO.getSchemeId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "insuranceSchemeService.getScheme",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "respVO.getSchemeId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "respVO.setSchemeName",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "scheme.getName",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getInsuranceEmployeeInfo",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "saveInsuranceEmployeeInfo",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "saveInsuranceEmployeeInfo",
+          "callee": "insuranceEmployeeInfoService.saveInsuranceEmployeeInfo",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateEmployeeScheme",
+          "callee": "insuranceEmployeeInfoService.updateEmployeeScheme",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateEmployeeScheme",
+          "callee": "reqVO.getEmployeeId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateEmployeeScheme",
+          "callee": "reqVO.getSchemeId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateEmployeeScheme",
+          "callee": "success",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/HrmInsuranceMonthEmployeeRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 188,
+      "nonEmptyLines": 171,
+      "functions": [
+        {
+          "name": "getMonthEmployeeRecordPage",
+          "startLine": 70,
+          "endLine": 79,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getMonthEmployeeRecord",
+          "startLine": 81,
+          "endLine": 93,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateMonthEmployeeRecord",
+          "startLine": 95,
+          "endLine": 102,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "stopMonthEmployeeRecordList",
+          "startLine": 104,
+          "endLine": 111,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "createMonthEmployeeRecordList",
+          "startLine": 113,
+          "endLine": 120,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getUninsuredEmployeeList",
+          "startLine": 122,
+          "endLine": 130,
+          "params": [
+            "monthRecordId"
+          ]
+        },
+        {
+          "name": "buildMonthEmployeeRecordRespVOList",
+          "startLine": 134,
+          "endLine": 186,
+          "params": [
+            "employeeRecords"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordController",
+          "startLine": 52,
+          "endLine": 188,
+          "methods": [
+            "getMonthEmployeeRecordPage",
+            "getMonthEmployeeRecord",
+            "updateMonthEmployeeRecord",
+            "stopMonthEmployeeRecordList",
+            "createMonthEmployeeRecordList",
+            "getUninsuredEmployeeList",
+            "buildMonthEmployeeRecordRespVOList"
+          ],
+          "properties": [
+            "monthEmployeeRecordService",
+            "employeeService",
+            "insuranceEmployeeInfoService",
+            "insuranceSchemeService",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMonthEmployeeRecordPage",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getMonthEmployeeRecord",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "updateMonthEmployeeRecord",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "stopMonthEmployeeRecordList",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "createMonthEmployeeRecordList",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "getUninsuredEmployeeList",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordController",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMonthEmployeeRecordPage",
+          "callee": "monthEmployeeRecordService.getMonthEmployeeRecordPage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getMonthEmployeeRecordPage",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMonthEmployeeRecordPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMonthEmployeeRecordPage",
+          "callee": "buildMonthEmployeeRecordRespVOList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMonthEmployeeRecordPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMonthEmployeeRecordPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMonthEmployeeRecord",
+          "callee": "monthEmployeeRecordService.getMonthEmployeeRecord",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getMonthEmployeeRecord",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMonthEmployeeRecord",
+          "callee": "success",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMonthEmployeeRecord",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMonthEmployeeRecord",
+          "callee": "buildMonthEmployeeRecordRespVOList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMonthEmployeeRecord",
+          "callee": "Collections.singletonList",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updateMonthEmployeeRecord",
+          "callee": "monthEmployeeRecordService.updateMonthEmployeeRecord",
+          "lineNumber": 100
+        },
+        {
+          "caller": "updateMonthEmployeeRecord",
+          "callee": "success",
+          "lineNumber": 101
+        },
+        {
+          "caller": "stopMonthEmployeeRecordList",
+          "callee": "monthEmployeeRecordService.stopMonthEmployeeRecordList",
+          "lineNumber": 109
+        },
+        {
+          "caller": "stopMonthEmployeeRecordList",
+          "callee": "reqVO.getIds",
+          "lineNumber": 109
+        },
+        {
+          "caller": "stopMonthEmployeeRecordList",
+          "callee": "success",
+          "lineNumber": 110
+        },
+        {
+          "caller": "createMonthEmployeeRecordList",
+          "callee": "monthEmployeeRecordService.createMonthEmployeeRecordList",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createMonthEmployeeRecordList",
+          "callee": "success",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getUninsuredEmployeeList",
+          "callee": "monthEmployeeRecordService.getUninsuredEmployeeList",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getUninsuredEmployeeList",
+          "callee": "success",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getUninsuredEmployeeList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employeeService.getEmployeeMap",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employeeMap.values",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "convertMap",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "insuranceSchemeService.getSchemeListByIds",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "insuranceEmployeeInfoService.getInsuranceEmployeeInfoMap",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "convertMap",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "record.getProjects",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "record.getProjects",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.getEmployeeId",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber(employee.getIdNumber())\n                        .setSex(employee.getSex()).setAge(employee.getAge())\n                        .setDeptId(employee.getDeptId()).setPostName(employee.getPostName())\n                        .setEntryStatus(employee.getEntryStatus()).setEmployeeStatus(employee.getStatus()).setEntryTime",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber(employee.getIdNumber())\n                        .setSex(employee.getSex()).setAge(employee.getAge())\n                        .setDeptId(employee.getDeptId()).setPostName(employee.getPostName())\n                        .setEntryStatus(employee.getEntryStatus()).setEmployeeStatus",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber(employee.getIdNumber())\n                        .setSex(employee.getSex()).setAge(employee.getAge())\n                        .setDeptId(employee.getDeptId()).setPostName(employee.getPostName()).setEntryStatus",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber(employee.getIdNumber())\n                        .setSex(employee.getSex()).setAge(employee.getAge())\n                        .setDeptId(employee.getDeptId()).setPostName",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber(employee.getIdNumber())\n                        .setSex(employee.getSex()).setAge(employee.getAge()).setDeptId",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber(employee.getIdNumber())\n                        .setSex(employee.getSex()).setAge",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber(employee.getIdNumber()).setSex",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                        .setMobile(employee.getMobile()).setIdNumber",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber()).setMobile",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setEmployeeName",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getName",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getJobNumber",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getMobile",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getIdNumber",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getSex",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getAge",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getDeptId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getPostName",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getEntryStatus",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getStatus",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getEntryTime",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "employee.getDeptId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setDeptName",
+          "lineNumber": 166
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "dept.getName",
+          "lineNumber": 166
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.getSchemeId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSchemeName(scheme.getName()).setAreaId(scheme.getAreaId())\n                        .setAreaName(AreaUtils.format(scheme.getAreaId()))\n                        .setHouseType(scheme.getHouseholdType()).setSchemeType",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSchemeName(scheme.getName()).setAreaId(scheme.getAreaId())\n                        .setAreaName(AreaUtils.format(scheme.getAreaId())).setHouseType",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSchemeName(scheme.getName()).setAreaId(scheme.getAreaId()).setAreaName",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSchemeName(scheme.getName()).setAreaId",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSchemeName",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "scheme.getName",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "scheme.getAreaId",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "AreaUtils.format",
+          "lineNumber": 170
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "scheme.getAreaId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "scheme.getHouseholdType",
+          "lineNumber": 171
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "scheme.getType",
+          "lineNumber": 171
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 173
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.getEmployeeId",
+          "lineNumber": 173
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSocialSecurityNumber(insuranceEmployeeInfo.getSocialSecurityNumber()).setAccumulationFundNumber",
+          "lineNumber": 174
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSocialSecurityNumber",
+          "lineNumber": 174
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "insuranceEmployeeInfo.getSocialSecurityNumber",
+          "lineNumber": 174
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "insuranceEmployeeInfo.getAccumulationFundNumber",
+          "lineNumber": 175
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 177
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "projectMap.getOrDefault",
+          "lineNumber": 178
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.getId",
+          "lineNumber": 178
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 178
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setSocialSecurityProjectList",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "convertList",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "HrmInsuranceProjectTypeEnum.isSocialSecurity",
+          "lineNumber": 181
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "project.getType",
+          "lineNumber": 181
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "respVO.setProvidentFundProjectList",
+          "lineNumber": 182
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "convertList",
+          "lineNumber": 182
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "HrmInsuranceProjectTypeEnum.isProvidentFund",
+          "lineNumber": 183
+        },
+        {
+          "caller": "buildMonthEmployeeRecordRespVOList",
+          "callee": "project.getType",
+          "lineNumber": 183
+        }
+      ],
+      "metrics": {
+        "importCount": 23,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/HrmInsuranceMonthRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "createFirstMonthRecord",
+          "startLine": 37,
+          "endLine": 43,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "createNextMonthRecord",
+          "startLine": 45,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "deleteMonthRecord",
+          "startLine": 52,
+          "endLine": 59,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMonthRecord",
+          "startLine": 61,
+          "endLine": 68,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getLastMonthRecord",
+          "startLine": 70,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "getMonthRecordList",
+          "startLine": 78,
+          "endLine": 86,
+          "params": [
+            "year"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthRecordController",
+          "startLine": 28,
+          "endLine": 88,
+          "methods": [
+            "createFirstMonthRecord",
+            "createNextMonthRecord",
+            "deleteMonthRecord",
+            "getMonthRecord",
+            "getLastMonthRecord",
+            "getMonthRecordList"
+          ],
+          "properties": [
+            "insuranceMonthRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createFirstMonthRecord",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "createNextMonthRecord",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMonthRecord",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getMonthRecord",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getLastMonthRecord",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getMonthRecordList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "HrmInsuranceMonthRecordController",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFirstMonthRecord",
+          "callee": "success",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createFirstMonthRecord",
+          "callee": "insuranceMonthRecordService.createFirstMonthRecord",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createNextMonthRecord",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createNextMonthRecord",
+          "callee": "insuranceMonthRecordService.createNextMonthRecord",
+          "lineNumber": 49
+        },
+        {
+          "caller": "deleteMonthRecord",
+          "callee": "insuranceMonthRecordService.deleteMonthRecord",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deleteMonthRecord",
+          "callee": "success",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getMonthRecord",
+          "callee": "insuranceMonthRecordService.getMonthRecord",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getMonthRecord",
+          "callee": "success",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getMonthRecord",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getLastMonthRecord",
+          "callee": "insuranceMonthRecordService.getLastMonthRecord",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getLastMonthRecord",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getLastMonthRecord",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getMonthRecordList",
+          "callee": "insuranceMonthRecordService.getMonthRecordList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getMonthRecordList",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getMonthRecordList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/HrmInsuranceSchemeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 157,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "createScheme",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateScheme",
+          "startLine": 63,
+          "endLine": 69,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteScheme",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getScheme",
+          "startLine": 80,
+          "endLine": 87,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSchemeList",
+          "startLine": 89,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "getSchemeSimpleList",
+          "startLine": 97,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "buildSchemeRespVO",
+          "startLine": 108,
+          "endLine": 113,
+          "params": [
+            "scheme"
+          ]
+        },
+        {
+          "name": "buildSchemeRespVOList",
+          "startLine": 115,
+          "endLine": 155,
+          "params": [
+            "schemes"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmInsuranceSchemeController",
+          "startLine": 43,
+          "endLine": 157,
+          "methods": [
+            "createScheme",
+            "updateScheme",
+            "deleteScheme",
+            "getScheme",
+            "getSchemeList",
+            "getSchemeSimpleList",
+            "buildSchemeRespVO",
+            "buildSchemeRespVOList"
+          ],
+          "properties": [
+            "insuranceSchemeService",
+            "insuranceEmployeeInfoService",
+            "insuranceMonthEmployeeRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createScheme",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "updateScheme",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "deleteScheme",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getScheme",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getSchemeList",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getSchemeSimpleList",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "HrmInsuranceSchemeController",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createScheme",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createScheme",
+          "callee": "insuranceSchemeService.createScheme",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateScheme",
+          "callee": "insuranceSchemeService.updateScheme",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateScheme",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deleteScheme",
+          "callee": "insuranceSchemeService.deleteScheme",
+          "lineNumber": 76
+        },
+        {
+          "caller": "deleteScheme",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getScheme",
+          "callee": "insuranceSchemeService.getScheme",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getScheme",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getScheme",
+          "callee": "buildSchemeRespVO",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSchemeList",
+          "callee": "insuranceSchemeService.getSchemeList",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getSchemeList",
+          "callee": "success",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSchemeList",
+          "callee": "buildSchemeRespVOList",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSchemeSimpleList",
+          "callee": "insuranceSchemeService.getSchemeList",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getSchemeSimpleList",
+          "callee": "success",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getSchemeSimpleList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getSchemeSimpleList",
+          "callee": "scheme.setAreaName",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getSchemeSimpleList",
+          "callee": "AreaUtils.format",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getSchemeSimpleList",
+          "callee": "scheme.getAreaId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "buildSchemeRespVO",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildSchemeRespVO",
+          "callee": "buildSchemeRespVOList",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildSchemeRespVO",
+          "callee": "Collections.singletonList",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 117
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "insuranceSchemeService.getSchemeProjectListMap",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "insuranceEmployeeInfoService.getInsuranceEmployeeInfoCountMapBySchemeIds",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "insuranceMonthEmployeeRecordService.getMonthEmployeeRecordCountMapBySchemeIds",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "convertList",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setAreaName",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "AreaUtils.format",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.getAreaId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "projectMap.getOrDefault",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "scheme.getId",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setProjectList",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "convertList",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "HrmInsuranceProjectTypeEnum.isSocialSecurity",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "project.getType",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "convertList",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "HrmInsuranceProjectTypeEnum.isProvidentFund",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "project.getType",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setSocialSecurityProjectList(socialSecurityProjects).setProvidentFundProjectList",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setSocialSecurityProjectList",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setPersonalInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setCorporateInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getCorporateAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setPersonalProvidentFundAmount(getSumValue(providentFundProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setCorporateProvidentFundAmount(getSumValue(providentFundProjects,\n                            HrmInsuranceSchemeProjectRespVO::getCorporateAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setUseCount(useCountMap.getOrDefault(scheme.getId(), 0L)).setMonthRecordCount",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setPersonalInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setCorporateInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getCorporateAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setPersonalProvidentFundAmount(getSumValue(providentFundProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setCorporateProvidentFundAmount(getSumValue(providentFundProjects,\n                            HrmInsuranceSchemeProjectRespVO::getCorporateAmount, BigDecimal::add, BigDecimal.ZERO)).setUseCount",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setPersonalInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setCorporateInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getCorporateAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setPersonalProvidentFundAmount(getSumValue(providentFundProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO)).setCorporateProvidentFundAmount",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setPersonalInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO))\n                    .setCorporateInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getCorporateAmount, BigDecimal::add, BigDecimal.ZERO)).setPersonalProvidentFundAmount",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setPersonalInsuranceAmount(getSumValue(socialSecurityProjects,\n                            HrmInsuranceSchemeProjectRespVO::getPersonalAmount, BigDecimal::add, BigDecimal.ZERO)).setCorporateInsuranceAmount",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "respVO.setPersonalInsuranceAmount",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "getSumValue",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "getSumValue",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "getSumValue",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "getSumValue",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "useCountMap.getOrDefault",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "scheme.getId",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "monthRecordCountMap.getOrDefault",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildSchemeRespVOList",
+          "callee": "scheme.getId",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 7,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/employeeinfo/HrmInsuranceEmployeeInfoRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "HrmInsuranceEmployeeInfoRespVO",
+          "startLine": 8,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "firstSocialSecurity",
+            "firstAccumulationFund",
+            "socialSecurityNumber",
+            "accumulationFundNumber",
+            "socialSecurityStartMonth",
+            "schemeId",
+            "schemeName",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceEmployeeInfoRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/employeeinfo/HrmInsuranceEmployeeInfoSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "HrmInsuranceEmployeeInfoSaveReqVO",
+          "startLine": 10,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "firstSocialSecurity",
+            "firstAccumulationFund",
+            "socialSecurityNumber",
+            "accumulationFundNumber",
+            "socialSecurityStartMonth",
+            "schemeId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceEmployeeInfoSaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/employeeinfo/HrmInsuranceEmployeeInfoUpdateSchemeReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "HrmInsuranceEmployeeInfoUpdateSchemeReqVO",
+          "startLine": 7,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "employeeId",
+            "schemeId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceEmployeeInfoUpdateSchemeReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/monthrecord/HrmInsuranceMonthRecordCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthRecordCreateReqVO",
+          "startLine": 9,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "year",
+            "month"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceMonthRecordCreateReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/monthrecord/HrmInsuranceMonthRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthRecordRespVO",
+          "startLine": 9,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "id",
+            "year",
+            "month",
+            "title",
+            "insuredEmployeeCount",
+            "stoppedEmployeeCount",
+            "status",
+            "personalInsuranceAmount",
+            "personalProvidentFundAmount",
+            "corporateInsuranceAmount",
+            "corporateProvidentFundAmount",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceMonthRecordRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/monthrecord/employee/HrmInsuranceMonthEmployeeProjectRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthEmployeeProjectRespVO",
+          "startLine": 8,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "schemeProjectId",
+            "type",
+            "name",
+            "baseAmount",
+            "corporateRate",
+            "personalRate",
+            "corporateAmount",
+            "personalAmount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceMonthEmployeeProjectRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/monthrecord/employee/HrmInsuranceMonthEmployeeProjectUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthEmployeeProjectUpdateReqVO",
+          "startLine": 11,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "schemeProjectId",
+            "baseAmount",
+            "corporateAmount",
+            "personalAmount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceMonthEmployeeProjectUpdateReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/monthrecord/employee/HrmInsuranceMonthEmployeeRecordCreateListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordCreateListReqVO",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "monthRecordId",
+            "employeeIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordCreateListReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/monthrecord/employee/HrmInsuranceMonthEmployeeRecordPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordPageReqVO",
+          "startLine": 11,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "monthRecordId",
+            "employeeId",
+            "employeeName",
+            "schemeId",
+            "areaId",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordPageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/insurance/vo/monthrecord/employee/HrmInsuranceMonthEmployeeRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 76,
+      "classes": [
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordRespVO",
+          "startLine": 10,
+          "endLine": 113,
+          "methods": [],
+          "properties": [
+            "id",
+            "monthRecordId",
+            "employeeId",
+            "employeeName",
+            "jobNumber",
+            "mobile",
+            "idNumber",
+            "sex",
+            "age",
+            "deptId",
+            "deptName",
+            "postName",
+            "entryStatus",
+            "employeeStatus",
+            "entryTime",
+            "schemeId",
+            "schemeName",
+            "areaName",
+            "areaId",
+            "houseType",
+            "schemeType",
+            "socialSecurityNumber",
+            "accumulationFundNumber",
+            "year",
+            "month",
+            "personalInsuranceAmount",
+            "personalProvidentFundAmount",
+            "corporateInsuranceAmount",
+            "corporateProvidentFundAmount",
+            "status",
+            "socialSecurityProjectList",
+            "providentFundProjectList",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmInsuranceMonthEmployeeRecordRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

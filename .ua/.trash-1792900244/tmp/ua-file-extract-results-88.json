@@ -1,0 +1,5379 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/md/workstation/MesMdWorkstationWorkerService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "MesMdWorkstationWorkerService",
+          "startLine": 14,
+          "endLine": 53,
+          "methods": [
+            "createWorkstationWorker",
+            "updateWorkstationWorker",
+            "deleteWorkstationWorker",
+            "getWorkstationWorkerListByWorkstationId",
+            "deleteWorkstationWorkerByWorkstationId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesMdWorkstationWorkerService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/md/workstation/MesMdWorkstationWorkerServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "createWorkstationWorker",
+          "startLine": 34,
+          "endLine": 43,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateWorkstationWorker",
+          "startLine": 45,
+          "endLine": 55,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "validateWorkstationWorkerSaveData",
+          "startLine": 57,
+          "endLine": 66,
+          "params": [
+            "id",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteWorkstationWorker",
+          "startLine": 68,
+          "endLine": 75,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateWorkstationWorkerExists",
+          "startLine": 77,
+          "endLine": 81,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWorkstationWorkerListByWorkstationId",
+          "startLine": 83,
+          "endLine": 86,
+          "params": [
+            "workstationId"
+          ]
+        },
+        {
+          "name": "deleteWorkstationWorkerByWorkstationId",
+          "startLine": 88,
+          "endLine": 91,
+          "params": [
+            "workstationId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesMdWorkstationWorkerServiceImpl",
+          "startLine": 24,
+          "endLine": 93,
+          "methods": [
+            "createWorkstationWorker",
+            "updateWorkstationWorker",
+            "validateWorkstationWorkerSaveData",
+            "deleteWorkstationWorker",
+            "validateWorkstationWorkerExists",
+            "getWorkstationWorkerListByWorkstationId",
+            "deleteWorkstationWorkerByWorkstationId"
+          ],
+          "properties": [
+            "workstationWorkerMapper",
+            "postApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createWorkstationWorker",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "updateWorkstationWorker",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWorkstationWorker",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getWorkstationWorkerListByWorkstationId",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWorkstationWorkerByWorkstationId",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "MesMdWorkstationWorkerServiceImpl",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWorkstationWorker",
+          "callee": "validateWorkstationWorkerSaveData",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createWorkstationWorker",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createWorkstationWorker",
+          "callee": "workstationWorkerMapper.insert",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createWorkstationWorker",
+          "callee": "worker.getId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "validateWorkstationWorkerExists",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "validateWorkstationWorkerSaveData",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateWorkstationWorker",
+          "callee": "workstationWorkerMapper.updateById",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "postApi.validPostList(Collections.singleton(reqVO.getPostId())).getCheckedData",
+          "lineNumber": 59
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "postApi.validPostList",
+          "lineNumber": 59
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "Collections.singleton",
+          "lineNumber": 59
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "reqVO.getPostId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "workstationWorkerMapper.selectByWorkstationIdAndPostId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "reqVO.getWorkstationId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "reqVO.getPostId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 63
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "existing.getId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "validateWorkstationWorkerSaveData",
+          "callee": "exception",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deleteWorkstationWorker",
+          "callee": "validateWorkstationWorkerExists",
+          "lineNumber": 71
+        },
+        {
+          "caller": "deleteWorkstationWorker",
+          "callee": "workstationWorkerMapper.deleteById",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validateWorkstationWorkerExists",
+          "callee": "workstationWorkerMapper.selectById",
+          "lineNumber": 78
+        },
+        {
+          "caller": "validateWorkstationWorkerExists",
+          "callee": "exception",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getWorkstationWorkerListByWorkstationId",
+          "callee": "workstationWorkerMapper.selectListByWorkstationId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "deleteWorkstationWorkerByWorkstationId",
+          "callee": "workstationWorkerMapper.deleteByWorkstationId",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 6,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/pro/andon/MesProAndonConfigService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "MesProAndonConfigService",
+          "startLine": 16,
+          "endLine": 71,
+          "methods": [
+            "createAndonConfig",
+            "updateAndonConfig",
+            "deleteAndonConfig",
+            "validateAndonConfigExists",
+            "getAndonConfig",
+            "getAndonConfigPage",
+            "getAndonConfigList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesProAndonConfigService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/pro/andon/MesProAndonConfigServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "createAndonConfig",
+          "startLine": 38,
+          "endLine": 47,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateAndonConfig",
+          "startLine": 49,
+          "endLine": 59,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteAndonConfig",
+          "startLine": 61,
+          "endLine": 68,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateAndonConfigExists",
+          "startLine": 70,
+          "endLine": 77,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAndonConfig",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAndonConfigPage",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getAndonConfigList",
+          "startLine": 89,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "validateHandlerUserAndRole",
+          "startLine": 96,
+          "endLine": 103,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesProAndonConfigServiceImpl",
+          "startLine": 26,
+          "endLine": 105,
+          "methods": [
+            "createAndonConfig",
+            "updateAndonConfig",
+            "deleteAndonConfig",
+            "validateAndonConfigExists",
+            "getAndonConfig",
+            "getAndonConfigPage",
+            "getAndonConfigList",
+            "validateHandlerUserAndRole"
+          ],
+          "properties": [
+            "andonConfigMapper",
+            "adminUserApi",
+            "roleApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createAndonConfig",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateAndonConfig",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAndonConfig",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "validateAndonConfigExists",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getAndonConfig",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "getAndonConfigPage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getAndonConfigList",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "MesProAndonConfigServiceImpl",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createAndonConfig",
+          "callee": "validateHandlerUserAndRole",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createAndonConfig",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createAndonConfig",
+          "callee": "andonConfigMapper.insert",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createAndonConfig",
+          "callee": "config.getId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateAndonConfig",
+          "callee": "validateAndonConfigExists",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateAndonConfig",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateAndonConfig",
+          "callee": "validateHandlerUserAndRole",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateAndonConfig",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateAndonConfig",
+          "callee": "andonConfigMapper.updateById",
+          "lineNumber": 58
+        },
+        {
+          "caller": "deleteAndonConfig",
+          "callee": "validateAndonConfigExists",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deleteAndonConfig",
+          "callee": "andonConfigMapper.deleteById",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validateAndonConfigExists",
+          "callee": "andonConfigMapper.selectById",
+          "lineNumber": 72
+        },
+        {
+          "caller": "validateAndonConfigExists",
+          "callee": "exception",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getAndonConfig",
+          "callee": "andonConfigMapper.selectById",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getAndonConfigPage",
+          "callee": "andonConfigMapper.selectPage",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getAndonConfigList",
+          "callee": "andonConfigMapper.selectList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "reqVO.getHandlerUserId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "adminUserApi.validateUser",
+          "lineNumber": 98
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "reqVO.getHandlerUserId",
+          "lineNumber": 98
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "reqVO.getHandlerRoleId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "roleApi.validRoleList(Collections.singleton(reqVO.getHandlerRoleId())).getCheckedData",
+          "lineNumber": 101
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "roleApi.validRoleList",
+          "lineNumber": 101
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "Collections.singleton",
+          "lineNumber": 101
+        },
+        {
+          "caller": "validateHandlerUserAndRole",
+          "callee": "reqVO.getHandlerRoleId",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/test/java/cn/iocoder/yudao/module/mes/dal/mysql/wm/productsales/MesWmProductSalesDetailMapperTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 176,
+      "functions": [
+        {
+          "name": "createDetailPojo",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "consumer"
+          ]
+        },
+        {
+          "name": "testSelectListByLineId_match",
+          "startLine": 41,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "testSelectListByLineId_multipleRows",
+          "startLine": 58,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "testSelectListByLineId_noMatch",
+          "startLine": 77,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "testSelectListBySalesId_match",
+          "startLine": 92,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "testSelectListBySalesId_multipleRows",
+          "startLine": 109,
+          "endLine": 126,
+          "params": []
+        },
+        {
+          "name": "testSelectListBySalesId_noMatch",
+          "startLine": 128,
+          "endLine": 139,
+          "params": []
+        },
+        {
+          "name": "testDeleteByLineId_deletesOnlyTargetLine",
+          "startLine": 143,
+          "endLine": 166,
+          "params": []
+        },
+        {
+          "name": "testDeleteByLineId_multipleRows",
+          "startLine": 168,
+          "endLine": 178,
+          "params": []
+        },
+        {
+          "name": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "startLine": 182,
+          "endLine": 205,
+          "params": []
+        },
+        {
+          "name": "testDeleteBySalesId_multipleRows",
+          "startLine": 207,
+          "endLine": 218,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesWmProductSalesDetailMapperTest",
+          "startLine": 22,
+          "endLine": 220,
+          "methods": [
+            "createDetailPojo",
+            "testSelectListByLineId_match",
+            "testSelectListByLineId_multipleRows",
+            "testSelectListByLineId_noMatch",
+            "testSelectListBySalesId_match",
+            "testSelectListBySalesId_multipleRows",
+            "testSelectListBySalesId_noMatch",
+            "testDeleteByLineId_deletesOnlyTargetLine",
+            "testDeleteByLineId_multipleRows",
+            "testDeleteBySalesId_deletesOnlyTargetSales",
+            "testDeleteBySalesId_multipleRows"
+          ],
+          "properties": [
+            "detailMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testSelectListByLineId_match",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "testSelectListByLineId_multipleRows",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "testSelectListByLineId_noMatch",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "testSelectListBySalesId_match",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "testSelectListBySalesId_multipleRows",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "testSelectListBySalesId_noMatch",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteByLineId_deletesOnlyTargetLine",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteByLineId_multipleRows",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteBySalesId_multipleRows",
+          "line": 207,
+          "isDefault": false
+        },
+        {
+          "name": "MesWmProductSalesDetailMapperTest",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDetailPojo",
+          "callee": "randomPojo",
+          "lineNumber": 33
+        },
+        {
+          "caller": "createDetailPojo",
+          "callee": "o.setQuantity",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createDetailPojo",
+          "callee": "new BigDecimal",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createDetailPojo",
+          "callee": "consumer.accept",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "createDetailPojo",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "o.setLineId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "o.setSalesId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "detailMapper.insert",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "detailMapper.insert",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "o.setLineId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "detailMapper.selectListByLineId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "assertEquals",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "result.size",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "assertPojoEquals",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testSelectListByLineId_match",
+          "callee": "result.get",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "detailMapper.selectListByLineId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "assertEquals",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testSelectListByLineId_multipleRows",
+          "callee": "result.size",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testSelectListByLineId_noMatch",
+          "callee": "createDetailPojo",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testSelectListByLineId_noMatch",
+          "callee": "o.setLineId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testSelectListByLineId_noMatch",
+          "callee": "o.setSalesId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testSelectListByLineId_noMatch",
+          "callee": "detailMapper.insert",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testSelectListByLineId_noMatch",
+          "callee": "detailMapper.selectListByLineId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testSelectListByLineId_noMatch",
+          "callee": "assertTrue",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testSelectListByLineId_noMatch",
+          "callee": "result.isEmpty",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "createDetailPojo",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "o.setSalesId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "o.setLineId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "detailMapper.insert",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "detailMapper.insert",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "o.setSalesId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "detailMapper.selectListBySalesId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "assertEquals",
+          "lineNumber": 105
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "result.size",
+          "lineNumber": 105
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "assertPojoEquals",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testSelectListBySalesId_match",
+          "callee": "result.get",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 112
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "detailMapper.selectListBySalesId",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "assertEquals",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testSelectListBySalesId_multipleRows",
+          "callee": "result.size",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testSelectListBySalesId_noMatch",
+          "callee": "createDetailPojo",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testSelectListBySalesId_noMatch",
+          "callee": "o.setSalesId",
+          "lineNumber": 131
+        },
+        {
+          "caller": "testSelectListBySalesId_noMatch",
+          "callee": "o.setLineId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testSelectListBySalesId_noMatch",
+          "callee": "detailMapper.insert",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testSelectListBySalesId_noMatch",
+          "callee": "detailMapper.selectListBySalesId",
+          "lineNumber": 136
+        },
+        {
+          "caller": "testSelectListBySalesId_noMatch",
+          "callee": "assertTrue",
+          "lineNumber": 138
+        },
+        {
+          "caller": "testSelectListBySalesId_noMatch",
+          "callee": "result.isEmpty",
+          "lineNumber": 138
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "createDetailPojo",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "o.setLineId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "o.setSalesId",
+          "lineNumber": 148
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "createDetailPojo",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "o.setLineId",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "o.setSalesId",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "detailMapper.insert",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "detailMapper.insert",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "detailMapper.deleteByLineId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "detailMapper.selectListByLineId",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "assertTrue",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "deletedResult.isEmpty",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "detailMapper.selectListByLineId",
+          "lineNumber": 164
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "assertEquals",
+          "lineNumber": 165
+        },
+        {
+          "caller": "testDeleteByLineId_deletesOnlyTargetLine",
+          "callee": "keptResult.size",
+          "lineNumber": 165
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "detailMapper.deleteByLineId",
+          "lineNumber": 174
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "detailMapper.selectListByLineId",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "assertTrue",
+          "lineNumber": 177
+        },
+        {
+          "caller": "testDeleteByLineId_multipleRows",
+          "callee": "result.isEmpty",
+          "lineNumber": 177
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "createDetailPojo",
+          "lineNumber": 185
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "o.setSalesId",
+          "lineNumber": 186
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "o.setLineId",
+          "lineNumber": 187
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "createDetailPojo",
+          "lineNumber": 189
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "o.setSalesId",
+          "lineNumber": 190
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "o.setLineId",
+          "lineNumber": 191
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "detailMapper.insert",
+          "lineNumber": 193
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "detailMapper.insert",
+          "lineNumber": 194
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "detailMapper.deleteBySalesId",
+          "lineNumber": 196
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "detailMapper.selectListBySalesId",
+          "lineNumber": 199
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "assertTrue",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "deletedResult.isEmpty",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "detailMapper.selectListBySalesId",
+          "lineNumber": 203
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "assertEquals",
+          "lineNumber": 204
+        },
+        {
+          "caller": "testDeleteBySalesId_deletesOnlyTargetSales",
+          "callee": "keptResult.size",
+          "lineNumber": 204
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "detailMapper.insert",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "createDetailPojo",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "o.setSalesId",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "o.setLineId",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "detailMapper.deleteBySalesId",
+          "lineNumber": 214
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "detailMapper.selectListBySalesId",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "assertTrue",
+          "lineNumber": 217
+        },
+        {
+          "caller": "testDeleteBySalesId_multipleRows",
+          "callee": "result.isEmpty",
+          "lineNumber": 217
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 7,
+          "endLine": 10,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/kb/PmsKnowledgeObjectTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 32,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "valueOf",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeObjectTypeEnum",
+          "startLine": 15,
+          "endLine": 41,
+          "methods": [
+            "array",
+            "valueOf"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeObjectTypeEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 38
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType().equals",
+          "lineNumber": 38
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType",
+          "lineNumber": 38
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/kb/content/PmsKnowledgeContentLevelEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "valueOf",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "array",
+          "startLine": 42,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "canEdit",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "canDelete",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "canDownload",
+          "startLine": 55,
+          "endLine": 57,
+          "params": [
+            "level"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeContentLevelEnum",
+          "startLine": 16,
+          "endLine": 59,
+          "methods": [
+            "valueOf",
+            "array",
+            "canEdit",
+            "canDelete",
+            "canDownload"
+          ],
+          "properties": [
+            "ARRAYS",
+            "level",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "canEdit",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "canDelete",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "canDownload",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeContentLevelEnum",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 39
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getLevel().equals",
+          "lineNumber": 39
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getLevel",
+          "lineNumber": 39
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 39
+        },
+        {
+          "caller": "canEdit",
+          "callee": "MANAGE.level.equals",
+          "lineNumber": 48
+        },
+        {
+          "caller": "canEdit",
+          "callee": "EDIT.level.equals",
+          "lineNumber": 48
+        },
+        {
+          "caller": "canEdit",
+          "callee": "UPLOAD_DOWNLOAD.level.equals",
+          "lineNumber": 48
+        },
+        {
+          "caller": "canDelete",
+          "callee": "MANAGE.level.equals",
+          "lineNumber": 52
+        },
+        {
+          "caller": "canDelete",
+          "callee": "EDIT.level.equals",
+          "lineNumber": 52
+        },
+        {
+          "caller": "canDownload",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/kb/content/PmsKnowledgeDocumentStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 44,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "valueOf",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentStatusEnum",
+          "startLine": 17,
+          "endLine": 53,
+          "methods": [
+            "array",
+            "valueOf"
+          ],
+          "properties": [
+            "ARRAYS",
+            "ACTIVE_STATUSES",
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "ACTIVE_STATUSES",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeDocumentStatusEnum",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 50
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getStatus().equals",
+          "lineNumber": 50
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getStatus",
+          "lineNumber": 50
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/kb/content/PmsKnowledgeDocumentTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "valueOf",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentTypeEnum",
+          "startLine": 15,
+          "endLine": 43,
+          "methods": [
+            "array",
+            "valueOf"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeDocumentTypeEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 40
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType().equals",
+          "lineNumber": 40
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType",
+          "lineNumber": 40
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/kb/library/PmsKnowledgeGroupTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "valueOf",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeGroupTypeEnum",
+          "startLine": 15,
+          "endLine": 44,
+          "methods": [
+            "array",
+            "valueOf"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeGroupTypeEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 41
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType().equals",
+          "lineNumber": 41
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType",
+          "lineNumber": 41
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/kb/library/PmsKnowledgeLibraryMemberLevelEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "valueOf",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "level"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryMemberLevelEnum",
+          "startLine": 15,
+          "endLine": 44,
+          "methods": [
+            "array",
+            "valueOf"
+          ],
+          "properties": [
+            "ARRAYS",
+            "level",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeLibraryMemberLevelEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 41
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getLevel().equals",
+          "lineNumber": 41
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getLevel",
+          "lineNumber": 41
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/pm/project/PmsProjectMemberLevelEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 47,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "isOwner",
+          "startLine": 52,
+          "endLine": 54,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "isAdmin",
+          "startLine": 56,
+          "endLine": 58,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "isManager",
+          "startLine": 60,
+          "endLine": 62,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "isWritable",
+          "startLine": 64,
+          "endLine": 66,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "isReadable",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "valueOf",
+          "startLine": 72,
+          "endLine": 74,
+          "params": [
+            "level"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsProjectMemberLevelEnum",
+          "startLine": 17,
+          "endLine": 76,
+          "methods": [
+            "array",
+            "isOwner",
+            "isAdmin",
+            "isManager",
+            "isWritable",
+            "isReadable",
+            "valueOf"
+          ],
+          "properties": [
+            "ARRAYS",
+            "MANAGER_LEVELS",
+            "WRITABLE_LEVELS",
+            "level",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "MANAGER_LEVELS",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "WRITABLE_LEVELS",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "isOwner",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "isManager",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "isWritable",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "isReadable",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "PmsProjectMemberLevelEnum",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isOwner",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 53
+        },
+        {
+          "caller": "isAdmin",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 57
+        },
+        {
+          "caller": "isManager",
+          "callee": "isOwner",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isManager",
+          "callee": "isAdmin",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isWritable",
+          "callee": "isManager",
+          "lineNumber": 65
+        },
+        {
+          "caller": "isWritable",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 65
+        },
+        {
+          "caller": "isReadable",
+          "callee": "valueOf",
+          "lineNumber": 69
+        },
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 73
+        },
+        {
+          "caller": "valueOf",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 73
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 11,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/PmsKnowledgeContentPermissionController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "getContentPermission",
+          "startLine": 51,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateContentPermission",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "buildPermissionRespVO",
+          "startLine": 74,
+          "endLine": 91,
+          "params": [
+            "permission",
+            "members",
+            "currentUserLevel"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeContentPermissionController",
+          "startLine": 37,
+          "endLine": 93,
+          "methods": [
+            "getContentPermission",
+            "updateContentPermission",
+            "buildPermissionRespVO"
+          ],
+          "properties": [
+            "permissionService",
+            "adminUserApi",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getContentPermission",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "updateContentPermission",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeContentPermissionController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getContentPermission",
+          "callee": "getLoginUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getContentPermission",
+          "callee": "permissionService.getContentPermission",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getContentPermission",
+          "callee": "permissionService.getContentPermissionMemberList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getContentPermission",
+          "callee": "permissionService.getCurrentUserContentPermissionLevel",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getContentPermission",
+          "callee": "permission.getLibraryId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getContentPermission",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getContentPermission",
+          "callee": "buildPermissionRespVO",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateContentPermission",
+          "callee": "permissionService.updateContentPermission",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateContentPermission",
+          "callee": "getLoginUserId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateContentPermission",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "convertSet",
+          "lineNumber": 78
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "convertSet",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "BeanUtils.toBean(permission, PmsKnowledgeContentPermissionRespVO.class)\n                .setCreatorUserId(NumberUtils.parseLong(permission.getCreator()))\n                .setCurrentUserLevel(currentUserLevel).setMembers",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "BeanUtils.toBean(permission, PmsKnowledgeContentPermissionRespVO.class)\n                .setCreatorUserId(NumberUtils.parseLong(permission.getCreator())).setCurrentUserLevel",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "BeanUtils.toBean(permission, PmsKnowledgeContentPermissionRespVO.class).setCreatorUserId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "permission.getCreator",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "permissionVO.getMembers().forEach",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "permissionVO.getMembers",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "findAndThen",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "member.getUserId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "member.setUserName",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "user.getNickname",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "findAndThen",
+          "lineNumber": 88
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "member.getDeptId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "member.setDeptName",
+          "lineNumber": 88
+        },
+        {
+          "caller": "buildPermissionRespVO",
+          "callee": "dept.getName",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/PmsKnowledgeDocumentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 202,
+      "nonEmptyLines": 184,
+      "functions": [
+        {
+          "name": "createDocument",
+          "startLine": 75,
+          "endLine": 80,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDocument",
+          "startLine": 82,
+          "endLine": 88,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDocument",
+          "startLine": 90,
+          "endLine": 97,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "moveDocument",
+          "startLine": 99,
+          "endLine": 105,
+          "params": [
+            "moveReqVO"
+          ]
+        },
+        {
+          "name": "getDocument",
+          "startLine": 107,
+          "endLine": 124,
+          "params": [
+            "id",
+            "view"
+          ]
+        },
+        {
+          "name": "getDocumentSearchPage",
+          "startLine": 126,
+          "endLine": 134,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "buildDocumentRespVO",
+          "startLine": 138,
+          "endLine": 169,
+          "params": [
+            "document",
+            "userId"
+          ]
+        },
+        {
+          "name": "buildDocumentRespVOList",
+          "startLine": 171,
+          "endLine": 189,
+          "params": [
+            "documents"
+          ]
+        },
+        {
+          "name": "buildContentSummary",
+          "startLine": 194,
+          "endLine": 200,
+          "params": [
+            "content"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentController",
+          "startLine": 53,
+          "endLine": 202,
+          "methods": [
+            "createDocument",
+            "updateDocument",
+            "deleteDocument",
+            "moveDocument",
+            "getDocument",
+            "getDocumentSearchPage",
+            "buildDocumentRespVO",
+            "buildDocumentRespVOList",
+            "buildContentSummary"
+          ],
+          "properties": [
+            "documentService",
+            "contentPermissionService",
+            "favoriteService",
+            "documentLikeService",
+            "viewRecordService",
+            "libraryService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDocument",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "updateDocument",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDocument",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "moveDocument",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "getDocument",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "getDocumentSearchPage",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeDocumentController",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDocument",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createDocument",
+          "callee": "documentService.createDocument",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createDocument",
+          "callee": "getLoginUserId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateDocument",
+          "callee": "documentService.updateDocument",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateDocument",
+          "callee": "getLoginUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateDocument",
+          "callee": "success",
+          "lineNumber": 87
+        },
+        {
+          "caller": "deleteDocument",
+          "callee": "documentService.deleteDocument",
+          "lineNumber": 95
+        },
+        {
+          "caller": "deleteDocument",
+          "callee": "getLoginUserId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "deleteDocument",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "moveDocument",
+          "callee": "documentService.moveDocument",
+          "lineNumber": 103
+        },
+        {
+          "caller": "moveDocument",
+          "callee": "getLoginUserId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "moveDocument",
+          "callee": "success",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getDocument",
+          "callee": "getLoginUserId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getDocument",
+          "callee": "documentService.getDocument",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getDocument",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getDocument",
+          "callee": "viewRecordService.createViewRecord",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getDocument",
+          "callee": "document.getLibraryId",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getDocument",
+          "callee": "document.getType",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getDocument",
+          "callee": "document.getId",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getDocument",
+          "callee": "success",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getDocument",
+          "callee": "buildDocumentRespVO",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getDocumentSearchPage",
+          "callee": "documentService.getDocumentSearchPage",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getDocumentSearchPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getDocumentSearchPage",
+          "callee": "success",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getDocumentSearchPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getDocumentSearchPage",
+          "callee": "buildDocumentRespVOList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getDocumentSearchPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getDocumentSearchPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "contentPermissionService.getCurrentUserContentPermissionLevel",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getPermissionId",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getLibraryId",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getCreator",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class)\n                .setCreatorUserId(creatorUserId).setCurrentUserLevel(currentUserLevel)\n                .setDownloadStatus(PmsKnowledgeContentLevelEnum.canDownload(currentUserLevel))\n                .setPreviewUrl(document.getContent()).setFavoriteStatus",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class)\n                .setCreatorUserId(creatorUserId).setCurrentUserLevel(currentUserLevel)\n                .setDownloadStatus(PmsKnowledgeContentLevelEnum.canDownload(currentUserLevel)).setPreviewUrl",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class)\n                .setCreatorUserId(creatorUserId).setCurrentUserLevel(currentUserLevel).setDownloadStatus",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class)\n                .setCreatorUserId(creatorUserId).setCurrentUserLevel",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class).setCreatorUserId",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "PmsKnowledgeContentLevelEnum.canDownload",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getContent",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "favoriteService.isFavorite",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getType",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "PmsKnowledgeDocumentTypeEnum.FILE.getType().equals",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "PmsKnowledgeDocumentTypeEnum.FILE.getType",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getType",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "Boolean.FALSE.equals",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "documentVO.getDownloadStatus",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "documentVO.setContent",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "documentLikeService.getDocumentLikeList",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "document.getId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "convertSet",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "relatedUserIds.add",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "findAndThen",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "documentVO.setCreatorUserName",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "user.getNickname",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "documentVO.setLikeStatus(CollUtil.anyMatch(likes, like -> userId.equals(like.getUserId()))).setLikeUsers",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "documentVO.setLikeStatus",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "CollUtil.anyMatch",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "userId.equals",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "like.getUserId",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "convertList",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "new PmsKnowledgeDocumentRespVO.LikeUser().setId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "new PmsKnowledgeDocumentRespVO.LikeUser",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "like.getUserId",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "findAndThen",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "like.getUserId",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "likeUser.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "likeUser.setNickname",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "user.getNickname",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildDocumentRespVO",
+          "callee": "user.getAvatar",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 172
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 173
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "libraryService.getLibraryMap",
+          "lineNumber": 175
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 176
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 177
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 177
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 178
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "document.getCreator",
+          "lineNumber": 178
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "convertList",
+          "lineNumber": 179
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class)\n                    .setContent(null).setContentSummary(buildContentSummary(document.getContent())).setCreatorUserId",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class)\n                    .setContent(null).setContentSummary",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class).setContent",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "buildContentSummary",
+          "lineNumber": 181
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "document.getContent",
+          "lineNumber": 181
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 182
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "document.getCreator",
+          "lineNumber": 182
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 183
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "document.getLibraryId",
+          "lineNumber": 183
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "documentVO.setLibraryName",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "library.getName",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 185
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "documentVO.getCreatorUserId",
+          "lineNumber": 185
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "documentVO.setCreatorUserName",
+          "lineNumber": 186
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 186
+        },
+        {
+          "caller": "buildContentSummary",
+          "callee": "content.trim().isEmpty",
+          "lineNumber": 195
+        },
+        {
+          "caller": "buildContentSummary",
+          "callee": "content.trim",
+          "lineNumber": 195
+        },
+        {
+          "caller": "buildContentSummary",
+          "callee": "content.replaceAll(\"<[^>]+>\", \" \").replaceAll(\"\\\\s+\", \" \").trim",
+          "lineNumber": 198
+        },
+        {
+          "caller": "buildContentSummary",
+          "callee": "content.replaceAll(\"<[^>]+>\", \" \").replaceAll",
+          "lineNumber": 198
+        },
+        {
+          "caller": "buildContentSummary",
+          "callee": "content.replaceAll",
+          "lineNumber": 198
+        },
+        {
+          "caller": "buildContentSummary",
+          "callee": "summary.length",
+          "lineNumber": 199
+        },
+        {
+          "caller": "buildContentSummary",
+          "callee": "summary.substring",
+          "lineNumber": 199
+        }
+      ],
+      "metrics": {
+        "importCount": 22,
+        "exportCount": 7,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/PmsKnowledgeDocumentLabelController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 117,
+      "functions": [
+        {
+          "name": "createDocumentLabel",
+          "startLine": 58,
+          "endLine": 64,
+          "params": [
+            "saveReqVO"
+          ]
+        },
+        {
+          "name": "updateDocumentLabel",
+          "startLine": 66,
+          "endLine": 73,
+          "params": [
+            "saveReqVO"
+          ]
+        },
+        {
+          "name": "deleteDocumentLabel",
+          "startLine": 75,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDocumentLabel",
+          "startLine": 84,
+          "endLine": 91,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDocumentLabelList",
+          "startLine": 93,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "getDocumentPageByLabel",
+          "startLine": 101,
+          "endLine": 109,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "buildDocumentRespVOList",
+          "startLine": 113,
+          "endLine": 130,
+          "params": [
+            "documents"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentLabelController",
+          "startLine": 44,
+          "endLine": 132,
+          "methods": [
+            "createDocumentLabel",
+            "updateDocumentLabel",
+            "deleteDocumentLabel",
+            "getDocumentLabel",
+            "getDocumentLabelList",
+            "getDocumentPageByLabel",
+            "buildDocumentRespVOList"
+          ],
+          "properties": [
+            "documentLabelService",
+            "libraryService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDocumentLabel",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "updateDocumentLabel",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDocumentLabel",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getDocumentLabel",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getDocumentLabelList",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "getDocumentPageByLabel",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeDocumentLabelController",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDocumentLabel",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createDocumentLabel",
+          "callee": "documentLabelService.createDocumentLabel",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateDocumentLabel",
+          "callee": "documentLabelService.updateDocumentLabel",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateDocumentLabel",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "deleteDocumentLabel",
+          "callee": "documentLabelService.deleteDocumentLabel",
+          "lineNumber": 80
+        },
+        {
+          "caller": "deleteDocumentLabel",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getDocumentLabel",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDocumentLabel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDocumentLabel",
+          "callee": "documentLabelService.getDocumentLabel",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDocumentLabelList",
+          "callee": "success",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getDocumentLabelList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getDocumentLabelList",
+          "callee": "documentLabelService.getDocumentLabelList",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getDocumentPageByLabel",
+          "callee": "documentLabelService.getDocumentPageByLabel",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getDocumentPageByLabel",
+          "callee": "getLoginUserId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getDocumentPageByLabel",
+          "callee": "success",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getDocumentPageByLabel",
+          "callee": "new PageResult<>",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getDocumentPageByLabel",
+          "callee": "buildDocumentRespVOList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getDocumentPageByLabel",
+          "callee": "pageResult.getList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getDocumentPageByLabel",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 115
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "libraryService.getLibraryMap",
+          "lineNumber": 117
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "document.getCreator",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "convertList",
+          "lineNumber": 121
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class)\n                    .setContent(null).setCreatorUserId",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeDocumentRespVO.class).setContent",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "NumberUtils.parseLong",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "document.getCreator",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "document.getLibraryId",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "documentVO.setLibraryName",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "library.getName",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "documentVO.getCreatorUserId",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "documentVO.setCreatorUserName",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildDocumentRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/PmsKnowledgeFolderController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 189,
+      "nonEmptyLines": 171,
+      "functions": [
+        {
+          "name": "createFolder",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "saveReqVO"
+          ]
+        },
+        {
+          "name": "updateFolder",
+          "startLine": 71,
+          "endLine": 77,
+          "params": [
+            "saveReqVO"
+          ]
+        },
+        {
+          "name": "deleteFolder",
+          "startLine": 79,
+          "endLine": 86,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "moveFolder",
+          "startLine": 88,
+          "endLine": 94,
+          "params": [
+            "moveReqVO"
+          ]
+        },
+        {
+          "name": "getFolder",
+          "startLine": 96,
+          "endLine": 111,
+          "params": [
+            "id",
+            "view"
+          ]
+        },
+        {
+          "name": "getFolderTree",
+          "startLine": 113,
+          "endLine": 124,
+          "params": [
+            "libraryId"
+          ]
+        },
+        {
+          "name": "buildFolderRespVO",
+          "startLine": 128,
+          "endLine": 140,
+          "params": [
+            "folder",
+            "userId"
+          ]
+        },
+        {
+          "name": "buildTreeRespVO",
+          "startLine": 142,
+          "endLine": 187,
+          "params": [
+            "libraryId",
+            "userId",
+            "writeStatus",
+            "manageStatus",
+            "folders",
+            "documents"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeFolderController",
+          "startLine": 45,
+          "endLine": 189,
+          "methods": [
+            "createFolder",
+            "updateFolder",
+            "deleteFolder",
+            "moveFolder",
+            "getFolder",
+            "getFolderTree",
+            "buildFolderRespVO",
+            "buildTreeRespVO"
+          ],
+          "properties": [
+            "folderService",
+            "documentService",
+            "contentPermissionService",
+            "libraryMemberService",
+            "favoriteService",
+            "viewRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createFolder",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "updateFolder",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFolder",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "moveFolder",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "getFolder",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "getFolderTree",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeFolderController",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFolder",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createFolder",
+          "callee": "folderService.createFolder",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createFolder",
+          "callee": "getLoginUserId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateFolder",
+          "callee": "folderService.updateFolder",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateFolder",
+          "callee": "getLoginUserId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateFolder",
+          "callee": "success",
+          "lineNumber": 76
+        },
+        {
+          "caller": "deleteFolder",
+          "callee": "folderService.deleteFolder",
+          "lineNumber": 84
+        },
+        {
+          "caller": "deleteFolder",
+          "callee": "getLoginUserId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "deleteFolder",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "moveFolder",
+          "callee": "folderService.moveFolder",
+          "lineNumber": 92
+        },
+        {
+          "caller": "moveFolder",
+          "callee": "getLoginUserId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "moveFolder",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getFolder",
+          "callee": "getLoginUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getFolder",
+          "callee": "folderService.getFolder",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getFolder",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getFolder",
+          "callee": "viewRecordService.createViewRecord",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getFolder",
+          "callee": "folder.getLibraryId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getFolder",
+          "callee": "PmsKnowledgeObjectTypeEnum.FOLDER.getType",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getFolder",
+          "callee": "folder.getId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getFolder",
+          "callee": "success",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getFolder",
+          "callee": "buildFolderRespVO",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getFolderTree",
+          "callee": "getLoginUserId",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getFolderTree",
+          "callee": "folderService.getFolderList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getFolderTree",
+          "callee": "documentService.getDocumentList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getFolderTree",
+          "callee": "success",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getFolderTree",
+          "callee": "buildTreeRespVO",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getFolderTree",
+          "callee": "libraryMemberService.isLibraryWritable",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getFolderTree",
+          "callee": "libraryMemberService.isLibraryAdmin",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folderService.getFolderList",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getLibraryId",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "documentService.getDocumentList",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getLibraryId",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "CollUtil.count",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getId().equals",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "item.getParentId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "CollUtil.count",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getId().equals",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "item.getFolderId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "item.getParentId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "item.getParentId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "BeanUtils.toBean(folder, PmsKnowledgeFolderRespVO.class)\n                .setChildFolderCount(childFolderCount).setDocumentCount(documentCount)\n                .setCurrentUserLevel(contentPermissionService.getCurrentUserContentPermissionLevel(folder.getPermissionId(), folder.getLibraryId(), userId)).setFavoriteStatus",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "BeanUtils.toBean(folder, PmsKnowledgeFolderRespVO.class)\n                .setChildFolderCount(childFolderCount).setDocumentCount(documentCount).setCurrentUserLevel",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "BeanUtils.toBean(folder, PmsKnowledgeFolderRespVO.class)\n                .setChildFolderCount(childFolderCount).setDocumentCount",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "BeanUtils.toBean(folder, PmsKnowledgeFolderRespVO.class).setChildFolderCount",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "contentPermissionService.getCurrentUserContentPermissionLevel",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getPermissionId",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getLibraryId",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "favoriteService.isFavorite",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "PmsKnowledgeObjectTypeEnum.FOLDER.getType",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildFolderRespVO",
+          "callee": "folder.getId",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "convertSet",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "permissionIds.addAll",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "convertSet",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "contentPermissionService.getCurrentUserContentPermissionLevelMap",
+          "lineNumber": 148
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "convertMap",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "BeanUtils.toBean(folder, PmsKnowledgeTreeRespVO.FolderNode.class)\n                        .setCurrentUserLevel(levelMap.get(folder.getPermissionId())).setChildren(new ArrayList<>()).setDocuments",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "BeanUtils.toBean(folder, PmsKnowledgeTreeRespVO.FolderNode.class)\n                        .setCurrentUserLevel(levelMap.get(folder.getPermissionId())).setChildren",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "BeanUtils.toBean(folder, PmsKnowledgeTreeRespVO.FolderNode.class).setCurrentUserLevel",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "levelMap.get",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folder.getPermissionId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new ArrayList<>",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new ArrayList<>",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "convertMap",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeTreeRespVO.DocumentNode.class)\n                        .setCurrentUserLevel(levelMap.get(document.getPermissionId())).setChildren",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "BeanUtils.toBean(document, PmsKnowledgeTreeRespVO.DocumentNode.class).setCurrentUserLevel",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "levelMap.get",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "document.getPermissionId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new ArrayList<>",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new ArrayList<>",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "documentNodeMap.get",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "document.getId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "documentNodeMap.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "document.getParentId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folderNodeMap.get",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "document.getFolderId",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "parentNode.getChildren().add",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "parentNode.getChildren",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folderNode.getDocuments().add",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folderNode.getDocuments",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "rootDocuments.add",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new ArrayList<>",
+          "lineNumber": 174
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folderNodeMap.get",
+          "lineNumber": 176
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folder.getId",
+          "lineNumber": 176
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folderNodeMap.get",
+          "lineNumber": 177
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "folder.getParentId",
+          "lineNumber": 177
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "parentNode.getChildren().add",
+          "lineNumber": 179
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "parentNode.getChildren",
+          "lineNumber": 179
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "rootFolders.add",
+          "lineNumber": 181
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new PmsKnowledgeTreeRespVO().setLibraryId(libraryId).setWriteStatus(writeStatus)\n                .setManageStatus(manageStatus)\n                .setFolders(rootFolders).setDocuments",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new PmsKnowledgeTreeRespVO().setLibraryId(libraryId).setWriteStatus(writeStatus)\n                .setManageStatus(manageStatus).setFolders",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new PmsKnowledgeTreeRespVO().setLibraryId(libraryId).setWriteStatus(writeStatus).setManageStatus",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new PmsKnowledgeTreeRespVO().setLibraryId(libraryId).setWriteStatus",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new PmsKnowledgeTreeRespVO().setLibraryId",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildTreeRespVO",
+          "callee": "new PmsKnowledgeTreeRespVO",
+          "lineNumber": 184
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 7,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/document/PmsKnowledgeDocumentCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentCreateReqVO",
+          "startLine": 13,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "libraryId",
+            "folderId",
+            "parentId",
+            "title",
+            "type",
+            "content",
+            "fileType",
+            "fileSize"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentCreateReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/document/PmsKnowledgeDocumentMoveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentMoveReqVO",
+          "startLine": 7,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "id",
+            "targetLibraryId",
+            "targetFolderId",
+            "targetParentId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentMoveReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/document/PmsKnowledgeDocumentRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 67,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentRespVO",
+          "startLine": 9,
+          "endLine": 100,
+          "methods": [],
+          "properties": [
+            "id",
+            "libraryId",
+            "permissionId",
+            "currentUserLevel",
+            "downloadStatus",
+            "libraryName",
+            "folderId",
+            "parentId",
+            "title",
+            "contentSummary",
+            "content",
+            "previewUrl",
+            "type",
+            "fileType",
+            "fileSize",
+            "status",
+            "labelIds",
+            "creatorUserId",
+            "creatorUserName",
+            "favoriteStatus",
+            "likeStatus",
+            "likeUsers",
+            "createTime",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/document/PmsKnowledgeDocumentSearchPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentSearchPageReqVO",
+          "startLine": 14,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "keyword",
+            "libraryId",
+            "creatorUserId",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentSearchPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/document/PmsKnowledgeDocumentUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentUpdateReqVO",
+          "startLine": 12,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "content",
+            "labelIds",
+            "fileType",
+            "fileSize"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentUpdateReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/folder/PmsKnowledgeFolderMoveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "PmsKnowledgeFolderMoveReqVO",
+          "startLine": 7,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "id",
+            "targetLibraryId",
+            "targetParentId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeFolderMoveReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/folder/PmsKnowledgeFolderRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "PmsKnowledgeFolderRespVO",
+          "startLine": 8,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "id",
+            "libraryId",
+            "permissionId",
+            "currentUserLevel",
+            "parentId",
+            "title",
+            "childFolderCount",
+            "documentCount",
+            "status",
+            "favoriteStatus",
+            "createTime",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeFolderRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/folder/PmsKnowledgeFolderSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "PmsKnowledgeFolderSaveReqVO",
+          "startLine": 9,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "id",
+            "libraryId",
+            "parentId",
+            "title"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeFolderSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/folder/PmsKnowledgeTreeRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "PmsKnowledgeTreeRespVO",
+          "startLine": 8,
+          "endLine": 82,
+          "methods": [],
+          "properties": [
+            "libraryId",
+            "writeStatus",
+            "manageStatus",
+            "folders",
+            "documents"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeTreeRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/label/PmsKnowledgeDocumentLabelPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentLabelPageReqVO",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "labelId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentLabelPageReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/label/PmsKnowledgeDocumentLabelRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentLabelRespVO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "color",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentLabelRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/label/PmsKnowledgeDocumentLabelSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentLabelSaveReqVO",
+          "startLine": 8,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "color"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeDocumentLabelSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/permission/PmsKnowledgeContentPermissionRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "PmsKnowledgeContentPermissionRespVO",
+          "startLine": 8,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "libraryId",
+            "openStatus",
+            "openLevel",
+            "creatorUserId",
+            "currentUserLevel",
+            "members"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeContentPermissionRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/content/vo/permission/PmsKnowledgeContentPermissionUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "PmsKnowledgeContentPermissionUpdateReqVO",
+          "startLine": 14,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "id",
+            "openStatus",
+            "openLevel",
+            "members"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeContentPermissionUpdateReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/interaction/PmsKnowledgeDocumentCommentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "createDocumentComment",
+          "startLine": 51,
+          "endLine": 56,
+          "params": [
+            "saveReqVO"
+          ]
+        },
+        {
+          "name": "deleteDocumentComment",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDocumentCommentList",
+          "startLine": 67,
+          "endLine": 75,
+          "params": [
+            "documentId"
+          ]
+        },
+        {
+          "name": "buildCommentRespVOList",
+          "startLine": 79,
+          "endLine": 110,
+          "params": [
+            "comments"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentCommentController",
+          "startLine": 39,
+          "endLine": 112,
+          "methods": [
+            "createDocumentComment",
+            "deleteDocumentComment",
+            "getDocumentCommentList",
+            "buildCommentRespVOList"
+          ],
+          "properties": [
+            "commentService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDocumentComment",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDocumentComment",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getDocumentCommentList",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeDocumentCommentController",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDocumentComment",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createDocumentComment",
+          "callee": "commentService.createDocumentComment",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createDocumentComment",
+          "callee": "getLoginUserId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "deleteDocumentComment",
+          "callee": "commentService.deleteDocumentComment",
+          "lineNumber": 63
+        },
+        {
+          "caller": "deleteDocumentComment",
+          "callee": "getLoginUserId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "deleteDocumentComment",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getDocumentCommentList",
+          "callee": "commentService.getDocumentCommentList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getDocumentCommentList",
+          "callee": "getLoginUserId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getDocumentCommentList",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getDocumentCommentList",
+          "callee": "buildCommentRespVOList",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 81
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "Stream.of",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "comment.getUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "comment.getReplyUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "convertMap",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "BeanUtils.toBean(comment,\n                            PmsKnowledgeDocumentCommentRespVO.class).setChildren",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 93
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "comment.getUserId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "commentVO.setUserName",
+          "lineNumber": 93
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 93
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 94
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "comment.getReplyUserId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "commentVO.setReplyUserName",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 100
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "commentMap.get",
+          "lineNumber": 102
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "comment.getId",
+          "lineNumber": 102
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "PmsKnowledgeDocumentCommentDO.MAIN_ID_ROOT.equals",
+          "lineNumber": 103
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "comment.getMainId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "result.add",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "comment.getMainId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "mainComment.getChildren().add",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildCommentRespVOList",
+          "callee": "mainComment.getChildren",
+          "lineNumber": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/interaction/PmsKnowledgeDocumentShareController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "openShare",
+          "startLine": 47,
+          "endLine": 55,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateShareMemberList",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "closeShare",
+          "startLine": 66,
+          "endLine": 73,
+          "params": [
+            "documentId"
+          ]
+        },
+        {
+          "name": "getDocumentShare",
+          "startLine": 75,
+          "endLine": 82,
+          "params": [
+            "documentId"
+          ]
+        },
+        {
+          "name": "getDocumentByToken",
+          "startLine": 84,
+          "endLine": 99,
+          "params": [
+            "token"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentShareController",
+          "startLine": 35,
+          "endLine": 101,
+          "methods": [
+            "openShare",
+            "updateShareMemberList",
+            "closeShare",
+            "getDocumentShare",
+            "getDocumentByToken"
+          ],
+          "properties": [
+            "documentShareService",
+            "fileApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "openShare",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "updateShareMemberList",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "closeShare",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getDocumentShare",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getDocumentByToken",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeDocumentShareController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "openShare",
+          "callee": "documentShareService.openShare",
+          "lineNumber": 52
+        },
+        {
+          "caller": "openShare",
+          "callee": "reqVO.getDocumentId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "openShare",
+          "callee": "reqVO.getShareUserIds",
+          "lineNumber": 53
+        },
+        {
+          "caller": "openShare",
+          "callee": "getLoginUserId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "openShare",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "openShare",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateShareMemberList",
+          "callee": "documentShareService.updateShareMemberList",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateShareMemberList",
+          "callee": "reqVO.getDocumentId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateShareMemberList",
+          "callee": "reqVO.getShareUserIds",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateShareMemberList",
+          "callee": "getLoginUserId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateShareMemberList",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "closeShare",
+          "callee": "documentShareService.closeShare",
+          "lineNumber": 71
+        },
+        {
+          "caller": "closeShare",
+          "callee": "getLoginUserId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "closeShare",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getDocumentShare",
+          "callee": "documentShareService.getActiveDocumentShare",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDocumentShare",
+          "callee": "getLoginUserId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDocumentShare",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getDocumentShare",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "documentShareService.getDocumentByShareToken",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "PmsKnowledgeDocumentTypeEnum.FILE.getType().equals",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "PmsKnowledgeDocumentTypeEnum.FILE.getType",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "document.getType",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "documentVO.setContent(null).setPreviewUrl",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "documentVO.setContent",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "fileApi.presignGetUrl(document.getContent(), null).getCheckedData",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "fileApi.presignGetUrl",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "document.getContent",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getDocumentByToken",
+          "callee": "success",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/interaction/PmsKnowledgeFavoriteController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "createFavorite",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "saveReqVO"
+          ]
+        },
+        {
+          "name": "deleteFavorite",
+          "startLine": 48,
+          "endLine": 58,
+          "params": [
+            "type",
+            "entityId"
+          ]
+        },
+        {
+          "name": "getFavoritePage",
+          "startLine": 60,
+          "endLine": 66,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getFavoriteListByLibraryId",
+          "startLine": 68,
+          "endLine": 75,
+          "params": [
+            "libraryId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeFavoriteController",
+          "startLine": 31,
+          "endLine": 77,
+          "methods": [
+            "createFavorite",
+            "deleteFavorite",
+            "getFavoritePage",
+            "getFavoriteListByLibraryId"
+          ],
+          "properties": [
+            "favoriteService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createFavorite",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFavorite",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "getFavoritePage",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getFavoriteListByLibraryId",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeFavoriteController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFavorite",
+          "callee": "favoriteService.createFavorite",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createFavorite",
+          "callee": "getLoginUserId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createFavorite",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "deleteFavorite",
+          "callee": "favoriteService.deleteFavorite",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteFavorite",
+          "callee": "getLoginUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteFavorite",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getFavoritePage",
+          "callee": "success",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getFavoritePage",
+          "callee": "favoriteService.getFavoritePage",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getFavoritePage",
+          "callee": "getLoginUserId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getFavoriteListByLibraryId",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getFavoriteListByLibraryId",
+          "callee": "favoriteService.getFavoriteListByLibraryId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getFavoriteListByLibraryId",
+          "callee": "getLoginUserId",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/interaction/PmsKnowledgeViewRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "getRecentViewRecordList",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "libraryId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeViewRecordController",
+          "startLine": 20,
+          "endLine": 38,
+          "methods": [
+            "getRecentViewRecordList"
+          ],
+          "properties": [
+            "viewRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getRecentViewRecordList",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeViewRecordController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getRecentViewRecordList",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getRecentViewRecordList",
+          "callee": "viewRecordService.getRecentViewRecordList",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getRecentViewRecordList",
+          "callee": "getLoginUserId",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

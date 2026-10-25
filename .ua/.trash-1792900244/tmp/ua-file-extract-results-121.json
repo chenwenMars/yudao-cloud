@@ -1,0 +1,6226 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 34,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 34,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 34,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/statistics/CrmStatisticsPerformanceTargetServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 190,
+      "nonEmptyLines": 174,
+      "functions": [
+        {
+          "name": "getPerformanceTargetSummary",
+          "startLine": 51,
+          "endLine": 80,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceConfigs",
+          "startLine": 82,
+          "endLine": 92,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getMonthTargetPrice",
+          "startLine": 94,
+          "endLine": 98,
+          "params": [
+            "performanceConfigs",
+            "month"
+          ]
+        },
+        {
+          "name": "getMonthTargetPrice",
+          "startLine": 100,
+          "endLine": 149,
+          "params": [
+            "performanceConfig",
+            "month"
+          ]
+        },
+        {
+          "name": "calculateCompletionRate",
+          "startLine": 151,
+          "endLine": 156,
+          "params": [
+            "currentPrice",
+            "targetPrice"
+          ]
+        },
+        {
+          "name": "getUserIds",
+          "startLine": 166,
+          "endLine": 176,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getDeptIds",
+          "startLine": 184,
+          "endLine": 188,
+          "params": [
+            "deptId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmStatisticsPerformanceTargetServiceImpl",
+          "startLine": 37,
+          "endLine": 190,
+          "methods": [
+            "getPerformanceTargetSummary",
+            "getPerformanceConfigs",
+            "getMonthTargetPrice",
+            "getMonthTargetPrice",
+            "calculateCompletionRate",
+            "getUserIds",
+            "getDeptIds"
+          ],
+          "properties": [
+            "performanceTargetMapper",
+            "performanceConfigService",
+            "adminUserApi",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPerformanceTargetSummary",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "CrmStatisticsPerformanceTargetServiceImpl",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "reqVO.setUserIds",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "getUserIds",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "reqVO.getUserIds",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "Collections.emptyList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "getPerformanceConfigs",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "reqVO.getBizType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "CrmPerformanceConfigBizTypeEnum.CRM_RECEIVABLE.getBizType",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "performanceTargetMapper.selectReceivableActualByMonth",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "performanceTargetMapper.selectContractActualByMonth",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "convertMap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "new ArrayList<>",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "getMonthTargetPrice",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "actualMap.getOrDefault",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "result.add",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "new CrmStatisticsPerformanceTargetRespVO().setMonth(month).setTargetPrice(targetPrice)\n                    .setCurrentPrice(currentPrice).setCompletionRate",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "new CrmStatisticsPerformanceTargetRespVO().setMonth(month).setTargetPrice(targetPrice).setCurrentPrice",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "new CrmStatisticsPerformanceTargetRespVO().setMonth(month).setTargetPrice",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "new CrmStatisticsPerformanceTargetRespVO().setMonth",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "new CrmStatisticsPerformanceTargetRespVO",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceTargetSummary",
+          "callee": "calculateCompletionRate",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "ObjUtil.isNotNull",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "performanceConfigService.getPerformanceConfig",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "CrmPerformanceConfigObjectTypeEnum.USER.getObjectType",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "reqVO.getYear",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "reqVO.getBizType",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "Collections.emptyList",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "ListUtil.of",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "performanceConfigService.getPerformanceConfigList",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "getDeptIds",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "reqVO.getDeptId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "CrmPerformanceConfigObjectTypeEnum.DEPT.getObjectType",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "reqVO.getYear",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getPerformanceConfigs",
+          "callee": "reqVO.getBizType",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfigs.stream()\n                .map(performanceConfig -> getMonthTargetPrice(performanceConfig, month)).reduce",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfigs.stream().map",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfigs.stream",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "getMonthTargetPrice",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getJanuaryTargetPrice",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getFebruaryTargetPrice",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getMarchTargetPrice",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getAprilTargetPrice",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getMayTargetPrice",
+          "lineNumber": 122
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getJuneTargetPrice",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getJulyTargetPrice",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getAugustTargetPrice",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getSeptemberTargetPrice",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getOctoberTargetPrice",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getNovemberTargetPrice",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getMonthTargetPrice",
+          "callee": "performanceConfig.getDecemberTargetPrice",
+          "lineNumber": 143
+        },
+        {
+          "caller": "calculateCompletionRate",
+          "callee": "targetPrice.compareTo",
+          "lineNumber": 152
+        },
+        {
+          "caller": "calculateCompletionRate",
+          "callee": "currentPrice.multiply(BigDecimal.valueOf(100)).divide",
+          "lineNumber": 155
+        },
+        {
+          "caller": "calculateCompletionRate",
+          "callee": "currentPrice.multiply",
+          "lineNumber": 155
+        },
+        {
+          "caller": "calculateCompletionRate",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "ObjUtil.isNotNull",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "ListUtil.of",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "getDeptIds",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "reqVO.getDeptId",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "convertList",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "adminUserApi.getUserListByDeptIds(deptIds).getCheckedData",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "adminUserApi.getUserListByDeptIds",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getDeptIds",
+          "callee": "convertList",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getDeptIds",
+          "callee": "deptApi.getChildDeptList(deptId).getCheckedData",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getDeptIds",
+          "callee": "deptApi.getChildDeptList",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getDeptIds",
+          "callee": "deptIds.add",
+          "lineNumber": 186
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 2,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/statistics/CrmStatisticsRankService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 67,
+      "classes": [
+        {
+          "name": "CrmStatisticsRankService",
+          "startLine": 14,
+          "endLine": 80,
+          "methods": [
+            "getContractPriceRank",
+            "getReceivablePriceRank",
+            "getContractCountRank",
+            "getProductSalesRank",
+            "getCustomerCountRank",
+            "getContactsCountRank",
+            "getFollowCountRank",
+            "getFollowCustomerCountRank"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmStatisticsRankService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/service/statistics/CrmStatisticsRankServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 116,
+      "functions": [
+        {
+          "name": "getContractPriceRank",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getReceivablePriceRank",
+          "startLine": 47,
+          "endLine": 50,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getContractCountRank",
+          "startLine": 52,
+          "endLine": 55,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getProductSalesRank",
+          "startLine": 57,
+          "endLine": 60,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getCustomerCountRank",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getContactsCountRank",
+          "startLine": 67,
+          "endLine": 70,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getFollowCountRank",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getFollowCustomerCountRank",
+          "startLine": 77,
+          "endLine": 80,
+          "params": [
+            "rankReqVO"
+          ]
+        },
+        {
+          "name": "getRank",
+          "startLine": 89,
+          "endLine": 104,
+          "params": [
+            "rankReqVO",
+            "rankFunction"
+          ]
+        },
+        {
+          "name": "appendUserInfo",
+          "startLine": 111,
+          "endLine": 118,
+          "params": [
+            "ranks"
+          ]
+        },
+        {
+          "name": "getUserIds",
+          "startLine": 126,
+          "endLine": 132,
+          "params": [
+            "deptId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmStatisticsRankServiceImpl",
+          "startLine": 30,
+          "endLine": 134,
+          "methods": [
+            "getContractPriceRank",
+            "getReceivablePriceRank",
+            "getContractCountRank",
+            "getProductSalesRank",
+            "getCustomerCountRank",
+            "getContactsCountRank",
+            "getFollowCountRank",
+            "getFollowCustomerCountRank",
+            "getRank",
+            "appendUserInfo",
+            "getUserIds"
+          ],
+          "properties": [
+            "rankMapper",
+            "adminUserApi",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getContractPriceRank",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getReceivablePriceRank",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getContractCountRank",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getProductSalesRank",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomerCountRank",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "getContactsCountRank",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getFollowCountRank",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getFollowCustomerCountRank",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getUserIds",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "CrmStatisticsRankServiceImpl",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getContractPriceRank",
+          "callee": "getRank",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getReceivablePriceRank",
+          "callee": "getRank",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getContractCountRank",
+          "callee": "getRank",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getProductSalesRank",
+          "callee": "getRank",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getCustomerCountRank",
+          "callee": "getRank",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getContactsCountRank",
+          "callee": "getRank",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getFollowCountRank",
+          "callee": "getRank",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getFollowCustomerCountRank",
+          "callee": "getRank",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getRank",
+          "callee": "rankReqVO.setUserIds",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getRank",
+          "callee": "getUserIds",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getRank",
+          "callee": "rankReqVO.getDeptId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getRank",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getRank",
+          "callee": "rankReqVO.getUserIds",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getRank",
+          "callee": "Collections.emptyList",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getRank",
+          "callee": "rankFunction.apply",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRank",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getRank",
+          "callee": "Collections.emptyList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getRank",
+          "callee": "ranks.sort",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getRank",
+          "callee": "Comparator.comparing(CrmStatisticsRankRespVO::getCount).reversed",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getRank",
+          "callee": "Comparator.comparing",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getRank",
+          "callee": "appendUserInfo",
+          "lineNumber": 102
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 112
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "convertSet",
+          "lineNumber": 112
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 113
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "convertSet",
+          "lineNumber": 113
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "userMap.values",
+          "lineNumber": 113
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "ranks.forEach",
+          "lineNumber": 114
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 114
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "rank.getOwnerUserId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "rank.setNickname",
+          "lineNumber": 115
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "user.getNickname",
+          "lineNumber": 115
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 116
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "user.getDeptId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "rank.setDeptName",
+          "lineNumber": 116
+        },
+        {
+          "caller": "appendUserInfo",
+          "callee": "dept.getName",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "convertList",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "deptApi.getChildDeptList(deptId).getCheckedData",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "deptApi.getChildDeptList",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "deptIds.add",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "convertList",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "adminUserApi.getUserListByDeptIds(deptIds).getCheckedData",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getUserIds",
+          "callee": "adminUserApi.getUserListByDeptIds",
+          "lineNumber": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 10,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/util/CrmAuditStatusUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "convertBpmResultToAuditStatus",
+          "startLine": 19,
+          "endLine": 25,
+          "params": [
+            "bpmResult"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmAuditStatusUtils",
+          "startLine": 12,
+          "endLine": 27,
+          "methods": [
+            "convertBpmResultToAuditStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "convertBpmResultToAuditStatus",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "CrmAuditStatusUtils",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "BpmTaskStatusEnum.APPROVE.getStatus().equals",
+          "lineNumber": 20
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "BpmTaskStatusEnum.APPROVE.getStatus",
+          "lineNumber": 20
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "CrmAuditStatusEnum.APPROVE.getStatus",
+          "lineNumber": 20
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "BpmTaskStatusEnum.REJECT.getStatus().equals",
+          "lineNumber": 21
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "BpmTaskStatusEnum.REJECT.getStatus",
+          "lineNumber": 21
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "CrmAuditStatusEnum.REJECT.getStatus",
+          "lineNumber": 21
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "BpmTaskStatusEnum.CANCEL.getStatus().equals",
+          "lineNumber": 22
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "BpmTaskStatusEnum.CANCEL.getStatus",
+          "lineNumber": 22
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "BpmTaskStatusEnum.CANCEL.getStatus",
+          "lineNumber": 22
+        },
+        {
+          "caller": "convertBpmResultToAuditStatus",
+          "callee": "Assert.notNull",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/FmsAccountUserController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "getAccountUserList",
+          "startLine": 49,
+          "endLine": 58,
+          "params": [
+            "accountSetId"
+          ]
+        },
+        {
+          "name": "updateAccountUserList",
+          "startLine": 60,
+          "endLine": 67,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateAccountSetDefaultStatus",
+          "startLine": 69,
+          "endLine": 75,
+          "params": [
+            "accountSetId"
+          ]
+        },
+        {
+          "name": "buildAccountUserRespVOList",
+          "startLine": 79,
+          "endLine": 93,
+          "params": [
+            "accountUsers"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FmsAccountUserController",
+          "startLine": 36,
+          "endLine": 95,
+          "methods": [
+            "getAccountUserList",
+            "updateAccountUserList",
+            "updateAccountSetDefaultStatus",
+            "buildAccountUserRespVOList"
+          ],
+          "properties": [
+            "accountUserService",
+            "adminUserApi",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAccountUserList",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "updateAccountUserList",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "updateAccountSetDefaultStatus",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "FmsAccountUserController",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAccountUserList",
+          "callee": "accountUserService.getAccountUserList",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getAccountUserList",
+          "callee": "getLoginUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getAccountUserList",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getAccountUserList",
+          "callee": "buildAccountUserRespVOList",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateAccountUserList",
+          "callee": "accountUserService.updateAccountUserList",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateAccountUserList",
+          "callee": "getLoginUserId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "updateAccountUserList",
+          "callee": "success",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateAccountSetDefaultStatus",
+          "callee": "accountUserService.updateAccountSetDefaultStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateAccountSetDefaultStatus",
+          "callee": "getLoginUserId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateAccountSetDefaultStatus",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 81
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "userMap.values",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "convertList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "accountUser.getUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "respVO.setNickname(user.getNickname()).setMobile(user.getMobile())\n                        .setEmail(user.getEmail()).setStatus",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "respVO.setNickname(user.getNickname()).setMobile(user.getMobile()).setEmail",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "respVO.setNickname(user.getNickname()).setMobile",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "respVO.setNickname",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "user.getMobile",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "user.getEmail",
+          "lineNumber": 88
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "user.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "findAndThen",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "user.getDeptId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "respVO.setDeptName",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildAccountUserRespVOList",
+          "callee": "dept.getName",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-fms/yudao-module-fms-server/src/main/java/cn/iocoder/yudao/module/fms/controller/admin/config/vo/accountuser/FmsAccountUserRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "FmsAccountUserRespVO",
+          "startLine": 6,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "userId",
+            "nickname",
+            "deptName",
+            "mobile",
+            "email",
+            "status",
+            "defaultStatus",
+            "founder",
+            "level"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FmsAccountUserRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/HrmAttendanceLeaveController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "getAttendanceLeave",
+          "startLine": 54,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAttendanceLeavePage",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportAttendanceLeave",
+          "startLine": 73,
+          "endLine": 83,
+          "params": [
+            "exportReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "buildAttendanceLeaveRespVO",
+          "startLine": 87,
+          "endLine": 92,
+          "params": [
+            "attendanceLeave"
+          ]
+        },
+        {
+          "name": "buildAttendanceLeaveRespVOList",
+          "startLine": 94,
+          "endLine": 109,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveController",
+          "startLine": 40,
+          "endLine": 111,
+          "methods": [
+            "getAttendanceLeave",
+            "getAttendanceLeavePage",
+            "exportAttendanceLeave",
+            "buildAttendanceLeaveRespVO",
+            "buildAttendanceLeaveRespVOList"
+          ],
+          "properties": [
+            "attendanceLeaveService",
+            "employeeService",
+            "deptApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAttendanceLeave",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getAttendanceLeavePage",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "exportAttendanceLeave",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "HrmAttendanceLeaveController",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAttendanceLeave",
+          "callee": "attendanceLeaveService.getAttendanceLeave",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getAttendanceLeave",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getAttendanceLeave",
+          "callee": "buildAttendanceLeaveRespVO",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "attendanceLeaveService.getAttendanceLeavePage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "new PageResult<>",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "buildAttendanceLeaveRespVOList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 70
+        },
+        {
+          "caller": "exportAttendanceLeave",
+          "callee": "exportReqVO.setPageSize",
+          "lineNumber": 79
+        },
+        {
+          "caller": "exportAttendanceLeave",
+          "callee": "buildAttendanceLeaveRespVOList",
+          "lineNumber": 80
+        },
+        {
+          "caller": "exportAttendanceLeave",
+          "callee": "attendanceLeaveService.getAttendanceLeaveList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "exportAttendanceLeave",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVO",
+          "callee": "buildAttendanceLeaveRespVOList(Collections.singletonList(attendanceLeave)).get",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVO",
+          "callee": "buildAttendanceLeaveRespVOList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVO",
+          "callee": "Collections.singletonList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employeeService.getEmployeeMap",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 96
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 97
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 97
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employeeMap.values",
+          "lineNumber": 97
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "convertList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 99
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employeeMap.get",
+          "lineNumber": 100
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "attendanceLeave.getEmployeeId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber())\n                    .setDeptId(employee.getDeptId()).setPostName",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber(employee.getJobNumber()).setDeptId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "respVO.setEmployeeName(employee.getName()).setJobNumber",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "respVO.setEmployeeName",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employee.getName",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employee.getJobNumber",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employee.getDeptId",
+          "lineNumber": 105
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employee.getPostName",
+          "lineNumber": 105
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "employee.getDeptId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "respVO.setDeptName",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildAttendanceLeaveRespVOList",
+          "callee": "dept.getName",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/vo/leave/HrmAttendanceLeaveCancelReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveCancelReqVO",
+          "startLine": 9,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmAttendanceLeaveCancelReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/vo/leave/HrmAttendanceLeaveCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "isTimeRangeValid",
+          "startLine": 48,
+          "endLine": 53,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveCreateReqVO",
+          "startLine": 16,
+          "endLine": 55,
+          "methods": [
+            "isTimeRangeValid"
+          ],
+          "properties": [
+            "type",
+            "startTime",
+            "endTime",
+            "day",
+            "reason",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isTimeRangeValid",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "HrmAttendanceLeaveCreateReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isTimeRangeValid",
+          "callee": "endTime.isAfter",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/attendance/vo/leave/HrmAttendanceLeavePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "HrmAttendanceLeavePageReqVO",
+          "startLine": 16,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "employeeId",
+            "deptIds",
+            "employeeKeyword",
+            "types",
+            "startTime",
+            "approvalStatus",
+            "employeeIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmAttendanceLeavePageReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/operatelog/HrmOperateLogController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "getOperateLogPage",
+          "startLine": 53,
+          "endLine": 65,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmOperateLogController",
+          "startLine": 34,
+          "endLine": 67,
+          "methods": [
+            "getOperateLogPage"
+          ],
+          "properties": [
+            "BIZ_TYPE_MAP",
+            "operateLogApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOperateLogPage",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "HrmOperateLogController",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOperateLogPage",
+          "callee": "new OperateLogPageReqDTO",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "reqDTO.setPageSize",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "reqDTO.setType",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "BIZ_TYPE_MAP.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "pageReqVO.getBizType",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "reqDTO.setBizId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "pageReqVO.getBizId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "operateLogApi.getOperateLogPage(reqDTO).getCheckedData",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "operateLogApi.getOperateLogPage",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/operatelog/vo/HrmOperateLogPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "HrmOperateLogPageReqVO",
+          "startLine": 12,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "bizType",
+            "bizId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmOperateLogPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/operatelog/vo/HrmOperateLogRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "HrmOperateLogRespVO",
+          "startLine": 8,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "userName",
+            "userType",
+            "type",
+            "subType",
+            "bizId",
+            "action",
+            "extra",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmOperateLogRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/attendance/HrmPortalAttendanceLeaveController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "getAttendanceLeaveList",
+          "startLine": 37,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "createAttendanceLeave",
+          "startLine": 45,
+          "endLine": 51,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "cancelAttendanceLeave",
+          "startLine": 53,
+          "endLine": 60,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalAttendanceLeaveController",
+          "startLine": 28,
+          "endLine": 62,
+          "methods": [
+            "getAttendanceLeaveList",
+            "createAttendanceLeave",
+            "cancelAttendanceLeave"
+          ],
+          "properties": [
+            "attendanceLeaveService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAttendanceLeaveList",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "createAttendanceLeave",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "cancelAttendanceLeave",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalAttendanceLeaveController",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "attendanceLeaveService.getMyAttendanceLeaveList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "getLoginUserId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "success",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createAttendanceLeave",
+          "callee": "success",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createAttendanceLeave",
+          "callee": "attendanceLeaveService.createLeave",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createAttendanceLeave",
+          "callee": "getLoginUserId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "cancelAttendanceLeave",
+          "callee": "attendanceLeaveService.cancelLeave",
+          "lineNumber": 58
+        },
+        {
+          "caller": "cancelAttendanceLeave",
+          "callee": "getLoginUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "cancelAttendanceLeave",
+          "callee": "success",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/attendance/record/HrmAttendanceLeaveDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 88,
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveDO",
+          "startLine": 25,
+          "endLine": 93,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "type",
+            "startTime",
+            "endTime",
+            "day",
+            "reason",
+            "remark",
+            "approvalStatus",
+            "processInstanceId",
+            "approvalTime",
+            "approvalReason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmAttendanceLeaveDO",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/mysql/attendance/record/HrmAttendanceLeaveMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 79,
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveMapper",
+          "startLine": 16,
+          "endLine": 91,
+          "methods": [
+            "selectPage",
+            "selectList",
+            "buildQueryWrapper",
+            "selectListByEmployeeId",
+            "selectListByEmployeeIdAndApprovalStatus",
+            "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+            "selectCountByEmployeeIdAndTimeRangeAndApprovalStatusIn",
+            "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmAttendanceLeaveMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectPage",
+          "callee": "buildQueryWrapper",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "buildQueryWrapper",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectList",
+          "callee": "MyBatisUtils.addOrder",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getSortingFields",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 26
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .inIfPresent(HrmAttendanceLeaveDO::getEmployeeId, reqVO.getEmployeeIds())\n                .inIfPresent(HrmAttendanceLeaveDO::getType, reqVO.getTypes())\n                .betweenIfPresent(HrmAttendanceLeaveDO::getStartTime, reqVO.getStartTime()).eqIfPresent",
+          "lineNumber": 30
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .inIfPresent(HrmAttendanceLeaveDO::getEmployeeId, reqVO.getEmployeeIds())\n                .inIfPresent(HrmAttendanceLeaveDO::getType, reqVO.getTypes()).betweenIfPresent",
+          "lineNumber": 30
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .inIfPresent(HrmAttendanceLeaveDO::getEmployeeId, reqVO.getEmployeeIds()).inIfPresent",
+          "lineNumber": 30
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>().inIfPresent",
+          "lineNumber": 30
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "reqVO.getEmployeeIds",
+          "lineNumber": 31
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "reqVO.getTypes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "reqVO.getStartTime",
+          "lineNumber": 33
+        },
+        {
+          "caller": "buildQueryWrapper",
+          "callee": "reqVO.getApprovalStatus",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "selectList",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getEmployeeId, employeeId)\n                .orderByDesc(HrmAttendanceLeaveDO::getStartTime).orderByDesc",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getEmployeeId, employeeId).orderByDesc",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>().eq",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByEmployeeIdAndApprovalStatus",
+          "callee": "selectList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectListByEmployeeIdAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getEmployeeId, employeeId)\n                .eq(HrmAttendanceLeaveDO::getApprovalStatus, approvalStatus)\n                .orderByDesc(HrmAttendanceLeaveDO::getStartTime).orderByDesc",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectListByEmployeeIdAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getEmployeeId, employeeId)\n                .eq(HrmAttendanceLeaveDO::getApprovalStatus, approvalStatus).orderByDesc",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectListByEmployeeIdAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getEmployeeId, employeeId).eq",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectListByEmployeeIdAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>().eq",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectListByEmployeeIdAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "callee": "selectList",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .in(HrmAttendanceLeaveDO::getEmployeeId, employeeIds)\n                .betweenIfPresent(HrmAttendanceLeaveDO::getStartTime,\n                        HrmAttendanceLeaveDO::getEndTime, leaveTimes)\n                .eq(HrmAttendanceLeaveDO::getApprovalStatus, approvalStatus)\n                .orderByDesc(HrmAttendanceLeaveDO::getStartTime).orderByDesc",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .in(HrmAttendanceLeaveDO::getEmployeeId, employeeIds)\n                .betweenIfPresent(HrmAttendanceLeaveDO::getStartTime,\n                        HrmAttendanceLeaveDO::getEndTime, leaveTimes)\n                .eq(HrmAttendanceLeaveDO::getApprovalStatus, approvalStatus).orderByDesc",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .in(HrmAttendanceLeaveDO::getEmployeeId, employeeIds)\n                .betweenIfPresent(HrmAttendanceLeaveDO::getStartTime,\n                        HrmAttendanceLeaveDO::getEndTime, leaveTimes).eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .in(HrmAttendanceLeaveDO::getEmployeeId, employeeIds).betweenIfPresent",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>().in",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectCountByEmployeeIdAndTimeRangeAndApprovalStatusIn",
+          "callee": "selectCount",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectCountByEmployeeIdAndTimeRangeAndApprovalStatusIn",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getEmployeeId, employeeId)\n                .betweenIfPresent(HrmAttendanceLeaveDO::getStartTime,\n                        HrmAttendanceLeaveDO::getEndTime, leaveTimes).in",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectCountByEmployeeIdAndTimeRangeAndApprovalStatusIn",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getEmployeeId, employeeId).betweenIfPresent",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectCountByEmployeeIdAndTimeRangeAndApprovalStatusIn",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>().eq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectCountByEmployeeIdAndTimeRangeAndApprovalStatusIn",
+          "callee": "new LambdaQueryWrapperX<HrmAttendanceLeaveDO>",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "update",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "new LambdaUpdateWrapper<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getId, id)\n                .and(wrapper -> wrapper.isNull(HrmAttendanceLeaveDO::getProcessInstanceId)\n                        .or().eq(HrmAttendanceLeaveDO::getProcessInstanceId, processInstanceId)).eq",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "new LambdaUpdateWrapper<HrmAttendanceLeaveDO>()\n                .eq(HrmAttendanceLeaveDO::getId, id).and",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "new LambdaUpdateWrapper<HrmAttendanceLeaveDO>().eq",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "new LambdaUpdateWrapper<HrmAttendanceLeaveDO>",
+          "lineNumber": 84
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "wrapper.isNull(HrmAttendanceLeaveDO::getProcessInstanceId)\n                        .or().eq",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "wrapper.isNull(HrmAttendanceLeaveDO::getProcessInstanceId).or",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "callee": "wrapper.isNull",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/enums/common/HrmBizTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmBizTypeEnum",
+          "startLine": 14,
+          "endLine": 40,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "HrmBizTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 11,
+          "endLine": 15,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/service/attendance/record/HrmAttendanceLeaveService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 92,
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveService",
+          "startLine": 18,
+          "endLine": 106,
+          "methods": [
+            "createLeave",
+            "cancelLeave",
+            "getMyAttendanceLeaveList",
+            "getAttendanceLeave",
+            "getAttendanceLeavePage",
+            "getAttendanceLeaveList",
+            "getAttendanceLeaveListByEmployeeId",
+            "getEffectiveAttendanceLeaveListByEmployeeId",
+            "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+            "updateLeaveApprovalStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmAttendanceLeaveService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/service/attendance/record/HrmAttendanceLeaveServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 217,
+      "nonEmptyLines": 192,
+      "functions": [
+        {
+          "name": "createLeave",
+          "startLine": 56,
+          "endLine": 96,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "cancelLeave",
+          "startLine": 98,
+          "endLine": 117,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getMyAttendanceLeaveList",
+          "startLine": 119,
+          "endLine": 122,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "getAttendanceLeave",
+          "startLine": 124,
+          "endLine": 127,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getAttendanceLeavePage",
+          "startLine": 129,
+          "endLine": 141,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getAttendanceLeaveList",
+          "startLine": 143,
+          "endLine": 155,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getAttendanceLeaveListByEmployeeId",
+          "startLine": 157,
+          "endLine": 160,
+          "params": [
+            "employeeId"
+          ]
+        },
+        {
+          "name": "getEffectiveAttendanceLeaveListByEmployeeId",
+          "startLine": 162,
+          "endLine": 165,
+          "params": [
+            "employeeId"
+          ]
+        },
+        {
+          "name": "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "startLine": 167,
+          "endLine": 175,
+          "params": [
+            "employeeIds",
+            "leaveTimes"
+          ]
+        },
+        {
+          "name": "updateLeaveApprovalStatus",
+          "startLine": 177,
+          "endLine": 196,
+          "params": [
+            "id",
+            "processInstanceId",
+            "status",
+            "reason"
+          ]
+        },
+        {
+          "name": "validateAttendanceLeaveExists",
+          "startLine": 198,
+          "endLine": 204,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "resolveEmployeeIds",
+          "startLine": 206,
+          "endLine": 215,
+          "params": [
+            "employeeId",
+            "deptIds",
+            "employeeKeyword"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveServiceImpl",
+          "startLine": 43,
+          "endLine": 217,
+          "methods": [
+            "createLeave",
+            "cancelLeave",
+            "getMyAttendanceLeaveList",
+            "getAttendanceLeave",
+            "getAttendanceLeavePage",
+            "getAttendanceLeaveList",
+            "getAttendanceLeaveListByEmployeeId",
+            "getEffectiveAttendanceLeaveListByEmployeeId",
+            "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+            "updateLeaveApprovalStatus",
+            "validateAttendanceLeaveExists",
+            "resolveEmployeeIds"
+          ],
+          "properties": [
+            "LEAVE_PROCESS_KEY",
+            "attendanceLeaveMapper",
+            "employeeService",
+            "processInstanceApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LEAVE_PROCESS_KEY",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "createLeave",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "cancelLeave",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "getMyAttendanceLeaveList",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "getAttendanceLeave",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "getAttendanceLeavePage",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "getAttendanceLeaveList",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "getAttendanceLeaveListByEmployeeId",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "getEffectiveAttendanceLeaveListByEmployeeId",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "updateLeaveApprovalStatus",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "HrmAttendanceLeaveServiceImpl",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createLeave",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createLeave",
+          "callee": "employeeService.validateEmployeeExistsForUpdate",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createLeave",
+          "callee": "employee.getId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createLeave",
+          "callee": "attendanceLeaveMapper.selectCountByEmployeeIdAndTimeRangeAndApprovalStatusIn",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createLeave",
+          "callee": "employee.getId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getStartTime",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getEndTime",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createLeave",
+          "callee": "Arrays.asList",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createLeave",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createLeave",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createLeave",
+          "callee": "exception",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createLeave",
+          "callee": "BeanUtils.toBean(reqVO, HrmAttendanceLeaveDO.class)\n                .setEmployeeId(employee.getId()).setApprovalStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createLeave",
+          "callee": "BeanUtils.toBean(reqVO, HrmAttendanceLeaveDO.class).setEmployeeId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createLeave",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createLeave",
+          "callee": "employee.getId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createLeave",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createLeave",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createLeave",
+          "callee": "new HashMap<>",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createLeave",
+          "callee": "employee.getDeptId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createLeave",
+          "callee": "employee.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createLeave",
+          "callee": "employee.getName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getType",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getStartTime().toString",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getStartTime",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getEndTime().toString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getEndTime",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getDay",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createLeave",
+          "callee": "variables.put",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createLeave",
+          "callee": "reqVO.getReason",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createLeave",
+          "callee": "new BpmProcessInstanceCreateReqDTO",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createLeave",
+          "callee": "processInstanceCreateReqDTO.setProcessDefinitionKey",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createLeave",
+          "callee": "processInstanceCreateReqDTO.setBusinessKey",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createLeave",
+          "callee": "String.valueOf",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createLeave",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createLeave",
+          "callee": "processInstanceCreateReqDTO.setVariables",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createLeave",
+          "callee": "processInstanceApi.createProcessInstance(userId, processInstanceCreateReqDTO).getCheckedData",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createLeave",
+          "callee": "processInstanceApi.createProcessInstance",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createLeave",
+          "callee": "attendanceLeaveMapper.updateById",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createLeave",
+          "callee": "new HrmAttendanceLeaveDO().setId(attendanceLeave.getId()).setProcessInstanceId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createLeave",
+          "callee": "new HrmAttendanceLeaveDO().setId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createLeave",
+          "callee": "new HrmAttendanceLeaveDO",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createLeave",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createLeave",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 102
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "validateAttendanceLeaveExists",
+          "lineNumber": 103
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "reqVO.getId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 104
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "attendanceLeave.getEmployeeId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "employee.getId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "exception",
+          "lineNumber": 105
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "attendanceLeave.getApprovalStatus",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 108
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "exception",
+          "lineNumber": 109
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "processInstanceApi.cancelProcessInstanceByStartUser(\n                userId, attendanceLeave.getProcessInstanceId(), reqVO.getReason()).checkError",
+          "lineNumber": 113
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "processInstanceApi.cancelProcessInstanceByStartUser",
+          "lineNumber": 113
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "reqVO.getReason",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "updateLeaveApprovalStatus",
+          "lineNumber": 115
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "BpmProcessInstanceStatusEnum.CANCEL.getStatus",
+          "lineNumber": 116
+        },
+        {
+          "caller": "cancelLeave",
+          "callee": "reqVO.getReason",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getMyAttendanceLeaveList",
+          "callee": "attendanceLeaveMapper.selectListByEmployeeId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getMyAttendanceLeaveList",
+          "callee": "employeeService.validateEmployeeBySelf(userId).getId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getMyAttendanceLeaveList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getAttendanceLeave",
+          "callee": "attendanceLeaveMapper.selectById",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "resolveEmployeeIds",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "reqVO.getEmployeeId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "reqVO.getDeptIds",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "reqVO.getEmployeeKeyword",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "PageResult.empty",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "reqVO.setEmployeeIds",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getAttendanceLeavePage",
+          "callee": "attendanceLeaveMapper.selectPage",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "resolveEmployeeIds",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "reqVO.getEmployeeId",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "reqVO.getDeptIds",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "reqVO.getEmployeeKeyword",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "reqVO.setEmployeeIds",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getAttendanceLeaveList",
+          "callee": "attendanceLeaveMapper.selectList",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveMapper.selectListByEmployeeId",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getEffectiveAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveMapper.selectListByEmployeeIdAndApprovalStatus",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getEffectiveAttendanceLeaveListByEmployeeId",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 170
+        },
+        {
+          "caller": "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "Collections.emptyList",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.selectListByEmployeeIdsAndTimeRangeAndApprovalStatus",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 174
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "BpmProcessInstanceStatusEnum.isProcessEndStatus",
+          "lineNumber": 181
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "validateAttendanceLeaveExists",
+          "lineNumber": 184
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 185
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 186
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 186
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 187
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "attendanceLeave.getApprovalStatus",
+          "lineNumber": 187
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 187
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "attendanceLeaveMapper.updateApprovalResultByIdAndProcessInstanceIdAndApprovalStatus",
+          "lineNumber": 192
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 193
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "new HrmAttendanceLeaveDO().setProcessInstanceId(processInstanceId)\n                        .setApprovalStatus(status).setApprovalTime(LocalDateTime.now()).setApprovalReason",
+          "lineNumber": 194
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "new HrmAttendanceLeaveDO().setProcessInstanceId(processInstanceId)\n                        .setApprovalStatus(status).setApprovalTime",
+          "lineNumber": 194
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "new HrmAttendanceLeaveDO().setProcessInstanceId(processInstanceId).setApprovalStatus",
+          "lineNumber": 194
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "new HrmAttendanceLeaveDO().setProcessInstanceId",
+          "lineNumber": 194
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "new HrmAttendanceLeaveDO",
+          "lineNumber": 194
+        },
+        {
+          "caller": "updateLeaveApprovalStatus",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 195
+        },
+        {
+          "caller": "validateAttendanceLeaveExists",
+          "callee": "attendanceLeaveMapper.selectById",
+          "lineNumber": 199
+        },
+        {
+          "caller": "validateAttendanceLeaveExists",
+          "callee": "exception",
+          "lineNumber": 201
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 208
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 208
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "new HrmEmployeeListReqVO()\n                .setIds(employeeId == null ? null : Collections.singletonList(employeeId))\n                .setSearch(employeeKeyword).setDeptIds",
+          "lineNumber": 211
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "new HrmEmployeeListReqVO()\n                .setIds(employeeId == null ? null : Collections.singletonList(employeeId)).setSearch",
+          "lineNumber": 211
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "new HrmEmployeeListReqVO().setIds",
+          "lineNumber": 211
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "new HrmEmployeeListReqVO",
+          "lineNumber": 211
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "Collections.singletonList",
+          "lineNumber": 212
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "convertList",
+          "lineNumber": 214
+        },
+        {
+          "caller": "resolveEmployeeIds",
+          "callee": "employeeService.getEmployeeList",
+          "lineNumber": 214
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/test/java/cn/iocoder/yudao/module/hrm/service/attendance/record/HrmAttendanceLeaveServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 313,
+      "nonEmptyLines": 273,
+      "functions": [
+        {
+          "name": "testCreateLeave_success",
+          "startLine": 53,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "testCreateLeave_timeConflict",
+          "startLine": 83,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "testCancelLeave_success",
+          "startLine": 106,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "testUpdateLeaveApprovalStatus_success",
+          "startLine": 136,
+          "endLine": 162,
+          "params": []
+        },
+        {
+          "name": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "startLine": 164,
+          "endLine": 181,
+          "params": []
+        },
+        {
+          "name": "testGetAttendanceLeavePage",
+          "startLine": 183,
+          "endLine": 201,
+          "params": []
+        },
+        {
+          "name": "testGetAttendanceLeaveListByEmployeeId",
+          "startLine": 203,
+          "endLine": 230,
+          "params": []
+        },
+        {
+          "name": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "startLine": 232,
+          "endLine": 274,
+          "params": []
+        },
+        {
+          "name": "testGetAttendanceLeaveList",
+          "startLine": 276,
+          "endLine": 301,
+          "params": []
+        },
+        {
+          "name": "randomAttendanceLeaveDO",
+          "startLine": 305,
+          "endLine": 311,
+          "params": [
+            "employeeId",
+            "type",
+            "startTime",
+            "approvalStatus"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmAttendanceLeaveServiceImplTest",
+          "startLine": 41,
+          "endLine": 313,
+          "methods": [
+            "testCreateLeave_success",
+            "testCreateLeave_timeConflict",
+            "testCancelLeave_success",
+            "testUpdateLeaveApprovalStatus_success",
+            "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+            "testGetAttendanceLeavePage",
+            "testGetAttendanceLeaveListByEmployeeId",
+            "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+            "testGetAttendanceLeaveList",
+            "randomAttendanceLeaveDO"
+          ],
+          "properties": [
+            "attendanceLeaveService",
+            "attendanceLeaveMapper",
+            "employeeService",
+            "processInstanceApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCreateLeave_success",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateLeave_timeConflict",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "testCancelLeave_success",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateLeaveApprovalStatus_success",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "testGetAttendanceLeavePage",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "testGetAttendanceLeaveListByEmployeeId",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "line": 232,
+          "isDefault": false
+        },
+        {
+          "name": "testGetAttendanceLeaveList",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "HrmAttendanceLeaveServiceImplTest",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "randomLongId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "new HrmEmployeeDO().setId(randomLongId())\n                .setDeptId(randomLongId()).setName",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "new HrmEmployeeDO().setId(randomLongId()).setDeptId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "new HrmEmployeeDO().setId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "new HrmEmployeeDO",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "randomLongId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "randomLongId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "when(employeeService.validateEmployeeBySelf(userId)).thenReturn",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "when",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "when(processInstanceApi.createProcessInstance(eq(userId), any())).thenReturn",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "when",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "processInstanceApi.createProcessInstance",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "eq",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "any",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "new HrmAttendanceLeaveCreateReqVO",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "reqVO.setType",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "reqVO.setStartTime",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "reqVO.setEndTime",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "reqVO.setDay",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "new BigDecimal",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "reqVO.setReason",
+          "lineNumber": 68
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "attendanceLeaveService.createLeave",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "attendanceLeaveMapper.selectById",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "assertNotNull",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "assertEquals",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "employee.getId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "attendanceLeave.getEmployeeId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "assertEquals",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "reqVO.getDay().compareTo",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "reqVO.getDay",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "attendanceLeave.getDay",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "assertEquals",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "attendanceLeave.getApprovalStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "assertEquals",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "verify(employeeService).validateEmployeeExistsForUpdate",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "verify",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCreateLeave_success",
+          "callee": "employee.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "randomLongId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "new HrmEmployeeDO().setId(randomLongId())\n                .setDeptId(randomLongId()).setName",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "new HrmEmployeeDO().setId(randomLongId()).setDeptId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "new HrmEmployeeDO().setId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "new HrmEmployeeDO",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "randomLongId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "randomLongId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "when(employeeService.validateEmployeeBySelf(userId)).thenReturn",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "when",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "when(processInstanceApi.createProcessInstance(eq(userId), any())).thenReturn",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "when",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "processInstanceApi.createProcessInstance",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "eq",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "any",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "success",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "new HrmAttendanceLeaveCreateReqVO",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "reqVO.setType",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "reqVO.setStartTime",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "reqVO.setEndTime",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "reqVO.setDay",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "new BigDecimal",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "reqVO.setReason",
+          "lineNumber": 98
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "attendanceLeaveService.createLeave",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "assertServiceException",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testCreateLeave_timeConflict",
+          "callee": "attendanceLeaveService.createLeave",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "randomLongId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "randomLongId",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "when(employeeService.validateEmployeeBySelf(userId)).thenReturn",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "when",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "new HrmEmployeeDO().setId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "new HrmEmployeeDO",
+          "lineNumber": 112
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 115
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "new HrmAttendanceLeaveCancelReqVO",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "reqVO.setId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "reqVO.setReason",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "when(processInstanceApi.cancelProcessInstanceByStartUser(\n                userId, attendanceLeave.getProcessInstanceId(), reqVO.getReason())).thenReturn",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "when",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "processInstanceApi.cancelProcessInstanceByStartUser",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 122
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "reqVO.getReason",
+          "lineNumber": 122
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "success",
+          "lineNumber": 122
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "attendanceLeaveService.cancelLeave",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "verify(processInstanceApi).cancelProcessInstanceByStartUser",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "verify",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "attendanceLeave.getProcessInstanceId",
+          "lineNumber": 129
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "attendanceLeaveMapper.selectById",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "assertEquals",
+          "lineNumber": 131
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "BpmProcessInstanceStatusEnum.CANCEL.getStatus",
+          "lineNumber": 131
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "result.getApprovalStatus",
+          "lineNumber": 131
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "assertEquals",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "result.getApprovalReason",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "assertNotNull",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testCancelLeave_success",
+          "callee": "result.getApprovalTime",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "randomLongId",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 140
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeave.setProcessInstanceId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 143
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeaveService.updateLeaveApprovalStatus",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeaveMapper.selectById",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "assertEquals",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "result.getApprovalStatus",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "assertEquals",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "result.getApprovalReason",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "assertNotNull",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "result.getApprovalTime",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeaveService.updateLeaveApprovalStatus",
+          "lineNumber": 156
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "BpmProcessInstanceStatusEnum.REJECT.getStatus",
+          "lineNumber": 158
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeaveMapper.selectById",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "assertEquals",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "result.getApprovalStatus",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "assertEquals",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_success",
+          "callee": "result.getApprovalReason",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "randomLongId",
+          "lineNumber": 167
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 169
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 169
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "attendanceLeave.setProcessInstanceId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "attendanceLeaveService.updateLeaveApprovalStatus",
+          "lineNumber": 174
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 175
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 175
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "attendanceLeaveMapper.selectById",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "attendanceLeave.getId",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "assertEquals",
+          "lineNumber": 179
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 179
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "result.getApprovalStatus",
+          "lineNumber": 179
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "assertEquals",
+          "lineNumber": 180
+        },
+        {
+          "caller": "testUpdateLeaveApprovalStatus_processInstanceNotMatch",
+          "callee": "result.getProcessInstanceId",
+          "lineNumber": 180
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "new HrmEmployeeDO().setId(randomLongId()).setName",
+          "lineNumber": 186
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "new HrmEmployeeDO().setId",
+          "lineNumber": 186
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "new HrmEmployeeDO",
+          "lineNumber": 186
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "randomLongId",
+          "lineNumber": 186
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 187
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "employee.getId",
+          "lineNumber": 187
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 188
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 188
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 189
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "when(employeeService.getEmployeeList(any())).thenReturn",
+          "lineNumber": 190
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "when",
+          "lineNumber": 190
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "employeeService.getEmployeeList",
+          "lineNumber": 190
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "any",
+          "lineNumber": 190
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "Collections.singletonList",
+          "lineNumber": 190
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "new HrmAttendanceLeavePageReqVO",
+          "lineNumber": 193
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "reqVO.setEmployeeId",
+          "lineNumber": 194
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "employee.getId",
+          "lineNumber": 194
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "attendanceLeaveService.getAttendanceLeavePage(reqVO).getList().get",
+          "lineNumber": 197
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "attendanceLeaveService.getAttendanceLeavePage(reqVO).getList",
+          "lineNumber": 197
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "attendanceLeaveService.getAttendanceLeavePage",
+          "lineNumber": 197
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "assertEquals",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "leave.getId",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testGetAttendanceLeavePage",
+          "callee": "result.getId",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "randomLongId",
+          "lineNumber": 206
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 207
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 208
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "beginTime.plusHours",
+          "lineNumber": 209
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 209
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "beginTime.plusDays(1).plusHours",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "beginTime.plusDays",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 213
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 214
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 214
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "beginTime.plusDays(2).plusHours",
+          "lineNumber": 215
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "beginTime.plusDays",
+          "lineNumber": 215
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 215
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "randomLongId",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "beginTime.plusHours",
+          "lineNumber": 217
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 217
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveService.getAttendanceLeaveListByEmployeeId",
+          "lineNumber": 221
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "attendanceLeaveService.getEffectiveAttendanceLeaveListByEmployeeId",
+          "lineNumber": 223
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "assertEquals",
+          "lineNumber": 226
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "leaves.size",
+          "lineNumber": 226
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "assertEquals",
+          "lineNumber": 227
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "effectiveLeaves.size",
+          "lineNumber": 227
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "assertEquals",
+          "lineNumber": 228
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "secondApprovedLeave.getId",
+          "lineNumber": 228
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "effectiveLeaves.get(0).getId",
+          "lineNumber": 228
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "effectiveLeaves.get",
+          "lineNumber": 228
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "assertEquals",
+          "lineNumber": 229
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "approvedLeave.getId",
+          "lineNumber": 229
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "effectiveLeaves.get(1).getId",
+          "lineNumber": 229
+        },
+        {
+          "caller": "testGetAttendanceLeaveListByEmployeeId",
+          "callee": "effectiveLeaves.get",
+          "lineNumber": 229
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomLongId",
+          "lineNumber": 235
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomLongId",
+          "lineNumber": 236
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 237
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "beginTime.plusMonths",
+          "lineNumber": 238
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 239
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "beginTime.plusHours",
+          "lineNumber": 240
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 240
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 241
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 242
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "endTime.minusDays(1).plusHours",
+          "lineNumber": 243
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "endTime.minusDays",
+          "lineNumber": 243
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 243
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 244
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 246
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "beginTime.minusHours",
+          "lineNumber": 247
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 247
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 248
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 250
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "beginTime.minusHours",
+          "lineNumber": 251
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 251
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 252
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 253
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 254
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 255
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 256
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 256
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "beginTime.minusDays",
+          "lineNumber": 257
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 257
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 258
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 258
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "beginTime.plusDays",
+          "lineNumber": 259
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 259
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "attendanceLeaveService.getEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "lineNumber": 263
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "Arrays.asList",
+          "lineNumber": 264
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "assertEquals",
+          "lineNumber": 268
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.size",
+          "lineNumber": 268
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "assertEquals",
+          "lineNumber": 269
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "rightBoundaryLeave.getId",
+          "lineNumber": 269
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get(0).getId",
+          "lineNumber": 269
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get",
+          "lineNumber": 269
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "assertEquals",
+          "lineNumber": 270
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "secondLeave.getId",
+          "lineNumber": 270
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get(1).getId",
+          "lineNumber": 270
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get",
+          "lineNumber": 270
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "assertEquals",
+          "lineNumber": 271
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "firstLeave.getId",
+          "lineNumber": 271
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get(2).getId",
+          "lineNumber": 271
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get",
+          "lineNumber": 271
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "assertEquals",
+          "lineNumber": 272
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "boundaryOverlapLeave.getId",
+          "lineNumber": 272
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get(3).getId",
+          "lineNumber": 272
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get",
+          "lineNumber": 272
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "assertEquals",
+          "lineNumber": 273
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "leftBoundaryLeave.getId",
+          "lineNumber": 273
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get(4).getId",
+          "lineNumber": 273
+        },
+        {
+          "caller": "testGetEffectiveAttendanceLeaveListByEmployeeIdsAndTimeRange",
+          "callee": "result.get",
+          "lineNumber": 273
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "randomLongId",
+          "lineNumber": 279
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "LocalDateTime.of",
+          "lineNumber": 280
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 281
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 281
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 282
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 283
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 283
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "startTime.plusDays",
+          "lineNumber": 284
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "BpmProcessInstanceStatusEnum.RUNNING.getStatus",
+          "lineNumber": 284
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "attendanceLeaveMapper.insert",
+          "lineNumber": 285
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "randomAttendanceLeaveDO",
+          "lineNumber": 285
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "startTime.plusDays",
+          "lineNumber": 286
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 286
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "when(employeeService.getEmployeeList(any())).thenReturn",
+          "lineNumber": 287
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "when",
+          "lineNumber": 287
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "employeeService.getEmployeeList",
+          "lineNumber": 287
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "any",
+          "lineNumber": 287
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "Collections.singletonList",
+          "lineNumber": 288
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "new HrmEmployeeDO().setId",
+          "lineNumber": 288
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "new HrmEmployeeDO",
+          "lineNumber": 288
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "new HrmAttendanceLeavePageReqVO",
+          "lineNumber": 291
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "reqVO.setEmployeeId",
+          "lineNumber": 292
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "reqVO.setTypes",
+          "lineNumber": 293
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "Collections.singletonList",
+          "lineNumber": 293
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "reqVO.setApprovalStatus",
+          "lineNumber": 294
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "BpmProcessInstanceStatusEnum.APPROVE.getStatus",
+          "lineNumber": 294
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "attendanceLeaveService.getAttendanceLeaveList",
+          "lineNumber": 297
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "assertEquals",
+          "lineNumber": 300
+        },
+        {
+          "caller": "testGetAttendanceLeaveList",
+          "callee": "leaves.size",
+          "lineNumber": 300
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "randomPojo",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId(employeeId)\n                .setType(type).setStartTime(startTime).setEndTime(startTime.plusHours(8))\n                .setDay(new BigDecimal(\"1.00\")).setApprovalStatus(approvalStatus)\n                .setProcessInstanceId(employeeId + \"-\" + startTime).setDeleted",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId(employeeId)\n                .setType(type).setStartTime(startTime).setEndTime(startTime.plusHours(8))\n                .setDay(new BigDecimal(\"1.00\")).setApprovalStatus(approvalStatus).setProcessInstanceId",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId(employeeId)\n                .setType(type).setStartTime(startTime).setEndTime(startTime.plusHours(8))\n                .setDay(new BigDecimal(\"1.00\")).setApprovalStatus",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId(employeeId)\n                .setType(type).setStartTime(startTime).setEndTime(startTime.plusHours(8)).setDay",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId(employeeId)\n                .setType(type).setStartTime(startTime).setEndTime",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId(employeeId)\n                .setType(type).setStartTime",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId(employeeId).setType",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId(null).setEmployeeId",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "leave.setId",
+          "lineNumber": 307
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "startTime.plusHours",
+          "lineNumber": 308
+        },
+        {
+          "caller": "randomAttendanceLeaveDO",
+          "callee": "new BigDecimal",
+          "lineNumber": 309
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-api/src/main/java/cn/iocoder/yudao/module/system/api/dept/DeptApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "DeptApi",
+          "startLine": 18,
+          "endLine": 65,
+          "methods": [
+            "getDept",
+            "getDeptList",
+            "validateDeptList",
+            "getDeptMap",
+            "getChildDeptList",
+            "getChildDeptList",
+            "getParentDeptList"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeptApi",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDeptMap",
+          "callee": "getDeptList(ids).getCheckedData",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getDeptMap",
+          "callee": "getDeptList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getDeptMap",
+          "callee": "CollectionUtils.convertMap",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-api/src/main/java/cn/iocoder/yudao/module/system/api/dept/dto/DeptRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "DeptRespDTO",
+          "startLine": 6,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "parentId",
+            "leaderUserId",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeptRespDTO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-api/src/main/java/cn/iocoder/yudao/module/system/api/logger/OperateLogApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "OperateLogApi",
+          "startLine": 15,
+          "endLine": 25,
+          "methods": [
+            "getOperateLogPage"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogApi",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-api/src/main/java/cn/iocoder/yudao/module/system/api/logger/dto/OperateLogPageReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "OperateLogPageReqDTO",
+          "startLine": 7,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "type",
+            "bizId",
+            "userId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogPageReqDTO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-api/src/main/java/cn/iocoder/yudao/module/system/api/logger/dto/OperateLogRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "OperateLogRespDTO",
+          "startLine": 12,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "id",
+            "traceId",
+            "userId",
+            "userName",
+            "userType",
+            "type",
+            "subType",
+            "bizId",
+            "action",
+            "extra",
+            "requestMethod",
+            "requestUrl",
+            "userIp",
+            "userAgent",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogRespDTO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/api/logger/OperateLogApiImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "createOperateLog",
+          "startLine": 26,
+          "endLine": 30,
+          "params": [
+            "createReqDTO"
+          ]
+        },
+        {
+          "name": "getOperateLogPage",
+          "startLine": 32,
+          "endLine": 36,
+          "params": [
+            "pageReqDTO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OperateLogApiImpl",
+          "startLine": 18,
+          "endLine": 38,
+          "methods": [
+            "createOperateLog",
+            "getOperateLogPage"
+          ],
+          "properties": [
+            "operateLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createOperateLog",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getOperateLogPage",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "OperateLogApiImpl",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createOperateLog",
+          "callee": "operateLogService.createOperateLog",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createOperateLog",
+          "callee": "success",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "operateLogService.getOperateLogPage",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/OperateLogController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "getOperateLog",
+          "startLine": 43,
+          "endLine": 50,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "pageOperateLog",
+          "startLine": 52,
+          "endLine": 59,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportOperateLog",
+          "startLine": 61,
+          "endLine": 71,
+          "params": [
+            "response",
+            "exportReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OperateLogController",
+          "startLine": 34,
+          "endLine": 73,
+          "methods": [
+            "getOperateLog",
+            "pageOperateLog",
+            "exportOperateLog"
+          ],
+          "properties": [
+            "operateLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOperateLog",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "pageOperateLog",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "exportOperateLog",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "OperateLogController",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOperateLog",
+          "callee": "operateLogService.getOperateLog",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getOperateLog",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getOperateLog",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 49
+        },
+        {
+          "caller": "pageOperateLog",
+          "callee": "operateLogService.getOperateLogPage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "pageOperateLog",
+          "callee": "success",
+          "lineNumber": 58
+        },
+        {
+          "caller": "pageOperateLog",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 58
+        },
+        {
+          "caller": "exportOperateLog",
+          "callee": "exportReqVO.setPageSize",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exportOperateLog",
+          "callee": "operateLogService.getOperateLogPage(exportReqVO).getList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "exportOperateLog",
+          "callee": "operateLogService.getOperateLogPage",
+          "lineNumber": 68
+        },
+        {
+          "caller": "exportOperateLog",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 69
+        },
+        {
+          "caller": "exportOperateLog",
+          "callee": "TranslateUtils.translate",
+          "lineNumber": 70
+        },
+        {
+          "caller": "exportOperateLog",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/vo/operatelog/OperateLogPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "OperateLogPageReqVO",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "userId",
+            "bizId",
+            "type",
+            "subType",
+            "action",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/logger/OperateLogDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 80,
+      "classes": [
+        {
+          "name": "OperateLogDO",
+          "startLine": 15,
+          "endLine": 85,
+          "methods": [],
+          "properties": [
+            "id",
+            "traceId",
+            "userId",
+            "userType",
+            "type",
+            "subType",
+            "bizId",
+            "action",
+            "extra",
+            "requestMethod",
+            "requestUrl",
+            "userIp",
+            "userAgent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/logger/OperateLogMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "OperateLogMapper",
+          "startLine": 11,
+          "endLine": 33,
+          "methods": [
+            "selectPage",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogMapper",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getUserId, pageReqDTO.getUserId())\n                .eqIfPresent(OperateLogDO::getBizId, pageReqDTO.getBizId())\n                .likeIfPresent(OperateLogDO::getType, pageReqDTO.getType())\n                .likeIfPresent(OperateLogDO::getSubType, pageReqDTO.getSubType())\n                .likeIfPresent(OperateLogDO::getAction, pageReqDTO.getAction())\n                .betweenIfPresent(OperateLogDO::getCreateTime, pageReqDTO.getCreateTime()).orderByDesc",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getUserId, pageReqDTO.getUserId())\n                .eqIfPresent(OperateLogDO::getBizId, pageReqDTO.getBizId())\n                .likeIfPresent(OperateLogDO::getType, pageReqDTO.getType())\n                .likeIfPresent(OperateLogDO::getSubType, pageReqDTO.getSubType())\n                .likeIfPresent(OperateLogDO::getAction, pageReqDTO.getAction()).betweenIfPresent",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getUserId, pageReqDTO.getUserId())\n                .eqIfPresent(OperateLogDO::getBizId, pageReqDTO.getBizId())\n                .likeIfPresent(OperateLogDO::getType, pageReqDTO.getType())\n                .likeIfPresent(OperateLogDO::getSubType, pageReqDTO.getSubType()).likeIfPresent",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getUserId, pageReqDTO.getUserId())\n                .eqIfPresent(OperateLogDO::getBizId, pageReqDTO.getBizId())\n                .likeIfPresent(OperateLogDO::getType, pageReqDTO.getType()).likeIfPresent",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getUserId, pageReqDTO.getUserId())\n                .eqIfPresent(OperateLogDO::getBizId, pageReqDTO.getBizId()).likeIfPresent",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getUserId, pageReqDTO.getUserId()).eqIfPresent",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>().eqIfPresent",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getUserId",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getBizId",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getType",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getSubType",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getAction",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getCreateTime",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getType, pageReqDTO.getType())\n                .eqIfPresent(OperateLogDO::getBizId, pageReqDTO.getBizId())\n                .eqIfPresent(OperateLogDO::getUserId, pageReqDTO.getUserId()).orderByDesc",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getType, pageReqDTO.getType())\n                .eqIfPresent(OperateLogDO::getBizId, pageReqDTO.getBizId()).eqIfPresent",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>()\n                .eqIfPresent(OperateLogDO::getType, pageReqDTO.getType()).eqIfPresent",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>().eqIfPresent",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<OperateLogDO>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getType",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getBizId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqDTO.getUserId",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/logger/OperateLogService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 40,
+      "classes": [
+        {
+          "name": "OperateLogService",
+          "startLine": 14,
+          "endLine": 47,
+          "methods": [
+            "createOperateLog",
+            "getOperateLog",
+            "getOperateLogPage",
+            "getOperateLogPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/logger/OperateLogServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "createOperateLog",
+          "startLine": 28,
+          "endLine": 32,
+          "params": [
+            "createReqDTO"
+          ]
+        },
+        {
+          "name": "getOperateLog",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getOperateLogPage",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getOperateLogPage",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "pageReqDTO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OperateLogServiceImpl",
+          "startLine": 20,
+          "endLine": 49,
+          "methods": [
+            "createOperateLog",
+            "getOperateLog",
+            "getOperateLogPage",
+            "getOperateLogPage"
+          ],
+          "properties": [
+            "operateLogMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createOperateLog",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "getOperateLog",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getOperateLogPage",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "getOperateLogPage",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "OperateLogServiceImpl",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createOperateLog",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createOperateLog",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getOperateLog",
+          "callee": "operateLogMapper.selectById",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "operateLogMapper.selectPage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getOperateLogPage",
+          "callee": "operateLogMapper.selectPage",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/test/java/cn/iocoder/yudao/module/system/service/logger/OperateLogServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "testCreateOperateLog",
+          "startLine": 30,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "testGetOperateLogPage_vo",
+          "startLine": 41,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "testGetOperateLogPage_dto",
+          "startLine": 83,
+          "endLine": 111,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OperateLogServiceImplTest",
+          "startLine": 21,
+          "endLine": 113,
+          "methods": [
+            "testCreateOperateLog",
+            "testGetOperateLogPage_vo",
+            "testGetOperateLogPage_dto"
+          ],
+          "properties": [
+            "operateLogServiceImpl",
+            "operateLogMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCreateOperateLog",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "testGetOperateLogPage_vo",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "testGetOperateLogPage_dto",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "OperateLogServiceImplTest",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCreateOperateLog",
+          "callee": "RandomUtils.randomPojo",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testCreateOperateLog",
+          "callee": "operateLogServiceImpl.createOperateLog",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCreateOperateLog",
+          "callee": "operateLogMapper.selectOne",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCreateOperateLog",
+          "callee": "assertPojoEquals",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "RandomUtils.randomPojo",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setUserId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setBizId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setType",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setSubType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setAction",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setCreateTime",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "buildTime",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setUserId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setBizId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setType",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setSubType",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setAction",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "o.setCreateTime",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "buildTime",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "new OperateLogPageReqVO",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "reqVO.setUserId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "reqVO.setBizId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "reqVO.setType",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "reqVO.setSubType",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "reqVO.setAction",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "reqVO.setCreateTime",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "buildBetweenTime",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "operateLogServiceImpl.getOperateLogPage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "assertEquals",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "assertEquals",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "pageResult.getList().size",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "pageResult.getList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "assertPojoEquals",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "pageResult.getList().get",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testGetOperateLogPage_vo",
+          "callee": "pageResult.getList",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "RandomUtils.randomPojo",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "o.setUserId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "o.setBizId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "o.setType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "o.setUserId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "o.setBizId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "operateLogMapper.insert",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "o.setType",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "new OperateLogPageReqDTO",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "reqDTO.setUserId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "reqDTO.setBizId",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "reqDTO.setType",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "operateLogServiceImpl.getOperateLogPage",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "assertEquals",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "assertEquals",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "pageResult.getList().size",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "pageResult.getList",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "assertPojoEquals",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "pageResult.getList().get",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testGetOperateLogPage_dto",
+          "callee": "pageResult.getList",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    }
+  ]
+}

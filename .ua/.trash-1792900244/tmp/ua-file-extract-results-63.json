@@ -1,0 +1,3759 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/job/order/TradeOrderAutoCommentJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "execute",
+          "startLine": 21,
+          "endLine": 26,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TradeOrderAutoCommentJob",
+          "startLine": 15,
+          "endLine": 28,
+          "methods": [
+            "execute"
+          ],
+          "properties": [
+            "tradeOrderUpdateService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "execute",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "TradeOrderAutoCommentJob",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "tradeOrderUpdateService.createOrderItemCommentBySystem",
+          "lineNumber": 24
+        },
+        {
+          "caller": "execute",
+          "callee": "String.format",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/brokerage/BrokerageWithdrawService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 79,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawService",
+          "startLine": 22,
+          "endLine": 91,
+          "methods": [
+            "auditBrokerageWithdraw",
+            "getBrokerageWithdraw",
+            "getBrokerageWithdrawPage",
+            "createBrokerageWithdraw",
+            "updateBrokerageWithdrawTransferred",
+            "getWithdrawSummaryListByUserId",
+            "getWithdrawSummaryMapByUserId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawService",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWithdrawSummaryMapByUserId",
+          "callee": "convertMap",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getWithdrawSummaryMapByUserId",
+          "callee": "getWithdrawSummaryListByUserId",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/brokerage/BrokerageWithdrawServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 315,
+      "nonEmptyLines": 284,
+      "functions": [
+        {
+          "name": "auditBrokerageWithdraw",
+          "startLine": 80,
+          "endLine": 116,
+          "params": [
+            "id",
+            "status",
+            "auditReason",
+            "userIp"
+          ]
+        },
+        {
+          "name": "auditBrokerageWithdrawSuccess",
+          "startLine": 118,
+          "endLine": 128,
+          "params": [
+            "withdraw"
+          ]
+        },
+        {
+          "name": "createPayTransfer",
+          "startLine": 130,
+          "endLine": 163,
+          "params": [
+            "withdraw"
+          ]
+        },
+        {
+          "name": "validateBrokerageWithdrawExists",
+          "startLine": 165,
+          "endLine": 171,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBrokerageWithdraw",
+          "startLine": 173,
+          "endLine": 176,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBrokerageWithdrawPage",
+          "startLine": 178,
+          "endLine": 181,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "createBrokerageWithdraw",
+          "startLine": 183,
+          "endLine": 203,
+          "params": [
+            "userId",
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "calculateFeePrice",
+          "startLine": 212,
+          "endLine": 218,
+          "params": [
+            "withdrawPrice",
+            "percent"
+          ]
+        },
+        {
+          "name": "validateWithdrawPrice",
+          "startLine": 226,
+          "endLine": 232,
+          "params": [
+            "withdrawPrice"
+          ]
+        },
+        {
+          "name": "updateBrokerageWithdrawTransferred",
+          "startLine": 234,
+          "endLine": 267,
+          "params": [
+            "id",
+            "payTransferId"
+          ]
+        },
+        {
+          "name": "validateBrokerageTransferStatusCanUpdate",
+          "startLine": 269,
+          "endLine": 303,
+          "params": [
+            "withdraw",
+            "payTransferId"
+          ]
+        },
+        {
+          "name": "getWithdrawSummaryListByUserId",
+          "startLine": 305,
+          "endLine": 313,
+          "params": [
+            "userIds",
+            "statuses"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BrokerageWithdrawServiceImpl",
+          "startLine": 56,
+          "endLine": 315,
+          "methods": [
+            "auditBrokerageWithdraw",
+            "auditBrokerageWithdrawSuccess",
+            "createPayTransfer",
+            "validateBrokerageWithdrawExists",
+            "getBrokerageWithdraw",
+            "getBrokerageWithdrawPage",
+            "createBrokerageWithdraw",
+            "calculateFeePrice",
+            "validateWithdrawPrice",
+            "updateBrokerageWithdrawTransferred",
+            "validateBrokerageTransferStatusCanUpdate",
+            "getWithdrawSummaryListByUserId"
+          ],
+          "properties": [
+            "brokerageWithdrawMapper",
+            "brokerageRecordService",
+            "tradeConfigService",
+            "payTransferApi",
+            "payWalletApi",
+            "validator",
+            "tradeOrderProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "auditBrokerageWithdraw",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getBrokerageWithdraw",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "getBrokerageWithdrawPage",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "createBrokerageWithdraw",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "updateBrokerageWithdrawTransferred",
+          "line": 234,
+          "isDefault": false
+        },
+        {
+          "name": "getWithdrawSummaryListByUserId",
+          "line": 305,
+          "isDefault": false
+        },
+        {
+          "name": "BrokerageWithdrawServiceImpl",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "validateBrokerageWithdrawExists",
+          "lineNumber": 84
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.WITHDRAW_FAIL.getStatus().equals",
+          "lineNumber": 86
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.WITHDRAW_FAIL.getStatus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.getStatus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "brokerageWithdrawMapper.updateByIdAndStatus",
+          "lineNumber": 87
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.getStatus",
+          "lineNumber": 87
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new BrokerageWithdrawDO().setStatus(BrokerageWithdrawStatusEnum.AUDITING.getStatus()).setTransferErrorMsg",
+          "lineNumber": 88
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new BrokerageWithdrawDO().setStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new BrokerageWithdrawDO",
+          "lineNumber": 88
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.AUDITING.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "exception",
+          "lineNumber": 90
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.setStatus(BrokerageWithdrawStatusEnum.AUDITING.getStatus()).setTransferErrorMsg",
+          "lineNumber": 92
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.setStatus",
+          "lineNumber": 92
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.AUDITING.getStatus",
+          "lineNumber": 92
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 95
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.AUDITING.getStatus",
+          "lineNumber": 95
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.getStatus",
+          "lineNumber": 95
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "exception",
+          "lineNumber": 96
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "brokerageWithdrawMapper.updateByIdAndStatus",
+          "lineNumber": 100
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.getStatus",
+          "lineNumber": 100
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new BrokerageWithdrawDO().setStatus(status.getStatus()).setAuditReason(auditReason).setAuditTime",
+          "lineNumber": 101
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new BrokerageWithdrawDO().setStatus(status.getStatus()).setAuditReason",
+          "lineNumber": 101
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new BrokerageWithdrawDO().setStatus",
+          "lineNumber": 101
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new BrokerageWithdrawDO",
+          "lineNumber": 101
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "status.getStatus",
+          "lineNumber": 101
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 101
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "exception",
+          "lineNumber": 103
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.AUDIT_SUCCESS.equals",
+          "lineNumber": 107
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "auditBrokerageWithdrawSuccess",
+          "lineNumber": 108
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageWithdrawStatusEnum.AUDIT_FAIL.equals",
+          "lineNumber": 110
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "brokerageRecordService.addBrokerage",
+          "lineNumber": 111
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.getUserId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "String.valueOf",
+          "lineNumber": 112
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.getId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "withdraw.getPrice",
+          "lineNumber": 112
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "BrokerageRecordBizTypeEnum.WITHDRAW_REJECT.getTitle",
+          "lineNumber": 112
+        },
+        {
+          "caller": "auditBrokerageWithdraw",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 114
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "BrokerageWithdrawTypeEnum.isApi",
+          "lineNumber": 120
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "withdraw.getType",
+          "lineNumber": 120
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "createPayTransfer",
+          "lineNumber": 121
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "brokerageWithdrawMapper.updateByIdAndStatus",
+          "lineNumber": 126
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "withdraw.getId",
+          "lineNumber": 126
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "BrokerageWithdrawStatusEnum.AUDIT_SUCCESS.getStatus",
+          "lineNumber": 126
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "new BrokerageWithdrawDO().setStatus",
+          "lineNumber": 127
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "new BrokerageWithdrawDO",
+          "lineNumber": 127
+        },
+        {
+          "caller": "auditBrokerageWithdrawSuccess",
+          "callee": "BrokerageWithdrawStatusEnum.WITHDRAW_SUCCESS.getStatus",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getUserAccount",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getUserName",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "Objects.equal",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getType",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "BrokerageWithdrawTypeEnum.ALIPAY_API.getType",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "PayChannelEnum.ALIPAY_PC.getCode",
+          "lineNumber": 137
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "Objects.equal",
+          "lineNumber": 138
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getType",
+          "lineNumber": 138
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "BrokerageWithdrawTypeEnum.WECHAT_API.getType",
+          "lineNumber": 138
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getTransferChannelCode",
+          "lineNumber": 139
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getUserAccount",
+          "lineNumber": 140
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "PayTransferCreateReqDTO.buildWeiXinChannelExtra1000",
+          "lineNumber": 142
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "Objects.equal",
+          "lineNumber": 143
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getType",
+          "lineNumber": 143
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "BrokerageWithdrawTypeEnum.WALLET.getType",
+          "lineNumber": 143
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "payWalletApi.getOrCreateWallet(withdraw.getUserId(), UserTypeEnum.MEMBER.getValue()).getCheckedData",
+          "lineNumber": 144
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "payWalletApi.getOrCreateWallet",
+          "lineNumber": 144
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getUserId",
+          "lineNumber": 144
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 144
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "Assert.notNull",
+          "lineNumber": 145
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "PayChannelEnum.WALLET.getCode",
+          "lineNumber": 146
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "wallet.getId().toString",
+          "lineNumber": 147
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "wallet.getId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getPrice",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getFeePrice",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject(\"佣金提现\").setPrice(transferPrice)\n                .setUserAccount(userAccount).setUserName(userName).setUserIp(getClientIP())\n                .setUserId(withdraw.getUserId()).setUserType(UserTypeEnum.MEMBER.getValue()).setChannelExtras",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject(\"佣金提现\").setPrice(transferPrice)\n                .setUserAccount(userAccount).setUserName(userName).setUserIp(getClientIP())\n                .setUserId(withdraw.getUserId()).setUserType",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject(\"佣金提现\").setPrice(transferPrice)\n                .setUserAccount(userAccount).setUserName(userName).setUserIp(getClientIP()).setUserId",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject(\"佣金提现\").setPrice(transferPrice)\n                .setUserAccount(userAccount).setUserName(userName).setUserIp",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject(\"佣金提现\").setPrice(transferPrice)\n                .setUserAccount(userAccount).setUserName",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject(\"佣金提现\").setPrice(transferPrice).setUserAccount",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject(\"佣金提现\").setPrice",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode)\n                .setMerchantTransferId(withdraw.getId().toString()).setSubject",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode(channelCode).setMerchantTransferId",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO()\n                .setAppKey(tradeOrderProperties.getPayAppKey()).setChannelCode",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO().setAppKey",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new PayTransferCreateReqDTO",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "tradeOrderProperties.getPayAppKey",
+          "lineNumber": 152
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getId().toString",
+          "lineNumber": 153
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "getClientIP",
+          "lineNumber": 154
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getUserId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 155
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "payTransferApi.createTransfer(transferReqDTO).getCheckedData",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "payTransferApi.createTransfer",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "brokerageWithdrawMapper.updateById",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new BrokerageWithdrawDO().setId(withdraw.getId())\n                .setPayTransferId(transferRespDTO.getId()).setTransferChannelCode",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new BrokerageWithdrawDO().setId(withdraw.getId()).setPayTransferId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new BrokerageWithdrawDO().setId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "new BrokerageWithdrawDO",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "withdraw.getId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createPayTransfer",
+          "callee": "transferRespDTO.getId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "validateBrokerageWithdrawExists",
+          "callee": "brokerageWithdrawMapper.selectById",
+          "lineNumber": 166
+        },
+        {
+          "caller": "validateBrokerageWithdrawExists",
+          "callee": "exception",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getBrokerageWithdraw",
+          "callee": "brokerageWithdrawMapper.selectById",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getBrokerageWithdrawPage",
+          "callee": "brokerageWithdrawMapper.selectPage",
+          "lineNumber": 180
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "validateWithdrawPrice",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "createReqVO.getPrice",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "createReqVO.validate",
+          "lineNumber": 189
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "calculateFeePrice",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "createReqVO.getPrice",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "tradeConfig.getBrokerageWithdrawFeePercent",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "BeanUtils.toBean(createReqVO, BrokerageWithdrawDO.class)\n                .setUserId(userId).setFeePrice",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "BeanUtils.toBean(createReqVO, BrokerageWithdrawDO.class).setUserId",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "brokerageWithdrawMapper.insert",
+          "lineNumber": 196
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "brokerageRecordService.reduceBrokerage",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "String.valueOf",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "withdraw.getId",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "createReqVO.getPrice",
+          "lineNumber": 201
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "BrokerageRecordBizTypeEnum.WITHDRAW.getTitle",
+          "lineNumber": 201
+        },
+        {
+          "caller": "createBrokerageWithdraw",
+          "callee": "withdraw.getId",
+          "lineNumber": 202
+        },
+        {
+          "caller": "calculateFeePrice",
+          "callee": "MoneyUtils.calculateRatePrice",
+          "lineNumber": 215
+        },
+        {
+          "caller": "calculateFeePrice",
+          "callee": "Double.valueOf",
+          "lineNumber": 215
+        },
+        {
+          "caller": "validateWithdrawPrice",
+          "callee": "tradeConfigService.getTradeConfig",
+          "lineNumber": 227
+        },
+        {
+          "caller": "validateWithdrawPrice",
+          "callee": "tradeConfig.getBrokerageWithdrawMinPrice",
+          "lineNumber": 228
+        },
+        {
+          "caller": "validateWithdrawPrice",
+          "callee": "tradeConfig.getBrokerageWithdrawMinPrice",
+          "lineNumber": 228
+        },
+        {
+          "caller": "validateWithdrawPrice",
+          "callee": "exception",
+          "lineNumber": 229
+        },
+        {
+          "caller": "validateWithdrawPrice",
+          "callee": "MoneyUtils.fenToYuanStr",
+          "lineNumber": 229
+        },
+        {
+          "caller": "validateWithdrawPrice",
+          "callee": "tradeConfig.getBrokerageWithdrawMinPrice",
+          "lineNumber": 229
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "brokerageWithdrawMapper.selectById",
+          "lineNumber": 238
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "log.error",
+          "lineNumber": 240
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "exception",
+          "lineNumber": 241
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "ObjectUtils.equalsAny",
+          "lineNumber": 244
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "withdraw.getStatus",
+          "lineNumber": 244
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "BrokerageWithdrawStatusEnum.WITHDRAW_SUCCESS.getStatus",
+          "lineNumber": 244
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "BrokerageWithdrawStatusEnum.WITHDRAW_FAIL.getStatus",
+          "lineNumber": 245
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "ObjectUtil.equal",
+          "lineNumber": 247
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "withdraw.getPayTransferId",
+          "lineNumber": 247
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "log.warn",
+          "lineNumber": 248
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "log.error",
+          "lineNumber": 252
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "exception",
+          "lineNumber": 253
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "validateBrokerageTransferStatusCanUpdate",
+          "lineNumber": 257
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "PayTransferStatusEnum.isSuccess",
+          "lineNumber": 260
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "payTransfer.getStatus",
+          "lineNumber": 260
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "BrokerageWithdrawStatusEnum.WITHDRAW_SUCCESS.getStatus",
+          "lineNumber": 260
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "PayTransferStatusEnum.isClosed",
+          "lineNumber": 261
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "payTransfer.getStatus",
+          "lineNumber": 261
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "BrokerageWithdrawStatusEnum.WITHDRAW_FAIL.getStatus",
+          "lineNumber": 261
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "Assert.notNull",
+          "lineNumber": 262
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "payTransfer.getStatus",
+          "lineNumber": 262
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "brokerageWithdrawMapper.updateByIdAndStatus",
+          "lineNumber": 263
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "withdraw.getId",
+          "lineNumber": 263
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "withdraw.getStatus",
+          "lineNumber": 263
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "new BrokerageWithdrawDO().setStatus(newStatus)\n                        .setTransferTime(payTransfer.getSuccessTime()).setTransferErrorMsg",
+          "lineNumber": 264
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "new BrokerageWithdrawDO().setStatus(newStatus).setTransferTime",
+          "lineNumber": 264
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "new BrokerageWithdrawDO().setStatus",
+          "lineNumber": 264
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "new BrokerageWithdrawDO",
+          "lineNumber": 264
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "payTransfer.getSuccessTime",
+          "lineNumber": 265
+        },
+        {
+          "caller": "updateBrokerageWithdrawTransferred",
+          "callee": "payTransfer.getChannelErrorMsg",
+          "lineNumber": 266
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "payTransferApi.getTransfer(payTransferId).getCheckedData",
+          "lineNumber": 271
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "payTransferApi.getTransfer",
+          "lineNumber": 271
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "log.error",
+          "lineNumber": 273
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getId",
+          "lineNumber": 273
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "exception",
+          "lineNumber": 274
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "PayTransferStatusEnum.isSuccessOrClosed",
+          "lineNumber": 278
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "payTransfer.getStatus",
+          "lineNumber": 278
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "log.error",
+          "lineNumber": 279
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getId",
+          "lineNumber": 280
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 280
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "exception",
+          "lineNumber": 281
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getPrice",
+          "lineNumber": 284
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getFeePrice",
+          "lineNumber": 284
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 285
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "payTransfer.getPrice",
+          "lineNumber": 285
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "log.error",
+          "lineNumber": 286
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getId",
+          "lineNumber": 287
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 287
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 287
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "exception",
+          "lineNumber": 288
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 291
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "payTransfer.getMerchantTransferId",
+          "lineNumber": 291
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getId().toString",
+          "lineNumber": 291
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getId",
+          "lineNumber": 291
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "log.error",
+          "lineNumber": 292
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getId",
+          "lineNumber": 293
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 293
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "exception",
+          "lineNumber": 294
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 297
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "payTransfer.getChannelCode",
+          "lineNumber": 297
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getTransferChannelCode",
+          "lineNumber": 297
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "log.error",
+          "lineNumber": 298
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "withdraw.getId",
+          "lineNumber": 299
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 299
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 299
+        },
+        {
+          "caller": "validateBrokerageTransferStatusCanUpdate",
+          "callee": "exception",
+          "lineNumber": 300
+        },
+        {
+          "caller": "getWithdrawSummaryListByUserId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getWithdrawSummaryListByUserId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getWithdrawSummaryListByUserId",
+          "callee": "Collections.emptyList",
+          "lineNumber": 309
+        },
+        {
+          "caller": "getWithdrawSummaryListByUserId",
+          "callee": "brokerageWithdrawMapper.selectCountAndSumPriceByUserIdAndStatus",
+          "lineNumber": 311
+        },
+        {
+          "caller": "getWithdrawSummaryListByUserId",
+          "callee": "convertSet",
+          "lineNumber": 312
+        }
+      ],
+      "metrics": {
+        "importCount": 26,
+        "exportCount": 7,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/brokerage/bo/BrokerageWithdrawSummaryRespBO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "BrokerageWithdrawSummaryRespBO",
+          "startLine": 12,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "userId",
+            "count",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageWithdrawSummaryRespBO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/order/handler/TradeStatusSyncToWxaOrderHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "afterDeliveryOrder",
+          "startLine": 39,
+          "endLine": 48,
+          "params": [
+            "order"
+          ]
+        },
+        {
+          "name": "afterReceiveOrder",
+          "startLine": 50,
+          "endLine": 71,
+          "params": [
+            "order"
+          ]
+        },
+        {
+          "name": "uploadWxaOrderShippingInfo",
+          "startLine": 78,
+          "endLine": 99,
+          "params": [
+            "order"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TradeStatusSyncToWxaOrderHandler",
+          "startLine": 26,
+          "endLine": 103,
+          "methods": [
+            "afterDeliveryOrder",
+            "afterReceiveOrder",
+            "uploadWxaOrderShippingInfo"
+          ],
+          "properties": [
+            "payOrderApi",
+            "socialClientApi",
+            "expressService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "afterDeliveryOrder",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "afterReceiveOrder",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "TradeStatusSyncToWxaOrderHandler",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "afterDeliveryOrder",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 42
+        },
+        {
+          "caller": "afterDeliveryOrder",
+          "callee": "order.getPayChannelCode",
+          "lineNumber": 42
+        },
+        {
+          "caller": "afterDeliveryOrder",
+          "callee": "PayChannelEnum.WX_LITE.getCode",
+          "lineNumber": 42
+        },
+        {
+          "caller": "afterDeliveryOrder",
+          "callee": "uploadWxaOrderShippingInfo",
+          "lineNumber": 47
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 53
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "order.getPayChannelCode",
+          "lineNumber": 53
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "PayChannelEnum.WX_LITE.getCode",
+          "lineNumber": 53
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "payOrderApi.getOrder(order.getPayOrderId()).getCheckedData",
+          "lineNumber": 56
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "payOrderApi.getOrder",
+          "lineNumber": 56
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "order.getPayOrderId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "new SocialWxaOrderNotifyConfirmReceiveReqDTO()\n                .setTransactionId(payOrder.getChannelOrderNo()).setReceivedTime",
+          "lineNumber": 57
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "new SocialWxaOrderNotifyConfirmReceiveReqDTO().setTransactionId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "new SocialWxaOrderNotifyConfirmReceiveReqDTO",
+          "lineNumber": 57
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "payOrder.getChannelOrderNo",
+          "lineNumber": 58
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "order.getReceiveTime",
+          "lineNumber": 59
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "socialClientApi.notifyWxaOrderConfirmReceive(UserTypeEnum.MEMBER.getValue(), reqDTO).checkError",
+          "lineNumber": 61
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "socialClientApi.notifyWxaOrderConfirmReceive",
+          "lineNumber": 61
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 61
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "log.error",
+          "lineNumber": 63
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "DeliveryTypeEnum.PICK_UP.getType().equals",
+          "lineNumber": 68
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "DeliveryTypeEnum.PICK_UP.getType",
+          "lineNumber": 68
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "order.getDeliveryType",
+          "lineNumber": 68
+        },
+        {
+          "caller": "afterReceiveOrder",
+          "callee": "uploadWxaOrderShippingInfo",
+          "lineNumber": 69
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "payOrderApi.getOrder(order.getPayOrderId()).getCheckedData",
+          "lineNumber": 79
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "payOrderApi.getOrder",
+          "lineNumber": 79
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "order.getPayOrderId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "new SocialWxaOrderUploadShippingInfoReqDTO()\n                .setTransactionId(payOrder.getChannelOrderNo())\n                .setOpenid(payOrder.getChannelUserId())\n                .setItemDesc(payOrder.getSubject()).setReceiverContact",
+          "lineNumber": 80
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "new SocialWxaOrderUploadShippingInfoReqDTO()\n                .setTransactionId(payOrder.getChannelOrderNo())\n                .setOpenid(payOrder.getChannelUserId()).setItemDesc",
+          "lineNumber": 80
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "new SocialWxaOrderUploadShippingInfoReqDTO()\n                .setTransactionId(payOrder.getChannelOrderNo()).setOpenid",
+          "lineNumber": 80
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "new SocialWxaOrderUploadShippingInfoReqDTO().setTransactionId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "new SocialWxaOrderUploadShippingInfoReqDTO",
+          "lineNumber": 80
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "payOrder.getChannelOrderNo",
+          "lineNumber": 81
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "payOrder.getChannelUserId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "payOrder.getSubject",
+          "lineNumber": 83
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "order.getReceiverMobile",
+          "lineNumber": 84
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "DeliveryTypeEnum.EXPRESS.getType().equals",
+          "lineNumber": 85
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "DeliveryTypeEnum.EXPRESS.getType",
+          "lineNumber": 85
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "order.getDeliveryType",
+          "lineNumber": 85
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 85
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "order.getLogisticsNo",
+          "lineNumber": 85
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "reqDTO.setLogisticsType(SocialWxaOrderUploadShippingInfoReqDTO.LOGISTICS_TYPE_EXPRESS)\n                    .setExpressCompany(expressService.getDeliveryExpress(order.getLogisticsId()).getCode()).setLogisticsNo",
+          "lineNumber": 86
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "reqDTO.setLogisticsType(SocialWxaOrderUploadShippingInfoReqDTO.LOGISTICS_TYPE_EXPRESS).setExpressCompany",
+          "lineNumber": 86
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "reqDTO.setLogisticsType",
+          "lineNumber": 86
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "expressService.getDeliveryExpress(order.getLogisticsId()).getCode",
+          "lineNumber": 87
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "expressService.getDeliveryExpress",
+          "lineNumber": 87
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "order.getLogisticsId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "order.getLogisticsNo",
+          "lineNumber": 88
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "DeliveryTypeEnum.PICK_UP.getType().equals",
+          "lineNumber": 89
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "DeliveryTypeEnum.PICK_UP.getType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "order.getDeliveryType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "reqDTO.setLogisticsType",
+          "lineNumber": 90
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "reqDTO.setLogisticsType",
+          "lineNumber": 92
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "socialClientApi.uploadWxaOrderShippingInfo(UserTypeEnum.MEMBER.getValue(), reqDTO).checkError",
+          "lineNumber": 95
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "socialClientApi.uploadWxaOrderShippingInfo",
+          "lineNumber": 95
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 95
+        },
+        {
+          "caller": "uploadWxaOrderShippingInfo",
+          "callee": "log.error",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/notify/dto/PayOrderNotifyReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "PayOrderNotifyReqDTO",
+          "startLine": 15,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "merchantOrderId",
+            "payOrderId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderNotifyReqDTO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/notify/dto/PayRefundNotifyReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "PayRefundNotifyReqDTO",
+          "startLine": 15,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "merchantOrderId",
+            "merchantRefundId",
+            "payRefundId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayRefundNotifyReqDTO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/notify/dto/PayTransferNotifyReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "PayTransferNotifyReqDTO",
+          "startLine": 15,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "merchantTransferId",
+            "payTransferId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayTransferNotifyReqDTO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/order/PayOrderApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "PayOrderApi",
+          "startLine": 17,
+          "endLine": 42,
+          "methods": [
+            "createOrder",
+            "getOrder",
+            "updatePayOrderPrice"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderApi",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/order/dto/PayOrderCreateReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "PayOrderCreateReqDTO",
+          "startLine": 17,
+          "endLine": 78,
+          "methods": [],
+          "properties": [
+            "SUBJECT_MAX_LENGTH",
+            "appKey",
+            "userIp",
+            "userId",
+            "userType",
+            "merchantOrderId",
+            "subject",
+            "body",
+            "price",
+            "expireTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SUBJECT_MAX_LENGTH",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "PayOrderCreateReqDTO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/order/dto/PayOrderRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 58,
+      "classes": [
+        {
+          "name": "PayOrderRespDTO",
+          "startLine": 13,
+          "endLine": 68,
+          "methods": [],
+          "properties": [
+            "id",
+            "channelCode",
+            "merchantOrderId",
+            "subject",
+            "price",
+            "status",
+            "successTime",
+            "channelUserId",
+            "channelOrderNo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderRespDTO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/refund/PayRefundApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "PayRefundApi",
+          "startLine": 18,
+          "endLine": 33,
+          "methods": [
+            "createRefund",
+            "getRefund"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayRefundApi",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/refund/dto/PayRefundCreateReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 59,
+      "classes": [
+        {
+          "name": "PayRefundCreateReqDTO",
+          "startLine": 16,
+          "endLine": 70,
+          "methods": [],
+          "properties": [
+            "appKey",
+            "userIp",
+            "userId",
+            "userType",
+            "merchantOrderId",
+            "merchantRefundId",
+            "reason",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayRefundCreateReqDTO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/refund/dto/PayRefundRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "PayRefundRespDTO",
+          "startLine": 13,
+          "endLine": 65,
+          "methods": [],
+          "properties": [
+            "id",
+            "channelCode",
+            "status",
+            "refundPrice",
+            "merchantOrderId",
+            "merchantRefundId",
+            "successTime",
+            "channelErrorCode",
+            "channelErrorMsg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayRefundRespDTO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/transfer/PayTransferApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "PayTransferApi",
+          "startLine": 19,
+          "endLine": 34,
+          "methods": [
+            "createTransfer",
+            "getTransfer"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayTransferApi",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/transfer/dto/PayTransferCreateReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "buildWeiXinChannelExtra1000",
+          "startLine": 98,
+          "endLine": 102,
+          "params": [
+            "activityName",
+            "rewardDescription"
+          ]
+        },
+        {
+          "name": "buildWeiXinChannelExtra1006",
+          "startLine": 111,
+          "endLine": 115,
+          "params": [
+            "expenseType",
+            "expenseDescription"
+          ]
+        },
+        {
+          "name": "buildWeiXinChannelExtra",
+          "startLine": 117,
+          "endLine": 131,
+          "params": [
+            "sceneId"
+          ]
+        },
+        {
+          "name": "buildAlipayChannelExtra",
+          "startLine": 141,
+          "endLine": 145,
+          "params": [
+            "sceneName"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayTransferCreateReqDTO",
+          "startLine": 22,
+          "endLine": 147,
+          "methods": [
+            "buildWeiXinChannelExtra1000",
+            "buildWeiXinChannelExtra1006",
+            "buildWeiXinChannelExtra",
+            "buildAlipayChannelExtra"
+          ],
+          "properties": [
+            "appKey",
+            "userIp",
+            "userId",
+            "userType",
+            "merchantTransferId",
+            "price",
+            "subject",
+            "userAccount",
+            "userName",
+            "channelCode",
+            "channelExtras"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildWeiXinChannelExtra1000",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "buildWeiXinChannelExtra1006",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "buildAlipayChannelExtra",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "PayTransferCreateReqDTO",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildWeiXinChannelExtra1000",
+          "callee": "buildWeiXinChannelExtra",
+          "lineNumber": 99
+        },
+        {
+          "caller": "buildWeiXinChannelExtra1006",
+          "callee": "buildWeiXinChannelExtra",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "new HashMap<>",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "new ArrayList<>",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "new HashMap<>",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "info.put",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "info.put",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "sceneReportInfos.add",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "channelExtras.put",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "StrUtil.toString",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "channelExtras.put",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildWeiXinChannelExtra",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildAlipayChannelExtra",
+          "callee": "new HashMap<>",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildAlipayChannelExtra",
+          "callee": "channelExtras.put",
+          "lineNumber": 143
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/transfer/dto/PayTransferCreateRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "PayTransferCreateRespDTO",
+          "startLine": 10,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "id",
+            "channelPackageInfo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayTransferCreateRespDTO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/transfer/dto/PayTransferRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "PayTransferRespDTO",
+          "startLine": 9,
+          "endLine": 81,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "channelCode",
+            "merchantTransferId",
+            "price",
+            "status",
+            "successTime",
+            "channelErrorCode",
+            "channelErrorMsg",
+            "channelPackageInfo",
+            "channelMchId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayTransferRespDTO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/wallet/PayWalletApi.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "PayWalletApi",
+          "startLine": 18,
+          "endLine": 38,
+          "methods": [
+            "addWalletBalance",
+            "getOrCreateWallet"
+          ],
+          "properties": [
+            "PREFIX"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletApi",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/wallet/dto/PayWalletAddBalanceReqDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "PayWalletAddBalanceReqDTO",
+          "startLine": 12,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "bizType",
+            "bizId",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletAddBalanceReqDTO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/api/wallet/dto/PayWalletRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "PayWalletRespDTO",
+          "startLine": 11,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "userType",
+            "balance",
+            "freezePrice",
+            "totalExpense",
+            "totalRecharge"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletRespDTO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/ErrorCodeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 84,
+      "classes": [
+        {
+          "name": "ErrorCodeConstants",
+          "startLine": 10,
+          "endLine": 97,
+          "methods": [],
+          "properties": [
+            "APP_NOT_FOUND",
+            "APP_IS_DISABLE",
+            "APP_EXIST_ORDER_CANT_DELETE",
+            "APP_EXIST_REFUND_CANT_DELETE",
+            "APP_KEY_EXISTS",
+            "CHANNEL_NOT_FOUND",
+            "CHANNEL_IS_DISABLE",
+            "CHANNEL_EXIST_SAME_CHANNEL_ERROR",
+            "PAY_ORDER_NOT_FOUND",
+            "PAY_ORDER_STATUS_IS_NOT_WAITING",
+            "PAY_ORDER_STATUS_IS_SUCCESS",
+            "PAY_ORDER_IS_EXPIRED",
+            "PAY_ORDER_SUBMIT_CHANNEL_ERROR",
+            "PAY_ORDER_REFUND_FAIL_STATUS_ERROR",
+            "PAY_ORDER_EXTENSION_NOT_FOUND",
+            "PAY_ORDER_EXTENSION_STATUS_IS_NOT_WAITING",
+            "PAY_ORDER_EXTENSION_IS_PAID",
+            "REFUND_PRICE_EXCEED",
+            "REFUND_HAS_REFUNDING",
+            "REFUND_EXISTS",
+            "REFUND_NOT_FOUND",
+            "REFUND_STATUS_IS_NOT_WAITING",
+            "WALLET_NOT_FOUND",
+            "WALLET_BALANCE_NOT_ENOUGH",
+            "WALLET_TRANSACTION_NOT_FOUND",
+            "WALLET_REFUND_EXIST",
+            "WALLET_FREEZE_PRICE_NOT_ENOUGH",
+            "WALLET_RECHARGE_NOT_FOUND",
+            "WALLET_RECHARGE_UPDATE_PAID_STATUS_NOT_UNPAID",
+            "WALLET_RECHARGE_UPDATE_PAID_PAY_ORDER_ID_ERROR",
+            "WALLET_RECHARGE_UPDATE_PAID_PAY_ORDER_STATUS_NOT_SUCCESS",
+            "WALLET_RECHARGE_UPDATE_PAID_PAY_PRICE_NOT_MATCH",
+            "WALLET_RECHARGE_REFUND_FAIL_NOT_PAID",
+            "WALLET_RECHARGE_REFUND_FAIL_REFUNDED",
+            "WALLET_RECHARGE_REFUND_BALANCE_NOT_ENOUGH",
+            "WALLET_RECHARGE_REFUND_FAIL_REFUND_ORDER_ID_ERROR",
+            "WALLET_RECHARGE_REFUND_FAIL_REFUND_NOT_FOUND",
+            "WALLET_RECHARGE_REFUND_FAIL_REFUND_PRICE_NOT_MATCH",
+            "WALLET_RECHARGE_PACKAGE_NOT_FOUND",
+            "WALLET_RECHARGE_PACKAGE_IS_DISABLE",
+            "WALLET_RECHARGE_PACKAGE_NAME_EXISTS",
+            "PAY_TRANSFER_NOT_FOUND",
+            "PAY_TRANSFER_CREATE_CHANNEL_NOT_MATCH",
+            "PAY_TRANSFER_CREATE_PRICE_NOT_MATCH",
+            "PAY_TRANSFER_CREATE_FAIL_STATUS_NOT_CLOSED",
+            "PAY_TRANSFER_NOTIFY_FAIL_STATUS_IS_NOT_WAITING",
+            "PAY_TRANSFER_NOTIFY_FAIL_STATUS_NOT_WAITING_OR_PROCESSING",
+            "DEMO_ORDER_NOT_FOUND",
+            "DEMO_ORDER_UPDATE_PAID_STATUS_NOT_UNPAID",
+            "DEMO_ORDER_UPDATE_PAID_FAIL_PAY_ORDER_ID_ERROR",
+            "DEMO_ORDER_UPDATE_PAID_FAIL_PAY_ORDER_STATUS_NOT_SUCCESS",
+            "DEMO_ORDER_UPDATE_PAID_FAIL_PAY_PRICE_NOT_MATCH",
+            "DEMO_ORDER_REFUND_FAIL_NOT_PAID",
+            "DEMO_ORDER_REFUND_FAIL_REFUNDED",
+            "DEMO_ORDER_REFUND_FAIL_REFUND_NOT_FOUND",
+            "DEMO_ORDER_REFUND_FAIL_REFUND_NOT_SUCCESS",
+            "DEMO_ORDER_REFUND_FAIL_REFUND_ORDER_ID_ERROR",
+            "DEMO_ORDER_REFUND_FAIL_REFUND_PRICE_NOT_MATCH",
+            "DEMO_WITHDRAW_NOT_FOUND",
+            "DEMO_WITHDRAW_UPDATE_STATUS_FAIL_PAY_TRANSFER_ID_ERROR",
+            "DEMO_WITHDRAW_UPDATE_STATUS_FAIL_PAY_TRANSFER_STATUS_NOT_SUCCESS_OR_CLOSED",
+            "DEMO_WITHDRAW_UPDATE_STATUS_FAIL_PAY_PRICE_NOT_MATCH",
+            "DEMO_WITHDRAW_UPDATE_STATUS_FAIL_PAY_MERCHANT_EXISTS",
+            "DEMO_WITHDRAW_UPDATE_STATUS_FAIL_PAY_CHANNEL_NOT_MATCH",
+            "DEMO_WITHDRAW_TRANSFER_FAIL_STATUS_NOT_WAITING_OR_CLOSED"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErrorCodeConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/PayChannelEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 51,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "getByCode",
+          "startLine": 56,
+          "endLine": 58,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "isAlipay",
+          "startLine": 60,
+          "endLine": 62,
+          "params": [
+            "channelCode"
+          ]
+        },
+        {
+          "name": "isWeixin",
+          "startLine": 64,
+          "endLine": 66,
+          "params": [
+            "channelCode"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayChannelEnum",
+          "startLine": 16,
+          "endLine": 68,
+          "methods": [
+            "array",
+            "getByCode",
+            "isAlipay",
+            "isWeixin"
+          ],
+          "properties": [
+            "ARRAYS",
+            "code",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "getByCode",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "isAlipay",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "isWeixin",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "PayChannelEnum",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getByCode",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getByCode",
+          "callee": "o.getCode().equals",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getByCode",
+          "callee": "o.getCode",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getByCode",
+          "callee": "values",
+          "lineNumber": 57
+        },
+        {
+          "caller": "isAlipay",
+          "callee": "StrUtil.startWith",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isWeixin",
+          "callee": "StrUtil.startWith",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/demo/PayDemoWithdrawStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "isSuccess",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isClosed",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isWaiting",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayDemoWithdrawStatusEnum",
+          "startLine": 13,
+          "endLine": 42,
+          "methods": [
+            "isSuccess",
+            "isClosed",
+            "isWaiting"
+          ],
+          "properties": [
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isSuccess",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "isClosed",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "isWaiting",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "PayDemoWithdrawStatusEnum",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSuccess",
+          "callee": "Objects.equals",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isSuccess",
+          "callee": "SUCCESS.getStatus",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isClosed",
+          "callee": "Objects.equals",
+          "lineNumber": 35
+        },
+        {
+          "caller": "isClosed",
+          "callee": "CLOSED.getStatus",
+          "lineNumber": 35
+        },
+        {
+          "caller": "isWaiting",
+          "callee": "Objects.equals",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isWaiting",
+          "callee": "WAITING.getStatus",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/demo/PayDemoWithdrawTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 34,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayDemoWithdrawTypeEnum",
+          "startLine": 14,
+          "endLine": 39,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "PayDemoWithdrawTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/notify/PayNotifyStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "PayNotifyStatusEnum",
+          "startLine": 11,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayNotifyStatusEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/notify/PayNotifyTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "PayNotifyTypeEnum",
+          "startLine": 11,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayNotifyTypeEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/order/PayOrderStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 28,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "isWaiting",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isSuccess",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isRefund",
+          "startLine": 59,
+          "endLine": 61,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isSuccessOrRefund",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isClosed",
+          "startLine": 80,
+          "endLine": 82,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayOrderStatusEnum",
+          "startLine": 15,
+          "endLine": 84,
+          "methods": [
+            "array",
+            "isWaiting",
+            "isSuccess",
+            "isRefund",
+            "isSuccessOrRefund",
+            "isClosed"
+          ],
+          "properties": [
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "array",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "isWaiting",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "isSuccess",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "isRefund",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "isSuccessOrRefund",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "isClosed",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "PayOrderStatusEnum",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isWaiting",
+          "callee": "Objects.equals",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isWaiting",
+          "callee": "WAITING.getStatus",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isSuccess",
+          "callee": "Objects.equals",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isSuccess",
+          "callee": "SUCCESS.getStatus",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isRefund",
+          "callee": "Objects.equals",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isRefund",
+          "callee": "REFUND.getStatus",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isSuccessOrRefund",
+          "callee": "ObjectUtils.equalsAny",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isSuccessOrRefund",
+          "callee": "SUCCESS.getStatus",
+          "lineNumber": 71
+        },
+        {
+          "caller": "isSuccessOrRefund",
+          "callee": "REFUND.getStatus",
+          "lineNumber": 71
+        },
+        {
+          "caller": "isClosed",
+          "callee": "Objects.equals",
+          "lineNumber": 81
+        },
+        {
+          "caller": "isClosed",
+          "callee": "CLOSED.getStatus",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/refund/PayRefundStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "isSuccess",
+          "startLine": 24,
+          "endLine": 26,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isFailure",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayRefundStatusEnum",
+          "startLine": 13,
+          "endLine": 32,
+          "methods": [
+            "isSuccess",
+            "isFailure"
+          ],
+          "properties": [
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isSuccess",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "isFailure",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "PayRefundStatusEnum",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSuccess",
+          "callee": "Objects.equals",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isSuccess",
+          "callee": "SUCCESS.getStatus",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isFailure",
+          "callee": "Objects.equals",
+          "lineNumber": 29
+        },
+        {
+          "caller": "isFailure",
+          "callee": "FAILURE.getStatus",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/transfer/PayTransferStatusEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "isSuccess",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isClosed",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isWaiting",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isProcessing",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isWaitingOrProcessing",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "isSuccessOrClosed",
+          "startLine": 63,
+          "endLine": 65,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayTransferStatusEnum",
+          "startLine": 13,
+          "endLine": 67,
+          "methods": [
+            "isSuccess",
+            "isClosed",
+            "isWaiting",
+            "isProcessing",
+            "isWaitingOrProcessing",
+            "isSuccessOrClosed"
+          ],
+          "properties": [
+            "status",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isSuccess",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "isClosed",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "isWaiting",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "isProcessing",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "isWaitingOrProcessing",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "isSuccessOrClosed",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "PayTransferStatusEnum",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSuccess",
+          "callee": "Objects.equals",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isSuccess",
+          "callee": "SUCCESS.getStatus",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isClosed",
+          "callee": "Objects.equals",
+          "lineNumber": 36
+        },
+        {
+          "caller": "isClosed",
+          "callee": "CLOSED.getStatus",
+          "lineNumber": 36
+        },
+        {
+          "caller": "isWaiting",
+          "callee": "Objects.equals",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isWaiting",
+          "callee": "WAITING.getStatus",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isProcessing",
+          "callee": "Objects.equals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isProcessing",
+          "callee": "PROCESSING.getStatus",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isWaitingOrProcessing",
+          "callee": "isWaiting",
+          "lineNumber": 54
+        },
+        {
+          "caller": "isWaitingOrProcessing",
+          "callee": "isProcessing",
+          "lineNumber": 54
+        },
+        {
+          "caller": "isSuccessOrClosed",
+          "callee": "isSuccess",
+          "lineNumber": 64
+        },
+        {
+          "caller": "isSuccessOrClosed",
+          "callee": "isClosed",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/wallet/PayWalletBizTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "valueOf",
+          "startLine": 41,
+          "endLine": 43,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayWalletBizTypeEnum",
+          "startLine": 14,
+          "endLine": 45,
+          "methods": [
+            "array",
+            "valueOf"
+          ],
+          "properties": [
+            "type",
+            "description",
+            "ARRAYS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "valueOf",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "PayWalletBizTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "Arrays.stream(values()).filter(item -> item.getType().equals(type)).findFirst().orElse",
+          "lineNumber": 42
+        },
+        {
+          "caller": "valueOf",
+          "callee": "Arrays.stream(values()).filter(item -> item.getType().equals(type)).findFirst",
+          "lineNumber": 42
+        },
+        {
+          "caller": "valueOf",
+          "callee": "Arrays.stream(values()).filter",
+          "lineNumber": 42
+        },
+        {
+          "caller": "valueOf",
+          "callee": "Arrays.stream",
+          "lineNumber": 42
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 42
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType().equals",
+          "lineNumber": 42
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getType",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/api/order/PayOrderApiImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "createOrder",
+          "startLine": 23,
+          "endLine": 26,
+          "params": [
+            "reqDTO"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 28,
+          "endLine": 32,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updatePayOrderPrice",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "id",
+            "payPrice"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayOrderApiImpl",
+          "startLine": 16,
+          "endLine": 40,
+          "methods": [
+            "createOrder",
+            "getOrder",
+            "updatePayOrderPrice"
+          ],
+          "properties": [
+            "payOrderService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createOrder",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "updatePayOrderPrice",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "PayOrderApiImpl",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createOrder",
+          "callee": "success",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createOrder",
+          "callee": "payOrderService.createOrder",
+          "lineNumber": 25
+        },
+        {
+          "caller": "getOrder",
+          "callee": "payOrderService.getOrder",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getOrder",
+          "callee": "success",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getOrder",
+          "callee": "PayOrderConvert.INSTANCE.convert2",
+          "lineNumber": 31
+        },
+        {
+          "caller": "updatePayOrderPrice",
+          "callee": "payOrderService.updatePayOrderPrice",
+          "lineNumber": 36
+        },
+        {
+          "caller": "updatePayOrderPrice",
+          "callee": "success",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/api/refund/PayRefundApiImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "createRefund",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "reqDTO"
+          ]
+        },
+        {
+          "name": "getRefund",
+          "startLine": 29,
+          "endLine": 33,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayRefundApiImpl",
+          "startLine": 17,
+          "endLine": 35,
+          "methods": [
+            "createRefund",
+            "getRefund"
+          ],
+          "properties": [
+            "payRefundService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRefund",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "getRefund",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "PayRefundApiImpl",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRefund",
+          "callee": "success",
+          "lineNumber": 26
+        },
+        {
+          "caller": "createRefund",
+          "callee": "payRefundService.createRefund",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getRefund",
+          "callee": "payRefundService.getRefund",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getRefund",
+          "callee": "success",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getRefund",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/api/transfer/PayTransferApiImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "createTransfer",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "reqDTO"
+          ]
+        },
+        {
+          "name": "getTransfer",
+          "startLine": 39,
+          "endLine": 51,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayTransferApiImpl",
+          "startLine": 25,
+          "endLine": 53,
+          "methods": [
+            "createTransfer",
+            "getTransfer"
+          ],
+          "properties": [
+            "payTransferService",
+            "payChannelService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTransfer",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getTransfer",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "PayTransferApiImpl",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTransfer",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createTransfer",
+          "callee": "payTransferService.createTransfer",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "payTransferService.getTransfer",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "payChannelService.getChannel",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "transfer.getChannelId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "channel.getConfig",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "((WxPayClientConfig) channel.getConfig()).getMchId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "channel.getConfig",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "success",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "BeanUtils.toBean(transfer, PayTransferRespDTO.class).setChannelMchId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getTransfer",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

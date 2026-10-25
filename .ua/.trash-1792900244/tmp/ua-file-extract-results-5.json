@@ -1,0 +1,4398 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/enums/DocumentEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "DocumentEnum",
+          "startLine": 11,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "url",
+            "memo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DocumentEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/mq/redis/TenantRedisMessageInterceptor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "sendMessageBefore",
+          "startLine": 20,
+          "endLine": 26,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "consumeMessageBefore",
+          "startLine": 28,
+          "endLine": 34,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "consumeMessageAfter",
+          "startLine": 36,
+          "endLine": 40,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TenantRedisMessageInterceptor",
+          "startLine": 18,
+          "endLine": 42,
+          "methods": [
+            "sendMessageBefore",
+            "consumeMessageBefore",
+            "consumeMessageAfter"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendMessageBefore",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "consumeMessageBefore",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "consumeMessageAfter",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "TenantRedisMessageInterceptor",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendMessageBefore",
+          "callee": "TenantContextHolder.getTenantId",
+          "lineNumber": 22
+        },
+        {
+          "caller": "sendMessageBefore",
+          "callee": "message.addHeader",
+          "lineNumber": 24
+        },
+        {
+          "caller": "sendMessageBefore",
+          "callee": "tenantId.toString",
+          "lineNumber": 24
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "message.getHeader",
+          "lineNumber": 30
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 31
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "TenantContextHolder.setTenantId",
+          "lineNumber": 32
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "Long.valueOf",
+          "lineNumber": 32
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "TenantContextHolder.clear",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/config/YudaoRedisMQConsumerAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 163,
+      "nonEmptyLines": 152,
+      "functions": [
+        {
+          "name": "redisMessageListenerContainer",
+          "startLine": 46,
+          "endLine": 62,
+          "params": [
+            "redisMQTemplate",
+            "listeners"
+          ]
+        },
+        {
+          "name": "redisPendingMessageResendJob",
+          "startLine": 67,
+          "endLine": 74,
+          "params": [
+            "listeners",
+            "redisTemplate",
+            "redissonClient"
+          ]
+        },
+        {
+          "name": "redisStreamMessageCleanupJob",
+          "startLine": 79,
+          "endLine": 86,
+          "params": [
+            "listeners",
+            "redisTemplate",
+            "redissonClient"
+          ]
+        },
+        {
+          "name": "redisStreamMessageListenerContainer",
+          "startLine": 93,
+          "endLine": 136,
+          "params": [
+            "redisMQTemplate",
+            "listeners"
+          ]
+        },
+        {
+          "name": "buildConsumerName",
+          "startLine": 144,
+          "endLine": 146,
+          "params": []
+        },
+        {
+          "name": "checkRedisVersion",
+          "startLine": 151,
+          "endLine": 161,
+          "params": [
+            "redisTemplate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoRedisMQConsumerAutoConfiguration",
+          "startLine": 38,
+          "endLine": 163,
+          "methods": [
+            "redisMessageListenerContainer",
+            "redisPendingMessageResendJob",
+            "redisStreamMessageCleanupJob",
+            "redisStreamMessageListenerContainer",
+            "buildConsumerName",
+            "checkRedisVersion"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "redisMessageListenerContainer",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "redisPendingMessageResendJob",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "redisStreamMessageCleanupJob",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "redisStreamMessageListenerContainer",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "buildConsumerName",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "checkRedisVersion",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoRedisMQConsumerAutoConfiguration",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "new RedisMessageListenerContainer",
+          "lineNumber": 51
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "container.setConnectionFactory",
+          "lineNumber": 53
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "redisMQTemplate.getRedisTemplate().getRequiredConnectionFactory",
+          "lineNumber": 53
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "redisMQTemplate.getRedisTemplate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "listeners.forEach",
+          "lineNumber": 55
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "listener.setRedisMQTemplate",
+          "lineNumber": 56
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "container.addMessageListener",
+          "lineNumber": 57
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "new ChannelTopic",
+          "lineNumber": 57
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "listener.getChannel",
+          "lineNumber": 57
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "log.info",
+          "lineNumber": 58
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "listener.getChannel",
+          "lineNumber": 59
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "listener.getClass().getName",
+          "lineNumber": 59
+        },
+        {
+          "caller": "redisMessageListenerContainer",
+          "callee": "listener.getClass",
+          "lineNumber": 59
+        },
+        {
+          "caller": "redisPendingMessageResendJob",
+          "callee": "new RedisPendingMessageResendJob",
+          "lineNumber": 72
+        },
+        {
+          "caller": "redisStreamMessageCleanupJob",
+          "callee": "new RedisStreamMessageCleanupJob",
+          "lineNumber": 84
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "redisMQTemplate.getRedisTemplate",
+          "lineNumber": 97
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "checkRedisVersion",
+          "lineNumber": 98
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamMessageListenerContainerOptions.builder()\n                        .batchSize(10) // 一次性最多拉取多少条消息\n                        .targetType(String.class).build",
+          "lineNumber": 102
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamMessageListenerContainerOptions.builder()\n                        .batchSize(10).targetType",
+          "lineNumber": 102
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamMessageListenerContainerOptions.builder().batchSize",
+          "lineNumber": 102
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamMessageListenerContainerOptions.builder",
+          "lineNumber": 102
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.create",
+          "lineNumber": 108
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "redisMQTemplate.getRedisTemplate().getRequiredConnectionFactory",
+          "lineNumber": 108
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "redisMQTemplate.getRedisTemplate",
+          "lineNumber": 108
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "buildConsumerName",
+          "lineNumber": 111
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listeners.parallelStream().forEach",
+          "lineNumber": 112
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listeners.parallelStream",
+          "lineNumber": 112
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "log.info",
+          "lineNumber": 113
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 114
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getClass().getName",
+          "lineNumber": 114
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getClass",
+          "lineNumber": 114
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "redisTemplate.opsForStream().createGroup",
+          "lineNumber": 117
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "redisTemplate.opsForStream",
+          "lineNumber": 117
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 117
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getGroup",
+          "lineNumber": 117
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.setRedisMQTemplate",
+          "lineNumber": 121
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "Consumer.from",
+          "lineNumber": 123
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getGroup",
+          "lineNumber": 123
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamOffset.create",
+          "lineNumber": 125
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 125
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "ReadOffset.lastConsumed",
+          "lineNumber": 125
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamReadRequest\n                    .builder(streamOffset).consumer(consumer)\n                    .autoAcknowledge(false).cancelOnError",
+          "lineNumber": 127
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamReadRequest\n                    .builder(streamOffset).consumer(consumer).autoAcknowledge",
+          "lineNumber": 127
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamReadRequest\n                    .builder(streamOffset).consumer",
+          "lineNumber": 127
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "StreamMessageListenerContainer.StreamReadRequest.builder",
+          "lineNumber": 127
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "container.register",
+          "lineNumber": 131
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "builder.build",
+          "lineNumber": 131
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "log.info",
+          "lineNumber": 132
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 133
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getClass().getName",
+          "lineNumber": 133
+        },
+        {
+          "caller": "redisStreamMessageListenerContainer",
+          "callee": "listener.getClass",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildConsumerName",
+          "callee": "String.format",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildConsumerName",
+          "callee": "SystemUtil.getHostInfo().getAddress",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildConsumerName",
+          "callee": "SystemUtil.getHostInfo",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildConsumerName",
+          "callee": "SystemUtil.getCurrentPID",
+          "lineNumber": 145
+        },
+        {
+          "caller": "checkRedisVersion",
+          "callee": "redisTemplate.execute",
+          "lineNumber": 153
+        },
+        {
+          "caller": "checkRedisVersion",
+          "callee": "MapUtil.getStr",
+          "lineNumber": 154
+        },
+        {
+          "caller": "checkRedisVersion",
+          "callee": "Integer.parseInt",
+          "lineNumber": 156
+        },
+        {
+          "caller": "checkRedisVersion",
+          "callee": "StrUtil.subBefore",
+          "lineNumber": 156
+        },
+        {
+          "caller": "checkRedisVersion",
+          "callee": "new IllegalStateException",
+          "lineNumber": 158
+        },
+        {
+          "caller": "checkRedisVersion",
+          "callee": "StrUtil.format",
+          "lineNumber": 158
+        },
+        {
+          "caller": "checkRedisVersion",
+          "callee": "DocumentEnum.REDIS_INSTALL.getUrl",
+          "lineNumber": 159
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/config/YudaoRedisMQProducerAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "redisMQTemplate",
+          "startLine": 22,
+          "endLine": 29,
+          "params": [
+            "redisTemplate",
+            "interceptors"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoRedisMQProducerAutoConfiguration",
+          "startLine": 18,
+          "endLine": 31,
+          "methods": [
+            "redisMQTemplate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "redisMQTemplate",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoRedisMQProducerAutoConfiguration",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisMQTemplate",
+          "callee": "new RedisMQTemplate",
+          "lineNumber": 25
+        },
+        {
+          "caller": "redisMQTemplate",
+          "callee": "interceptors.forEach",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/RedisMQTemplate.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "send",
+          "startLine": 38,
+          "endLine": 46,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 54,
+          "endLine": 64,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "addInterceptor",
+          "startLine": 71,
+          "endLine": 73,
+          "params": [
+            "interceptor"
+          ]
+        },
+        {
+          "name": "sendMessageBefore",
+          "startLine": 75,
+          "endLine": 78,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "sendMessageAfter",
+          "startLine": 80,
+          "endLine": 85,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisMQTemplate",
+          "startLine": 22,
+          "endLine": 87,
+          "methods": [
+            "send",
+            "send",
+            "addInterceptor",
+            "sendMessageBefore",
+            "sendMessageAfter"
+          ],
+          "properties": [
+            "redisTemplate",
+            "interceptors"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "send",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "addInterceptor",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "RedisMQTemplate",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "sendMessageBefore",
+          "lineNumber": 40
+        },
+        {
+          "caller": "send",
+          "callee": "redisTemplate.convertAndSend",
+          "lineNumber": 42
+        },
+        {
+          "caller": "send",
+          "callee": "message.getChannel",
+          "lineNumber": 42
+        },
+        {
+          "caller": "send",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 42
+        },
+        {
+          "caller": "send",
+          "callee": "sendMessageAfter",
+          "lineNumber": 44
+        },
+        {
+          "caller": "send",
+          "callee": "sendMessageBefore",
+          "lineNumber": 56
+        },
+        {
+          "caller": "send",
+          "callee": "redisTemplate.opsForStream().add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "send",
+          "callee": "redisTemplate.opsForStream",
+          "lineNumber": 58
+        },
+        {
+          "caller": "send",
+          "callee": "StreamRecords.newRecord()\n                    .ofObject(JsonUtils.toJsonString(message)).withStreamKey",
+          "lineNumber": 58
+        },
+        {
+          "caller": "send",
+          "callee": "StreamRecords.newRecord().ofObject",
+          "lineNumber": 58
+        },
+        {
+          "caller": "send",
+          "callee": "StreamRecords.newRecord",
+          "lineNumber": 58
+        },
+        {
+          "caller": "send",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 59
+        },
+        {
+          "caller": "send",
+          "callee": "message.getStreamKey",
+          "lineNumber": 60
+        },
+        {
+          "caller": "send",
+          "callee": "sendMessageAfter",
+          "lineNumber": 62
+        },
+        {
+          "caller": "addInterceptor",
+          "callee": "interceptors.add",
+          "lineNumber": 72
+        },
+        {
+          "caller": "sendMessageBefore",
+          "callee": "interceptors.forEach",
+          "lineNumber": 77
+        },
+        {
+          "caller": "sendMessageBefore",
+          "callee": "interceptor.sendMessageBefore",
+          "lineNumber": 77
+        },
+        {
+          "caller": "sendMessageAfter",
+          "callee": "interceptors.size",
+          "lineNumber": 82
+        },
+        {
+          "caller": "sendMessageAfter",
+          "callee": "interceptors.get(i).sendMessageAfter",
+          "lineNumber": 83
+        },
+        {
+          "caller": "sendMessageAfter",
+          "callee": "interceptors.get",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/interceptor/RedisMessageInterceptor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "RedisMessageInterceptor",
+          "startLine": 12,
+          "endLine": 26,
+          "methods": [
+            "sendMessageBefore",
+            "sendMessageAfter",
+            "consumeMessageBefore",
+            "consumeMessageAfter"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisMessageInterceptor",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/job/RedisPendingMessageResendJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "messageResend",
+          "startLine": 46,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "execute",
+          "startLine": 69,
+          "endLine": 104,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisPendingMessageResendJob",
+          "startLine": 22,
+          "endLine": 105,
+          "methods": [
+            "messageResend",
+            "execute"
+          ],
+          "properties": [
+            "DEFAULT_RESEND_LOCK_KEY",
+            "IOT_RESEND_LOCK_KEY",
+            "EXPIRE_TIME",
+            "listeners",
+            "redisTemplate",
+            "redissonClient",
+            "resendLockKey"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_RESEND_LOCK_KEY",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "IOT_RESEND_LOCK_KEY",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "messageResend",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "RedisPendingMessageResendJob",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "messageResend",
+          "callee": "redissonClient.getLock",
+          "lineNumber": 48
+        },
+        {
+          "caller": "messageResend",
+          "callee": "lock.tryLock",
+          "lineNumber": 49
+        },
+        {
+          "caller": "messageResend",
+          "callee": "execute",
+          "lineNumber": 51
+        },
+        {
+          "caller": "messageResend",
+          "callee": "log.error",
+          "lineNumber": 53
+        },
+        {
+          "caller": "messageResend",
+          "callee": "lock.isHeldByCurrentThread",
+          "lineNumber": 55
+        },
+        {
+          "caller": "messageResend",
+          "callee": "lock.unlock",
+          "lineNumber": 56
+        },
+        {
+          "caller": "messageResend",
+          "callee": "log.debug",
+          "lineNumber": 60
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate().opsForStream",
+          "lineNumber": 70
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate",
+          "lineNumber": 70
+        },
+        {
+          "caller": "execute",
+          "callee": "listeners.forEach",
+          "lineNumber": 71
+        },
+        {
+          "caller": "execute",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 72
+        },
+        {
+          "caller": "execute",
+          "callee": "ops.pending",
+          "lineNumber": 72
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 72
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getGroup",
+          "lineNumber": 72
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessagesSummary.getPendingMessagesPerConsumer",
+          "lineNumber": 74
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessagesPerConsumer.forEach",
+          "lineNumber": 75
+        },
+        {
+          "caller": "execute",
+          "callee": "log.info",
+          "lineNumber": 76
+        },
+        {
+          "caller": "execute",
+          "callee": "ops.pending",
+          "lineNumber": 78
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 78
+        },
+        {
+          "caller": "execute",
+          "callee": "Consumer.from",
+          "lineNumber": 78
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getGroup",
+          "lineNumber": 78
+        },
+        {
+          "caller": "execute",
+          "callee": "Range.unbounded",
+          "lineNumber": 78
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessages.isEmpty",
+          "lineNumber": 79
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessages.forEach",
+          "lineNumber": 82
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessage.getElapsedTimeSinceLastDelivery().getSeconds",
+          "lineNumber": 84
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessage.getElapsedTimeSinceLastDelivery",
+          "lineNumber": 84
+        },
+        {
+          "caller": "execute",
+          "callee": "ops.range",
+          "lineNumber": 89
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 89
+        },
+        {
+          "caller": "execute",
+          "callee": "Range.of",
+          "lineNumber": 90
+        },
+        {
+          "caller": "execute",
+          "callee": "Range.Bound.inclusive",
+          "lineNumber": 90
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessage.getIdAsString",
+          "lineNumber": 90
+        },
+        {
+          "caller": "execute",
+          "callee": "Range.Bound.inclusive",
+          "lineNumber": 90
+        },
+        {
+          "caller": "execute",
+          "callee": "pendingMessage.getIdAsString",
+          "lineNumber": 90
+        },
+        {
+          "caller": "execute",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 91
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate().opsForStream().add",
+          "lineNumber": 95
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate().opsForStream",
+          "lineNumber": 95
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate",
+          "lineNumber": 95
+        },
+        {
+          "caller": "execute",
+          "callee": "StreamRecords.newRecord()\n                            .ofObject(records.get(0).getValue()).withStreamKey",
+          "lineNumber": 95
+        },
+        {
+          "caller": "execute",
+          "callee": "StreamRecords.newRecord().ofObject",
+          "lineNumber": 95
+        },
+        {
+          "caller": "execute",
+          "callee": "StreamRecords.newRecord",
+          "lineNumber": 95
+        },
+        {
+          "caller": "execute",
+          "callee": "records.get(0).getValue",
+          "lineNumber": 96
+        },
+        {
+          "caller": "execute",
+          "callee": "records.get",
+          "lineNumber": 96
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 97
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate().opsForStream().acknowledge",
+          "lineNumber": 99
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate().opsForStream",
+          "lineNumber": 99
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate",
+          "lineNumber": 99
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getGroup",
+          "lineNumber": 99
+        },
+        {
+          "caller": "execute",
+          "callee": "records.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "execute",
+          "callee": "log.info",
+          "lineNumber": 100
+        },
+        {
+          "caller": "execute",
+          "callee": "records.get(0).getId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "execute",
+          "callee": "records.get",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/job/RedisStreamMessageCleanupJob.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "cleanup",
+          "startLine": 53,
+          "endLine": 69,
+          "params": []
+        },
+        {
+          "name": "execute",
+          "startLine": 74,
+          "endLine": 87,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisStreamMessageCleanupJob",
+          "startLine": 22,
+          "endLine": 88,
+          "methods": [
+            "cleanup",
+            "execute"
+          ],
+          "properties": [
+            "DEFAULT_CLEANUP_LOCK_KEY",
+            "IOT_CLEANUP_LOCK_KEY",
+            "MAX_COUNT",
+            "listeners",
+            "redisTemplate",
+            "redissonClient",
+            "cleanupLockKey"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_CLEANUP_LOCK_KEY",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "IOT_CLEANUP_LOCK_KEY",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "cleanup",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "RedisStreamMessageCleanupJob",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cleanup",
+          "callee": "redissonClient.getLock",
+          "lineNumber": 55
+        },
+        {
+          "caller": "cleanup",
+          "callee": "lock.tryLock",
+          "lineNumber": 56
+        },
+        {
+          "caller": "cleanup",
+          "callee": "execute",
+          "lineNumber": 58
+        },
+        {
+          "caller": "cleanup",
+          "callee": "log.error",
+          "lineNumber": 60
+        },
+        {
+          "caller": "cleanup",
+          "callee": "lock.isHeldByCurrentThread",
+          "lineNumber": 62
+        },
+        {
+          "caller": "cleanup",
+          "callee": "lock.unlock",
+          "lineNumber": 63
+        },
+        {
+          "caller": "cleanup",
+          "callee": "log.debug",
+          "lineNumber": 67
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate().opsForStream",
+          "lineNumber": 75
+        },
+        {
+          "caller": "execute",
+          "callee": "redisTemplate.getRedisTemplate",
+          "lineNumber": 75
+        },
+        {
+          "caller": "execute",
+          "callee": "listeners.forEach",
+          "lineNumber": 76
+        },
+        {
+          "caller": "execute",
+          "callee": "ops.trim",
+          "lineNumber": 79
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 79
+        },
+        {
+          "caller": "execute",
+          "callee": "log.info",
+          "lineNumber": 81
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 81
+        },
+        {
+          "caller": "execute",
+          "callee": "log.error",
+          "lineNumber": 84
+        },
+        {
+          "caller": "execute",
+          "callee": "listener.getStreamKey",
+          "lineNumber": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/message/AbstractRedisMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "getHeader",
+          "startLine": 21,
+          "endLine": 23,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "addHeader",
+          "startLine": 25,
+          "endLine": 27,
+          "params": [
+            "key",
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractRedisMessage",
+          "startLine": 13,
+          "endLine": 29,
+          "methods": [
+            "getHeader",
+            "addHeader"
+          ],
+          "properties": [
+            "headers"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getHeader",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "addHeader",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractRedisMessage",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getHeader",
+          "callee": "headers.get",
+          "lineNumber": 22
+        },
+        {
+          "caller": "addHeader",
+          "callee": "headers.put",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/pubsub/AbstractRedisChannelMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "getChannel",
+          "startLine": 18,
+          "endLine": 21,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractRedisChannelMessage",
+          "startLine": 11,
+          "endLine": 23,
+          "methods": [
+            "getChannel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getChannel",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractRedisChannelMessage",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getChannel",
+          "callee": "getClass().getSimpleName",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getChannel",
+          "callee": "getClass",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/pubsub/AbstractRedisChannelMessageListener.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "AbstractRedisChannelMessageListener",
+          "startLine": 39,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "getChannel",
+          "startLine": 50,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "onMessage",
+          "startLine": 54,
+          "endLine": 64,
+          "params": [
+            "message",
+            "bytes"
+          ]
+        },
+        {
+          "name": "onMessage",
+          "startLine": 71,
+          "endLine": 71,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "getMessageClass",
+          "startLine": 78,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "consumeMessageBefore",
+          "startLine": 87,
+          "endLine": 92,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "consumeMessageAfter",
+          "startLine": 94,
+          "endLine": 101,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractRedisChannelMessageListener",
+          "startLine": 23,
+          "endLine": 103,
+          "methods": [
+            "AbstractRedisChannelMessageListener",
+            "getChannel",
+            "onMessage",
+            "onMessage",
+            "getMessageClass",
+            "consumeMessageBefore",
+            "consumeMessageAfter"
+          ],
+          "properties": [
+            "messageType",
+            "channel",
+            "redisMQTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getChannel",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "onMessage",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "onMessage",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractRedisChannelMessageListener",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AbstractRedisChannelMessageListener",
+          "callee": "getMessageClass",
+          "lineNumber": 41
+        },
+        {
+          "caller": "AbstractRedisChannelMessageListener",
+          "callee": "messageType.getDeclaredConstructor().newInstance().getChannel",
+          "lineNumber": 42
+        },
+        {
+          "caller": "AbstractRedisChannelMessageListener",
+          "callee": "messageType.getDeclaredConstructor().newInstance",
+          "lineNumber": 42
+        },
+        {
+          "caller": "AbstractRedisChannelMessageListener",
+          "callee": "messageType.getDeclaredConstructor",
+          "lineNumber": 42
+        },
+        {
+          "caller": "onMessage",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 56
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getBody",
+          "lineNumber": 56
+        },
+        {
+          "caller": "onMessage",
+          "callee": "consumeMessageBefore",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onMessage",
+          "callee": "this.onMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onMessage",
+          "callee": "consumeMessageAfter",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "TypeUtil.getTypeArgument",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "getClass",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "new IllegalStateException",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "String.format",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "getClass().getName",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "getClass",
+          "lineNumber": 82
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "redisMQTemplate.getInterceptors",
+          "lineNumber": 89
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "interceptors.forEach",
+          "lineNumber": 91
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "interceptor.consumeMessageBefore",
+          "lineNumber": 91
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "redisMQTemplate.getInterceptors",
+          "lineNumber": 96
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "interceptors.size",
+          "lineNumber": 98
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "interceptors.get(i).consumeMessageAfter",
+          "lineNumber": 99
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "interceptors.get",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/stream/AbstractRedisStreamMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "getStreamKey",
+          "startLine": 18,
+          "endLine": 21,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractRedisStreamMessage",
+          "startLine": 11,
+          "endLine": 23,
+          "methods": [
+            "getStreamKey"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getStreamKey",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractRedisStreamMessage",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getStreamKey",
+          "callee": "getClass().getSimpleName",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getStreamKey",
+          "callee": "getClass",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/stream/AbstractRedisStreamMessageListener.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "AbstractRedisStreamMessageListener",
+          "startLine": 50,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "AbstractRedisStreamMessageListener",
+          "startLine": 56,
+          "endLine": 60,
+          "params": [
+            "streamKey",
+            "group"
+          ]
+        },
+        {
+          "name": "onMessage",
+          "startLine": 62,
+          "endLine": 80,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "onMessage",
+          "startLine": 87,
+          "endLine": 87,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "getMessageClass",
+          "startLine": 94,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "consumeMessageBefore",
+          "startLine": 103,
+          "endLine": 108,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "consumeMessageAfter",
+          "startLine": 110,
+          "endLine": 117,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractRedisStreamMessageListener",
+          "startLine": 25,
+          "endLine": 119,
+          "methods": [
+            "AbstractRedisStreamMessageListener",
+            "AbstractRedisStreamMessageListener",
+            "onMessage",
+            "onMessage",
+            "getMessageClass",
+            "consumeMessageBefore",
+            "consumeMessageAfter"
+          ],
+          "properties": [
+            "messageType",
+            "streamKey",
+            "group",
+            "redisMQTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onMessage",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "onMessage",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractRedisStreamMessageListener",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AbstractRedisStreamMessageListener",
+          "callee": "getMessageClass",
+          "lineNumber": 52
+        },
+        {
+          "caller": "AbstractRedisStreamMessageListener",
+          "callee": "messageType.getDeclaredConstructor().newInstance().getStreamKey",
+          "lineNumber": 53
+        },
+        {
+          "caller": "AbstractRedisStreamMessageListener",
+          "callee": "messageType.getDeclaredConstructor().newInstance",
+          "lineNumber": 53
+        },
+        {
+          "caller": "AbstractRedisStreamMessageListener",
+          "callee": "messageType.getDeclaredConstructor",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onMessage",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 65
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getValue",
+          "lineNumber": 65
+        },
+        {
+          "caller": "onMessage",
+          "callee": "consumeMessageBefore",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onMessage",
+          "callee": "this.onMessage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "onMessage",
+          "callee": "redisMQTemplate.getRedisTemplate().opsForStream().acknowledge",
+          "lineNumber": 71
+        },
+        {
+          "caller": "onMessage",
+          "callee": "redisMQTemplate.getRedisTemplate().opsForStream",
+          "lineNumber": 71
+        },
+        {
+          "caller": "onMessage",
+          "callee": "redisMQTemplate.getRedisTemplate",
+          "lineNumber": 71
+        },
+        {
+          "caller": "onMessage",
+          "callee": "consumeMessageAfter",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "TypeUtil.getTypeArgument",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "getClass",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "new IllegalStateException",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "String.format",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "getClass().getName",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getMessageClass",
+          "callee": "getClass",
+          "lineNumber": 98
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "redisMQTemplate.getInterceptors",
+          "lineNumber": 105
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "interceptors.forEach",
+          "lineNumber": 107
+        },
+        {
+          "caller": "consumeMessageBefore",
+          "callee": "interceptor.consumeMessageBefore",
+          "lineNumber": 107
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "redisMQTemplate.getInterceptors",
+          "lineNumber": 112
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "interceptors.size",
+          "lineNumber": 114
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "interceptors.get(i).consumeMessageAfter",
+          "lineNumber": 115
+        },
+        {
+          "caller": "consumeMessageAfter",
+          "callee": "interceptors.get",
+          "lineNumber": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-redis/src/main/java/cn/iocoder/yudao/framework/redis/config/YudaoRedisAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "redisTemplate",
+          "startLine": 22,
+          "endLine": 36,
+          "params": [
+            "factory"
+          ]
+        },
+        {
+          "name": "buildRedisSerializer",
+          "startLine": 38,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoRedisAutoConfiguration",
+          "startLine": 16,
+          "endLine": 46,
+          "methods": [
+            "redisTemplate",
+            "buildRedisSerializer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "redisTemplate",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "buildRedisSerializer",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoRedisAutoConfiguration",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisTemplate",
+          "callee": "new RedisTemplate<>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setConnectionFactory",
+          "lineNumber": 27
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setKeySerializer",
+          "lineNumber": 29
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "RedisSerializer.string",
+          "lineNumber": 29
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setHashKeySerializer",
+          "lineNumber": 30
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "RedisSerializer.string",
+          "lineNumber": 30
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "buildRedisSerializer",
+          "lineNumber": 32
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setValueSerializer",
+          "lineNumber": 33
+        },
+        {
+          "caller": "redisTemplate",
+          "callee": "template.setHashValueSerializer",
+          "lineNumber": 34
+        },
+        {
+          "caller": "buildRedisSerializer",
+          "callee": "RedisSerializer.json",
+          "lineNumber": 39
+        },
+        {
+          "caller": "buildRedisSerializer",
+          "callee": "ReflectUtil.getFieldValue",
+          "lineNumber": 41
+        },
+        {
+          "caller": "buildRedisSerializer",
+          "callee": "objectMapper.registerModules",
+          "lineNumber": 42
+        },
+        {
+          "caller": "buildRedisSerializer",
+          "callee": "new JavaTimeModule",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-test/src/main/java/cn/iocoder/yudao/framework/test/config/RedisTestConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "redisServer",
+          "startLine": 25,
+          "endLine": 33,
+          "params": [
+            "properties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisTestConfiguration",
+          "startLine": 17,
+          "endLine": 35,
+          "methods": [
+            "redisServer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "redisServer",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "RedisTestConfiguration",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "redisServer",
+          "callee": "new RedisServer",
+          "lineNumber": 27
+        },
+        {
+          "caller": "redisServer",
+          "callee": "properties.getPort",
+          "lineNumber": 27
+        },
+        {
+          "caller": "redisServer",
+          "callee": "redisServer.start",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-test/src/main/java/cn/iocoder/yudao/framework/test/core/ut/BaseRedisUnitTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "BaseRedisUnitTest",
+          "startLine": 19,
+          "endLine": 36,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BaseRedisUnitTest",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/config/YudaoWebSocketAutoConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 153,
+      "functions": [
+        {
+          "name": "webSocketConfigurer",
+          "startLine": 49,
+          "endLine": 59,
+          "params": [
+            "handshakeInterceptors",
+            "webSocketHandler",
+            "webSocketProperties"
+          ]
+        },
+        {
+          "name": "handshakeInterceptor",
+          "startLine": 61,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "webSocketHandler",
+          "startLine": 66,
+          "endLine": 73,
+          "params": [
+            "sessionManager",
+            "messageListeners"
+          ]
+        },
+        {
+          "name": "webSocketSessionManager",
+          "startLine": 75,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "webSocketAuthorizeRequestsCustomizer",
+          "startLine": 80,
+          "endLine": 83,
+          "params": [
+            "webSocketProperties"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "YudaoWebSocketAutoConfiguration",
+          "startLine": 43,
+          "endLine": 183,
+          "methods": [
+            "webSocketConfigurer",
+            "handshakeInterceptor",
+            "webSocketHandler",
+            "webSocketSessionManager",
+            "webSocketAuthorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "webSocketConfigurer",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "handshakeInterceptor",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "webSocketHandler",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "webSocketSessionManager",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "webSocketAuthorizeRequestsCustomizer",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "YudaoWebSocketAutoConfiguration",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "webSocketConfigurer",
+          "callee": "registry\n                // 添加 WebSocketHandler\n                .addHandler(webSocketHandler, webSocketProperties.getPath())\n                .addInterceptors(handshakeInterceptors).setAllowedOriginPatterns",
+          "lineNumber": 53
+        },
+        {
+          "caller": "webSocketConfigurer",
+          "callee": "registry\n                // 添加 WebSocketHandler\n                .addHandler(webSocketHandler, webSocketProperties.getPath()).addInterceptors",
+          "lineNumber": 53
+        },
+        {
+          "caller": "webSocketConfigurer",
+          "callee": "registry.addHandler",
+          "lineNumber": 53
+        },
+        {
+          "caller": "webSocketConfigurer",
+          "callee": "webSocketProperties.getPath",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handshakeInterceptor",
+          "callee": "new LoginUserHandshakeInterceptor",
+          "lineNumber": 63
+        },
+        {
+          "caller": "webSocketHandler",
+          "callee": "new JsonWebSocketMessageHandler",
+          "lineNumber": 70
+        },
+        {
+          "caller": "webSocketHandler",
+          "callee": "new WebSocketSessionHandlerDecorator",
+          "lineNumber": 72
+        },
+        {
+          "caller": "webSocketSessionManager",
+          "callee": "new WebSocketSessionManagerImpl",
+          "lineNumber": 77
+        },
+        {
+          "caller": "webSocketAuthorizeRequestsCustomizer",
+          "callee": "new WebSocketAuthorizeRequestsCustomizer",
+          "lineNumber": 82
+        },
+        {
+          "caller": "localWebSocketMessageSender",
+          "callee": "new LocalWebSocketMessageSender",
+          "lineNumber": 93
+        },
+        {
+          "caller": "redisWebSocketMessageSender",
+          "callee": "new RedisWebSocketMessageSender",
+          "lineNumber": 105
+        },
+        {
+          "caller": "redisWebSocketMessageConsumer",
+          "callee": "new RedisWebSocketMessageConsumer",
+          "lineNumber": 111
+        },
+        {
+          "caller": "rocketMQWebSocketMessageSender",
+          "callee": "new RocketMQWebSocketMessageSender",
+          "lineNumber": 124
+        },
+        {
+          "caller": "rocketMQWebSocketMessageConsumer",
+          "callee": "new RocketMQWebSocketMessageConsumer",
+          "lineNumber": 130
+        },
+        {
+          "caller": "rabbitMQWebSocketMessageSender",
+          "callee": "new RabbitMQWebSocketMessageSender",
+          "lineNumber": 143
+        },
+        {
+          "caller": "rabbitMQWebSocketMessageConsumer",
+          "callee": "new RabbitMQWebSocketMessageConsumer",
+          "lineNumber": 149
+        },
+        {
+          "caller": "websocketTopicExchange",
+          "callee": "new TopicExchange",
+          "lineNumber": 157
+        },
+        {
+          "caller": "kafkaWebSocketMessageSender",
+          "callee": "new KafkaWebSocketMessageSender",
+          "lineNumber": 172
+        },
+        {
+          "caller": "kafkaWebSocketMessageConsumer",
+          "callee": "new KafkaWebSocketMessageConsumer",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/handler/JsonWebSocketMessageHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "JsonWebSocketMessageHandler",
+          "startLine": 38,
+          "endLine": 42,
+          "params": [
+            "listenersList"
+          ]
+        },
+        {
+          "name": "handleTextMessage",
+          "startLine": 44,
+          "endLine": 81,
+          "params": [
+            "session",
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JsonWebSocketMessageHandler",
+          "startLine": 30,
+          "endLine": 83,
+          "methods": [
+            "JsonWebSocketMessageHandler",
+            "handleTextMessage"
+          ],
+          "properties": [
+            "listeners"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JsonWebSocketMessageHandler",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "JsonWebSocketMessageHandler",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "JsonWebSocketMessageHandler",
+          "callee": "listenersList.forEach",
+          "lineNumber": 40
+        },
+        {
+          "caller": "JsonWebSocketMessageHandler",
+          "callee": "listeners.put",
+          "lineNumber": 41
+        },
+        {
+          "caller": "JsonWebSocketMessageHandler",
+          "callee": "listener.getType",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayloadLength",
+          "lineNumber": 47
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayloadLength",
+          "lineNumber": 51
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "Objects.equals",
+          "lineNumber": 51
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayload",
+          "lineNumber": 51
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "session.sendMessage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "new TextMessage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayload",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "log.error",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "session.getId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayload",
+          "lineNumber": 60
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 63
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "jsonMessage.getType",
+          "lineNumber": 63
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "log.error",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "session.getId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayload",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "listeners.get",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "jsonMessage.getType",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "log.error",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "session.getId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayload",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "TypeUtil.getTypeArgument",
+          "lineNumber": 74
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "messageListener.getClass",
+          "lineNumber": 74
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 75
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "jsonMessage.getContent",
+          "lineNumber": 75
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "WebSocketFrameworkUtils.getTenantId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "TenantUtils.execute",
+          "lineNumber": 77
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "messageListener.onMessage",
+          "lineNumber": 77
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "log.error",
+          "lineNumber": 79
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "session.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "handleTextMessage",
+          "callee": "message.getPayload",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/listener/WebSocketMessageListener.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "WebSocketMessageListener",
+          "startLine": 13,
+          "endLine": 31,
+          "methods": [
+            "onMessage",
+            "getType"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebSocketMessageListener",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/message/JsonWebSocketMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "JsonWebSocketMessage",
+          "startLine": 13,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "type",
+            "content"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JsonWebSocketMessage",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/AbstractWebSocketMessageSender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "send",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "sessionId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 53,
+          "endLine": 74,
+          "params": [
+            "sessionId",
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "doSend",
+          "startLine": 83,
+          "endLine": 104,
+          "params": [
+            "sessions",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractWebSocketMessageSender",
+          "startLine": 23,
+          "endLine": 106,
+          "methods": [
+            "send",
+            "send",
+            "send",
+            "send",
+            "doSend"
+          ],
+          "properties": [
+            "sessionManager"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "send",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "doSend",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractWebSocketMessageSender",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "send",
+          "lineNumber": 31
+        },
+        {
+          "caller": "send",
+          "callee": "send",
+          "lineNumber": 36
+        },
+        {
+          "caller": "send",
+          "callee": "send",
+          "lineNumber": 41
+        },
+        {
+          "caller": "send",
+          "callee": "Collections.emptyList",
+          "lineNumber": 55
+        },
+        {
+          "caller": "send",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 56
+        },
+        {
+          "caller": "send",
+          "callee": "sessionManager.getSession",
+          "lineNumber": 57
+        },
+        {
+          "caller": "send",
+          "callee": "Collections.singletonList",
+          "lineNumber": 59
+        },
+        {
+          "caller": "send",
+          "callee": "sessionManager.getSessionList",
+          "lineNumber": 62
+        },
+        {
+          "caller": "send",
+          "callee": "sessionManager.getSessionList",
+          "lineNumber": 64
+        },
+        {
+          "caller": "send",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 66
+        },
+        {
+          "caller": "send",
+          "callee": "log.isDebugEnabled",
+          "lineNumber": 67
+        },
+        {
+          "caller": "send",
+          "callee": "log.debug",
+          "lineNumber": 68
+        },
+        {
+          "caller": "send",
+          "callee": "doSend",
+          "lineNumber": 73
+        },
+        {
+          "caller": "doSend",
+          "callee": "new JsonWebSocketMessage().setType(messageType).setContent",
+          "lineNumber": 84
+        },
+        {
+          "caller": "doSend",
+          "callee": "new JsonWebSocketMessage().setType",
+          "lineNumber": 84
+        },
+        {
+          "caller": "doSend",
+          "callee": "new JsonWebSocketMessage",
+          "lineNumber": 84
+        },
+        {
+          "caller": "doSend",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 85
+        },
+        {
+          "caller": "doSend",
+          "callee": "sessions.forEach",
+          "lineNumber": 86
+        },
+        {
+          "caller": "doSend",
+          "callee": "log.error",
+          "lineNumber": 89
+        },
+        {
+          "caller": "doSend",
+          "callee": "session.isOpen",
+          "lineNumber": 92
+        },
+        {
+          "caller": "doSend",
+          "callee": "log.error",
+          "lineNumber": 93
+        },
+        {
+          "caller": "doSend",
+          "callee": "session.getId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "doSend",
+          "callee": "session.sendMessage",
+          "lineNumber": 98
+        },
+        {
+          "caller": "doSend",
+          "callee": "new TextMessage",
+          "lineNumber": 98
+        },
+        {
+          "caller": "doSend",
+          "callee": "log.info",
+          "lineNumber": 99
+        },
+        {
+          "caller": "doSend",
+          "callee": "session.getId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "doSend",
+          "callee": "log.error",
+          "lineNumber": 101
+        },
+        {
+          "caller": "doSend",
+          "callee": "session.getId",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/WebSocketMessageSender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "WebSocketMessageSender",
+          "startLine": 10,
+          "endLine": 52,
+          "methods": [
+            "send",
+            "send",
+            "send",
+            "sendObject",
+            "sendObject",
+            "sendObject"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebSocketMessageSender",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendObject",
+          "callee": "send",
+          "lineNumber": 41
+        },
+        {
+          "caller": "sendObject",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 41
+        },
+        {
+          "caller": "sendObject",
+          "callee": "send",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sendObject",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sendObject",
+          "callee": "send",
+          "lineNumber": 49
+        },
+        {
+          "caller": "sendObject",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/kafka/KafkaWebSocketMessageConsumer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "onMessage",
+          "startLine": 17,
+          "endLine": 26,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "KafkaWebSocketMessageConsumer",
+          "startLine": 12,
+          "endLine": 28,
+          "methods": [
+            "onMessage"
+          ],
+          "properties": [
+            "kafkaWebSocketMessageSender"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onMessage",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "KafkaWebSocketMessageConsumer",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onMessage",
+          "callee": "kafkaWebSocketMessageSender.send",
+          "lineNumber": 23
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getSessionId",
+          "lineNumber": 23
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserType",
+          "lineNumber": 24
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserId",
+          "lineNumber": 24
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageType",
+          "lineNumber": 25
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageContent",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/kafka/KafkaWebSocketMessageSender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "KafkaWebSocketMessageSender",
+          "startLine": 23,
+          "endLine": 29,
+          "params": [
+            "sessionManager",
+            "kafkaTemplate",
+            "topic"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 31,
+          "endLine": 34,
+          "params": [
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "sessionId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "sendKafkaMessage",
+          "startLine": 55,
+          "endLine": 65,
+          "params": [
+            "sessionId",
+            "userId",
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "KafkaWebSocketMessageSender",
+          "startLine": 16,
+          "endLine": 67,
+          "methods": [
+            "KafkaWebSocketMessageSender",
+            "send",
+            "send",
+            "send",
+            "sendKafkaMessage"
+          ],
+          "properties": [
+            "kafkaTemplate",
+            "topic"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KafkaWebSocketMessageSender",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "KafkaWebSocketMessageSender",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "sendKafkaMessage",
+          "lineNumber": 33
+        },
+        {
+          "caller": "send",
+          "callee": "sendKafkaMessage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "send",
+          "callee": "sendKafkaMessage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "new KafkaWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType)\n                .setMessageType(messageType).setMessageContent",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "new KafkaWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType).setMessageType",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "new KafkaWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "new KafkaWebSocketMessage()\n                .setSessionId(sessionId).setUserId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "new KafkaWebSocketMessage().setSessionId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "new KafkaWebSocketMessage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "kafkaTemplate.send(topic, mqMessage).get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "kafkaTemplate.send",
+          "lineNumber": 61
+        },
+        {
+          "caller": "sendKafkaMessage",
+          "callee": "log.error",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/local/LocalWebSocketMessageSender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "LocalWebSocketMessageSender",
+          "startLine": 16,
+          "endLine": 18,
+          "params": [
+            "sessionManager"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LocalWebSocketMessageSender",
+          "startLine": 14,
+          "endLine": 20,
+          "methods": [
+            "LocalWebSocketMessageSender"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LocalWebSocketMessageSender",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "LocalWebSocketMessageSender",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/rabbitmq/RabbitMQWebSocketMessageConsumer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "onMessage",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RabbitMQWebSocketMessageConsumer",
+          "startLine": 12,
+          "endLine": 39,
+          "methods": [
+            "onMessage"
+          ],
+          "properties": [
+            "rabbitMQWebSocketMessageSender"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onMessage",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "RabbitMQWebSocketMessageConsumer",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onMessage",
+          "callee": "rabbitMQWebSocketMessageSender.send",
+          "lineNumber": 34
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getSessionId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserType",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageType",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageContent",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/rabbitmq/RabbitMQWebSocketMessageSender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "RabbitMQWebSocketMessageSender",
+          "startLine": 22,
+          "endLine": 28,
+          "params": [
+            "sessionManager",
+            "rabbitTemplate",
+            "topicExchange"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 35,
+          "endLine": 38,
+          "params": [
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "sessionId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "sendRabbitMQMessage",
+          "startLine": 54,
+          "endLine": 60,
+          "params": [
+            "sessionId",
+            "userId",
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RabbitMQWebSocketMessageSender",
+          "startLine": 15,
+          "endLine": 62,
+          "methods": [
+            "RabbitMQWebSocketMessageSender",
+            "send",
+            "send",
+            "send",
+            "sendRabbitMQMessage"
+          ],
+          "properties": [
+            "rabbitTemplate",
+            "topicExchange"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RabbitMQWebSocketMessageSender",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "RabbitMQWebSocketMessageSender",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "sendRabbitMQMessage",
+          "lineNumber": 32
+        },
+        {
+          "caller": "send",
+          "callee": "sendRabbitMQMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "send",
+          "callee": "sendRabbitMQMessage",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "new RabbitMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType)\n                .setMessageType(messageType).setMessageContent",
+          "lineNumber": 56
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "new RabbitMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType).setMessageType",
+          "lineNumber": 56
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "new RabbitMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType",
+          "lineNumber": 56
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "new RabbitMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "new RabbitMQWebSocketMessage().setSessionId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "new RabbitMQWebSocketMessage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "rabbitTemplate.convertAndSend",
+          "lineNumber": 59
+        },
+        {
+          "caller": "sendRabbitMQMessage",
+          "callee": "topicExchange.getName",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/redis/RedisWebSocketMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "RedisWebSocketMessage",
+          "startLine": 9,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "sessionId",
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisWebSocketMessage",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/redis/RedisWebSocketMessageConsumer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "onMessage",
+          "startLine": 16,
+          "endLine": 21,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisWebSocketMessageConsumer",
+          "startLine": 11,
+          "endLine": 23,
+          "methods": [
+            "onMessage"
+          ],
+          "properties": [
+            "redisWebSocketMessageSender"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onMessage",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "RedisWebSocketMessageConsumer",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onMessage",
+          "callee": "redisWebSocketMessageSender.send",
+          "lineNumber": 18
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getSessionId",
+          "lineNumber": 18
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserType",
+          "lineNumber": 19
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserId",
+          "lineNumber": 19
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageType",
+          "lineNumber": 20
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageContent",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/redis/RedisWebSocketMessageSender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "RedisWebSocketMessageSender",
+          "startLine": 19,
+          "endLine": 23,
+          "params": [
+            "sessionManager",
+            "redisMQTemplate"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 35,
+          "endLine": 38,
+          "params": [
+            "sessionId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "sendRedisMessage",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "sessionId",
+            "userId",
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RedisWebSocketMessageSender",
+          "startLine": 14,
+          "endLine": 57,
+          "methods": [
+            "RedisWebSocketMessageSender",
+            "send",
+            "send",
+            "send",
+            "sendRedisMessage"
+          ],
+          "properties": [
+            "redisMQTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisWebSocketMessageSender",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "RedisWebSocketMessageSender",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "sendRedisMessage",
+          "lineNumber": 27
+        },
+        {
+          "caller": "send",
+          "callee": "sendRedisMessage",
+          "lineNumber": 32
+        },
+        {
+          "caller": "send",
+          "callee": "sendRedisMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sendRedisMessage",
+          "callee": "new RedisWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType)\n                .setMessageType(messageType).setMessageContent",
+          "lineNumber": 51
+        },
+        {
+          "caller": "sendRedisMessage",
+          "callee": "new RedisWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType).setMessageType",
+          "lineNumber": 51
+        },
+        {
+          "caller": "sendRedisMessage",
+          "callee": "new RedisWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType",
+          "lineNumber": 51
+        },
+        {
+          "caller": "sendRedisMessage",
+          "callee": "new RedisWebSocketMessage()\n                .setSessionId(sessionId).setUserId",
+          "lineNumber": 51
+        },
+        {
+          "caller": "sendRedisMessage",
+          "callee": "new RedisWebSocketMessage().setSessionId",
+          "lineNumber": 51
+        },
+        {
+          "caller": "sendRedisMessage",
+          "callee": "new RedisWebSocketMessage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "sendRedisMessage",
+          "callee": "redisMQTemplate.send",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/rocketmq/RocketMQWebSocketMessageConsumer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "onMessage",
+          "startLine": 23,
+          "endLine": 28,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RocketMQWebSocketMessageConsumer",
+          "startLine": 13,
+          "endLine": 30,
+          "methods": [
+            "onMessage"
+          ],
+          "properties": [
+            "rocketMQWebSocketMessageSender"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onMessage",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "RocketMQWebSocketMessageConsumer",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onMessage",
+          "callee": "rocketMQWebSocketMessageSender.send",
+          "lineNumber": 25
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getSessionId",
+          "lineNumber": 25
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserType",
+          "lineNumber": 26
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getUserId",
+          "lineNumber": 26
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageType",
+          "lineNumber": 27
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getMessageContent",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/sender/rocketmq/RocketMQWebSocketMessageSender.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "RocketMQWebSocketMessageSender",
+          "startLine": 21,
+          "endLine": 27,
+          "params": [
+            "sessionManager",
+            "rocketMQTemplate",
+            "topic"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "userType",
+            "userId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "send",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "sessionId",
+            "messageType",
+            "messageContent"
+          ]
+        },
+        {
+          "name": "sendRocketMQMessage",
+          "startLine": 53,
+          "endLine": 59,
+          "params": [
+            "sessionId",
+            "userId",
+            "userType",
+            "messageType",
+            "messageContent"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RocketMQWebSocketMessageSender",
+          "startLine": 14,
+          "endLine": 61,
+          "methods": [
+            "RocketMQWebSocketMessageSender",
+            "send",
+            "send",
+            "send",
+            "sendRocketMQMessage"
+          ],
+          "properties": [
+            "rocketMQTemplate",
+            "topic"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RocketMQWebSocketMessageSender",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "send",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "RocketMQWebSocketMessageSender",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "sendRocketMQMessage",
+          "lineNumber": 31
+        },
+        {
+          "caller": "send",
+          "callee": "sendRocketMQMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "send",
+          "callee": "sendRocketMQMessage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "sendRocketMQMessage",
+          "callee": "new RocketMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType)\n                .setMessageType(messageType).setMessageContent",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sendRocketMQMessage",
+          "callee": "new RocketMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType(userType).setMessageType",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sendRocketMQMessage",
+          "callee": "new RocketMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId(userId).setUserType",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sendRocketMQMessage",
+          "callee": "new RocketMQWebSocketMessage()\n                .setSessionId(sessionId).setUserId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sendRocketMQMessage",
+          "callee": "new RocketMQWebSocketMessage().setSessionId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sendRocketMQMessage",
+          "callee": "new RocketMQWebSocketMessage",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sendRocketMQMessage",
+          "callee": "rocketMQTemplate.syncSend",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/session/WebSocketSessionHandlerDecorator.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "WebSocketSessionHandlerDecorator",
+          "startLine": 30,
+          "endLine": 34,
+          "params": [
+            "delegate",
+            "sessionManager"
+          ]
+        },
+        {
+          "name": "afterConnectionEstablished",
+          "startLine": 36,
+          "endLine": 42,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "afterConnectionClosed",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "session",
+            "closeStatus"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WebSocketSessionHandlerDecorator",
+          "startLine": 17,
+          "endLine": 49,
+          "methods": [
+            "WebSocketSessionHandlerDecorator",
+            "afterConnectionEstablished",
+            "afterConnectionClosed"
+          ],
+          "properties": [
+            "SEND_TIME_LIMIT",
+            "BUFFER_SIZE_LIMIT",
+            "sessionManager"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebSocketSessionHandlerDecorator",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "afterConnectionEstablished",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "afterConnectionClosed",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "WebSocketSessionHandlerDecorator",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "afterConnectionEstablished",
+          "callee": "new ConcurrentWebSocketSessionDecorator",
+          "lineNumber": 39
+        },
+        {
+          "caller": "afterConnectionEstablished",
+          "callee": "sessionManager.addSession",
+          "lineNumber": 41
+        },
+        {
+          "caller": "afterConnectionClosed",
+          "callee": "sessionManager.removeSession",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-websocket/src/main/java/cn/iocoder/yudao/framework/websocket/core/session/WebSocketSessionManager.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "WebSocketSessionManager",
+          "startLine": 12,
+          "endLine": 53,
+          "methods": [
+            "addSession",
+            "removeSession",
+            "getSession",
+            "getSessionList",
+            "getSessionList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "WebSocketSessionManager",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/websocket/DemoWebSocketMessageListener.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "onMessage",
+          "startLine": 25,
+          "endLine": 41,
+          "params": [
+            "session",
+            "message"
+          ]
+        },
+        {
+          "name": "getType",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DemoWebSocketMessageListener",
+          "startLine": 18,
+          "endLine": 48,
+          "methods": [
+            "onMessage",
+            "getType"
+          ],
+          "properties": [
+            "webSocketMessageSender"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onMessage",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "getType",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "DemoWebSocketMessageListener",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onMessage",
+          "callee": "WebSocketFrameworkUtils.getLoginUserId",
+          "lineNumber": 27
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getToUserId",
+          "lineNumber": 29
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage().setFromUserId(fromUserId)\n                    .setText(message.getText()).setSingle",
+          "lineNumber": 30
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage().setFromUserId(fromUserId).setText",
+          "lineNumber": 30
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage().setFromUserId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage",
+          "lineNumber": 30
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getText",
+          "lineNumber": 31
+        },
+        {
+          "caller": "onMessage",
+          "callee": "webSocketMessageSender.sendObject",
+          "lineNumber": 32
+        },
+        {
+          "caller": "onMessage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 32
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getToUserId",
+          "lineNumber": 32
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage().setFromUserId(fromUserId)\n                .setText(message.getText()).setSingle",
+          "lineNumber": 37
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage().setFromUserId(fromUserId).setText",
+          "lineNumber": 37
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage().setFromUserId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "onMessage",
+          "callee": "new DemoReceiveMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "onMessage",
+          "callee": "message.getText",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onMessage",
+          "callee": "webSocketMessageSender.sendObject",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onMessage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

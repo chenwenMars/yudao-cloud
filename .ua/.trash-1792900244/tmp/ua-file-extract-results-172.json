@@ -1,0 +1,2152 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 27,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 27,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 27,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/favorite/vo/AppFavoriteReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AppFavoriteReqVO",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "spuId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppFavoriteReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/favorite/vo/AppFavoriteRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AppFavoriteRespVO",
+          "startLine": 6,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "spuName",
+            "picUrl",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppFavoriteRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/AppProductBrowseHistoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "deleteBrowseHistory",
+          "startLine": 40,
+          "endLine": 45,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteBrowseHistory",
+          "startLine": 47,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "getBrowseHistoryPage",
+          "startLine": 54,
+          "endLine": 72,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppProductBrowseHistoryController",
+          "startLine": 30,
+          "endLine": 74,
+          "methods": [
+            "deleteBrowseHistory",
+            "deleteBrowseHistory",
+            "getBrowseHistoryPage"
+          ],
+          "properties": [
+            "productBrowseHistoryService",
+            "productSpuService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "deleteBrowseHistory",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBrowseHistory",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getBrowseHistoryPage",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "AppProductBrowseHistoryController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deleteBrowseHistory",
+          "callee": "productBrowseHistoryService.hideUserBrowseHistory",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deleteBrowseHistory",
+          "callee": "getLoginUserId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deleteBrowseHistory",
+          "callee": "reqVO.getSpuIds",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deleteBrowseHistory",
+          "callee": "success",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deleteBrowseHistory",
+          "callee": "productBrowseHistoryService.hideUserBrowseHistory",
+          "lineNumber": 50
+        },
+        {
+          "caller": "deleteBrowseHistory",
+          "callee": "getLoginUserId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "deleteBrowseHistory",
+          "callee": "success",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "BeanUtils.toBean(reqVO, ProductBrowseHistoryPageReqVO.class)\n                .setUserId(getLoginUserId()).setUserDeleted",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "BeanUtils.toBean(reqVO, ProductBrowseHistoryPageReqVO.class).setUserId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "productBrowseHistoryService.getBrowseHistoryPage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "convertSet",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "convertMap",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "productSpuService.getSpuList",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "Optional.ofNullable(spuMap.get(vo.getSpuId())).ifPresent",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "spuMap.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "vo.getSpuId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "vo.setSpuName(spu.getName()).setPicUrl(spu.getPicUrl()).setPrice(spu.getPrice())\n                                .setSalesCount(spu.getSalesCount()).setStock",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "vo.setSpuName(spu.getName()).setPicUrl(spu.getPicUrl()).setPrice(spu.getPrice()).setSalesCount",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "vo.setSpuName(spu.getName()).setPicUrl(spu.getPicUrl()).setPrice",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "vo.setSpuName(spu.getName()).setPicUrl",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "vo.setSpuName",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "spu.getName",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "spu.getPicUrl",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "spu.getPrice",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "spu.getSalesCount",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getBrowseHistoryPage",
+          "callee": "spu.getStock",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/vo/AppProductBrowseHistoryDeleteReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "AppProductBrowseHistoryDeleteReqVO",
+          "startLine": 9,
+          "endLine": 17,
+          "methods": [],
+          "properties": [
+            "spuIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppProductBrowseHistoryDeleteReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/vo/AppProductBrowseHistoryPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AppProductBrowseHistoryPageReqVO",
+          "startLine": 14,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppProductBrowseHistoryPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/history/vo/AppProductBrowseHistoryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "AppProductBrowseHistoryRespVO",
+          "startLine": 6,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "spuName",
+            "picUrl",
+            "price",
+            "salesCount",
+            "stock"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppProductBrowseHistoryRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/property/vo/value/AppProductPropertyValueDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "AppProductPropertyValueDetailRespVO",
+          "startLine": 6,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "propertyId",
+            "propertyName",
+            "valueId",
+            "valueName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppProductPropertyValueDetailRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/AppProductSpuController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "getSpuList",
+          "startLine": 51,
+          "endLine": 65,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getSpuPage",
+          "startLine": 67,
+          "endLine": 80,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getSpuDetail",
+          "startLine": 82,
+          "endLine": 108,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppProductSpuController",
+          "startLine": 38,
+          "endLine": 110,
+          "methods": [
+            "getSpuList",
+            "getSpuPage",
+            "getSpuDetail"
+          ],
+          "properties": [
+            "productSpuService",
+            "productSkuService",
+            "productBrowseHistoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getSpuList",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "getSpuPage",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getSpuDetail",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "AppProductSpuController",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSpuList",
+          "callee": "productSpuService.getSpuList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "success",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "list.forEach",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "spu.setSalesCount",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "spu.getSalesCount",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "spu.getVirtualSalesCount",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getSpuList",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "productSpuService.getSpuPage",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "spu.setSalesCount",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "spu.getSalesCount",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "spu.getVirtualSalesCount",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getSpuPage",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "productSpuService.getSpu",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "exception",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "ProductSpuStatusEnum.isEnable",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "spu.getStatus",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "exception",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "spu.getName",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "productSkuService.getSkuListBySpuId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "spu.getId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "productSpuService.updateBrowseCount",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "productBrowseHistoryService.createBrowseHistory",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "getLoginUserId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "spu.setSalesCount",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "spu.getSalesCount",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "spu.getVirtualSalesCount",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "BeanUtils.toBean(spu, AppProductSpuDetailRespVO.class).setSkus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getSpuDetail",
+          "callee": "success",
+          "lineNumber": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/vo/AppProductSpuDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "AppProductSpuDetailRespVO",
+          "startLine": 9,
+          "endLine": 97,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "introduction",
+            "description",
+            "categoryId",
+            "picUrl",
+            "sliderPicUrls",
+            "specType",
+            "price",
+            "marketPrice",
+            "stock",
+            "skus",
+            "salesCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppProductSpuDetailRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/vo/AppProductSpuPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "isSortFieldValid",
+          "startLine": 42,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppProductSpuPageReqVO",
+          "startLine": 14,
+          "endLine": 51,
+          "methods": [
+            "isSortFieldValid"
+          ],
+          "properties": [
+            "SORT_FIELD_PRICE",
+            "SORT_FIELD_SALES_COUNT",
+            "SORT_FIELD_CREATE_TIME",
+            "ids",
+            "categoryId",
+            "categoryIds",
+            "keyword",
+            "sortField",
+            "sortAsc"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SORT_FIELD_PRICE",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "SORT_FIELD_SALES_COUNT",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "SORT_FIELD_CREATE_TIME",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "isSortFieldValid",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "AppProductSpuPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSortFieldValid",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 45
+        },
+        {
+          "caller": "isSortFieldValid",
+          "callee": "StrUtil.equalsAny",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/controller/app/spu/vo/AppProductSpuRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "AppProductSpuRespVO",
+          "startLine": 8,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "introduction",
+            "categoryId",
+            "picUrl",
+            "sliderPicUrls",
+            "specType",
+            "price",
+            "marketPrice",
+            "stock",
+            "salesCount",
+            "deliveryTypes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppProductSpuRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/convert/brand/ProductBrandConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "ProductBrandConvert",
+          "startLine": 19,
+          "endLine": 36,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList1",
+            "convertList",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductBrandConvert",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/convert/comment/ProductCommentConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "ProductCommentConvert",
+          "startLine": 21,
+          "endLine": 62,
+          "methods": [
+            "convert",
+            "convert",
+            "convertScores"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductCommentConvert",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean(createReqDTO, ProductCommentDO.class).setScores",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convert",
+          "callee": "convertScores",
+          "lineNumber": 29
+        },
+        {
+          "caller": "convert",
+          "callee": "createReqDTO.getDescriptionScores",
+          "lineNumber": 29
+        },
+        {
+          "caller": "convert",
+          "callee": "createReqDTO.getBenefitScores",
+          "lineNumber": 29
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setUserId(user.getId()).setUserNickname(user.getNickname()).setUserAvatar",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setUserId(user.getId()).setUserNickname",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setUserId",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getId",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getNickname",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getAvatar",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSpuId(spu.getId()).setSpuName",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSpuId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getName",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSkuPicUrl(sku.getPicUrl()).setSkuProperties",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSkuPicUrl",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convert",
+          "callee": "sku.getPicUrl",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convert",
+          "callee": "sku.getProperties",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean(createReq, ProductCommentDO.class)\n                .setVisible(true).setUserId(0L).setAnonymous(false).setScores",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean(createReq, ProductCommentDO.class)\n                .setVisible(true).setUserId(0L).setAnonymous",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean(createReq, ProductCommentDO.class)\n                .setVisible(true).setUserId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean(createReq, ProductCommentDO.class).setVisible",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convert",
+          "callee": "convertScores",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convert",
+          "callee": "createReq.getDescriptionScores",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convert",
+          "callee": "createReq.getBenefitScores",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSpuId(spu.getId()).setSpuName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSpuId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSkuPicUrl(sku.getPicUrl()).setSkuProperties",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "comment.setSkuPicUrl",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "sku.getPicUrl",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "sku.getProperties",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertScores",
+          "callee": "new BigDecimal",
+          "lineNumber": 57
+        },
+        {
+          "caller": "convertScores",
+          "callee": "sumScore.divide",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertScores",
+          "callee": "BigDecimal.valueOf",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertScores",
+          "callee": "divide.intValue",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/convert/favorite/ProductFavoriteConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "ProductFavoriteConvert",
+          "startLine": 19,
+          "endLine": 54,
+          "methods": [
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convert02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductFavoriteConvert",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertList",
+          "callee": "favorites.size",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertMap",
+          "lineNumber": 32
+        },
+        {
+          "caller": "convertList",
+          "callee": "spuMap.get",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "favorite.getSpuId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "resultList.add",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertPage",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convertPage",
+          "callee": "spuMap.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertPage",
+          "callee": "favorite.getSpuId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convert02",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/convert/sku/ProductSkuConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "ProductSkuConvert",
+          "startLine": 20,
+          "endLine": 56,
+          "methods": [
+            "convertSpuStockMap",
+            "buildPropertyKey"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSkuConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "convertMap",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "new HashMap<>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "items.forEach",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "skuIdAndSpuIdMap.get",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "item.getId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "spuIdAndStockMap.getOrDefault",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "item.getIncrCount",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertSpuStockMap",
+          "callee": "spuIdAndStockMap.put",
+          "lineNumber": 42
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "bean.getProperties",
+          "lineNumber": 48
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "new ArrayList<>",
+          "lineNumber": 51
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "bean.getProperties",
+          "lineNumber": 51
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "properties.sort",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "Comparator.comparing",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "properties.stream().map(m -> String.valueOf(m.getValueId())).collect",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "properties.stream().map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "properties.stream",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "String.valueOf",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "m.getValueId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildPropertyKey",
+          "callee": "Collectors.joining",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/convert/spu/ProductSpuConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "ProductSpuConvert",
+          "startLine": 24,
+          "endLine": 42,
+          "methods": [
+            "convert",
+            "convert",
+            "convertForSpuDetailRespListVO"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSpuConvert",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 32
+        },
+        {
+          "caller": "convert",
+          "callee": "spuVO.setSkus",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convert",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertForSpuDetailRespListVO",
+          "callee": "convertMultiMap",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convertForSpuDetailRespListVO",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 39
+        },
+        {
+          "caller": "convertForSpuDetailRespListVO",
+          "callee": "convert",
+          "lineNumber": 39
+        },
+        {
+          "caller": "convertForSpuDetailRespListVO",
+          "callee": "skuMultiMap.get",
+          "lineNumber": 39
+        },
+        {
+          "caller": "convertForSpuDetailRespListVO",
+          "callee": "spu.getId",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/brand/ProductBrandDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "ProductBrandDO",
+          "startLine": 15,
+          "endLine": 53,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "picUrl",
+            "sort",
+            "description",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductBrandDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/category/ProductCategoryDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 59,
+      "classes": [
+        {
+          "name": "ProductCategoryDO",
+          "startLine": 15,
+          "endLine": 64,
+          "methods": [],
+          "properties": [
+            "PARENT_ID_NULL",
+            "CATEGORY_LEVEL",
+            "id",
+            "parentId",
+            "name",
+            "picUrl",
+            "sort",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PARENT_ID_NULL",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "CATEGORY_LEVEL",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ProductCategoryDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/comment/ProductCommentDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 148,
+      "classes": [
+        {
+          "name": "ProductCommentDO",
+          "startLine": 21,
+          "endLine": 159,
+          "methods": [],
+          "properties": [
+            "NICKNAME_ANONYMOUS",
+            "id",
+            "userId",
+            "userNickname",
+            "userAvatar",
+            "anonymous",
+            "orderId",
+            "orderItemId",
+            "spuId",
+            "spuName",
+            "skuId",
+            "skuPicUrl",
+            "skuProperties",
+            "visible",
+            "scores",
+            "descriptionScores",
+            "benefitScores",
+            "content",
+            "picUrls",
+            "replyStatus",
+            "replyUserId",
+            "replyContent",
+            "replyTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NICKNAME_ANONYMOUS",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "ProductCommentDO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/favorite/ProductFavoriteDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "ProductFavoriteDO",
+          "startLine": 15,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "spuId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductFavoriteDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/history/ProductBrowseHistoryDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "ProductBrowseHistoryDO",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "userId",
+            "userDeleted"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductBrowseHistoryDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/property/ProductPropertyDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "ProductPropertyDO",
+          "startLine": 14,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "ID_DEFAULT",
+            "NAME_DEFAULT",
+            "id",
+            "name",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ID_DEFAULT",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "NAME_DEFAULT",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "ProductPropertyDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/property/ProductPropertyValueDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "ProductPropertyValueDO",
+          "startLine": 15,
+          "endLine": 55,
+          "methods": [],
+          "properties": [
+            "ID_DEFAULT",
+            "NAME_DEFAULT",
+            "id",
+            "propertyId",
+            "name",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ID_DEFAULT",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "NAME_DEFAULT",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ProductPropertyValueDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/sku/ProductSkuDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 121,
+      "classes": [
+        {
+          "name": "ProductSkuDO",
+          "startLine": 21,
+          "endLine": 133,
+          "methods": [],
+          "properties": [
+            "id",
+            "spuId",
+            "properties",
+            "price",
+            "marketPrice",
+            "costPrice",
+            "barCode",
+            "picUrl",
+            "stock",
+            "weight",
+            "volume",
+            "firstBrokeragePrice",
+            "secondBrokeragePrice",
+            "salesCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSkuDO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/spu/ProductSpuDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 171,
+      "nonEmptyLines": 154,
+      "classes": [
+        {
+          "name": "ProductSpuDO",
+          "startLine": 23,
+          "endLine": 171,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "keyword",
+            "introduction",
+            "description",
+            "categoryId",
+            "brandId",
+            "picUrl",
+            "sliderPicUrls",
+            "sort",
+            "status",
+            "specType",
+            "price",
+            "marketPrice",
+            "costPrice",
+            "stock",
+            "deliveryTypes",
+            "deliveryTemplateId",
+            "giveIntegral",
+            "subCommissionType",
+            "salesCount",
+            "virtualSalesCount",
+            "browseCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductSpuDO",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/brand/ProductBrandMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "ProductBrandMapper",
+          "startLine": 13,
+          "endLine": 37,
+          "methods": [
+            "selectPage",
+            "selectList",
+            "selectByName",
+            "selectListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductBrandMapper",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ProductBrandDO>()\n                .likeIfPresent(ProductBrandDO::getName, reqVO.getName())\n                .eqIfPresent(ProductBrandDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(ProductBrandDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ProductBrandDO>()\n                .likeIfPresent(ProductBrandDO::getName, reqVO.getName())\n                .eqIfPresent(ProductBrandDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ProductBrandDO>()\n                .likeIfPresent(ProductBrandDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ProductBrandDO>().likeIfPresent",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ProductBrandDO>",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductBrandDO>().likeIfPresent",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductBrandDO>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getName",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectByName",
+          "callee": "selectOne",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-product-server/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/category/ProductCategoryMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "ProductCategoryMapper",
+          "startLine": 17,
+          "endLine": 43,
+          "methods": [
+            "selectList",
+            "selectCountByParentId",
+            "selectListByStatus",
+            "selectListByIdAndStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProductCategoryMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>()\n                .likeIfPresent(ProductCategoryDO::getName, listReqVO.getName())\n                .eqIfPresent(ProductCategoryDO::getParentId, listReqVO.getParentId())\n                .inIfPresent(ProductCategoryDO::getId, listReqVO.getParentIds())\n                .eqIfPresent(ProductCategoryDO::getStatus, listReqVO.getStatus()).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>()\n                .likeIfPresent(ProductCategoryDO::getName, listReqVO.getName())\n                .eqIfPresent(ProductCategoryDO::getParentId, listReqVO.getParentId())\n                .inIfPresent(ProductCategoryDO::getId, listReqVO.getParentIds()).eqIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>()\n                .likeIfPresent(ProductCategoryDO::getName, listReqVO.getName())\n                .eqIfPresent(ProductCategoryDO::getParentId, listReqVO.getParentId()).inIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>()\n                .likeIfPresent(ProductCategoryDO::getName, listReqVO.getName()).eqIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>().likeIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "listReqVO.getName",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectList",
+          "callee": "listReqVO.getParentId",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectList",
+          "callee": "listReqVO.getParentIds",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectList",
+          "callee": "listReqVO.getStatus",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectCountByParentId",
+          "callee": "selectCount",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectListByIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>()\n                .in(ProductCategoryDO::getId, ids).eq",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>().in",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectListByIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<ProductCategoryDO>",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

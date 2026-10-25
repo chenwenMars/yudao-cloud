@@ -1,0 +1,3356 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/maintenrecord/MesDvMaintenRecordLineService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordLineService",
+          "startLine": 16,
+          "endLine": 71,
+          "methods": [
+            "createMaintenRecordLine",
+            "updateMaintenRecordLine",
+            "deleteMaintenRecordLine",
+            "getMaintenRecordLine",
+            "getMaintenRecordLinePage",
+            "getMaintenRecordLineListByRecordId",
+            "deleteMaintenRecordLineByRecordId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordLineService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/maintenrecord/MesDvMaintenRecordLineServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "createMaintenRecordLine",
+          "startLine": 38,
+          "endLine": 47,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMaintenRecordLine",
+          "startLine": 49,
+          "endLine": 59,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMaintenRecordLine",
+          "startLine": 61,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateMaintenRecordLineRelation",
+          "startLine": 72,
+          "endLine": 77,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateMaintenRecordLineExists",
+          "startLine": 79,
+          "endLine": 85,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecordLine",
+          "startLine": 87,
+          "endLine": 90,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecordLinePage",
+          "startLine": 92,
+          "endLine": 95,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getMaintenRecordLineListByRecordId",
+          "startLine": 97,
+          "endLine": 100,
+          "params": [
+            "recordId"
+          ]
+        },
+        {
+          "name": "deleteMaintenRecordLineByRecordId",
+          "startLine": 102,
+          "endLine": 105,
+          "params": [
+            "recordId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordLineServiceImpl",
+          "startLine": 25,
+          "endLine": 107,
+          "methods": [
+            "createMaintenRecordLine",
+            "updateMaintenRecordLine",
+            "deleteMaintenRecordLine",
+            "validateMaintenRecordLineRelation",
+            "validateMaintenRecordLineExists",
+            "getMaintenRecordLine",
+            "getMaintenRecordLinePage",
+            "getMaintenRecordLineListByRecordId",
+            "deleteMaintenRecordLineByRecordId"
+          ],
+          "properties": [
+            "maintenRecordLineMapper",
+            "maintenRecordService",
+            "subjectService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMaintenRecordLine",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateMaintenRecordLine",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMaintenRecordLine",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordLine",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordLinePage",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordLineListByRecordId",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMaintenRecordLineByRecordId",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvMaintenRecordLineServiceImpl",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMaintenRecordLine",
+          "callee": "validateMaintenRecordLineRelation",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createMaintenRecordLine",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createMaintenRecordLine",
+          "callee": "maintenRecordLineMapper.insert",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createMaintenRecordLine",
+          "callee": "maintenRecordLine.getId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateMaintenRecordLine",
+          "callee": "validateMaintenRecordLineExists",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateMaintenRecordLine",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateMaintenRecordLine",
+          "callee": "validateMaintenRecordLineRelation",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateMaintenRecordLine",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateMaintenRecordLine",
+          "callee": "maintenRecordLineMapper.updateById",
+          "lineNumber": 58
+        },
+        {
+          "caller": "deleteMaintenRecordLine",
+          "callee": "validateMaintenRecordLineExists",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deleteMaintenRecordLine",
+          "callee": "maintenRecordService.validateMaintenRecordDraft",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteMaintenRecordLine",
+          "callee": "line.getRecordId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "deleteMaintenRecordLine",
+          "callee": "maintenRecordLineMapper.deleteById",
+          "lineNumber": 69
+        },
+        {
+          "caller": "validateMaintenRecordLineRelation",
+          "callee": "maintenRecordService.validateMaintenRecordDraft",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validateMaintenRecordLineRelation",
+          "callee": "reqVO.getRecordId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validateMaintenRecordLineRelation",
+          "callee": "subjectService.validateSubjectExistsAndEnable",
+          "lineNumber": 76
+        },
+        {
+          "caller": "validateMaintenRecordLineRelation",
+          "callee": "reqVO.getSubjectId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "validateMaintenRecordLineExists",
+          "callee": "maintenRecordLineMapper.selectById",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validateMaintenRecordLineExists",
+          "callee": "exception",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMaintenRecordLine",
+          "callee": "maintenRecordLineMapper.selectById",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getMaintenRecordLinePage",
+          "callee": "maintenRecordLineMapper.selectPage",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getMaintenRecordLineListByRecordId",
+          "callee": "maintenRecordLineMapper.selectListByRecordId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "deleteMaintenRecordLineByRecordId",
+          "callee": "maintenRecordLineMapper.deleteByRecordId",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/maintenrecord/MesDvMaintenRecordService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 72,
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordService",
+          "startLine": 15,
+          "endLine": 85,
+          "methods": [
+            "createMaintenRecord",
+            "updateMaintenRecord",
+            "submitMaintenRecord",
+            "deleteMaintenRecord",
+            "validateMaintenRecordExists",
+            "validateMaintenRecordDraft",
+            "getMaintenRecordCountByMachineryId",
+            "getMaintenRecord",
+            "getMaintenRecordPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvMaintenRecordService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/maintenrecord/MesDvMaintenRecordServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 150,
+      "nonEmptyLines": 128,
+      "functions": [
+        {
+          "name": "createMaintenRecord",
+          "startLine": 47,
+          "endLine": 57,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMaintenRecord",
+          "startLine": 59,
+          "endLine": 69,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "submitMaintenRecord",
+          "startLine": 71,
+          "endLine": 93,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteMaintenRecord",
+          "startLine": 95,
+          "endLine": 105,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateMaintenRecordRelation",
+          "startLine": 107,
+          "endLine": 114,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateMaintenRecordExists",
+          "startLine": 116,
+          "endLine": 121,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecordCountByMachineryId",
+          "startLine": 123,
+          "endLine": 126,
+          "params": [
+            "machineryId"
+          ]
+        },
+        {
+          "name": "validateMaintenRecordDraft",
+          "startLine": 128,
+          "endLine": 138,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecord",
+          "startLine": 140,
+          "endLine": 143,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMaintenRecordPage",
+          "startLine": 145,
+          "endLine": 148,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvMaintenRecordServiceImpl",
+          "startLine": 32,
+          "endLine": 150,
+          "methods": [
+            "createMaintenRecord",
+            "updateMaintenRecord",
+            "submitMaintenRecord",
+            "deleteMaintenRecord",
+            "validateMaintenRecordRelation",
+            "validateMaintenRecordExists",
+            "getMaintenRecordCountByMachineryId",
+            "validateMaintenRecordDraft",
+            "getMaintenRecord",
+            "getMaintenRecordPage"
+          ],
+          "properties": [
+            "maintenRecordMapper",
+            "maintenRecordLineService",
+            "machineryService",
+            "checkPlanService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMaintenRecord",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "updateMaintenRecord",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "submitMaintenRecord",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMaintenRecord",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "validateMaintenRecordExists",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordCountByMachineryId",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "validateMaintenRecordDraft",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecord",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "getMaintenRecordPage",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvMaintenRecordServiceImpl",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMaintenRecord",
+          "callee": "validateMaintenRecordRelation",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createMaintenRecord",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createMaintenRecord",
+          "callee": "maintenRecord.setStatus",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createMaintenRecord",
+          "callee": "MesDvMaintenRecordStatusEnum.PREPARE.getStatus",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createMaintenRecord",
+          "callee": "maintenRecordMapper.insert",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createMaintenRecord",
+          "callee": "maintenRecord.getId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateMaintenRecord",
+          "callee": "validateMaintenRecordDraft",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateMaintenRecord",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateMaintenRecord",
+          "callee": "validateMaintenRecordRelation",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateMaintenRecord",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateMaintenRecord",
+          "callee": "maintenRecordMapper.updateById",
+          "lineNumber": 68
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "validateMaintenRecordDraft",
+          "lineNumber": 75
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "maintenRecordLineService.getMaintenRecordLineListByRecordId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 78
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "exception",
+          "lineNumber": 79
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "maintenRecordMapper.selectById",
+          "lineNumber": 83
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "new MesDvMaintenRecordDO",
+          "lineNumber": 84
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "updateObj.setId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "updateObj.setStatus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "MesDvMaintenRecordStatusEnum.SUBMITTED.getStatus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "maintenRecordMapper.updateById",
+          "lineNumber": 87
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "record.getMaintenTime",
+          "lineNumber": 90
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "machineryService.updateMachineryLastMaintenTime",
+          "lineNumber": 91
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "record.getMachineryId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "submitMaintenRecord",
+          "callee": "record.getMaintenTime",
+          "lineNumber": 91
+        },
+        {
+          "caller": "deleteMaintenRecord",
+          "callee": "validateMaintenRecordDraft",
+          "lineNumber": 99
+        },
+        {
+          "caller": "deleteMaintenRecord",
+          "callee": "maintenRecordMapper.deleteById",
+          "lineNumber": 102
+        },
+        {
+          "caller": "deleteMaintenRecord",
+          "callee": "maintenRecordLineService.deleteMaintenRecordLineByRecordId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "validateMaintenRecordRelation",
+          "callee": "machineryService.validateMachineryExists",
+          "lineNumber": 109
+        },
+        {
+          "caller": "validateMaintenRecordRelation",
+          "callee": "reqVO.getMachineryId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "validateMaintenRecordRelation",
+          "callee": "reqVO.getPlanId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "validateMaintenRecordRelation",
+          "callee": "checkPlanService.validateCheckPlanExistsAndType",
+          "lineNumber": 112
+        },
+        {
+          "caller": "validateMaintenRecordRelation",
+          "callee": "reqVO.getPlanId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "validateMaintenRecordRelation",
+          "callee": "MesDvCheckPlanTypeEnum.MAINTENANCE.getType",
+          "lineNumber": 112
+        },
+        {
+          "caller": "validateMaintenRecordExists",
+          "callee": "maintenRecordMapper.selectById",
+          "lineNumber": 118
+        },
+        {
+          "caller": "validateMaintenRecordExists",
+          "callee": "exception",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getMaintenRecordCountByMachineryId",
+          "callee": "maintenRecordMapper.selectCountByMachineryId",
+          "lineNumber": 125
+        },
+        {
+          "caller": "validateMaintenRecordDraft",
+          "callee": "maintenRecordMapper.selectById",
+          "lineNumber": 130
+        },
+        {
+          "caller": "validateMaintenRecordDraft",
+          "callee": "exception",
+          "lineNumber": 132
+        },
+        {
+          "caller": "validateMaintenRecordDraft",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateMaintenRecordDraft",
+          "callee": "MesDvMaintenRecordStatusEnum.PREPARE.getStatus",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateMaintenRecordDraft",
+          "callee": "record.getStatus",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateMaintenRecordDraft",
+          "callee": "exception",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getMaintenRecord",
+          "callee": "maintenRecordMapper.selectById",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getMaintenRecordPage",
+          "callee": "maintenRecordMapper.selectPage",
+          "lineNumber": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/repair/MesDvRepairLineService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "MesDvRepairLineService",
+          "startLine": 17,
+          "endLine": 72,
+          "methods": [
+            "createRepairLine",
+            "updateRepairLine",
+            "deleteRepairLine",
+            "getRepairLine",
+            "getRepairLinePage",
+            "getRepairLineListByRepairId",
+            "deleteByRepairId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvRepairLineService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/repair/MesDvRepairLineServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "createRepairLine",
+          "startLine": 38,
+          "endLine": 49,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateRepairLine",
+          "startLine": 51,
+          "endLine": 63,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteRepairLine",
+          "startLine": 65,
+          "endLine": 77,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateRepairLineRelation",
+          "startLine": 79,
+          "endLine": 86,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateRepairLineExists",
+          "startLine": 88,
+          "endLine": 92,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRepairLine",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRepairLinePage",
+          "startLine": 99,
+          "endLine": 102,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getRepairLineListByRepairId",
+          "startLine": 104,
+          "endLine": 107,
+          "params": [
+            "repairId"
+          ]
+        },
+        {
+          "name": "deleteByRepairId",
+          "startLine": 109,
+          "endLine": 112,
+          "params": [
+            "repairId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvRepairLineServiceImpl",
+          "startLine": 25,
+          "endLine": 114,
+          "methods": [
+            "createRepairLine",
+            "updateRepairLine",
+            "deleteRepairLine",
+            "validateRepairLineRelation",
+            "validateRepairLineExists",
+            "getRepairLine",
+            "getRepairLinePage",
+            "getRepairLineListByRepairId",
+            "deleteByRepairId"
+          ],
+          "properties": [
+            "repairLineMapper",
+            "repairService",
+            "subjectService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRepairLine",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateRepairLine",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteRepairLine",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getRepairLine",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "getRepairLinePage",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "getRepairLineListByRepairId",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "deleteByRepairId",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvRepairLineServiceImpl",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRepairLine",
+          "callee": "validateRepairLineRelation",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createRepairLine",
+          "callee": "repairService.validateRepairPrepare",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createRepairLine",
+          "callee": "createReqVO.getRepairId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createRepairLine",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRepairLine",
+          "callee": "repairLineMapper.insert",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createRepairLine",
+          "callee": "repairLine.getId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateRepairLine",
+          "callee": "validateRepairLineExists",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateRepairLine",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateRepairLine",
+          "callee": "validateRepairLineRelation",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateRepairLine",
+          "callee": "repairService.validateRepairPrepare",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateRepairLine",
+          "callee": "updateReqVO.getRepairId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateRepairLine",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateRepairLine",
+          "callee": "repairLineMapper.updateById",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteRepairLine",
+          "callee": "repairLineMapper.selectById",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deleteRepairLine",
+          "callee": "exception",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteRepairLine",
+          "callee": "repairService.validateRepairPrepare",
+          "lineNumber": 73
+        },
+        {
+          "caller": "deleteRepairLine",
+          "callee": "line.getRepairId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "deleteRepairLine",
+          "callee": "repairLineMapper.deleteById",
+          "lineNumber": 76
+        },
+        {
+          "caller": "validateRepairLineRelation",
+          "callee": "repairService.validateRepairExists",
+          "lineNumber": 81
+        },
+        {
+          "caller": "validateRepairLineRelation",
+          "callee": "reqVO.getRepairId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "validateRepairLineRelation",
+          "callee": "reqVO.getSubjectId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "validateRepairLineRelation",
+          "callee": "subjectService.validateSubjectExistsAndEnable",
+          "lineNumber": 84
+        },
+        {
+          "caller": "validateRepairLineRelation",
+          "callee": "reqVO.getSubjectId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "validateRepairLineExists",
+          "callee": "repairLineMapper.selectById",
+          "lineNumber": 89
+        },
+        {
+          "caller": "validateRepairLineExists",
+          "callee": "exception",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getRepairLine",
+          "callee": "repairLineMapper.selectById",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRepairLinePage",
+          "callee": "repairLineMapper.selectPage",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getRepairLineListByRepairId",
+          "callee": "repairLineMapper.selectListByRepairId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "deleteByRepairId",
+          "callee": "repairLineMapper.deleteByRepairId",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/repair/MesDvRepairService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 81,
+      "classes": [
+        {
+          "name": "MesDvRepairService",
+          "startLine": 15,
+          "endLine": 94,
+          "methods": [
+            "createRepair",
+            "updateRepair",
+            "deleteRepair",
+            "validateRepairExists",
+            "getRepairCountByMachineryId",
+            "getRepair",
+            "getRepairPage",
+            "submitRepair",
+            "confirmRepair",
+            "finishRepair"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvRepairService",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/repair/MesDvRepairServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "createRepair",
+          "startLine": 39,
+          "endLine": 49,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateRepair",
+          "startLine": 51,
+          "endLine": 61,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteRepair",
+          "startLine": 63,
+          "endLine": 73,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateSaveData",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateCodeUnique",
+          "startLine": 85,
+          "endLine": 96,
+          "params": [
+            "id",
+            "code"
+          ]
+        },
+        {
+          "name": "validateRepairExists",
+          "startLine": 98,
+          "endLine": 105,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRepairCountByMachineryId",
+          "startLine": 107,
+          "endLine": 110,
+          "params": [
+            "machineryId"
+          ]
+        },
+        {
+          "name": "validateRepairPrepare",
+          "startLine": 118,
+          "endLine": 124,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRepair",
+          "startLine": 126,
+          "endLine": 129,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRepairPage",
+          "startLine": 131,
+          "endLine": 134,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "submitRepair",
+          "startLine": 136,
+          "endLine": 144,
+          "params": [
+            "id",
+            "userId"
+          ]
+        },
+        {
+          "name": "confirmRepair",
+          "startLine": 146,
+          "endLine": 157,
+          "params": [
+            "confirmReqVO"
+          ]
+        },
+        {
+          "name": "finishRepair",
+          "startLine": 159,
+          "endLine": 171,
+          "params": [
+            "id",
+            "result",
+            "userId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvRepairServiceImpl",
+          "startLine": 27,
+          "endLine": 173,
+          "methods": [
+            "createRepair",
+            "updateRepair",
+            "deleteRepair",
+            "validateSaveData",
+            "validateCodeUnique",
+            "validateRepairExists",
+            "getRepairCountByMachineryId",
+            "validateRepairPrepare",
+            "getRepair",
+            "getRepairPage",
+            "submitRepair",
+            "confirmRepair",
+            "finishRepair"
+          ],
+          "properties": [
+            "repairMapper",
+            "repairLineService",
+            "machineryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRepair",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "updateRepair",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteRepair",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "validateRepairExists",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "getRepairCountByMachineryId",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "validateRepairPrepare",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "getRepair",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "getRepairPage",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "submitRepair",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "confirmRepair",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "finishRepair",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvRepairServiceImpl",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRepair",
+          "callee": "validateSaveData",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createRepair",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createRepair",
+          "callee": "repair.setStatus",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRepair",
+          "callee": "MesDvRepairStatusEnum.PREPARE.getStatus",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRepair",
+          "callee": "repairMapper.insert",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createRepair",
+          "callee": "repair.getId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateRepair",
+          "callee": "validateRepairPrepare",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateRepair",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateRepair",
+          "callee": "validateSaveData",
+          "lineNumber": 56
+        },
+        {
+          "caller": "updateRepair",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateRepair",
+          "callee": "repairMapper.updateById",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteRepair",
+          "callee": "validateRepairPrepare",
+          "lineNumber": 67
+        },
+        {
+          "caller": "deleteRepair",
+          "callee": "repairMapper.deleteById",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteRepair",
+          "callee": "repairLineService.deleteByRepairId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "validateSaveData",
+          "callee": "validateCodeUnique",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validateSaveData",
+          "callee": "reqVO.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validateSaveData",
+          "callee": "reqVO.getCode",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validateSaveData",
+          "callee": "machineryService.validateMachineryExists",
+          "lineNumber": 82
+        },
+        {
+          "caller": "validateSaveData",
+          "callee": "reqVO.getMachineryId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "validateCodeUnique",
+          "callee": "repairMapper.selectByCode",
+          "lineNumber": 89
+        },
+        {
+          "caller": "validateCodeUnique",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 93
+        },
+        {
+          "caller": "validateCodeUnique",
+          "callee": "repair.getId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "validateCodeUnique",
+          "callee": "exception",
+          "lineNumber": 94
+        },
+        {
+          "caller": "validateRepairExists",
+          "callee": "repairMapper.selectById",
+          "lineNumber": 100
+        },
+        {
+          "caller": "validateRepairExists",
+          "callee": "exception",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getRepairCountByMachineryId",
+          "callee": "repairMapper.selectCountByMachineryId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "validateRepairPrepare",
+          "callee": "validateRepairExists",
+          "lineNumber": 119
+        },
+        {
+          "caller": "validateRepairPrepare",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validateRepairPrepare",
+          "callee": "MesDvRepairStatusEnum.PREPARE.getStatus",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validateRepairPrepare",
+          "callee": "repair.getStatus",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validateRepairPrepare",
+          "callee": "exception",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getRepair",
+          "callee": "repairMapper.selectById",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getRepairPage",
+          "callee": "repairMapper.selectPage",
+          "lineNumber": 133
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "validateRepairPrepare",
+          "lineNumber": 139
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "repairMapper.updateById",
+          "lineNumber": 142
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "new MesDvRepairDO().setId(id)\n                .setStatus(MesDvRepairStatusEnum.CONFIRMED.getStatus()).setAcceptedUserId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "new MesDvRepairDO().setId(id).setStatus",
+          "lineNumber": 142
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "new MesDvRepairDO().setId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "new MesDvRepairDO",
+          "lineNumber": 142
+        },
+        {
+          "caller": "submitRepair",
+          "callee": "MesDvRepairStatusEnum.CONFIRMED.getStatus",
+          "lineNumber": 143
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "validateRepairExists",
+          "lineNumber": 149
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "confirmReqVO.getId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 150
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "MesDvRepairStatusEnum.CONFIRMED.getStatus",
+          "lineNumber": 150
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "repair.getStatus",
+          "lineNumber": 150
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "exception",
+          "lineNumber": 151
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "repairMapper.updateById",
+          "lineNumber": 155
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "new MesDvRepairDO().setId(confirmReqVO.getId())\n                .setStatus(MesDvRepairStatusEnum.APPROVING.getStatus()).setFinishDate",
+          "lineNumber": 155
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "new MesDvRepairDO().setId(confirmReqVO.getId()).setStatus",
+          "lineNumber": 155
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "new MesDvRepairDO().setId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "new MesDvRepairDO",
+          "lineNumber": 155
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "confirmReqVO.getId",
+          "lineNumber": 155
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "MesDvRepairStatusEnum.APPROVING.getStatus",
+          "lineNumber": 156
+        },
+        {
+          "caller": "confirmRepair",
+          "callee": "confirmReqVO.getFinishDate",
+          "lineNumber": 156
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "validateRepairExists",
+          "lineNumber": 162
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 163
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "MesDvRepairStatusEnum.APPROVING.getStatus",
+          "lineNumber": 163
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "repair.getStatus",
+          "lineNumber": 163
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "exception",
+          "lineNumber": 164
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "repairMapper.updateById",
+          "lineNumber": 168
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "new MesDvRepairDO().setId(id)\n                .setStatus(MesDvRepairStatusEnum.FINISHED.getStatus()).setResult(result)\n                .setConfirmUserId(userId).setConfirmDate",
+          "lineNumber": 168
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "new MesDvRepairDO().setId(id)\n                .setStatus(MesDvRepairStatusEnum.FINISHED.getStatus()).setResult(result).setConfirmUserId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "new MesDvRepairDO().setId(id)\n                .setStatus(MesDvRepairStatusEnum.FINISHED.getStatus()).setResult",
+          "lineNumber": 168
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "new MesDvRepairDO().setId(id).setStatus",
+          "lineNumber": 168
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "new MesDvRepairDO().setId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "new MesDvRepairDO",
+          "lineNumber": 168
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "MesDvRepairStatusEnum.FINISHED.getStatus",
+          "lineNumber": 169
+        },
+        {
+          "caller": "finishRepair",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 170
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 12,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/subject/MesDvSubjectService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 84,
+      "classes": [
+        {
+          "name": "MesDvSubjectService",
+          "startLine": 20,
+          "endLine": 99,
+          "methods": [
+            "createSubject",
+            "updateSubject",
+            "deleteSubject",
+            "getSubject",
+            "getSubjectPage",
+            "validateSubjectExists",
+            "validateSubjectExistsAndEnable",
+            "getSubjectList",
+            "getSubjectList",
+            "getSubjectMap"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesDvSubjectService",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSubjectMap",
+          "callee": "convertMap",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getSubjectMap",
+          "callee": "getSubjectList",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/dv/subject/MesDvSubjectServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 131,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "createSubject",
+          "startLine": 41,
+          "endLine": 50,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateSubject",
+          "startLine": 52,
+          "endLine": 62,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteSubject",
+          "startLine": 64,
+          "endLine": 75,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateSubjectExists",
+          "startLine": 77,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateSubjectExistsAndEnable",
+          "startLine": 84,
+          "endLine": 93,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateSubjectCodeUnique",
+          "startLine": 95,
+          "endLine": 106,
+          "params": [
+            "id",
+            "code"
+          ]
+        },
+        {
+          "name": "getSubject",
+          "startLine": 108,
+          "endLine": 111,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSubjectPage",
+          "startLine": 113,
+          "endLine": 116,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getSubjectList",
+          "startLine": 118,
+          "endLine": 121,
+          "params": []
+        },
+        {
+          "name": "getSubjectList",
+          "startLine": 123,
+          "endLine": 129,
+          "params": [
+            "ids"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesDvSubjectServiceImpl",
+          "startLine": 30,
+          "endLine": 131,
+          "methods": [
+            "createSubject",
+            "updateSubject",
+            "deleteSubject",
+            "validateSubjectExists",
+            "validateSubjectExistsAndEnable",
+            "validateSubjectCodeUnique",
+            "getSubject",
+            "getSubjectPage",
+            "getSubjectList",
+            "getSubjectList"
+          ],
+          "properties": [
+            "subjectMapper",
+            "checkPlanSubjectService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createSubject",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateSubject",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "deleteSubject",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "validateSubjectExists",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "validateSubjectExistsAndEnable",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getSubject",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "getSubjectPage",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "getSubjectList",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "getSubjectList",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "MesDvSubjectServiceImpl",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createSubject",
+          "callee": "validateSubjectCodeUnique",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createSubject",
+          "callee": "createReqVO.getCode",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createSubject",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createSubject",
+          "callee": "subjectMapper.insert",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createSubject",
+          "callee": "subject.getId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateSubject",
+          "callee": "validateSubjectExists",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateSubject",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateSubject",
+          "callee": "validateSubjectCodeUnique",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateSubject",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateSubject",
+          "callee": "updateReqVO.getCode",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateSubject",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateSubject",
+          "callee": "subjectMapper.updateById",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteSubject",
+          "callee": "validateSubjectExists",
+          "lineNumber": 67
+        },
+        {
+          "caller": "deleteSubject",
+          "callee": "checkPlanSubjectService.getCheckPlanSubjectCountBySubjectId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteSubject",
+          "callee": "exception",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteSubject",
+          "callee": "subjectMapper.deleteById",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validateSubjectExists",
+          "callee": "subjectMapper.selectById",
+          "lineNumber": 79
+        },
+        {
+          "caller": "validateSubjectExists",
+          "callee": "exception",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validateSubjectExistsAndEnable",
+          "callee": "subjectMapper.selectById",
+          "lineNumber": 86
+        },
+        {
+          "caller": "validateSubjectExistsAndEnable",
+          "callee": "exception",
+          "lineNumber": 88
+        },
+        {
+          "caller": "validateSubjectExistsAndEnable",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 90
+        },
+        {
+          "caller": "validateSubjectExistsAndEnable",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 90
+        },
+        {
+          "caller": "validateSubjectExistsAndEnable",
+          "callee": "subject.getStatus",
+          "lineNumber": 90
+        },
+        {
+          "caller": "validateSubjectExistsAndEnable",
+          "callee": "exception",
+          "lineNumber": 91
+        },
+        {
+          "caller": "validateSubjectCodeUnique",
+          "callee": "subjectMapper.selectByCode",
+          "lineNumber": 99
+        },
+        {
+          "caller": "validateSubjectCodeUnique",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 103
+        },
+        {
+          "caller": "validateSubjectCodeUnique",
+          "callee": "subject.getId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "validateSubjectCodeUnique",
+          "callee": "exception",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getSubject",
+          "callee": "subjectMapper.selectById",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getSubjectPage",
+          "callee": "subjectMapper.selectPage",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getSubjectList",
+          "callee": "subjectMapper.selectList",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getSubjectList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getSubjectList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getSubjectList",
+          "callee": "subjectMapper.selectByIds",
+          "lineNumber": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/md/workstation/MesMdWorkstationMachineService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "MesMdWorkstationMachineService",
+          "startLine": 14,
+          "endLine": 46,
+          "methods": [
+            "createWorkstationMachine",
+            "deleteWorkstationMachine",
+            "getWorkstationMachineListByWorkstationId",
+            "deleteWorkstationMachineByWorkstationId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesMdWorkstationMachineService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/service/md/workstation/MesMdWorkstationMachineServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "createWorkstationMachine",
+          "startLine": 37,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "validateWorkstationMachineSaveData",
+          "startLine": 48,
+          "endLine": 58,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteWorkstationMachine",
+          "startLine": 60,
+          "endLine": 66,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWorkstationMachineListByWorkstationId",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "workstationId"
+          ]
+        },
+        {
+          "name": "deleteWorkstationMachineByWorkstationId",
+          "startLine": 73,
+          "endLine": 76,
+          "params": [
+            "workstationId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesMdWorkstationMachineServiceImpl",
+          "startLine": 24,
+          "endLine": 78,
+          "methods": [
+            "createWorkstationMachine",
+            "validateWorkstationMachineSaveData",
+            "deleteWorkstationMachine",
+            "getWorkstationMachineListByWorkstationId",
+            "deleteWorkstationMachineByWorkstationId"
+          ],
+          "properties": [
+            "workstationMachineMapper",
+            "workstationService",
+            "machineryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createWorkstationMachine",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWorkstationMachine",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getWorkstationMachineListByWorkstationId",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWorkstationMachineByWorkstationId",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "MesMdWorkstationMachineServiceImpl",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWorkstationMachine",
+          "callee": "validateWorkstationMachineSaveData",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createWorkstationMachine",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createWorkstationMachine",
+          "callee": "workstationMachineMapper.insert",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createWorkstationMachine",
+          "callee": "machine.getId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "machineryService.validateMachineryExists",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "reqVO.getMachineryId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "workstationMachineMapper.selectByMachineryId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "reqVO.getMachineryId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "workstationService.getWorkstation",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "existing.getWorkstationId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "exception",
+          "lineNumber": 55
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "workstation.getName",
+          "lineNumber": 56
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "String.valueOf",
+          "lineNumber": 56
+        },
+        {
+          "caller": "validateWorkstationMachineSaveData",
+          "callee": "existing.getWorkstationId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteWorkstationMachine",
+          "callee": "workstationMachineMapper.selectById",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteWorkstationMachine",
+          "callee": "exception",
+          "lineNumber": 63
+        },
+        {
+          "caller": "deleteWorkstationMachine",
+          "callee": "workstationMachineMapper.deleteById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getWorkstationMachineListByWorkstationId",
+          "callee": "workstationMachineMapper.selectListByWorkstationId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteWorkstationMachineByWorkstationId",
+          "callee": "workstationMachineMapper.deleteByWorkstationId",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-api/src/main/java/cn/iocoder/yudao/module/pay/enums/DictTypeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "DictTypeConstants",
+          "startLine": 8,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "CHANNEL_CODE",
+            "ORDER_STATUS",
+            "REFUND_STATUS",
+            "NOTIFY_STATUS",
+            "TRANSFER_STATUS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/order/vo/PayOrderExcelVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "PayOrderExcelVO",
+          "startLine": 17,
+          "endLine": 67,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime",
+            "price",
+            "refundPrice",
+            "channelFeePrice",
+            "merchantOrderId",
+            "no",
+            "channelOrderNo",
+            "status",
+            "channelCode",
+            "successTime",
+            "expireTime",
+            "appName",
+            "subject",
+            "body"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderExcelVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/refund/vo/PayRefundExcelVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "PayRefundExcelVO",
+          "startLine": 17,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime",
+            "payPrice",
+            "refundPrice",
+            "merchantRefundId",
+            "no",
+            "channelRefundNo",
+            "merchantOrderId",
+            "channelOrderNo",
+            "status",
+            "channelCode",
+            "successTime",
+            "appName",
+            "reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayRefundExcelVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/transfer/vo/PayTransferRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 75,
+      "classes": [
+        {
+          "name": "PayTransferRespVO",
+          "startLine": 15,
+          "endLine": 100,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "appId",
+            "appName",
+            "channelId",
+            "channelCode",
+            "merchantTransferId",
+            "status",
+            "successTime",
+            "price",
+            "subject",
+            "userName",
+            "userAccount",
+            "notifyUrl",
+            "userIp",
+            "channelExtras",
+            "channelTransferNo",
+            "channelErrorCode",
+            "channelErrorMsg",
+            "channelNotifyData",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayTransferRespVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-api/src/main/java/cn/iocoder/yudao/module/system/enums/DictTypeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "DictTypeConstants",
+          "startLine": 8,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "USER_TYPE",
+            "COMMON_STATUS",
+            "USER_SEX",
+            "DATA_SCOPE",
+            "LOGIN_TYPE",
+            "LOGIN_RESULT",
+            "SMS_CHANNEL_CODE",
+            "SMS_TEMPLATE_TYPE",
+            "SMS_SEND_STATUS",
+            "SMS_RECEIVE_STATUS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dept/vo/post/PostRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "PostRespVO",
+          "startLine": 13,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "code",
+            "sort",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PostRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/data/DictDataRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "DictDataRespVO",
+          "startLine": 13,
+          "endLine": 55,
+          "methods": [],
+          "properties": [
+            "id",
+            "sort",
+            "label",
+            "value",
+            "dictType",
+            "status",
+            "colorType",
+            "cssClass",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictDataRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/type/DictTypeRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "DictTypeRespVO",
+          "startLine": 13,
+          "endLine": 41,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "type",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/vo/loginlog/LoginLogRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "LoginLogRespVO",
+          "startLine": 13,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "logType",
+            "userId",
+            "userType",
+            "traceId",
+            "username",
+            "result",
+            "userIp",
+            "userAgent",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginLogRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/vo/operatelog/OperateLogRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "OperateLogRespVO",
+          "startLine": 17,
+          "endLine": 75,
+          "methods": [],
+          "properties": [
+            "id",
+            "traceId",
+            "userId",
+            "userName",
+            "userType",
+            "type",
+            "subType",
+            "bizId",
+            "action",
+            "extra",
+            "requestMethod",
+            "requestUrl",
+            "userIp",
+            "userAgent",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OperateLogRespVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/vo/role/RoleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "RoleRespVO",
+          "startLine": 15,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "code",
+            "sort",
+            "status",
+            "type",
+            "remark",
+            "dataScope",
+            "dataScopeDeptIds",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RoleRespVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/sms/vo/log/SmsLogRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 89,
+      "classes": [
+        {
+          "name": "SmsLogRespVO",
+          "startLine": 15,
+          "endLine": 116,
+          "methods": [],
+          "properties": [
+            "id",
+            "channelId",
+            "channelCode",
+            "templateId",
+            "templateCode",
+            "templateType",
+            "templateContent",
+            "templateParams",
+            "apiTemplateId",
+            "mobile",
+            "userId",
+            "userType",
+            "sendStatus",
+            "sendTime",
+            "apiSendCode",
+            "apiSendMsg",
+            "apiRequestId",
+            "apiSerialNo",
+            "receiveStatus",
+            "receiveTime",
+            "apiReceiveCode",
+            "apiReceiveMsg",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SmsLogRespVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/sms/vo/template/SmsTemplateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "SmsTemplateRespVO",
+          "startLine": 14,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "id",
+            "type",
+            "status",
+            "code",
+            "name",
+            "content",
+            "params",
+            "remark",
+            "apiTemplateId",
+            "channelId",
+            "channelCode",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SmsTemplateRespVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/tenant/vo/tenant/TenantRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "TenantRespVO",
+          "startLine": 14,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "contactName",
+            "contactMobile",
+            "status",
+            "websites",
+            "packageId",
+            "expireTime",
+            "accountCount",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TenantRespVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/vo/user/UserImportExcelVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "UserImportExcelVO",
+          "startLine": 15,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "username",
+            "nickname",
+            "deptId",
+            "email",
+            "mobile",
+            "sex",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserImportExcelVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/vo/user/UserRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "UserRespVO",
+          "startLine": 14,
+          "endLine": 75,
+          "methods": [],
+          "properties": [
+            "id",
+            "username",
+            "nickname",
+            "remark",
+            "deptId",
+            "deptName",
+            "postIds",
+            "email",
+            "mobile",
+            "sex",
+            "avatar",
+            "status",
+            "loginIp",
+            "loginDate",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserRespVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/framework/operatelog/core/BooleanParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 31,
+          "endLine": 37,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BooleanParseFunction",
+          "startLine": 15,
+          "endLine": 39,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "BooleanParseFunction",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "apply",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 36
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-api/src/main/java/cn/iocoder/yudao/module/wms/enums/DictTypeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "DictTypeConstants",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "MERCHANT_TYPE",
+            "ORDER_STATUS",
+            "ORDER_TYPE",
+            "RECEIPT_ORDER_TYPE",
+            "SHIPMENT_ORDER_TYPE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/merchant/vo/WmsMerchantRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "WmsMerchantRespVO",
+          "startLine": 13,
+          "endLine": 68,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "type",
+            "level",
+            "bankName",
+            "bankAccount",
+            "address",
+            "mobile",
+            "telephone",
+            "contact",
+            "email",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsMerchantRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/check/vo/order/WmsCheckOrderRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "WmsCheckOrderRespVO",
+          "startLine": 16,
+          "endLine": 79,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "orderTime",
+            "status",
+            "remark",
+            "warehouseId",
+            "warehouseName",
+            "totalQuantity",
+            "totalPrice",
+            "actualPrice",
+            "details",
+            "createTime",
+            "creator",
+            "creatorName",
+            "updateTime",
+            "updater",
+            "updaterName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsCheckOrderRespVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/movement/vo/order/WmsMovementOrderRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 62,
+      "classes": [
+        {
+          "name": "WmsMovementOrderRespVO",
+          "startLine": 16,
+          "endLine": 82,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "orderTime",
+            "status",
+            "remark",
+            "sourceWarehouseId",
+            "sourceWarehouseName",
+            "targetWarehouseId",
+            "targetWarehouseName",
+            "totalQuantity",
+            "totalPrice",
+            "details",
+            "createTime",
+            "creator",
+            "creatorName",
+            "updateTime",
+            "updater",
+            "updaterName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsMovementOrderRespVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/receipt/vo/order/WmsReceiptOrderRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 69,
+      "classes": [
+        {
+          "name": "WmsReceiptOrderRespVO",
+          "startLine": 16,
+          "endLine": 91,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "type",
+            "orderTime",
+            "status",
+            "bizOrderNo",
+            "merchantId",
+            "merchantName",
+            "remark",
+            "warehouseId",
+            "warehouseName",
+            "totalQuantity",
+            "totalPrice",
+            "details",
+            "createTime",
+            "creator",
+            "creatorName",
+            "updateTime",
+            "updater",
+            "updaterName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsReceiptOrderRespVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/shipment/vo/order/WmsShipmentOrderRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 69,
+      "classes": [
+        {
+          "name": "WmsShipmentOrderRespVO",
+          "startLine": 16,
+          "endLine": 91,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "type",
+            "orderTime",
+            "status",
+            "bizOrderNo",
+            "merchantId",
+            "merchantName",
+            "remark",
+            "warehouseId",
+            "warehouseName",
+            "totalQuantity",
+            "totalPrice",
+            "details",
+            "createTime",
+            "creator",
+            "creatorName",
+            "updateTime",
+            "updater",
+            "updaterName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsShipmentOrderRespVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

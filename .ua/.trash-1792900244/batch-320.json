@@ -1,0 +1,723 @@
+{
+  "nodes": [
+    {
+      "id": "file:yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/package-info.java",
+      "summary": "member 模块，我们放会员业务。 例如说：会员中心等等 1. Controller URL：以 /member/ 开头，避免和其它 Module 冲突 2. DataObject 表名：以 member_ 开头，方便在数据库中区分",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-member/yudao-module-member-server/src/test/resources/application-unit-test.yaml",
+      "type": "file",
+      "name": "application-unit-test.yaml",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/application-unit-test.yaml",
+      "summary": "配置会员与 MES 单元测试使用的 Spring、MyBatis-Plus 和芋道测试参数。",
+      "tags": [
+        "test",
+        "unit-test",
+        "business-rule"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-member/yudao-module-member-server/src/test/resources/logback.xml",
+      "type": "file",
+      "name": "logback.xml",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/logback.xml",
+      "summary": "复用 Spring Boot 默认 Logback 配置，作为测试环境日志配置入口。",
+      "tags": [
+        "test",
+        "unit-test",
+        "business-rule"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/clean.sql",
+      "type": "file",
+      "name": "clean.sql",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/clean.sql",
+      "summary": "清理会员测试涉及的用户、地址、标签、等级、分组及佣金记录数据。",
+      "tags": [
+        "test",
+        "unit-test",
+        "business-rule"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "type": "file",
+      "name": "create_tables.sql",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "summary": "定义会员单元测试需要的用户、地址、标签、等级、分组和佣金记录表。",
+      "tags": [
+        "test",
+        "unit-test",
+        "business-rule"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_user",
+      "type": "table",
+      "name": "member_user",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "lineRange": [
+        1,
+        6
+      ],
+      "summary": "定义单元测试表 member_user，用于 MES 制造业务数据验证。",
+      "tags": [
+        "table",
+        "test-fixture",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_address",
+      "type": "table",
+      "name": "member_address",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "lineRange": [
+        32,
+        37
+      ],
+      "summary": "定义单元测试表 member_address，用于 MES 制造业务数据验证。",
+      "tags": [
+        "table",
+        "test-fixture",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_tag",
+      "type": "table",
+      "name": "member_tag",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "lineRange": [
+        48,
+        53
+      ],
+      "summary": "定义单元测试表 member_tag，用于 MES 制造业务数据验证。",
+      "tags": [
+        "table",
+        "test-fixture",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_level",
+      "type": "table",
+      "name": "member_level",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "lineRange": [
+        61,
+        66
+      ],
+      "summary": "定义单元测试表 member_level，用于 MES 制造业务数据验证。",
+      "tags": [
+        "table",
+        "test-fixture",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_group",
+      "type": "table",
+      "name": "member_group",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "lineRange": [
+        80,
+        85
+      ],
+      "summary": "定义单元测试表 member_group，用于 MES 制造业务数据验证。",
+      "tags": [
+        "table",
+        "test-fixture",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_brokerage_record",
+      "type": "table",
+      "name": "member_brokerage_record",
+      "filePath": "yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "lineRange": [
+        94,
+        99
+      ],
+      "summary": "定义单元测试表 member_brokerage_record，用于 MES 制造业务数据验证。",
+      "tags": [
+        "table",
+        "test-fixture",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:yudao-module-mes/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "yudao-module-mes/pom.xml",
+      "summary": "配置 MES 制造执行模块，覆盖基础数据、排班、设备、工具、生产、质量和仓库等业务。",
+      "tags": [
+        "configuration",
+        "runtime",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:yudao-module-mes/yudao-module-mes-api/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "yudao-module-mes/yudao-module-mes-api/pom.xml",
+      "summary": "配置 MES 制造执行模块，覆盖基础数据、排班、设备、工具、生产、质量和仓库等业务。",
+      "tags": [
+        "configuration",
+        "runtime",
+        "spring-boot"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:yudao-module-mes/yudao-module-mes-server/pom.xml",
+      "type": "config",
+      "name": "pom.xml",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/pom.xml",
+      "summary": "配置 MES 制造执行模块，覆盖基础数据、排班、设备、工具、生产、质量和仓库等业务。",
+      "tags": [
+        "configuration",
+        "runtime",
+        "spring-boot"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "type": "file",
+      "name": "MesServerApplication.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "summary": "MES 服务端 Spring Boot 启动入口。",
+      "tags": [
+        "entry-point",
+        "spring-boot",
+        "mes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java:MesServerApplication",
+      "type": "class",
+      "name": "MesServerApplication",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "lineRange": [
+        15,
+        30
+      ],
+      "summary": "MesServerApplication：MES 服务端 Spring Boot 启动入口。",
+      "tags": [
+        "entry-point",
+        "spring-boot",
+        "mes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "lineRange": [
+        18,
+        28
+      ],
+      "summary": "启动 MES 服务端应用。",
+      "tags": [
+        "entry-point",
+        "spring-boot",
+        "mes"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/cal/package-info.java",
+      "summary": "MES 日历排班（Calendar / Shift Planning）：班次、班组、班组成员、排班计划、假期设置等生产人员轮班与工作日历",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/dv/package-info.java",
+      "summary": "MES 设备管理（Device / Equipment Management）：设备类型、设备台账、点检计划与记录、保养记录、维修工单等设备全生命周期管理",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/package-info.java",
+      "summary": "MES 基础数据（Master Data）：物料、物料分类、计量单位、客户、供应商、车间、工作站、BOM、SOP、SIP 等制造基础主数据",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/pro/package-info.java",
+      "summary": "MES 生产管理（Production）：工序、工艺路线、生产工单、生产任务、报工反馈、流转卡、安灯、停机记录等核心生产执行",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java",
+      "type": "file",
+      "name": "MesQcIndicatorResultRespVO.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java",
+      "summary": "定义 MES 质量检测指标结果的响应字段结构。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java:MesQcIndicatorResultRespVO",
+      "type": "class",
+      "name": "MesQcIndicatorResultRespVO",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java",
+      "lineRange": [
+        9,
+        74
+      ],
+      "summary": "MesQcIndicatorResultRespVO：定义 MES 质量检测指标结果的响应字段结构。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/package-info.java",
+      "summary": "MES 质量管理（Quality Control）：检验模板、质检指标、来料检（IQC）、过程检（IPQC）、出货检（OQC）、退货检（RQC）、缺陷管理",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/tm/package-info.java",
+      "summary": "MES 工具管理（Tool Management）：工具类型、工具台账，管理生产所需的刀具、模具、夹具等工装资源",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/package-info.java",
+      "summary": "MES 仓库管理（Warehouse Management）：仓库/库区/库位、库存台账、批次/SN、出入库（采购/生产/销售/外协/其他）、调拨、盘点、条码",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java",
+      "type": "file",
+      "name": "MesWmStockTakingTaskCancelReqVO.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java",
+      "summary": "定义取消 MES 仓库盘点任务的请求数据。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java:MesWmStockTakingTaskCancelReqVO",
+      "type": "class",
+      "name": "MesWmStockTakingTaskCancelReqVO",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java",
+      "lineRange": [
+        7,
+        15
+      ],
+      "summary": "MesWmStockTakingTaskCancelReqVO：定义取消 MES 仓库盘点任务的请求数据。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java",
+      "type": "file",
+      "name": "MesWmStockTakingTaskFinishReqVO.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java",
+      "summary": "定义完成 MES 仓库盘点任务的请求数据。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java:MesWmStockTakingTaskFinishReqVO",
+      "type": "class",
+      "name": "MesWmStockTakingTaskFinishReqVO",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java",
+      "lineRange": [
+        7,
+        15
+      ],
+      "summary": "MesWmStockTakingTaskFinishReqVO：定义完成 MES 仓库盘点任务的请求数据。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java",
+      "type": "file",
+      "name": "MesWmStockTakingTaskRespVO.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java",
+      "summary": "定义 MES 仓库盘点任务的响应结构，包含任务状态与业务信息。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java:MesWmStockTakingTaskRespVO",
+      "type": "class",
+      "name": "MesWmStockTakingTaskRespVO",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java",
+      "lineRange": [
+        10,
+        81
+      ],
+      "summary": "MesWmStockTakingTaskRespVO：定义 MES 仓库盘点任务的响应结构，包含任务状态与业务信息。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java",
+      "type": "file",
+      "name": "MesWmStockTakingTaskStartReqVO.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java",
+      "summary": "定义启动 MES 仓库盘点任务的请求数据。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java:MesWmStockTakingTaskStartReqVO",
+      "type": "class",
+      "name": "MesWmStockTakingTaskStartReqVO",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java",
+      "lineRange": [
+        7,
+        15
+      ],
+      "summary": "MesWmStockTakingTaskStartReqVO：定义启动 MES 仓库盘点任务的请求数据。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java",
+      "type": "file",
+      "name": "MesWmStockTakingTaskLineBatchUpdateReqVO.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java",
+      "summary": "定义批量更新仓库盘点任务明细的请求数据结构。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java:MesWmStockTakingTaskLineBatchUpdateReqVO",
+      "type": "class",
+      "name": "MesWmStockTakingTaskLineBatchUpdateReqVO",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java",
+      "lineRange": [
+        12,
+        41
+      ],
+      "summary": "MesWmStockTakingTaskLineBatchUpdateReqVO：定义批量更新仓库盘点任务明细的请求数据结构。",
+      "tags": [
+        "data-model",
+        "api",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/package-info.java",
+      "summary": "提供 RESTful API 给前端： 1. admin 包：提供给管理后台 yudao-ui-admin 前端项目 2. app 包：提供给用户 APP yudao-ui-app 前端项目，它的 Controller 和 VO 都要添加 App 前缀，用于和管理后台进行区分",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/framework/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/framework/package-info.java",
+      "summary": "属于 mes 模块的 framework 封装 @author 芋道源码",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/framework/rpc/package-info.java",
+      "type": "file",
+      "name": "package-info.java",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/framework/rpc/package-info.java",
+      "summary": "占位",
+      "tags": [
+        "package-info",
+        "module-boundary",
+        "business"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "target": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_user",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "target": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_address",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "target": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_tag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "target": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_level",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "target": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_group",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql",
+      "target": "table:yudao-module-member/yudao-module-member-server/src/test/resources/sql/create_tables.sql:member_brokerage_record",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java:MesServerApplication",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java:MesServerApplication",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "target": "function:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java",
+      "target": "function:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/MesServerApplication.java:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java:MesQcIndicatorResultRespVO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/qc/indicatorresult/vo/MesQcIndicatorResultRespVO.java:MesQcIndicatorResultRespVO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java:MesWmStockTakingTaskCancelReqVO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskCancelReqVO.java:MesWmStockTakingTaskCancelReqVO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java:MesWmStockTakingTaskFinishReqVO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskFinishReqVO.java:MesWmStockTakingTaskFinishReqVO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java:MesWmStockTakingTaskRespVO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskRespVO.java:MesWmStockTakingTaskRespVO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java:MesWmStockTakingTaskStartReqVO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/MesWmStockTakingTaskStartReqVO.java:MesWmStockTakingTaskStartReqVO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java:MesWmStockTakingTaskLineBatchUpdateReqVO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java",
+      "target": "class:yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/wm/stocktaking/task/vo/line/MesWmStockTakingTaskLineBatchUpdateReqVO.java:MesWmStockTakingTaskLineBatchUpdateReqVO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

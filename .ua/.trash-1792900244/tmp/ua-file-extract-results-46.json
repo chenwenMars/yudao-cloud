@@ -1,0 +1,2592 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/ImChannelMessageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "pullChannelMessageList",
+          "startLine": 41,
+          "endLine": 63,
+          "params": [
+            "minId",
+            "size"
+          ]
+        },
+        {
+          "name": "readChannelMessages",
+          "startLine": 65,
+          "endLine": 73,
+          "params": [
+            "channelId",
+            "messageId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImChannelMessageController",
+          "startLine": 32,
+          "endLine": 75,
+          "methods": [
+            "pullChannelMessageList",
+            "readChannelMessages"
+          ],
+          "properties": [
+            "channelMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "pullChannelMessageList",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "readChannelMessages",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "ImChannelMessageController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "getLoginUserId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "channelMessageService.pullChannelMessageList",
+          "lineNumber": 50
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 51
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 52
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "channelMessageService.getChannelReadMaxMessageIdMap",
+          "lineNumber": 55
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "convertSet",
+          "lineNumber": 56
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 57
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "readMaxByChannel.get",
+          "lineNumber": 58
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "vo.getChannelId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "vo.setReceiptStatus",
+          "lineNumber": 59
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "vo.getId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "ImMessageReceiptStatusEnum.DONE.getStatus",
+          "lineNumber": 60
+        },
+        {
+          "caller": "pullChannelMessageList",
+          "callee": "ImMessageReceiptStatusEnum.PENDING.getStatus",
+          "lineNumber": 61
+        },
+        {
+          "caller": "readChannelMessages",
+          "callee": "channelMessageService.readChannelMessages",
+          "lineNumber": 71
+        },
+        {
+          "caller": "readChannelMessages",
+          "callee": "getLoginUserId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "readChannelMessages",
+          "callee": "success",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/ImGroupMessageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "sendGroupMessage",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "pullGroupMessageList",
+          "startLine": 40,
+          "endLine": 49,
+          "params": [
+            "minId",
+            "size"
+          ]
+        },
+        {
+          "name": "readGroupMessages",
+          "startLine": 51,
+          "endLine": 59,
+          "params": [
+            "groupId",
+            "messageId"
+          ]
+        },
+        {
+          "name": "recallGroupMessage",
+          "startLine": 61,
+          "endLine": 67,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getGroupReadUserIds",
+          "startLine": 69,
+          "endLine": 76,
+          "params": [
+            "groupId",
+            "messageId"
+          ]
+        },
+        {
+          "name": "getGroupMessageList",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImGroupMessageController",
+          "startLine": 24,
+          "endLine": 85,
+          "methods": [
+            "sendGroupMessage",
+            "pullGroupMessageList",
+            "readGroupMessages",
+            "recallGroupMessage",
+            "getGroupReadUserIds",
+            "getGroupMessageList"
+          ],
+          "properties": [
+            "groupMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendGroupMessage",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "pullGroupMessageList",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "readGroupMessages",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "recallGroupMessage",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getGroupReadUserIds",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getGroupMessageList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "ImGroupMessageController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendGroupMessage",
+          "callee": "groupMessageService.sendGroupMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "sendGroupMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "sendGroupMessage",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sendGroupMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 37
+        },
+        {
+          "caller": "pullGroupMessageList",
+          "callee": "groupMessageService.pullGroupMessageList",
+          "lineNumber": 47
+        },
+        {
+          "caller": "pullGroupMessageList",
+          "callee": "getLoginUserId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "pullGroupMessageList",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "pullGroupMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 48
+        },
+        {
+          "caller": "readGroupMessages",
+          "callee": "groupMessageService.readGroupMessages",
+          "lineNumber": 57
+        },
+        {
+          "caller": "readGroupMessages",
+          "callee": "getLoginUserId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "readGroupMessages",
+          "callee": "success",
+          "lineNumber": 58
+        },
+        {
+          "caller": "recallGroupMessage",
+          "callee": "groupMessageService.recallGroupMessage",
+          "lineNumber": 65
+        },
+        {
+          "caller": "recallGroupMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "recallGroupMessage",
+          "callee": "success",
+          "lineNumber": 66
+        },
+        {
+          "caller": "recallGroupMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getGroupReadUserIds",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getGroupReadUserIds",
+          "callee": "groupMessageService.getGroupReadUserIds",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getGroupReadUserIds",
+          "callee": "getLoginUserId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getGroupMessageList",
+          "callee": "groupMessageService.getGroupMessageList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getGroupMessageList",
+          "callee": "getLoginUserId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getGroupMessageList",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getGroupMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/ImPrivateMessageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "sendPrivateMessage",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "pullPrivateMessageList",
+          "startLine": 41,
+          "endLine": 50,
+          "params": [
+            "minId",
+            "size"
+          ]
+        },
+        {
+          "name": "readPrivateMessages",
+          "startLine": 52,
+          "endLine": 60,
+          "params": [
+            "receiverId",
+            "messageId"
+          ]
+        },
+        {
+          "name": "getMaxReadMessageId",
+          "startLine": 62,
+          "endLine": 68,
+          "params": [
+            "peerId"
+          ]
+        },
+        {
+          "name": "recallPrivateMessage",
+          "startLine": 70,
+          "endLine": 76,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getPrivateMessageList",
+          "startLine": 78,
+          "endLine": 83,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImPrivateMessageController",
+          "startLine": 24,
+          "endLine": 85,
+          "methods": [
+            "sendPrivateMessage",
+            "pullPrivateMessageList",
+            "readPrivateMessages",
+            "getMaxReadMessageId",
+            "recallPrivateMessage",
+            "getPrivateMessageList"
+          ],
+          "properties": [
+            "privateMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendPrivateMessage",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "pullPrivateMessageList",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "readPrivateMessages",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getMaxReadMessageId",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "recallPrivateMessage",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getPrivateMessageList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "ImPrivateMessageController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendPrivateMessage",
+          "callee": "privateMessageService.sendPrivateMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sendPrivateMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sendPrivateMessage",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "sendPrivateMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 38
+        },
+        {
+          "caller": "pullPrivateMessageList",
+          "callee": "privateMessageService.pullPrivateMessageList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "pullPrivateMessageList",
+          "callee": "getLoginUserId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "pullPrivateMessageList",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "pullPrivateMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 49
+        },
+        {
+          "caller": "readPrivateMessages",
+          "callee": "privateMessageService.readPrivateMessages",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readPrivateMessages",
+          "callee": "getLoginUserId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readPrivateMessages",
+          "callee": "success",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getMaxReadMessageId",
+          "callee": "success",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getMaxReadMessageId",
+          "callee": "privateMessageService.getMaxReadMessageId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getMaxReadMessageId",
+          "callee": "getLoginUserId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "recallPrivateMessage",
+          "callee": "privateMessageService.recallPrivateMessage",
+          "lineNumber": 74
+        },
+        {
+          "caller": "recallPrivateMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "recallPrivateMessage",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "recallPrivateMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPrivateMessageList",
+          "callee": "privateMessageService.getPrivateMessageList",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getPrivateMessageList",
+          "callee": "getLoginUserId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getPrivateMessageList",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getPrivateMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/channel/ImChannelMessagePullRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "ImChannelMessagePullRespVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "channelId",
+            "materialId",
+            "type",
+            "content",
+            "receiptStatus",
+            "sendTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImChannelMessagePullRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/group/ImGroupMessageListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "ImGroupMessageListReqVO",
+          "startLine": 9,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "groupId",
+            "maxId",
+            "limit"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupMessageListReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/group/ImGroupMessageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "ImGroupMessageRespVO",
+          "startLine": 12,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "id",
+            "clientMessageId",
+            "senderId",
+            "groupId",
+            "type",
+            "content",
+            "status",
+            "sendTime",
+            "atUserIds",
+            "receiverUserIds",
+            "receiptStatus",
+            "readCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupMessageRespVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/group/ImGroupMessageSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "isTypeNormal",
+          "startLine": 47,
+          "endLine": 51,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImGroupMessageSendReqVO",
+          "startLine": 17,
+          "endLine": 53,
+          "methods": [
+            "isTypeNormal"
+          ],
+          "properties": [
+            "clientMessageId",
+            "groupId",
+            "type",
+            "content",
+            "atUserIds",
+            "receipt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isTypeNormal",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "ImGroupMessageSendReqVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isTypeNormal",
+          "callee": "ImContentTypeEnum.validate(type).isNormal",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isTypeNormal",
+          "callee": "ImContentTypeEnum.validate",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/privates/ImPrivateMessageListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "ImPrivateMessageListReqVO",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "receiverId",
+            "maxId",
+            "limit"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImPrivateMessageListReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/privates/ImPrivateMessageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "ImPrivateMessageRespVO",
+          "startLine": 11,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "clientMessageId",
+            "senderId",
+            "receiverId",
+            "type",
+            "content",
+            "status",
+            "receiptStatus",
+            "sendTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImPrivateMessageRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/message/vo/privates/ImPrivateMessageSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "isTypeNormal",
+          "startLine": 42,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImPrivateMessageSendReqVO",
+          "startLine": 15,
+          "endLine": 48,
+          "methods": [
+            "isTypeNormal"
+          ],
+          "properties": [
+            "clientMessageId",
+            "receiverId",
+            "type",
+            "content",
+            "receipt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isTypeNormal",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "ImPrivateMessageSendReqVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isTypeNormal",
+          "callee": "ImContentTypeEnum.validate(type).isNormal",
+          "lineNumber": 45
+        },
+        {
+          "caller": "isTypeNormal",
+          "callee": "ImContentTypeEnum.validate",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/rtc/ImRtcCallController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "createCall",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "inviteCall",
+          "startLine": 49,
+          "endLine": 54,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "joinCall",
+          "startLine": 56,
+          "endLine": 62,
+          "params": [
+            "room"
+          ]
+        },
+        {
+          "name": "accept",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "room"
+          ]
+        },
+        {
+          "name": "reject",
+          "startLine": 72,
+          "endLine": 78,
+          "params": [
+            "room"
+          ]
+        },
+        {
+          "name": "cancel",
+          "startLine": 80,
+          "endLine": 86,
+          "params": [
+            "room"
+          ]
+        },
+        {
+          "name": "leave",
+          "startLine": 88,
+          "endLine": 94,
+          "params": [
+            "room"
+          ]
+        },
+        {
+          "name": "noAnswerCallCheck",
+          "startLine": 96,
+          "endLine": 102,
+          "params": [
+            "room"
+          ]
+        },
+        {
+          "name": "getActiveCall",
+          "startLine": 104,
+          "endLine": 110,
+          "params": [
+            "groupId"
+          ]
+        },
+        {
+          "name": "buildCallRespVO",
+          "startLine": 121,
+          "endLine": 137,
+          "params": [
+            "call",
+            "userId"
+          ]
+        },
+        {
+          "name": "buildGroupActiveRespVO",
+          "startLine": 145,
+          "endLine": 154,
+          "params": [
+            "call"
+          ]
+        },
+        {
+          "name": "filterUserIds",
+          "startLine": 163,
+          "endLine": 167,
+          "params": [
+            "participants",
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcCallController",
+          "startLine": 30,
+          "endLine": 169,
+          "methods": [
+            "createCall",
+            "inviteCall",
+            "joinCall",
+            "accept",
+            "reject",
+            "cancel",
+            "leave",
+            "noAnswerCallCheck",
+            "getActiveCall",
+            "buildCallRespVO",
+            "buildGroupActiveRespVO",
+            "filterUserIds"
+          ],
+          "properties": [
+            "rtcCallService",
+            "imProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createCall",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "inviteCall",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "joinCall",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "accept",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "reject",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "cancel",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "leave",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "noAnswerCallCheck",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "getActiveCall",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcCallController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCall",
+          "callee": "getLoginUserId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createCall",
+          "callee": "rtcCallService.createCall",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createCall",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createCall",
+          "callee": "buildCallRespVO",
+          "lineNumber": 46
+        },
+        {
+          "caller": "inviteCall",
+          "callee": "rtcCallService.inviteCall",
+          "lineNumber": 52
+        },
+        {
+          "caller": "inviteCall",
+          "callee": "getLoginUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "inviteCall",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "joinCall",
+          "callee": "getLoginUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "joinCall",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "joinCall",
+          "callee": "buildCallRespVO",
+          "lineNumber": 61
+        },
+        {
+          "caller": "joinCall",
+          "callee": "rtcCallService.joinCall",
+          "lineNumber": 61
+        },
+        {
+          "caller": "accept",
+          "callee": "getLoginUserId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "accept",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "accept",
+          "callee": "buildCallRespVO",
+          "lineNumber": 69
+        },
+        {
+          "caller": "accept",
+          "callee": "rtcCallService.acceptCall",
+          "lineNumber": 69
+        },
+        {
+          "caller": "reject",
+          "callee": "rtcCallService.rejectCall",
+          "lineNumber": 76
+        },
+        {
+          "caller": "reject",
+          "callee": "getLoginUserId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "reject",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "cancel",
+          "callee": "rtcCallService.cancelCall",
+          "lineNumber": 84
+        },
+        {
+          "caller": "cancel",
+          "callee": "getLoginUserId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "cancel",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "leave",
+          "callee": "rtcCallService.leaveCall",
+          "lineNumber": 92
+        },
+        {
+          "caller": "leave",
+          "callee": "getLoginUserId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "leave",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "noAnswerCallCheck",
+          "callee": "rtcCallService.noAnswerCallCheck",
+          "lineNumber": 100
+        },
+        {
+          "caller": "noAnswerCallCheck",
+          "callee": "getLoginUserId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "noAnswerCallCheck",
+          "callee": "success",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getActiveCall",
+          "callee": "rtcCallService.getActiveCall",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getActiveCall",
+          "callee": "getLoginUserId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getActiveCall",
+          "callee": "success",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getActiveCall",
+          "callee": "buildGroupActiveRespVO",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "rtcCallService.getCallParticipantList",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getRoom",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "ImRtcCallStatusEnum.isEnded",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getStatus",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom()))\n                .setConversationType(call.getConversationType()).setMediaType(call.getMediaType())\n                .setStatus(call.getStatus()).setEndReason(call.getEndReason())\n                .setInviterId(call.getInviterUserId()).setGroupId(call.getGroupId())\n                .setInviteeIds(filterUserIds(participants, ImRtcParticipantStatusEnum.INVITING)).setJoinedUserIds",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom()))\n                .setConversationType(call.getConversationType()).setMediaType(call.getMediaType())\n                .setStatus(call.getStatus()).setEndReason(call.getEndReason())\n                .setInviterId(call.getInviterUserId()).setGroupId(call.getGroupId()).setInviteeIds",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom()))\n                .setConversationType(call.getConversationType()).setMediaType(call.getMediaType())\n                .setStatus(call.getStatus()).setEndReason(call.getEndReason())\n                .setInviterId(call.getInviterUserId()).setGroupId",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom()))\n                .setConversationType(call.getConversationType()).setMediaType(call.getMediaType())\n                .setStatus(call.getStatus()).setEndReason(call.getEndReason()).setInviterId",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom()))\n                .setConversationType(call.getConversationType()).setMediaType(call.getMediaType())\n                .setStatus(call.getStatus()).setEndReason",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom()))\n                .setConversationType(call.getConversationType()).setMediaType(call.getMediaType()).setStatus",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom()))\n                .setConversationType(call.getConversationType()).setMediaType",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl())\n                // 仅非 ENDED 场景才签 token，ENDED 场景不签，前端根据 token 是否存在，来判断是否展示「通话已结束」的提示\n                .setToken(ended ? null : rtcCallService.signCallToken(userId, call.getRoom())).setConversationType",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom())\n                .setLivekitUrl(imProperties.getRtc().getLivekitUrl()).setToken",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO()\n                .setRoom(call.getRoom()).setLivekitUrl",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO().setRoom",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "new ImRtcCallRespVO",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getRoom",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "imProperties.getRtc().getLivekitUrl",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "imProperties.getRtc",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "rtcCallService.signCallToken",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getRoom",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getConversationType",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getMediaType",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getStatus",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getEndReason",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getInviterUserId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "call.getGroupId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "filterUserIds",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildCallRespVO",
+          "callee": "filterUserIds",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "rtcCallService.getCallParticipantList",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "call.getRoom",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "new ImRtcGroupCallRespVO().setRoom(call.getRoom()).setMediaType(call.getMediaType())\n                .setGroupId(call.getGroupId()).setInviterId(call.getInviterUserId())\n                .setJoinedUserIds(filterUserIds(participants, ImRtcParticipantStatusEnum.JOINED)).setInviteeIds",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "new ImRtcGroupCallRespVO().setRoom(call.getRoom()).setMediaType(call.getMediaType())\n                .setGroupId(call.getGroupId()).setInviterId(call.getInviterUserId()).setJoinedUserIds",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "new ImRtcGroupCallRespVO().setRoom(call.getRoom()).setMediaType(call.getMediaType())\n                .setGroupId(call.getGroupId()).setInviterId",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "new ImRtcGroupCallRespVO().setRoom(call.getRoom()).setMediaType(call.getMediaType()).setGroupId",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "new ImRtcGroupCallRespVO().setRoom(call.getRoom()).setMediaType",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "new ImRtcGroupCallRespVO().setRoom",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "new ImRtcGroupCallRespVO",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "call.getRoom",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "call.getMediaType",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "call.getGroupId",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "call.getInviterUserId",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "filterUserIds",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildGroupActiveRespVO",
+          "callee": "filterUserIds",
+          "lineNumber": 153
+        },
+        {
+          "caller": "filterUserIds",
+          "callee": "CollectionUtils.convertLinkedSet",
+          "lineNumber": 165
+        },
+        {
+          "caller": "filterUserIds",
+          "callee": "Objects.equals",
+          "lineNumber": 166
+        },
+        {
+          "caller": "filterUserIds",
+          "callee": "participant.getStatus",
+          "lineNumber": 166
+        },
+        {
+          "caller": "filterUserIds",
+          "callee": "status.getStatus",
+          "lineNumber": 166
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 10,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/rtc/ImRtcLiveKitController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "webhook",
+          "startLine": 48,
+          "endLine": 74,
+          "params": [
+            "request",
+            "rawBody"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcLiveKitController",
+          "startLine": 30,
+          "endLine": 76,
+          "methods": [
+            "webhook"
+          ],
+          "properties": [
+            "liveKitClient",
+            "rtcCallService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "webhook",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcLiveKitController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "webhook",
+          "callee": "liveKitClient.verifyWebhookSignature",
+          "lineNumber": 54
+        },
+        {
+          "caller": "webhook",
+          "callee": "request.getHeader",
+          "lineNumber": 54
+        },
+        {
+          "caller": "webhook",
+          "callee": "log.warn",
+          "lineNumber": 55
+        },
+        {
+          "caller": "webhook",
+          "callee": "request.getRemoteAddr",
+          "lineNumber": 56
+        },
+        {
+          "caller": "webhook",
+          "callee": "rawBody.length",
+          "lineNumber": 56
+        },
+        {
+          "caller": "webhook",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "webhook",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 60
+        },
+        {
+          "caller": "webhook",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 61
+        },
+        {
+          "caller": "webhook",
+          "callee": "event.getEvent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "webhook",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "webhook",
+          "callee": "log.info",
+          "lineNumber": 66
+        },
+        {
+          "caller": "webhook",
+          "callee": "event.getEvent",
+          "lineNumber": 66
+        },
+        {
+          "caller": "webhook",
+          "callee": "event.getRoom",
+          "lineNumber": 67
+        },
+        {
+          "caller": "webhook",
+          "callee": "event.getRoom().getName",
+          "lineNumber": 67
+        },
+        {
+          "caller": "webhook",
+          "callee": "event.getRoom",
+          "lineNumber": 67
+        },
+        {
+          "caller": "webhook",
+          "callee": "rtcCallService.handleLiveKitEvent",
+          "lineNumber": 69
+        },
+        {
+          "caller": "webhook",
+          "callee": "log.error",
+          "lineNumber": 71
+        },
+        {
+          "caller": "webhook",
+          "callee": "event.getEvent",
+          "lineNumber": 71
+        },
+        {
+          "caller": "webhook",
+          "callee": "success",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/rtc/vo/ImRtcCallCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "isConversationTypeSupported",
+          "startLine": 37,
+          "endLine": 42,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImRtcCallCreateReqVO",
+          "startLine": 14,
+          "endLine": 44,
+          "methods": [
+            "isConversationTypeSupported"
+          ],
+          "properties": [
+            "conversationType",
+            "mediaType",
+            "groupId",
+            "inviteeIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isConversationTypeSupported",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "ImRtcCallCreateReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isConversationTypeSupported",
+          "callee": "ImConversationTypeEnum.isPrivate",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isConversationTypeSupported",
+          "callee": "ImConversationTypeEnum.isGroup",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/rtc/vo/ImRtcCallInviteReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ImRtcCallInviteReqVO",
+          "startLine": 11,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "room",
+            "inviteeIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImRtcCallInviteReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/rtc/vo/ImRtcCallRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "ImRtcCallRespVO",
+          "startLine": 8,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "room",
+            "livekitUrl",
+            "token",
+            "conversationType",
+            "mediaType",
+            "status",
+            "endReason",
+            "inviterId",
+            "groupId",
+            "inviteeIds",
+            "joinedUserIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImRtcCallRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/controller/admin/rtc/vo/ImRtcGroupCallRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "ImRtcGroupCallRespVO",
+          "startLine": 8,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "room",
+            "groupId",
+            "mediaType",
+            "inviterId",
+            "joinedUserIds",
+            "inviteeIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImRtcGroupCallRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/channel/ImChannelDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "ImChannelDO",
+          "startLine": 19,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "avatar",
+            "sort",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImChannelDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/channel/ImChannelMaterialDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "ImChannelMaterialDO",
+          "startLine": 21,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "id",
+            "channelId",
+            "type",
+            "title",
+            "coverUrl",
+            "summary",
+            "content",
+            "url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImChannelMaterialDO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/conversation/ImConversationReadDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 63,
+      "classes": [
+        {
+          "name": "ImConversationReadDO",
+          "startLine": 24,
+          "endLine": 68,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "conversationType",
+            "targetId",
+            "messageId",
+            "readTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImConversationReadDO",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/face/ImFaceUserItemDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 54,
+      "classes": [
+        {
+          "name": "ImFaceUserItemDO",
+          "startLine": 14,
+          "endLine": 58,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "url",
+            "name",
+            "width",
+            "height",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFaceUserItemDO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/friend/ImFriendDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 85,
+      "classes": [
+        {
+          "name": "ImFriendDO",
+          "startLine": 24,
+          "endLine": 90,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "friendUserId",
+            "silent",
+            "displayName",
+            "addSource",
+            "pinned",
+            "blocked",
+            "status",
+            "addTime",
+            "deleteTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFriendDO",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/friend/ImFriendRequestDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 78,
+      "classes": [
+        {
+          "name": "ImFriendRequestDO",
+          "startLine": 23,
+          "endLine": 85,
+          "methods": [],
+          "properties": [
+            "id",
+            "fromUserId",
+            "toUserId",
+            "applyContent",
+            "displayName",
+            "addSource",
+            "handleResult",
+            "handleContent",
+            "handleTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFriendRequestDO",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 89,
+      "classes": [
+        {
+          "name": "ImGroupDO",
+          "startLine": 20,
+          "endLine": 94,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "ownerUserId",
+            "avatar",
+            "notice",
+            "joinApproval",
+            "banned",
+            "bannedReason",
+            "bannedTime",
+            "status",
+            "dissolvedTime",
+            "mutedAll",
+            "pinnedMessageIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupDO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupMemberDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 96,
+      "classes": [
+        {
+          "name": "ImGroupMemberDO",
+          "startLine": 19,
+          "endLine": 102,
+          "methods": [],
+          "properties": [
+            "PERMANENT_MUTE_END_TIME",
+            "id",
+            "groupId",
+            "userId",
+            "displayUserName",
+            "groupRemark",
+            "silent",
+            "status",
+            "role",
+            "joinTime",
+            "addSource",
+            "inviterUserId",
+            "quitTime",
+            "muteEndTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PERMANENT_MUTE_END_TIME",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "ImGroupMemberDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/group/ImGroupRequestDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 84,
+      "classes": [
+        {
+          "name": "ImGroupRequestDO",
+          "startLine": 25,
+          "endLine": 91,
+          "methods": [],
+          "properties": [
+            "id",
+            "groupId",
+            "userId",
+            "inviterUserId",
+            "applyContent",
+            "addSource",
+            "handleResult",
+            "handleUserId",
+            "handleContent",
+            "handleTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupRequestDO",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImChannelMessageDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 69,
+      "classes": [
+        {
+          "name": "ImChannelMessageDO",
+          "startLine": 27,
+          "endLine": 74,
+          "methods": [],
+          "properties": [
+            "id",
+            "channelId",
+            "materialId",
+            "type",
+            "content",
+            "receiverUserIds",
+            "sendTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImChannelMessageDO",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImGroupMessageDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 100,
+      "classes": [
+        {
+          "name": "ImGroupMessageDO",
+          "startLine": 23,
+          "endLine": 107,
+          "methods": [],
+          "properties": [
+            "id",
+            "clientMessageId",
+            "senderId",
+            "groupId",
+            "type",
+            "content",
+            "status",
+            "sendTime",
+            "receiverUserIds",
+            "atUserIds",
+            "receiptStatus",
+            "readCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImGroupMessageDO",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/ImPrivateMessageDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "ImPrivateMessageDO",
+          "startLine": 19,
+          "endLine": 79,
+          "methods": [],
+          "properties": [
+            "id",
+            "clientMessageId",
+            "senderId",
+            "receiverId",
+            "type",
+            "content",
+            "status",
+            "receiptStatus",
+            "sendTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImPrivateMessageDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/content/CardMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "CardMessage",
+          "startLine": 13,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "targetType",
+            "targetId",
+            "name",
+            "avatar",
+            "memberCount",
+            "quote"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CardMessage",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/content/MaterialMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "MaterialMessage",
+          "startLine": 13,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "materialId",
+            "channelId",
+            "type",
+            "title",
+            "coverUrl",
+            "summary",
+            "url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MaterialMessage",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/content/MergeMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "MergeMessage",
+          "startLine": 13,
+          "endLine": 64,
+          "methods": [],
+          "properties": [
+            "title",
+            "messages"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MergeMessage",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/content/QuoteMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "QuoteMessage",
+          "startLine": 15,
+          "endLine": 50,
+          "methods": [],
+          "properties": [
+            "FIELD_NAME",
+            "FIELD_MESSAGE_ID",
+            "messageId",
+            "senderId",
+            "type",
+            "content"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FIELD_NAME",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "FIELD_MESSAGE_ID",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "QuoteMessage",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/message/content/RecallMessage.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "RecallMessage",
+          "startLine": 9,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "messageId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RecallMessage",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/rtc/ImRtcCallDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 88,
+      "classes": [
+        {
+          "name": "ImRtcCallDO",
+          "startLine": 23,
+          "endLine": 93,
+          "methods": [],
+          "properties": [
+            "id",
+            "room",
+            "conversationType",
+            "mediaType",
+            "inviterUserId",
+            "groupId",
+            "status",
+            "endReason",
+            "startTime",
+            "acceptTime",
+            "endTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImRtcCallDO",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/rtc/ImRtcParticipantDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 75,
+      "classes": [
+        {
+          "name": "ImRtcParticipantDO",
+          "startLine": 22,
+          "endLine": 80,
+          "methods": [],
+          "properties": [
+            "id",
+            "callId",
+            "room",
+            "userId",
+            "role",
+            "status",
+            "inviteTime",
+            "acceptTime",
+            "leaveTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImRtcParticipantDO",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

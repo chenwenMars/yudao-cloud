@@ -1,0 +1,1142 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 10,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-system/yudao-module-system-api/src/main/java/cn/iocoder/yudao/module/system/enums/notice/NoticeTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "NoticeTypeEnum",
+          "startLine": 11,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NoticeTypeEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notice/NoticeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "createNotice",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateNotice",
+          "startLine": 47,
+          "endLine": 53,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteNotice",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteNoticeList",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getNoticePage",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getNotice",
+          "startLine": 81,
+          "endLine": 88,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "push",
+          "startLine": 90,
+          "endLine": 100,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NoticeController",
+          "startLine": 27,
+          "endLine": 102,
+          "methods": [
+            "createNotice",
+            "updateNotice",
+            "deleteNotice",
+            "deleteNoticeList",
+            "getNoticePage",
+            "getNotice",
+            "push"
+          ],
+          "properties": [
+            "noticeService",
+            "webSocketSenderApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createNotice",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "updateNotice",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "deleteNotice",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "deleteNoticeList",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getNoticePage",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getNotice",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "push",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "NoticeController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createNotice",
+          "callee": "noticeService.createNotice",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createNotice",
+          "callee": "success",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateNotice",
+          "callee": "noticeService.updateNotice",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateNotice",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteNotice",
+          "callee": "noticeService.deleteNotice",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteNotice",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteNoticeList",
+          "callee": "noticeService.deleteNoticeList",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteNoticeList",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getNoticePage",
+          "callee": "noticeService.getNoticePage",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getNoticePage",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getNoticePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getNotice",
+          "callee": "noticeService.getNotice",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getNotice",
+          "callee": "success",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getNotice",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 87
+        },
+        {
+          "caller": "push",
+          "callee": "noticeService.getNotice",
+          "lineNumber": 95
+        },
+        {
+          "caller": "push",
+          "callee": "Assert.notNull",
+          "lineNumber": 96
+        },
+        {
+          "caller": "push",
+          "callee": "webSocketSenderApi.sendObject",
+          "lineNumber": 98
+        },
+        {
+          "caller": "push",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 98
+        },
+        {
+          "caller": "push",
+          "callee": "success",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notice/vo/NoticePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "NoticePageReqVO",
+          "startLine": 8,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "title",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NoticePageReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notice/vo/NoticeRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "NoticeRespVO",
+          "startLine": 8,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "type",
+            "content",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NoticeRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notice/vo/NoticeSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "NoticeSaveReqVO",
+          "startLine": 10,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "type",
+            "content",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NoticeSaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/notice/NoticeDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "NoticeDO",
+          "startLine": 16,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "type",
+            "content",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NoticeDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/notice/NoticeMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "NoticeMapper",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NoticeMapper",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<NoticeDO>()\n                .likeIfPresent(NoticeDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(NoticeDO::getStatus, reqVO.getStatus()).orderByDesc",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<NoticeDO>()\n                .likeIfPresent(NoticeDO::getTitle, reqVO.getTitle()).eqIfPresent",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<NoticeDO>().likeIfPresent",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<NoticeDO>",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTitle",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/notice/NoticeService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "NoticeService",
+          "startLine": 13,
+          "endLine": 60,
+          "methods": [
+            "createNotice",
+            "updateNotice",
+            "deleteNotice",
+            "deleteNoticeList",
+            "getNoticePage",
+            "getNotice"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "NoticeService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/service/notice/NoticeServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "createNotice",
+          "startLine": 29,
+          "endLine": 34,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateNotice",
+          "startLine": 36,
+          "endLine": 43,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteNotice",
+          "startLine": 45,
+          "endLine": 51,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteNoticeList",
+          "startLine": 53,
+          "endLine": 56,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getNoticePage",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getNotice",
+          "startLine": 63,
+          "endLine": 66,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateNoticeExists",
+          "startLine": 68,
+          "endLine": 77,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NoticeServiceImpl",
+          "startLine": 23,
+          "endLine": 79,
+          "methods": [
+            "createNotice",
+            "updateNotice",
+            "deleteNotice",
+            "deleteNoticeList",
+            "getNoticePage",
+            "getNotice",
+            "validateNoticeExists"
+          ],
+          "properties": [
+            "noticeMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createNotice",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "updateNotice",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "deleteNotice",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "deleteNoticeList",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "getNoticePage",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getNotice",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "validateNoticeExists",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "NoticeServiceImpl",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createNotice",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createNotice",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createNotice",
+          "callee": "notice.getId",
+          "lineNumber": 33
+        },
+        {
+          "caller": "updateNotice",
+          "callee": "validateNoticeExists",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateNotice",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateNotice",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 41
+        },
+        {
+          "caller": "updateNotice",
+          "callee": "noticeMapper.updateById",
+          "lineNumber": 42
+        },
+        {
+          "caller": "deleteNotice",
+          "callee": "validateNoticeExists",
+          "lineNumber": 48
+        },
+        {
+          "caller": "deleteNotice",
+          "callee": "noticeMapper.deleteById",
+          "lineNumber": 50
+        },
+        {
+          "caller": "deleteNoticeList",
+          "callee": "noticeMapper.deleteByIds",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getNoticePage",
+          "callee": "noticeMapper.selectPage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getNotice",
+          "callee": "noticeMapper.selectById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "validateNoticeExists",
+          "callee": "noticeMapper.selectById",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validateNoticeExists",
+          "callee": "exception",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/test/java/cn/iocoder/yudao/module/system/service/notice/NoticeServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "testGetNoticePage_success",
+          "startLine": 32,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "testGetNotice_success",
+          "startLine": 57,
+          "endLine": 69,
+          "params": []
+        },
+        {
+          "name": "testCreateNotice_success",
+          "startLine": 71,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "testUpdateNotice_success",
+          "startLine": 85,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "testDeleteNotice_success",
+          "startLine": 101,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "testValidateNoticeExists_success",
+          "startLine": 114,
+          "endLine": 122,
+          "params": []
+        },
+        {
+          "name": "testValidateNoticeExists_noExists",
+          "startLine": 124,
+          "endLine": 128,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "NoticeServiceImplTest",
+          "startLine": 23,
+          "endLine": 130,
+          "methods": [
+            "testGetNoticePage_success",
+            "testGetNotice_success",
+            "testCreateNotice_success",
+            "testUpdateNotice_success",
+            "testDeleteNotice_success",
+            "testValidateNoticeExists_success",
+            "testValidateNoticeExists_noExists"
+          ],
+          "properties": [
+            "noticeService",
+            "noticeMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testGetNoticePage_success",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "testGetNotice_success",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateNotice_success",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateNotice_success",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteNotice_success",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateNoticeExists_success",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateNoticeExists_noExists",
+          "line": 124,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "randomPojo",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "o.setTitle",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "o.setStatus",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "o.setTitle",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "o.setStatus",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "CommonStatusEnum.DISABLE.getStatus",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "new NoticePageReqVO",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "reqVO.setTitle",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "reqVO.setStatus",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "noticeService.getNoticePage",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "assertEquals",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "assertEquals",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "pageResult.getList().size",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "pageResult.getList",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "assertPojoEquals",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "pageResult.getList().get",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetNoticePage_success",
+          "callee": "pageResult.getList",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetNotice_success",
+          "callee": "randomPojo",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetNotice_success",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testGetNotice_success",
+          "callee": "noticeService.getNotice",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetNotice_success",
+          "callee": "dbNotice.getId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetNotice_success",
+          "callee": "assertNotNull",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testGetNotice_success",
+          "callee": "assertPojoEquals",
+          "lineNumber": 68
+        },
+        {
+          "caller": "testCreateNotice_success",
+          "callee": "randomPojo(NoticeSaveReqVO.class).setId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testCreateNotice_success",
+          "callee": "randomPojo",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testCreateNotice_success",
+          "callee": "noticeService.createNotice",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testCreateNotice_success",
+          "callee": "assertNotNull",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCreateNotice_success",
+          "callee": "noticeMapper.selectById",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testCreateNotice_success",
+          "callee": "assertPojoEquals",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "randomPojo",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "randomPojo",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "o.setId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "dbNoticeDO.getId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "noticeService.updateNotice",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "noticeMapper.selectById",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "reqVO.getId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testUpdateNotice_success",
+          "callee": "assertPojoEquals",
+          "lineNumber": 98
+        },
+        {
+          "caller": "testDeleteNotice_success",
+          "callee": "randomPojo",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testDeleteNotice_success",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 105
+        },
+        {
+          "caller": "testDeleteNotice_success",
+          "callee": "noticeService.deleteNotice",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testDeleteNotice_success",
+          "callee": "dbNotice.getId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testDeleteNotice_success",
+          "callee": "assertNull",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testDeleteNotice_success",
+          "callee": "noticeMapper.selectById",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testDeleteNotice_success",
+          "callee": "dbNotice.getId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testValidateNoticeExists_success",
+          "callee": "randomPojo",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testValidateNoticeExists_success",
+          "callee": "noticeMapper.insert",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testValidateNoticeExists_success",
+          "callee": "noticeService.validateNoticeExists",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testValidateNoticeExists_success",
+          "callee": "dbNotice.getId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testValidateNoticeExists_noExists",
+          "callee": "assertServiceException",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testValidateNoticeExists_noExists",
+          "callee": "noticeService.validateNoticeExists",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testValidateNoticeExists_noExists",
+          "callee": "randomLongId",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,5976 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/face/ImFacePackItemDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "ImFacePackItemDO",
+          "startLine": 15,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "id",
+            "packId",
+            "url",
+            "name",
+            "width",
+            "height",
+            "sort",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFacePackItemDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/dataobject/sensitiveword/ImSensitiveWordDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "ImSensitiveWordDO",
+          "startLine": 15,
+          "endLine": 41,
+          "methods": [],
+          "properties": [
+            "id",
+            "word",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImSensitiveWordDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/face/ImFacePackItemMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "ImFacePackItemMapper",
+          "startLine": 18,
+          "endLine": 49,
+          "methods": [
+            "selectListByPackIdsAndStatus",
+            "selectCountByPackId",
+            "selectCountByPackIds",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFacePackItemMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByPackIdsAndStatus",
+          "callee": "selectList",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectListByPackIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .in(ImFacePackItemDO::getPackId, packIds)\n                .eq(ImFacePackItemDO::getStatus, status)\n                .orderByAsc(ImFacePackItemDO::getPackId)\n                .orderByAsc(ImFacePackItemDO::getSort).orderByAsc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectListByPackIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .in(ImFacePackItemDO::getPackId, packIds)\n                .eq(ImFacePackItemDO::getStatus, status)\n                .orderByAsc(ImFacePackItemDO::getPackId).orderByAsc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectListByPackIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .in(ImFacePackItemDO::getPackId, packIds)\n                .eq(ImFacePackItemDO::getStatus, status).orderByAsc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectListByPackIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .in(ImFacePackItemDO::getPackId, packIds).eq",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectListByPackIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>().in",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectListByPackIdsAndStatus",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectCountByPackId",
+          "callee": "selectCount",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectCountByPackId",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>().eq",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectCountByPackId",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectCountByPackIds",
+          "callee": "selectCount",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectCountByPackIds",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>().in",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectCountByPackIds",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .eqIfPresent(ImFacePackItemDO::getPackId, reqVO.getPackId())\n                .likeIfPresent(ImFacePackItemDO::getName, reqVO.getName())\n                .eqIfPresent(ImFacePackItemDO::getStatus, reqVO.getStatus())\n                .orderByAsc(ImFacePackItemDO::getSort).orderByDesc",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .eqIfPresent(ImFacePackItemDO::getPackId, reqVO.getPackId())\n                .likeIfPresent(ImFacePackItemDO::getName, reqVO.getName())\n                .eqIfPresent(ImFacePackItemDO::getStatus, reqVO.getStatus()).orderByAsc",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .eqIfPresent(ImFacePackItemDO::getPackId, reqVO.getPackId())\n                .likeIfPresent(ImFacePackItemDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>()\n                .eqIfPresent(ImFacePackItemDO::getPackId, reqVO.getPackId()).likeIfPresent",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>().eqIfPresent",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackItemDO>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getPackId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/face/ImFacePackMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "ImFacePackMapper",
+          "startLine": 17,
+          "endLine": 36,
+          "methods": [
+            "selectListByStatusOrderBySort",
+            "selectPage"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFacePackMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "selectList",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>()\n                .eq(ImFacePackDO::getStatus, status)\n                .orderByAsc(ImFacePackDO::getSort).orderByAsc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>()\n                .eq(ImFacePackDO::getStatus, status).orderByAsc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>().eq",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByStatusOrderBySort",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>()\n                .likeIfPresent(ImFacePackDO::getName, reqVO.getName())\n                .eqIfPresent(ImFacePackDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(ImFacePackDO::getCreateTime, reqVO.getCreateTime())\n                .orderByAsc(ImFacePackDO::getSort).orderByDesc",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>()\n                .likeIfPresent(ImFacePackDO::getName, reqVO.getName())\n                .eqIfPresent(ImFacePackDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(ImFacePackDO::getCreateTime, reqVO.getCreateTime()).orderByAsc",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>()\n                .likeIfPresent(ImFacePackDO::getName, reqVO.getName())\n                .eqIfPresent(ImFacePackDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>()\n                .likeIfPresent(ImFacePackDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>().likeIfPresent",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImFacePackDO>",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/dal/mysql/sensitiveword/ImSensitiveWordMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "ImSensitiveWordMapper",
+          "startLine": 20,
+          "endLine": 44,
+          "methods": [
+            "selectListByStatus",
+            "selectByWord",
+            "selectPage",
+            "selectMaxUpdateTime"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImSensitiveWordMapper",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>().eq",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectByWord",
+          "callee": "selectOne",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectByWord",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>().eq",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectByWord",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>()\n                .likeIfPresent(ImSensitiveWordDO::getWord, reqVO.getWord())\n                .eqIfPresent(ImSensitiveWordDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(ImSensitiveWordDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>()\n                .likeIfPresent(ImSensitiveWordDO::getWord, reqVO.getWord())\n                .eqIfPresent(ImSensitiveWordDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>()\n                .likeIfPresent(ImSensitiveWordDO::getWord, reqVO.getWord()).eqIfPresent",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>().likeIfPresent",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<ImSensitiveWordDO>",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getWord",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/face/ImFacePackItemService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 77,
+      "classes": [
+        {
+          "name": "ImFacePackItemService",
+          "startLine": 17,
+          "endLine": 92,
+          "methods": [
+            "getEnabledItemListByPackIds",
+            "getFacePackItemCount",
+            "getFacePackItemCount",
+            "getFacePackItemPage",
+            "getFacePackItem",
+            "createFacePackItem",
+            "updateFacePackItem",
+            "deleteFacePackItem",
+            "deleteFacePackItemList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFacePackItemService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/face/ImFacePackItemServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "getEnabledItemListByPackIds",
+          "startLine": 38,
+          "endLine": 44,
+          "params": [
+            "packIds"
+          ]
+        },
+        {
+          "name": "getFacePackItemCount",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "packId"
+          ]
+        },
+        {
+          "name": "getFacePackItemCount",
+          "startLine": 51,
+          "endLine": 57,
+          "params": [
+            "packIds"
+          ]
+        },
+        {
+          "name": "getFacePackItemPage",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getFacePackItem",
+          "startLine": 66,
+          "endLine": 69,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createFacePackItem",
+          "startLine": 71,
+          "endLine": 80,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateFacePackItem",
+          "startLine": 82,
+          "endLine": 92,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteFacePackItem",
+          "startLine": 94,
+          "endLine": 101,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteFacePackItemList",
+          "startLine": 103,
+          "endLine": 109,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "validateFacePackItemExists",
+          "startLine": 111,
+          "endLine": 115,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFacePackItemServiceImpl",
+          "startLine": 27,
+          "endLine": 117,
+          "methods": [
+            "getEnabledItemListByPackIds",
+            "getFacePackItemCount",
+            "getFacePackItemCount",
+            "getFacePackItemPage",
+            "getFacePackItem",
+            "createFacePackItem",
+            "updateFacePackItem",
+            "deleteFacePackItem",
+            "deleteFacePackItemList",
+            "validateFacePackItemExists"
+          ],
+          "properties": [
+            "facePackItemMapper",
+            "facePackService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEnabledItemListByPackIds",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getFacePackItemCount",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getFacePackItemCount",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "getFacePackItemPage",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getFacePackItem",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "createFacePackItem",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "updateFacePackItem",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFacePackItem",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFacePackItemList",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "ImFacePackItemServiceImpl",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEnabledItemListByPackIds",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getEnabledItemListByPackIds",
+          "callee": "Collections.emptyList",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getEnabledItemListByPackIds",
+          "callee": "facePackItemMapper.selectListByPackIdsAndStatus",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getEnabledItemListByPackIds",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getFacePackItemCount",
+          "callee": "facePackItemMapper.selectCountByPackId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getFacePackItemCount",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getFacePackItemCount",
+          "callee": "facePackItemMapper.selectCountByPackIds",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getFacePackItemPage",
+          "callee": "facePackItemMapper.selectPage",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getFacePackItem",
+          "callee": "facePackItemMapper.selectById",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createFacePackItem",
+          "callee": "facePackService.validateFacePackExists",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createFacePackItem",
+          "callee": "reqVO.getPackId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createFacePackItem",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createFacePackItem",
+          "callee": "facePackItemMapper.insert",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createFacePackItem",
+          "callee": "item.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateFacePackItem",
+          "callee": "validateFacePackItemExists",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateFacePackItem",
+          "callee": "reqVO.getId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateFacePackItem",
+          "callee": "facePackService.validateFacePackExists",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateFacePackItem",
+          "callee": "reqVO.getPackId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateFacePackItem",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 90
+        },
+        {
+          "caller": "updateFacePackItem",
+          "callee": "facePackItemMapper.updateById",
+          "lineNumber": 91
+        },
+        {
+          "caller": "deleteFacePackItem",
+          "callee": "validateFacePackItemExists",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deleteFacePackItem",
+          "callee": "facePackItemMapper.deleteById",
+          "lineNumber": 100
+        },
+        {
+          "caller": "deleteFacePackItemList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deleteFacePackItemList",
+          "callee": "facePackItemMapper.deleteByIds",
+          "lineNumber": 108
+        },
+        {
+          "caller": "validateFacePackItemExists",
+          "callee": "facePackItemMapper.selectById",
+          "lineNumber": 112
+        },
+        {
+          "caller": "validateFacePackItemExists",
+          "callee": "exception",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/face/ImFacePackService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 69,
+      "classes": [
+        {
+          "name": "ImFacePackService",
+          "startLine": 16,
+          "endLine": 83,
+          "methods": [
+            "getEnabledFacePackList",
+            "validateFacePackExists",
+            "getFacePackPage",
+            "getFacePack",
+            "createFacePack",
+            "updateFacePack",
+            "deleteFacePack",
+            "deleteFacePackList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImFacePackService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/face/ImFacePackServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "getEnabledFacePackList",
+          "startLine": 43,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "validateFacePackExists",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getFacePackPage",
+          "startLine": 59,
+          "endLine": 62,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getFacePack",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createFacePack",
+          "startLine": 69,
+          "endLine": 74,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateFacePack",
+          "startLine": 76,
+          "endLine": 84,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteFacePack",
+          "startLine": 86,
+          "endLine": 97,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteFacePackList",
+          "startLine": 99,
+          "endLine": 111,
+          "params": [
+            "ids"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFacePackServiceImpl",
+          "startLine": 27,
+          "endLine": 113,
+          "methods": [
+            "getEnabledFacePackList",
+            "validateFacePackExists",
+            "getFacePackPage",
+            "getFacePack",
+            "createFacePack",
+            "updateFacePack",
+            "deleteFacePack",
+            "deleteFacePackList"
+          ],
+          "properties": [
+            "facePackMapper",
+            "facePackItemService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEnabledFacePackList",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "validateFacePackExists",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "getFacePackPage",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getFacePack",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "createFacePack",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "updateFacePack",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFacePack",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFacePackList",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "ImFacePackServiceImpl",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEnabledFacePackList",
+          "callee": "facePackMapper.selectListByStatusOrderBySort",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getEnabledFacePackList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validateFacePackExists",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validateFacePackExists",
+          "callee": "exception",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getFacePackPage",
+          "callee": "facePackMapper.selectPage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getFacePack",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createFacePack",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createFacePack",
+          "callee": "facePackMapper.insert",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createFacePack",
+          "callee": "pack.getId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateFacePack",
+          "callee": "validateFacePackExists",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateFacePack",
+          "callee": "reqVO.getId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateFacePack",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateFacePack",
+          "callee": "facePackMapper.updateById",
+          "lineNumber": 83
+        },
+        {
+          "caller": "deleteFacePack",
+          "callee": "validateFacePackExists",
+          "lineNumber": 89
+        },
+        {
+          "caller": "deleteFacePack",
+          "callee": "facePackItemService.getFacePackItemCount",
+          "lineNumber": 91
+        },
+        {
+          "caller": "deleteFacePack",
+          "callee": "exception",
+          "lineNumber": 92
+        },
+        {
+          "caller": "deleteFacePack",
+          "callee": "facePackMapper.deleteById",
+          "lineNumber": 96
+        },
+        {
+          "caller": "deleteFacePackList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 102
+        },
+        {
+          "caller": "deleteFacePackList",
+          "callee": "facePackItemService.getFacePackItemCount",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deleteFacePackList",
+          "callee": "exception",
+          "lineNumber": 106
+        },
+        {
+          "caller": "deleteFacePackList",
+          "callee": "facePackMapper.deleteByIds",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/sensitiveword/ImSensitiveWordService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "ImSensitiveWordService",
+          "startLine": 16,
+          "endLine": 57,
+          "methods": [
+            "validateText",
+            "getSensitiveWordPage",
+            "getSensitiveWord",
+            "createSensitiveWord",
+            "updateSensitiveWord",
+            "deleteSensitiveWord",
+            "deleteSensitiveWordList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImSensitiveWordService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/main/java/cn/iocoder/yudao/module/im/service/sensitiveword/ImSensitiveWordServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 228,
+      "nonEmptyLines": 199,
+      "functions": [
+        {
+          "name": "loadFresh",
+          "startLine": 104,
+          "endLine": 120,
+          "params": [
+            "tenantId"
+          ]
+        },
+        {
+          "name": "invalidateSensitiveWordBsCaches",
+          "startLine": 127,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "validateText",
+          "startLine": 136,
+          "endLine": 145,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "getSensitiveWordPage",
+          "startLine": 149,
+          "endLine": 152,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getSensitiveWord",
+          "startLine": 154,
+          "endLine": 157,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createSensitiveWord",
+          "startLine": 159,
+          "endLine": 170,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateSensitiveWord",
+          "startLine": 172,
+          "endLine": 184,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteSensitiveWord",
+          "startLine": 186,
+          "endLine": 195,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteSensitiveWordList",
+          "startLine": 198,
+          "endLine": 207,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "validateSensitiveWordExists",
+          "startLine": 209,
+          "endLine": 213,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateWordUnique",
+          "startLine": 218,
+          "endLine": 226,
+          "params": [
+            "id",
+            "word"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImSensitiveWordServiceImpl",
+          "startLine": 46,
+          "endLine": 228,
+          "methods": [
+            "loadFresh",
+            "invalidateSensitiveWordBsCaches",
+            "validateText",
+            "getSensitiveWordPage",
+            "getSensitiveWord",
+            "createSensitiveWord",
+            "updateSensitiveWord",
+            "deleteSensitiveWord",
+            "deleteSensitiveWordList",
+            "validateSensitiveWordExists",
+            "validateWordUnique"
+          ],
+          "properties": [
+            "sensitiveWordMapper",
+            "sensitiveWordBsCaches"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validateText",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "getSensitiveWordPage",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "getSensitiveWord",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "createSensitiveWord",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "updateSensitiveWord",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "deleteSensitiveWord",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "deleteSensitiveWordList",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "ImSensitiveWordServiceImpl",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "load",
+          "callee": "loadFresh",
+          "lineNumber": 85
+        },
+        {
+          "caller": "reload",
+          "callee": "Futures.immediateFuture",
+          "lineNumber": 91
+        },
+        {
+          "caller": "reload",
+          "callee": "TenantUtils.execute",
+          "lineNumber": 91
+        },
+        {
+          "caller": "reload",
+          "callee": "sensitiveWordMapper.selectMaxUpdateTime",
+          "lineNumber": 92
+        },
+        {
+          "caller": "reload",
+          "callee": "Objects.equals",
+          "lineNumber": 94
+        },
+        {
+          "caller": "reload",
+          "callee": "oldValue.getMaxUpdateTime",
+          "lineNumber": 94
+        },
+        {
+          "caller": "reload",
+          "callee": "loadFresh",
+          "lineNumber": 98
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "TenantUtils.execute",
+          "lineNumber": 105
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "sensitiveWordMapper.selectMaxUpdateTime",
+          "lineNumber": 107
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "sensitiveWordMapper.selectListByStatus",
+          "lineNumber": 108
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 108
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance()\n                    .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord))\n                    .ignoreCase(true)\n                    .ignoreWidth(true)         // 忽略全/半角\n                    .ignoreNumStyle(true)      // 忽略数字风格（中文/阿拉伯）\n                    .ignoreChineseStyle(true)  // 忽略繁简体\n                    .enableWordCheck(true).init",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance()\n                    .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord))\n                    .ignoreCase(true)\n                    .ignoreWidth(true)         // 忽略全/半角\n                    .ignoreNumStyle(true)      // 忽略数字风格（中文/阿拉伯）\n                    .ignoreChineseStyle(true).enableWordCheck",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance()\n                    .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord))\n                    .ignoreCase(true)\n                    .ignoreWidth(true)         // 忽略全/半角\n                    .ignoreNumStyle(true).ignoreChineseStyle",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance()\n                    .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord))\n                    .ignoreCase(true)\n                    .ignoreWidth(true).ignoreNumStyle",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance()\n                    .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord))\n                    .ignoreCase(true).ignoreWidth",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance()\n                    .wordDeny(() -> convertList(words, ImSensitiveWordDO::getWord)).ignoreCase",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance().wordDeny",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "SensitiveWordBs.newInstance",
+          "lineNumber": 110
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "convertList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "loadFresh",
+          "callee": "new SensitiveWordBsCache",
+          "lineNumber": 118
+        },
+        {
+          "caller": "invalidateSensitiveWordBsCaches",
+          "callee": "TenantContextHolder.getTenantId",
+          "lineNumber": 128
+        },
+        {
+          "caller": "invalidateSensitiveWordBsCaches",
+          "callee": "sensitiveWordBsCaches.invalidate",
+          "lineNumber": 130
+        },
+        {
+          "caller": "invalidateSensitiveWordBsCaches",
+          "callee": "sensitiveWordBsCaches.invalidateAll",
+          "lineNumber": 133
+        },
+        {
+          "caller": "validateText",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 138
+        },
+        {
+          "caller": "validateText",
+          "callee": "sensitiveWordBsCaches.getUnchecked(TenantContextHolder.getRequiredTenantId()).getBs",
+          "lineNumber": 141
+        },
+        {
+          "caller": "validateText",
+          "callee": "sensitiveWordBsCaches.getUnchecked",
+          "lineNumber": 141
+        },
+        {
+          "caller": "validateText",
+          "callee": "TenantContextHolder.getRequiredTenantId",
+          "lineNumber": 141
+        },
+        {
+          "caller": "validateText",
+          "callee": "bs.contains",
+          "lineNumber": 142
+        },
+        {
+          "caller": "validateText",
+          "callee": "exception",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getSensitiveWordPage",
+          "callee": "sensitiveWordMapper.selectPage",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getSensitiveWord",
+          "callee": "sensitiveWordMapper.selectById",
+          "lineNumber": 156
+        },
+        {
+          "caller": "createSensitiveWord",
+          "callee": "validateWordUnique",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createSensitiveWord",
+          "callee": "reqVO.getWord",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createSensitiveWord",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createSensitiveWord",
+          "callee": "sensitiveWordMapper.insert",
+          "lineNumber": 166
+        },
+        {
+          "caller": "createSensitiveWord",
+          "callee": "invalidateSensitiveWordBsCaches",
+          "lineNumber": 168
+        },
+        {
+          "caller": "createSensitiveWord",
+          "callee": "word.getId",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "validateSensitiveWordExists",
+          "lineNumber": 175
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "reqVO.getId",
+          "lineNumber": 175
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "validateWordUnique",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "reqVO.getId",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "reqVO.getWord",
+          "lineNumber": 177
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "sensitiveWordMapper.updateById",
+          "lineNumber": 181
+        },
+        {
+          "caller": "updateSensitiveWord",
+          "callee": "invalidateSensitiveWordBsCaches",
+          "lineNumber": 183
+        },
+        {
+          "caller": "deleteSensitiveWord",
+          "callee": "validateSensitiveWordExists",
+          "lineNumber": 189
+        },
+        {
+          "caller": "deleteSensitiveWord",
+          "callee": "sensitiveWordMapper.deleteById",
+          "lineNumber": 192
+        },
+        {
+          "caller": "deleteSensitiveWord",
+          "callee": "invalidateSensitiveWordBsCaches",
+          "lineNumber": 194
+        },
+        {
+          "caller": "deleteSensitiveWordList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 200
+        },
+        {
+          "caller": "deleteSensitiveWordList",
+          "callee": "sensitiveWordMapper.deleteByIds",
+          "lineNumber": 204
+        },
+        {
+          "caller": "deleteSensitiveWordList",
+          "callee": "invalidateSensitiveWordBsCaches",
+          "lineNumber": 206
+        },
+        {
+          "caller": "validateSensitiveWordExists",
+          "callee": "sensitiveWordMapper.selectById",
+          "lineNumber": 210
+        },
+        {
+          "caller": "validateSensitiveWordExists",
+          "callee": "exception",
+          "lineNumber": 211
+        },
+        {
+          "caller": "validateWordUnique",
+          "callee": "sensitiveWordMapper.selectByWord",
+          "lineNumber": 219
+        },
+        {
+          "caller": "validateWordUnique",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 223
+        },
+        {
+          "caller": "validateWordUnique",
+          "callee": "exist.getId",
+          "lineNumber": 223
+        },
+        {
+          "caller": "validateWordUnique",
+          "callee": "exception",
+          "lineNumber": 224
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 8,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/test/java/cn/iocoder/yudao/module/im/service/face/ImFacePackItemServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 177,
+      "nonEmptyLines": 140,
+      "functions": [
+        {
+          "name": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "startLine": 45,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "startLine": 52,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "testCreateFacePackItem_success",
+          "startLine": 66,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "testCreateFacePackItem_packNotExists",
+          "startLine": 84,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "testUpdateFacePackItem_success",
+          "startLine": 100,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "testUpdateFacePackItem_itemNotExists",
+          "startLine": 116,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackItem_success",
+          "startLine": 131,
+          "endLine": 138,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackItem_notExists",
+          "startLine": 140,
+          "endLine": 148,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackItemList_emptySkip",
+          "startLine": 150,
+          "endLine": 155,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackItemList_success",
+          "startLine": 157,
+          "endLine": 165,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackItemList_ignoreMissingIds",
+          "startLine": 167,
+          "endLine": 175,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFacePackItemServiceImplTest",
+          "startLine": 33,
+          "endLine": 177,
+          "methods": [
+            "testGetEnabledItemListByPackIds_emptyShortReturn",
+            "testGetEnabledItemListByPackIds_passesEnableStatus",
+            "testCreateFacePackItem_success",
+            "testCreateFacePackItem_packNotExists",
+            "testUpdateFacePackItem_success",
+            "testUpdateFacePackItem_itemNotExists",
+            "testDeleteFacePackItem_success",
+            "testDeleteFacePackItem_notExists",
+            "testDeleteFacePackItemList_emptySkip",
+            "testDeleteFacePackItemList_success",
+            "testDeleteFacePackItemList_ignoreMissingIds"
+          ],
+          "properties": [
+            "service",
+            "facePackItemMapper",
+            "facePackService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateFacePackItem_success",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateFacePackItem_packNotExists",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateFacePackItem_success",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateFacePackItem_itemNotExists",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackItem_success",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackItem_notExists",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackItemList_emptySkip",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackItemList_success",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackItemList_ignoreMissingIds",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "ImFacePackItemServiceImplTest",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "assertTrue",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "service.getEnabledItemListByPackIds(Collections.emptyList()).isEmpty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "service.getEnabledItemListByPackIds",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "Collections.emptyList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "verify(facePackItemMapper, never()).selectListByPackIdsAndStatus",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "verify",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "never",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "any",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_emptyShortReturn",
+          "callee": "any",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "Arrays.asList",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "new ImFacePackItemDO",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "when(facePackItemMapper.selectListByPackIdsAndStatus(packIds, CommonStatusEnum.ENABLE.getStatus())).thenReturn",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "when",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "facePackItemMapper.selectListByPackIdsAndStatus",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "Collections.singletonList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "assertEquals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "service.getEnabledItemListByPackIds(packIds).size",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testGetEnabledItemListByPackIds_passesEnableStatus",
+          "callee": "service.getEnabledItemListByPackIds",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "new ImFacePackItemSaveReqVO",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "reqVO.setPackId(10L).setUrl(\"a.png\").setName(\"dog\").setWidth(100).setHeight(100)\n                .setSort(0).setStatus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "reqVO.setPackId(10L).setUrl(\"a.png\").setName(\"dog\").setWidth(100).setHeight(100).setSort",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "reqVO.setPackId(10L).setUrl(\"a.png\").setName(\"dog\").setWidth(100).setHeight",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "reqVO.setPackId(10L).setUrl(\"a.png\").setName(\"dog\").setWidth",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "reqVO.setPackId(10L).setUrl(\"a.png\").setName",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "reqVO.setPackId(10L).setUrl",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "reqVO.setPackId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "when(facePackService.validateFacePackExists(10L)).thenReturn",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "when",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "facePackService.validateFacePackExists",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "new ImFacePackDO",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "service.createFacePackItem",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "ArgumentCaptor.forClass",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "verify(facePackItemMapper).insert",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "verify",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "captor.capture",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "assertEquals",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "captor.getValue().getPackId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "captor.getValue",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "assertEquals",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "captor.getValue().getUrl",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testCreateFacePackItem_success",
+          "callee": "captor.getValue",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "new ImFacePackItemSaveReqVO",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "reqVO.setPackId(99L).setUrl(\"a.png\").setWidth(100).setHeight(100).setSort(0).setStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "reqVO.setPackId(99L).setUrl(\"a.png\").setWidth(100).setHeight(100).setSort",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "reqVO.setPackId(99L).setUrl(\"a.png\").setWidth(100).setHeight",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "reqVO.setPackId(99L).setUrl(\"a.png\").setWidth",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "reqVO.setPackId(99L).setUrl",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "reqVO.setPackId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "when(facePackService.validateFacePackExists(99L)).thenThrow",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "when",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "facePackService.validateFacePackExists",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "new ServiceException",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "FACE_PACK_NOT_EXISTS.getCode",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "FACE_PACK_NOT_EXISTS.getMsg",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "assertThrows",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "service.createFacePackItem",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "verify(facePackItemMapper, never()).insert",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "verify",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "never",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testCreateFacePackItem_packNotExists",
+          "callee": "any",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "new ImFacePackItemSaveReqVO",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "reqVO.setId(1L).setPackId(10L).setUrl(\"a.png\").setWidth(100).setHeight(100)\n                .setSort(0).setStatus",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "reqVO.setId(1L).setPackId(10L).setUrl(\"a.png\").setWidth(100).setHeight(100).setSort",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "reqVO.setId(1L).setPackId(10L).setUrl(\"a.png\").setWidth(100).setHeight",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "reqVO.setId(1L).setPackId(10L).setUrl(\"a.png\").setWidth",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "reqVO.setId(1L).setPackId(10L).setUrl",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "reqVO.setId(1L).setPackId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "reqVO.setId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "when(facePackItemMapper.selectById(1L)).thenReturn",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "when",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "facePackItemMapper.selectById",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "new ImFacePackItemDO",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "when(facePackService.validateFacePackExists(10L)).thenReturn",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "when",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "facePackService.validateFacePackExists",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "new ImFacePackDO",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "service.updateFacePackItem",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "verify(facePackItemMapper).updateById",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "verify",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testUpdateFacePackItem_success",
+          "callee": "any",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "new ImFacePackItemSaveReqVO",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "reqVO.setId(99L).setPackId(10L).setUrl(\"a.png\").setWidth(100).setHeight(100).setSort(0).setStatus",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "reqVO.setId(99L).setPackId(10L).setUrl(\"a.png\").setWidth(100).setHeight(100).setSort",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "reqVO.setId(99L).setPackId(10L).setUrl(\"a.png\").setWidth(100).setHeight",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "reqVO.setId(99L).setPackId(10L).setUrl(\"a.png\").setWidth",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "reqVO.setId(99L).setPackId(10L).setUrl",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "reqVO.setId(99L).setPackId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "reqVO.setId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "when(facePackItemMapper.selectById(99L)).thenReturn",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "when",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "facePackItemMapper.selectById",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "assertThrows",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "service.updateFacePackItem",
+          "lineNumber": 124
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "assertEquals",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "FACE_PACK_ITEM_NOT_EXISTS.getCode",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "exception.getCode",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "verify(facePackItemMapper, never()).updateById",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "verify",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "never",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testUpdateFacePackItem_itemNotExists",
+          "callee": "any",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testDeleteFacePackItem_success",
+          "callee": "when(facePackItemMapper.selectById(1L)).thenReturn",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testDeleteFacePackItem_success",
+          "callee": "when",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testDeleteFacePackItem_success",
+          "callee": "facePackItemMapper.selectById",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testDeleteFacePackItem_success",
+          "callee": "new ImFacePackItemDO",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testDeleteFacePackItem_success",
+          "callee": "service.deleteFacePackItem",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testDeleteFacePackItem_success",
+          "callee": "verify(facePackItemMapper).deleteById",
+          "lineNumber": 137
+        },
+        {
+          "caller": "testDeleteFacePackItem_success",
+          "callee": "verify",
+          "lineNumber": 137
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "when(facePackItemMapper.selectById(99L)).thenReturn",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "when",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "facePackItemMapper.selectById",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "assertThrows",
+          "lineNumber": 144
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "service.deleteFacePackItem",
+          "lineNumber": 145
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "assertEquals",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "FACE_PACK_ITEM_NOT_EXISTS.getCode",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "exception.getCode",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "verify(facePackItemMapper, never()).deleteById",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "verify",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "never",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testDeleteFacePackItem_notExists",
+          "callee": "anyLong",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testDeleteFacePackItemList_emptySkip",
+          "callee": "service.deleteFacePackItemList",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testDeleteFacePackItemList_emptySkip",
+          "callee": "Collections.emptyList",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testDeleteFacePackItemList_emptySkip",
+          "callee": "verify(facePackItemMapper, never()).deleteByIds",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testDeleteFacePackItemList_emptySkip",
+          "callee": "verify",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testDeleteFacePackItemList_emptySkip",
+          "callee": "never",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testDeleteFacePackItemList_emptySkip",
+          "callee": "any",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testDeleteFacePackItemList_success",
+          "callee": "Arrays.asList",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testDeleteFacePackItemList_success",
+          "callee": "when(facePackItemMapper.deleteByIds(ids)).thenReturn",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testDeleteFacePackItemList_success",
+          "callee": "when",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testDeleteFacePackItemList_success",
+          "callee": "facePackItemMapper.deleteByIds",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testDeleteFacePackItemList_success",
+          "callee": "service.deleteFacePackItemList",
+          "lineNumber": 162
+        },
+        {
+          "caller": "testDeleteFacePackItemList_success",
+          "callee": "verify(facePackItemMapper).deleteByIds",
+          "lineNumber": 164
+        },
+        {
+          "caller": "testDeleteFacePackItemList_success",
+          "callee": "verify",
+          "lineNumber": 164
+        },
+        {
+          "caller": "testDeleteFacePackItemList_ignoreMissingIds",
+          "callee": "Arrays.asList",
+          "lineNumber": 169
+        },
+        {
+          "caller": "testDeleteFacePackItemList_ignoreMissingIds",
+          "callee": "when(facePackItemMapper.deleteByIds(ids)).thenReturn",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testDeleteFacePackItemList_ignoreMissingIds",
+          "callee": "when",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testDeleteFacePackItemList_ignoreMissingIds",
+          "callee": "facePackItemMapper.deleteByIds",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testDeleteFacePackItemList_ignoreMissingIds",
+          "callee": "service.deleteFacePackItemList",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testDeleteFacePackItemList_ignoreMissingIds",
+          "callee": "verify(facePackItemMapper).deleteByIds",
+          "lineNumber": 174
+        },
+        {
+          "caller": "testDeleteFacePackItemList_ignoreMissingIds",
+          "callee": "verify",
+          "lineNumber": 174
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/test/java/cn/iocoder/yudao/module/im/service/face/ImFacePackServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 177,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "testValidateFacePackExists_notFound",
+          "startLine": 44,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "testValidateFacePackExists_returnsDo",
+          "startLine": 53,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "testCreateFacePack_insert",
+          "startLine": 63,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "testUpdateFacePack_success",
+          "startLine": 81,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "testUpdateFacePack_notExists",
+          "startLine": 98,
+          "endLine": 110,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePack_success",
+          "startLine": 114,
+          "endLine": 122,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePack_hasItems",
+          "startLine": 124,
+          "endLine": 133,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePack_notExists",
+          "startLine": 135,
+          "endLine": 141,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackList_emptySkip",
+          "startLine": 145,
+          "endLine": 152,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "startLine": 154,
+          "endLine": 163,
+          "params": []
+        },
+        {
+          "name": "testDeleteFacePackList_success",
+          "startLine": 165,
+          "endLine": 175,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImFacePackServiceImplTest",
+          "startLine": 32,
+          "endLine": 177,
+          "methods": [
+            "testValidateFacePackExists_notFound",
+            "testValidateFacePackExists_returnsDo",
+            "testCreateFacePack_insert",
+            "testUpdateFacePack_success",
+            "testUpdateFacePack_notExists",
+            "testDeleteFacePack_success",
+            "testDeleteFacePack_hasItems",
+            "testDeleteFacePack_notExists",
+            "testDeleteFacePackList_emptySkip",
+            "testDeleteFacePackList_anyHasItemsRejectAll",
+            "testDeleteFacePackList_success"
+          ],
+          "properties": [
+            "service",
+            "facePackMapper",
+            "facePackItemService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testValidateFacePackExists_notFound",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateFacePackExists_returnsDo",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateFacePack_insert",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateFacePack_success",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateFacePack_notExists",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePack_success",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePack_hasItems",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePack_notExists",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackList_emptySkip",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteFacePackList_success",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "ImFacePackServiceImplTest",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "when(facePackMapper.selectById(1L)).thenReturn",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "when",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "assertThrows",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "service.validateFacePackExists",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "assertEquals",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "FACE_PACK_NOT_EXISTS.getCode",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testValidateFacePackExists_notFound",
+          "callee": "exception.getCode",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "ImFacePackDO.builder().id(1L).name(\"猫主子\").build",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "ImFacePackDO.builder().id(1L).name",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "ImFacePackDO.builder().id",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "ImFacePackDO.builder",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "when(facePackMapper.selectById(1L)).thenReturn",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "when",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "assertEquals",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testValidateFacePackExists_returnsDo",
+          "callee": "service.validateFacePackExists",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "new ImFacePackSaveReqVO",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "reqVO.setName(\"猫主子\").setIcon(\"icon.png\").setSort(0).setStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "reqVO.setName(\"猫主子\").setIcon(\"icon.png\").setSort",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "reqVO.setName(\"猫主子\").setIcon",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "reqVO.setName",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "service.createFacePack",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "ArgumentCaptor.forClass",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "verify(facePackMapper).insert",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "verify",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "captor.capture",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "assertEquals",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "captor.getValue().getName",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "captor.getValue",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "assertEquals",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "captor.getValue().getStatus",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testCreateFacePack_insert",
+          "callee": "captor.getValue",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "new ImFacePackSaveReqVO",
+          "lineNumber": 84
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "reqVO.setId(1L).setName(\"新名\").setSort(1).setStatus",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "reqVO.setId(1L).setName(\"新名\").setSort",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "reqVO.setId(1L).setName",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "reqVO.setId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "when(facePackMapper.selectById(1L)).thenReturn",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "when",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "ImFacePackDO.builder().id(1L).build",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "ImFacePackDO.builder().id",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "ImFacePackDO.builder",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "service.updateFacePack",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "ArgumentCaptor.forClass",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "verify(facePackMapper).updateById",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "verify",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "captor.capture",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "assertEquals",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "captor.getValue().getId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "captor.getValue",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "assertEquals",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "captor.getValue().getName",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testUpdateFacePack_success",
+          "callee": "captor.getValue",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "new ImFacePackSaveReqVO",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "reqVO.setId(99L).setName(\"x\").setSort(0).setStatus",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "reqVO.setId(99L).setName(\"x\").setSort",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "reqVO.setId(99L).setName",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "reqVO.setId",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "when(facePackMapper.selectById(99L)).thenReturn",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "when",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "assertThrows",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "service.updateFacePack",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "assertEquals",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "FACE_PACK_NOT_EXISTS.getCode",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "exception.getCode",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "verify(facePackMapper, never()).updateById",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "verify",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "never",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testUpdateFacePack_notExists",
+          "callee": "any",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "when(facePackMapper.selectById(1L)).thenReturn",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "when",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "ImFacePackDO.builder().id(1L).build",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "ImFacePackDO.builder().id",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "ImFacePackDO.builder",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "when(facePackItemService.getFacePackItemCount(1L)).thenReturn",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "when",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "facePackItemService.getFacePackItemCount",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "service.deleteFacePack",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "verify(facePackMapper).deleteById",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testDeleteFacePack_success",
+          "callee": "verify",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "when(facePackMapper.selectById(1L)).thenReturn",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "when",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "ImFacePackDO.builder().id(1L).build",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "ImFacePackDO.builder().id",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "ImFacePackDO.builder",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "when(facePackItemService.getFacePackItemCount(1L)).thenReturn",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "when",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "facePackItemService.getFacePackItemCount",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "assertThrows",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "service.deleteFacePack",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "assertEquals",
+          "lineNumber": 131
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "FACE_PACK_HAS_ITEMS.getCode",
+          "lineNumber": 131
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "exception.getCode",
+          "lineNumber": 131
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "verify(facePackMapper, never()).deleteById",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "verify",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "never",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testDeleteFacePack_hasItems",
+          "callee": "anyLong",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "when(facePackMapper.selectById(99L)).thenReturn",
+          "lineNumber": 137
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "when",
+          "lineNumber": 137
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "facePackMapper.selectById",
+          "lineNumber": 137
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "assertThrows",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "service.deleteFacePack",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "assertEquals",
+          "lineNumber": 140
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "FACE_PACK_NOT_EXISTS.getCode",
+          "lineNumber": 140
+        },
+        {
+          "caller": "testDeleteFacePack_notExists",
+          "callee": "exception.getCode",
+          "lineNumber": 140
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "service.deleteFacePackList",
+          "lineNumber": 148
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "Collections.emptyList",
+          "lineNumber": 148
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "verify(facePackItemService, never()).getFacePackItemCount",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "verify",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "never",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "any",
+          "lineNumber": 150
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "verify(facePackMapper, never()).deleteByIds",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "verify",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "never",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testDeleteFacePackList_emptySkip",
+          "callee": "any",
+          "lineNumber": 151
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "when(facePackItemService.getFacePackItemCount(Arrays.asList(1L, 2L))).thenReturn",
+          "lineNumber": 157
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "when",
+          "lineNumber": 157
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "facePackItemService.getFacePackItemCount",
+          "lineNumber": 157
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "Arrays.asList",
+          "lineNumber": 157
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "assertThrows",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "service.deleteFacePackList",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "Arrays.asList",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "assertEquals",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "FACE_PACK_HAS_ITEMS.getCode",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "exception.getCode",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "verify(facePackMapper, never()).deleteByIds",
+          "lineNumber": 162
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "verify",
+          "lineNumber": 162
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "never",
+          "lineNumber": 162
+        },
+        {
+          "caller": "testDeleteFacePackList_anyHasItemsRejectAll",
+          "callee": "any",
+          "lineNumber": 162
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "when(facePackItemService.getFacePackItemCount(Arrays.asList(1L, 2L))).thenReturn",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "when",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "facePackItemService.getFacePackItemCount",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "Arrays.asList",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "service.deleteFacePackList",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "Arrays.asList",
+          "lineNumber": 171
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "verify(facePackMapper).deleteByIds",
+          "lineNumber": 174
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "verify",
+          "lineNumber": 174
+        },
+        {
+          "caller": "testDeleteFacePackList_success",
+          "callee": "Arrays.asList",
+          "lineNumber": 174
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-im/yudao-module-im-server/src/test/java/cn/iocoder/yudao/module/im/service/sensitiveword/ImSensitiveWordServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 278,
+      "nonEmptyLines": 231,
+      "functions": [
+        {
+          "name": "setUp",
+          "startLine": 41,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "tearDown",
+          "startLine": 56,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "testValidateText_null",
+          "startLine": 62,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "testValidateText_empty",
+          "startLine": 68,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "testValidateText_clean",
+          "startLine": 73,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "testValidateText_hitEnglish",
+          "startLine": 79,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "testValidateText_hitChinese",
+          "startLine": 86,
+          "endLine": 91,
+          "params": []
+        },
+        {
+          "name": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "startLine": 93,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "testValidateText_reusesCachedBsAcrossCalls",
+          "startLine": 103,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "startLine": 114,
+          "endLine": 148,
+          "params": []
+        },
+        {
+          "name": "testCreateSensitiveWord_duplicateWord_throws",
+          "startLine": 150,
+          "endLine": 167,
+          "params": []
+        },
+        {
+          "name": "testUpdateSensitiveWord_invalidatesCache",
+          "startLine": 169,
+          "endLine": 201,
+          "params": []
+        },
+        {
+          "name": "testDeleteSensitiveWord_invalidatesCache",
+          "startLine": 203,
+          "endLine": 231,
+          "params": []
+        },
+        {
+          "name": "testDeleteSensitiveWord_notExists_throws",
+          "startLine": 233,
+          "endLine": 245,
+          "params": []
+        },
+        {
+          "name": "testDeleteSensitiveWordList_invalidatesCache",
+          "startLine": 247,
+          "endLine": 267,
+          "params": []
+        },
+        {
+          "name": "testDeleteSensitiveWordList_emptyIds_skip",
+          "startLine": 269,
+          "endLine": 276,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ImSensitiveWordServiceImplTest",
+          "startLine": 31,
+          "endLine": 278,
+          "methods": [
+            "setUp",
+            "tearDown",
+            "testValidateText_null",
+            "testValidateText_empty",
+            "testValidateText_clean",
+            "testValidateText_hitEnglish",
+            "testValidateText_hitChinese",
+            "testValidateText_lazyLoadsCacheOnFirstCall",
+            "testValidateText_reusesCachedBsAcrossCalls",
+            "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+            "testCreateSensitiveWord_duplicateWord_throws",
+            "testUpdateSensitiveWord_invalidatesCache",
+            "testDeleteSensitiveWord_invalidatesCache",
+            "testDeleteSensitiveWord_notExists_throws",
+            "testDeleteSensitiveWordList_invalidatesCache",
+            "testDeleteSensitiveWordList_emptyIds_skip"
+          ],
+          "properties": [
+            "TENANT_ID",
+            "sensitiveWordService",
+            "imSensitiveWordMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setUp",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "tearDown",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateText_null",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateText_empty",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateText_clean",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateText_hitEnglish",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateText_hitChinese",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "testValidateText_reusesCachedBsAcrossCalls",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateSensitiveWord_duplicateWord_throws",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateSensitiveWord_invalidatesCache",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteSensitiveWord_invalidatesCache",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteSensitiveWord_notExists_throws",
+          "line": 233,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteSensitiveWordList_invalidatesCache",
+          "line": 247,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteSensitiveWordList_emptyIds_skip",
+          "line": 269,
+          "isDefault": false
+        },
+        {
+          "name": "ImSensitiveWordServiceImplTest",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setUp",
+          "callee": "TenantContextHolder.setTenantId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setUp",
+          "callee": "lenient().when(imSensitiveWordMapper.selectListByStatus(CommonStatusEnum.ENABLE.getStatus())).thenReturn",
+          "lineNumber": 47
+        },
+        {
+          "caller": "setUp",
+          "callee": "lenient().when",
+          "lineNumber": 47
+        },
+        {
+          "caller": "setUp",
+          "callee": "lenient",
+          "lineNumber": 47
+        },
+        {
+          "caller": "setUp",
+          "callee": "imSensitiveWordMapper.selectListByStatus",
+          "lineNumber": 47
+        },
+        {
+          "caller": "setUp",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 47
+        },
+        {
+          "caller": "setUp",
+          "callee": "ListUtil.of",
+          "lineNumber": 48
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\")\n                                .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\").status",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 49
+        },
+        {
+          "caller": "setUp",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 50
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word(\"违禁词\")\n                                .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word(\"违禁词\").status",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setUp",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 51
+        },
+        {
+          "caller": "setUp",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 52
+        },
+        {
+          "caller": "tearDown",
+          "callee": "TenantContextHolder.clear",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testValidateText_null",
+          "callee": "assertDoesNotThrow",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testValidateText_null",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testValidateText_empty",
+          "callee": "assertDoesNotThrow",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testValidateText_empty",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testValidateText_clean",
+          "callee": "assertDoesNotThrow",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testValidateText_clean",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testValidateText_hitEnglish",
+          "callee": "assertThrows",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testValidateText_hitEnglish",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testValidateText_hitEnglish",
+          "callee": "assertEquals",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testValidateText_hitEnglish",
+          "callee": "MESSAGE_SENSITIVE_WORD_BLOCKED.getCode",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testValidateText_hitEnglish",
+          "callee": "exception.getCode",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testValidateText_hitChinese",
+          "callee": "assertThrows",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testValidateText_hitChinese",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testValidateText_hitChinese",
+          "callee": "assertEquals",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testValidateText_hitChinese",
+          "callee": "MESSAGE_SENSITIVE_WORD_BLOCKED.getCode",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testValidateText_hitChinese",
+          "callee": "exception.getCode",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectMaxUpdateTime",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "verify",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "times",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectListByStatus",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "verify",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "times",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testValidateText_lazyLoadsCacheOnFirstCall",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectMaxUpdateTime",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "verify",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "times",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectListByStatus",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "verify",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "times",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testValidateText_reusesCachedBsAcrossCalls",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectListByStatus",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "verify",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "times",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "when(imSensitiveWordMapper.selectListByStatus(CommonStatusEnum.ENABLE.getStatus())).thenReturn",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "when",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "imSensitiveWordMapper.selectListByStatus",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ListUtil.of",
+          "lineNumber": 122
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\")\n                                .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\").status",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 123
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 124
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word(\"违禁词\")\n                                .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word(\"违禁词\").status",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(3L).word(\"newbad\")\n                                .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(3L).word(\"newbad\").status",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id(3L).word",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "when(imSensitiveWordMapper.selectByWord(\"newbad\")).thenReturn",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "when",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "imSensitiveWordMapper.selectByWord",
+          "lineNumber": 130
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "new ImSensitiveWordSaveReqVO",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "reqVO.setWord",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "reqVO.setStatus",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "sensitiveWordService.createSensitiveWord",
+          "lineNumber": 136
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "assertThrows",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 140
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "assertEquals",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "MESSAGE_SENSITIVE_WORD_BLOCKED.getCode",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "exception.getCode",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "assertThrows",
+          "lineNumber": 143
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 144
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "verify(imSensitiveWordMapper, times(2)).selectListByStatus",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "verify",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "times",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testCreateSensitiveWord_invalidatesCacheAndReloadsOnNextValidate",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "when(imSensitiveWordMapper.selectByWord(\"dup\")).thenReturn",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "when",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "imSensitiveWordMapper.selectByWord",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "ImSensitiveWordDO.builder().id(99L).word(\"dup\")\n                        .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "ImSensitiveWordDO.builder().id(99L).word(\"dup\").status",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "ImSensitiveWordDO.builder().id(99L).word",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "new ImSensitiveWordSaveReqVO",
+          "lineNumber": 158
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "reqVO.setWord",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "reqVO.setStatus",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 160
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "assertThrows",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "sensitiveWordService.createSensitiveWord",
+          "lineNumber": 162
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "assertEquals",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "SENSITIVE_WORD_DUPLICATED.getCode",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "exception.getCode",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "verify(imSensitiveWordMapper, never()).insert",
+          "lineNumber": 166
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "verify",
+          "lineNumber": 166
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "never",
+          "lineNumber": 166
+        },
+        {
+          "caller": "testCreateSensitiveWord_duplicateWord_throws",
+          "callee": "any",
+          "lineNumber": 166
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 172
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectListByStatus",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "verify",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "times",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 173
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "when(imSensitiveWordMapper.selectById(1L)).thenReturn",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "when",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "imSensitiveWordMapper.selectById",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\")\n                        .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 177
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\").status",
+          "lineNumber": 177
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word",
+          "lineNumber": 177
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 177
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 177
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "when(imSensitiveWordMapper.selectByWord(\"updatedbad\")).thenReturn",
+          "lineNumber": 179
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "when",
+          "lineNumber": 179
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "imSensitiveWordMapper.selectByWord",
+          "lineNumber": 179
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "when(imSensitiveWordMapper.selectListByStatus(CommonStatusEnum.ENABLE.getStatus())).thenReturn",
+          "lineNumber": 181
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "when",
+          "lineNumber": 181
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "imSensitiveWordMapper.selectListByStatus",
+          "lineNumber": 181
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 181
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ListUtil.of",
+          "lineNumber": 182
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"updatedbad\")\n                                .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 183
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"updatedbad\").status",
+          "lineNumber": 183
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word",
+          "lineNumber": 183
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 183
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 183
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 184
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "new ImSensitiveWordSaveReqVO",
+          "lineNumber": 188
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "reqVO.setId",
+          "lineNumber": 189
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "reqVO.setWord",
+          "lineNumber": 190
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "reqVO.setStatus",
+          "lineNumber": 191
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 191
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "sensitiveWordService.updateSensitiveWord",
+          "lineNumber": 192
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "assertThrows",
+          "lineNumber": 195
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 196
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "assertEquals",
+          "lineNumber": 197
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "MESSAGE_SENSITIVE_WORD_BLOCKED.getCode",
+          "lineNumber": 197
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "exception.getCode",
+          "lineNumber": 197
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "verify(imSensitiveWordMapper, times(2)).selectListByStatus",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "verify",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "times",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testUpdateSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 200
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 206
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectListByStatus",
+          "lineNumber": 207
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "verify",
+          "lineNumber": 207
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "times",
+          "lineNumber": 207
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 207
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "when(imSensitiveWordMapper.selectById(1L)).thenReturn",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "when",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "imSensitiveWordMapper.selectById",
+          "lineNumber": 210
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\")\n                        .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word(\"badword\").status",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(1L).word",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 211
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 212
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "when(imSensitiveWordMapper.selectListByStatus(CommonStatusEnum.ENABLE.getStatus())).thenReturn",
+          "lineNumber": 214
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "when",
+          "lineNumber": 214
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "imSensitiveWordMapper.selectListByStatus",
+          "lineNumber": 214
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 214
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ListUtil.of",
+          "lineNumber": 215
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word(\"违禁词\")\n                                .status(CommonStatusEnum.ENABLE.getStatus()).build",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word(\"违禁词\").status",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id(2L).word",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder().id",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "ImSensitiveWordDO.builder",
+          "lineNumber": 216
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 217
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "sensitiveWordService.deleteSensitiveWord",
+          "lineNumber": 221
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "assertDoesNotThrow",
+          "lineNumber": 224
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 224
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "assertThrows",
+          "lineNumber": 226
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 227
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "verify(imSensitiveWordMapper, times(2)).selectListByStatus",
+          "lineNumber": 230
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "verify",
+          "lineNumber": 230
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "times",
+          "lineNumber": 230
+        },
+        {
+          "caller": "testDeleteSensitiveWord_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 230
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "when(imSensitiveWordMapper.selectById(999L)).thenReturn",
+          "lineNumber": 236
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "when",
+          "lineNumber": 236
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "imSensitiveWordMapper.selectById",
+          "lineNumber": 236
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "assertThrows",
+          "lineNumber": 239
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "sensitiveWordService.deleteSensitiveWord",
+          "lineNumber": 240
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "assertEquals",
+          "lineNumber": 241
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "SENSITIVE_WORD_NOT_EXISTS.getCode",
+          "lineNumber": 241
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "exception.getCode",
+          "lineNumber": 241
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "verify(imSensitiveWordMapper, never()).deleteById",
+          "lineNumber": 244
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "verify",
+          "lineNumber": 244
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "never",
+          "lineNumber": 244
+        },
+        {
+          "caller": "testDeleteSensitiveWord_notExists_throws",
+          "callee": "anyLong",
+          "lineNumber": 244
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 250
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "verify(imSensitiveWordMapper, times(1)).selectListByStatus",
+          "lineNumber": 251
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "verify",
+          "lineNumber": 251
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "times",
+          "lineNumber": 251
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 251
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "when(imSensitiveWordMapper.selectListByStatus(CommonStatusEnum.ENABLE.getStatus())).thenReturn",
+          "lineNumber": 254
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "when",
+          "lineNumber": 254
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "imSensitiveWordMapper.selectListByStatus",
+          "lineNumber": 254
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 254
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "ListUtil.of",
+          "lineNumber": 255
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "sensitiveWordService.deleteSensitiveWordList",
+          "lineNumber": 258
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "ListUtil.of",
+          "lineNumber": 258
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "assertDoesNotThrow",
+          "lineNumber": 261
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 261
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "assertDoesNotThrow",
+          "lineNumber": 262
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "sensitiveWordService.validateText",
+          "lineNumber": 262
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "verify(imSensitiveWordMapper, times(1)).deleteByIds",
+          "lineNumber": 265
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "verify",
+          "lineNumber": 265
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "times",
+          "lineNumber": 265
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "ListUtil.of",
+          "lineNumber": 265
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "verify(imSensitiveWordMapper, times(2)).selectListByStatus",
+          "lineNumber": 266
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "verify",
+          "lineNumber": 266
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "times",
+          "lineNumber": 266
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_invalidatesCache",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 266
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_emptyIds_skip",
+          "callee": "sensitiveWordService.deleteSensitiveWordList",
+          "lineNumber": 272
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_emptyIds_skip",
+          "callee": "ListUtil.of",
+          "lineNumber": 272
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_emptyIds_skip",
+          "callee": "verify(imSensitiveWordMapper, never()).deleteByIds",
+          "lineNumber": 275
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_emptyIds_skip",
+          "callee": "verify",
+          "lineNumber": 275
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_emptyIds_skip",
+          "callee": "never",
+          "lineNumber": 275
+        },
+        {
+          "caller": "testDeleteSensitiveWordList_emptyIds_skip",
+          "callee": "anyList",
+          "lineNumber": 275
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 17,
+        "functionCount": 16,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-api/src/main/java/cn/iocoder/yudao/module/iot/enums/thingmodel/IotThingModelAccessModeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 25,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotThingModelAccessModeEnum",
+          "startLine": 14,
+          "endLine": 30,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "mode"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "IotThingModelAccessModeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/device/vo/message/IotDeviceMessageSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "IotDeviceMessageSendReqVO",
+          "startLine": 10,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "method",
+            "params",
+            "deviceId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotDeviceMessageSendReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/rule/IotSceneRuleController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "createSceneRule",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateSceneRule",
+          "startLine": 43,
+          "endLine": 49,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateSceneRuleStatus",
+          "startLine": 51,
+          "endLine": 57,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteSceneRule",
+          "startLine": 59,
+          "endLine": 66,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSceneRule",
+          "startLine": 68,
+          "endLine": 75,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSceneRulePage",
+          "startLine": 77,
+          "endLine": 83,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getSceneRuleSimpleList",
+          "startLine": 85,
+          "endLine": 91,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotSceneRuleController",
+          "startLine": 27,
+          "endLine": 93,
+          "methods": [
+            "createSceneRule",
+            "updateSceneRule",
+            "updateSceneRuleStatus",
+            "deleteSceneRule",
+            "getSceneRule",
+            "getSceneRulePage",
+            "getSceneRuleSimpleList"
+          ],
+          "properties": [
+            "sceneRuleService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createSceneRule",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "updateSceneRule",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "updateSceneRuleStatus",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteSceneRule",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getSceneRule",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getSceneRulePage",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getSceneRuleSimpleList",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "IotSceneRuleController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createSceneRule",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createSceneRule",
+          "callee": "sceneRuleService.createSceneRule",
+          "lineNumber": 40
+        },
+        {
+          "caller": "updateSceneRule",
+          "callee": "sceneRuleService.updateSceneRule",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateSceneRule",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "updateSceneRuleStatus",
+          "callee": "sceneRuleService.updateSceneRuleStatus",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateSceneRuleStatus",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateSceneRuleStatus",
+          "callee": "updateReqVO.getStatus",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateSceneRuleStatus",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteSceneRule",
+          "callee": "sceneRuleService.deleteSceneRule",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deleteSceneRule",
+          "callee": "success",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getSceneRule",
+          "callee": "sceneRuleService.getSceneRule",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getSceneRule",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getSceneRule",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getSceneRulePage",
+          "callee": "sceneRuleService.getSceneRulePage",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getSceneRulePage",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getSceneRulePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "sceneRuleService.getSceneRuleListByStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "convertList",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "new IotSceneRuleRespVO().setId(scene.getId()).setName",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "new IotSceneRuleRespVO().setId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "new IotSceneRuleRespVO",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "scene.getId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getSceneRuleSimpleList",
+          "callee": "scene.getName",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/rule/vo/scene/IotSceneRulePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "IotSceneRulePageReqVO",
+          "startLine": 16,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "name",
+            "description",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotSceneRulePageReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/rule/vo/scene/IotSceneRuleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "IotSceneRuleRespVO",
+          "startLine": 10,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "status",
+            "triggers",
+            "actions",
+            "lastTriggerTime",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotSceneRuleRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/controller/admin/rule/vo/scene/IotSceneRuleUpdateStatusReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "IotSceneRuleUpdateStatusReqVO",
+          "startLine": 9,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IotSceneRuleUpdateStatusReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/dal/dataobject/thingmodel/model/dataType/ThingModelStructDataSpecs.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "ThingModelStructDataSpecs",
+          "startLine": 19,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "identifier",
+            "name",
+            "accessMode",
+            "required",
+            "childDataType",
+            "dataSpecs",
+            "dataSpecsList"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ThingModelStructDataSpecs",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/api/coupon/dto/CouponTemplateRespDTO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "CouponTemplateRespDTO",
+          "startLine": 11,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponTemplateRespDTO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/enums/banner/BannerPositionEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "BannerPositionEnum",
+          "startLine": 14,
+          "endLine": 40,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "position",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARRAYS",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "array",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "BannerPositionEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/banner/BannerController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "createBanner",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateBanner",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteBanner",
+          "startLine": 47,
+          "endLine": 54,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBanner",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBannerPage",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BannerController",
+          "startLine": 23,
+          "endLine": 73,
+          "methods": [
+            "createBanner",
+            "updateBanner",
+            "deleteBanner",
+            "getBanner",
+            "getBannerPage"
+          ],
+          "properties": [
+            "bannerService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createBanner",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "updateBanner",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBanner",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getBanner",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getBannerPage",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "BannerController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createBanner",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createBanner",
+          "callee": "bannerService.createBanner",
+          "lineNumber": 36
+        },
+        {
+          "caller": "updateBanner",
+          "callee": "bannerService.updateBanner",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateBanner",
+          "callee": "success",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deleteBanner",
+          "callee": "bannerService.deleteBanner",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteBanner",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getBanner",
+          "callee": "bannerService.getBanner",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getBanner",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getBanner",
+          "callee": "BannerConvert.INSTANCE.convert",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getBannerPage",
+          "callee": "bannerService.getBannerPage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getBannerPage",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getBannerPage",
+          "callee": "BannerConvert.INSTANCE.convertPage",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/banner/vo/BannerBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "BannerBaseVO",
+          "startLine": 15,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "title",
+            "url",
+            "picUrl",
+            "position",
+            "sort",
+            "status",
+            "memo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerBaseVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/banner/vo/BannerCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "BannerCreateReqVO",
+          "startLine": 11,
+          "endLine": 17,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerCreateReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/banner/vo/BannerPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "BannerPageReqVO",
+          "startLine": 16,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "title",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerPageReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/banner/vo/BannerRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "BannerRespVO",
+          "startLine": 9,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/banner/vo/BannerUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "BannerUpdateReqVO",
+          "startLine": 12,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerUpdateReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/coupon/vo/template/CouponTemplateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "CouponTemplateRespVO",
+          "startLine": 12,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "id",
+            "status",
+            "takeCount",
+            "useCount",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponTemplateRespVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/coupon/vo/template/CouponTemplateUpdateStatusReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "CouponTemplateUpdateStatusReqVO",
+          "startLine": 9,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CouponTemplateUpdateStatusReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/seckill/vo/config/SeckillConfigUpdateStatusReqVo.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "SeckillConfigUpdateStatusReqVo",
+          "startLine": 9,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SeckillConfigUpdateStatusReqVo",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/banner/AppBannerController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "getBannerList",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "position"
+          ]
+        },
+        {
+          "name": "addBrowseCount",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppBannerController",
+          "startLine": 20,
+          "endLine": 47,
+          "methods": [
+            "getBannerList",
+            "addBrowseCount"
+          ],
+          "properties": [
+            "bannerService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getBannerList",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "addBrowseCount",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "AppBannerController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getBannerList",
+          "callee": "bannerService.getBannerListByPosition",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getBannerList",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getBannerList",
+          "callee": "BannerConvert.INSTANCE.convertList01",
+          "lineNumber": 35
+        },
+        {
+          "caller": "addBrowseCount",
+          "callee": "bannerService.addBannerBrowseCount",
+          "lineNumber": 43
+        },
+        {
+          "caller": "addBrowseCount",
+          "callee": "success",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/banner/vo/AppBannerRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "AppBannerRespVO",
+          "startLine": 7,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "url",
+            "picUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppBannerRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/convert/banner/BannerConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "BannerConvert",
+          "startLine": 14,
+          "endLine": 31,
+          "methods": [
+            "convertList",
+            "convertPage",
+            "convert",
+            "convert",
+            "convert",
+            "convertList01"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerConvert",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

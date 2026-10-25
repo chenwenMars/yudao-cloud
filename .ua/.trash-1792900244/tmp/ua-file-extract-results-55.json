@@ -1,0 +1,2438 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/banner/BannerDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 58,
+      "classes": [
+        {
+          "name": "BannerDO",
+          "startLine": 15,
+          "endLine": 66,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "url",
+            "picUrl",
+            "sort",
+            "status",
+            "position",
+            "memo",
+            "browseCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/banner/BannerMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "BannerMapper",
+          "startLine": 18,
+          "endLine": 39,
+          "methods": [
+            "selectPage",
+            "updateBrowseCount",
+            "selectBannerListByPosition"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BannerDO>()\n                .likeIfPresent(BannerDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(BannerDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(BannerDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BannerDO>()\n                .likeIfPresent(BannerDO::getTitle, reqVO.getTitle())\n                .eqIfPresent(BannerDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BannerDO>()\n                .likeIfPresent(BannerDO::getTitle, reqVO.getTitle()).eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BannerDO>().likeIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<BannerDO>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTitle",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 25
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "update",
+          "lineNumber": 30
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "new LambdaUpdateWrapper<BannerDO>()\n                .eq(BannerDO::getId, id).setSql",
+          "lineNumber": 30
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "new LambdaUpdateWrapper<BannerDO>().eq",
+          "lineNumber": 30
+        },
+        {
+          "caller": "updateBrowseCount",
+          "callee": "new LambdaUpdateWrapper<BannerDO>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectBannerListByPosition",
+          "callee": "selectList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectBannerListByPosition",
+          "callee": "new LambdaQueryWrapperX<BannerDO>().eq",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectBannerListByPosition",
+          "callee": "new LambdaQueryWrapperX<BannerDO>",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/banner/BannerService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "BannerService",
+          "startLine": 17,
+          "endLine": 72,
+          "methods": [
+            "createBanner",
+            "updateBanner",
+            "deleteBanner",
+            "getBanner",
+            "getBannerPage",
+            "addBannerBrowseCount",
+            "getBannerListByPosition"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BannerService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/banner/BannerServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "createBanner",
+          "startLine": 31,
+          "endLine": 38,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateBanner",
+          "startLine": 40,
+          "endLine": 47,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteBanner",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateBannerExists",
+          "startLine": 57,
+          "endLine": 61,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBanner",
+          "startLine": 63,
+          "endLine": 66,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBannerPage",
+          "startLine": 68,
+          "endLine": 71,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "addBannerBrowseCount",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getBannerListByPosition",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "position"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BannerServiceImpl",
+          "startLine": 24,
+          "endLine": 86,
+          "methods": [
+            "createBanner",
+            "updateBanner",
+            "deleteBanner",
+            "validateBannerExists",
+            "getBanner",
+            "getBannerPage",
+            "addBannerBrowseCount",
+            "getBannerListByPosition"
+          ],
+          "properties": [
+            "bannerMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createBanner",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "updateBanner",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "deleteBanner",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getBanner",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getBannerPage",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "addBannerBrowseCount",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getBannerListByPosition",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "BannerServiceImpl",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createBanner",
+          "callee": "BannerConvert.INSTANCE.convert",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createBanner",
+          "callee": "bannerMapper.insert",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createBanner",
+          "callee": "banner.getId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "updateBanner",
+          "callee": "this.validateBannerExists",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateBanner",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateBanner",
+          "callee": "BannerConvert.INSTANCE.convert",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateBanner",
+          "callee": "bannerMapper.updateById",
+          "lineNumber": 46
+        },
+        {
+          "caller": "deleteBanner",
+          "callee": "this.validateBannerExists",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteBanner",
+          "callee": "bannerMapper.deleteById",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validateBannerExists",
+          "callee": "bannerMapper.selectById",
+          "lineNumber": 58
+        },
+        {
+          "caller": "validateBannerExists",
+          "callee": "exception",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getBanner",
+          "callee": "bannerMapper.selectById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getBannerPage",
+          "callee": "bannerMapper.selectPage",
+          "lineNumber": 70
+        },
+        {
+          "caller": "addBannerBrowseCount",
+          "callee": "validateBannerExists",
+          "lineNumber": 76
+        },
+        {
+          "caller": "addBannerBrowseCount",
+          "callee": "bannerMapper.updateBrowseCount",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getBannerListByPosition",
+          "callee": "bannerMapper.selectBannerListByPosition",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/base/system/user/UserSimpleBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "UserSimpleBaseVO",
+          "startLine": 6,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "nickname",
+            "avatar"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UserSimpleBaseVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/DeliveryPickUpStoreController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "createDeliveryPickUpStore",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDeliveryPickUpStore",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDeliveryPickUpStore",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDeliveryPickUpStore",
+          "startLine": 65,
+          "endLine": 78,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSimpleDeliveryPickUpStoreList",
+          "startLine": 80,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "getDeliveryPickUpStoreList",
+          "startLine": 88,
+          "endLine": 95,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getDeliveryPickUpStorePage",
+          "startLine": 97,
+          "endLine": 103,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "bindDeliveryPickUpStore",
+          "startLine": 105,
+          "endLine": 111,
+          "params": [
+            "bindReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreController",
+          "startLine": 29,
+          "endLine": 113,
+          "methods": [
+            "createDeliveryPickUpStore",
+            "updateDeliveryPickUpStore",
+            "deleteDeliveryPickUpStore",
+            "getDeliveryPickUpStore",
+            "getSimpleDeliveryPickUpStoreList",
+            "getDeliveryPickUpStoreList",
+            "getDeliveryPickUpStorePage",
+            "bindDeliveryPickUpStore"
+          ],
+          "properties": [
+            "deliveryPickUpStoreService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDeliveryPickUpStore",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateDeliveryPickUpStore",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDeliveryPickUpStore",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getDeliveryPickUpStore",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleDeliveryPickUpStoreList",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getDeliveryPickUpStoreList",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "getDeliveryPickUpStorePage",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "bindDeliveryPickUpStore",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "DeliveryPickUpStoreController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDeliveryPickUpStore",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreService.createDeliveryPickUpStore",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreService.updateDeliveryPickUpStore",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDeliveryPickUpStore",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreService.deleteDeliveryPickUpStore",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteDeliveryPickUpStore",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreService.getDeliveryPickUpStore",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "deliveryPickUpStore.getVerifyUserIds",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "adminUserApi.getUserList(deliveryPickUpStore.getVerifyUserIds()).getCheckedData",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "adminUserApi.getUserList",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "deliveryPickUpStore.getVerifyUserIds",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "success",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convert01(deliveryPickUpStore).setVerifyUsers",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convert01",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSimpleDeliveryPickUpStoreList",
+          "callee": "deliveryPickUpStoreService.getDeliveryPickUpStoreListByStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSimpleDeliveryPickUpStoreList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getSimpleDeliveryPickUpStoreList",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleDeliveryPickUpStoreList",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convertList1",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "deliveryPickUpStoreService.getDeliveryPickUpStoreList",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "success",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convertList",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getDeliveryPickUpStorePage",
+          "callee": "deliveryPickUpStoreService.getDeliveryPickUpStorePage",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getDeliveryPickUpStorePage",
+          "callee": "success",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getDeliveryPickUpStorePage",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convertPage",
+          "lineNumber": 102
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreService.bindDeliveryPickUpStore",
+          "lineNumber": 109
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "success",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/vo/pickup/DeliveryPickUpBindReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "DeliveryPickUpBindReqVO",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "id",
+            "verifyUserIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpBindReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/vo/pickup/DeliveryPickUpStoreBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreBaseVO",
+          "startLine": 18,
+          "endLine": 68,
+          "methods": [],
+          "properties": [
+            "name",
+            "introduction",
+            "phone",
+            "areaId",
+            "detailAddress",
+            "logo",
+            "openingTime",
+            "closingTime",
+            "latitude",
+            "longitude",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreBaseVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/vo/pickup/DeliveryPickUpStoreCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreCreateReqVO",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreCreateReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/vo/pickup/DeliveryPickUpStorePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStorePageReqVO",
+          "startLine": 16,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "name",
+            "phone",
+            "areaId",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStorePageReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/vo/pickup/DeliveryPickUpStoreRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreRespVO",
+          "startLine": 12,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime",
+            "areaName",
+            "verifyUsers"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreRespVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/vo/pickup/DeliveryPickUpStoreSimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreSimpleRespVO",
+          "startLine": 10,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "phone",
+            "areaId",
+            "areaName",
+            "detailAddress",
+            "verifyUserIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreSimpleRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/delivery/vo/pickup/DeliveryPickUpStoreUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreUpdateReqVO",
+          "startLine": 9,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreUpdateReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/delivery/AppDeliverPickUpStoreController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "getDeliveryPickUpStoreList",
+          "startLine": 34,
+          "endLine": 47,
+          "params": [
+            "latitude",
+            "longitude"
+          ]
+        },
+        {
+          "name": "getOrder",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppDeliverPickUpStoreController",
+          "startLine": 25,
+          "endLine": 58,
+          "methods": [
+            "getDeliveryPickUpStoreList",
+            "getOrder"
+          ],
+          "properties": [
+            "deliveryPickUpStoreService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDeliveryPickUpStoreList",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getOrder",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "AppDeliverPickUpStoreController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "deliveryPickUpStoreService.getDeliveryPickUpStoreListByStatus",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convertList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getOrder",
+          "callee": "deliveryPickUpStoreService.getDeliveryPickUpStore",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getOrder",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getOrder",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convert03",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/delivery/vo/pickup/AppDeliveryPickUpStoreRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 38,
+      "classes": [
+        {
+          "name": "AppDeliveryPickUpStoreRespVO",
+          "startLine": 10,
+          "endLine": 54,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "logo",
+            "phone",
+            "areaId",
+            "areaName",
+            "detailAddress",
+            "openingTime",
+            "closingTime",
+            "latitude",
+            "longitude",
+            "distance"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppDeliveryPickUpStoreRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/delivery/DeliveryPickUpStoreConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreConvert",
+          "startLine": 20,
+          "endLine": 58,
+          "methods": [
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convert01",
+            "convertList1",
+            "convert02",
+            "convertAreaIdToAreaName",
+            "convertList",
+            "convert03"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertAreaIdToAreaName",
+          "callee": "AreaUtils.format",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert03",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertList",
+          "callee": "storeVO.setDistance",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertList",
+          "callee": "NumberUtils.getDistance",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertList",
+          "callee": "storeVO.getLatitude",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertList",
+          "callee": "storeVO.getLongitude",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryPickUpStoreDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 82,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreDO",
+          "startLine": 21,
+          "endLine": 98,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "introduction",
+            "phone",
+            "areaId",
+            "detailAddress",
+            "logo",
+            "openingTime",
+            "closingTime",
+            "latitude",
+            "longitude",
+            "verifyUserIds",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreDO",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/mysql/delivery/DeliveryPickUpStoreMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreMapper",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [
+            "selectPage",
+            "selectListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreMapper",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<DeliveryPickUpStoreDO>()\n                .likeIfPresent(DeliveryPickUpStoreDO::getName, reqVO.getName())\n                .eqIfPresent(DeliveryPickUpStoreDO::getPhone, reqVO.getPhone())\n                .eqIfPresent(DeliveryPickUpStoreDO::getAreaId, reqVO.getAreaId())\n                .eqIfPresent(DeliveryPickUpStoreDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(DeliveryPickUpStoreDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<DeliveryPickUpStoreDO>()\n                .likeIfPresent(DeliveryPickUpStoreDO::getName, reqVO.getName())\n                .eqIfPresent(DeliveryPickUpStoreDO::getPhone, reqVO.getPhone())\n                .eqIfPresent(DeliveryPickUpStoreDO::getAreaId, reqVO.getAreaId())\n                .eqIfPresent(DeliveryPickUpStoreDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<DeliveryPickUpStoreDO>()\n                .likeIfPresent(DeliveryPickUpStoreDO::getName, reqVO.getName())\n                .eqIfPresent(DeliveryPickUpStoreDO::getPhone, reqVO.getPhone())\n                .eqIfPresent(DeliveryPickUpStoreDO::getAreaId, reqVO.getAreaId()).eqIfPresent",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<DeliveryPickUpStoreDO>()\n                .likeIfPresent(DeliveryPickUpStoreDO::getName, reqVO.getName())\n                .eqIfPresent(DeliveryPickUpStoreDO::getPhone, reqVO.getPhone()).eqIfPresent",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<DeliveryPickUpStoreDO>()\n                .likeIfPresent(DeliveryPickUpStoreDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<DeliveryPickUpStoreDO>().likeIfPresent",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<DeliveryPickUpStoreDO>",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getPhone",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getAreaId",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/delivery/DeliveryPickUpStoreService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 70,
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreService",
+          "startLine": 19,
+          "endLine": 82,
+          "methods": [
+            "createDeliveryPickUpStore",
+            "updateDeliveryPickUpStore",
+            "deleteDeliveryPickUpStore",
+            "getDeliveryPickUpStore",
+            "getDeliveryPickUpStoreList",
+            "getDeliveryPickUpStoreListByStatus",
+            "getDeliveryPickUpStorePage",
+            "bindDeliveryPickUpStore"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryPickUpStoreService",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/service/delivery/DeliveryPickUpStoreServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "createDeliveryPickUpStore",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDeliveryPickUpStore",
+          "startLine": 47,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDeliveryPickUpStore",
+          "startLine": 56,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateDeliveryPickUpStoreExists",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDeliveryPickUpStore",
+          "startLine": 71,
+          "endLine": 74,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getDeliveryPickUpStoreList",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getDeliveryPickUpStoreListByStatus",
+          "startLine": 81,
+          "endLine": 84,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "getDeliveryPickUpStorePage",
+          "startLine": 86,
+          "endLine": 89,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "bindDeliveryPickUpStore",
+          "startLine": 91,
+          "endLine": 101,
+          "params": [
+            "bindReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeliveryPickUpStoreServiceImpl",
+          "startLine": 28,
+          "endLine": 103,
+          "methods": [
+            "createDeliveryPickUpStore",
+            "updateDeliveryPickUpStore",
+            "deleteDeliveryPickUpStore",
+            "validateDeliveryPickUpStoreExists",
+            "getDeliveryPickUpStore",
+            "getDeliveryPickUpStoreList",
+            "getDeliveryPickUpStoreListByStatus",
+            "getDeliveryPickUpStorePage",
+            "bindDeliveryPickUpStore"
+          ],
+          "properties": [
+            "deliveryPickUpStoreMapper",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDeliveryPickUpStore",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateDeliveryPickUpStore",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDeliveryPickUpStore",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getDeliveryPickUpStore",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getDeliveryPickUpStoreList",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "getDeliveryPickUpStoreListByStatus",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getDeliveryPickUpStorePage",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "bindDeliveryPickUpStore",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "DeliveryPickUpStoreServiceImpl",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDeliveryPickUpStore",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convert",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreMapper.insert",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createDeliveryPickUpStore",
+          "callee": "deliveryPickUpStore.getId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateDeliveryPickUpStore",
+          "callee": "validateDeliveryPickUpStoreExists",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateDeliveryPickUpStore",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateDeliveryPickUpStore",
+          "callee": "DeliveryPickUpStoreConvert.INSTANCE.convert",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreMapper.updateById",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteDeliveryPickUpStore",
+          "callee": "validateDeliveryPickUpStoreExists",
+          "lineNumber": 59
+        },
+        {
+          "caller": "deleteDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreMapper.deleteById",
+          "lineNumber": 61
+        },
+        {
+          "caller": "validateDeliveryPickUpStoreExists",
+          "callee": "deliveryPickUpStoreMapper.selectById",
+          "lineNumber": 65
+        },
+        {
+          "caller": "validateDeliveryPickUpStoreExists",
+          "callee": "exception",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreMapper.selectById",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getDeliveryPickUpStoreList",
+          "callee": "deliveryPickUpStoreMapper.selectByIds",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getDeliveryPickUpStoreListByStatus",
+          "callee": "deliveryPickUpStoreMapper.selectListByStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getDeliveryPickUpStorePage",
+          "callee": "deliveryPickUpStoreMapper.selectPage",
+          "lineNumber": 88
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "validateDeliveryPickUpStoreExists",
+          "lineNumber": 94
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "bindReqVO.getId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "adminUserApi.validateUserList(bindReqVO.getVerifyUserIds()).checkError",
+          "lineNumber": 96
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "adminUserApi.validateUserList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "bindReqVO.getVerifyUserIds",
+          "lineNumber": 96
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 99
+        },
+        {
+          "caller": "bindDeliveryPickUpStore",
+          "callee": "deliveryPickUpStoreMapper.updateById",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/group/vo/MemberGroupBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "MemberGroupBaseVO",
+          "startLine": 14,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "name",
+            "remark",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberGroupBaseVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/level/vo/level/MemberLevelBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "MemberLevelBaseVO",
+          "startLine": 18,
+          "endLine": 53,
+          "methods": [],
+          "properties": [
+            "name",
+            "experience",
+            "level",
+            "discountPercent",
+            "icon",
+            "backgroundUrl",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberLevelBaseVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/signin/vo/config/MemberSignInConfigBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "isConfigAward",
+          "startLine": 40,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemberSignInConfigBaseVO",
+          "startLine": 18,
+          "endLine": 45,
+          "methods": [
+            "isConfigAward"
+          ],
+          "properties": [
+            "day",
+            "point",
+            "experience",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isConfigAward",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "MemberSignInConfigBaseVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isConfigAward",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 43
+        },
+        {
+          "caller": "isConfigAward",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/app/vo/PayAppBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "PayAppBaseVO",
+          "startLine": 14,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "appKey",
+            "name",
+            "status",
+            "remark",
+            "orderNotifyUrl",
+            "refundNotifyUrl",
+            "transferNotifyUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayAppBaseVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/channel/vo/PayChannelBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "PayChannelBaseVO",
+          "startLine": 12,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "status",
+            "remark",
+            "feeRate",
+            "appId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayChannelBaseVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletRechargePackageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "createWalletRechargePackage",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateWalletRechargePackage",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteWalletRechargePackage",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWalletRechargePackage",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWalletRechargePackagePage",
+          "startLine": 67,
+          "endLine": 73,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayWalletRechargePackageController",
+          "startLine": 25,
+          "endLine": 75,
+          "methods": [
+            "createWalletRechargePackage",
+            "updateWalletRechargePackage",
+            "deleteWalletRechargePackage",
+            "getWalletRechargePackage",
+            "getWalletRechargePackagePage"
+          ],
+          "properties": [
+            "walletRechargePackageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createWalletRechargePackage",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "updateWalletRechargePackage",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWalletRechargePackage",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getWalletRechargePackage",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getWalletRechargePackagePage",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "PayWalletRechargePackageController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWalletRechargePackage",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createWalletRechargePackage",
+          "callee": "walletRechargePackageService.createWalletRechargePackage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "walletRechargePackageService.updateWalletRechargePackage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "deleteWalletRechargePackage",
+          "callee": "walletRechargePackageService.deleteWalletRechargePackage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteWalletRechargePackage",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getWalletRechargePackage",
+          "callee": "walletRechargePackageService.getWalletRechargePackage",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getWalletRechargePackage",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getWalletRechargePackage",
+          "callee": "PayWalletRechargePackageConvert.INSTANCE.convert",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getWalletRechargePackagePage",
+          "callee": "walletRechargePackageService.getWalletRechargePackagePage",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getWalletRechargePackagePage",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getWalletRechargePackagePage",
+          "callee": "PayWalletRechargePackageConvert.INSTANCE.convertPage",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/rechargepackage/WalletRechargePackageCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "WalletRechargePackageCreateReqVO",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "WalletRechargePackageCreateReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/rechargepackage/WalletRechargePackagePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "WalletRechargePackagePageReqVO",
+          "startLine": 14,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "name",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WalletRechargePackagePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/rechargepackage/WalletRechargePackageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "WalletRechargePackageRespVO",
+          "startLine": 7,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WalletRechargePackageRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/rechargepackage/WalletRechargePackageUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "WalletRechargePackageUpdateReqVO",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WalletRechargePackageUpdateReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/AppPayWalletRechargePackageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "getWalletRechargePackageList",
+          "startLine": 33,
+          "endLine": 40,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayWalletRechargePackageController",
+          "startLine": 23,
+          "endLine": 42,
+          "methods": [
+            "getWalletRechargePackageList"
+          ],
+          "properties": [
+            "walletRechargePackageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getWalletRechargePackageList",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayWalletRechargePackageController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWalletRechargePackageList",
+          "callee": "walletRechargePackageService.getWalletRechargePackageList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getWalletRechargePackageList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getWalletRechargePackageList",
+          "callee": "list.sort",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getWalletRechargePackageList",
+          "callee": "Comparator.comparingInt",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getWalletRechargePackageList",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getWalletRechargePackageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/recharge/AppPayWalletPackageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "AppPayWalletPackageRespVO",
+          "startLine": 6,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "payPrice",
+            "bonusPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayWalletPackageRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/wallet/PayWalletRechargePackageConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "PayWalletRechargePackageConvert",
+          "startLine": 14,
+          "endLine": 29,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletRechargePackageConvert",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/wallet/PayWalletRechargePackageDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "PayWalletRechargePackageDO",
+          "startLine": 16,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "payPrice",
+            "bonusPrice",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletRechargePackageDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/mysql/wallet/PayWalletRechargePackageMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "PayWalletRechargePackageMapper",
+          "startLine": 13,
+          "endLine": 32,
+          "methods": [
+            "selectPage",
+            "selectByName",
+            "selectListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletRechargePackageMapper",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PayWalletRechargePackageDO>()\n                .likeIfPresent(PayWalletRechargePackageDO::getName, reqVO.getName())\n                .eqIfPresent(PayWalletRechargePackageDO::getStatus, reqVO.getStatus())\n                .betweenIfPresent(PayWalletRechargePackageDO::getCreateTime, reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PayWalletRechargePackageDO>()\n                .likeIfPresent(PayWalletRechargePackageDO::getName, reqVO.getName())\n                .eqIfPresent(PayWalletRechargePackageDO::getStatus, reqVO.getStatus()).betweenIfPresent",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PayWalletRechargePackageDO>()\n                .likeIfPresent(PayWalletRechargePackageDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PayWalletRechargePackageDO>().likeIfPresent",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PayWalletRechargePackageDO>",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectByName",
+          "callee": "selectOne",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

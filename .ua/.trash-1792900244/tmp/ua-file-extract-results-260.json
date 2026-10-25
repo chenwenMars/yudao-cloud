@@ -1,0 +1,2719 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 22,
+  "filesSkipped": [
+    "yudao-module-bpm/pom.xml",
+    "yudao-module-bpm/yudao-module-bpm-api/pom.xml",
+    "yudao-module-bpm/yudao-module-bpm-server/pom.xml"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 22,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 22,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/main/java/cn/iocoder/yudao/module/ai/tool/method/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/AnthropicChatModelTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 37,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 51,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "testStream_thinking",
+          "startLine": 66,
+          "endLine": 85,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AnthropicChatModelTest",
+          "startLine": 23,
+          "endLine": 87,
+          "methods": [
+            "testCall",
+            "testStream",
+            "testStream_thinking"
+          ],
+          "properties": [
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "testStream_thinking",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "AnthropicChatModelTest",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(System.out::println).then().block",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(System.out::println).then",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new ArrayList<>",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "messages.add",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new UserMessage",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "AnthropicChatOptions.builder()\n                .model(AnthropicApi.ChatModel.CLAUDE_SONNET_4_5)\n                .thinking(AnthropicApi.ThinkingType.ENABLED, 3096)\n                .temperature(1D).build",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "AnthropicChatOptions.builder()\n                .model(AnthropicApi.ChatModel.CLAUDE_SONNET_4_5)\n                .thinking(AnthropicApi.ThinkingType.ENABLED, 3096).temperature",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "AnthropicChatOptions.builder()\n                .model(AnthropicApi.ChatModel.CLAUDE_SONNET_4_5).thinking",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "AnthropicChatOptions.builder().model",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "AnthropicChatOptions.builder",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "chatModel.stream",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new Prompt",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult());\n        }).then().block",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult());\n        }).then",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "System.out.println",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "response.getResult",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/AzureOpenAIChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 39,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 54,
+          "endLine": 69,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AzureOpenAIChatModelTests",
+          "startLine": 26,
+          "endLine": 71,
+          "methods": [
+            "testCall",
+            "testStream"
+          ],
+          "properties": [
+            "openAiApi",
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "AzureOpenAIChatModelTests",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testStream",
+          "callee": "System.out.println",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/CozeChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 31,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 46,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CozeChatModelTests",
+          "startLine": 22,
+          "endLine": 63,
+          "methods": [
+            "testCall",
+            "testStream"
+          ],
+          "properties": [
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "CozeChatModelTests",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "System.out.println",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/DeepSeekChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 44,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 59,
+          "endLine": 72,
+          "params": []
+        },
+        {
+          "name": "testStream_thinking",
+          "startLine": 74,
+          "endLine": 92,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DeepSeekChatModelTests",
+          "startLine": 27,
+          "endLine": 94,
+          "methods": [
+            "testCall",
+            "testStream",
+            "testStream_thinking"
+          ],
+          "properties": [
+            "API_KEY",
+            "MODEL",
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "testStream_thinking",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "DeepSeekChatModelTests",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "validateApiKey",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testCall",
+          "callee": "Objects.requireNonNull(response.getResult()).getOutput",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testCall",
+          "callee": "Objects.requireNonNull",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testStream",
+          "callee": "validateApiKey",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(System.out::println).then().block",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(System.out::println).then",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "validateApiKey",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new ArrayList<>",
+          "lineNumber": 79
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "messages.add",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new UserMessage",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "DeepSeekChatOptions.builder()\n                .model(MODEL).build",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "DeepSeekChatOptions.builder().model",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "DeepSeekChatOptions.builder",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "chatModel.stream",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new Prompt",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "System.out.println",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "response.getResult",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/DifyChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 31,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 46,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DifyChatModelTests",
+          "startLine": 22,
+          "endLine": 63,
+          "methods": [
+            "testCall",
+            "testStream"
+          ],
+          "properties": [
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "DifyChatModelTests",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "System.out.println",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/FastGPTChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 31,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 46,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FastGPTChatModelTests",
+          "startLine": 22,
+          "endLine": 63,
+          "methods": [
+            "testCall",
+            "testStream"
+          ],
+          "properties": [
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "FastGPTChatModelTests",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "System.out.println",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/LlamaChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 35,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 50,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "testStream_thinking",
+          "startLine": 67,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "LlamaChatModelTests",
+          "startLine": 24,
+          "endLine": 86,
+          "methods": [
+            "testCall",
+            "testStream",
+            "testStream_thinking"
+          ],
+          "properties": [
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "testStream_thinking",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "LlamaChatModelTests",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testStream",
+          "callee": "System.out.println",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new ArrayList<>",
+          "lineNumber": 71
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "messages.add",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new UserMessage",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "OllamaChatOptions.builder()\n                .model(\"qwen3\").build",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "OllamaChatOptions.builder().model",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "OllamaChatOptions.builder",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "chatModel.stream",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new Prompt",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "System.out.println",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "response.getResult",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/OllamaChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 35,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 50,
+          "endLine": 65,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OllamaChatModelTests",
+          "startLine": 23,
+          "endLine": 67,
+          "methods": [
+            "testCall",
+            "testStream"
+          ],
+          "properties": [
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "OllamaChatModelTests",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testStream",
+          "callee": "System.out.println",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/chat/OpenAIChatModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 38,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "testStream",
+          "startLine": 53,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "testStream_thinking",
+          "startLine": 71,
+          "endLine": 91,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OpenAIChatModelTests",
+          "startLine": 24,
+          "endLine": 95,
+          "methods": [
+            "testCall",
+            "testStream",
+            "testStream_thinking"
+          ],
+          "properties": [
+            "chatModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "testStream",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "testStream_thinking",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "OpenAIChatModelTests",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "new ArrayList<>",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "new SystemMessage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "messages.add",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "new UserMessage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCall",
+          "callee": "chatModel.call",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCall",
+          "callee": "new Prompt",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 49
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testStream",
+          "callee": "new ArrayList<>",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testStream",
+          "callee": "new SystemMessage",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testStream",
+          "callee": "messages.add",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "new UserMessage",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testStream",
+          "callee": "chatModel.stream",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testStream",
+          "callee": "new Prompt",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testStream",
+          "callee": "flux.doOnNext",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testStream",
+          "callee": "System.out.println",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testStream",
+          "callee": "response.getResult",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new ArrayList<>",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "messages.add",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new UserMessage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "OpenAiChatOptions.builder()\n                .model(\"gpt-5\")\n//                .model(OpenAiApi.ChatModel.O4_MINI)\n//                .model(\"o3-pro\")\n                .reasoningEffort(ReasoningEffortValue.LOW.getValue()).build",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "OpenAiChatOptions.builder()\n                .model(\"gpt-5\").reasoningEffort",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "OpenAiChatOptions.builder().model",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "OpenAiChatOptions.builder",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "ReasoningEffortValue.LOW.getValue",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "chatModel.stream",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "new Prompt",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then().block",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext(response -> {\n//            System.out.println(response);\n            System.out.println(response.getResult().getOutput());\n        }).then",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "flux.doOnNext",
+          "lineNumber": 87
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "System.out.println",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testStream_thinking",
+          "callee": "response.getResult",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/image/OpenAiImageModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 29,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OpenAiImageModelTests",
+          "startLine": 20,
+          "endLine": 46,
+          "methods": [
+            "testCall"
+          ],
+          "properties": [
+            "API_KEY",
+            "imageModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "OpenAiImageModelTests",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "validateApiKey",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder()\n                .model(\"gpt-image-1\")\n                .height(256).width(256).build",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder()\n                .model(\"gpt-image-1\")\n                .height(256).width",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder()\n                .model(\"gpt-image-1\").height",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder().model",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testCall",
+          "callee": "new ImagePrompt",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testCall",
+          "callee": "imageModel.call",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/image/StabilityAiImageModelTests.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "testCall",
+          "startLine": 29,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "viewImage",
+          "startLine": 47,
+          "endLine": 63,
+          "params": [
+            "b64Json"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "StabilityAiImageModelTests",
+          "startLine": 23,
+          "endLine": 65,
+          "methods": [
+            "testCall",
+            "viewImage"
+          ],
+          "properties": [
+            "imageModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCall",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "viewImage",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "StabilityAiImageModelTests",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder()\n                .model(\"stable-diffusion-v1-6\")\n                .height(320).width(320).build",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder()\n                .model(\"stable-diffusion-v1-6\")\n                .height(320).width",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder()\n                .model(\"stable-diffusion-v1-6\").height",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder().model",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testCall",
+          "callee": "OpenAiImageOptions.builder",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testCall",
+          "callee": "new ImagePrompt",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testCall",
+          "callee": "imageModel.call",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput().getB64Json",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult().getOutput",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "response.getResult",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testCall",
+          "callee": "System.out.println",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testCall",
+          "callee": "viewImage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "viewImage",
+          "callee": "new JFrame",
+          "lineNumber": 49
+        },
+        {
+          "caller": "viewImage",
+          "callee": "frame.setDefaultCloseOperation",
+          "lineNumber": 50
+        },
+        {
+          "caller": "viewImage",
+          "callee": "frame.setSize",
+          "lineNumber": 51
+        },
+        {
+          "caller": "viewImage",
+          "callee": "Base64.decode",
+          "lineNumber": 54
+        },
+        {
+          "caller": "viewImage",
+          "callee": "new JLabel",
+          "lineNumber": 55
+        },
+        {
+          "caller": "viewImage",
+          "callee": "new ImageIcon",
+          "lineNumber": 55
+        },
+        {
+          "caller": "viewImage",
+          "callee": "frame.getContentPane().add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "viewImage",
+          "callee": "frame.getContentPane",
+          "lineNumber": 58
+        },
+        {
+          "caller": "viewImage",
+          "callee": "frame.setVisible",
+          "lineNumber": 61
+        },
+        {
+          "caller": "viewImage",
+          "callee": "ThreadUtil.sleep",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-ai/yudao-module-ai-server/src/test/java/cn/iocoder/yudao/module/ai/framework/ai/core/model/image/TongYiImagesModelTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "imageCallTest",
+          "startLine": 34,
+          "endLine": 50,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TongYiImagesModelTest",
+          "startLine": 25,
+          "endLine": 52,
+          "methods": [
+            "imageCallTest"
+          ],
+          "properties": [
+            "imageModel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "imageCallTest",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "TongYiImagesModelTest",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "imageCallTest",
+          "callee": "DashScopeImageOptions.builder()\n                .model(\"wan2.7-image\")\n//                .withSize(\"2k\")\n                .height(768).width(768)\n                .n(1).build",
+          "lineNumber": 38
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "DashScopeImageOptions.builder()\n                .model(\"wan2.7-image\")\n//                .withSize(\"2k\")\n                .height(768).width(768).n",
+          "lineNumber": 38
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "DashScopeImageOptions.builder()\n                .model(\"wan2.7-image\")\n//                .withSize(\"2k\")\n                .height(768).width",
+          "lineNumber": 38
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "DashScopeImageOptions.builder()\n                .model(\"wan2.7-image\").height",
+          "lineNumber": 38
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "DashScopeImageOptions.builder().model",
+          "lineNumber": 38
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "DashScopeImageOptions.builder",
+          "lineNumber": 38
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "new ImagePrompt",
+          "lineNumber": 44
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "imageModel.call",
+          "lineNumber": 47
+        },
+        {
+          "caller": "imageCallTest",
+          "callee": "System.out.println",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-api/src/main/java/cn/iocoder/yudao/module/bpm/api/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-api/src/main/java/cn/iocoder/yudao/module/bpm/enums/DictTypeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 9,
+      "classes": [
+        {
+          "name": "DictTypeConstants",
+          "startLine": 8,
+          "endLine": 12,
+          "methods": [],
+          "properties": [
+            "COMMENT_TYPE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-api/src/main/java/cn/iocoder/yudao/module/bpm/enums/definition/BpmConditionOpCodeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "fromCode",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "code"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmConditionOpCodeEnum",
+          "startLine": 11,
+          "endLine": 38,
+          "methods": [
+            "fromCode"
+          ],
+          "properties": [
+            "code",
+            "des",
+            "symbol"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fromCode",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "BpmConditionOpCodeEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fromCode",
+          "callee": "BpmConditionOpCodeEnum.values",
+          "lineNumber": 30
+        },
+        {
+          "caller": "fromCode",
+          "callee": "op.code.equalsIgnoreCase",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fromCode",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-api/src/main/java/cn/iocoder/yudao/module/bpm/enums/definition/BpmFieldPermissionEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "valueOf",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "permission"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmFieldPermissionEnum",
+          "startLine": 12,
+          "endLine": 33,
+          "methods": [
+            "valueOf"
+          ],
+          "properties": [
+            "permission",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "valueOf",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "BpmFieldPermissionEnum",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 30
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getPermission().equals",
+          "lineNumber": 30
+        },
+        {
+          "caller": "valueOf",
+          "callee": "item.getPermission",
+          "lineNumber": 30
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-api/src/main/java/cn/iocoder/yudao/module/bpm/enums/task/BpmTaskSignTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "nameOfType",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "of",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmTaskSignTypeEnum",
+          "startLine": 12,
+          "endLine": 47,
+          "methods": [
+            "nameOfType",
+            "of"
+          ],
+          "properties": [
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "nameOfType",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "of",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "BpmTaskSignTypeEnum",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nameOfType",
+          "callee": "values",
+          "lineNumber": 35
+        },
+        {
+          "caller": "nameOfType",
+          "callee": "value.type.equals",
+          "lineNumber": 36
+        },
+        {
+          "caller": "of",
+          "callee": "ArrayUtil.firstMatch",
+          "lineNumber": 44
+        },
+        {
+          "caller": "of",
+          "callee": "value.getType().equals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "of",
+          "callee": "value.getType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "of",
+          "callee": "values",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/BpmServerApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BpmServerApplication",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "BpmServerApplication",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/api/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/base/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-bpm/yudao-module-bpm-server/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/vo/model/BpmModeUpdateBpmnReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "BpmModeUpdateBpmnReqVO",
+          "startLine": 7,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "bpmnXml"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BpmModeUpdateBpmnReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

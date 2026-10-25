@@ -1,0 +1,1326 @@
+{
+  "nodes": [
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "type": "file",
+      "name": "S3FileClient.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "summary": "实现 S3 文件存储后端，提供文件上传、删除及访问地址解析。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "type": "file",
+      "name": "S3FileClientConfig.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "summary": "定义 S3 文件存储连接和访问参数。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "type": "file",
+      "name": "SftpFileClient.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "summary": "实现 Sftp 文件存储后端，提供文件上传、删除及访问地址解析。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "type": "file",
+      "name": "SftpFileClientConfig.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "summary": "定义 Sftp 文件存储连接和访问参数。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "type": "file",
+      "name": "FileStorageEnum.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "summary": "定义文件存储后端类型，区分数据库、本地、FTP、SFTP 与 S3 存储。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "type": "file",
+      "name": "FilePathUtils.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "summary": "提供文件路径拼接、规范化和扩展名提取工具。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "type": "file",
+      "name": "FileTypeUtils.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "summary": "根据文件名和内容元数据判断 MIME 类型与文件类别。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:S3FileClient",
+      "type": "class",
+      "name": "S3FileClient",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        32,
+        262
+      ],
+      "summary": "实现 S3 文件存储后端，提供文件上传、删除及访问地址解析。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java:S3FileClientConfig",
+      "type": "class",
+      "name": "S3FileClientConfig",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "lineRange": [
+        17,
+        108
+      ],
+      "summary": "实现 S3 文件存储连接和访问参数。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:SftpFileClient",
+      "type": "class",
+      "name": "SftpFileClient",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "lineRange": [
+        20,
+        93
+      ],
+      "summary": "实现 Sftp 文件存储后端，提供文件上传、删除及访问地址解析。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java:SftpFileClientConfig",
+      "type": "class",
+      "name": "SftpFileClientConfig",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "lineRange": [
+        14,
+        51
+      ],
+      "summary": "实现 Sftp 文件存储连接和访问参数。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java:FileStorageEnum",
+      "type": "class",
+      "name": "FileStorageEnum",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "lineRange": [
+        24,
+        55
+      ],
+      "summary": "实现文件存储后端类型，区分数据库、本地、FTP、SFTP 与 S3 存储。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:FilePathUtils",
+      "type": "class",
+      "name": "FilePathUtils",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "lineRange": [
+        17,
+        106
+      ],
+      "summary": "提供文件路径拼接、规范化和扩展名提取工具。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:FileTypeUtils",
+      "type": "class",
+      "name": "FileTypeUtils",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "lineRange": [
+        20,
+        134
+      ],
+      "summary": "根据文件名和内容元数据判断 MIME 类型与文件类别。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:S3FileClient",
+      "type": "function",
+      "name": "S3FileClient",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        39,
+        41
+      ],
+      "summary": "执行 S3FileClient 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:doInit",
+      "type": "function",
+      "name": "doInit",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        43,
+        73
+      ],
+      "summary": "执行 doInit 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:upload",
+      "type": "function",
+      "name": "upload",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        75,
+        88
+      ],
+      "summary": "执行 upload 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:delete",
+      "type": "function",
+      "name": "delete",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        90,
+        97
+      ],
+      "summary": "删除 Redis 中的幂等或限流记录。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:getContent",
+      "type": "function",
+      "name": "getContent",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        99,
+        106
+      ],
+      "summary": "查询 Content 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:presignPutUrl",
+      "type": "function",
+      "name": "presignPutUrl",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        108,
+        114
+      ],
+      "summary": "执行 presignPutUrl 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:presignGetUrl",
+      "type": "function",
+      "name": "presignGetUrl",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        116,
+        141
+      ],
+      "summary": "执行 presignGetUrl 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:buildPresignerEndpoint",
+      "type": "function",
+      "name": "buildPresignerEndpoint",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        175,
+        191
+      ],
+      "summary": "组装 PresignerEndpoint 相关数据或业务状态。",
+      "tags": [
+        "会员运营",
+        "积分等级",
+        "文件服务",
+        "对象存储",
+        "s3"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:resolveRegion",
+      "type": "function",
+      "name": "resolveRegion",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "lineRange": [
+        199,
+        260
+      ],
+      "summary": "解析 Region 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java:isDomainValid",
+      "type": "function",
+      "name": "isDomainValid",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "lineRange": [
+        97,
+        106
+      ],
+      "summary": "判断 DomainValid 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "s3",
+        "云存储",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:SftpFileClient",
+      "type": "function",
+      "name": "SftpFileClient",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "lineRange": [
+        38,
+        40
+      ],
+      "summary": "执行 SftpFileClient 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:upload",
+      "type": "function",
+      "name": "upload",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "lineRange": [
+        52,
+        67
+      ],
+      "summary": "执行 upload 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:delete",
+      "type": "function",
+      "name": "delete",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "lineRange": [
+        69,
+        74
+      ],
+      "summary": "删除 Redis 中的幂等或限流记录。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:getContent",
+      "type": "function",
+      "name": "getContent",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "lineRange": [
+        76,
+        83
+      ],
+      "summary": "查询 Content 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "ftp",
+        "文件传输",
+        "数据访问"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java:getByStorage",
+      "type": "function",
+      "name": "getByStorage",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "lineRange": [
+        51,
+        53
+      ],
+      "summary": "查询 ByStorage 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:FilePathUtils",
+      "type": "function",
+      "name": "FilePathUtils",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "lineRange": [
+        19,
+        20
+      ],
+      "summary": "执行 FilePathUtils 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validateFileName",
+      "type": "function",
+      "name": "validateFileName",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "lineRange": [
+        28,
+        36
+      ],
+      "summary": "校验 FileName 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:isDirectoryValid",
+      "type": "function",
+      "name": "isDirectoryValid",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "lineRange": [
+        44,
+        46
+      ],
+      "summary": "判断 DirectoryValid 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validateDirectory",
+      "type": "function",
+      "name": "validateDirectory",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "lineRange": [
+        53,
+        57
+      ],
+      "summary": "校验 Directory 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validatePath",
+      "type": "function",
+      "name": "validatePath",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "lineRange": [
+        64,
+        68
+      ],
+      "summary": "校验 Path 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:isPathValid",
+      "type": "function",
+      "name": "isPathValid",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "lineRange": [
+        76,
+        104
+      ],
+      "summary": "判断 PathValid 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getMineType",
+      "type": "function",
+      "name": "getMineType",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "lineRange": [
+        31,
+        34
+      ],
+      "summary": "查询 MineType 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getExtension",
+      "type": "function",
+      "name": "getExtension",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "lineRange": [
+        65,
+        72
+      ],
+      "summary": "查询 Extension 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:writeAttachment",
+      "type": "function",
+      "name": "writeAttachment",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "lineRange": [
+        81,
+        99
+      ],
+      "summary": "以附件形式写入响应内容。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:buildFallbackFilename",
+      "type": "function",
+      "name": "buildFallbackFilename",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "lineRange": [
+        106,
+        122
+      ],
+      "summary": "组装 FallbackFilename 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:isImage",
+      "type": "function",
+      "name": "isImage",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "lineRange": [
+        130,
+        132
+      ],
+      "summary": "判断 Image 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:S3FileClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:S3FileClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java:S3FileClientConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java:S3FileClientConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:SftpFileClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:SftpFileClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java:SftpFileClientConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java:SftpFileClientConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java:FileStorageEnum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java:FileStorageEnum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:FilePathUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:FilePathUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:FileTypeUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:FileTypeUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:S3FileClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:S3FileClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:doInit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:upload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:upload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:delete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:delete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:getContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:getContent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:presignPutUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:presignPutUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:presignGetUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:presignGetUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:buildPresignerEndpoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java:resolveRegion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java:isDomainValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java:isDomainValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:SftpFileClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:SftpFileClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:upload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:upload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:delete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:delete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:getContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java:getContent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java:getByStorage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java:getByStorage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:FilePathUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:FilePathUtils",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validateFileName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validateFileName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:isDirectoryValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:isDirectoryValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validateDirectory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validateDirectory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validatePath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:validatePath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FilePathUtils.java:isPathValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getMineType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getMineType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getMineType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getMineType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getMineType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getMineType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getExtension",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:getExtension",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:writeAttachment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:writeAttachment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:buildFallbackFilename",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:isImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java:isImage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/http/HttpUtils.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/io/FileUtils.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/db/DBFileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/db/DBFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/ftp/FtpFileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/ftp/FtpFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/local/LocalFileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/local/LocalFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/utils/FileTypeUtils.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/http/HttpUtils.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

@@ -1,0 +1,4376 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargePackageService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "PayWalletRechargePackageService",
+          "startLine": 18,
+          "endLine": 71,
+          "methods": [
+            "getWalletRechargePackage",
+            "validWalletRechargePackage",
+            "createWalletRechargePackage",
+            "updateWalletRechargePackage",
+            "deleteWalletRechargePackage",
+            "getWalletRechargePackagePage",
+            "getWalletRechargePackageList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletRechargePackageService",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletRechargePackageServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "getWalletRechargePackage",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "validWalletRechargePackage",
+          "startLine": 37,
+          "endLine": 47,
+          "params": [
+            "packageId"
+          ]
+        },
+        {
+          "name": "createWalletRechargePackage",
+          "startLine": 49,
+          "endLine": 59,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateWalletRechargePackage",
+          "startLine": 61,
+          "endLine": 71,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "validateRechargePackageNameUnique",
+          "startLine": 73,
+          "endLine": 87,
+          "params": [
+            "id",
+            "name"
+          ]
+        },
+        {
+          "name": "deleteWalletRechargePackage",
+          "startLine": 89,
+          "endLine": 95,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateWalletRechargePackageExists",
+          "startLine": 97,
+          "endLine": 101,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWalletRechargePackagePage",
+          "startLine": 103,
+          "endLine": 106,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getWalletRechargePackageList",
+          "startLine": 108,
+          "endLine": 111,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayWalletRechargePackageServiceImpl",
+          "startLine": 26,
+          "endLine": 113,
+          "methods": [
+            "getWalletRechargePackage",
+            "validWalletRechargePackage",
+            "createWalletRechargePackage",
+            "updateWalletRechargePackage",
+            "validateRechargePackageNameUnique",
+            "deleteWalletRechargePackage",
+            "validateWalletRechargePackageExists",
+            "getWalletRechargePackagePage",
+            "getWalletRechargePackageList"
+          ],
+          "properties": [
+            "walletRechargePackageMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getWalletRechargePackage",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "validWalletRechargePackage",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "createWalletRechargePackage",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "updateWalletRechargePackage",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWalletRechargePackage",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getWalletRechargePackagePage",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "getWalletRechargePackageList",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "PayWalletRechargePackageServiceImpl",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWalletRechargePackage",
+          "callee": "walletRechargePackageMapper.selectById",
+          "lineNumber": 34
+        },
+        {
+          "caller": "validWalletRechargePackage",
+          "callee": "walletRechargePackageMapper.selectById",
+          "lineNumber": 39
+        },
+        {
+          "caller": "validWalletRechargePackage",
+          "callee": "exception",
+          "lineNumber": 41
+        },
+        {
+          "caller": "validWalletRechargePackage",
+          "callee": "CommonStatusEnum.DISABLE.getStatus().equals",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validWalletRechargePackage",
+          "callee": "CommonStatusEnum.DISABLE.getStatus",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validWalletRechargePackage",
+          "callee": "rechargePackageDO.getStatus",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validWalletRechargePackage",
+          "callee": "exception",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createWalletRechargePackage",
+          "callee": "validateRechargePackageNameUnique",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createWalletRechargePackage",
+          "callee": "createReqVO.getName",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createWalletRechargePackage",
+          "callee": "PayWalletRechargePackageConvert.INSTANCE.convert",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createWalletRechargePackage",
+          "callee": "walletRechargePackageMapper.insert",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createWalletRechargePackage",
+          "callee": "walletRechargePackage.getId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "validateWalletRechargePackageExists",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "validateRechargePackageNameUnique",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "updateReqVO.getName",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "PayWalletRechargePackageConvert.INSTANCE.convert",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateWalletRechargePackage",
+          "callee": "walletRechargePackageMapper.updateById",
+          "lineNumber": 70
+        },
+        {
+          "caller": "validateRechargePackageNameUnique",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 74
+        },
+        {
+          "caller": "validateRechargePackageNameUnique",
+          "callee": "walletRechargePackageMapper.selectByName",
+          "lineNumber": 77
+        },
+        {
+          "caller": "validateRechargePackageNameUnique",
+          "callee": "exception",
+          "lineNumber": 82
+        },
+        {
+          "caller": "validateRechargePackageNameUnique",
+          "callee": "id.equals",
+          "lineNumber": 84
+        },
+        {
+          "caller": "validateRechargePackageNameUnique",
+          "callee": "rechargePackage.getId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "validateRechargePackageNameUnique",
+          "callee": "exception",
+          "lineNumber": 85
+        },
+        {
+          "caller": "deleteWalletRechargePackage",
+          "callee": "validateWalletRechargePackageExists",
+          "lineNumber": 92
+        },
+        {
+          "caller": "deleteWalletRechargePackage",
+          "callee": "walletRechargePackageMapper.deleteById",
+          "lineNumber": 94
+        },
+        {
+          "caller": "validateWalletRechargePackageExists",
+          "callee": "walletRechargePackageMapper.selectById",
+          "lineNumber": 98
+        },
+        {
+          "caller": "validateWalletRechargePackageExists",
+          "callee": "exception",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getWalletRechargePackagePage",
+          "callee": "walletRechargePackageMapper.selectPage",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getWalletRechargePackageList",
+          "callee": "walletRechargePackageMapper.selectListByStatus",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/library/PmsKnowledgeLibraryTemplateController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "createLibraryTemplate",
+          "startLine": 47,
+          "endLine": 53,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateLibraryTemplate",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteLibraryTemplate",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getLibraryTemplate",
+          "startLine": 73,
+          "endLine": 80,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSimpleLibraryTemplateList",
+          "startLine": 82,
+          "endLine": 90,
+          "params": []
+        },
+        {
+          "name": "getLibraryTemplatePage",
+          "startLine": 92,
+          "endLine": 101,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateController",
+          "startLine": 38,
+          "endLine": 103,
+          "methods": [
+            "createLibraryTemplate",
+            "updateLibraryTemplate",
+            "deleteLibraryTemplate",
+            "getLibraryTemplate",
+            "getSimpleLibraryTemplateList",
+            "getLibraryTemplatePage"
+          ],
+          "properties": [
+            "libraryTemplateService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createLibraryTemplate",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "updateLibraryTemplate",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "deleteLibraryTemplate",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getLibraryTemplate",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleLibraryTemplateList",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getLibraryTemplatePage",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeLibraryTemplateController",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "libraryTemplateService.createLibraryTemplate",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "libraryTemplateService.updateLibraryTemplate",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteLibraryTemplate",
+          "callee": "libraryTemplateService.deleteLibraryTemplate",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteLibraryTemplate",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getLibraryTemplate",
+          "callee": "libraryTemplateService.getLibraryTemplate",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getLibraryTemplate",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getLibraryTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "convertList",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "libraryTemplateService.getLibraryTemplateList",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateRespVO().setId(template.getId())\n                        .setName(template.getName()).setCoverUrl(template.getCoverUrl()).setDescription(template.getDescription()).setDocuments",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateRespVO().setId(template.getId())\n                        .setName(template.getName()).setCoverUrl(template.getCoverUrl()).setDescription",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateRespVO().setId(template.getId())\n                        .setName(template.getName()).setCoverUrl",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateRespVO().setId(template.getId()).setName",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateRespVO().setId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateRespVO",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "template.getId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "template.getName",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "template.getCoverUrl",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "template.getDescription",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "convertList",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "template.getDocuments",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document().setTitle",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getSimpleLibraryTemplateList",
+          "callee": "document.getTitle",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getLibraryTemplatePage",
+          "callee": "libraryTemplateService.getLibraryTemplatePage",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getLibraryTemplatePage",
+          "callee": "success",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getLibraryTemplatePage",
+          "callee": "new PageResult<>",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getLibraryTemplatePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getLibraryTemplatePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getLibraryTemplatePage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/library/vo/template/PmsKnowledgeLibraryTemplatePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplatePageReqVO",
+          "startLine": 10,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "name",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeLibraryTemplatePageReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/library/vo/template/PmsKnowledgeLibraryTemplateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateRespVO",
+          "startLine": 9,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "coverUrl",
+            "status",
+            "sort",
+            "documents",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/library/vo/template/PmsKnowledgeLibraryTemplateSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateSaveReqVO",
+          "startLine": 16,
+          "endLine": 66,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "coverUrl",
+            "status",
+            "sort",
+            "documents"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateSaveReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/dataobject/kb/library/PmsKnowledgeLibraryTemplateDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 72,
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateDO",
+          "startLine": 23,
+          "endLine": 80,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "description",
+            "coverUrl",
+            "status",
+            "sort",
+            "documents"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateDO",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/dal/mysql/kb/library/PmsKnowledgeLibraryTemplateMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateMapper",
+          "startLine": 12,
+          "endLine": 34,
+          "methods": [
+            "selectPage",
+            "selectListByStatus",
+            "selectByName"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateMapper",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>()\n                .likeIfPresent(PmsKnowledgeLibraryTemplateDO::getName, pageReqVO.getName())\n                .eq(pageReqVO.getStatus() != null, PmsKnowledgeLibraryTemplateDO::getStatus, pageReqVO.getStatus())\n                .orderByAsc(PmsKnowledgeLibraryTemplateDO::getSort).orderByDesc",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>()\n                .likeIfPresent(PmsKnowledgeLibraryTemplateDO::getName, pageReqVO.getName())\n                .eq(pageReqVO.getStatus() != null, PmsKnowledgeLibraryTemplateDO::getStatus, pageReqVO.getStatus()).orderByAsc",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>()\n                .likeIfPresent(PmsKnowledgeLibraryTemplateDO::getName, pageReqVO.getName()).eq",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>().likeIfPresent",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>",
+          "lineNumber": 16
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getStatus",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getStatus",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>()\n                .eqIfPresent(PmsKnowledgeLibraryTemplateDO::getStatus, status)\n                .orderByAsc(PmsKnowledgeLibraryTemplateDO::getSort).orderByDesc",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>()\n                .eqIfPresent(PmsKnowledgeLibraryTemplateDO::getStatus, status).orderByAsc",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>().eqIfPresent",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "new LambdaQueryWrapperX<PmsKnowledgeLibraryTemplateDO>",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectByName",
+          "callee": "selectOne",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/service/kb/library/PmsKnowledgeLibraryTemplateService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateService",
+          "startLine": 16,
+          "endLine": 74,
+          "methods": [
+            "createLibraryTemplate",
+            "updateLibraryTemplate",
+            "deleteLibraryTemplate",
+            "getLibraryTemplate",
+            "getLibraryTemplatePage",
+            "getLibraryTemplateList",
+            "createTemplateDocumentList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/service/kb/library/PmsKnowledgeLibraryTemplateServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 158,
+      "nonEmptyLines": 138,
+      "functions": [
+        {
+          "name": "createLibraryTemplate",
+          "startLine": 45,
+          "endLine": 56,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateLibraryTemplate",
+          "startLine": 58,
+          "endLine": 68,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteLibraryTemplate",
+          "startLine": 70,
+          "endLine": 77,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getLibraryTemplate",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getLibraryTemplatePage",
+          "startLine": 84,
+          "endLine": 88,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getLibraryTemplateList",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "createTemplateDocumentList",
+          "startLine": 95,
+          "endLine": 115,
+          "params": [
+            "templateId",
+            "libraryId",
+            "userId"
+          ]
+        },
+        {
+          "name": "validateLibraryTemplateExists",
+          "startLine": 117,
+          "endLine": 123,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateLibraryTemplateNameDuplicate",
+          "startLine": 131,
+          "endLine": 143,
+          "params": [
+            "id",
+            "name"
+          ]
+        },
+        {
+          "name": "validateLibraryTemplateDocuments",
+          "startLine": 145,
+          "endLine": 156,
+          "params": [
+            "documents"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateServiceImpl",
+          "startLine": 36,
+          "endLine": 158,
+          "methods": [
+            "createLibraryTemplate",
+            "updateLibraryTemplate",
+            "deleteLibraryTemplate",
+            "getLibraryTemplate",
+            "getLibraryTemplatePage",
+            "getLibraryTemplateList",
+            "createTemplateDocumentList",
+            "validateLibraryTemplateExists",
+            "validateLibraryTemplateNameDuplicate",
+            "validateLibraryTemplateDocuments"
+          ],
+          "properties": [
+            "libraryTemplateMapper",
+            "documentService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createLibraryTemplate",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "updateLibraryTemplate",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "deleteLibraryTemplate",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getLibraryTemplate",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "getLibraryTemplatePage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getLibraryTemplateList",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "createTemplateDocumentList",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeLibraryTemplateServiceImpl",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "validateLibraryTemplateNameDuplicate",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "createReqVO.getName",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "validateLibraryTemplateDocuments",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "createReqVO.getDocuments",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "BeanUtils.toBean(createReqVO, PmsKnowledgeLibraryTemplateDO.class).setDocuments",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "createReqVO.getDocuments",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "libraryTemplateMapper.insert",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createLibraryTemplate",
+          "callee": "template.getId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "validateLibraryTemplateExists",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "validateLibraryTemplateNameDuplicate",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "updateReqVO.getName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "validateLibraryTemplateDocuments",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "updateReqVO.getDocuments",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "libraryTemplateMapper.updateById",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "BeanUtils.toBean(updateReqVO, PmsKnowledgeLibraryTemplateDO.class).setDocuments",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateLibraryTemplate",
+          "callee": "updateReqVO.getDocuments",
+          "lineNumber": 67
+        },
+        {
+          "caller": "deleteLibraryTemplate",
+          "callee": "validateLibraryTemplateExists",
+          "lineNumber": 73
+        },
+        {
+          "caller": "deleteLibraryTemplate",
+          "callee": "libraryTemplateMapper.deleteById",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getLibraryTemplate",
+          "callee": "validateLibraryTemplateExists",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getLibraryTemplatePage",
+          "callee": "libraryTemplateMapper.selectPage",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getLibraryTemplateList",
+          "callee": "libraryTemplateMapper.selectListByStatus",
+          "lineNumber": 92
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "validateLibraryTemplateExists",
+          "lineNumber": 99
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "CommonStatusEnum.isDisable",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "template.getStatus",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "exception",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "template.getDocuments",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "exception",
+          "lineNumber": 104
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "template.getDocuments",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "documentService.createDocument",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "new PmsKnowledgeDocumentCreateReqVO().setLibraryId(libraryId)\n                    .setFolderId(PmsKnowledgeDocumentDO.FOLDER_ID_ROOT)\n                    .setParentId(PmsKnowledgeDocumentDO.PARENT_ID_ROOT).setTitle(document.getTitle())\n                    .setType(PmsKnowledgeDocumentTypeEnum.RICH_TEXT.getType()).setContent",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "new PmsKnowledgeDocumentCreateReqVO().setLibraryId(libraryId)\n                    .setFolderId(PmsKnowledgeDocumentDO.FOLDER_ID_ROOT)\n                    .setParentId(PmsKnowledgeDocumentDO.PARENT_ID_ROOT).setTitle(document.getTitle()).setType",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "new PmsKnowledgeDocumentCreateReqVO().setLibraryId(libraryId)\n                    .setFolderId(PmsKnowledgeDocumentDO.FOLDER_ID_ROOT)\n                    .setParentId(PmsKnowledgeDocumentDO.PARENT_ID_ROOT).setTitle",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "new PmsKnowledgeDocumentCreateReqVO().setLibraryId(libraryId)\n                    .setFolderId(PmsKnowledgeDocumentDO.FOLDER_ID_ROOT).setParentId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "new PmsKnowledgeDocumentCreateReqVO().setLibraryId(libraryId).setFolderId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "new PmsKnowledgeDocumentCreateReqVO().setLibraryId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "new PmsKnowledgeDocumentCreateReqVO",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "document.getTitle",
+          "lineNumber": 111
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "PmsKnowledgeDocumentTypeEnum.RICH_TEXT.getType",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createTemplateDocumentList",
+          "callee": "document.getContent",
+          "lineNumber": 113
+        },
+        {
+          "caller": "validateLibraryTemplateExists",
+          "callee": "libraryTemplateMapper.selectById",
+          "lineNumber": 118
+        },
+        {
+          "caller": "validateLibraryTemplateExists",
+          "callee": "exception",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validateLibraryTemplateNameDuplicate",
+          "callee": "libraryTemplateMapper.selectByName",
+          "lineNumber": 132
+        },
+        {
+          "caller": "validateLibraryTemplateNameDuplicate",
+          "callee": "exception",
+          "lineNumber": 138
+        },
+        {
+          "caller": "validateLibraryTemplateNameDuplicate",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 140
+        },
+        {
+          "caller": "validateLibraryTemplateNameDuplicate",
+          "callee": "template.getId",
+          "lineNumber": 140
+        },
+        {
+          "caller": "validateLibraryTemplateNameDuplicate",
+          "callee": "exception",
+          "lineNumber": 141
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 146
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "exception",
+          "lineNumber": 147
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "new HashSet<>",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "StrUtil.hasBlank",
+          "lineNumber": 151
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "document.getTitle",
+          "lineNumber": 151
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "document.getContent",
+          "lineNumber": 151
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "titles.add",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "document.getTitle",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateLibraryTemplateDocuments",
+          "callee": "exception",
+          "lineNumber": 153
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 8,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/test/java/cn/iocoder/yudao/module/pms/service/kb/library/PmsKnowledgeLibraryTemplateServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 181,
+      "nonEmptyLines": 157,
+      "functions": [
+        {
+          "name": "setUp",
+          "startLine": 53,
+          "endLine": 72,
+          "params": []
+        },
+        {
+          "name": "testGetTemplateList_success",
+          "startLine": 74,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "testGetTemplateList_withStatus",
+          "startLine": 89,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "testCreateLibraryTemplate_success",
+          "startLine": 106,
+          "endLine": 121,
+          "params": []
+        },
+        {
+          "name": "testCreateLibraryTemplate_duplicateName",
+          "startLine": 123,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "testCreateLibraryTemplate_invalidDocuments",
+          "startLine": 136,
+          "endLine": 147,
+          "params": []
+        },
+        {
+          "name": "testCreateTemplateDocumentList_success",
+          "startLine": 149,
+          "endLine": 171,
+          "params": []
+        },
+        {
+          "name": "testCreateTemplateDocumentList_notExists",
+          "startLine": 173,
+          "endLine": 179,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeLibraryTemplateServiceImplTest",
+          "startLine": 41,
+          "endLine": 181,
+          "methods": [
+            "setUp",
+            "testGetTemplateList_success",
+            "testGetTemplateList_withStatus",
+            "testCreateLibraryTemplate_success",
+            "testCreateLibraryTemplate_duplicateName",
+            "testCreateLibraryTemplate_invalidDocuments",
+            "testCreateTemplateDocumentList_success",
+            "testCreateTemplateDocumentList_notExists"
+          ],
+          "properties": [
+            "templateService",
+            "templateMapper",
+            "documentService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setUp",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "testGetTemplateList_success",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "testGetTemplateList_withStatus",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateLibraryTemplate_success",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateLibraryTemplate_duplicateName",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateLibraryTemplate_invalidDocuments",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateTemplateDocumentList_success",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateTemplateDocumentList_notExists",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeLibraryTemplateServiceImplTest",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setUp",
+          "callee": "templateMapper.selectCount",
+          "lineNumber": 55
+        },
+        {
+          "caller": "setUp",
+          "callee": "new ArrayList<>",
+          "lineNumber": 59
+        },
+        {
+          "caller": "setUp",
+          "callee": "documents.add",
+          "lineNumber": 62
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO.Document()\n                        .setTitle(i == 1 && j == 1 ? \"产品需求文档\"\n                                : i == 7 && j == 1 ? \"2020.01.01 更新日志\" : \"模板文档\" + j).setContent",
+          "lineNumber": 62
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO.Document().setTitle",
+          "lineNumber": 62
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO.Document",
+          "lineNumber": 62
+        },
+        {
+          "caller": "setUp",
+          "callee": "templateMapper.insert",
+          "lineNumber": 68
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId((long) i)\n                    .setName(i == 1 ? \"产品研发\" : \"模板\" + i).setDescription(\"模板简介\")\n                    .setStatus(0).setSort(i * 10).setDocuments",
+          "lineNumber": 68
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId((long) i)\n                    .setName(i == 1 ? \"产品研发\" : \"模板\" + i).setDescription(\"模板简介\")\n                    .setStatus(0).setSort",
+          "lineNumber": 68
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId((long) i)\n                    .setName(i == 1 ? \"产品研发\" : \"模板\" + i).setDescription(\"模板简介\").setStatus",
+          "lineNumber": 68
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId((long) i)\n                    .setName(i == 1 ? \"产品研发\" : \"模板\" + i).setDescription",
+          "lineNumber": 68
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId((long) i).setName",
+          "lineNumber": 68
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "setUp",
+          "callee": "new PmsKnowledgeLibraryTemplateDO",
+          "lineNumber": 68
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "templateService.getLibraryTemplateList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "assertEquals",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "template.getName",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "assertEquals",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "template.getDocuments().size",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "template.getDocuments",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 84
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "template.getDocuments",
+          "lineNumber": 84
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "assertEquals",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "document.getTitle",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "assertTrue",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "document.getContent().contains",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testGetTemplateList_success",
+          "callee": "document.getContent",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "templateMapper.insert",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId(99L).setName(\"关闭模板\")\n                .setStatus(CommonStatusEnum.DISABLE.getStatus()).setSort(99).setDocuments",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId(99L).setName(\"关闭模板\")\n                .setStatus(CommonStatusEnum.DISABLE.getStatus()).setSort",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId(99L).setName(\"关闭模板\").setStatus",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId(99L).setName",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO().setId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "CommonStatusEnum.DISABLE.getStatus",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "Collections.singletonList",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO.Document()\n                        .setTitle(\"关闭文档\").setContent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO.Document().setTitle",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "new PmsKnowledgeLibraryTemplateDO.Document",
+          "lineNumber": 94
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "assertEquals",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "CommonStatusEnum.DISABLE.getStatus",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "templateMapper.selectById(99L).getStatus",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "templateMapper.selectById",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "templateService.getLibraryTemplateList",
+          "lineNumber": 99
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "templateService.getLibraryTemplateList",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "assertTrue",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "enabledTemplates.stream().noneMatch",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "enabledTemplates.stream",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "template.getId().equals",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "template.getId",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "assertTrue",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "allTemplates.stream().anyMatch",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "allTemplates.stream",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "template.getId().equals",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testGetTemplateList_withStatus",
+          "callee": "template.getId",
+          "lineNumber": 103
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"新模板\").setDescription(\"模板简介\").setStatus(0).setSort(100).setDocuments",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"新模板\").setDescription(\"模板简介\").setStatus(0).setSort",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"新模板\").setDescription(\"模板简介\").setStatus",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"新模板\").setDescription",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO().setName",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "Collections.singletonList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document()\n                        .setTitle(\"模板文档\").setContent",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document().setTitle",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "templateService.createLibraryTemplate",
+          "lineNumber": 115
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "templateService.getLibraryTemplate",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "assertEquals",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "template.getName",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "assertEquals",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "CollUtil.getFirst(template.getDocuments()).getTitle",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testCreateLibraryTemplate_success",
+          "callee": "template.getDocuments",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"产品研发\").setStatus(0).setSort(100).setDocuments",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"产品研发\").setStatus(0).setSort",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"产品研发\").setStatus",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO().setName",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "Collections.singletonList",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document()\n                        .setTitle(\"模板文档\").setContent",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document().setTitle",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document",
+          "lineNumber": 128
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "assertServiceException",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testCreateLibraryTemplate_duplicateName",
+          "callee": "templateService.createLibraryTemplate",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"无效模板\").setStatus(0).setSort(100).setDocuments",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"无效模板\").setStatus(0).setSort",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO()\n                .setName(\"无效模板\").setStatus",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO().setName",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "Arrays.asList",
+          "lineNumber": 140
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document().setTitle(\"重复\").setContent",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document().setTitle",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document().setTitle(\"重复\").setContent",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document().setTitle",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "new PmsKnowledgeLibraryTemplateSaveReqVO.Document",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "assertServiceException",
+          "lineNumber": 145
+        },
+        {
+          "caller": "testCreateLibraryTemplate_invalidDocuments",
+          "callee": "templateService.createLibraryTemplate",
+          "lineNumber": 145
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "randomLongId",
+          "lineNumber": 152
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "randomLongId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "randomLongId",
+          "lineNumber": 154
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "when(documentService.createDocument(any(), eq(userId))).thenReturn",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "when",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "documentService.createDocument",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "any",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "eq",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "templateService.createTemplateDocumentList",
+          "lineNumber": 158
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "ArgumentCaptor.forClass",
+          "lineNumber": 162
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "verify(documentService).createDocument",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "verify",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "createCaptor.capture",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "eq",
+          "lineNumber": 163
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "createCaptor.getValue",
+          "lineNumber": 164
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "assertEquals",
+          "lineNumber": 165
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "document.getLibraryId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "assertEquals",
+          "lineNumber": 166
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "document.getFolderId",
+          "lineNumber": 166
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "assertEquals",
+          "lineNumber": 167
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "document.getParentId",
+          "lineNumber": 167
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "assertEquals",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "document.getTitle",
+          "lineNumber": 168
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "assertTrue",
+          "lineNumber": 169
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "document.getContent().contains",
+          "lineNumber": 169
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "document.getContent",
+          "lineNumber": 169
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "verify(documentService, times(0)).updateDocument",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "verify",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "times",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "any",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_success",
+          "callee": "eq",
+          "lineNumber": 170
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "assertServiceException",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "templateService.createTemplateDocumentList",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "randomLongId",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "randomLongId",
+          "lineNumber": 176
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "verify(documentService, times(0)).createDocument",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "verify",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "times",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "any",
+          "lineNumber": 178
+        },
+        {
+          "caller": "testCreateTemplateDocumentList_notExists",
+          "callee": "anyLong",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/api/dict/DictDataApiImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "validateDictDataList",
+          "startLine": 26,
+          "endLine": 30,
+          "params": [
+            "dictType",
+            "values"
+          ]
+        },
+        {
+          "name": "getDictDataList",
+          "startLine": 32,
+          "endLine": 36,
+          "params": [
+            "dictType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DictDataApiImpl",
+          "startLine": 18,
+          "endLine": 38,
+          "methods": [
+            "validateDictDataList",
+            "getDictDataList"
+          ],
+          "properties": [
+            "dictDataService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validateDictDataList",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "getDictDataList",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "DictDataApiImpl",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validateDictDataList",
+          "callee": "dictDataService.validateDictDataList",
+          "lineNumber": 28
+        },
+        {
+          "caller": "validateDictDataList",
+          "callee": "success",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getDictDataList",
+          "callee": "dictDataService.getDictDataListByDictType",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getDictDataList",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getDictDataList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/api/notify/NotifyMessageSendApiImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "sendSingleMessageToAdmin",
+          "startLine": 20,
+          "endLine": 24,
+          "params": [
+            "reqDTO"
+          ]
+        },
+        {
+          "name": "sendSingleMessageToMember",
+          "startLine": 26,
+          "endLine": 30,
+          "params": [
+            "reqDTO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotifyMessageSendApiImpl",
+          "startLine": 13,
+          "endLine": 32,
+          "methods": [
+            "sendSingleMessageToAdmin",
+            "sendSingleMessageToMember"
+          ],
+          "properties": [
+            "notifySendService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendSingleMessageToAdmin",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "sendSingleMessageToMember",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "NotifyMessageSendApiImpl",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendSingleMessageToAdmin",
+          "callee": "success",
+          "lineNumber": 22
+        },
+        {
+          "caller": "sendSingleMessageToAdmin",
+          "callee": "notifySendService.sendSingleNotifyToAdmin",
+          "lineNumber": 22
+        },
+        {
+          "caller": "sendSingleMessageToAdmin",
+          "callee": "reqDTO.getUserId",
+          "lineNumber": 22
+        },
+        {
+          "caller": "sendSingleMessageToAdmin",
+          "callee": "reqDTO.getTemplateCode",
+          "lineNumber": 23
+        },
+        {
+          "caller": "sendSingleMessageToAdmin",
+          "callee": "reqDTO.getTemplateParams",
+          "lineNumber": 23
+        },
+        {
+          "caller": "sendSingleMessageToMember",
+          "callee": "success",
+          "lineNumber": 28
+        },
+        {
+          "caller": "sendSingleMessageToMember",
+          "callee": "notifySendService.sendSingleNotifyToMember",
+          "lineNumber": 28
+        },
+        {
+          "caller": "sendSingleMessageToMember",
+          "callee": "reqDTO.getUserId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "sendSingleMessageToMember",
+          "callee": "reqDTO.getTemplateCode",
+          "lineNumber": 29
+        },
+        {
+          "caller": "sendSingleMessageToMember",
+          "callee": "reqDTO.getTemplateParams",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictDataController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "createDictData",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDictData",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDictData",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteDictDataList",
+          "startLine": 66,
+          "endLine": 73,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getSimpleDictDataList",
+          "startLine": 75,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "getDictTypePage",
+          "startLine": 84,
+          "endLine": 90,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getDictData",
+          "startLine": 92,
+          "endLine": 99,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "export",
+          "startLine": 101,
+          "endLine": 111,
+          "params": [
+            "response",
+            "exportReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DictDataController",
+          "startLine": 32,
+          "endLine": 113,
+          "methods": [
+            "createDictData",
+            "updateDictData",
+            "deleteDictData",
+            "deleteDictDataList",
+            "getSimpleDictDataList",
+            "getDictTypePage",
+            "getDictData",
+            "export"
+          ],
+          "properties": [
+            "dictDataService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDictData",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateDictData",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDictData",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDictDataList",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleDictDataList",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getDictTypePage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getDictData",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "DictDataController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDictData",
+          "callee": "dictDataService.createDictData",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createDictData",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateDictData",
+          "callee": "dictDataService.updateDictData",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateDictData",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteDictData",
+          "callee": "dictDataService.deleteDictData",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteDictData",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "deleteDictDataList",
+          "callee": "dictDataService.deleteDictDataList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "deleteDictDataList",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getSimpleDictDataList",
+          "callee": "dictDataService.getDictDataList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getSimpleDictDataList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSimpleDictDataList",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getSimpleDictDataList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getDictTypePage",
+          "callee": "dictDataService.getDictDataPage",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getDictTypePage",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDictTypePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDictData",
+          "callee": "dictDataService.getDictData",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getDictData",
+          "callee": "success",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getDictData",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 98
+        },
+        {
+          "caller": "export",
+          "callee": "exportReqVO.setPageSize",
+          "lineNumber": 106
+        },
+        {
+          "caller": "export",
+          "callee": "dictDataService.getDictDataPage(exportReqVO).getList",
+          "lineNumber": 107
+        },
+        {
+          "caller": "export",
+          "callee": "dictDataService.getDictDataPage",
+          "lineNumber": 107
+        },
+        {
+          "caller": "export",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 109
+        },
+        {
+          "caller": "export",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "createDictType",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateDictType",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteDictType",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteDictTypeList",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "pageDictTypes",
+          "startLine": 74,
+          "endLine": 80,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getDictType",
+          "startLine": 82,
+          "endLine": 89,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSimpleDictTypeList",
+          "startLine": 91,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "export",
+          "startLine": 99,
+          "endLine": 109,
+          "params": [
+            "response",
+            "exportReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DictTypeController",
+          "startLine": 31,
+          "endLine": 111,
+          "methods": [
+            "createDictType",
+            "updateDictType",
+            "deleteDictType",
+            "deleteDictTypeList",
+            "pageDictTypes",
+            "getDictType",
+            "getSimpleDictTypeList",
+            "export"
+          ],
+          "properties": [
+            "dictTypeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDictType",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "updateDictType",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDictType",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDictTypeList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "pageDictTypes",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getDictType",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleDictTypeList",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "DictTypeController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDictType",
+          "callee": "dictTypeService.createDictType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createDictType",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateDictType",
+          "callee": "dictTypeService.updateDictType",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateDictType",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteDictType",
+          "callee": "dictTypeService.deleteDictType",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteDictType",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteDictTypeList",
+          "callee": "dictTypeService.deleteDictTypeList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteDictTypeList",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "pageDictTypes",
+          "callee": "dictTypeService.getDictTypePage",
+          "lineNumber": 78
+        },
+        {
+          "caller": "pageDictTypes",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "pageDictTypes",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getDictType",
+          "callee": "dictTypeService.getDictType",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getDictType",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getDictType",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSimpleDictTypeList",
+          "callee": "dictTypeService.getDictTypeList",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getSimpleDictTypeList",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getSimpleDictTypeList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 96
+        },
+        {
+          "caller": "export",
+          "callee": "exportReqVO.setPageSize",
+          "lineNumber": 104
+        },
+        {
+          "caller": "export",
+          "callee": "dictTypeService.getDictTypePage(exportReqVO).getList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "export",
+          "callee": "dictTypeService.getDictTypePage",
+          "lineNumber": 105
+        },
+        {
+          "caller": "export",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 107
+        },
+        {
+          "caller": "export",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/data/DictDataPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "DictDataPageReqVO",
+          "startLine": 11,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "label",
+            "dictType",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictDataPageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/data/DictDataSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "DictDataSaveReqVO",
+          "startLine": 11,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "id",
+            "sort",
+            "label",
+            "value",
+            "dictType",
+            "status",
+            "colorType",
+            "cssClass",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictDataSaveReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/data/DictDataSimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "DictDataSimpleRespVO",
+          "startLine": 6,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "dictType",
+            "value",
+            "label",
+            "colorType",
+            "cssClass"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictDataSimpleRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/type/DictTypePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "DictTypePageReqVO",
+          "startLine": 14,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "name",
+            "type",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/type/DictTypeSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "DictTypeSaveReqVO",
+          "startLine": 10,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "type",
+            "status",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeSaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/vo/type/DictTypeSimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "DictTypeSimpleRespVO",
+          "startLine": 6,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DictTypeSimpleRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/NotifyMessageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "getNotifyMessage",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getNotifyMessagePage",
+          "startLine": 47,
+          "endLine": 53,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getMyMyNotifyMessagePage",
+          "startLine": 57,
+          "endLine": 63,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "updateNotifyMessageRead",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "updateAllNotifyMessageRead",
+          "startLine": 73,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "getUnreadNotifyMessageList",
+          "startLine": 80,
+          "endLine": 88,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "getUnreadNotifyMessageCount",
+          "startLine": 90,
+          "endLine": 96,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotifyMessageController",
+          "startLine": 27,
+          "endLine": 98,
+          "methods": [
+            "getNotifyMessage",
+            "getNotifyMessagePage",
+            "getMyMyNotifyMessagePage",
+            "updateNotifyMessageRead",
+            "updateAllNotifyMessageRead",
+            "getUnreadNotifyMessageList",
+            "getUnreadNotifyMessageCount"
+          ],
+          "properties": [
+            "notifyMessageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getNotifyMessage",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getNotifyMessagePage",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getMyMyNotifyMessagePage",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "updateNotifyMessageRead",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "updateAllNotifyMessageRead",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getUnreadNotifyMessageList",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getUnreadNotifyMessageCount",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "NotifyMessageController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getNotifyMessage",
+          "callee": "notifyMessageService.getNotifyMessage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getNotifyMessage",
+          "callee": "success",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getNotifyMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getNotifyMessagePage",
+          "callee": "notifyMessageService.getNotifyMessagePage",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getNotifyMessagePage",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getNotifyMessagePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getMyMyNotifyMessagePage",
+          "callee": "notifyMessageService.getMyMyNotifyMessagePage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getMyMyNotifyMessagePage",
+          "callee": "getLoginUserId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getMyMyNotifyMessagePage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getMyMyNotifyMessagePage",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getMyMyNotifyMessagePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateNotifyMessageRead",
+          "callee": "notifyMessageService.updateNotifyMessageRead",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateNotifyMessageRead",
+          "callee": "getLoginUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateNotifyMessageRead",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateNotifyMessageRead",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateAllNotifyMessageRead",
+          "callee": "notifyMessageService.updateAllNotifyMessageRead",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateAllNotifyMessageRead",
+          "callee": "getLoginUserId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateAllNotifyMessageRead",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateAllNotifyMessageRead",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getUnreadNotifyMessageList",
+          "callee": "notifyMessageService.getUnreadNotifyMessageList",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getUnreadNotifyMessageList",
+          "callee": "getLoginUserId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getUnreadNotifyMessageList",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getUnreadNotifyMessageList",
+          "callee": "success",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getUnreadNotifyMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getUnreadNotifyMessageCount",
+          "callee": "success",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getUnreadNotifyMessageCount",
+          "callee": "notifyMessageService.getUnreadNotifyMessageCount",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getUnreadNotifyMessageCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getUnreadNotifyMessageCount",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/NotifyTemplateController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "createNotifyTemplate",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateNotifyTemplate",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteNotifyTemplate",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteNotifyTemplateList",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getNotifyTemplate",
+          "startLine": 74,
+          "endLine": 81,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getNotifyTemplatePage",
+          "startLine": 83,
+          "endLine": 89,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getSimpleNotifyTemplateList",
+          "startLine": 91,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "sendNotify",
+          "startLine": 99,
+          "endLine": 110,
+          "params": [
+            "sendReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotifyTemplateController",
+          "startLine": 29,
+          "endLine": 111,
+          "methods": [
+            "createNotifyTemplate",
+            "updateNotifyTemplate",
+            "deleteNotifyTemplate",
+            "deleteNotifyTemplateList",
+            "getNotifyTemplate",
+            "getNotifyTemplatePage",
+            "getSimpleNotifyTemplateList",
+            "sendNotify"
+          ],
+          "properties": [
+            "notifyTemplateService",
+            "notifySendService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createNotifyTemplate",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateNotifyTemplate",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteNotifyTemplate",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "deleteNotifyTemplateList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getNotifyTemplate",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getNotifyTemplatePage",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleNotifyTemplateList",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "sendNotify",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "NotifyTemplateController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createNotifyTemplate",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createNotifyTemplate",
+          "callee": "notifyTemplateService.createNotifyTemplate",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateNotifyTemplate",
+          "callee": "notifyTemplateService.updateNotifyTemplate",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateNotifyTemplate",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteNotifyTemplate",
+          "callee": "notifyTemplateService.deleteNotifyTemplate",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteNotifyTemplate",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteNotifyTemplateList",
+          "callee": "notifyTemplateService.deleteNotifyTemplateList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteNotifyTemplateList",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getNotifyTemplate",
+          "callee": "notifyTemplateService.getNotifyTemplate",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getNotifyTemplate",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getNotifyTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getNotifyTemplatePage",
+          "callee": "notifyTemplateService.getNotifyTemplatePage",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getNotifyTemplatePage",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getNotifyTemplatePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSimpleNotifyTemplateList",
+          "callee": "notifyTemplateService.getNotifyTemplateListByStatus",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSimpleNotifyTemplateList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getSimpleNotifyTemplateList",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getSimpleNotifyTemplateList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 96
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "UserTypeEnum.MEMBER.getValue().equals",
+          "lineNumber": 103
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 103
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "sendReqVO.getUserType",
+          "lineNumber": 103
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "success",
+          "lineNumber": 104
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "notifySendService.sendSingleNotifyToMember",
+          "lineNumber": 104
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "sendReqVO.getUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "sendReqVO.getTemplateCode",
+          "lineNumber": 105
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "sendReqVO.getTemplateParams",
+          "lineNumber": 105
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "success",
+          "lineNumber": 107
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "notifySendService.sendSingleNotifyToAdmin",
+          "lineNumber": 107
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "sendReqVO.getUserId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "sendReqVO.getTemplateCode",
+          "lineNumber": 108
+        },
+        {
+          "caller": "sendNotify",
+          "callee": "sendReqVO.getTemplateParams",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/message/NotifyMessageMyPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "NotifyMessageMyPageReqVO",
+          "startLine": 14,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "readStatus",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyMessageMyPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/message/NotifyMessagePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "NotifyMessagePageReqVO",
+          "startLine": 14,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "templateCode",
+            "templateType",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyMessagePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/message/NotifyMessageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "NotifyMessageRespVO",
+          "startLine": 9,
+          "endLine": 49,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "userType",
+            "templateId",
+            "templateCode",
+            "templateNickname",
+            "templateContent",
+            "templateType",
+            "templateParams",
+            "readStatus",
+            "readTime",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyMessageRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/template/NotifyTemplatePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "NotifyTemplatePageReqVO",
+          "startLine": 14,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyTemplatePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/template/NotifyTemplateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "NotifyTemplateRespVO",
+          "startLine": 9,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "code",
+            "type",
+            "nickname",
+            "content",
+            "params",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyTemplateRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/template/NotifyTemplateSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "NotifyTemplateSaveReqVO",
+          "startLine": 11,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "code",
+            "type",
+            "nickname",
+            "content",
+            "status",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyTemplateSaveReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/template/NotifyTemplateSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "NotifyTemplateSendReqVO",
+          "startLine": 10,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "templateCode",
+            "templateParams"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyTemplateSendReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/notify/vo/template/NotifyTemplateSimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "NotifyTemplateSimpleRespVO",
+          "startLine": 6,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotifyTemplateSimpleRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/tenant/TenantPackageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "createTenantPackage",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateTenantPackage",
+          "startLine": 42,
+          "endLine": 48,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteTenantPackage",
+          "startLine": 50,
+          "endLine": 57,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteTenantPackageList",
+          "startLine": 59,
+          "endLine": 66,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getTenantPackage",
+          "startLine": 68,
+          "endLine": 75,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getTenantPackagePage",
+          "startLine": 77,
+          "endLine": 83,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getTenantPackageList",
+          "startLine": 85,
+          "endLine": 90,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TenantPackageController",
+          "startLine": 26,
+          "endLine": 92,
+          "methods": [
+            "createTenantPackage",
+            "updateTenantPackage",
+            "deleteTenantPackage",
+            "deleteTenantPackageList",
+            "getTenantPackage",
+            "getTenantPackagePage",
+            "getTenantPackageList"
+          ],
+          "properties": [
+            "tenantPackageService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTenantPackage",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "updateTenantPackage",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "deleteTenantPackage",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "deleteTenantPackageList",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getTenantPackage",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getTenantPackagePage",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getTenantPackageList",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "TenantPackageController",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTenantPackage",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createTenantPackage",
+          "callee": "tenantPackageService.createTenantPackage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateTenantPackage",
+          "callee": "tenantPackageService.updateTenantPackage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateTenantPackage",
+          "callee": "success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "deleteTenantPackage",
+          "callee": "tenantPackageService.deleteTenantPackage",
+          "lineNumber": 55
+        },
+        {
+          "caller": "deleteTenantPackage",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteTenantPackageList",
+          "callee": "tenantPackageService.deleteTenantPackageList",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deleteTenantPackageList",
+          "callee": "success",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getTenantPackage",
+          "callee": "tenantPackageService.getTenantPackage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getTenantPackage",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getTenantPackage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getTenantPackagePage",
+          "callee": "tenantPackageService.getTenantPackagePage",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getTenantPackagePage",
+          "callee": "success",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTenantPackagePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getTenantPackageList",
+          "callee": "tenantPackageService.getTenantPackageListByStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getTenantPackageList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getTenantPackageList",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getTenantPackageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/tenant/vo/packages/TenantPackagePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "TenantPackagePageReqVO",
+          "startLine": 14,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "name",
+            "status",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TenantPackagePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/tenant/vo/packages/TenantPackageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "TenantPackageRespVO",
+          "startLine": 9,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status",
+            "remark",
+            "menuIds",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TenantPackageRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/tenant/vo/packages/TenantPackageSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "TenantPackageSaveReqVO",
+          "startLine": 12,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "status",
+            "remark",
+            "menuIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TenantPackageSaveReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

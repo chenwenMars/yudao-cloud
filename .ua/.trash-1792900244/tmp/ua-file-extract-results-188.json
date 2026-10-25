@@ -1,0 +1,1156 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 9,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 9,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/HrmEmployeeContactController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "getContactList",
+          "startLine": 38,
+          "endLine": 46,
+          "params": [
+            "employeeId"
+          ]
+        },
+        {
+          "name": "createContact",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateContact",
+          "startLine": 55,
+          "endLine": 61,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteContact",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeContactController",
+          "startLine": 29,
+          "endLine": 72,
+          "methods": [
+            "getContactList",
+            "createContact",
+            "updateContact",
+            "deleteContact"
+          ],
+          "properties": [
+            "contactService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getContactList",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "createContact",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "updateContact",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "deleteContact",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeContactController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getContactList",
+          "callee": "contactService.getContactListByEmployeeId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getContactList",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getContactList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createContact",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createContact",
+          "callee": "contactService.createContact",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateContact",
+          "callee": "contactService.updateContact",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateContact",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteContact",
+          "callee": "contactService.deleteContact",
+          "lineNumber": 68
+        },
+        {
+          "caller": "deleteContact",
+          "callee": "success",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/contact/HrmEmployeeContactRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "HrmEmployeeContactRespVO",
+          "startLine": 8,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "name",
+            "relation",
+            "phone",
+            "workUnit",
+            "postName",
+            "address",
+            "sort",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeContactRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/employee/vo/contact/HrmEmployeeContactSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "HrmEmployeeContactSaveReqVO",
+          "startLine": 10,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "name",
+            "relation",
+            "phone",
+            "workUnit",
+            "postName",
+            "address",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeContactSaveReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeContactController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "getContactList",
+          "startLine": 34,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeContactController",
+          "startLine": 23,
+          "endLine": 43,
+          "methods": [
+            "getContactList"
+          ],
+          "properties": [
+            "contactService",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getContactList",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeContactController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getContactList",
+          "callee": "employeeService.validateEmployeeBySelf(getLoginUserId()).getId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getContactList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getContactList",
+          "callee": "getLoginUserId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getContactList",
+          "callee": "contactService.getContactListByEmployeeId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getContactList",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getContactList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/dataobject/employee/info/HrmEmployeeContactDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "HrmEmployeeContactDO",
+          "startLine": 19,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "name",
+            "relation",
+            "phone",
+            "workUnit",
+            "postName",
+            "address",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeContactDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/dal/mysql/employee/info/HrmEmployeeContactMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "HrmEmployeeContactMapper",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [
+            "selectListByEmployeeId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeContactMapper",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "selectList",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmEmployeeContactDO>()\n                .eq(HrmEmployeeContactDO::getEmployeeId, employeeId)\n                .orderByAsc(HrmEmployeeContactDO::getSort).orderByDesc",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmEmployeeContactDO>()\n                .eq(HrmEmployeeContactDO::getEmployeeId, employeeId).orderByAsc",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmEmployeeContactDO>().eq",
+          "lineNumber": 14
+        },
+        {
+          "caller": "selectListByEmployeeId",
+          "callee": "new LambdaQueryWrapperX<HrmEmployeeContactDO>",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/service/employee/info/HrmEmployeeContactService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "HrmEmployeeContactService",
+          "startLine": 14,
+          "endLine": 54,
+          "methods": [
+            "createContact",
+            "updateContact",
+            "deleteContact",
+            "validateContactExists",
+            "getContactListByEmployeeId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmEmployeeContactService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/service/employee/info/HrmEmployeeContactServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "createContact",
+          "startLine": 36,
+          "endLine": 50,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateContact",
+          "startLine": 52,
+          "endLine": 70,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteContact",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateContactExists",
+          "startLine": 86,
+          "endLine": 93,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getContactListByEmployeeId",
+          "startLine": 95,
+          "endLine": 98,
+          "params": [
+            "employeeId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeContactServiceImpl",
+          "startLine": 27,
+          "endLine": 100,
+          "methods": [
+            "createContact",
+            "updateContact",
+            "deleteContact",
+            "validateContactExists",
+            "getContactListByEmployeeId"
+          ],
+          "properties": [
+            "contactMapper",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createContact",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "updateContact",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "deleteContact",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "validateContactExists",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "getContactListByEmployeeId",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeContactServiceImpl",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createContact",
+          "callee": "employeeService.validateEmployeeExists",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createContact",
+          "callee": "reqVO.getEmployeeId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createContact",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createContact",
+          "callee": "contactMapper.insert",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createContact",
+          "callee": "LogRecordContext.putVariable",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createContact",
+          "callee": "contact.getId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "updateContact",
+          "callee": "employeeService.validateEmployeeExists",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateContact",
+          "callee": "reqVO.getEmployeeId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "updateContact",
+          "callee": "validateContactExists",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateContact",
+          "callee": "reqVO.getId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateContact",
+          "callee": "notEqual",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateContact",
+          "callee": "contact.getEmployeeId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateContact",
+          "callee": "reqVO.getEmployeeId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateContact",
+          "callee": "exception",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateContact",
+          "callee": "contactMapper.updateById",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateContact",
+          "callee": "BeanUtils.toBean(reqVO, HrmEmployeeContactDO.class).setEmployeeId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateContact",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateContact",
+          "callee": "LogRecordContext.putVariable",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateContact",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 69
+        },
+        {
+          "caller": "deleteContact",
+          "callee": "validateContactExists",
+          "lineNumber": 77
+        },
+        {
+          "caller": "deleteContact",
+          "callee": "contactMapper.deleteById",
+          "lineNumber": 80
+        },
+        {
+          "caller": "deleteContact",
+          "callee": "LogRecordContext.putVariable",
+          "lineNumber": 83
+        },
+        {
+          "caller": "validateContactExists",
+          "callee": "contactMapper.selectById",
+          "lineNumber": 88
+        },
+        {
+          "caller": "validateContactExists",
+          "callee": "exception",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getContactListByEmployeeId",
+          "callee": "contactMapper.selectListByEmployeeId",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/test/java/cn/iocoder/yudao/module/hrm/service/employee/info/HrmEmployeeContactServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "testCreateContact_success",
+          "startLine": 41,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "testUpdateContact_success",
+          "startLine": 58,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "testDeleteContact_success",
+          "startLine": 78,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "testDeleteContact_notExists",
+          "startLine": 94,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "testGetContactListByEmployeeId",
+          "startLine": 103,
+          "endLine": 122,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmEmployeeContactServiceImplTest",
+          "startLine": 29,
+          "endLine": 124,
+          "methods": [
+            "testCreateContact_success",
+            "testUpdateContact_success",
+            "testDeleteContact_success",
+            "testDeleteContact_notExists",
+            "testGetContactListByEmployeeId"
+          ],
+          "properties": [
+            "contactService",
+            "contactMapper",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testCreateContact_success",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateContact_success",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteContact_success",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "testDeleteContact_notExists",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "testGetContactListByEmployeeId",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "HrmEmployeeContactServiceImplTest",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testCreateContact_success",
+          "callee": "randomLongId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "randomPojo",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "o.setId(null).setEmployeeId(employeeId).setSort",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "o.setId(null).setEmployeeId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "o.setId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "contactService.createContact",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "assertNotNull",
+          "lineNumber": 53
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "assertPojoEquals",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "contactMapper.selectById",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "verify(employeeService).validateEmployeeExists",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testCreateContact_success",
+          "callee": "verify",
+          "lineNumber": 55
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "randomPojo",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "o.setId(null).setEmployeeId(randomLongId()).setSort(20).setDeleted",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "o.setId(null).setEmployeeId(randomLongId()).setSort",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "o.setId(null).setEmployeeId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "o.setId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "randomLongId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "contactMapper.insert",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "randomPojo",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "o.setId(dbRecord.getId()).setEmployeeId(dbRecord.getEmployeeId()).setSort",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "o.setId(dbRecord.getId()).setEmployeeId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "o.setId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "dbRecord.getId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "dbRecord.getEmployeeId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "contactService.updateContact",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "contactMapper.selectById",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "dbRecord.getId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "assertPojoEquals",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "assertEquals",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "dbRecord.getEmployeeId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testUpdateContact_success",
+          "callee": "contact.getEmployeeId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "randomPojo",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "o.setId(null).setEmployeeId(randomLongId()).setSort(20).setDeleted",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "o.setId(null).setEmployeeId(randomLongId()).setSort",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "o.setId(null).setEmployeeId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "o.setId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "randomLongId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "contactMapper.insert",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "dbRecord.getId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "contactService.deleteContact",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "assertNull",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testDeleteContact_success",
+          "callee": "contactMapper.selectById",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testDeleteContact_notExists",
+          "callee": "randomLongId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testDeleteContact_notExists",
+          "callee": "assertServiceException",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testDeleteContact_notExists",
+          "callee": "contactService.deleteContact",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "randomLongId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "randomPojo",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId(employeeId).setSort(20).setDeleted",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId(employeeId).setSort",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "contactMapper.insert",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "randomPojo",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId(employeeId).setSort(10).setDeleted",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId(employeeId).setSort",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId",
+          "lineNumber": 111
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "contactMapper.insert",
+          "lineNumber": 112
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "contactMapper.insert",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "randomPojo",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId(randomLongId()).setSort(1).setDeleted",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId(randomLongId()).setSort",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId(null).setEmployeeId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "o.setId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "randomLongId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "contactService.getContactListByEmployeeId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "assertEquals",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "result.size",
+          "lineNumber": 119
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "assertEquals",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "secondRecord.getId",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "result.get(0).getId",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "result.get",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "assertEquals",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "firstRecord.getId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "result.get(1).getId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testGetContactListByEmployeeId",
+          "callee": "result.get",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    }
+  ]
+}

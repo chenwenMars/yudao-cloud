@@ -1,0 +1,4959 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthSmsLoginReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "isSocialCodeValid",
+          "startLine": 48,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "isSocialState",
+          "startLine": 53,
+          "endLine": 56,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppAuthSmsLoginReqVO",
+          "startLine": 18,
+          "endLine": 58,
+          "methods": [
+            "isSocialCodeValid",
+            "isSocialState"
+          ],
+          "properties": [
+            "mobile",
+            "code",
+            "socialType",
+            "socialCode",
+            "socialState"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isSocialCodeValid",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "isSocialState",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "AppAuthSmsLoginReqVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSocialCodeValid",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isSocialState",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthSmsSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AppAuthSmsSendReqVO",
+          "startLine": 11,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "mobile",
+            "scene"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppAuthSmsSendReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthSmsValidateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "AppAuthSmsValidateReqVO",
+          "startLine": 14,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "mobile",
+            "scene",
+            "code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppAuthSmsValidateReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthSocialLoginReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "AppAuthSocialLoginReqVO",
+          "startLine": 14,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "type",
+            "code",
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppAuthSocialLoginReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/social/AppSocialUserController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "socialBind",
+          "startLine": 36,
+          "endLine": 44,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "socialUnbind",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getSocialUser",
+          "startLine": 55,
+          "endLine": 61,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "getWxaQrcode",
+          "startLine": 63,
+          "endLine": 69,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getSubscribeTemplateList",
+          "startLine": 71,
+          "endLine": 77,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppSocialUserController",
+          "startLine": 25,
+          "endLine": 79,
+          "methods": [
+            "socialBind",
+            "socialUnbind",
+            "getSocialUser",
+            "getWxaQrcode",
+            "getSubscribeTemplateList"
+          ],
+          "properties": [
+            "socialUserApi",
+            "socialClientApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "socialBind",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "socialUnbind",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "getSocialUser",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getWxaQrcode",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getSubscribeTemplateList",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "AppSocialUserController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "socialBind",
+          "callee": "new SocialUserBindReqDTO",
+          "lineNumber": 40
+        },
+        {
+          "caller": "socialBind",
+          "callee": "getLoginUserId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "socialBind",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 40
+        },
+        {
+          "caller": "socialBind",
+          "callee": "reqVO.getType",
+          "lineNumber": 41
+        },
+        {
+          "caller": "socialBind",
+          "callee": "reqVO.getCode",
+          "lineNumber": 41
+        },
+        {
+          "caller": "socialBind",
+          "callee": "reqVO.getState",
+          "lineNumber": 41
+        },
+        {
+          "caller": "socialBind",
+          "callee": "socialUserApi.bindSocialUser(reqDTO).getCheckedData",
+          "lineNumber": 42
+        },
+        {
+          "caller": "socialBind",
+          "callee": "socialUserApi.bindSocialUser",
+          "lineNumber": 42
+        },
+        {
+          "caller": "socialBind",
+          "callee": "success",
+          "lineNumber": 43
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "new SocialUserUnbindReqDTO",
+          "lineNumber": 49
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "getLoginUserId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 49
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "reqVO.getType",
+          "lineNumber": 50
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "reqVO.getOpenid",
+          "lineNumber": 50
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "socialUserApi.unbindSocialUser(reqDTO).checkError",
+          "lineNumber": 51
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "socialUserApi.unbindSocialUser",
+          "lineNumber": 51
+        },
+        {
+          "caller": "socialUnbind",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getSocialUser",
+          "callee": "socialUserApi.getSocialUserByUserId(UserTypeEnum.MEMBER.getValue(), getLoginUserId(), type).getCheckedData",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getSocialUser",
+          "callee": "socialUserApi.getSocialUserByUserId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getSocialUser",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getSocialUser",
+          "callee": "getLoginUserId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getSocialUser",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getSocialUser",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getWxaQrcode",
+          "callee": "socialClientApi.getWxaQrcode(BeanUtils.toBean(reqVO, SocialWxQrcodeReqDTO.class)).getCheckedData",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getWxaQrcode",
+          "callee": "socialClientApi.getWxaQrcode",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getWxaQrcode",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getWxaQrcode",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getWxaQrcode",
+          "callee": "Base64.encode",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getSubscribeTemplateList",
+          "callee": "socialClientApi.getWxaSubscribeTemplateList(UserTypeEnum.MEMBER.getValue()).getCheckedData",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getSubscribeTemplateList",
+          "callee": "socialClientApi.getWxaSubscribeTemplateList",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getSubscribeTemplateList",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getSubscribeTemplateList",
+          "callee": "success",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getSubscribeTemplateList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/social/vo/AppSocialUserBindReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "AppSocialUserBindReqVO",
+          "startLine": 14,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "type",
+            "code",
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppSocialUserBindReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/social/vo/AppSocialUserUnbindReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "AppSocialUserUnbindReqVO",
+          "startLine": 14,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "type",
+            "openid"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppSocialUserUnbindReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/user/vo/AppMemberUserResetPasswordReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "AppMemberUserResetPasswordReqVO",
+          "startLine": 15,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "password",
+            "code",
+            "mobile"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberUserResetPasswordReqVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/user/vo/AppMemberUserUpdateMobileReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "AppMemberUserUpdateMobileReqVO",
+          "startLine": 15,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "code",
+            "mobile",
+            "oldCode"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberUserUpdateMobileReqVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/auth/AuthConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "AuthConvert",
+          "startLine": 17,
+          "endLine": 35,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuthConvert",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/mysql/user/MemberUserMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 91,
+      "classes": [
+        {
+          "name": "MemberUserMapper",
+          "startLine": 23,
+          "endLine": 104,
+          "methods": [
+            "selectByMobile",
+            "selectByEmail",
+            "selectListByNicknameLike",
+            "selectPage",
+            "selectCountByGroupId",
+            "selectCountByLevelId",
+            "selectCountByTagId",
+            "updatePointIncr",
+            "updatePointDecr"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberUserMapper",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByMobile",
+          "callee": "selectOne",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectByEmail",
+          "callee": "selectOne",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectListByNicknameLike",
+          "callee": "selectList",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectListByNicknameLike",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>().likeIfPresent",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectListByNicknameLike",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTagIds",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPage",
+          "callee": "IntStream.range(0, reqVO.getTagIds().size())\n                    .mapToObj(index -> MyBatisUtils.findInSetWithParamIndex(\"tag_ids\", index)).collect",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPage",
+          "callee": "IntStream.range(0, reqVO.getTagIds().size()).mapToObj",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPage",
+          "callee": "IntStream.range",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTagIds().size",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTagIds",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPage",
+          "callee": "MyBatisUtils.findInSetWithParamIndex",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectPage",
+          "callee": "Collectors.joining",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTagIds().toArray",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTagIds",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile())\n                .likeIfPresent(MemberUserDO::getEmail, reqVO.getEmail())\n                .betweenIfPresent(MemberUserDO::getLoginDate, reqVO.getLoginDate())\n                .likeIfPresent(MemberUserDO::getNickname, reqVO.getNickname())\n                .betweenIfPresent(MemberUserDO::getCreateTime, reqVO.getCreateTime())\n                .eqIfPresent(MemberUserDO::getLevelId, reqVO.getLevelId())\n                .eqIfPresent(MemberUserDO::getGroupId, reqVO.getGroupId())\n                .apply(CollUtil.isNotEmpty(reqVO.getTagIds()), tagIdSql, tagIdParams).orderByDesc",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile())\n                .likeIfPresent(MemberUserDO::getEmail, reqVO.getEmail())\n                .betweenIfPresent(MemberUserDO::getLoginDate, reqVO.getLoginDate())\n                .likeIfPresent(MemberUserDO::getNickname, reqVO.getNickname())\n                .betweenIfPresent(MemberUserDO::getCreateTime, reqVO.getCreateTime())\n                .eqIfPresent(MemberUserDO::getLevelId, reqVO.getLevelId())\n                .eqIfPresent(MemberUserDO::getGroupId, reqVO.getGroupId()).apply",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile())\n                .likeIfPresent(MemberUserDO::getEmail, reqVO.getEmail())\n                .betweenIfPresent(MemberUserDO::getLoginDate, reqVO.getLoginDate())\n                .likeIfPresent(MemberUserDO::getNickname, reqVO.getNickname())\n                .betweenIfPresent(MemberUserDO::getCreateTime, reqVO.getCreateTime())\n                .eqIfPresent(MemberUserDO::getLevelId, reqVO.getLevelId()).eqIfPresent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile())\n                .likeIfPresent(MemberUserDO::getEmail, reqVO.getEmail())\n                .betweenIfPresent(MemberUserDO::getLoginDate, reqVO.getLoginDate())\n                .likeIfPresent(MemberUserDO::getNickname, reqVO.getNickname())\n                .betweenIfPresent(MemberUserDO::getCreateTime, reqVO.getCreateTime()).eqIfPresent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile())\n                .likeIfPresent(MemberUserDO::getEmail, reqVO.getEmail())\n                .betweenIfPresent(MemberUserDO::getLoginDate, reqVO.getLoginDate())\n                .likeIfPresent(MemberUserDO::getNickname, reqVO.getNickname()).betweenIfPresent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile())\n                .likeIfPresent(MemberUserDO::getEmail, reqVO.getEmail())\n                .betweenIfPresent(MemberUserDO::getLoginDate, reqVO.getLoginDate()).likeIfPresent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile())\n                .likeIfPresent(MemberUserDO::getEmail, reqVO.getEmail()).betweenIfPresent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>()\n                .likeIfPresent(MemberUserDO::getMobile, reqVO.getMobile()).likeIfPresent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>().likeIfPresent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getEmail",
+          "lineNumber": 52
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getLoginDate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getNickname",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getLevelId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getGroupId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getTagIds",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectCountByGroupId",
+          "callee": "selectCount",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectCountByLevelId",
+          "callee": "selectCount",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectCountByTagId",
+          "callee": "selectCount",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectCountByTagId",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>().apply",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectCountByTagId",
+          "callee": "new LambdaQueryWrapperX<MemberUserDO>",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectCountByTagId",
+          "callee": "MyBatisUtils.findInSet",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updatePointIncr",
+          "callee": "Assert.isTrue",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updatePointIncr",
+          "callee": "new LambdaUpdateWrapper<MemberUserDO>()\n                .setSql(\" point = point + \" + incrCount).eq",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updatePointIncr",
+          "callee": "new LambdaUpdateWrapper<MemberUserDO>().setSql",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updatePointIncr",
+          "callee": "new LambdaUpdateWrapper<MemberUserDO>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "updatePointIncr",
+          "callee": "update",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updatePointDecr",
+          "callee": "Assert.isTrue",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updatePointDecr",
+          "callee": "new LambdaUpdateWrapper<MemberUserDO>()\n                .setSql(\" point = point + \" + incrCount).eq",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePointDecr",
+          "callee": "new LambdaUpdateWrapper<MemberUserDO>().setSql",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePointDecr",
+          "callee": "new LambdaUpdateWrapper<MemberUserDO>",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePointDecr",
+          "callee": "update",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 10,
+          "endLine": 13,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/auth/MemberAuthService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 75,
+      "classes": [
+        {
+          "name": "MemberAuthService",
+          "startLine": 14,
+          "endLine": 88,
+          "methods": [
+            "login",
+            "logout",
+            "smsLogin",
+            "socialLogin",
+            "weixinMiniAppLogin",
+            "getSocialAuthorizeUrl",
+            "sendSmsCode",
+            "validateSmsCode",
+            "refreshToken"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberAuthService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/auth/MemberAuthServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 293,
+      "nonEmptyLines": 257,
+      "functions": [
+        {
+          "name": "login",
+          "startLine": 63,
+          "endLine": 77,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "smsLogin",
+          "startLine": 79,
+          "endLine": 102,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "socialLogin",
+          "startLine": 104,
+          "endLine": 133,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "weixinMiniAppLogin",
+          "startLine": 135,
+          "endLine": 154,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "createTokenAfterLoginSuccess",
+          "startLine": 156,
+          "endLine": 169,
+          "params": [
+            "user",
+            "mobile",
+            "logType",
+            "openid"
+          ]
+        },
+        {
+          "name": "validateUserStatus",
+          "startLine": 171,
+          "endLine": 176,
+          "params": [
+            "user",
+            "mobile",
+            "logType"
+          ]
+        },
+        {
+          "name": "getSocialAuthorizeUrl",
+          "startLine": 178,
+          "endLine": 181,
+          "params": [
+            "type",
+            "redirectUri"
+          ]
+        },
+        {
+          "name": "login0",
+          "startLine": 183,
+          "endLine": 198,
+          "params": [
+            "mobile",
+            "password"
+          ]
+        },
+        {
+          "name": "createLoginLog",
+          "startLine": 200,
+          "endLine": 216,
+          "params": [
+            "userId",
+            "mobile",
+            "logType",
+            "loginResult"
+          ]
+        },
+        {
+          "name": "logout",
+          "startLine": 218,
+          "endLine": 227,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "sendSmsCode",
+          "startLine": 229,
+          "endLine": 254,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateSmsCode",
+          "startLine": 256,
+          "endLine": 259,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "refreshToken",
+          "startLine": 261,
+          "endLine": 266,
+          "params": [
+            "refreshToken"
+          ]
+        },
+        {
+          "name": "createLogoutLog",
+          "startLine": 268,
+          "endLine": 279,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "getMobile",
+          "startLine": 281,
+          "endLine": 287,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "getUserType",
+          "startLine": 289,
+          "endLine": 291,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemberAuthServiceImpl",
+          "startLine": 46,
+          "endLine": 293,
+          "methods": [
+            "login",
+            "smsLogin",
+            "socialLogin",
+            "weixinMiniAppLogin",
+            "createTokenAfterLoginSuccess",
+            "validateUserStatus",
+            "getSocialAuthorizeUrl",
+            "login0",
+            "createLoginLog",
+            "logout",
+            "sendSmsCode",
+            "validateSmsCode",
+            "refreshToken",
+            "createLogoutLog",
+            "getMobile",
+            "getUserType"
+          ],
+          "properties": [
+            "userService",
+            "smsCodeApi",
+            "loginLogApi",
+            "socialUserApi",
+            "socialClientApi",
+            "oauth2TokenApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "login",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "smsLogin",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "socialLogin",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "weixinMiniAppLogin",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "getSocialAuthorizeUrl",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 218,
+          "isDefault": false
+        },
+        {
+          "name": "sendSmsCode",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "validateSmsCode",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "refreshToken",
+          "line": 261,
+          "isDefault": false
+        },
+        {
+          "name": "MemberAuthServiceImpl",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "login",
+          "callee": "login0",
+          "lineNumber": 66
+        },
+        {
+          "caller": "login",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 66
+        },
+        {
+          "caller": "login",
+          "callee": "reqVO.getPassword",
+          "lineNumber": 66
+        },
+        {
+          "caller": "login",
+          "callee": "reqVO.getSocialType",
+          "lineNumber": 70
+        },
+        {
+          "caller": "login",
+          "callee": "socialUserApi.bindSocialUser(new SocialUserBindReqDTO(user.getId(), getUserType().getValue(),\n                    reqVO.getSocialType(), reqVO.getSocialCode(), reqVO.getSocialState())).getCheckedData",
+          "lineNumber": 71
+        },
+        {
+          "caller": "login",
+          "callee": "socialUserApi.bindSocialUser",
+          "lineNumber": 71
+        },
+        {
+          "caller": "login",
+          "callee": "new SocialUserBindReqDTO",
+          "lineNumber": 71
+        },
+        {
+          "caller": "login",
+          "callee": "user.getId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "login",
+          "callee": "getUserType().getValue",
+          "lineNumber": 71
+        },
+        {
+          "caller": "login",
+          "callee": "getUserType",
+          "lineNumber": 71
+        },
+        {
+          "caller": "login",
+          "callee": "reqVO.getSocialType",
+          "lineNumber": 72
+        },
+        {
+          "caller": "login",
+          "callee": "reqVO.getSocialCode",
+          "lineNumber": 72
+        },
+        {
+          "caller": "login",
+          "callee": "reqVO.getSocialState",
+          "lineNumber": 72
+        },
+        {
+          "caller": "login",
+          "callee": "createTokenAfterLoginSuccess",
+          "lineNumber": 76
+        },
+        {
+          "caller": "login",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 76
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "getClientIP",
+          "lineNumber": 83
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "smsCodeApi.useSmsCode(AuthConvert.INSTANCE.convert(reqVO, SmsSceneEnum.MEMBER_LOGIN.getScene(), userIp)).checkError",
+          "lineNumber": 84
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "smsCodeApi.useSmsCode",
+          "lineNumber": 84
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "AuthConvert.INSTANCE.convert",
+          "lineNumber": 84
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "SmsSceneEnum.MEMBER_LOGIN.getScene",
+          "lineNumber": 84
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "userService.createUserIfAbsent",
+          "lineNumber": 87
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 87
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "getTerminal",
+          "lineNumber": 87
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "Assert.notNull",
+          "lineNumber": 88
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "validateUserStatus",
+          "lineNumber": 91
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 91
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "reqVO.getSocialType",
+          "lineNumber": 95
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "socialUserApi.bindSocialUser(new SocialUserBindReqDTO(user.getId(), getUserType().getValue(),\n                    reqVO.getSocialType(), reqVO.getSocialCode(), reqVO.getSocialState())).getCheckedData",
+          "lineNumber": 96
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "socialUserApi.bindSocialUser",
+          "lineNumber": 96
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "new SocialUserBindReqDTO",
+          "lineNumber": 96
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "user.getId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "getUserType().getValue",
+          "lineNumber": 96
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "getUserType",
+          "lineNumber": 96
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "reqVO.getSocialType",
+          "lineNumber": 97
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "reqVO.getSocialCode",
+          "lineNumber": 97
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "reqVO.getSocialState",
+          "lineNumber": 97
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "createTokenAfterLoginSuccess",
+          "lineNumber": 101
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 101
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUserApi.getSocialUserByCode(UserTypeEnum.MEMBER.getValue(), reqVO.getType(),\n                reqVO.getCode(), reqVO.getState()).getCheckedData",
+          "lineNumber": 108
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUserApi.getSocialUserByCode",
+          "lineNumber": 108
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 108
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "reqVO.getType",
+          "lineNumber": 108
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "reqVO.getCode",
+          "lineNumber": 109
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "reqVO.getState",
+          "lineNumber": 109
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "exception",
+          "lineNumber": 111
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUser.getUserId",
+          "lineNumber": 116
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "userService.getUser",
+          "lineNumber": 117
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUser.getUserId",
+          "lineNumber": 117
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "userService.createUser",
+          "lineNumber": 120
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUser.getNickname",
+          "lineNumber": 120
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUser.getAvatar",
+          "lineNumber": 120
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "getClientIP",
+          "lineNumber": 120
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "getTerminal",
+          "lineNumber": 120
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUserApi.bindSocialUser(new SocialUserBindReqDTO(user.getId(), getUserType().getValue(),\n                    reqVO.getType(), reqVO.getCode(), reqVO.getState())).checkError",
+          "lineNumber": 121
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUserApi.bindSocialUser",
+          "lineNumber": 121
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "new SocialUserBindReqDTO",
+          "lineNumber": 121
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "user.getId",
+          "lineNumber": 121
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "getUserType().getValue",
+          "lineNumber": 121
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "getUserType",
+          "lineNumber": 121
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "reqVO.getType",
+          "lineNumber": 122
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "reqVO.getCode",
+          "lineNumber": 122
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "reqVO.getState",
+          "lineNumber": 122
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "exception",
+          "lineNumber": 125
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "validateUserStatus",
+          "lineNumber": 129
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "user.getMobile",
+          "lineNumber": 129
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "createTokenAfterLoginSuccess",
+          "lineNumber": 132
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "user.getMobile",
+          "lineNumber": 132
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "socialUser.getOpenid",
+          "lineNumber": 132
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "socialClientApi.getWxMaPhoneNumberInfo(\n                UserTypeEnum.MEMBER.getValue(), reqVO.getPhoneCode()).getCheckedData",
+          "lineNumber": 138
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "socialClientApi.getWxMaPhoneNumberInfo",
+          "lineNumber": 138
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 139
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "reqVO.getPhoneCode",
+          "lineNumber": 139
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "Assert.notNull",
+          "lineNumber": 140
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "userService.createUserIfAbsent",
+          "lineNumber": 143
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "phoneNumberInfo.getPurePhoneNumber",
+          "lineNumber": 143
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "getClientIP",
+          "lineNumber": 144
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "TerminalEnum.WECHAT_MINI_PROGRAM.getTerminal",
+          "lineNumber": 144
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "Assert.notNull",
+          "lineNumber": 145
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "validateUserStatus",
+          "lineNumber": 146
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "user.getMobile",
+          "lineNumber": 146
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "socialUserApi.bindSocialUser(new SocialUserBindReqDTO(user.getId(), getUserType().getValue(),\n                SocialTypeEnum.WECHAT_MINI_PROGRAM.getType(), reqVO.getLoginCode(), reqVO.getState())).getCheckedData",
+          "lineNumber": 149
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "socialUserApi.bindSocialUser",
+          "lineNumber": 149
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "new SocialUserBindReqDTO",
+          "lineNumber": 149
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "user.getId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "getUserType().getValue",
+          "lineNumber": 149
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "getUserType",
+          "lineNumber": 149
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "SocialTypeEnum.WECHAT_MINI_PROGRAM.getType",
+          "lineNumber": 150
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "reqVO.getLoginCode",
+          "lineNumber": 150
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "reqVO.getState",
+          "lineNumber": 150
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "createTokenAfterLoginSuccess",
+          "lineNumber": 153
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "user.getMobile",
+          "lineNumber": 153
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "validateUserStatus",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "createLoginLog",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "user.getId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "oauth2TokenApi.createAccessToken(new OAuth2AccessTokenCreateReqDTO()\n                .setUserId(user.getId()).setUserType(getUserType().getValue())\n                .setClientId(OAuth2ClientConstants.CLIENT_ID_DEFAULT)).getCheckedData",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "oauth2TokenApi.createAccessToken",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "new OAuth2AccessTokenCreateReqDTO()\n                .setUserId(user.getId()).setUserType(getUserType().getValue()).setClientId",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "new OAuth2AccessTokenCreateReqDTO()\n                .setUserId(user.getId()).setUserType",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "new OAuth2AccessTokenCreateReqDTO().setUserId",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "new OAuth2AccessTokenCreateReqDTO",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "user.getId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "getUserType().getValue",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "getUserType",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createTokenAfterLoginSuccess",
+          "callee": "AuthConvert.INSTANCE.convert",
+          "lineNumber": 168
+        },
+        {
+          "caller": "validateUserStatus",
+          "callee": "CommonStatusEnum.isDisable",
+          "lineNumber": 172
+        },
+        {
+          "caller": "validateUserStatus",
+          "callee": "user.getStatus",
+          "lineNumber": 172
+        },
+        {
+          "caller": "validateUserStatus",
+          "callee": "createLoginLog",
+          "lineNumber": 173
+        },
+        {
+          "caller": "validateUserStatus",
+          "callee": "user.getId",
+          "lineNumber": 173
+        },
+        {
+          "caller": "validateUserStatus",
+          "callee": "exception",
+          "lineNumber": 174
+        },
+        {
+          "caller": "getSocialAuthorizeUrl",
+          "callee": "socialClientApi.getAuthorizeUrl(type, UserTypeEnum.MEMBER.getValue(), redirectUri).getCheckedData",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getSocialAuthorizeUrl",
+          "callee": "socialClientApi.getAuthorizeUrl",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getSocialAuthorizeUrl",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 180
+        },
+        {
+          "caller": "login0",
+          "callee": "userService.getUserByMobile",
+          "lineNumber": 186
+        },
+        {
+          "caller": "login0",
+          "callee": "createLoginLog",
+          "lineNumber": 188
+        },
+        {
+          "caller": "login0",
+          "callee": "exception",
+          "lineNumber": 189
+        },
+        {
+          "caller": "login0",
+          "callee": "userService.isPasswordMatch",
+          "lineNumber": 191
+        },
+        {
+          "caller": "login0",
+          "callee": "user.getPassword",
+          "lineNumber": 191
+        },
+        {
+          "caller": "login0",
+          "callee": "createLoginLog",
+          "lineNumber": 192
+        },
+        {
+          "caller": "login0",
+          "callee": "user.getId",
+          "lineNumber": 192
+        },
+        {
+          "caller": "login0",
+          "callee": "exception",
+          "lineNumber": 193
+        },
+        {
+          "caller": "login0",
+          "callee": "validateUserStatus",
+          "lineNumber": 196
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "new LoginLogCreateReqDTO",
+          "lineNumber": 202
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setLogType",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "logType.getType",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setTraceId",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "TracerUtils.getTraceId",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setUserId",
+          "lineNumber": 205
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setUserType",
+          "lineNumber": 206
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "getUserType().getValue",
+          "lineNumber": 206
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "getUserType",
+          "lineNumber": 206
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setUsername",
+          "lineNumber": 207
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setUserAgent",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "ServletUtils.getUserAgent",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setUserIp",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "getClientIP",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "reqDTO.setResult",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "loginResult.getResult",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "loginLogApi.createLoginLog(reqDTO).checkError",
+          "lineNumber": 211
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "loginLogApi.createLoginLog",
+          "lineNumber": 211
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "Objects.equals",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "LoginResultEnum.SUCCESS.getResult",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "loginResult.getResult",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "userService.updateUserLogin",
+          "lineNumber": 214
+        },
+        {
+          "caller": "createLoginLog",
+          "callee": "getClientIP",
+          "lineNumber": 214
+        },
+        {
+          "caller": "logout",
+          "callee": "oauth2TokenApi.removeAccessToken(token).getCheckedData",
+          "lineNumber": 221
+        },
+        {
+          "caller": "logout",
+          "callee": "oauth2TokenApi.removeAccessToken",
+          "lineNumber": 221
+        },
+        {
+          "caller": "logout",
+          "callee": "createLogoutLog",
+          "lineNumber": 226
+        },
+        {
+          "caller": "logout",
+          "callee": "accessTokenRespDTO.getUserId",
+          "lineNumber": 226
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "Objects.equals",
+          "lineNumber": 232
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "reqVO.getScene",
+          "lineNumber": 232
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "SmsSceneEnum.MEMBER_UPDATE_MOBILE.getScene",
+          "lineNumber": 232
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "userService.getUserByMobile",
+          "lineNumber": 233
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 233
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "Objects.equals",
+          "lineNumber": 234
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "user.getId",
+          "lineNumber": 234
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "exception",
+          "lineNumber": 235
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "Objects.equals",
+          "lineNumber": 239
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "reqVO.getScene",
+          "lineNumber": 239
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "SmsSceneEnum.MEMBER_RESET_PASSWORD.getScene",
+          "lineNumber": 239
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "userService.getUserByMobile",
+          "lineNumber": 240
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 240
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "exception",
+          "lineNumber": 242
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "Objects.equals",
+          "lineNumber": 246
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "reqVO.getScene",
+          "lineNumber": 246
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "SmsSceneEnum.MEMBER_UPDATE_PASSWORD.getScene",
+          "lineNumber": 246
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "userService.getUser",
+          "lineNumber": 247
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "reqVO.setMobile",
+          "lineNumber": 249
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "user.getMobile",
+          "lineNumber": 249
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "smsCodeApi.sendSmsCode(AuthConvert.INSTANCE.convert(reqVO).setCreateIp(getClientIP())).checkError",
+          "lineNumber": 253
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "smsCodeApi.sendSmsCode",
+          "lineNumber": 253
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "AuthConvert.INSTANCE.convert(reqVO).setCreateIp",
+          "lineNumber": 253
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "AuthConvert.INSTANCE.convert",
+          "lineNumber": 253
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "getClientIP",
+          "lineNumber": 253
+        },
+        {
+          "caller": "validateSmsCode",
+          "callee": "smsCodeApi.validateSmsCode(AuthConvert.INSTANCE.convert(reqVO)).checkError",
+          "lineNumber": 258
+        },
+        {
+          "caller": "validateSmsCode",
+          "callee": "smsCodeApi.validateSmsCode",
+          "lineNumber": 258
+        },
+        {
+          "caller": "validateSmsCode",
+          "callee": "AuthConvert.INSTANCE.convert",
+          "lineNumber": 258
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "oauth2TokenApi.refreshAccessToken(refreshToken,\n                OAuth2ClientConstants.CLIENT_ID_DEFAULT).getCheckedData",
+          "lineNumber": 263
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "oauth2TokenApi.refreshAccessToken",
+          "lineNumber": 263
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "AuthConvert.INSTANCE.convert",
+          "lineNumber": 265
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "new LoginLogCreateReqDTO",
+          "lineNumber": 269
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setLogType",
+          "lineNumber": 270
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "LoginLogTypeEnum.LOGOUT_SELF.getType",
+          "lineNumber": 270
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setTraceId",
+          "lineNumber": 271
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "TracerUtils.getTraceId",
+          "lineNumber": 271
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setUserId",
+          "lineNumber": 272
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setUserType",
+          "lineNumber": 273
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "getUserType().getValue",
+          "lineNumber": 273
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "getUserType",
+          "lineNumber": 273
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setUsername",
+          "lineNumber": 274
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "getMobile",
+          "lineNumber": 274
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setUserAgent",
+          "lineNumber": 275
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "ServletUtils.getUserAgent",
+          "lineNumber": 275
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setUserIp",
+          "lineNumber": 276
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "getClientIP",
+          "lineNumber": 276
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "reqDTO.setResult",
+          "lineNumber": 277
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "LoginResultEnum.SUCCESS.getResult",
+          "lineNumber": 277
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "loginLogApi.createLoginLog(reqDTO).checkError",
+          "lineNumber": 278
+        },
+        {
+          "caller": "createLogoutLog",
+          "callee": "loginLogApi.createLoginLog",
+          "lineNumber": 278
+        },
+        {
+          "caller": "getMobile",
+          "callee": "userService.getUser",
+          "lineNumber": 285
+        },
+        {
+          "caller": "getMobile",
+          "callee": "user.getMobile",
+          "lineNumber": 286
+        }
+      ],
+      "metrics": {
+        "importCount": 25,
+        "exportCount": 10,
+        "functionCount": 16,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/service/user/MemberUserServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 350,
+      "nonEmptyLines": 303,
+      "functions": [
+        {
+          "name": "getUserByMobile",
+          "startLine": 69,
+          "endLine": 72,
+          "params": [
+            "mobile"
+          ]
+        },
+        {
+          "name": "getUserListByNickname",
+          "startLine": 74,
+          "endLine": 77,
+          "params": [
+            "nickname"
+          ]
+        },
+        {
+          "name": "createUserIfAbsent",
+          "startLine": 79,
+          "endLine": 89,
+          "params": [
+            "mobile",
+            "registerIp",
+            "terminal"
+          ]
+        },
+        {
+          "name": "createUser",
+          "startLine": 91,
+          "endLine": 95,
+          "params": [
+            "nickname",
+            "avtar",
+            "registerIp",
+            "terminal"
+          ]
+        },
+        {
+          "name": "createUser",
+          "startLine": 97,
+          "endLine": 124,
+          "params": [
+            "mobile",
+            "nickname",
+            "avtar",
+            "registerIp",
+            "terminal"
+          ]
+        },
+        {
+          "name": "updateUserLogin",
+          "startLine": 126,
+          "endLine": 130,
+          "params": [
+            "id",
+            "loginIp"
+          ]
+        },
+        {
+          "name": "getUser",
+          "startLine": 132,
+          "endLine": 135,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getUserList",
+          "startLine": 137,
+          "endLine": 143,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "updateUser",
+          "startLine": 145,
+          "endLine": 155,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateUserMobile",
+          "startLine": 157,
+          "endLine": 177,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateUserMobileByWeixin",
+          "startLine": 179,
+          "endLine": 190,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateUserPassword",
+          "startLine": 192,
+          "endLine": 203,
+          "params": [
+            "userId",
+            "reqVO"
+          ]
+        },
+        {
+          "name": "resetUserPassword",
+          "startLine": 205,
+          "endLine": 217,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateUserExists",
+          "startLine": 219,
+          "endLine": 225,
+          "params": [
+            "mobile"
+          ]
+        },
+        {
+          "name": "isPasswordMatch",
+          "startLine": 227,
+          "endLine": 230,
+          "params": [
+            "rawPassword",
+            "encodedPassword"
+          ]
+        },
+        {
+          "name": "encodePassword",
+          "startLine": 238,
+          "endLine": 240,
+          "params": [
+            "password"
+          ]
+        },
+        {
+          "name": "updateUser",
+          "startLine": 242,
+          "endLine": 260,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "validateUserExists",
+          "startLine": 262,
+          "endLine": 272,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateMobileUnique",
+          "startLine": 274,
+          "endLine": 290,
+          "params": [
+            "id",
+            "mobile"
+          ]
+        },
+        {
+          "name": "validateEmailUnique",
+          "startLine": 292,
+          "endLine": 308,
+          "params": [
+            "id",
+            "email"
+          ]
+        },
+        {
+          "name": "getUserPage",
+          "startLine": 310,
+          "endLine": 313,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "updateUserLevel",
+          "startLine": 315,
+          "endLine": 323,
+          "params": [
+            "id",
+            "levelId",
+            "experience"
+          ]
+        },
+        {
+          "name": "getUserCountByGroupId",
+          "startLine": 325,
+          "endLine": 328,
+          "params": [
+            "groupId"
+          ]
+        },
+        {
+          "name": "getUserCountByLevelId",
+          "startLine": 330,
+          "endLine": 333,
+          "params": [
+            "levelId"
+          ]
+        },
+        {
+          "name": "getUserCountByTagId",
+          "startLine": 335,
+          "endLine": 338,
+          "params": [
+            "tagId"
+          ]
+        },
+        {
+          "name": "updateUserPoint",
+          "startLine": 340,
+          "endLine": 348,
+          "params": [
+            "id",
+            "point"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemberUserServiceImpl",
+          "startLine": 48,
+          "endLine": 350,
+          "methods": [
+            "getUserByMobile",
+            "getUserListByNickname",
+            "createUserIfAbsent",
+            "createUser",
+            "createUser",
+            "updateUserLogin",
+            "getUser",
+            "getUserList",
+            "updateUser",
+            "updateUserMobile",
+            "updateUserMobileByWeixin",
+            "updateUserPassword",
+            "resetUserPassword",
+            "validateUserExists",
+            "isPasswordMatch",
+            "encodePassword",
+            "updateUser",
+            "validateUserExists",
+            "validateMobileUnique",
+            "validateEmailUnique",
+            "getUserPage",
+            "updateUserLevel",
+            "getUserCountByGroupId",
+            "getUserCountByLevelId",
+            "getUserCountByTagId",
+            "updateUserPoint"
+          ],
+          "properties": [
+            "memberUserMapper",
+            "smsCodeApi",
+            "socialClientApi",
+            "oauth2TokenApi",
+            "passwordEncoder",
+            "memberUserProducer"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUserByMobile",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getUserListByNickname",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "createUserIfAbsent",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "createUser",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserLogin",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "getUser",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "getUserList",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "updateUser",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserMobile",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserMobileByWeixin",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserPassword",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "resetUserPassword",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "isPasswordMatch",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "updateUser",
+          "line": 242,
+          "isDefault": false
+        },
+        {
+          "name": "getUserPage",
+          "line": 310,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserLevel",
+          "line": 315,
+          "isDefault": false
+        },
+        {
+          "name": "getUserCountByGroupId",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "getUserCountByLevelId",
+          "line": 330,
+          "isDefault": false
+        },
+        {
+          "name": "getUserCountByTagId",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserPoint",
+          "line": 340,
+          "isDefault": false
+        },
+        {
+          "name": "MemberUserServiceImpl",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUserByMobile",
+          "callee": "memberUserMapper.selectByMobile",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getUserListByNickname",
+          "callee": "memberUserMapper.selectListByNicknameLike",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createUserIfAbsent",
+          "callee": "memberUserMapper.selectByMobile",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createUserIfAbsent",
+          "callee": "createUser",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createUser",
+          "callee": "createUser",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createUser",
+          "callee": "IdUtil.fastSimpleUUID",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createUser",
+          "callee": "new MemberUserDO",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setMobile",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setStatus",
+          "lineNumber": 104
+        },
+        {
+          "caller": "createUser",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 104
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setPassword",
+          "lineNumber": 105
+        },
+        {
+          "caller": "createUser",
+          "callee": "encodePassword",
+          "lineNumber": 105
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setRegisterIp(registerIp).setRegisterTerminal",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setRegisterIp",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setNickname(nickname).setAvatar",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setNickname",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createUser",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createUser",
+          "callee": "user.setNickname",
+          "lineNumber": 110
+        },
+        {
+          "caller": "createUser",
+          "callee": "RandomUtil.randomNumbers",
+          "lineNumber": 110
+        },
+        {
+          "caller": "createUser",
+          "callee": "memberUserMapper.insert",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createUser",
+          "callee": "TransactionSynchronizationManager.registerSynchronization",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createUser",
+          "callee": "new TransactionSynchronization",
+          "lineNumber": 115
+        },
+        {
+          "caller": "afterCommit",
+          "callee": "memberUserProducer.sendUserCreateMessage",
+          "lineNumber": 119
+        },
+        {
+          "caller": "afterCommit",
+          "callee": "user.getId",
+          "lineNumber": 119
+        },
+        {
+          "caller": "updateUserLogin",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateUserLogin",
+          "callee": "new MemberUserDO().setId(id)\n                .setLoginIp(loginIp).setLoginDate",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateUserLogin",
+          "callee": "new MemberUserDO().setId(id).setLoginIp",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateUserLogin",
+          "callee": "new MemberUserDO().setId",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateUserLogin",
+          "callee": "new MemberUserDO",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateUserLogin",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 129
+        },
+        {
+          "caller": "getUser",
+          "callee": "memberUserMapper.selectById",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getUserList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getUserList",
+          "callee": "ListUtil.empty",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getUserList",
+          "callee": "memberUserMapper.selectByIds",
+          "lineNumber": 142
+        },
+        {
+          "caller": "updateUser",
+          "callee": "validateUserExists",
+          "lineNumber": 148
+        },
+        {
+          "caller": "updateUser",
+          "callee": "validateEmailUnique",
+          "lineNumber": 150
+        },
+        {
+          "caller": "updateUser",
+          "callee": "reqVO.getEmail",
+          "lineNumber": 150
+        },
+        {
+          "caller": "updateUser",
+          "callee": "BeanUtils.toBean(reqVO, MemberUserDO.class).setId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "updateUser",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 153
+        },
+        {
+          "caller": "updateUser",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 154
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "validateUserExists",
+          "lineNumber": 161
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "validateMobileUnique",
+          "lineNumber": 163
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 163
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "reqVO.getOldCode",
+          "lineNumber": 167
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "smsCodeApi.useSmsCode(new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode(reqVO.getOldCode())\n                    .setScene(SmsSceneEnum.MEMBER_UPDATE_MOBILE.getScene()).setUsedIp(getClientIP())).checkError",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "smsCodeApi.useSmsCode",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode(reqVO.getOldCode())\n                    .setScene(SmsSceneEnum.MEMBER_UPDATE_MOBILE.getScene()).setUsedIp",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode(reqVO.getOldCode()).setScene",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "user.getMobile",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "reqVO.getOldCode",
+          "lineNumber": 168
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "SmsSceneEnum.MEMBER_UPDATE_MOBILE.getScene",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "getClientIP",
+          "lineNumber": 169
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "smsCodeApi.useSmsCode(new SmsCodeUseReqDTO().setMobile(reqVO.getMobile()).setCode(reqVO.getCode())\n                .setScene(SmsSceneEnum.MEMBER_UPDATE_MOBILE.getScene()).setUsedIp(getClientIP())).checkError",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "smsCodeApi.useSmsCode",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile(reqVO.getMobile()).setCode(reqVO.getCode())\n                .setScene(SmsSceneEnum.MEMBER_UPDATE_MOBILE.getScene()).setUsedIp",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile(reqVO.getMobile()).setCode(reqVO.getCode()).setScene",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile(reqVO.getMobile()).setCode",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO().setMobile",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "new SmsCodeUseReqDTO",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "reqVO.getCode",
+          "lineNumber": 172
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "SmsSceneEnum.MEMBER_UPDATE_MOBILE.getScene",
+          "lineNumber": 173
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "getClientIP",
+          "lineNumber": 173
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "MemberUserDO.builder().id(userId).mobile(reqVO.getMobile()).build",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "MemberUserDO.builder().id(userId).mobile",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "MemberUserDO.builder().id",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "MemberUserDO.builder",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 176
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "socialClientApi.getWxMaPhoneNumberInfo(\n                UserTypeEnum.MEMBER.getValue(), reqVO.getCode()).getCheckedData",
+          "lineNumber": 182
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "socialClientApi.getWxMaPhoneNumberInfo",
+          "lineNumber": 182
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "reqVO.getCode",
+          "lineNumber": 183
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "Assert.notNull",
+          "lineNumber": 184
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "validateMobileUnique",
+          "lineNumber": 186
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "phoneNumberInfo.getPhoneNumber",
+          "lineNumber": 186
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "MemberUserDO.builder().id(userId).mobile(phoneNumberInfo.getPhoneNumber()).build",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "MemberUserDO.builder().id(userId).mobile",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "MemberUserDO.builder().id",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "MemberUserDO.builder",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "phoneNumberInfo.getPhoneNumber",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "validateUserExists",
+          "lineNumber": 195
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "smsCodeApi.useSmsCode(new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode(reqVO.getCode())\n                .setScene(SmsSceneEnum.MEMBER_UPDATE_PASSWORD.getScene()).setUsedIp(getClientIP())).checkError",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "smsCodeApi.useSmsCode",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode(reqVO.getCode())\n                .setScene(SmsSceneEnum.MEMBER_UPDATE_PASSWORD.getScene()).setUsedIp",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode(reqVO.getCode()).setScene",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "new SmsCodeUseReqDTO().setMobile(user.getMobile()).setCode",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "new SmsCodeUseReqDTO().setMobile",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "new SmsCodeUseReqDTO",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "user.getMobile",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "reqVO.getCode",
+          "lineNumber": 197
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "SmsSceneEnum.MEMBER_UPDATE_PASSWORD.getScene",
+          "lineNumber": 198
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "getClientIP",
+          "lineNumber": 198
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "MemberUserDO.builder().id(userId)\n                .password(passwordEncoder.encode(reqVO.getPassword())).build",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "MemberUserDO.builder().id(userId).password",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "MemberUserDO.builder().id",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "MemberUserDO.builder",
+          "lineNumber": 201
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "passwordEncoder.encode",
+          "lineNumber": 202
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "reqVO.getPassword",
+          "lineNumber": 202
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "validateUserExists",
+          "lineNumber": 208
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "reqVO.getMobile",
+          "lineNumber": 208
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "smsCodeApi.useSmsCode(AuthConvert.INSTANCE.convert(reqVO, SmsSceneEnum.MEMBER_RESET_PASSWORD,\n                getClientIP())).checkError",
+          "lineNumber": 211
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "smsCodeApi.useSmsCode",
+          "lineNumber": 211
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "AuthConvert.INSTANCE.convert",
+          "lineNumber": 211
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "getClientIP",
+          "lineNumber": 212
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 215
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "MemberUserDO.builder().id(user.getId())\n                .password(passwordEncoder.encode(reqVO.getPassword())).build",
+          "lineNumber": 215
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "MemberUserDO.builder().id(user.getId()).password",
+          "lineNumber": 215
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "MemberUserDO.builder().id",
+          "lineNumber": 215
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "MemberUserDO.builder",
+          "lineNumber": 215
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "user.getId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "passwordEncoder.encode",
+          "lineNumber": 216
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "reqVO.getPassword",
+          "lineNumber": 216
+        },
+        {
+          "caller": "validateUserExists",
+          "callee": "memberUserMapper.selectByMobile",
+          "lineNumber": 220
+        },
+        {
+          "caller": "validateUserExists",
+          "callee": "exception",
+          "lineNumber": 222
+        },
+        {
+          "caller": "isPasswordMatch",
+          "callee": "passwordEncoder.matches",
+          "lineNumber": 229
+        },
+        {
+          "caller": "encodePassword",
+          "callee": "passwordEncoder.encode",
+          "lineNumber": 239
+        },
+        {
+          "caller": "updateUser",
+          "callee": "validateUserExists",
+          "lineNumber": 246
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 246
+        },
+        {
+          "caller": "updateUser",
+          "callee": "validateMobileUnique",
+          "lineNumber": 248
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 248
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateReqVO.getMobile",
+          "lineNumber": 248
+        },
+        {
+          "caller": "updateUser",
+          "callee": "validateEmailUnique",
+          "lineNumber": 250
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 250
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateReqVO.getEmail",
+          "lineNumber": 250
+        },
+        {
+          "caller": "updateUser",
+          "callee": "MemberUserConvert.INSTANCE.convert",
+          "lineNumber": 253
+        },
+        {
+          "caller": "updateUser",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 254
+        },
+        {
+          "caller": "updateUser",
+          "callee": "CommonStatusEnum.isDisable",
+          "lineNumber": 257
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateObj.getStatus",
+          "lineNumber": 257
+        },
+        {
+          "caller": "updateUser",
+          "callee": "oauth2TokenApi.removeAccessToken(updateObj.getId(), UserTypeEnum.MEMBER.getValue()).checkError",
+          "lineNumber": 258
+        },
+        {
+          "caller": "updateUser",
+          "callee": "oauth2TokenApi.removeAccessToken",
+          "lineNumber": 258
+        },
+        {
+          "caller": "updateUser",
+          "callee": "updateObj.getId",
+          "lineNumber": 258
+        },
+        {
+          "caller": "updateUser",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 258
+        },
+        {
+          "caller": "validateUserExists",
+          "callee": "memberUserMapper.selectById",
+          "lineNumber": 267
+        },
+        {
+          "caller": "validateUserExists",
+          "callee": "exception",
+          "lineNumber": 269
+        },
+        {
+          "caller": "validateMobileUnique",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 276
+        },
+        {
+          "caller": "validateMobileUnique",
+          "callee": "memberUserMapper.selectByMobile",
+          "lineNumber": 279
+        },
+        {
+          "caller": "validateMobileUnique",
+          "callee": "exception",
+          "lineNumber": 285
+        },
+        {
+          "caller": "validateMobileUnique",
+          "callee": "user.getId().equals",
+          "lineNumber": 287
+        },
+        {
+          "caller": "validateMobileUnique",
+          "callee": "user.getId",
+          "lineNumber": 287
+        },
+        {
+          "caller": "validateMobileUnique",
+          "callee": "exception",
+          "lineNumber": 288
+        },
+        {
+          "caller": "validateEmailUnique",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 294
+        },
+        {
+          "caller": "validateEmailUnique",
+          "callee": "memberUserMapper.selectByEmail",
+          "lineNumber": 297
+        },
+        {
+          "caller": "validateEmailUnique",
+          "callee": "exception",
+          "lineNumber": 303
+        },
+        {
+          "caller": "validateEmailUnique",
+          "callee": "user.getId().equals",
+          "lineNumber": 305
+        },
+        {
+          "caller": "validateEmailUnique",
+          "callee": "user.getId",
+          "lineNumber": 305
+        },
+        {
+          "caller": "validateEmailUnique",
+          "callee": "exception",
+          "lineNumber": 306
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "memberUserMapper.selectPage",
+          "lineNumber": 312
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 318
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "memberUserMapper.updateById",
+          "lineNumber": 319
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "new MemberUserDO()\n                .setId(id)\n                .setLevelId(levelId).setExperience",
+          "lineNumber": 319
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "new MemberUserDO()\n                .setId(id).setLevelId",
+          "lineNumber": 319
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "new MemberUserDO().setId",
+          "lineNumber": 319
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "new MemberUserDO",
+          "lineNumber": 319
+        },
+        {
+          "caller": "getUserCountByGroupId",
+          "callee": "memberUserMapper.selectCountByGroupId",
+          "lineNumber": 327
+        },
+        {
+          "caller": "getUserCountByLevelId",
+          "callee": "memberUserMapper.selectCountByLevelId",
+          "lineNumber": 332
+        },
+        {
+          "caller": "getUserCountByTagId",
+          "callee": "memberUserMapper.selectCountByTagId",
+          "lineNumber": 337
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "memberUserMapper.updatePointIncr",
+          "lineNumber": 343
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "memberUserMapper.updatePointDecr",
+          "lineNumber": 345
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 21,
+        "functionCount": 26,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-api/src/main/java/cn/iocoder/yudao/module/mes/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/autocode/MesMdAutoCodeRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "generateAutoCode",
+          "startLine": 25,
+          "endLine": 31,
+          "params": [
+            "generateReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MesMdAutoCodeRecordController",
+          "startLine": 16,
+          "endLine": 33,
+          "methods": [
+            "generateAutoCode"
+          ],
+          "properties": [
+            "autoCodeRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateAutoCode",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "MesMdAutoCodeRecordController",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateAutoCode",
+          "callee": "autoCodeRecordService.generateAutoCode",
+          "lineNumber": 29
+        },
+        {
+          "caller": "generateAutoCode",
+          "callee": "generateReqVO.getRuleCode",
+          "lineNumber": 29
+        },
+        {
+          "caller": "generateAutoCode",
+          "callee": "generateReqVO.getInputChar",
+          "lineNumber": 29
+        },
+        {
+          "caller": "generateAutoCode",
+          "callee": "success",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/controller/admin/md/autocode/vo/record/MesMdAutoCodeGenerateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "MesMdAutoCodeGenerateReqVO",
+          "startLine": 7,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "ruleCode",
+            "inputChar"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MesMdAutoCodeGenerateReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mes/yudao-module-mes-server/src/main/java/cn/iocoder/yudao/module/mes/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/statistics/MpStatisticsController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "getUserSummary",
+          "startLine": 33,
+          "endLine": 40,
+          "params": [
+            "getReqVO"
+          ]
+        },
+        {
+          "name": "getUserCumulate",
+          "startLine": 42,
+          "endLine": 49,
+          "params": [
+            "getReqVO"
+          ]
+        },
+        {
+          "name": "getUpstreamMessage",
+          "startLine": 51,
+          "endLine": 58,
+          "params": [
+            "getReqVO"
+          ]
+        },
+        {
+          "name": "getInterfaceSummary",
+          "startLine": 60,
+          "endLine": 67,
+          "params": [
+            "getReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MpStatisticsController",
+          "startLine": 24,
+          "endLine": 68,
+          "methods": [
+            "getUserSummary",
+            "getUserCumulate",
+            "getUpstreamMessage",
+            "getInterfaceSummary"
+          ],
+          "properties": [
+            "mpStatisticsService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUserSummary",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "getUserCumulate",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getUpstreamMessage",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "getInterfaceSummary",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "MpStatisticsController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUserSummary",
+          "callee": "mpStatisticsService.getUserSummary",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "getReqVO.getAccountId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "getReqVO.getDate",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getUserSummary",
+          "callee": "MpStatisticsConvert.INSTANCE.convertList01",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "mpStatisticsService.getUserCumulate",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "getReqVO.getAccountId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "getReqVO.getDate",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getUserCumulate",
+          "callee": "MpStatisticsConvert.INSTANCE.convertList02",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "mpStatisticsService.getUpstreamMessage",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "getReqVO.getAccountId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "getReqVO.getDate",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getUpstreamMessage",
+          "callee": "MpStatisticsConvert.INSTANCE.convertList03",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "mpStatisticsService.getInterfaceSummary",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "getReqVO.getAccountId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "getReqVO.getDate",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "success",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getInterfaceSummary",
+          "callee": "MpStatisticsConvert.INSTANCE.convertList04",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/statistics/vo/MpStatisticsInterfaceSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "MpStatisticsInterfaceSummaryRespVO",
+          "startLine": 8,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "refDate",
+            "callbackCount",
+            "failCount",
+            "totalTimeCost",
+            "maxTimeCost"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpStatisticsInterfaceSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/statistics/vo/MpStatisticsUpstreamMessageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "MpStatisticsUpstreamMessageRespVO",
+          "startLine": 8,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "refDate",
+            "messageUser",
+            "messageCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpStatisticsUpstreamMessageRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/statistics/vo/MpStatisticsUserCumulateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 12,
+      "classes": [
+        {
+          "name": "MpStatisticsUserCumulateRespVO",
+          "startLine": 8,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "refDate",
+            "cumulateUser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpStatisticsUserCumulateRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/statistics/vo/MpStatisticsUserSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "MpStatisticsUserSummaryRespVO",
+          "startLine": 9,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "refDate",
+            "userSource",
+            "newUser",
+            "cancelUser"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpStatisticsUserSummaryRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/convert/statistics/MpStatisticsConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "MpStatisticsConvert",
+          "startLine": 24,
+          "endLine": 52,
+          "methods": [
+            "convertList01",
+            "convertList02",
+            "convertList03",
+            "convert",
+            "convertList04",
+            "convert",
+            "dateFormat0"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpStatisticsConvert",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "dateFormat0",
+          "callee": "LocalDate.parse(date, DateTimeFormatter.ofPattern(FORMAT_YEAR_MONTH_DAY)).atStartOfDay",
+          "lineNumber": 49
+        },
+        {
+          "caller": "dateFormat0",
+          "callee": "LocalDate.parse",
+          "lineNumber": 49
+        },
+        {
+          "caller": "dateFormat0",
+          "callee": "DateTimeFormatter.ofPattern",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 38,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 40,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 24
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 29
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 29
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 34
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mp/yudao-module-mp-server/src/main/java/cn/iocoder/yudao/module/mp/service/statistics/MpStatisticsService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "MpStatisticsService",
+          "startLine": 16,
+          "endLine": 54,
+          "methods": [
+            "getUserSummary",
+            "getUserCumulate",
+            "getUpstreamMessage",
+            "getInterfaceSummary"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MpStatisticsService",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/framework/rpc/config/RpcConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "RpcConfiguration",
+          "startLine": 7,
+          "endLine": 10,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcConfiguration",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-api/src/main/java/cn/iocoder/yudao/module/pms/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/controller/admin/kb/interaction/PmsKnowledgeDocumentLikeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "createDocumentLike",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "documentId"
+          ]
+        },
+        {
+          "name": "deleteDocumentLike",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "documentId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsKnowledgeDocumentLikeController",
+          "startLine": 20,
+          "endLine": 47,
+          "methods": [
+            "createDocumentLike",
+            "deleteDocumentLike"
+          ],
+          "properties": [
+            "documentLikeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createDocumentLike",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "deleteDocumentLike",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "PmsKnowledgeDocumentLikeController",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDocumentLike",
+          "callee": "documentLikeService.createDocumentLike",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createDocumentLike",
+          "callee": "getLoginUserId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createDocumentLike",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "deleteDocumentLike",
+          "callee": "documentLikeService.deleteDocumentLike",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deleteDocumentLike",
+          "callee": "getLoginUserId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deleteDocumentLike",
+          "callee": "success",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pms/yudao-module-pms-server/src/main/java/cn/iocoder/yudao/module/pms/framework/web/config/PmsWebConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "pmsGroupedOpenApi",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PmsWebConfiguration",
+          "startLine": 13,
+          "endLine": 26,
+          "methods": [
+            "pmsGroupedOpenApi"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pmsGroupedOpenApi",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "PmsWebConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pmsGroupedOpenApi",
+          "callee": "YudaoSwaggerAutoConfiguration.buildGroupedOpenApi",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/controller/admin/goview/GoViewDataController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "getDataBySQL",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getDataByHttp",
+          "startLine": 41,
+          "endLine": 61,
+          "params": [
+            "params",
+            "body"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GoViewDataController",
+          "startLine": 25,
+          "endLine": 63,
+          "methods": [
+            "getDataBySQL",
+            "getDataByHttp"
+          ],
+          "properties": [
+            "goViewDataService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDataBySQL",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getDataByHttp",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "GoViewDataController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDataBySQL",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDataBySQL",
+          "callee": "goViewDataService.getDataBySQL",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDataBySQL",
+          "callee": "reqVO.getSql",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "new GoViewDataRespVO",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "respVO.setDimensions",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "Arrays.asList",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "respVO.setSource",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "new LinkedList<>",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "RandomUtil.randomInt",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "respVO.getSource().add",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "respVO.getSource",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "MapUtil.<String, Object>builder().put(\"日期\", date)\n                    .put(\"PV\", pv).put(\"UV\", uv).build",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "MapUtil.<String, Object>builder().put(\"日期\", date)\n                    .put(\"PV\", pv).put",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "MapUtil.<String, Object>builder().put(\"日期\", date).put",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "MapUtil.<String, Object>builder().put",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "MapUtil.builder",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDataByHttp",
+          "callee": "success",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-report/yudao-module-report-server/src/main/java/cn/iocoder/yudao/module/report/controller/admin/goview/vo/data/GoViewDataGetBySqlReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "GoViewDataGetBySqlReqVO",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "sql"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GoViewDataGetBySqlReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

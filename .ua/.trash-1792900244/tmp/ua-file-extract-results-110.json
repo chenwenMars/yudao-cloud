@@ -1,0 +1,3664 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/inventory/WmsInventoryHistoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "getInventoryHistoryPage",
+          "startLine": 50,
+          "endLine": 57,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "buildInventoryHistoryRespVOList",
+          "startLine": 61,
+          "endLine": 77,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsInventoryHistoryController",
+          "startLine": 35,
+          "endLine": 79,
+          "methods": [
+            "getInventoryHistoryPage",
+            "buildInventoryHistoryRespVOList"
+          ],
+          "properties": [
+            "inventoryHistoryService",
+            "itemService",
+            "itemSkuService",
+            "warehouseService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getInventoryHistoryPage",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "WmsInventoryHistoryController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getInventoryHistoryPage",
+          "callee": "inventoryHistoryService.getInventoryHistoryPage",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getInventoryHistoryPage",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getInventoryHistoryPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getInventoryHistoryPage",
+          "callee": "buildInventoryHistoryRespVOList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getInventoryHistoryPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getInventoryHistoryPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 62
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 63
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "itemSkuService.getItemSkuMap",
+          "lineNumber": 65
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 65
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "itemService.getItemMap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 66
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "skuMap.values",
+          "lineNumber": 66
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "warehouseService.getWarehouseMap",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.getSkuId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.setSkuCode(sku.getCode()).setSkuName(sku.getName()).setItemId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.setSkuCode(sku.getCode()).setSkuName",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.setSkuCode",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "sku.getCode",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "sku.getName",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "sku.getItemId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "sku.getItemId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.setItemCode(item.getCode())\n                        .setItemName(item.getName()).setUnit",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.setItemCode(item.getCode()).setItemName",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.setItemCode",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "item.getCode",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "item.getName",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "item.getUnit",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.getWarehouseId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "vo.setWarehouseName",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildInventoryHistoryRespVOList",
+          "callee": "warehouse.getName",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/inventory/vo/WmsInventoryListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "WmsInventoryListReqVO",
+          "startLine": 7,
+          "endLine": 15,
+          "methods": [],
+          "properties": [
+            "warehouseId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsInventoryListReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/inventory/vo/WmsInventoryPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "WmsInventoryPageReqVO",
+          "startLine": 12,
+          "endLine": 56,
+          "methods": [],
+          "properties": [
+            "TYPE_WAREHOUSE",
+            "TYPE_ITEM",
+            "type",
+            "itemCode",
+            "itemName",
+            "skuId",
+            "skuCode",
+            "skuName",
+            "warehouseId",
+            "minQuantity",
+            "onlyPositiveQuantity"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TYPE_WAREHOUSE",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_ITEM",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "WmsInventoryPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/inventory/vo/WmsInventoryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "WmsInventoryRespVO",
+          "startLine": 9,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "id",
+            "itemId",
+            "itemCode",
+            "itemName",
+            "unit",
+            "skuId",
+            "skuCode",
+            "skuName",
+            "warehouseId",
+            "warehouseName",
+            "quantity",
+            "remark",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsInventoryRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/inventory/vo/history/WmsInventoryHistoryPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "WmsInventoryHistoryPageReqVO",
+          "startLine": 14,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "itemCode",
+            "itemName",
+            "skuId",
+            "skuCode",
+            "skuName",
+            "warehouseId",
+            "orderNo",
+            "orderType",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsInventoryHistoryPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/inventory/vo/history/WmsInventoryHistoryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "WmsInventoryHistoryRespVO",
+          "startLine": 9,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "id",
+            "itemId",
+            "itemCode",
+            "itemName",
+            "unit",
+            "skuId",
+            "skuCode",
+            "skuName",
+            "warehouseId",
+            "warehouseName",
+            "quantity",
+            "beforeQuantity",
+            "afterQuantity",
+            "price",
+            "totalPrice",
+            "remark",
+            "orderId",
+            "orderNo",
+            "orderType",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsInventoryHistoryRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/WmsItemBrandController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "createItemBrand",
+          "startLine": 39,
+          "endLine": 44,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateItemBrand",
+          "startLine": 46,
+          "endLine": 52,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteItemBrand",
+          "startLine": 54,
+          "endLine": 61,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getItemBrand",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getItemBrandPage",
+          "startLine": 72,
+          "endLine": 78,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getItemBrandSimpleList",
+          "startLine": 80,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "exportItemBrandExcel",
+          "startLine": 88,
+          "endLine": 98,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsItemBrandController",
+          "startLine": 30,
+          "endLine": 100,
+          "methods": [
+            "createItemBrand",
+            "updateItemBrand",
+            "deleteItemBrand",
+            "getItemBrand",
+            "getItemBrandPage",
+            "getItemBrandSimpleList",
+            "exportItemBrandExcel"
+          ],
+          "properties": [
+            "brandService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createItemBrand",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "updateItemBrand",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "deleteItemBrand",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getItemBrand",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getItemBrandPage",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getItemBrandSimpleList",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "exportItemBrandExcel",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "WmsItemBrandController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createItemBrand",
+          "callee": "success",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createItemBrand",
+          "callee": "brandService.createItemBrand",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateItemBrand",
+          "callee": "brandService.updateItemBrand",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateItemBrand",
+          "callee": "success",
+          "lineNumber": 51
+        },
+        {
+          "caller": "deleteItemBrand",
+          "callee": "brandService.deleteItemBrand",
+          "lineNumber": 59
+        },
+        {
+          "caller": "deleteItemBrand",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getItemBrand",
+          "callee": "brandService.getItemBrand",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getItemBrand",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getItemBrand",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getItemBrandPage",
+          "callee": "brandService.getItemBrandPage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getItemBrandPage",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getItemBrandPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getItemBrandSimpleList",
+          "callee": "brandService.getItemBrandList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getItemBrandSimpleList",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getItemBrandSimpleList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 85
+        },
+        {
+          "caller": "exportItemBrandExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 94
+        },
+        {
+          "caller": "exportItemBrandExcel",
+          "callee": "brandService.getItemBrandPage(pageReqVO).getList",
+          "lineNumber": 95
+        },
+        {
+          "caller": "exportItemBrandExcel",
+          "callee": "brandService.getItemBrandPage",
+          "lineNumber": 95
+        },
+        {
+          "caller": "exportItemBrandExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 96
+        },
+        {
+          "caller": "exportItemBrandExcel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/WmsItemCategoryController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "createItemCategory",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateItemCategory",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteItemCategory",
+          "startLine": 47,
+          "endLine": 54,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getItemCategory",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getItemCategoryList",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "listReqVO"
+          ]
+        },
+        {
+          "name": "getItemCategorySimpleList",
+          "startLine": 73,
+          "endLine": 79,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsItemCategoryController",
+          "startLine": 23,
+          "endLine": 81,
+          "methods": [
+            "createItemCategory",
+            "updateItemCategory",
+            "deleteItemCategory",
+            "getItemCategory",
+            "getItemCategoryList",
+            "getItemCategorySimpleList"
+          ],
+          "properties": [
+            "categoryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createItemCategory",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "updateItemCategory",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "deleteItemCategory",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "getItemCategory",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getItemCategoryList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getItemCategorySimpleList",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "WmsItemCategoryController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createItemCategory",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createItemCategory",
+          "callee": "categoryService.createItemCategory",
+          "lineNumber": 36
+        },
+        {
+          "caller": "updateItemCategory",
+          "callee": "categoryService.updateItemCategory",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateItemCategory",
+          "callee": "success",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deleteItemCategory",
+          "callee": "categoryService.deleteItemCategory",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteItemCategory",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getItemCategory",
+          "callee": "categoryService.getItemCategory",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getItemCategory",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getItemCategory",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getItemCategoryList",
+          "callee": "categoryService.getItemCategoryList",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getItemCategoryList",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getItemCategoryList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getItemCategorySimpleList",
+          "callee": "categoryService.getItemCategoryList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getItemCategorySimpleList",
+          "callee": "new WmsItemCategoryListReqVO",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getItemCategorySimpleList",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getItemCategorySimpleList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/WmsItemController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 150,
+      "nonEmptyLines": 134,
+      "functions": [
+        {
+          "name": "createItem",
+          "startLine": 58,
+          "endLine": 63,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateItem",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteItem",
+          "startLine": 73,
+          "endLine": 80,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getItem",
+          "startLine": 82,
+          "endLine": 89,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getItemPage",
+          "startLine": 91,
+          "endLine": 97,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getItemSimpleList",
+          "startLine": 99,
+          "endLine": 105,
+          "params": [
+            "listReqVO"
+          ]
+        },
+        {
+          "name": "exportItemExcel",
+          "startLine": 107,
+          "endLine": 117,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "buildItemRespVO",
+          "startLine": 121,
+          "endLine": 126,
+          "params": [
+            "item"
+          ]
+        },
+        {
+          "name": "buildItemRespVOList",
+          "startLine": 128,
+          "endLine": 148,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsItemController",
+          "startLine": 43,
+          "endLine": 150,
+          "methods": [
+            "createItem",
+            "updateItem",
+            "deleteItem",
+            "getItem",
+            "getItemPage",
+            "getItemSimpleList",
+            "exportItemExcel",
+            "buildItemRespVO",
+            "buildItemRespVOList"
+          ],
+          "properties": [
+            "itemService",
+            "categoryService",
+            "brandService",
+            "itemSkuService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createItem",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "updateItem",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "deleteItem",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getItem",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getItemPage",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getItemSimpleList",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "exportItemExcel",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "WmsItemController",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createItem",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createItem",
+          "callee": "itemService.createItem",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateItem",
+          "callee": "itemService.updateItem",
+          "lineNumber": 69
+        },
+        {
+          "caller": "updateItem",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteItem",
+          "callee": "itemService.deleteItem",
+          "lineNumber": 78
+        },
+        {
+          "caller": "deleteItem",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getItem",
+          "callee": "itemService.getItem",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getItem",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getItem",
+          "callee": "buildItemRespVO",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getItemPage",
+          "callee": "itemService.getItemPage",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getItemPage",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getItemPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getItemPage",
+          "callee": "buildItemRespVOList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getItemPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getItemPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getItemSimpleList",
+          "callee": "itemService.getItemList",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getItemSimpleList",
+          "callee": "success",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getItemSimpleList",
+          "callee": "buildItemRespVOList",
+          "lineNumber": 104
+        },
+        {
+          "caller": "exportItemExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 113
+        },
+        {
+          "caller": "exportItemExcel",
+          "callee": "itemService.getItemPage(pageReqVO).getList",
+          "lineNumber": 114
+        },
+        {
+          "caller": "exportItemExcel",
+          "callee": "itemService.getItemPage",
+          "lineNumber": 114
+        },
+        {
+          "caller": "exportItemExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 115
+        },
+        {
+          "caller": "exportItemExcel",
+          "callee": "buildItemRespVOList",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildItemRespVO",
+          "callee": "getFirst",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildItemRespVO",
+          "callee": "buildItemRespVOList",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildItemRespVO",
+          "callee": "Collections.singletonList",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "categoryService.getItemCategoryMap",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "brandService.getItemBrandMap",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "itemSkuService.getItemSkuMultiMap",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "vo.getCategoryId",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "vo.setCategoryName",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "category.getName",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "vo.getBrandId",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "vo.setBrandName",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "brand.getName",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "vo.setSkus",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "skuMap.getOrDefault",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "vo.getId",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildItemRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 145
+        }
+      ],
+      "metrics": {
+        "importCount": 21,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/WmsItemSkuController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "getItemSkuPage",
+          "startLine": 58,
+          "endLine": 64,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "buildItemSkuRespVOList",
+          "startLine": 68,
+          "endLine": 87,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsItemSkuController",
+          "startLine": 43,
+          "endLine": 89,
+          "methods": [
+            "getItemSkuPage",
+            "buildItemSkuRespVOList"
+          ],
+          "properties": [
+            "itemSkuService",
+            "itemService",
+            "categoryService",
+            "brandService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getItemSkuPage",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "WmsItemSkuController",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getItemSkuPage",
+          "callee": "itemSkuService.getItemSkuPage",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getItemSkuPage",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getItemSkuPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getItemSkuPage",
+          "callee": "buildItemSkuRespVOList",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getItemSkuPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getItemSkuPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 63
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "itemService.getItemMap",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "categoryService.getItemCategoryMap",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "itemMap.values",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "brandService.getItemBrandMap",
+          "lineNumber": 76
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "itemMap.values",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.getItemId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.setItemCode(item.getCode()).setItemName(item.getName()).setUnit(item.getUnit())\n                    .setCategoryId(item.getCategoryId()).setBrandId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.setItemCode(item.getCode()).setItemName(item.getName()).setUnit(item.getUnit()).setCategoryId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.setItemCode(item.getCode()).setItemName(item.getName()).setUnit",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.setItemCode(item.getCode()).setItemName",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.setItemCode",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "item.getCode",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "item.getName",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "item.getUnit",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "item.getCategoryId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "item.getBrandId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "item.getCategoryId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.setCategoryName",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "category.getName",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 84
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "item.getBrandId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "vo.setBrandName",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildItemSkuRespVOList",
+          "callee": "brand.getName",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/brand/WmsItemBrandPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "WmsItemBrandPageReqVO",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "code",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemBrandPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/brand/WmsItemBrandRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "WmsItemBrandRespVO",
+          "startLine": 10,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemBrandRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/brand/WmsItemBrandSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "WmsItemBrandSaveReqVO",
+          "startLine": 8,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemBrandSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/category/WmsItemCategoryListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "WmsItemCategoryListReqVO",
+          "startLine": 8,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "parentId",
+            "code",
+            "name",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemCategoryListReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/category/WmsItemCategoryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "WmsItemCategoryRespVO",
+          "startLine": 8,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "id",
+            "parentId",
+            "code",
+            "name",
+            "sort",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemCategoryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/item/WmsItemListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "WmsItemListReqVO",
+          "startLine": 11,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "categoryId",
+            "brandId",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemListReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/item/WmsItemPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "WmsItemPageReqVO",
+          "startLine": 14,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "categoryId",
+            "brandId",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/item/WmsItemRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "WmsItemRespVO",
+          "startLine": 12,
+          "endLine": 58,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "categoryId",
+            "categoryName",
+            "unit",
+            "brandId",
+            "brandName",
+            "remark",
+            "skus",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemRespVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/item/WmsItemSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "WmsItemSaveReqVO",
+          "startLine": 14,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "categoryId",
+            "unit",
+            "brandId",
+            "remark",
+            "skus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemSaveReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/sku/WmsItemSkuPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "WmsItemSkuPageReqVO",
+          "startLine": 9,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "itemCode",
+            "itemName",
+            "categoryId",
+            "brandId",
+            "code",
+            "name",
+            "barCode"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemSkuPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/sku/WmsItemSkuRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "WmsItemSkuRespVO",
+          "startLine": 9,
+          "endLine": 73,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "itemId",
+            "itemCode",
+            "itemName",
+            "categoryId",
+            "categoryName",
+            "unit",
+            "brandId",
+            "brandName",
+            "barCode",
+            "code",
+            "length",
+            "width",
+            "height",
+            "grossWeight",
+            "netWeight",
+            "costPrice",
+            "sellingPrice",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemSkuRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/item/vo/sku/WmsItemSkuSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "WmsItemSkuSaveReqVO",
+          "startLine": 11,
+          "endLine": 62,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "itemId",
+            "barCode",
+            "code",
+            "length",
+            "width",
+            "height",
+            "grossWeight",
+            "netWeight",
+            "costPrice",
+            "sellingPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsItemSkuSaveReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/merchant/WmsMerchantController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "createMerchant",
+          "startLine": 40,
+          "endLine": 45,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMerchant",
+          "startLine": 47,
+          "endLine": 53,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMerchant",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMerchant",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMerchantPage",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getMerchantSimpleList",
+          "startLine": 81,
+          "endLine": 87,
+          "params": [
+            "listReqVO"
+          ]
+        },
+        {
+          "name": "exportMerchantExcel",
+          "startLine": 89,
+          "endLine": 99,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsMerchantController",
+          "startLine": 31,
+          "endLine": 101,
+          "methods": [
+            "createMerchant",
+            "updateMerchant",
+            "deleteMerchant",
+            "getMerchant",
+            "getMerchantPage",
+            "getMerchantSimpleList",
+            "exportMerchantExcel"
+          ],
+          "properties": [
+            "merchantService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMerchant",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "updateMerchant",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMerchant",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "getMerchant",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getMerchantPage",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getMerchantSimpleList",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "exportMerchantExcel",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "WmsMerchantController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMerchant",
+          "callee": "success",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createMerchant",
+          "callee": "merchantService.createMerchant",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateMerchant",
+          "callee": "merchantService.updateMerchant",
+          "lineNumber": 51
+        },
+        {
+          "caller": "updateMerchant",
+          "callee": "success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deleteMerchant",
+          "callee": "merchantService.deleteMerchant",
+          "lineNumber": 60
+        },
+        {
+          "caller": "deleteMerchant",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getMerchant",
+          "callee": "merchantService.getMerchant",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getMerchant",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getMerchant",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getMerchantPage",
+          "callee": "merchantService.getMerchantPage",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getMerchantPage",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMerchantPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getMerchantSimpleList",
+          "callee": "merchantService.getMerchantList",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getMerchantSimpleList",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMerchantSimpleList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 86
+        },
+        {
+          "caller": "exportMerchantExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 95
+        },
+        {
+          "caller": "exportMerchantExcel",
+          "callee": "merchantService.getMerchantPage(pageReqVO).getList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "exportMerchantExcel",
+          "callee": "merchantService.getMerchantPage",
+          "lineNumber": 96
+        },
+        {
+          "caller": "exportMerchantExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 97
+        },
+        {
+          "caller": "exportMerchantExcel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/merchant/vo/WmsMerchantListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "WmsMerchantListReqVO",
+          "startLine": 10,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "type",
+            "types"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsMerchantListReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/merchant/vo/WmsMerchantPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "WmsMerchantPageReqVO",
+          "startLine": 13,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "code",
+            "name",
+            "type",
+            "types"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsMerchantPageReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/merchant/vo/WmsMerchantSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "WmsMerchantSaveReqVO",
+          "startLine": 11,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "type",
+            "level",
+            "bankName",
+            "bankAccount",
+            "address",
+            "mobile",
+            "telephone",
+            "contact",
+            "email",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsMerchantSaveReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/warehouse/WmsWarehouseController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "createWarehouse",
+          "startLine": 39,
+          "endLine": 44,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateWarehouse",
+          "startLine": 46,
+          "endLine": 52,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteWarehouse",
+          "startLine": 54,
+          "endLine": 61,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWarehouse",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getWarehousePage",
+          "startLine": 72,
+          "endLine": 78,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getWarehouseSimpleList",
+          "startLine": 80,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "exportWarehouseExcel",
+          "startLine": 88,
+          "endLine": 98,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsWarehouseController",
+          "startLine": 30,
+          "endLine": 100,
+          "methods": [
+            "createWarehouse",
+            "updateWarehouse",
+            "deleteWarehouse",
+            "getWarehouse",
+            "getWarehousePage",
+            "getWarehouseSimpleList",
+            "exportWarehouseExcel"
+          ],
+          "properties": [
+            "warehouseService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createWarehouse",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "updateWarehouse",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "deleteWarehouse",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "getWarehouse",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "getWarehousePage",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "getWarehouseSimpleList",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "exportWarehouseExcel",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "WmsWarehouseController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWarehouse",
+          "callee": "success",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createWarehouse",
+          "callee": "warehouseService.createWarehouse",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateWarehouse",
+          "callee": "warehouseService.updateWarehouse",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateWarehouse",
+          "callee": "success",
+          "lineNumber": 51
+        },
+        {
+          "caller": "deleteWarehouse",
+          "callee": "warehouseService.deleteWarehouse",
+          "lineNumber": 59
+        },
+        {
+          "caller": "deleteWarehouse",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getWarehouse",
+          "callee": "warehouseService.getWarehouse",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getWarehouse",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getWarehouse",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getWarehousePage",
+          "callee": "warehouseService.getWarehousePage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getWarehousePage",
+          "callee": "success",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getWarehousePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getWarehouseSimpleList",
+          "callee": "warehouseService.getWarehouseList",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getWarehouseSimpleList",
+          "callee": "success",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getWarehouseSimpleList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 85
+        },
+        {
+          "caller": "exportWarehouseExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 94
+        },
+        {
+          "caller": "exportWarehouseExcel",
+          "callee": "warehouseService.getWarehousePage(pageReqVO).getList",
+          "lineNumber": 95
+        },
+        {
+          "caller": "exportWarehouseExcel",
+          "callee": "warehouseService.getWarehousePage",
+          "lineNumber": 95
+        },
+        {
+          "caller": "exportWarehouseExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 96
+        },
+        {
+          "caller": "exportWarehouseExcel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/warehouse/vo/WmsWarehousePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "WmsWarehousePageReqVO",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "code",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsWarehousePageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/warehouse/vo/WmsWarehouseRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "WmsWarehouseRespVO",
+          "startLine": 10,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "remark",
+            "sort",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsWarehouseRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/md/warehouse/vo/WmsWarehouseSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "WmsWarehouseSaveReqVO",
+          "startLine": 9,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "sort",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsWarehouseSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/check/WmsCheckOrderController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 178,
+      "functions": [
+        {
+          "name": "createCheckOrder",
+          "startLine": 69,
+          "endLine": 74,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateCheckOrder",
+          "startLine": 76,
+          "endLine": 82,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteCheckOrder",
+          "startLine": 84,
+          "endLine": 91,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "completeCheckOrder",
+          "startLine": 93,
+          "endLine": 100,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "cancelCheckOrder",
+          "startLine": 102,
+          "endLine": 109,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCheckOrder",
+          "startLine": 111,
+          "endLine": 126,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getCheckOrderPage",
+          "startLine": 128,
+          "endLine": 134,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportCheckOrderExcel",
+          "startLine": 136,
+          "endLine": 146,
+          "params": [
+            "pageReqVO",
+            "response"
+          ]
+        },
+        {
+          "name": "buildCheckOrderRespVO",
+          "startLine": 150,
+          "endLine": 156,
+          "params": [
+            "order"
+          ]
+        },
+        {
+          "name": "buildCheckOrderRespVOList",
+          "startLine": 158,
+          "endLine": 172,
+          "params": [
+            "list"
+          ]
+        },
+        {
+          "name": "parseUserId",
+          "startLine": 174,
+          "endLine": 176,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "buildCheckOrderDetailRespVOList",
+          "startLine": 178,
+          "endLine": 196,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsCheckOrderController",
+          "startLine": 49,
+          "endLine": 198,
+          "methods": [
+            "createCheckOrder",
+            "updateCheckOrder",
+            "deleteCheckOrder",
+            "completeCheckOrder",
+            "cancelCheckOrder",
+            "getCheckOrder",
+            "getCheckOrderPage",
+            "exportCheckOrderExcel",
+            "buildCheckOrderRespVO",
+            "buildCheckOrderRespVOList",
+            "parseUserId",
+            "buildCheckOrderDetailRespVOList"
+          ],
+          "properties": [
+            "checkOrderService",
+            "checkOrderDetailService",
+            "warehouseService",
+            "itemService",
+            "itemSkuService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createCheckOrder",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "updateCheckOrder",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCheckOrder",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "completeCheckOrder",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "cancelCheckOrder",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckOrder",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "getCheckOrderPage",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "exportCheckOrderExcel",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "WmsCheckOrderController",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createCheckOrder",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createCheckOrder",
+          "callee": "checkOrderService.createCheckOrder",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateCheckOrder",
+          "callee": "checkOrderService.updateCheckOrder",
+          "lineNumber": 80
+        },
+        {
+          "caller": "updateCheckOrder",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "deleteCheckOrder",
+          "callee": "checkOrderService.deleteCheckOrder",
+          "lineNumber": 89
+        },
+        {
+          "caller": "deleteCheckOrder",
+          "callee": "success",
+          "lineNumber": 90
+        },
+        {
+          "caller": "completeCheckOrder",
+          "callee": "checkOrderService.completeCheckOrder",
+          "lineNumber": 98
+        },
+        {
+          "caller": "completeCheckOrder",
+          "callee": "success",
+          "lineNumber": 99
+        },
+        {
+          "caller": "cancelCheckOrder",
+          "callee": "checkOrderService.cancelCheckOrder",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cancelCheckOrder",
+          "callee": "success",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getCheckOrder",
+          "callee": "checkOrderService.getCheckOrder",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getCheckOrder",
+          "callee": "success",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getCheckOrder",
+          "callee": "checkOrderDetailService.getCheckOrderDetailList",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getCheckOrder",
+          "callee": "buildCheckOrderRespVO(order).setDetails",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getCheckOrder",
+          "callee": "buildCheckOrderRespVO",
+          "lineNumber": 123
+        },
+        {
+          "caller": "getCheckOrder",
+          "callee": "buildCheckOrderDetailRespVOList",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getCheckOrder",
+          "callee": "success",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getCheckOrderPage",
+          "callee": "checkOrderService.getCheckOrderPage",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getCheckOrderPage",
+          "callee": "success",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getCheckOrderPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getCheckOrderPage",
+          "callee": "buildCheckOrderRespVOList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getCheckOrderPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getCheckOrderPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 133
+        },
+        {
+          "caller": "exportCheckOrderExcel",
+          "callee": "pageReqVO.setPageSize",
+          "lineNumber": 142
+        },
+        {
+          "caller": "exportCheckOrderExcel",
+          "callee": "checkOrderService.getCheckOrderPage(pageReqVO).getList",
+          "lineNumber": 143
+        },
+        {
+          "caller": "exportCheckOrderExcel",
+          "callee": "checkOrderService.getCheckOrderPage",
+          "lineNumber": 143
+        },
+        {
+          "caller": "exportCheckOrderExcel",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 144
+        },
+        {
+          "caller": "exportCheckOrderExcel",
+          "callee": "buildCheckOrderRespVOList",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildCheckOrderRespVO",
+          "callee": "buildCheckOrderRespVOList",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildCheckOrderRespVO",
+          "callee": "Collections.singletonList",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildCheckOrderRespVO",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "warehouseService.getWarehouseMap",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "Stream.of",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "parseUserId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "order.getCreator",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "parseUserId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "order.getUpdater",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "vo.getWarehouseId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "vo.setWarehouseName",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "warehouse.getName",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "parseUserId",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "vo.getCreator",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "vo.setCreatorName",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 170
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "parseUserId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "vo.getUpdater",
+          "lineNumber": 170
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "vo.setUpdaterName",
+          "lineNumber": 170
+        },
+        {
+          "caller": "buildCheckOrderRespVOList",
+          "callee": "user.getNickname",
+          "lineNumber": 170
+        },
+        {
+          "caller": "parseUserId",
+          "callee": "NumberUtil.parseLong",
+          "lineNumber": 175
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 179
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 180
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "itemSkuService.getItemSkuMap",
+          "lineNumber": 183
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 183
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "itemService.getItemMap",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "skuMap.values",
+          "lineNumber": 184
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "warehouseService.getWarehouseMap",
+          "lineNumber": 185
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 186
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 188
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 189
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.getSkuId",
+          "lineNumber": 189
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setSkuCode(sku.getCode()).setSkuName(sku.getName()).setItemId",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setSkuCode(sku.getCode()).setSkuName",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setSkuCode",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getCode",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getName",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getItemId",
+          "lineNumber": 190
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 191
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getItemId",
+          "lineNumber": 191
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setItemCode(item.getCode())\n                        .setItemName(item.getName()).setUnit",
+          "lineNumber": 191
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setItemCode(item.getCode()).setItemName",
+          "lineNumber": 191
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setItemCode",
+          "lineNumber": 191
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "item.getCode",
+          "lineNumber": 191
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "item.getName",
+          "lineNumber": 192
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "item.getUnit",
+          "lineNumber": 192
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.getWarehouseId",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setWarehouseName",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "warehouse.getName",
+          "lineNumber": 194
+        }
+      ],
+      "metrics": {
+        "importCount": 23,
+        "exportCount": 9,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/check/WmsCheckOrderDetailController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "getCheckOrderDetailListByOrderId",
+          "startLine": 49,
+          "endLine": 57,
+          "params": [
+            "orderId"
+          ]
+        },
+        {
+          "name": "buildCheckOrderDetailRespVOList",
+          "startLine": 61,
+          "endLine": 79,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WmsCheckOrderDetailController",
+          "startLine": 34,
+          "endLine": 81,
+          "methods": [
+            "getCheckOrderDetailListByOrderId",
+            "buildCheckOrderDetailRespVOList"
+          ],
+          "properties": [
+            "checkOrderDetailService",
+            "itemService",
+            "itemSkuService",
+            "warehouseService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCheckOrderDetailListByOrderId",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "WmsCheckOrderDetailController",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCheckOrderDetailListByOrderId",
+          "callee": "checkOrderDetailService.getCheckOrderDetailList",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getCheckOrderDetailListByOrderId",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getCheckOrderDetailListByOrderId",
+          "callee": "buildCheckOrderDetailRespVOList",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 62
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 63
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "itemSkuService.getItemSkuMap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 66
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "itemService.getItemMap",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "skuMap.values",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "warehouseService.getWarehouseMap",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.getSkuId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setSkuCode(sku.getCode()).setSkuName(sku.getName()).setItemId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setSkuCode(sku.getCode()).setSkuName",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setSkuCode",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getCode",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getName",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getItemId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "sku.getItemId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setItemCode(item.getCode())\n                        .setItemName(item.getName()).setUnit",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setItemCode(item.getCode()).setItemName",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setItemCode",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "item.getCode",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "item.getName",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "item.getUnit",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.getWarehouseId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "vo.setWarehouseName",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildCheckOrderDetailRespVOList",
+          "callee": "warehouse.getName",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/check/vo/detail/WmsCheckOrderDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "WmsCheckOrderDetailRespVO",
+          "startLine": 9,
+          "endLine": 64,
+          "methods": [],
+          "properties": [
+            "id",
+            "orderId",
+            "itemId",
+            "itemCode",
+            "itemName",
+            "unit",
+            "skuId",
+            "skuCode",
+            "skuName",
+            "warehouseId",
+            "warehouseName",
+            "inventoryId",
+            "receiptTime",
+            "quantity",
+            "checkQuantity",
+            "price",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsCheckOrderDetailRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/check/vo/detail/WmsCheckOrderDetailSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "WmsCheckOrderDetailSaveReqVO",
+          "startLine": 11,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "skuId",
+            "inventoryId",
+            "receiptTime",
+            "quantity",
+            "checkQuantity",
+            "price"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsCheckOrderDetailSaveReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-wms/yudao-module-wms-server/src/main/java/cn/iocoder/yudao/module/wms/controller/admin/order/check/vo/order/WmsCheckOrderPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "WmsCheckOrderPageReqVO",
+          "startLine": 17,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "no",
+            "status",
+            "warehouseId",
+            "orderTime",
+            "totalQuantityMin",
+            "totalQuantityMax",
+            "totalPriceMin",
+            "totalPriceMax",
+            "actualPriceMin",
+            "actualPriceMax",
+            "creator",
+            "updater",
+            "createTime",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WmsCheckOrderPageReqVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,2271 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletRechargeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "updateWalletRechargerPaid",
+          "startLine": 31,
+          "endLine": 38,
+          "params": [
+            "notifyReqDTO"
+          ]
+        },
+        {
+          "name": "refundWalletRecharge",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateWalletRechargeRefunded",
+          "startLine": 48,
+          "endLine": 57,
+          "params": [
+            "notifyReqDTO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayWalletRechargeController",
+          "startLine": 21,
+          "endLine": 59,
+          "methods": [
+            "updateWalletRechargerPaid",
+            "refundWalletRecharge",
+            "updateWalletRechargeRefunded"
+          ],
+          "properties": [
+            "walletRechargeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "updateWalletRechargerPaid",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "refundWalletRecharge",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "updateWalletRechargeRefunded",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "PayWalletRechargeController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "updateWalletRechargerPaid",
+          "callee": "walletRechargeService.updateWalletRechargerPaid",
+          "lineNumber": 35
+        },
+        {
+          "caller": "updateWalletRechargerPaid",
+          "callee": "Long.valueOf",
+          "lineNumber": 35
+        },
+        {
+          "caller": "updateWalletRechargerPaid",
+          "callee": "notifyReqDTO.getMerchantOrderId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "updateWalletRechargerPaid",
+          "callee": "notifyReqDTO.getPayOrderId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "updateWalletRechargerPaid",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "refundWalletRecharge",
+          "callee": "walletRechargeService.refundWalletRecharge",
+          "lineNumber": 44
+        },
+        {
+          "caller": "refundWalletRecharge",
+          "callee": "getClientIP",
+          "lineNumber": 44
+        },
+        {
+          "caller": "refundWalletRecharge",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateWalletRechargeRefunded",
+          "callee": "walletRechargeService.updateWalletRechargeRefunded",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateWalletRechargeRefunded",
+          "callee": "Long.valueOf",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateWalletRechargeRefunded",
+          "callee": "notifyReqDTO.getMerchantOrderId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateWalletRechargeRefunded",
+          "callee": "notifyReqDTO.getMerchantRefundId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateWalletRechargeRefunded",
+          "callee": "notifyReqDTO.getPayRefundId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateWalletRechargeRefunded",
+          "callee": "success",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletTransactionController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "getWalletTransactionPage",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayWalletTransactionController",
+          "startLine": 24,
+          "endLine": 43,
+          "methods": [
+            "getWalletTransactionPage"
+          ],
+          "properties": [
+            "payWalletTransactionService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getWalletTransactionPage",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "PayWalletTransactionController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "payWalletTransactionService.getWalletTransactionPage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "PayWalletTransactionConvert.INSTANCE.convertPage2",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/transaction/PayWalletTransactionPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "PayWalletTransactionPageReqVO",
+          "startLine": 9,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "walletId",
+            "userId",
+            "userType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletTransactionPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/transaction/PayWalletTransactionRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "PayWalletTransactionRespVO",
+          "startLine": 8,
+          "endLine": 35,
+          "methods": [],
+          "properties": [
+            "id",
+            "walletId",
+            "bizType",
+            "price",
+            "title",
+            "balance",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletTransactionRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/wallet/PayWalletPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "PayWalletPageReqVO",
+          "startLine": 16,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletPageReqVO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/wallet/PayWalletRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "PayWalletRespVO",
+          "startLine": 10,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/wallet/PayWalletUpdateBalanceReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "PayWalletUpdateBalanceReqVO",
+          "startLine": 7,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "userId",
+            "balance"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletUpdateBalanceReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/vo/wallet/PayWalletUserReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "PayWalletUserReqVO",
+          "startLine": 8,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "userId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletUserReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/channel/AppPayChannelController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "getEnableChannelCodeList",
+          "startLine": 31,
+          "endLine": 37,
+          "params": [
+            "appId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayChannelController",
+          "startLine": 22,
+          "endLine": 39,
+          "methods": [
+            "getEnableChannelCodeList"
+          ],
+          "properties": [
+            "channelService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEnableChannelCodeList",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayChannelController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEnableChannelCodeList",
+          "callee": "channelService.getEnableChannelList",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getEnableChannelCodeList",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getEnableChannelCodeList",
+          "callee": "convertSet",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/order/AppPayOrderController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "getOrder",
+          "startLine": 47,
+          "endLine": 80,
+          "params": [
+            "id",
+            "no",
+            "sync"
+          ]
+        },
+        {
+          "name": "submitPayOrder",
+          "startLine": 82,
+          "endLine": 97,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayOrderController",
+          "startLine": 35,
+          "endLine": 99,
+          "methods": [
+            "getOrder",
+            "submitPayOrder"
+          ],
+          "properties": [
+            "payOrderService",
+            "payWalletService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOrder",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "submitPayOrder",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayOrderController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOrder",
+          "callee": "CharSequenceUtil.isNotEmpty",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getOrder",
+          "callee": "payOrderService.getOrder",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getOrder",
+          "callee": "ObjUtil.isNull",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getOrder",
+          "callee": "ObjUtil.isNotNull",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getOrder",
+          "callee": "payOrderService.getOrder",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getOrder",
+          "callee": "success",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getOrder",
+          "callee": "order.getUserId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getOrder",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getOrder",
+          "callee": "order.getUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getOrder",
+          "callee": "getLoginUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getOrder",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getOrder",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getOrder",
+          "callee": "PayOrderStatusEnum.isWaiting",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getOrder",
+          "callee": "order.getStatus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getOrder",
+          "callee": "payOrderService.syncOrderQuietly",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getOrder",
+          "callee": "order.getId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getOrder",
+          "callee": "payOrderService.getOrder",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getOrder",
+          "callee": "order.getId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getOrder",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getOrder",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "Objects.equals",
+          "lineNumber": 86
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "reqVO.getChannelCode",
+          "lineNumber": 86
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "PayChannelEnum.WALLET.getCode",
+          "lineNumber": 86
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "reqVO.getChannelExtras",
+          "lineNumber": 87
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "reqVO.setChannelExtras",
+          "lineNumber": 88
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "Maps.newHashMapWithExpectedSize",
+          "lineNumber": 88
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "payWalletService.getOrCreateWallet",
+          "lineNumber": 90
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "getLoginUserId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "getLoginUserType",
+          "lineNumber": 90
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "reqVO.getChannelExtras().put",
+          "lineNumber": 91
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "reqVO.getChannelExtras",
+          "lineNumber": 91
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "String.valueOf",
+          "lineNumber": 91
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "wallet.getId",
+          "lineNumber": 91
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "payOrderService.submitOrder",
+          "lineNumber": 95
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "getClientIP",
+          "lineNumber": 95
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "submitPayOrder",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/order/vo/AppPayOrderSubmitReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "AppPayOrderSubmitReqVO",
+          "startLine": 7,
+          "endLine": 10,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayOrderSubmitReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/order/vo/AppPayOrderSubmitRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "AppPayOrderSubmitRespVO",
+          "startLine": 7,
+          "endLine": 11,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayOrderSubmitRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/transfer/AppPayTransferController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "syncTransfer",
+          "startLine": 28,
+          "endLine": 34,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayTransferController",
+          "startLine": 18,
+          "endLine": 36,
+          "methods": [
+            "syncTransfer"
+          ],
+          "properties": [
+            "transferService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "syncTransfer",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayTransferController",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "syncTransfer",
+          "callee": "transferService.syncTransfer",
+          "lineNumber": 32
+        },
+        {
+          "caller": "syncTransfer",
+          "callee": "success",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/AppPayWalletController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "getPayWallet",
+          "startLine": 32,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayWalletController",
+          "startLine": 22,
+          "endLine": 39,
+          "methods": [
+            "getPayWallet"
+          ],
+          "properties": [
+            "payWalletService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPayWallet",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayWalletController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPayWallet",
+          "callee": "payWalletService.getOrCreateWallet",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getPayWallet",
+          "callee": "getLoginUserId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getPayWallet",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getPayWallet",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getPayWallet",
+          "callee": "PayWalletConvert.INSTANCE.convert",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/AppPayWalletRechargeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "createWalletRecharge",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getWalletRechargePage",
+          "startLine": 58,
+          "endLine": 70,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayWalletRechargeController",
+          "startLine": 37,
+          "endLine": 72,
+          "methods": [
+            "createWalletRecharge",
+            "getWalletRechargePage"
+          ],
+          "properties": [
+            "walletRechargeService",
+            "payOrderService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createWalletRecharge",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getWalletRechargePage",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayWalletRechargeController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWalletRecharge",
+          "callee": "walletRechargeService.createWalletRecharge",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createWalletRecharge",
+          "callee": "getLoginUserId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createWalletRecharge",
+          "callee": "getLoginUserType",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createWalletRecharge",
+          "callee": "getClientIP",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createWalletRecharge",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createWalletRecharge",
+          "callee": "PayWalletRechargeConvert.INSTANCE.convert",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "walletRechargeService.getWalletRechargePackagePage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "getLoginUserId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "PageResult.empty",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "payOrderService.getOrderList",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "convertList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getWalletRechargePage",
+          "callee": "PayWalletRechargeConvert.INSTANCE.convertPage",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/AppPayWalletTransactionController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "getWalletTransactionPage",
+          "startLine": 42,
+          "endLine": 49,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getWalletTransactionSummary",
+          "startLine": 51,
+          "endLine": 59,
+          "params": [
+            "createTime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayWalletTransactionController",
+          "startLine": 32,
+          "endLine": 61,
+          "methods": [
+            "getWalletTransactionPage",
+            "getWalletTransactionSummary"
+          ],
+          "properties": [
+            "payWalletTransactionService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getWalletTransactionPage",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "getWalletTransactionSummary",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayWalletTransactionController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "payWalletTransactionService.getWalletTransactionPage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getWalletTransactionPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getWalletTransactionSummary",
+          "callee": "payWalletTransactionService.getWalletTransactionSummary",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getWalletTransactionSummary",
+          "callee": "getLoginUserId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getWalletTransactionSummary",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getWalletTransactionSummary",
+          "callee": "success",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/recharge/AppPayWalletRechargeCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "isValidPayPriceAndPackageId",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppPayWalletRechargeCreateReqVO",
+          "startLine": 10,
+          "endLine": 26,
+          "methods": [
+            "isValidPayPriceAndPackageId"
+          ],
+          "properties": [
+            "payPrice",
+            "packageId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isValidPayPriceAndPackageId",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayWalletRechargeCreateReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isValidPayPriceAndPackageId",
+          "callee": "Objects.nonNull",
+          "lineNumber": 23
+        },
+        {
+          "caller": "isValidPayPriceAndPackageId",
+          "callee": "Objects.nonNull",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/recharge/AppPayWalletRechargeCreateRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AppPayWalletRechargeCreateRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "id",
+            "payOrderId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayWalletRechargeCreateRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/recharge/AppPayWalletRechargeRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "AppPayWalletRechargeRespVO",
+          "startLine": 8,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "id",
+            "totalPrice",
+            "payPrice",
+            "bonusPrice",
+            "payChannelCode",
+            "payChannelName",
+            "payOrderId",
+            "payOrderChannelOrderNo",
+            "payTime",
+            "refundStatus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayWalletRechargeRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/transaction/AppPayWalletTransactionPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "AppPayWalletTransactionPageReqVO",
+          "startLine": 11,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "TYPE_INCOME",
+            "TYPE_EXPENSE",
+            "type",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TYPE_INCOME",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "TYPE_EXPENSE",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "AppPayWalletTransactionPageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/transaction/AppPayWalletTransactionRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "AppPayWalletTransactionRespVO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "bizType",
+            "price",
+            "title",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayWalletTransactionRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/transaction/AppPayWalletTransactionSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AppPayWalletTransactionSummaryRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "totalExpense",
+            "totalIncome"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayWalletTransactionSummaryRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/controller/app/wallet/vo/wallet/AppPayWalletRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "AppPayWalletRespVO",
+          "startLine": 6,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "balance",
+            "totalExpense",
+            "totalRecharge"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppPayWalletRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/app/PayAppConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "PayAppConvert",
+          "startLine": 24,
+          "endLine": 49,
+          "methods": [
+            "pageConvert",
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayAppConvert",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convertPage",
+          "callee": "CollectionUtils.convertMultiMap2",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList().forEach",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertPage",
+          "callee": "app.setChannelCodes",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertPage",
+          "callee": "appIdChannelMap.get",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertPage",
+          "callee": "app.getId",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/channel/PayChannelConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "PayChannelConvert",
+          "startLine": 15,
+          "endLine": 40,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayChannelConvert",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert",
+          "lineNumber": 32
+        },
+        {
+          "caller": "convertList",
+          "callee": "vo.setConfig",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/order/PayOrderConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "PayOrderConvert",
+          "startLine": 25,
+          "endLine": 71,
+          "methods": [
+            "convert",
+            "convert2",
+            "convert",
+            "convertDetail",
+            "convert",
+            "convertPage",
+            "convertPage",
+            "convertList",
+            "convertExcel",
+            "convert",
+            "convert",
+            "convert2",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayOrderConvert",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "convertDetail",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setExtension",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setAppName",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convert",
+          "callee": "app.getName",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList().forEach",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertPage",
+          "callee": "order.getAppId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertPage",
+          "callee": "order.setAppName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertPage",
+          "callee": "app.getName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertExcel",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convertList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertList",
+          "callee": "order.getAppId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertList",
+          "callee": "excelVO.setAppName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertList",
+          "callee": "app.getName",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/refund/PayRefundConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "PayRefundConvert",
+          "startLine": 19,
+          "endLine": 53,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertPage",
+            "convertPage",
+            "convert",
+            "convertList",
+            "convertExcel"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayRefundConvert",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 26
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setAppName",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convert",
+          "callee": "app.getName",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList().forEach",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "order.getAppId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "order.setAppName",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "app.getName",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertExcel",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convertList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertList",
+          "callee": "order.getAppId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertList",
+          "callee": "excelVO.setAppName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convertList",
+          "callee": "app.getName",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/wallet/PayWalletConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "PayWalletConvert",
+          "startLine": 10,
+          "endLine": 21,
+          "methods": [
+            "convert",
+            "convert02",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletConvert",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/wallet/PayWalletRechargeConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "PayWalletRechargeConvert",
+          "startLine": 20,
+          "endLine": 43,
+          "methods": [
+            "convert",
+            "convert",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletRechargeConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 32
+        },
+        {
+          "caller": "convertPage",
+          "callee": "CollectionUtils.convertMap",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList().forEach",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertPage",
+          "callee": "recharge.setPayChannelName",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertPage",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertPage",
+          "callee": "recharge.getPayChannelCode",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "recharge.getPayOrderId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "recharge.setPayOrderChannelOrderNo",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convertPage",
+          "callee": "order.getChannelOrderNo",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/convert/wallet/PayWalletTransactionConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "PayWalletTransactionConvert",
+          "startLine": 11,
+          "endLine": 20,
+          "methods": [
+            "convertPage2",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayWalletTransactionConvert",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/app/PayAppDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "PayAppDO",
+          "startLine": 19,
+          "endLine": 66,
+          "methods": [],
+          "properties": [
+            "id",
+            "appKey",
+            "name",
+            "status",
+            "remark",
+            "orderNotifyUrl",
+            "refundNotifyUrl",
+            "transferNotifyUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayAppDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/channel/PayChannelDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 105,
+      "classes": [
+        {
+          "name": "PayChannelDO",
+          "startLine": 32,
+          "endLine": 118,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "status",
+            "feeRate",
+            "remark",
+            "appId",
+            "config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayChannelDO",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parse",
+          "callee": "JsonUtils.parseObjectQuietly",
+          "lineNumber": 91
+        },
+        {
+          "caller": "parse",
+          "callee": "new TypeReference<>",
+          "lineNumber": 91
+        },
+        {
+          "caller": "parse",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 97
+        },
+        {
+          "caller": "parse",
+          "callee": "StrUtil.subAfter",
+          "lineNumber": 98
+        },
+        {
+          "caller": "parse",
+          "callee": "JsonUtils.parseObject2",
+          "lineNumber": 101
+        },
+        {
+          "caller": "parse",
+          "callee": "JsonUtils.parseObject2",
+          "lineNumber": 103
+        },
+        {
+          "caller": "parse",
+          "callee": "JsonUtils.parseObject2",
+          "lineNumber": 105
+        },
+        {
+          "caller": "parse",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 107
+        },
+        {
+          "caller": "toJson",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/demo/PayDemoOrderDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 79,
+      "classes": [
+        {
+          "name": "PayDemoOrderDO",
+          "startLine": 18,
+          "endLine": 87,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "spuId",
+            "spuName",
+            "price",
+            "payStatus",
+            "payOrderId",
+            "payTime",
+            "payChannelCode",
+            "payRefundId",
+            "refundPrice",
+            "refundTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayDemoOrderDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/demo/PayDemoWithdrawDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "PayDemoWithdrawDO",
+          "startLine": 19,
+          "endLine": 84,
+          "methods": [],
+          "properties": [
+            "id",
+            "subject",
+            "price",
+            "userAccount",
+            "userName",
+            "type",
+            "status",
+            "payTransferId",
+            "transferChannelCode",
+            "transferTime",
+            "transferErrorMsg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayDemoWithdrawDO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-pay/yudao-module-pay-server/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/notify/PayNotifyLogDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "PayNotifyLogDO",
+          "startLine": 15,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "id",
+            "taskId",
+            "notifyTimes",
+            "response",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PayNotifyLogDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

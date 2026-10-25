@@ -1,0 +1,2340 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 25,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/config/IdTypeEnvironmentPostProcessor.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 104,
+      "functions": [
+        {
+          "name": "postProcessEnvironment",
+          "startLine": 35,
+          "endLine": 59,
+          "params": [
+            "environment",
+            "application"
+          ]
+        },
+        {
+          "name": "getIdType",
+          "startLine": 61,
+          "endLine": 69,
+          "params": [
+            "environment"
+          ]
+        },
+        {
+          "name": "setIdType",
+          "startLine": 71,
+          "endLine": 76,
+          "params": [
+            "environment",
+            "idType"
+          ]
+        },
+        {
+          "name": "setJobStoreDriverIfPresent",
+          "startLine": 78,
+          "endLine": 105,
+          "params": [
+            "environment",
+            "dbType"
+          ]
+        },
+        {
+          "name": "getDbType",
+          "startLine": 107,
+          "endLine": 117,
+          "params": [
+            "environment"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IdTypeEnvironmentPostProcessor",
+          "startLine": 23,
+          "endLine": 119,
+          "methods": [
+            "postProcessEnvironment",
+            "getIdType",
+            "setIdType",
+            "setJobStoreDriverIfPresent",
+            "getDbType"
+          ],
+          "properties": [
+            "ID_TYPE_KEY",
+            "DATASOURCE_DYNAMIC_KEY",
+            "QUARTZ_JOB_STORE_DRIVER_KEY",
+            "INPUT_ID_TYPES"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "postProcessEnvironment",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "getIdType",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "setIdType",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "setJobStoreDriverIfPresent",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getDbType",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "IdTypeEnvironmentPostProcessor",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "getDbType",
+          "lineNumber": 38
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "setJobStoreDriverIfPresent",
+          "lineNumber": 45
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "getIdType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "INPUT_ID_TYPES.contains",
+          "lineNumber": 53
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "setIdType",
+          "lineNumber": 54
+        },
+        {
+          "caller": "postProcessEnvironment",
+          "callee": "setIdType",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getIdType",
+          "callee": "environment.getProperty",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getIdType",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getIdType",
+          "callee": "IdType.valueOf",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getIdType",
+          "callee": "log.error",
+          "lineNumber": 66
+        },
+        {
+          "caller": "setIdType",
+          "callee": "new HashMap<>",
+          "lineNumber": 72
+        },
+        {
+          "caller": "setIdType",
+          "callee": "map.put",
+          "lineNumber": 73
+        },
+        {
+          "caller": "setIdType",
+          "callee": "environment.getPropertySources().addFirst",
+          "lineNumber": 74
+        },
+        {
+          "caller": "setIdType",
+          "callee": "environment.getPropertySources",
+          "lineNumber": 74
+        },
+        {
+          "caller": "setIdType",
+          "callee": "new MapPropertySource",
+          "lineNumber": 74
+        },
+        {
+          "caller": "setIdType",
+          "callee": "log.info",
+          "lineNumber": 75
+        },
+        {
+          "caller": "setJobStoreDriverIfPresent",
+          "callee": "environment.getProperty",
+          "lineNumber": 79
+        },
+        {
+          "caller": "setJobStoreDriverIfPresent",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 80
+        },
+        {
+          "caller": "setJobStoreDriverIfPresent",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 102
+        },
+        {
+          "caller": "setJobStoreDriverIfPresent",
+          "callee": "environment.getSystemProperties().put",
+          "lineNumber": 103
+        },
+        {
+          "caller": "setJobStoreDriverIfPresent",
+          "callee": "environment.getSystemProperties",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getDbType",
+          "callee": "environment.getProperty",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getDbType",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getDbType",
+          "callee": "environment.getProperty",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getDbType",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getDbType",
+          "callee": "JdbcUtils.getDbType",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/enums/DbTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "find",
+          "startLine": 88,
+          "endLine": 93,
+          "params": [
+            "databaseProductName"
+          ]
+        },
+        {
+          "name": "getFindInSetTemplate",
+          "startLine": 95,
+          "endLine": 100,
+          "params": [
+            "dbType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DbTypeEnum",
+          "startLine": 17,
+          "endLine": 101,
+          "methods": [
+            "find",
+            "getFindInSetTemplate"
+          ],
+          "properties": [
+            "MAP_BY_NAME",
+            "MAP_BY_MP",
+            "mpDbType",
+            "productName",
+            "findInSetTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MAP_BY_NAME",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "MAP_BY_MP",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "find",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "getFindInSetTemplate",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "DbTypeEnum",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "find",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 89
+        },
+        {
+          "caller": "find",
+          "callee": "MAP_BY_NAME.get(databaseProductName).getMpDbType",
+          "lineNumber": 92
+        },
+        {
+          "caller": "find",
+          "callee": "MAP_BY_NAME.get",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getFindInSetTemplate",
+          "callee": "Optional.ofNullable(MAP_BY_MP.get(dbType))\n                .map(DbTypeEnum::getFindInSetTemplate)\n                .filter(StrUtil::isNotBlank).orElseThrow",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getFindInSetTemplate",
+          "callee": "Optional.ofNullable(MAP_BY_MP.get(dbType))\n                .map(DbTypeEnum::getFindInSetTemplate).filter",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getFindInSetTemplate",
+          "callee": "Optional.ofNullable(MAP_BY_MP.get(dbType)).map",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getFindInSetTemplate",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getFindInSetTemplate",
+          "callee": "MAP_BY_MP.get",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getFindInSetTemplate",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/type/EncryptTypeHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "setNonNullParameter",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "ps",
+            "i",
+            "parameter",
+            "jdbcType"
+          ]
+        },
+        {
+          "name": "getNullableResult",
+          "startLine": 32,
+          "endLine": 36,
+          "params": [
+            "rs",
+            "columnName"
+          ]
+        },
+        {
+          "name": "getNullableResult",
+          "startLine": 38,
+          "endLine": 42,
+          "params": [
+            "rs",
+            "columnIndex"
+          ]
+        },
+        {
+          "name": "getNullableResult",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "cs",
+            "columnIndex"
+          ]
+        },
+        {
+          "name": "decrypt",
+          "startLine": 50,
+          "endLine": 55,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "encrypt",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "rawValue"
+          ]
+        },
+        {
+          "name": "getEncryptor",
+          "startLine": 64,
+          "endLine": 73,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "EncryptTypeHandler",
+          "startLine": 21,
+          "endLine": 75,
+          "methods": [
+            "setNonNullParameter",
+            "getNullableResult",
+            "getNullableResult",
+            "getNullableResult",
+            "decrypt",
+            "encrypt",
+            "getEncryptor"
+          ],
+          "properties": [
+            "ENCRYPTOR_PROPERTY_NAME",
+            "aes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setNonNullParameter",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "getNullableResult",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getNullableResult",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getNullableResult",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "encrypt",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "EncryptTypeHandler",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setNonNullParameter",
+          "callee": "ps.setString",
+          "lineNumber": 29
+        },
+        {
+          "caller": "setNonNullParameter",
+          "callee": "encrypt",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getNullableResult",
+          "callee": "rs.getString",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getNullableResult",
+          "callee": "decrypt",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getNullableResult",
+          "callee": "rs.getString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getNullableResult",
+          "callee": "decrypt",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getNullableResult",
+          "callee": "cs.getString",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getNullableResult",
+          "callee": "decrypt",
+          "lineNumber": 47
+        },
+        {
+          "caller": "decrypt",
+          "callee": "getEncryptor().decryptStr",
+          "lineNumber": 54
+        },
+        {
+          "caller": "decrypt",
+          "callee": "getEncryptor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "encrypt",
+          "callee": "getEncryptor().encryptBase64",
+          "lineNumber": 61
+        },
+        {
+          "caller": "encrypt",
+          "callee": "getEncryptor",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getEncryptor",
+          "callee": "SpringUtil.getProperty",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getEncryptor",
+          "callee": "Assert.notEmpty",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getEncryptor",
+          "callee": "SecureUtil.aes",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getEncryptor",
+          "callee": "password.getBytes",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/util/JdbcUtils.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "isConnectionOK",
+          "startLine": 30,
+          "endLine": 36,
+          "params": [
+            "url",
+            "username",
+            "password"
+          ]
+        },
+        {
+          "name": "getDbType",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "getDbType",
+          "startLine": 53,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "isSQLServer",
+          "startLine": 74,
+          "endLine": 77,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "isSQLServer",
+          "startLine": 85,
+          "endLine": 87,
+          "params": [
+            "dbType"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JdbcUtils",
+          "startLine": 20,
+          "endLine": 89,
+          "methods": [
+            "isConnectionOK",
+            "getDbType",
+            "getDbType",
+            "isSQLServer",
+            "isSQLServer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "isConnectionOK",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "getDbType",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getDbType",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "isSQLServer",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "isSQLServer",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "JdbcUtils",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isConnectionOK",
+          "callee": "DriverManager.getConnection",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getDbType",
+          "callee": "com.baomidou.mybatisplus.extension.toolkit.JdbcUtils.getDbType",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getDbType",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getDbType",
+          "callee": "dynamicRoutingDataSource.determineDataSource",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getDbType",
+          "callee": "SpringUtils.getBean",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getDbType",
+          "callee": "dataSource.getConnection",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getDbType",
+          "callee": "DbTypeEnum.find",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getDbType",
+          "callee": "conn.getMetaData().getDatabaseProductName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getDbType",
+          "callee": "conn.getMetaData",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getDbType",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getDbType",
+          "callee": "e.getMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "isSQLServer",
+          "callee": "getDbType",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSQLServer",
+          "callee": "isSQLServer",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isSQLServer",
+          "callee": "ObjectUtils.equalsAny",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/ErrorCodeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 66,
+      "classes": [
+        {
+          "name": "ErrorCodeConstants",
+          "startLine": 10,
+          "endLine": 77,
+          "methods": [],
+          "properties": [
+            "CONFIG_NOT_EXISTS",
+            "CONFIG_KEY_DUPLICATE",
+            "CONFIG_CAN_NOT_DELETE_SYSTEM_TYPE",
+            "CONFIG_GET_VALUE_ERROR_IF_VISIBLE",
+            "JOB_NOT_EXISTS",
+            "JOB_HANDLER_EXISTS",
+            "JOB_CHANGE_STATUS_INVALID",
+            "JOB_CHANGE_STATUS_EQUALS",
+            "JOB_UPDATE_ONLY_NORMAL_STATUS",
+            "JOB_CRON_EXPRESSION_VALID",
+            "JOB_HANDLER_BEAN_NOT_EXISTS",
+            "JOB_HANDLER_BEAN_TYPE_ERROR",
+            "API_ERROR_LOG_NOT_FOUND",
+            "API_ERROR_LOG_PROCESSED",
+            "FILE_PATH_EXISTS",
+            "FILE_NOT_EXISTS",
+            "FILE_IS_EMPTY",
+            "FILE_PATH_INVALID",
+            "CODEGEN_TABLE_EXISTS",
+            "CODEGEN_IMPORT_TABLE_NULL",
+            "CODEGEN_IMPORT_COLUMNS_NULL",
+            "CODEGEN_TABLE_NOT_EXISTS",
+            "CODEGEN_COLUMN_NOT_EXISTS",
+            "CODEGEN_SYNC_COLUMNS_NULL",
+            "CODEGEN_SYNC_NONE_CHANGE",
+            "CODEGEN_TABLE_INFO_TABLE_COMMENT_IS_NULL",
+            "CODEGEN_TABLE_INFO_COLUMN_COMMENT_IS_NULL",
+            "CODEGEN_MASTER_TABLE_NOT_EXISTS",
+            "CODEGEN_SUB_COLUMN_NOT_EXISTS",
+            "CODEGEN_MASTER_GENERATION_FAIL_NO_SUB_TABLE",
+            "CODEGEN_MASTER_TABLE_NAME_DUPLICATE",
+            "CODEGEN_MASTER_TABLE_FIELD_DUPLICATE",
+            "FILE_CONFIG_NOT_EXISTS",
+            "FILE_CONFIG_DELETE_FAIL_MASTER",
+            "DATA_SOURCE_CONFIG_NOT_EXISTS",
+            "DATA_SOURCE_CONFIG_NOT_OK",
+            "DEMO01_CONTACT_NOT_EXISTS",
+            "DEMO02_CATEGORY_NOT_EXISTS",
+            "DEMO02_CATEGORY_EXITS_CHILDREN",
+            "DEMO02_CATEGORY_PARENT_NOT_EXITS",
+            "DEMO02_CATEGORY_PARENT_ERROR",
+            "DEMO02_CATEGORY_NAME_DUPLICATE",
+            "DEMO02_CATEGORY_PARENT_IS_CHILD",
+            "DEMO03_STUDENT_NOT_EXISTS",
+            "DEMO03_COURSE_NOT_EXISTS",
+            "DEMO03_GRADE_NOT_EXISTS",
+            "DEMO03_GRADE_EXISTS"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErrorCodeConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/codegen/CodegenColumnHtmlTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "CodegenColumnHtmlTypeEnum",
+          "startLine": 9,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenColumnHtmlTypeEnum",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/codegen/CodegenColumnListConditionEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "CodegenColumnListConditionEnum",
+          "startLine": 9,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "condition"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenColumnListConditionEnum",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/codegen/CodegenFrontTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "CodegenFrontTypeEnum",
+          "startLine": 11,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenFrontTypeEnum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/codegen/CodegenSceneEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "valueOf",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "scene"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CodegenSceneEnum",
+          "startLine": 13,
+          "endLine": 41,
+          "methods": [
+            "valueOf"
+          ],
+          "properties": [
+            "scene",
+            "name",
+            "basePackage",
+            "prefixClass"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "valueOf",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "CodegenSceneEnum",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "valueOf",
+          "callee": "firstMatch",
+          "lineNumber": 38
+        },
+        {
+          "caller": "valueOf",
+          "callee": "sceneEnum.getScene().equals",
+          "lineNumber": 38
+        },
+        {
+          "caller": "valueOf",
+          "callee": "sceneEnum.getScene",
+          "lineNumber": 38
+        },
+        {
+          "caller": "valueOf",
+          "callee": "values",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/codegen/CodegenTemplateTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "isMaster",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isTree",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "type"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CodegenTemplateTypeEnum",
+          "startLine": 14,
+          "endLine": 53,
+          "methods": [
+            "isMaster",
+            "isTree"
+          ],
+          "properties": [
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isMaster",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isTree",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "CodegenTemplateTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isMaster",
+          "callee": "ObjectUtils.equalsAny",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isTree",
+          "callee": "Objects.equals",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/codegen/CodegenVOTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "CodegenVOTypeEnum",
+          "startLine": 14,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenVOTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-api/src/main/java/cn/iocoder/yudao/module/infra/enums/config/ConfigTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "ConfigTypeEnum",
+          "startLine": 6,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ConfigTypeEnum",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/api/config/ConfigApiImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "getConfigValueByKey",
+          "startLine": 19,
+          "endLine": 23,
+          "params": [
+            "key"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ConfigApiImpl",
+          "startLine": 12,
+          "endLine": 25,
+          "methods": [
+            "getConfigValueByKey"
+          ],
+          "properties": [
+            "configService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getConfigValueByKey",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "ConfigApiImpl",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getConfigValueByKey",
+          "callee": "configService.getConfigByKey",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getConfigValueByKey",
+          "callee": "success",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getConfigValueByKey",
+          "callee": "config.getValue",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/CodegenController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 143,
+      "functions": [
+        {
+          "name": "getDatabaseTableList",
+          "startLine": 49,
+          "endLine": 62,
+          "params": [
+            "dataSourceConfigId",
+            "name",
+            "comment"
+          ]
+        },
+        {
+          "name": "getCodegenTableList",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "dataSourceConfigId"
+          ]
+        },
+        {
+          "name": "getCodegenTablePage",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getCodegenDetail",
+          "startLine": 81,
+          "endLine": 90,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "createCodegenList",
+          "startLine": 92,
+          "endLine": 97,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateCodegen",
+          "startLine": 99,
+          "endLine": 105,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "syncCodegenFromDB",
+          "startLine": 107,
+          "endLine": 114,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "deleteCodegen",
+          "startLine": 116,
+          "endLine": 123,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "deleteCodegenList",
+          "startLine": 125,
+          "endLine": 132,
+          "params": [
+            "tableIds"
+          ]
+        },
+        {
+          "name": "previewCodegen",
+          "startLine": 134,
+          "endLine": 141,
+          "params": [
+            "tableId"
+          ]
+        },
+        {
+          "name": "downloadCodegen",
+          "startLine": 143,
+          "endLine": 158,
+          "params": [
+            "tableId",
+            "response"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CodegenController",
+          "startLine": 40,
+          "endLine": 160,
+          "methods": [
+            "getDatabaseTableList",
+            "getCodegenTableList",
+            "getCodegenTablePage",
+            "getCodegenDetail",
+            "createCodegenList",
+            "updateCodegen",
+            "syncCodegenFromDB",
+            "deleteCodegen",
+            "deleteCodegenList",
+            "previewCodegen",
+            "downloadCodegen"
+          ],
+          "properties": [
+            "codegenService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDatabaseTableList",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getCodegenTableList",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "getCodegenTablePage",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "getCodegenDetail",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "createCodegenList",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "updateCodegen",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "syncCodegenFromDB",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCodegen",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "deleteCodegenList",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "previewCodegen",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "downloadCodegen",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "CodegenController",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDatabaseTableList",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getDatabaseTableList",
+          "callee": "codegenService.getDatabaseTableList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getCodegenTableList",
+          "callee": "codegenService.getCodegenTableList",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getCodegenTableList",
+          "callee": "success",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getCodegenTableList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getCodegenTablePage",
+          "callee": "codegenService.getCodegenTablePage",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getCodegenTablePage",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getCodegenTablePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getCodegenDetail",
+          "callee": "codegenService.getCodegenTable",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getCodegenDetail",
+          "callee": "codegenService.getCodegenColumnListByTableId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getCodegenDetail",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getCodegenDetail",
+          "callee": "CodegenConvert.INSTANCE.convert",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createCodegenList",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createCodegenList",
+          "callee": "codegenService.createCodegenList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createCodegenList",
+          "callee": "getLoginUserNickname",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateCodegen",
+          "callee": "codegenService.updateCodegen",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateCodegen",
+          "callee": "success",
+          "lineNumber": 104
+        },
+        {
+          "caller": "syncCodegenFromDB",
+          "callee": "codegenService.syncCodegenFromDB",
+          "lineNumber": 112
+        },
+        {
+          "caller": "syncCodegenFromDB",
+          "callee": "success",
+          "lineNumber": 113
+        },
+        {
+          "caller": "deleteCodegen",
+          "callee": "codegenService.deleteCodegen",
+          "lineNumber": 121
+        },
+        {
+          "caller": "deleteCodegen",
+          "callee": "success",
+          "lineNumber": 122
+        },
+        {
+          "caller": "deleteCodegenList",
+          "callee": "codegenService.deleteCodegenList",
+          "lineNumber": 130
+        },
+        {
+          "caller": "deleteCodegenList",
+          "callee": "success",
+          "lineNumber": 131
+        },
+        {
+          "caller": "previewCodegen",
+          "callee": "codegenService.generationCodes",
+          "lineNumber": 139
+        },
+        {
+          "caller": "previewCodegen",
+          "callee": "success",
+          "lineNumber": 140
+        },
+        {
+          "caller": "previewCodegen",
+          "callee": "CodegenConvert.INSTANCE.convert",
+          "lineNumber": 140
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "codegenService.generationCodes",
+          "lineNumber": 150
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "codes.keySet().toArray",
+          "lineNumber": 152
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "codes.keySet",
+          "lineNumber": 152
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "codes.values().stream().map(IoUtil::toUtf8Stream).toArray",
+          "lineNumber": 153
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "codes.values().stream().map",
+          "lineNumber": 153
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "codes.values().stream",
+          "lineNumber": 153
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "codes.values",
+          "lineNumber": 153
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "new ByteArrayOutputStream",
+          "lineNumber": 154
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "ZipUtil.zip",
+          "lineNumber": 155
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "writeAttachment",
+          "lineNumber": 157
+        },
+        {
+          "caller": "downloadCodegen",
+          "callee": "outputStream.toByteArray",
+          "lineNumber": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/CodegenCreateListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "CodegenCreateListReqVO",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "dataSourceConfigId",
+            "tableNames"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenCreateListReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/CodegenDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "CodegenDetailRespVO",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "table",
+            "columns"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenDetailRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/CodegenPreviewRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "CodegenPreviewRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "filePath",
+            "code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenPreviewRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/CodegenUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "CodegenUpdateReqVO",
+          "startLine": 12,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "table",
+            "columns"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenUpdateReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/column/CodegenColumnRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 46,
+      "classes": [
+        {
+          "name": "CodegenColumnRespVO",
+          "startLine": 8,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "id",
+            "tableId",
+            "columnName",
+            "dataType",
+            "columnComment",
+            "nullable",
+            "primaryKey",
+            "ordinalPosition",
+            "javaType",
+            "javaField",
+            "dictType",
+            "example",
+            "createOperation",
+            "updateOperation",
+            "listOperation",
+            "listOperationCondition",
+            "listOperationResult",
+            "htmlType",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenColumnRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/column/CodegenColumnSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 59,
+      "classes": [
+        {
+          "name": "CodegenColumnSaveReqVO",
+          "startLine": 8,
+          "endLine": 81,
+          "methods": [],
+          "properties": [
+            "id",
+            "tableId",
+            "columnName",
+            "dataType",
+            "columnComment",
+            "nullable",
+            "primaryKey",
+            "ordinalPosition",
+            "javaType",
+            "javaField",
+            "dictType",
+            "example",
+            "createOperation",
+            "updateOperation",
+            "listOperation",
+            "listOperationCondition",
+            "listOperationResult",
+            "htmlType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenColumnSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/table/CodegenTablePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "CodegenTablePageReqVO",
+          "startLine": 12,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "tableName",
+            "tableComment",
+            "className",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenTablePageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/table/CodegenTableRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "CodegenTableRespVO",
+          "startLine": 8,
+          "endLine": 72,
+          "methods": [],
+          "properties": [
+            "id",
+            "scene",
+            "tableName",
+            "tableComment",
+            "remark",
+            "moduleName",
+            "businessName",
+            "className",
+            "classComment",
+            "author",
+            "templateType",
+            "frontType",
+            "parentMenuId",
+            "masterTableId",
+            "subJoinColumnId",
+            "subJoinMany",
+            "treeParentColumnId",
+            "treeNameColumnId",
+            "dataSourceConfigId",
+            "createTime",
+            "updateTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodegenTableRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/table/CodegenTableSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "isParentMenuIdValid",
+          "startLine": 78,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "isSubValid",
+          "startLine": 86,
+          "endLine": 91,
+          "params": []
+        },
+        {
+          "name": "isTreeValid",
+          "startLine": 93,
+          "endLine": 98,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CodegenTableSaveReqVO",
+          "startLine": 13,
+          "endLine": 100,
+          "methods": [
+            "isParentMenuIdValid",
+            "isSubValid",
+            "isTreeValid"
+          ],
+          "properties": [
+            "id",
+            "scene",
+            "tableName",
+            "tableComment",
+            "remark",
+            "moduleName",
+            "businessName",
+            "className",
+            "classComment",
+            "author",
+            "templateType",
+            "frontType",
+            "parentMenuId",
+            "masterTableId",
+            "subJoinColumnId",
+            "subJoinMany",
+            "treeParentColumnId",
+            "treeNameColumnId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isParentMenuIdValid",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "isSubValid",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "isTreeValid",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "CodegenTableSaveReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isParentMenuIdValid",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isParentMenuIdValid",
+          "callee": "getScene",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isParentMenuIdValid",
+          "callee": "CodegenSceneEnum.ADMIN.getScene",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isParentMenuIdValid",
+          "callee": "getParentMenuId",
+          "lineNumber": 83
+        },
+        {
+          "caller": "isSubValid",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 89
+        },
+        {
+          "caller": "isSubValid",
+          "callee": "getTemplateType",
+          "lineNumber": 89
+        },
+        {
+          "caller": "isSubValid",
+          "callee": "ObjectUtil.isAllNotEmpty",
+          "lineNumber": 90
+        },
+        {
+          "caller": "isTreeValid",
+          "callee": "ObjectUtil.notEqual",
+          "lineNumber": 96
+        },
+        {
+          "caller": "isTreeValid",
+          "callee": "ObjectUtil.isAllNotEmpty",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/vo/table/DatabaseTableRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "DatabaseTableRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "name",
+            "comment"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DatabaseTableRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/config/ConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "createConfig",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateConfig",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteConfig",
+          "startLine": 56,
+          "endLine": 63,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteConfigList",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getConfig",
+          "startLine": 74,
+          "endLine": 80,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getConfigKey",
+          "startLine": 82,
+          "endLine": 94,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "getConfigPage",
+          "startLine": 96,
+          "endLine": 102,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportConfig",
+          "startLine": 104,
+          "endLine": 115,
+          "params": [
+            "exportReqVO",
+            "response"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ConfigController",
+          "startLine": 32,
+          "endLine": 117,
+          "methods": [
+            "createConfig",
+            "updateConfig",
+            "deleteConfig",
+            "deleteConfigList",
+            "getConfig",
+            "getConfigKey",
+            "getConfigPage",
+            "exportConfig"
+          ],
+          "properties": [
+            "configService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createConfig",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "updateConfig",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteConfig",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "deleteConfigList",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getConfig",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigKey",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getConfigPage",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "exportConfig",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "ConfigController",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createConfig",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createConfig",
+          "callee": "configService.createConfig",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateConfig",
+          "callee": "configService.updateConfig",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateConfig",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteConfig",
+          "callee": "configService.deleteConfig",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deleteConfig",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteConfigList",
+          "callee": "configService.deleteConfigList",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteConfigList",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getConfig",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getConfig",
+          "callee": "ConfigConvert.INSTANCE.convert",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getConfig",
+          "callee": "configService.getConfig",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "configService.getConfigByKey",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "config.getVisible",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "exception",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getConfigKey",
+          "callee": "config.getValue",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getConfigPage",
+          "callee": "configService.getConfigPage",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getConfigPage",
+          "callee": "success",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getConfigPage",
+          "callee": "ConfigConvert.INSTANCE.convertPage",
+          "lineNumber": 101
+        },
+        {
+          "caller": "exportConfig",
+          "callee": "exportReqVO.setPageSize",
+          "lineNumber": 110
+        },
+        {
+          "caller": "exportConfig",
+          "callee": "configService.getConfigPage(exportReqVO).getList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "exportConfig",
+          "callee": "configService.getConfigPage",
+          "lineNumber": 111
+        },
+        {
+          "caller": "exportConfig",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 113
+        },
+        {
+          "caller": "exportConfig",
+          "callee": "ConfigConvert.INSTANCE.convertList",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    }
+  ]
+}

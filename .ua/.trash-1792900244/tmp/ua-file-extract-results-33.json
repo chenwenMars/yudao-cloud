@@ -1,0 +1,4733 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/attendance/vo/clock/HrmPortalAttendanceClockDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 101,
+      "classes": [
+        {
+          "name": "HrmPortalAttendanceClockDetailRespVO",
+          "startLine": 14,
+          "endLine": 147,
+          "methods": [],
+          "properties": [
+            "groupName",
+            "openPointCard",
+            "openWifiCard",
+            "attendanceDate",
+            "shiftTitle",
+            "restDay",
+            "onDutyAttendanceTime",
+            "offDutyAttendanceTime",
+            "points",
+            "wifis",
+            "nextClock",
+            "timeline",
+            "group",
+            "shift",
+            "clockInRange",
+            "clockOutRange"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalAttendanceClockDetailRespVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/attendance/vo/clock/HrmPortalAttendanceRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "HrmPortalAttendanceRecordRespVO",
+          "startLine": 9,
+          "endLine": 55,
+          "methods": [],
+          "properties": [
+            "id",
+            "employeeId",
+            "clockTime",
+            "type",
+            "attendanceTime",
+            "sourceType",
+            "status",
+            "stage",
+            "address",
+            "longitude",
+            "latitude",
+            "ssid",
+            "mac",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalAttendanceRecordRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeCertificateController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "getCertificateList",
+          "startLine": 34,
+          "endLine": 42,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeCertificateController",
+          "startLine": 23,
+          "endLine": 44,
+          "methods": [
+            "getCertificateList"
+          ],
+          "properties": [
+            "certificateService",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCertificateList",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeCertificateController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCertificateList",
+          "callee": "employeeService.validateEmployeeBySelf(getLoginUserId()).getId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getCertificateList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getCertificateList",
+          "callee": "getLoginUserId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getCertificateList",
+          "callee": "certificateService.getCertificateListByEmployeeId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getCertificateList",
+          "callee": "success",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getCertificateList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 131,
+      "functions": [
+        {
+          "name": "getEmployeeBindStatus",
+          "startLine": 50,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "getEmployee",
+          "startLine": 57,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "updateEmployee",
+          "startLine": 89,
+          "endLine": 96,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "hideInvisibleArchiveFields",
+          "startLine": 100,
+          "endLine": 140,
+          "params": [
+            "respVO",
+            "visibleFields"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeController",
+          "startLine": 35,
+          "endLine": 142,
+          "methods": [
+            "getEmployeeBindStatus",
+            "getEmployee",
+            "updateEmployee",
+            "hideInvisibleArchiveFields"
+          ],
+          "properties": [
+            "employeeService",
+            "employeeFieldConfigService",
+            "deptApi",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEmployeeBindStatus",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getEmployee",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "updateEmployee",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeController",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEmployeeBindStatus",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getEmployeeBindStatus",
+          "callee": "employeeService.getEmployeeByUserId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getEmployeeBindStatus",
+          "callee": "getLoginUserId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "getLoginUserId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "LocalDate.now",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getBirthday",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "respVO.setAge",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "getYearsBetween",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getBirthday().toLocalDate",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getBirthday",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getCompanyAgeStartTime",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "respVO.setCompanyAge",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "getYearsBetween",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getCompanyAgeStartTime().toLocalDate",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getCompanyAgeStartTime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "respVO.setEntryDay",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getEntryTime",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "Math.max",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "ChronoUnit.DAYS.between",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getEntryTime().toLocalDate",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getEntryTime",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getUserId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "adminUserApi.getUser(employee.getUserId()).getCheckedData",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "adminUserApi.getUser",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getUserId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "respVO.setAvatar",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "user.getAvatar",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getDeptId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "deptApi.getDept(employee.getDeptId()).getCheckedData",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "deptApi.getDept",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getDeptId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "respVO.setDeptName",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "dept.getName",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getLeaderEmployeeId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employeeService.getEmployee",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employee.getLeaderEmployeeId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "respVO.setLeaderEmployeeName",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "leader.getName",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "hideInvisibleArchiveFields",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "employeeFieldConfigService.getVisibleArchiveFieldNames",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getEmployee",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateEmployee",
+          "callee": "employeeService.updateEmployeeBySelf",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateEmployee",
+          "callee": "getLoginUserId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateEmployee",
+          "callee": "success",
+          "lineNumber": 95
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 101
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.NAME.getName",
+          "lineNumber": 101
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setName",
+          "lineNumber": 102
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 104
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.COUNTRY.getName",
+          "lineNumber": 104
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setCountry",
+          "lineNumber": 105
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 107
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.NATION.getName",
+          "lineNumber": 107
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setNation",
+          "lineNumber": 108
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 110
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.ID_TYPE.getName",
+          "lineNumber": 110
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setIdType",
+          "lineNumber": 111
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 113
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.ID_NUMBER.getName",
+          "lineNumber": 113
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setIdNumber",
+          "lineNumber": 114
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 116
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.SEX.getName",
+          "lineNumber": 116
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setSex",
+          "lineNumber": 117
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 119
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.NATIVE_PLACE.getName",
+          "lineNumber": 119
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setNativePlace",
+          "lineNumber": 120
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 122
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.BIRTHDAY.getName",
+          "lineNumber": 122
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setBirthday",
+          "lineNumber": 123
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 125
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.AGE.getName",
+          "lineNumber": 125
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setAge",
+          "lineNumber": 126
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 128
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.HIGHEST_EDUCATION.getName",
+          "lineNumber": 128
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setHighestEducation",
+          "lineNumber": 129
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 131
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.MOBILE.getName",
+          "lineNumber": 131
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setMobile",
+          "lineNumber": 132
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 134
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.EMAIL.getName",
+          "lineNumber": 134
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setEmail",
+          "lineNumber": 135
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "visibleFields.contains",
+          "lineNumber": 137
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "HrmEmployeeArchiveFieldEnum.ADDRESS.getName",
+          "lineNumber": 137
+        },
+        {
+          "caller": "hideInvisibleArchiveFields",
+          "callee": "respVO.setAddress",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeEducationExperienceController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getEducationExperienceList",
+          "startLine": 34,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeEducationExperienceController",
+          "startLine": 23,
+          "endLine": 45,
+          "methods": [
+            "getEducationExperienceList"
+          ],
+          "properties": [
+            "educationExperienceService",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEducationExperienceList",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeEducationExperienceController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEducationExperienceList",
+          "callee": "employeeService.validateEmployeeBySelf(getLoginUserId()).getId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getEducationExperienceList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getEducationExperienceList",
+          "callee": "getLoginUserId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getEducationExperienceList",
+          "callee": "educationExperienceService.getEducationExperienceListByEmployeeId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getEducationExperienceList",
+          "callee": "success",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getEducationExperienceList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeFieldConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "getEmployeeFieldConfigList",
+          "startLine": 28,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeFieldConfigController",
+          "startLine": 19,
+          "endLine": 35,
+          "methods": [
+            "getEmployeeFieldConfigList"
+          ],
+          "properties": [
+            "employeeFieldConfigService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEmployeeFieldConfigList",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeFieldConfigController",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEmployeeFieldConfigList",
+          "callee": "success",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getEmployeeFieldConfigList",
+          "callee": "employeeFieldConfigService.getEmployeeArchiveFieldConfigList",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeQuitInfoController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "getQuitInfo",
+          "startLine": 32,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeQuitInfoController",
+          "startLine": 21,
+          "endLine": 41,
+          "methods": [
+            "getQuitInfo"
+          ],
+          "properties": [
+            "quitInfoService",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getQuitInfo",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeQuitInfoController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getQuitInfo",
+          "callee": "employeeService.validateEmployeeBySelf(getLoginUserId()).getId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getQuitInfo",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getQuitInfo",
+          "callee": "getLoginUserId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getQuitInfo",
+          "callee": "quitInfoService.getQuitInfoByEmployeeId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getQuitInfo",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getQuitInfo",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeTrainingExperienceController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getTrainingExperienceList",
+          "startLine": 34,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeTrainingExperienceController",
+          "startLine": 23,
+          "endLine": 45,
+          "methods": [
+            "getTrainingExperienceList"
+          ],
+          "properties": [
+            "trainingExperienceService",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTrainingExperienceList",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeTrainingExperienceController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTrainingExperienceList",
+          "callee": "employeeService.validateEmployeeBySelf(getLoginUserId()).getId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getTrainingExperienceList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getTrainingExperienceList",
+          "callee": "getLoginUserId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getTrainingExperienceList",
+          "callee": "trainingExperienceService.getTrainingExperienceListByEmployeeId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getTrainingExperienceList",
+          "callee": "success",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getTrainingExperienceList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/HrmPortalEmployeeWorkExperienceController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getWorkExperienceList",
+          "startLine": 34,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeWorkExperienceController",
+          "startLine": 23,
+          "endLine": 45,
+          "methods": [
+            "getWorkExperienceList"
+          ],
+          "properties": [
+            "workExperienceService",
+            "employeeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getWorkExperienceList",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeWorkExperienceController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getWorkExperienceList",
+          "callee": "employeeService.validateEmployeeBySelf(getLoginUserId()).getId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getWorkExperienceList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getWorkExperienceList",
+          "callee": "getLoginUserId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getWorkExperienceList",
+          "callee": "workExperienceService.getWorkExperienceListByEmployeeId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getWorkExperienceList",
+          "callee": "success",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getWorkExperienceList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/vo/employee/HrmPortalEmployeeRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 78,
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeRespVO",
+          "startLine": 8,
+          "endLine": 117,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "avatar",
+            "jobNumber",
+            "mobile",
+            "country",
+            "nation",
+            "idType",
+            "idNumber",
+            "sex",
+            "email",
+            "nativePlace",
+            "birthday",
+            "age",
+            "address",
+            "highestEducation",
+            "deptId",
+            "deptName",
+            "leaderEmployeeId",
+            "leaderEmployeeName",
+            "entryStatus",
+            "status",
+            "type",
+            "entryTime",
+            "entryDay",
+            "probation",
+            "regularTime",
+            "leaveTime",
+            "postName",
+            "postLevel",
+            "workCity",
+            "workAddress",
+            "workDetailAddress",
+            "companyAgeStartTime",
+            "companyAge"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalEmployeeRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/employee/vo/employee/HrmPortalEmployeeUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "isIdNumberValid",
+          "startLine": 72,
+          "endLine": 77,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalEmployeeUpdateReqVO",
+          "startLine": 20,
+          "endLine": 79,
+          "methods": [
+            "isIdNumberValid"
+          ],
+          "properties": [
+            "name",
+            "mobile",
+            "country",
+            "nation",
+            "idType",
+            "idNumber",
+            "sex",
+            "email",
+            "nativePlace",
+            "birthday",
+            "address",
+            "highestEducation"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isIdNumberValid",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalEmployeeUpdateReqVO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isIdNumberValid",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isIdNumberValid",
+          "callee": "HrmEmployeeIdTypeEnum.ID_CARD.getType",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isIdNumberValid",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 76
+        },
+        {
+          "caller": "isIdNumberValid",
+          "callee": "IdcardUtil.isValidCard",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/home/HrmPortalHomeController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "getEmployeeHomeCalendar",
+          "startLine": 33,
+          "endLine": 44,
+          "params": [
+            "startDate",
+            "endDate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalHomeController",
+          "startLine": 24,
+          "endLine": 46,
+          "methods": [
+            "getEmployeeHomeCalendar"
+          ],
+          "properties": [
+            "homeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEmployeeHomeCalendar",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalHomeController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEmployeeHomeCalendar",
+          "callee": "success",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getEmployeeHomeCalendar",
+          "callee": "homeService.getEmployeeCalendar",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getEmployeeHomeCalendar",
+          "callee": "getLoginUserId",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/insurance/HrmPortalInsuranceController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "getInsuranceRecordList",
+          "startLine": 50,
+          "endLine": 62,
+          "params": [
+            "year"
+          ]
+        },
+        {
+          "name": "getInsuranceRecord",
+          "startLine": 64,
+          "endLine": 77,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "buildInsuranceRecordRespVOList",
+          "startLine": 87,
+          "endLine": 93,
+          "params": [
+            "records"
+          ]
+        },
+        {
+          "name": "buildInsuranceRecordRespVO",
+          "startLine": 103,
+          "endLine": 115,
+          "params": [
+            "record",
+            "scheme",
+            "includeProjects"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalInsuranceController",
+          "startLine": 37,
+          "endLine": 117,
+          "methods": [
+            "getInsuranceRecordList",
+            "getInsuranceRecord",
+            "buildInsuranceRecordRespVOList",
+            "buildInsuranceRecordRespVO"
+          ],
+          "properties": [
+            "employeeService",
+            "insuranceMonthEmployeeRecordService",
+            "insuranceSchemeService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getInsuranceRecordList",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getInsuranceRecord",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalInsuranceController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getInsuranceRecordList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getInsuranceRecordList",
+          "callee": "getLoginUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getInsuranceRecordList",
+          "callee": "insuranceMonthEmployeeRecordService.getMonthEmployeeRecordListByEmployeeIdAndYear",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getInsuranceRecordList",
+          "callee": "employee.getId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getInsuranceRecordList",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getInsuranceRecordList",
+          "callee": "buildInsuranceRecordRespVOList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "getLoginUserId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "insuranceMonthEmployeeRecordService.getMonthEmployeeRecord",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "notEqual",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "record.getEmployeeId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "employee.getId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "exception",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "buildInsuranceRecordRespVO",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "insuranceSchemeService.getScheme",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getInsuranceRecord",
+          "callee": "record.getSchemeId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "buildInsuranceRecordRespVOList",
+          "callee": "insuranceSchemeService.getSchemeMap",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildInsuranceRecordRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 90
+        },
+        {
+          "caller": "buildInsuranceRecordRespVOList",
+          "callee": "convertList",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildInsuranceRecordRespVOList",
+          "callee": "buildInsuranceRecordRespVO",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildInsuranceRecordRespVOList",
+          "callee": "schemeMap.get",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildInsuranceRecordRespVOList",
+          "callee": "record.getSchemeId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "respVO.setSchemeName(scheme.getName()).setSchemeType(scheme.getType()).setSchemeCity",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "respVO.setSchemeName(scheme.getName()).setSchemeType",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "respVO.setSchemeName",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "scheme.getName",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "scheme.getType",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "AreaUtils.format",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "scheme.getAreaId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "BooleanUtil.isFalse",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildInsuranceRecordRespVO",
+          "callee": "respVO.setProjects",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/insurance/vo/HrmPortalInsuranceRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 42,
+      "classes": [
+        {
+          "name": "HrmPortalInsuranceRecordRespVO",
+          "startLine": 10,
+          "endLine": 62,
+          "methods": [],
+          "properties": [
+            "id",
+            "monthRecordId",
+            "employeeId",
+            "schemeId",
+            "schemeName",
+            "schemeType",
+            "schemeCity",
+            "year",
+            "month",
+            "personalInsuranceAmount",
+            "personalProvidentFundAmount",
+            "corporateInsuranceAmount",
+            "corporateProvidentFundAmount",
+            "status",
+            "createTime",
+            "projects"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalInsuranceRecordRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/HrmPortalPerformanceAssessmentController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 354,
+      "nonEmptyLines": 322,
+      "functions": [
+        {
+          "name": "getPerformanceAssessmentPage",
+          "startLine": 70,
+          "endLine": 80,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentTaskCount",
+          "startLine": 82,
+          "endLine": 94,
+          "params": [
+            "search"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentFillQuotaTaskPage",
+          "startLine": 96,
+          "endLine": 106,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentTargetConfirmationTaskPage",
+          "startLine": 108,
+          "endLine": 118,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentReviewTaskPage",
+          "startLine": 120,
+          "endLine": 130,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentResultAuditTaskPage",
+          "startLine": 132,
+          "endLine": 142,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentResultConfirmationTaskPage",
+          "startLine": 144,
+          "endLine": 154,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentAppealTaskPage",
+          "startLine": 156,
+          "endLine": 166,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessment",
+          "startLine": 168,
+          "endLine": 184,
+          "params": [
+            "id",
+            "stageId"
+          ]
+        },
+        {
+          "name": "getPerformanceAssessmentProcessRecordList",
+          "startLine": 186,
+          "endLine": 196,
+          "params": [
+            "id",
+            "stageId"
+          ]
+        },
+        {
+          "name": "fillPerformanceAssessmentQuota",
+          "startLine": 198,
+          "endLine": 207,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "confirmPerformanceAssessmentTarget",
+          "startLine": 209,
+          "endLine": 216,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "previewPerformanceAssessmentScore",
+          "startLine": 218,
+          "endLine": 224,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "scorePerformanceAssessment",
+          "startLine": 226,
+          "endLine": 232,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "rejectPerformanceAssessmentReviewStage",
+          "startLine": 234,
+          "endLine": 241,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "handlePerformanceAssessmentResultAudit",
+          "startLine": 243,
+          "endLine": 250,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "confirmPerformanceAssessmentResult",
+          "startLine": 252,
+          "endLine": 261,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "submitPerformanceAssessmentAppeal",
+          "startLine": 263,
+          "endLine": 271,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "handlePerformanceAssessmentAppeal",
+          "startLine": 273,
+          "endLine": 280,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateOwnPerformanceAssessment",
+          "startLine": 282,
+          "endLine": 285,
+          "params": [
+            "loginUserId",
+            "assessmentId"
+          ]
+        },
+        {
+          "name": "validateReadablePerformanceAssessment",
+          "startLine": 287,
+          "endLine": 294,
+          "params": [
+            "loginUserId",
+            "assessmentId",
+            "stageId"
+          ]
+        },
+        {
+          "name": "buildPortalAssessmentRespVOPage",
+          "startLine": 298,
+          "endLine": 305,
+          "params": [
+            "pageResult"
+          ]
+        },
+        {
+          "name": "buildTaskCountRespVO",
+          "startLine": 307,
+          "endLine": 338,
+          "params": [
+            "taskCountMap"
+          ]
+        },
+        {
+          "name": "getTaskCount",
+          "startLine": 340,
+          "endLine": 342,
+          "params": [
+            "countMap",
+            "type",
+            "status"
+          ]
+        },
+        {
+          "name": "getTaskCount",
+          "startLine": 344,
+          "endLine": 352,
+          "params": [
+            "countMap",
+            "types",
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceAssessmentController",
+          "startLine": 53,
+          "endLine": 354,
+          "methods": [
+            "getPerformanceAssessmentPage",
+            "getPerformanceAssessmentTaskCount",
+            "getPerformanceAssessmentFillQuotaTaskPage",
+            "getPerformanceAssessmentTargetConfirmationTaskPage",
+            "getPerformanceAssessmentReviewTaskPage",
+            "getPerformanceAssessmentResultAuditTaskPage",
+            "getPerformanceAssessmentResultConfirmationTaskPage",
+            "getPerformanceAssessmentAppealTaskPage",
+            "getPerformanceAssessment",
+            "getPerformanceAssessmentProcessRecordList",
+            "fillPerformanceAssessmentQuota",
+            "confirmPerformanceAssessmentTarget",
+            "previewPerformanceAssessmentScore",
+            "scorePerformanceAssessment",
+            "rejectPerformanceAssessmentReviewStage",
+            "handlePerformanceAssessmentResultAudit",
+            "confirmPerformanceAssessmentResult",
+            "submitPerformanceAssessmentAppeal",
+            "handlePerformanceAssessmentAppeal",
+            "validateOwnPerformanceAssessment",
+            "validateReadablePerformanceAssessment",
+            "buildPortalAssessmentRespVOPage",
+            "buildTaskCountRespVO",
+            "getTaskCount",
+            "getTaskCount"
+          ],
+          "properties": [
+            "employeeService",
+            "performanceAssessmentService",
+            "performanceAssessmentProcessService",
+            "performanceAssessmentReviewService",
+            "performanceAssessmentQueryService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPerformanceAssessmentPage",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentTaskCount",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentFillQuotaTaskPage",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentTargetConfirmationTaskPage",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentReviewTaskPage",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentResultAuditTaskPage",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentResultConfirmationTaskPage",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentAppealTaskPage",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessment",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "getPerformanceAssessmentProcessRecordList",
+          "line": 186,
+          "isDefault": false
+        },
+        {
+          "name": "fillPerformanceAssessmentQuota",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "confirmPerformanceAssessmentTarget",
+          "line": 209,
+          "isDefault": false
+        },
+        {
+          "name": "previewPerformanceAssessmentScore",
+          "line": 218,
+          "isDefault": false
+        },
+        {
+          "name": "scorePerformanceAssessment",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "rejectPerformanceAssessmentReviewStage",
+          "line": 234,
+          "isDefault": false
+        },
+        {
+          "name": "handlePerformanceAssessmentResultAudit",
+          "line": 243,
+          "isDefault": false
+        },
+        {
+          "name": "confirmPerformanceAssessmentResult",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "submitPerformanceAssessmentAppeal",
+          "line": 263,
+          "isDefault": false
+        },
+        {
+          "name": "handlePerformanceAssessmentAppeal",
+          "line": 273,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalPerformanceAssessmentController",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPerformanceAssessmentPage",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceAssessmentPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getPerformanceAssessmentPage",
+          "callee": "performanceAssessmentService.getPortalPerformanceAssessmentPage",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getPerformanceAssessmentPage",
+          "callee": "employee.getId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getPerformanceAssessmentPage",
+          "callee": "success",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getPerformanceAssessmentPage",
+          "callee": "buildPortalAssessmentRespVOPage",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getPerformanceAssessmentTaskCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getPerformanceAssessmentTaskCount",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getPerformanceAssessmentTaskCount",
+          "callee": "performanceAssessmentProcessService.getMyTaskCountMap",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getPerformanceAssessmentTaskCount",
+          "callee": "success",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getPerformanceAssessmentTaskCount",
+          "callee": "buildTaskCountRespVO",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getPerformanceAssessmentFillQuotaTaskPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getPerformanceAssessmentFillQuotaTaskPage",
+          "callee": "performanceAssessmentReviewService.getMyFillQuotaTaskPage",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getPerformanceAssessmentFillQuotaTaskPage",
+          "callee": "success",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getPerformanceAssessmentFillQuotaTaskPage",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentTaskRespVOPage",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getPerformanceAssessmentTargetConfirmationTaskPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getPerformanceAssessmentTargetConfirmationTaskPage",
+          "callee": "performanceAssessmentProcessService.getMyTargetConfirmationTaskPage",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getPerformanceAssessmentTargetConfirmationTaskPage",
+          "callee": "success",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getPerformanceAssessmentTargetConfirmationTaskPage",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentTaskRespVOPage",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getPerformanceAssessmentReviewTaskPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getPerformanceAssessmentReviewTaskPage",
+          "callee": "performanceAssessmentReviewService.getMyReviewTaskPage",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getPerformanceAssessmentReviewTaskPage",
+          "callee": "success",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getPerformanceAssessmentReviewTaskPage",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentTaskRespVOPage",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getPerformanceAssessmentResultAuditTaskPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getPerformanceAssessmentResultAuditTaskPage",
+          "callee": "performanceAssessmentProcessService.getMyResultAuditTaskPage",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getPerformanceAssessmentResultAuditTaskPage",
+          "callee": "success",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getPerformanceAssessmentResultAuditTaskPage",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentTaskRespVOPage",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getPerformanceAssessmentResultConfirmationTaskPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getPerformanceAssessmentResultConfirmationTaskPage",
+          "callee": "performanceAssessmentProcessService.getMyResultConfirmationTaskPage",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getPerformanceAssessmentResultConfirmationTaskPage",
+          "callee": "success",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getPerformanceAssessmentResultConfirmationTaskPage",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentTaskRespVOPage",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getPerformanceAssessmentAppealTaskPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getPerformanceAssessmentAppealTaskPage",
+          "callee": "performanceAssessmentProcessService.getMyAppealTaskPage",
+          "lineNumber": 163
+        },
+        {
+          "caller": "getPerformanceAssessmentAppealTaskPage",
+          "callee": "success",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getPerformanceAssessmentAppealTaskPage",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentTaskRespVOPage",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getPerformanceAssessment",
+          "callee": "getLoginUserId",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getPerformanceAssessment",
+          "callee": "validateReadablePerformanceAssessment",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getPerformanceAssessment",
+          "callee": "success",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getPerformanceAssessment",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentTaskRespVO",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getPerformanceAssessment",
+          "callee": "success",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getPerformanceAssessment",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentProcessRespVO",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getPerformanceAssessmentProcessRecordList",
+          "callee": "getLoginUserId",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getPerformanceAssessmentProcessRecordList",
+          "callee": "validateReadablePerformanceAssessment",
+          "lineNumber": 194
+        },
+        {
+          "caller": "getPerformanceAssessmentProcessRecordList",
+          "callee": "success",
+          "lineNumber": 195
+        },
+        {
+          "caller": "getPerformanceAssessmentProcessRecordList",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentProcessRecordList",
+          "lineNumber": 195
+        },
+        {
+          "caller": "fillPerformanceAssessmentQuota",
+          "callee": "getLoginUserId",
+          "lineNumber": 203
+        },
+        {
+          "caller": "fillPerformanceAssessmentQuota",
+          "callee": "validateOwnPerformanceAssessment",
+          "lineNumber": 204
+        },
+        {
+          "caller": "fillPerformanceAssessmentQuota",
+          "callee": "reqVO.getAssessmentId",
+          "lineNumber": 204
+        },
+        {
+          "caller": "fillPerformanceAssessmentQuota",
+          "callee": "performanceAssessmentReviewService.fillQuota",
+          "lineNumber": 205
+        },
+        {
+          "caller": "fillPerformanceAssessmentQuota",
+          "callee": "success",
+          "lineNumber": 206
+        },
+        {
+          "caller": "confirmPerformanceAssessmentTarget",
+          "callee": "performanceAssessmentProcessService.confirmTarget",
+          "lineNumber": 214
+        },
+        {
+          "caller": "confirmPerformanceAssessmentTarget",
+          "callee": "getLoginUserId",
+          "lineNumber": 214
+        },
+        {
+          "caller": "confirmPerformanceAssessmentTarget",
+          "callee": "success",
+          "lineNumber": 215
+        },
+        {
+          "caller": "previewPerformanceAssessmentScore",
+          "callee": "success",
+          "lineNumber": 223
+        },
+        {
+          "caller": "previewPerformanceAssessmentScore",
+          "callee": "performanceAssessmentReviewService.previewScore",
+          "lineNumber": 223
+        },
+        {
+          "caller": "previewPerformanceAssessmentScore",
+          "callee": "getLoginUserId",
+          "lineNumber": 223
+        },
+        {
+          "caller": "scorePerformanceAssessment",
+          "callee": "success",
+          "lineNumber": 231
+        },
+        {
+          "caller": "scorePerformanceAssessment",
+          "callee": "performanceAssessmentReviewService.scoreAssessment",
+          "lineNumber": 231
+        },
+        {
+          "caller": "scorePerformanceAssessment",
+          "callee": "getLoginUserId",
+          "lineNumber": 231
+        },
+        {
+          "caller": "rejectPerformanceAssessmentReviewStage",
+          "callee": "performanceAssessmentReviewService.rejectReviewStage",
+          "lineNumber": 239
+        },
+        {
+          "caller": "rejectPerformanceAssessmentReviewStage",
+          "callee": "getLoginUserId",
+          "lineNumber": 239
+        },
+        {
+          "caller": "rejectPerformanceAssessmentReviewStage",
+          "callee": "success",
+          "lineNumber": 240
+        },
+        {
+          "caller": "handlePerformanceAssessmentResultAudit",
+          "callee": "performanceAssessmentProcessService.handleResultAudit",
+          "lineNumber": 248
+        },
+        {
+          "caller": "handlePerformanceAssessmentResultAudit",
+          "callee": "getLoginUserId",
+          "lineNumber": 248
+        },
+        {
+          "caller": "handlePerformanceAssessmentResultAudit",
+          "callee": "success",
+          "lineNumber": 249
+        },
+        {
+          "caller": "confirmPerformanceAssessmentResult",
+          "callee": "getLoginUserId",
+          "lineNumber": 257
+        },
+        {
+          "caller": "confirmPerformanceAssessmentResult",
+          "callee": "validateOwnPerformanceAssessment",
+          "lineNumber": 258
+        },
+        {
+          "caller": "confirmPerformanceAssessmentResult",
+          "callee": "reqVO.getAssessmentId",
+          "lineNumber": 258
+        },
+        {
+          "caller": "confirmPerformanceAssessmentResult",
+          "callee": "performanceAssessmentProcessService.confirmResult",
+          "lineNumber": 259
+        },
+        {
+          "caller": "confirmPerformanceAssessmentResult",
+          "callee": "success",
+          "lineNumber": 260
+        },
+        {
+          "caller": "submitPerformanceAssessmentAppeal",
+          "callee": "getLoginUserId",
+          "lineNumber": 268
+        },
+        {
+          "caller": "submitPerformanceAssessmentAppeal",
+          "callee": "validateOwnPerformanceAssessment",
+          "lineNumber": 269
+        },
+        {
+          "caller": "submitPerformanceAssessmentAppeal",
+          "callee": "reqVO.getAssessmentId",
+          "lineNumber": 269
+        },
+        {
+          "caller": "submitPerformanceAssessmentAppeal",
+          "callee": "success",
+          "lineNumber": 270
+        },
+        {
+          "caller": "submitPerformanceAssessmentAppeal",
+          "callee": "performanceAssessmentProcessService.submitAppeal",
+          "lineNumber": 270
+        },
+        {
+          "caller": "handlePerformanceAssessmentAppeal",
+          "callee": "performanceAssessmentProcessService.handleAppeal",
+          "lineNumber": 278
+        },
+        {
+          "caller": "handlePerformanceAssessmentAppeal",
+          "callee": "getLoginUserId",
+          "lineNumber": 278
+        },
+        {
+          "caller": "handlePerformanceAssessmentAppeal",
+          "callee": "success",
+          "lineNumber": 279
+        },
+        {
+          "caller": "validateOwnPerformanceAssessment",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 283
+        },
+        {
+          "caller": "validateOwnPerformanceAssessment",
+          "callee": "performanceAssessmentService.validatePerformanceAssessmentByEmployeeId",
+          "lineNumber": 284
+        },
+        {
+          "caller": "validateOwnPerformanceAssessment",
+          "callee": "employee.getId",
+          "lineNumber": 284
+        },
+        {
+          "caller": "validateReadablePerformanceAssessment",
+          "callee": "validateOwnPerformanceAssessment",
+          "lineNumber": 290
+        },
+        {
+          "caller": "validateReadablePerformanceAssessment",
+          "callee": "performanceAssessmentProcessService.validateTaskStage",
+          "lineNumber": 292
+        },
+        {
+          "caller": "validateReadablePerformanceAssessment",
+          "callee": "performanceAssessmentService.getPerformanceAssessment",
+          "lineNumber": 293
+        },
+        {
+          "caller": "buildPortalAssessmentRespVOPage",
+          "callee": "performanceAssessmentQueryService.getPerformanceAssessmentRespVOPage",
+          "lineNumber": 301
+        },
+        {
+          "caller": "buildPortalAssessmentRespVOPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 302
+        },
+        {
+          "caller": "buildPortalAssessmentRespVOPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 303
+        },
+        {
+          "caller": "buildPortalAssessmentRespVOPage",
+          "callee": "respVOPage.getList",
+          "lineNumber": 303
+        },
+        {
+          "caller": "buildPortalAssessmentRespVOPage",
+          "callee": "respVOPage.getTotal",
+          "lineNumber": 304
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceAssessmentStageStatusEnum.PENDING.getStatus",
+          "lineNumber": 309
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceAssessmentStageStatusEnum.PROCESSED.getStatus",
+          "lineNumber": 310
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus))\n                .setReviewCompletedCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, completedStatus))\n                .setResultAuditPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), pendingStatus))\n                .setResultAuditCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), completedStatus))\n                .setResultConfirmationPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(), pendingStatus))\n                .setResultConfirmationCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(), completedStatus))\n                .setResultConfirmationAppealedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(),\n                        HrmPerformanceAssessmentStageStatusEnum.APPEALED.getStatus()))\n                .setAppealPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.APPEAL_CONFIRM.getType(), pendingStatus)).setAppealCompletedCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus))\n                .setReviewCompletedCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, completedStatus))\n                .setResultAuditPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), pendingStatus))\n                .setResultAuditCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), completedStatus))\n                .setResultConfirmationPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(), pendingStatus))\n                .setResultConfirmationCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(), completedStatus))\n                .setResultConfirmationAppealedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(),\n                        HrmPerformanceAssessmentStageStatusEnum.APPEALED.getStatus())).setAppealPendingCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus))\n                .setReviewCompletedCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, completedStatus))\n                .setResultAuditPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), pendingStatus))\n                .setResultAuditCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), completedStatus))\n                .setResultConfirmationPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(), pendingStatus))\n                .setResultConfirmationCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(), completedStatus)).setResultConfirmationAppealedCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus))\n                .setReviewCompletedCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, completedStatus))\n                .setResultAuditPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), pendingStatus))\n                .setResultAuditCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), completedStatus))\n                .setResultConfirmationPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType(), pendingStatus)).setResultConfirmationCompletedCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus))\n                .setReviewCompletedCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, completedStatus))\n                .setResultAuditPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), pendingStatus))\n                .setResultAuditCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), completedStatus)).setResultConfirmationPendingCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus))\n                .setReviewCompletedCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, completedStatus))\n                .setResultAuditPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType(), pendingStatus)).setResultAuditCompletedCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus))\n                .setReviewCompletedCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, completedStatus)).setResultAuditPendingCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus))\n                .setReviewPendingCount(getTaskCount(taskCountMap, HrmPerformanceStageTypeEnum.REVIEW_TYPES, pendingStatus)).setReviewCompletedCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus))\n                .setTargetCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), completedStatus)).setReviewPendingCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus))\n                .setTargetPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType(), pendingStatus)).setTargetCompletedCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus))\n                .setFillCompletedCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), completedStatus)).setTargetPendingCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO()\n                .setFillPendingCount(getTaskCount(\n                        taskCountMap, HrmPerformanceStageTypeEnum.FILL_QUOTA.getType(), pendingStatus)).setFillCompletedCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO().setFillPendingCount",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "new HrmPortalPerformanceTaskCountRespVO",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 313
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.FILL_QUOTA.getType",
+          "lineNumber": 314
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 315
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.FILL_QUOTA.getType",
+          "lineNumber": 316
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 317
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType",
+          "lineNumber": 318
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 319
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.TARGET_CONFIRM.getType",
+          "lineNumber": 320
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 321
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 322
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 323
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType",
+          "lineNumber": 324
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 325
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.RESULT_AUDIT.getType",
+          "lineNumber": 326
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 327
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType",
+          "lineNumber": 328
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 329
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType",
+          "lineNumber": 330
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 331
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.RESULT_CONFIRM.getType",
+          "lineNumber": 332
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceAssessmentStageStatusEnum.APPEALED.getStatus",
+          "lineNumber": 333
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 334
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.APPEAL_CONFIRM.getType",
+          "lineNumber": 335
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "getTaskCount",
+          "lineNumber": 336
+        },
+        {
+          "caller": "buildTaskCountRespVO",
+          "callee": "HrmPerformanceStageTypeEnum.APPEAL_CONFIRM.getType",
+          "lineNumber": 337
+        },
+        {
+          "caller": "getTaskCount",
+          "callee": "countMap.getOrDefault(type, Collections.emptyMap()).getOrDefault",
+          "lineNumber": 341
+        },
+        {
+          "caller": "getTaskCount",
+          "callee": "countMap.getOrDefault",
+          "lineNumber": 341
+        },
+        {
+          "caller": "getTaskCount",
+          "callee": "Collections.emptyMap",
+          "lineNumber": 341
+        },
+        {
+          "caller": "getTaskCount",
+          "callee": "getTaskCount",
+          "lineNumber": 349
+        }
+      ],
+      "metrics": {
+        "importCount": 27,
+        "exportCount": 20,
+        "functionCount": 25,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/assessment/HrmPortalPerformanceAssessmentPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceAssessmentPageReqVO",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "search",
+            "archived"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceAssessmentPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/assessment/HrmPortalPerformanceAssessmentRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceAssessmentRespVO",
+          "startLine": 9,
+          "endLine": 67,
+          "methods": [],
+          "properties": [
+            "id",
+            "planId",
+            "name",
+            "status",
+            "stageType",
+            "score",
+            "resultLevel",
+            "coefficient",
+            "resultAuditStatus",
+            "resultAuditTime",
+            "resultAuditReason",
+            "appealReason",
+            "appealStatus",
+            "appealTime",
+            "appealComment",
+            "startTime",
+            "endTime",
+            "archiveTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceAssessmentRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/assessment/HrmPortalPerformanceTaskCountRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceTaskCountRespVO",
+          "startLine": 7,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "fillPendingCount",
+            "fillCompletedCount",
+            "targetPendingCount",
+            "targetCompletedCount",
+            "reviewPendingCount",
+            "reviewCompletedCount",
+            "resultAuditPendingCount",
+            "resultAuditCompletedCount",
+            "resultConfirmationPendingCount",
+            "resultConfirmationCompletedCount",
+            "resultConfirmationAppealedCount",
+            "appealPendingCount",
+            "appealCompletedCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceTaskCountRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/process/HrmPortalPerformanceAppealReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceAppealReqVO",
+          "startLine": 11,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "assessmentId",
+            "appealReason",
+            "appealFileUrls",
+            "reviewStageIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceAppealReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/process/HrmPortalPerformanceConfirmReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceConfirmReqVO",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "assessmentId",
+            "pass",
+            "comment"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceConfirmReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/process/HrmPortalPerformanceHandleStageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceHandleStageReqVO",
+          "startLine": 12,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "assessmentId",
+            "stageId",
+            "pass",
+            "comment",
+            "reviewStageIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceHandleStageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/process/HrmPortalPerformanceProcessRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceProcessRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "id",
+            "nextStageId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceProcessRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/review/HrmPortalPerformanceFillQuotaReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceFillQuotaReqVO",
+          "startLine": 10,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "assessmentId",
+            "quotas"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceFillQuotaReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/review/HrmPortalPerformanceQuotaSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceQuotaSaveReqVO",
+          "startLine": 9,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "id",
+            "dimensionId",
+            "name",
+            "description",
+            "standard",
+            "weight",
+            "scoreType",
+            "targetValue",
+            "actualValue",
+            "selfScore",
+            "reviewerScore",
+            "finalScore",
+            "comment",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceQuotaSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/review/HrmPortalPerformanceReviewRejectReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceReviewRejectReqVO",
+          "startLine": 9,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "assessmentId",
+            "reviewStageId",
+            "reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceReviewRejectReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/review/HrmPortalPerformanceScorePreviewRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceScorePreviewRespVO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "stageScore",
+            "stageResultLevel",
+            "cumulativeScore",
+            "cumulativeResultLevel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceScorePreviewRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/review/HrmPortalPerformanceScoreReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceScoreReqVO",
+          "startLine": 11,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "assessmentId",
+            "reviewStageId",
+            "comment",
+            "selfComment",
+            "reviewerComment",
+            "quotas"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceScoreReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/performance/vo/task/HrmPortalPerformanceTaskPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "HrmPortalPerformanceTaskPageReqVO",
+          "startLine": 11,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "search",
+            "stageStatus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalPerformanceTaskPageReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/salary/HrmPortalSalarySlipController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 116,
+      "functions": [
+        {
+          "name": "getUnreadSalarySlipSummary",
+          "startLine": 52,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "getSalarySlipList",
+          "startLine": 69,
+          "endLine": 84,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getSalarySlip",
+          "startLine": 86,
+          "endLine": 96,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "markSalarySlipRead",
+          "startLine": 98,
+          "endLine": 107,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "buildSalarySlipReminder",
+          "startLine": 117,
+          "endLine": 128,
+          "params": [
+            "salarySlip"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmPortalSalarySlipController",
+          "startLine": 39,
+          "endLine": 130,
+          "methods": [
+            "getUnreadSalarySlipSummary",
+            "getSalarySlipList",
+            "getSalarySlip",
+            "markSalarySlipRead",
+            "buildSalarySlipReminder"
+          ],
+          "properties": [
+            "employeeService",
+            "salarySlipService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUnreadSalarySlipSummary",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getSalarySlipList",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getSalarySlip",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "markSalarySlipRead",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "HrmPortalSalarySlipController",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "getLoginUserId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "filterList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "salarySlipService.getSalarySlipListByEmployeeId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "employee.getId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "HrmSalarySlipReadStatusEnum.UNREAD.getStatus().equals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "HrmSalarySlipReadStatusEnum.UNREAD.getStatus",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "salarySlip.getReadStatus",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "new HrmPortalSalarySlipUnreadSummaryRespVO",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "unreadSalarySlips.size",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "buildSalarySlipReminder",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getUnreadSalarySlipSummary",
+          "callee": "CollUtil.getFirst",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "getLoginUserId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "reqVO.getStartMonth",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "YearMonth.parse",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "reqVO.getStartMonth",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "reqVO.getEndMonth",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "YearMonth.parse",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "reqVO.getEndMonth",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "salarySlipService.getSalarySlipListByEmployeeId",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "employee.getId",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "reqVO.getOrderType",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "reqVO.getOrder",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "success",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSalarySlipList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSalarySlip",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getSalarySlip",
+          "callee": "getLoginUserId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getSalarySlip",
+          "callee": "salarySlipService.getSalarySlipByIdAndEmployeeId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getSalarySlip",
+          "callee": "employee.getId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getSalarySlip",
+          "callee": "success",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getSalarySlip",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 95
+        },
+        {
+          "caller": "markSalarySlipRead",
+          "callee": "employeeService.validateEmployeeBySelf",
+          "lineNumber": 104
+        },
+        {
+          "caller": "markSalarySlipRead",
+          "callee": "getLoginUserId",
+          "lineNumber": 104
+        },
+        {
+          "caller": "markSalarySlipRead",
+          "callee": "salarySlipService.markSalarySlipListRead",
+          "lineNumber": 105
+        },
+        {
+          "caller": "markSalarySlipRead",
+          "callee": "employee.getId",
+          "lineNumber": 105
+        },
+        {
+          "caller": "markSalarySlipRead",
+          "callee": "success",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "salarySlip.getCreator",
+          "lineNumber": 121
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "StrUtil.blankToDefault",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "StrUtil.isNumeric",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "adminUserApi.getUser(Long.valueOf(creator)).getCheckedData",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "adminUserApi.getUser",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "Long.valueOf",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "user.getNickname",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildSalarySlipReminder",
+          "callee": "salarySlip.getMonth",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/salary/vo/HrmPortalSalarySlipListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 21,
+      "classes": [
+        {
+          "name": "HrmPortalSalarySlipListReqVO",
+          "startLine": 8,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "startMonth",
+            "endMonth",
+            "orderType",
+            "order"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalSalarySlipListReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/salary/vo/HrmPortalSalarySlipRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "HrmPortalSalarySlipRespVO",
+          "startLine": 10,
+          "endLine": 47,
+          "methods": [],
+          "properties": [
+            "id",
+            "sendRecordId",
+            "monthEmployeeRecordId",
+            "employeeId",
+            "year",
+            "month",
+            "readStatus",
+            "realPaySalary",
+            "remark",
+            "createTime",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalSalarySlipRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/portal/salary/vo/HrmPortalSalarySlipUnreadSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "HrmPortalSalarySlipUnreadSummaryRespVO",
+          "startLine": 8,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "unreadCount",
+            "reminder"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HrmPortalSalarySlipUnreadSummaryRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/recruit/HrmRecruitCandidateController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 259,
+      "nonEmptyLines": 236,
+      "functions": [
+        {
+          "name": "createRecruitCandidate",
+          "startLine": 86,
+          "endLine": 91,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateRecruitCandidate",
+          "startLine": 93,
+          "endLine": 99,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateRecruitCandidateStatus",
+          "startLine": 101,
+          "endLine": 107,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateRecruitCandidatePost",
+          "startLine": 109,
+          "endLine": 115,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateRecruitCandidateChannel",
+          "startLine": 117,
+          "endLine": 124,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "eliminateRecruitCandidate",
+          "startLine": 126,
+          "endLine": 132,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "convertRecruitCandidateToEmployee",
+          "startLine": 134,
+          "endLine": 140,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteRecruitCandidate",
+          "startLine": 142,
+          "endLine": 149,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRecruitCandidate",
+          "startLine": 151,
+          "endLine": 157,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRecruitCandidatePage",
+          "startLine": 159,
+          "endLine": 166,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getCleanRecruitCandidateIdList",
+          "startLine": 168,
+          "endLine": 175,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getRecruitCandidateStatusCount",
+          "startLine": 177,
+          "endLine": 186,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "buildRecruitCandidateRespVO",
+          "startLine": 190,
+          "endLine": 195,
+          "params": [
+            "recruitCandidate"
+          ]
+        },
+        {
+          "name": "buildRecruitCandidateRespVOList",
+          "startLine": 197,
+          "endLine": 257,
+          "params": [
+            "list"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmRecruitCandidateController",
+          "startLine": 64,
+          "endLine": 259,
+          "methods": [
+            "createRecruitCandidate",
+            "updateRecruitCandidate",
+            "updateRecruitCandidateStatus",
+            "updateRecruitCandidatePost",
+            "updateRecruitCandidateChannel",
+            "eliminateRecruitCandidate",
+            "convertRecruitCandidateToEmployee",
+            "deleteRecruitCandidate",
+            "getRecruitCandidate",
+            "getRecruitCandidatePage",
+            "getCleanRecruitCandidateIdList",
+            "getRecruitCandidateStatusCount",
+            "buildRecruitCandidateRespVO",
+            "buildRecruitCandidateRespVOList"
+          ],
+          "properties": [
+            "recruitCandidateService",
+            "recruitPostService",
+            "recruitChannelService",
+            "recruitInterviewService",
+            "employeeService",
+            "deptApi",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRecruitCandidate",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "updateRecruitCandidate",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "updateRecruitCandidateStatus",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "updateRecruitCandidatePost",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "updateRecruitCandidateChannel",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "eliminateRecruitCandidate",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "convertRecruitCandidateToEmployee",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "deleteRecruitCandidate",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "getRecruitCandidate",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "getRecruitCandidatePage",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "getCleanRecruitCandidateIdList",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "getRecruitCandidateStatusCount",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "HrmRecruitCandidateController",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRecruitCandidate",
+          "callee": "success",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createRecruitCandidate",
+          "callee": "recruitCandidateService.createRecruitCandidate",
+          "lineNumber": 90
+        },
+        {
+          "caller": "updateRecruitCandidate",
+          "callee": "recruitCandidateService.updateRecruitCandidate",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updateRecruitCandidate",
+          "callee": "success",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updateRecruitCandidateStatus",
+          "callee": "recruitCandidateService.updateRecruitCandidateStatus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateRecruitCandidateStatus",
+          "callee": "success",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateRecruitCandidatePost",
+          "callee": "recruitCandidateService.updateRecruitCandidatePost",
+          "lineNumber": 113
+        },
+        {
+          "caller": "updateRecruitCandidatePost",
+          "callee": "success",
+          "lineNumber": 114
+        },
+        {
+          "caller": "updateRecruitCandidateChannel",
+          "callee": "recruitCandidateService.updateRecruitCandidateChannel",
+          "lineNumber": 122
+        },
+        {
+          "caller": "updateRecruitCandidateChannel",
+          "callee": "success",
+          "lineNumber": 123
+        },
+        {
+          "caller": "eliminateRecruitCandidate",
+          "callee": "recruitCandidateService.eliminateRecruitCandidate",
+          "lineNumber": 130
+        },
+        {
+          "caller": "eliminateRecruitCandidate",
+          "callee": "success",
+          "lineNumber": 131
+        },
+        {
+          "caller": "convertRecruitCandidateToEmployee",
+          "callee": "success",
+          "lineNumber": 139
+        },
+        {
+          "caller": "convertRecruitCandidateToEmployee",
+          "callee": "recruitCandidateService.convertRecruitCandidateToEmployee",
+          "lineNumber": 139
+        },
+        {
+          "caller": "deleteRecruitCandidate",
+          "callee": "recruitCandidateService.deleteRecruitCandidate",
+          "lineNumber": 147
+        },
+        {
+          "caller": "deleteRecruitCandidate",
+          "callee": "success",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getRecruitCandidate",
+          "callee": "success",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getRecruitCandidate",
+          "callee": "buildRecruitCandidateRespVO",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getRecruitCandidate",
+          "callee": "recruitCandidateService.getRecruitCandidate",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getRecruitCandidatePage",
+          "callee": "recruitCandidateService.getRecruitCandidatePage",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getRecruitCandidatePage",
+          "callee": "success",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getRecruitCandidatePage",
+          "callee": "new PageResult<>",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getRecruitCandidatePage",
+          "callee": "buildRecruitCandidateRespVOList",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getRecruitCandidatePage",
+          "callee": "pageResult.getList",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getRecruitCandidatePage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getCleanRecruitCandidateIdList",
+          "callee": "recruitCandidateService.getRecruitCandidateList",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getCleanRecruitCandidateIdList",
+          "callee": "reqVO.getStatuses",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getCleanRecruitCandidateIdList",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getCleanRecruitCandidateIdList",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getCleanRecruitCandidateIdList",
+          "callee": "reqVO.getDays",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getCleanRecruitCandidateIdList",
+          "callee": "success",
+          "lineNumber": 174
+        },
+        {
+          "caller": "getCleanRecruitCandidateIdList",
+          "callee": "convertList",
+          "lineNumber": 174
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "recruitCandidateService.getRecruitCandidateStatusCount",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "success",
+          "lineNumber": 183
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "convertList",
+          "lineNumber": 183
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "Arrays.asList",
+          "lineNumber": 183
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "HrmRecruitCandidateStatusEnum.values",
+          "lineNumber": 183
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "new HrmRecruitStatusCountRespVO",
+          "lineNumber": 184
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "status.getStatus",
+          "lineNumber": 184
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "countMap.getOrDefault",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getRecruitCandidateStatusCount",
+          "callee": "status.getStatus",
+          "lineNumber": 185
+        },
+        {
+          "caller": "buildRecruitCandidateRespVO",
+          "callee": "getFirst",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildRecruitCandidateRespVO",
+          "callee": "buildRecruitCandidateRespVOList",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildRecruitCandidateRespVO",
+          "callee": "Collections.singletonList",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 198
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 199
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "recruitPostService.getRecruitPostMap",
+          "lineNumber": 202
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 203
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "deptApi.getDeptMap",
+          "lineNumber": 204
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 205
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "recruitPostMap.values",
+          "lineNumber": 205
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "recruitChannelService.getRecruitChannelMap",
+          "lineNumber": 206
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 207
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 209
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "recruitInterviewService.getLatestRecruitInterviewMapByCandidateIds",
+          "lineNumber": 210
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 212
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "recruitPostMap.values",
+          "lineNumber": 212
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "employeeIds.addAll",
+          "lineNumber": 213
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 213
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "recruitInterviewMap.values",
+          "lineNumber": 213
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "employeeIds.addAll",
+          "lineNumber": 214
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSetByFlatMap",
+          "lineNumber": 214
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "recruitInterviewMap.values",
+          "lineNumber": 214
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "employeeService.getEmployeeMap",
+          "lineNumber": 217
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "employeeService.getEmployeeMapByCandidateIds",
+          "lineNumber": 218
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 220
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertSet",
+          "lineNumber": 221
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "NumberUtil.parseLong",
+          "lineNumber": 221
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "candidate.getCreator",
+          "lineNumber": 221
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 224
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 226
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.getPostId",
+          "lineNumber": 226
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setPostName(post.getPostName()).setPostStatus(post.getStatus())\n                        .setDeptId(post.getDeptId()).setOwnerEmployeeId",
+          "lineNumber": 227
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setPostName(post.getPostName()).setPostStatus(post.getStatus()).setDeptId",
+          "lineNumber": 227
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setPostName(post.getPostName()).setPostStatus",
+          "lineNumber": 227
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setPostName",
+          "lineNumber": 227
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "post.getPostName",
+          "lineNumber": 227
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "post.getStatus",
+          "lineNumber": 227
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "post.getDeptId",
+          "lineNumber": 228
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "post.getOwnerEmployeeId",
+          "lineNumber": 228
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 229
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "post.getDeptId",
+          "lineNumber": 229
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setDeptName",
+          "lineNumber": 229
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "dept.getName",
+          "lineNumber": 229
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 230
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "post.getOwnerEmployeeId",
+          "lineNumber": 230
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setOwnerEmployeeName",
+          "lineNumber": 231
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "employee.getName",
+          "lineNumber": 231
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 233
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.getChannelId",
+          "lineNumber": 233
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setChannelName",
+          "lineNumber": 234
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "channel.getName",
+          "lineNumber": 234
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "HrmRecruitCandidateStatusEnum.INTERVIEW_RELATED_STATUSES.contains",
+          "lineNumber": 236
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.getStatus",
+          "lineNumber": 236
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 237
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.getId",
+          "lineNumber": 237
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId(interview.getId()).setInterviewType(interview.getType())\n                            .setInterviewEmployeeId(interview.getInterviewEmployeeId())\n                            .setOtherInterviewEmployeeIds(interview.getOtherInterviewEmployeeIds())\n                            .setInterviewTime(interview.getInterviewTime()).setInterviewAddress(interview.getAddress())\n                            .setInterviewResult(interview.getResult()).setOtherInterviewEmployeeNames",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId(interview.getId()).setInterviewType(interview.getType())\n                            .setInterviewEmployeeId(interview.getInterviewEmployeeId())\n                            .setOtherInterviewEmployeeIds(interview.getOtherInterviewEmployeeIds())\n                            .setInterviewTime(interview.getInterviewTime()).setInterviewAddress(interview.getAddress()).setInterviewResult",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId(interview.getId()).setInterviewType(interview.getType())\n                            .setInterviewEmployeeId(interview.getInterviewEmployeeId())\n                            .setOtherInterviewEmployeeIds(interview.getOtherInterviewEmployeeIds())\n                            .setInterviewTime(interview.getInterviewTime()).setInterviewAddress",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId(interview.getId()).setInterviewType(interview.getType())\n                            .setInterviewEmployeeId(interview.getInterviewEmployeeId())\n                            .setOtherInterviewEmployeeIds(interview.getOtherInterviewEmployeeIds()).setInterviewTime",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId(interview.getId()).setInterviewType(interview.getType())\n                            .setInterviewEmployeeId(interview.getInterviewEmployeeId()).setOtherInterviewEmployeeIds",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId(interview.getId()).setInterviewType(interview.getType()).setInterviewEmployeeId",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId(interview.getId()).setInterviewType",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewId",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getId",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getType",
+          "lineNumber": 238
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getInterviewEmployeeId",
+          "lineNumber": 239
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getOtherInterviewEmployeeIds",
+          "lineNumber": 240
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getInterviewTime",
+          "lineNumber": 241
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getAddress",
+          "lineNumber": 241
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getResult",
+          "lineNumber": 242
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertList",
+          "lineNumber": 243
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "convertList",
+          "lineNumber": 244
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getOtherInterviewEmployeeIds",
+          "lineNumber": 244
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 246
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "interview.getInterviewEmployeeId",
+          "lineNumber": 246
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setInterviewEmployeeName",
+          "lineNumber": 247
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "employee.getName",
+          "lineNumber": 247
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setStageNumber",
+          "lineNumber": 250
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 253
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.getId",
+          "lineNumber": 253
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setEmployeeId",
+          "lineNumber": 253
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "employee.getId",
+          "lineNumber": 253
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 254
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "NumberUtil.parseLong",
+          "lineNumber": 254
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.getCreator",
+          "lineNumber": 254
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "vo.setCreatorName",
+          "lineNumber": 255
+        },
+        {
+          "caller": "buildRecruitCandidateRespVOList",
+          "callee": "creator.getNickname",
+          "lineNumber": 255
+        }
+      ],
+      "metrics": {
+        "importCount": 29,
+        "exportCount": 13,
+        "functionCount": 14,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/recruit/HrmRecruitChannelController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "createRecruitChannel",
+          "startLine": 43,
+          "endLine": 48,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateRecruitChannel",
+          "startLine": 50,
+          "endLine": 56,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateRecruitChannelStatus",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "statusReqVO"
+          ]
+        },
+        {
+          "name": "deleteRecruitChannel",
+          "startLine": 67,
+          "endLine": 73,
+          "params": [
+            "deleteReqVO"
+          ]
+        },
+        {
+          "name": "getRecruitChannel",
+          "startLine": 75,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRecruitChannelPage",
+          "startLine": 84,
+          "endLine": 90,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getRecruitChannelSimpleList",
+          "startLine": 92,
+          "endLine": 97,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmRecruitChannelController",
+          "startLine": 34,
+          "endLine": 99,
+          "methods": [
+            "createRecruitChannel",
+            "updateRecruitChannel",
+            "updateRecruitChannelStatus",
+            "deleteRecruitChannel",
+            "getRecruitChannel",
+            "getRecruitChannelPage",
+            "getRecruitChannelSimpleList"
+          ],
+          "properties": [
+            "recruitChannelService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRecruitChannel",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "updateRecruitChannel",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "updateRecruitChannelStatus",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "deleteRecruitChannel",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getRecruitChannel",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getRecruitChannelPage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "getRecruitChannelSimpleList",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "HrmRecruitChannelController",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRecruitChannel",
+          "callee": "success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createRecruitChannel",
+          "callee": "recruitChannelService.createRecruitChannel",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateRecruitChannel",
+          "callee": "recruitChannelService.updateRecruitChannel",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateRecruitChannel",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateRecruitChannelStatus",
+          "callee": "recruitChannelService.updateRecruitChannelStatus",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateRecruitChannelStatus",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deleteRecruitChannel",
+          "callee": "recruitChannelService.deleteRecruitChannel",
+          "lineNumber": 71
+        },
+        {
+          "caller": "deleteRecruitChannel",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getRecruitChannel",
+          "callee": "recruitChannelService.getRecruitChannel",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getRecruitChannel",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getRecruitChannel",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getRecruitChannelPage",
+          "callee": "recruitChannelService.getRecruitChannelPage",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getRecruitChannelPage",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getRecruitChannelPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "success",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "convertList",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "recruitChannelService.getRecruitChannelSimpleList",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "new HrmRecruitChannelRespVO().setId(channel.getId()).setName(channel.getName()).setStatus",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "new HrmRecruitChannelRespVO().setId(channel.getId()).setName",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "new HrmRecruitChannelRespVO().setId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "new HrmRecruitChannelRespVO",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "channel.getId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "channel.getName",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRecruitChannelSimpleList",
+          "callee": "channel.getStatus",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-hrm/yudao-module-hrm-server/src/main/java/cn/iocoder/yudao/module/hrm/controller/admin/recruit/HrmRecruitConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "saveRecruitEliminateReason",
+          "startLine": 31,
+          "endLine": 38,
+          "params": [
+            "saveReqVO"
+          ]
+        },
+        {
+          "name": "getRecruitEliminateReasonList",
+          "startLine": 40,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "HrmRecruitConfigController",
+          "startLine": 22,
+          "endLine": 48,
+          "methods": [
+            "saveRecruitEliminateReason",
+            "getRecruitEliminateReasonList"
+          ],
+          "properties": [
+            "recruitConfigService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "saveRecruitEliminateReason",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "getRecruitEliminateReasonList",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "HrmRecruitConfigController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "saveRecruitEliminateReason",
+          "callee": "recruitConfigService.saveRecruitEliminateReason",
+          "lineNumber": 36
+        },
+        {
+          "caller": "saveRecruitEliminateReason",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getRecruitEliminateReasonList",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getRecruitEliminateReasonList",
+          "callee": "recruitConfigService.getRecruitEliminateReasonList",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

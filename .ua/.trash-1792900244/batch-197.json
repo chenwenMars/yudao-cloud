@@ -1,0 +1,211 @@
+{
+  "nodes": [
+    {
+      "id": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "type": "service",
+      "name": "Dockerfile",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "summary": "为 ERP 服务端构建基于 Eclipse Temurin 21 JRE 的容器镜像，复制可执行 JAR，设置上海时区与 JVM 堆参数，并在端口 48088 启动应用。",
+      "tags": [
+        "containerization",
+        "infrastructure",
+        "java-runtime"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile:eclipse-temurin",
+      "type": "service",
+      "name": "eclipse-temurin",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        3,
+        20
+      ],
+      "summary": "使用 eclipse-temurin:21-jre 运行 ERP 服务端 JAR，并暴露端口 48088。",
+      "tags": [
+        "container-image",
+        "java-runtime",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:FROM eclipse-temurin:21-jre",
+      "type": "step",
+      "name": "FROM eclipse-temurin:21-jre",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        3,
+        3
+      ],
+      "summary": "Docker 构建/启动步骤：FROM eclipse-temurin:21-jre。",
+      "tags": [
+        "docker-step",
+        "containerization",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:RUN mkdir -p /yudao-module-erp-server",
+      "type": "step",
+      "name": "RUN mkdir -p /yudao-module-erp-server",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        6,
+        6
+      ],
+      "summary": "Docker 构建/启动步骤：RUN mkdir -p /yudao-module-erp-server。",
+      "tags": [
+        "docker-step",
+        "containerization",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:WORKDIR /yudao-module-erp-server",
+      "type": "step",
+      "name": "WORKDIR /yudao-module-erp-server",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        7,
+        7
+      ],
+      "summary": "Docker 构建/启动步骤：WORKDIR /yudao-module-erp-server。",
+      "tags": [
+        "docker-step",
+        "containerization",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:COPY ./target/yudao-module-erp-server.jar app.jar",
+      "type": "step",
+      "name": "COPY ./target/yudao-module-erp-server.jar app.jar",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        9,
+        9
+      ],
+      "summary": "Docker 构建/启动步骤：COPY ./target/yudao-module-erp-server.jar app.jar。",
+      "tags": [
+        "docker-step",
+        "containerization",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:ENV TZ=Asia/Shanghai JAVA_OPTS=\"-Xms512m -Xmx512m\"",
+      "type": "step",
+      "name": "ENV TZ=Asia/Shanghai JAVA_OPTS=\"-Xms512m -Xmx512m\"",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        13,
+        13
+      ],
+      "summary": "Docker 构建/启动步骤：ENV TZ=Asia/Shanghai JAVA_OPTS=\"-Xms512m -Xmx512m\"。",
+      "tags": [
+        "docker-step",
+        "containerization",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:EXPOSE 48088",
+      "type": "step",
+      "name": "EXPOSE 48088",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        16,
+        16
+      ],
+      "summary": "Docker 构建/启动步骤：EXPOSE 48088。",
+      "tags": [
+        "docker-step",
+        "containerization",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:CMD java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -j",
+      "type": "step",
+      "name": "CMD java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -j",
+      "filePath": "yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "lineRange": [
+        19,
+        19
+      ],
+      "summary": "Docker 构建/启动步骤：CMD java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -j。",
+      "tags": [
+        "docker-step",
+        "containerization",
+        "deployment"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile:eclipse-temurin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:FROM eclipse-temurin:21-jre",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:RUN mkdir -p /yudao-module-erp-server",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:WORKDIR /yudao-module-erp-server",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:COPY ./target/yudao-module-erp-server.jar app.jar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:ENV TZ=Asia/Shanghai JAVA_OPTS=\"-Xms512m -Xmx512m\"",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:EXPOSE 48088",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:yudao-module-erp/yudao-module-erp-server/Dockerfile",
+      "target": "step:yudao-module-erp/yudao-module-erp-server/Dockerfile:CMD java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -j",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,1764 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 28,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 28,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 28,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/base/annotation/DesensitizeBy.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/base/handler/DesensitizationHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "DesensitizationHandler",
+          "startLine": 12,
+          "endLine": 40,
+          "methods": [
+            "desensitize",
+            "getDisable"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DesensitizationHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDisable",
+          "callee": "ReflectUtil.invoke",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/base/serializer/StringDesensitizeSerializer.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "StringDesensitizeSerializer",
+          "startLine": 37,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "createContextual",
+          "startLine": 41,
+          "endLine": 51,
+          "params": [
+            "serializerProvider",
+            "beanProperty"
+          ]
+        },
+        {
+          "name": "serialize",
+          "startLine": 53,
+          "endLine": 77,
+          "params": [
+            "value",
+            "gen",
+            "serializerProvider"
+          ]
+        },
+        {
+          "name": "getField",
+          "startLine": 85,
+          "endLine": 90,
+          "params": [
+            "generator"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "StringDesensitizeSerializer",
+          "startLine": 30,
+          "endLine": 92,
+          "methods": [
+            "StringDesensitizeSerializer",
+            "createContextual",
+            "serialize",
+            "getField"
+          ],
+          "properties": [
+            "desensitizationHandler"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createContextual",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "serialize",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "StringDesensitizeSerializer",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createContextual",
+          "callee": "beanProperty.getAnnotation",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createContextual",
+          "callee": "new StringDesensitizeSerializer",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createContextual",
+          "callee": "serializer.setDesensitizationHandler",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createContextual",
+          "callee": "Singleton.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createContextual",
+          "callee": "annotation.handler",
+          "lineNumber": 49
+        },
+        {
+          "caller": "serialize",
+          "callee": "StrUtil.isBlank",
+          "lineNumber": 56
+        },
+        {
+          "caller": "serialize",
+          "callee": "gen.writeNull",
+          "lineNumber": 57
+        },
+        {
+          "caller": "serialize",
+          "callee": "getField",
+          "lineNumber": 61
+        },
+        {
+          "caller": "serialize",
+          "callee": "AnnotationUtil.getCombinationAnnotations",
+          "lineNumber": 64
+        },
+        {
+          "caller": "serialize",
+          "callee": "ArrayUtil.isEmpty",
+          "lineNumber": 65
+        },
+        {
+          "caller": "serialize",
+          "callee": "gen.writeString",
+          "lineNumber": 66
+        },
+        {
+          "caller": "serialize",
+          "callee": "field.getAnnotations",
+          "lineNumber": 69
+        },
+        {
+          "caller": "serialize",
+          "callee": "AnnotationUtil.hasAnnotation",
+          "lineNumber": 70
+        },
+        {
+          "caller": "serialize",
+          "callee": "annotation.annotationType",
+          "lineNumber": 70
+        },
+        {
+          "caller": "serialize",
+          "callee": "this.desensitizationHandler.desensitize",
+          "lineNumber": 71
+        },
+        {
+          "caller": "serialize",
+          "callee": "gen.writeString",
+          "lineNumber": 72
+        },
+        {
+          "caller": "serialize",
+          "callee": "gen.writeString",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getField",
+          "callee": "generator.getOutputContext().getCurrentName",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getField",
+          "callee": "generator.getOutputContext",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getField",
+          "callee": "generator.currentValue",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getField",
+          "callee": "currentValue.getClass",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getField",
+          "callee": "ReflectUtil.getField",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/regex/annotation/EmailDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/regex/annotation/RegexDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/regex/handler/AbstractRegexDesensitizationHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "desensitize",
+          "startLine": 16,
+          "endLine": 28,
+          "params": [
+            "origin",
+            "annotation"
+          ]
+        },
+        {
+          "name": "getRegex",
+          "startLine": 36,
+          "endLine": 36,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 44,
+          "endLine": 44,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractRegexDesensitizationHandler",
+          "startLine": 13,
+          "endLine": 46,
+          "methods": [
+            "desensitize",
+            "getRegex",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "desensitize",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractRegexDesensitizationHandler",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "desensitize",
+          "callee": "SpringExpressionUtils.parseExpression",
+          "lineNumber": 19
+        },
+        {
+          "caller": "desensitize",
+          "callee": "getDisable",
+          "lineNumber": 19
+        },
+        {
+          "caller": "desensitize",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 20
+        },
+        {
+          "caller": "desensitize",
+          "callee": "getRegex",
+          "lineNumber": 25
+        },
+        {
+          "caller": "desensitize",
+          "callee": "getReplacer",
+          "lineNumber": 26
+        },
+        {
+          "caller": "desensitize",
+          "callee": "origin.replaceAll",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/regex/handler/DefaultRegexDesensitizationHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getRegex",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getDisable",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultRegexDesensitizationHandler",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [
+            "getRegex",
+            "getReplacer",
+            "getDisable"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDisable",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultRegexDesensitizationHandler",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getRegex",
+          "callee": "annotation.regex",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getDisable",
+          "callee": "annotation.disable",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/regex/handler/EmailDesensitizationHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "getRegex",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "EmailDesensitizationHandler",
+          "startLine": 10,
+          "endLine": 22,
+          "methods": [
+            "getRegex",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "EmailDesensitizationHandler",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getRegex",
+          "callee": "annotation.regex",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/BankCardDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/CarLicenseDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/ChineseNameDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/FixedPhoneDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/IdCardDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/MobileDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/PasswordDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/annotation/SliderDesensitize.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/AbstractSliderDesensitizationHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "desensitize",
+          "startLine": 16,
+          "endLine": 40,
+          "params": [
+            "origin",
+            "annotation"
+          ]
+        },
+        {
+          "name": "buildReplacerByLength",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "replacer",
+            "length"
+          ]
+        },
+        {
+          "name": "getPrefixKeep",
+          "startLine": 59,
+          "endLine": 59,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 67,
+          "endLine": 67,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 75,
+          "endLine": 75,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AbstractSliderDesensitizationHandler",
+          "startLine": 13,
+          "endLine": 77,
+          "methods": [
+            "desensitize",
+            "buildReplacerByLength",
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "desensitize",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "AbstractSliderDesensitizationHandler",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "desensitize",
+          "callee": "SpringExpressionUtils.parseExpression",
+          "lineNumber": 19
+        },
+        {
+          "caller": "desensitize",
+          "callee": "getDisable",
+          "lineNumber": 19
+        },
+        {
+          "caller": "desensitize",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 20
+        },
+        {
+          "caller": "desensitize",
+          "callee": "getPrefixKeep",
+          "lineNumber": 25
+        },
+        {
+          "caller": "desensitize",
+          "callee": "getSuffixKeep",
+          "lineNumber": 26
+        },
+        {
+          "caller": "desensitize",
+          "callee": "getReplacer",
+          "lineNumber": 27
+        },
+        {
+          "caller": "desensitize",
+          "callee": "origin.length",
+          "lineNumber": 28
+        },
+        {
+          "caller": "desensitize",
+          "callee": "buildReplacerByLength",
+          "lineNumber": 33
+        },
+        {
+          "caller": "desensitize",
+          "callee": "origin.substring",
+          "lineNumber": 37
+        },
+        {
+          "caller": "desensitize",
+          "callee": "buildReplacerByLength",
+          "lineNumber": 38
+        },
+        {
+          "caller": "desensitize",
+          "callee": "origin.substring",
+          "lineNumber": 39
+        },
+        {
+          "caller": "buildReplacerByLength",
+          "callee": "replacer.repeat",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/BankCardDesensitization.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getDisable",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BankCardDesensitization",
+          "startLine": 10,
+          "endLine": 32,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer",
+            "getDisable"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDisable",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "BankCardDesensitization",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/CarLicenseDesensitization.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getDisable",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CarLicenseDesensitization",
+          "startLine": 10,
+          "endLine": 32,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer",
+            "getDisable"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDisable",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "CarLicenseDesensitization",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getDisable",
+          "callee": "annotation.disable",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/ChineseNameDesensitization.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ChineseNameDesensitization",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChineseNameDesensitization",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/DefaultDesensitizationHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DefaultDesensitizationHandler",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DefaultDesensitizationHandler",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/FixedPhoneDesensitization.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FixedPhoneDesensitization",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FixedPhoneDesensitization",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/IdCardDesensitization.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 11,
+          "endLine": 14,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 16,
+          "endLine": 19,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 21,
+          "endLine": 24,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "IdCardDesensitization",
+          "startLine": 10,
+          "endLine": 26,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "IdCardDesensitization",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 13
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 18
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/MobileDesensitization.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 17,
+          "endLine": 20,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MobileDesensitization",
+          "startLine": 10,
+          "endLine": 27,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MobileDesensitization",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 14
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/desensitize/core/slider/handler/PasswordDesensitization.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "getPrefixKeep",
+          "startLine": 11,
+          "endLine": 14,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getSuffixKeep",
+          "startLine": 16,
+          "endLine": 19,
+          "params": [
+            "annotation"
+          ]
+        },
+        {
+          "name": "getReplacer",
+          "startLine": 21,
+          "endLine": 24,
+          "params": [
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PasswordDesensitization",
+          "startLine": 10,
+          "endLine": 26,
+          "methods": [
+            "getPrefixKeep",
+            "getSuffixKeep",
+            "getReplacer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PasswordDesensitization",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPrefixKeep",
+          "callee": "annotation.prefixKeep",
+          "lineNumber": 13
+        },
+        {
+          "caller": "getSuffixKeep",
+          "callee": "annotation.suffixKeep",
+          "lineNumber": 18
+        },
+        {
+          "caller": "getReplacer",
+          "callee": "annotation.replacer",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/test/java/cn/iocoder/yudao/framework/desensitize/core/DesensitizeTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "test",
+          "startLine": 28,
+          "endLine": 65,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DesensitizeTest",
+          "startLine": 25,
+          "endLine": 100,
+          "methods": [
+            "test"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "DesensitizeTest",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test",
+          "callee": "new DesensitizeDemo",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setNickname",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setBankCard",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setCarLicense",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setFixedPhone",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setIdCard",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setPassword",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setPhoneNumber",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setSlider1",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setSlider2",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setSlider3",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setEmail",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setRegex",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setAddress",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test",
+          "callee": "desensitizeDemo.setOrigin",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test",
+          "callee": "JsonUtils.toJsonString",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test",
+          "callee": "assertNotNull",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test",
+          "callee": "d.getNickname",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test",
+          "callee": "d.getBankCard",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test",
+          "callee": "d.getCarLicense",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test",
+          "callee": "d.getFixedPhone",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test",
+          "callee": "d.getIdCard",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test",
+          "callee": "d.getPassword",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test",
+          "callee": "d.getPhoneNumber",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test",
+          "callee": "d.getSlider1",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test",
+          "callee": "d.getSlider2",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test",
+          "callee": "d.getSlider3",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test",
+          "callee": "d.getEmail",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test",
+          "callee": "d.getRegex",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test",
+          "callee": "d.getAddress",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test",
+          "callee": "assertEquals",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test",
+          "callee": "d.getOrigin",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/test/java/cn/iocoder/yudao/framework/desensitize/core/annotation/Address.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-framework/yudao-spring-boot-starter-web/src/test/java/cn/iocoder/yudao/framework/desensitize/core/handler/AddressHandler.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "functions": [
+        {
+          "name": "desensitize",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "origin",
+            "annotation"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AddressHandler",
+          "startLine": 12,
+          "endLine": 19,
+          "methods": [
+            "desensitize"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "desensitize",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "AddressHandler",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "desensitize",
+          "callee": "annotation.replacer",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

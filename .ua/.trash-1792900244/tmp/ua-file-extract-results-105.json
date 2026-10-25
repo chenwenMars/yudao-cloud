@@ -1,0 +1,3492 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dept/vo/post/PostSimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "PostSimpleRespVO",
+          "startLine": 7,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PostSimpleRespVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/LoginLogController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "getLoginLog",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getLoginLogPage",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "exportLoginLog",
+          "startLine": 56,
+          "endLine": 66,
+          "params": [
+            "response",
+            "exportReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LoginLogController",
+          "startLine": 31,
+          "endLine": 68,
+          "methods": [
+            "getLoginLog",
+            "getLoginLogPage",
+            "exportLoginLog"
+          ],
+          "properties": [
+            "loginLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getLoginLog",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "getLoginLogPage",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "exportLoginLog",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "LoginLogController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getLoginLog",
+          "callee": "loginLogService.getLoginLog",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getLoginLog",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getLoginLog",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getLoginLogPage",
+          "callee": "loginLogService.getLoginLogPage",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getLoginLogPage",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getLoginLogPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 53
+        },
+        {
+          "caller": "exportLoginLog",
+          "callee": "exportReqVO.setPageSize",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exportLoginLog",
+          "callee": "loginLogService.getLoginLogPage(exportReqVO).getList",
+          "lineNumber": 62
+        },
+        {
+          "caller": "exportLoginLog",
+          "callee": "loginLogService.getLoginLogPage",
+          "lineNumber": 62
+        },
+        {
+          "caller": "exportLoginLog",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 64
+        },
+        {
+          "caller": "exportLoginLog",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/vo/loginlog/LoginLogPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "LoginLogPageReqVO",
+          "startLine": 13,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "userIp",
+            "username",
+            "status",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginLogPageReqVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/MailAccountController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "createMailAccount",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMailAccount",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMailAccount",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteMailAccountList",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getMailAccount",
+          "startLine": 66,
+          "endLine": 73,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMailAccountPage",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getSimpleMailAccountList",
+          "startLine": 83,
+          "endLine": 88,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MailAccountController",
+          "startLine": 25,
+          "endLine": 90,
+          "methods": [
+            "createMailAccount",
+            "updateMailAccount",
+            "deleteMailAccount",
+            "deleteMailAccountList",
+            "getMailAccount",
+            "getMailAccountPage",
+            "getSimpleMailAccountList"
+          ],
+          "properties": [
+            "mailAccountService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMailAccount",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "updateMailAccount",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMailAccount",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMailAccountList",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getMailAccount",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getMailAccountPage",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleMailAccountList",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "MailAccountController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMailAccount",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createMailAccount",
+          "callee": "mailAccountService.createMailAccount",
+          "lineNumber": 37
+        },
+        {
+          "caller": "updateMailAccount",
+          "callee": "mailAccountService.updateMailAccount",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateMailAccount",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "deleteMailAccount",
+          "callee": "mailAccountService.deleteMailAccount",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteMailAccount",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteMailAccountList",
+          "callee": "mailAccountService.deleteMailAccountList",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteMailAccountList",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getMailAccount",
+          "callee": "mailAccountService.getMailAccount",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getMailAccount",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMailAccount",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMailAccountPage",
+          "callee": "mailAccountService.getMailAccountPage",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getMailAccountPage",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMailAccountPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getSimpleMailAccountList",
+          "callee": "mailAccountService.getMailAccountList",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleMailAccountList",
+          "callee": "success",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getSimpleMailAccountList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/MailLogController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "getMailLogPage",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "pageVO"
+          ]
+        },
+        {
+          "name": "getMailTemplate",
+          "startLine": 40,
+          "endLine": 47,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MailLogController",
+          "startLine": 24,
+          "endLine": 49,
+          "methods": [
+            "getMailLogPage",
+            "getMailTemplate"
+          ],
+          "properties": [
+            "mailLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMailLogPage",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "getMailTemplate",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "MailLogController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMailLogPage",
+          "callee": "mailLogService.getMailLogPage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getMailLogPage",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getMailLogPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getMailTemplate",
+          "callee": "mailLogService.getMailLog",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getMailTemplate",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getMailTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/MailTemplateController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 101,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "createMailTemplate",
+          "startLine": 34,
+          "endLine": 39,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMailTemplate",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMailTemplate",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteMailTemplateList",
+          "startLine": 58,
+          "endLine": 65,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getMailTemplate",
+          "startLine": 67,
+          "endLine": 74,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMailTemplatePage",
+          "startLine": 76,
+          "endLine": 82,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getSimpleMailTemplateList",
+          "startLine": 84,
+          "endLine": 90,
+          "params": []
+        },
+        {
+          "name": "sendMail",
+          "startLine": 92,
+          "endLine": 99,
+          "params": [
+            "sendReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MailTemplateController",
+          "startLine": 24,
+          "endLine": 101,
+          "methods": [
+            "createMailTemplate",
+            "updateMailTemplate",
+            "deleteMailTemplate",
+            "deleteMailTemplateList",
+            "getMailTemplate",
+            "getMailTemplatePage",
+            "getSimpleMailTemplateList",
+            "sendMail"
+          ],
+          "properties": [
+            "mailTempleService",
+            "mailSendService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMailTemplate",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "updateMailTemplate",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMailTemplate",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMailTemplateList",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getMailTemplate",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getMailTemplatePage",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleMailTemplateList",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "sendMail",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "MailTemplateController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMailTemplate",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createMailTemplate",
+          "callee": "mailTempleService.createMailTemplate",
+          "lineNumber": 38
+        },
+        {
+          "caller": "updateMailTemplate",
+          "callee": "mailTempleService.updateMailTemplate",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateMailTemplate",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "deleteMailTemplate",
+          "callee": "mailTempleService.deleteMailTemplate",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteMailTemplate",
+          "callee": "success",
+          "lineNumber": 55
+        },
+        {
+          "caller": "deleteMailTemplateList",
+          "callee": "mailTempleService.deleteMailTemplateList",
+          "lineNumber": 63
+        },
+        {
+          "caller": "deleteMailTemplateList",
+          "callee": "success",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getMailTemplate",
+          "callee": "mailTempleService.getMailTemplate",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getMailTemplate",
+          "callee": "success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getMailTemplate",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getMailTemplatePage",
+          "callee": "mailTempleService.getMailTemplatePage",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getMailTemplatePage",
+          "callee": "success",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getMailTemplatePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getSimpleMailTemplateList",
+          "callee": "mailTempleService.getMailTemplateListByStatus",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getSimpleMailTemplateList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSimpleMailTemplateList",
+          "callee": "success",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getSimpleMailTemplateList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 89
+        },
+        {
+          "caller": "sendMail",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "sendMail",
+          "callee": "mailSendService.sendSingleMailToAdmin",
+          "lineNumber": 96
+        },
+        {
+          "caller": "sendMail",
+          "callee": "getLoginUserId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "sendMail",
+          "callee": "sendReqVO.getToMails",
+          "lineNumber": 97
+        },
+        {
+          "caller": "sendMail",
+          "callee": "sendReqVO.getCcMails",
+          "lineNumber": 97
+        },
+        {
+          "caller": "sendMail",
+          "callee": "sendReqVO.getBccMails",
+          "lineNumber": 97
+        },
+        {
+          "caller": "sendMail",
+          "callee": "sendReqVO.getTemplateCode",
+          "lineNumber": 98
+        },
+        {
+          "caller": "sendMail",
+          "callee": "sendReqVO.getTemplateParams",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/account/MailAccountPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "MailAccountPageReqVO",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "mail",
+            "username"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailAccountPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/account/MailAccountRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MailAccountRespVO",
+          "startLine": 8,
+          "endLine": 39,
+          "methods": [],
+          "properties": [
+            "id",
+            "mail",
+            "username",
+            "password",
+            "host",
+            "port",
+            "sslEnable",
+            "starttlsEnable",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailAccountRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/account/MailAccountSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "MailAccountSaveReqVO",
+          "startLine": 8,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "id",
+            "mail",
+            "username",
+            "password",
+            "host",
+            "port",
+            "sslEnable",
+            "starttlsEnable"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailAccountSaveReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/account/MailAccountSimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "MailAccountSimpleRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "id",
+            "mail"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailAccountSimpleRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/log/MailLogPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "MailLogPageReqVO",
+          "startLine": 14,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "toMail",
+            "accountId",
+            "templateId",
+            "sendStatus",
+            "sendTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailLogPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/log/MailLogRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "MailLogRespVO",
+          "startLine": 10,
+          "endLine": 71,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "userType",
+            "toMails",
+            "ccMails",
+            "bccMails",
+            "accountId",
+            "fromMail",
+            "templateId",
+            "templateCode",
+            "templateNickname",
+            "templateTitle",
+            "templateContent",
+            "templateParams",
+            "sendStatus",
+            "sendTime",
+            "sendMessageId",
+            "sendException",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailLogRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/template/MailTemplatePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "MailTemplatePageReqVO",
+          "startLine": 14,
+          "endLine": 36,
+          "methods": [],
+          "properties": [
+            "status",
+            "code",
+            "name",
+            "accountId",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailTemplatePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/mail/vo/template/MailTemplateSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "MailTemplateSaveReqVO",
+          "startLine": 9,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "code",
+            "accountId",
+            "nickname",
+            "title",
+            "content",
+            "status",
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MailTemplateSaveReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/OAuth2ClientController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "createOAuth2Client",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateOAuth2Client",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteOAuth2Client",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteOAuth2ClientList",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getOAuth2Client",
+          "startLine": 66,
+          "endLine": 73,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getOAuth2ClientPage",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OAuth2ClientController",
+          "startLine": 24,
+          "endLine": 83,
+          "methods": [
+            "createOAuth2Client",
+            "updateOAuth2Client",
+            "deleteOAuth2Client",
+            "deleteOAuth2ClientList",
+            "getOAuth2Client",
+            "getOAuth2ClientPage"
+          ],
+          "properties": [
+            "oAuth2ClientService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createOAuth2Client",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "updateOAuth2Client",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "deleteOAuth2Client",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "deleteOAuth2ClientList",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getOAuth2Client",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getOAuth2ClientPage",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "OAuth2ClientController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createOAuth2Client",
+          "callee": "success",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createOAuth2Client",
+          "callee": "oAuth2ClientService.createOAuth2Client",
+          "lineNumber": 37
+        },
+        {
+          "caller": "updateOAuth2Client",
+          "callee": "oAuth2ClientService.updateOAuth2Client",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateOAuth2Client",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "deleteOAuth2Client",
+          "callee": "oAuth2ClientService.deleteOAuth2Client",
+          "lineNumber": 53
+        },
+        {
+          "caller": "deleteOAuth2Client",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteOAuth2ClientList",
+          "callee": "oAuth2ClientService.deleteOAuth2ClientList",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteOAuth2ClientList",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getOAuth2Client",
+          "callee": "oAuth2ClientService.getOAuth2Client",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getOAuth2Client",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getOAuth2Client",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getOAuth2ClientPage",
+          "callee": "oAuth2ClientService.getOAuth2ClientPage",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getOAuth2ClientPage",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getOAuth2ClientPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/OAuth2OpenController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 298,
+      "nonEmptyLines": 274,
+      "functions": [
+        {
+          "name": "postAccessToken",
+          "startLine": 84,
+          "endLine": 142,
+          "params": [
+            "request",
+            "grantType",
+            "code",
+            "redirectUri",
+            "state",
+            "username",
+            "password",
+            "scope",
+            "refreshToken"
+          ]
+        },
+        {
+          "name": "revokeToken",
+          "startLine": 144,
+          "endLine": 157,
+          "params": [
+            "request",
+            "token"
+          ]
+        },
+        {
+          "name": "checkToken",
+          "startLine": 162,
+          "endLine": 177,
+          "params": [
+            "request",
+            "token"
+          ]
+        },
+        {
+          "name": "authorize",
+          "startLine": 182,
+          "endLine": 194,
+          "params": [
+            "clientId"
+          ]
+        },
+        {
+          "name": "approveOrDeny",
+          "startLine": 206,
+          "endLine": 254,
+          "params": [
+            "responseType",
+            "clientId",
+            "scope",
+            "redirectUri",
+            "autoApprove",
+            "state"
+          ]
+        },
+        {
+          "name": "getGrantTypeEnum",
+          "startLine": 256,
+          "endLine": 264,
+          "params": [
+            "responseType"
+          ]
+        },
+        {
+          "name": "getImplicitGrantRedirect",
+          "startLine": 266,
+          "endLine": 275,
+          "params": [
+            "userId",
+            "client",
+            "scopes",
+            "redirectUri",
+            "state"
+          ]
+        },
+        {
+          "name": "getAuthorizationCodeRedirect",
+          "startLine": 277,
+          "endLine": 284,
+          "params": [
+            "userId",
+            "client",
+            "scopes",
+            "redirectUri",
+            "state"
+          ]
+        },
+        {
+          "name": "getUserType",
+          "startLine": 286,
+          "endLine": 288,
+          "params": []
+        },
+        {
+          "name": "obtainBasicAuthorization",
+          "startLine": 290,
+          "endLine": 296,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OAuth2OpenController",
+          "startLine": 57,
+          "endLine": 298,
+          "methods": [
+            "postAccessToken",
+            "revokeToken",
+            "checkToken",
+            "authorize",
+            "approveOrDeny",
+            "getGrantTypeEnum",
+            "getImplicitGrantRedirect",
+            "getAuthorizationCodeRedirect",
+            "getUserType",
+            "obtainBasicAuthorization"
+          ],
+          "properties": [
+            "oauth2GrantService",
+            "oauth2ClientService",
+            "oauth2ApproveService",
+            "oauth2TokenService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "postAccessToken",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "revokeToken",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "checkToken",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "authorize",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "approveOrDeny",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "OAuth2OpenController",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "postAccessToken",
+          "callee": "OAuth2Utils.buildScopes",
+          "lineNumber": 107
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "OAuth2GrantTypeEnum.getByGrantType",
+          "lineNumber": 109
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "exception0",
+          "lineNumber": 111
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "BAD_REQUEST.getCode",
+          "lineNumber": 111
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "StrUtil.format",
+          "lineNumber": 111
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "exception0",
+          "lineNumber": 114
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "BAD_REQUEST.getCode",
+          "lineNumber": 114
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "obtainBasicAuthorization",
+          "lineNumber": 118
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "oauth2ClientService.validOAuthClientFromCache",
+          "lineNumber": 119
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "oauth2GrantService.grantAuthorizationCodeForAccessToken",
+          "lineNumber": 126
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "client.getClientId",
+          "lineNumber": 126
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "oauth2GrantService.grantPassword",
+          "lineNumber": 129
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "client.getClientId",
+          "lineNumber": 129
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "oauth2GrantService.grantClientCredentials",
+          "lineNumber": 132
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "client.getClientId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "oauth2GrantService.grantRefreshToken",
+          "lineNumber": 135
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "client.getClientId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 138
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "Assert.notNull",
+          "lineNumber": 140
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "success",
+          "lineNumber": 141
+        },
+        {
+          "caller": "postAccessToken",
+          "callee": "OAuth2OpenConvert.INSTANCE.convert",
+          "lineNumber": 141
+        },
+        {
+          "caller": "revokeToken",
+          "callee": "obtainBasicAuthorization",
+          "lineNumber": 151
+        },
+        {
+          "caller": "revokeToken",
+          "callee": "oauth2ClientService.validOAuthClientFromCache",
+          "lineNumber": 152
+        },
+        {
+          "caller": "revokeToken",
+          "callee": "success",
+          "lineNumber": 156
+        },
+        {
+          "caller": "revokeToken",
+          "callee": "oauth2GrantService.revokeToken",
+          "lineNumber": 156
+        },
+        {
+          "caller": "revokeToken",
+          "callee": "client.getClientId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "checkToken",
+          "callee": "obtainBasicAuthorization",
+          "lineNumber": 169
+        },
+        {
+          "caller": "checkToken",
+          "callee": "oauth2ClientService.validOAuthClientFromCache",
+          "lineNumber": 170
+        },
+        {
+          "caller": "checkToken",
+          "callee": "oauth2TokenService.checkAccessToken",
+          "lineNumber": 174
+        },
+        {
+          "caller": "checkToken",
+          "callee": "Assert.notNull",
+          "lineNumber": 175
+        },
+        {
+          "caller": "checkToken",
+          "callee": "success",
+          "lineNumber": 176
+        },
+        {
+          "caller": "checkToken",
+          "callee": "OAuth2OpenConvert.INSTANCE.convert2",
+          "lineNumber": 176
+        },
+        {
+          "caller": "authorize",
+          "callee": "oauth2ClientService.validOAuthClientFromCache",
+          "lineNumber": 189
+        },
+        {
+          "caller": "authorize",
+          "callee": "oauth2ApproveService.getApproveList",
+          "lineNumber": 191
+        },
+        {
+          "caller": "authorize",
+          "callee": "getLoginUserId",
+          "lineNumber": 191
+        },
+        {
+          "caller": "authorize",
+          "callee": "getUserType",
+          "lineNumber": 191
+        },
+        {
+          "caller": "authorize",
+          "callee": "success",
+          "lineNumber": 193
+        },
+        {
+          "caller": "authorize",
+          "callee": "OAuth2OpenConvert.INSTANCE.convert",
+          "lineNumber": 193
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 223
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 224
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "Collections.emptyMap",
+          "lineNumber": 224
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getGrantTypeEnum",
+          "lineNumber": 228
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "oauth2ClientService.validOAuthClientFromCache",
+          "lineNumber": 230
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "grantTypeEnum.getGrantType",
+          "lineNumber": 231
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "scopes.keySet",
+          "lineNumber": 231
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 234
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "oauth2ApproveService.checkForPreApproval",
+          "lineNumber": 236
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getLoginUserId",
+          "lineNumber": 236
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getUserType",
+          "lineNumber": 236
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "scopes.keySet",
+          "lineNumber": 236
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "success",
+          "lineNumber": 237
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "oauth2ApproveService.updateAfterApproval",
+          "lineNumber": 241
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getLoginUserId",
+          "lineNumber": 241
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getUserType",
+          "lineNumber": 241
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "success",
+          "lineNumber": 242
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "OAuth2Utils.buildUnsuccessfulRedirect",
+          "lineNumber": 242
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "convertList",
+          "lineNumber": 248
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "scopes.entrySet",
+          "lineNumber": 248
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "success",
+          "lineNumber": 250
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getAuthorizationCodeRedirect",
+          "lineNumber": 250
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getLoginUserId",
+          "lineNumber": 250
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "success",
+          "lineNumber": 253
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getImplicitGrantRedirect",
+          "lineNumber": 253
+        },
+        {
+          "caller": "approveOrDeny",
+          "callee": "getLoginUserId",
+          "lineNumber": 253
+        },
+        {
+          "caller": "getGrantTypeEnum",
+          "callee": "StrUtil.equals",
+          "lineNumber": 257
+        },
+        {
+          "caller": "getGrantTypeEnum",
+          "callee": "StrUtil.equalsAny",
+          "lineNumber": 260
+        },
+        {
+          "caller": "getGrantTypeEnum",
+          "callee": "exception0",
+          "lineNumber": 263
+        },
+        {
+          "caller": "getGrantTypeEnum",
+          "callee": "BAD_REQUEST.getCode",
+          "lineNumber": 263
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "oauth2GrantService.grantImplicit",
+          "lineNumber": 269
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "getUserType",
+          "lineNumber": 269
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "client.getClientId",
+          "lineNumber": 269
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "Assert.notNull",
+          "lineNumber": 270
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "OAuth2Utils.buildImplicitRedirectUri",
+          "lineNumber": 273
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "accessTokenDO.getAccessToken",
+          "lineNumber": 273
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "accessTokenDO.getExpiresTime",
+          "lineNumber": 273
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "JsonUtils.parseObject",
+          "lineNumber": 274
+        },
+        {
+          "caller": "getImplicitGrantRedirect",
+          "callee": "client.getAdditionalInformation",
+          "lineNumber": 274
+        },
+        {
+          "caller": "getAuthorizationCodeRedirect",
+          "callee": "oauth2GrantService.grantAuthorizationCodeForCode",
+          "lineNumber": 280
+        },
+        {
+          "caller": "getAuthorizationCodeRedirect",
+          "callee": "getUserType",
+          "lineNumber": 280
+        },
+        {
+          "caller": "getAuthorizationCodeRedirect",
+          "callee": "client.getClientId",
+          "lineNumber": 280
+        },
+        {
+          "caller": "getAuthorizationCodeRedirect",
+          "callee": "OAuth2Utils.buildAuthorizationCodeRedirectUri",
+          "lineNumber": 283
+        },
+        {
+          "caller": "getUserType",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 287
+        },
+        {
+          "caller": "obtainBasicAuthorization",
+          "callee": "HttpUtils.obtainBasicAuthorization",
+          "lineNumber": 291
+        },
+        {
+          "caller": "obtainBasicAuthorization",
+          "callee": "ArrayUtil.isEmpty",
+          "lineNumber": 292
+        },
+        {
+          "caller": "obtainBasicAuthorization",
+          "callee": "exception0",
+          "lineNumber": 293
+        },
+        {
+          "caller": "obtainBasicAuthorization",
+          "callee": "BAD_REQUEST.getCode",
+          "lineNumber": 293
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 6,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/OAuth2TokenController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "getAccessTokenPage",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "deleteAccessToken",
+          "startLine": 42,
+          "endLine": 49,
+          "params": [
+            "accessToken"
+          ]
+        },
+        {
+          "name": "deleteAccessTokenList",
+          "startLine": 51,
+          "endLine": 59,
+          "params": [
+            "accessTokens"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OAuth2TokenController",
+          "startLine": 24,
+          "endLine": 61,
+          "methods": [
+            "getAccessTokenPage",
+            "deleteAccessToken",
+            "deleteAccessTokenList"
+          ],
+          "properties": [
+            "oauth2TokenService",
+            "authService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAccessTokenPage",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAccessToken",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "deleteAccessTokenList",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "OAuth2TokenController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAccessTokenPage",
+          "callee": "oauth2TokenService.getAccessTokenPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getAccessTokenPage",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getAccessTokenPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 39
+        },
+        {
+          "caller": "deleteAccessToken",
+          "callee": "authService.logout",
+          "lineNumber": 47
+        },
+        {
+          "caller": "deleteAccessToken",
+          "callee": "LoginLogTypeEnum.LOGOUT_DELETE.getType",
+          "lineNumber": 47
+        },
+        {
+          "caller": "deleteAccessToken",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "deleteAccessTokenList",
+          "callee": "accessTokens.forEach",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteAccessTokenList",
+          "callee": "authService.logout",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deleteAccessTokenList",
+          "callee": "LoginLogTypeEnum.LOGOUT_DELETE.getType",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deleteAccessTokenList",
+          "callee": "success",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/OAuth2UserController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "getUserInfo",
+          "startLine": 51,
+          "endLine": 69,
+          "params": []
+        },
+        {
+          "name": "updateUserInfo",
+          "startLine": 71,
+          "endLine": 79,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "OAuth2UserController",
+          "startLine": 37,
+          "endLine": 81,
+          "methods": [
+            "getUserInfo",
+            "updateUserInfo"
+          ],
+          "properties": [
+            "userService",
+            "deptService",
+            "postService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUserInfo",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserInfo",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "OAuth2UserController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUserInfo",
+          "callee": "userService.getUser",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "getLoginUserId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "user.getDeptId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "deptService.getDept",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "user.getDeptId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "resp.setDept",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "CollUtil.isNotEmpty",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "user.getPostIds",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "postService.getPostList",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "user.getPostIds",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "resp.setPosts",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "success",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "userService.updateUserProfile",
+          "lineNumber": 77
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "getLoginUserId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 77
+        },
+        {
+          "caller": "updateUserInfo",
+          "callee": "success",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/client/OAuth2ClientPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "OAuth2ClientPageReqVO",
+          "startLine": 9,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "name",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2ClientPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/client/OAuth2ClientRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "OAuth2ClientRespVO",
+          "startLine": 9,
+          "endLine": 64,
+          "methods": [],
+          "properties": [
+            "id",
+            "clientId",
+            "secret",
+            "name",
+            "logo",
+            "description",
+            "status",
+            "accessTokenValiditySeconds",
+            "refreshTokenValiditySeconds",
+            "redirectUris",
+            "authorizedGrantTypes",
+            "scopes",
+            "autoApproveScopes",
+            "authorities",
+            "resourceIds",
+            "additionalInformation",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2ClientRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/client/OAuth2ClientSaveReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "isAdditionalInformationJson",
+          "startLine": 76,
+          "endLine": 79,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OAuth2ClientSaveReqVO",
+          "startLine": 14,
+          "endLine": 81,
+          "methods": [
+            "isAdditionalInformationJson"
+          ],
+          "properties": [
+            "id",
+            "clientId",
+            "secret",
+            "name",
+            "logo",
+            "description",
+            "status",
+            "accessTokenValiditySeconds",
+            "refreshTokenValiditySeconds",
+            "redirectUris",
+            "authorizedGrantTypes",
+            "scopes",
+            "autoApproveScopes",
+            "authorities",
+            "resourceIds",
+            "additionalInformation"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isAdditionalInformationJson",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "OAuth2ClientSaveReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isAdditionalInformationJson",
+          "callee": "StrUtil.isEmpty",
+          "lineNumber": 78
+        },
+        {
+          "caller": "isAdditionalInformationJson",
+          "callee": "JsonUtils.isJson",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/open/OAuth2OpenAccessTokenRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "OAuth2OpenAccessTokenRespVO",
+          "startLine": 9,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "accessToken",
+            "refreshToken",
+            "tokenType",
+            "expiresIn",
+            "scope"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2OpenAccessTokenRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/open/OAuth2OpenAuthorizeInfoRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "OAuth2OpenAuthorizeInfoRespVO",
+          "startLine": 11,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "client",
+            "scopes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2OpenAuthorizeInfoRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/open/OAuth2OpenCheckTokenRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "OAuth2OpenCheckTokenRespVO",
+          "startLine": 11,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "tenantId",
+            "clientId",
+            "scopes",
+            "accessToken",
+            "exp"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2OpenCheckTokenRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/token/OAuth2AccessTokenPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "OAuth2AccessTokenPageReqVO",
+          "startLine": 8,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "userId",
+            "userType",
+            "clientId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2AccessTokenPageReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/token/OAuth2AccessTokenRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "OAuth2AccessTokenRespVO",
+          "startLine": 10,
+          "endLine": 40,
+          "methods": [],
+          "properties": [
+            "id",
+            "accessToken",
+            "refreshToken",
+            "userId",
+            "userType",
+            "clientId",
+            "createTime",
+            "expiresTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2AccessTokenRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/user/OAuth2UserInfoRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "OAuth2UserInfoRespVO",
+          "startLine": 10,
+          "endLine": 70,
+          "methods": [],
+          "properties": [
+            "id",
+            "username",
+            "nickname",
+            "email",
+            "mobile",
+            "sex",
+            "avatar",
+            "dept",
+            "posts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2UserInfoRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/vo/user/OAuth2UserUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "OAuth2UserUpdateReqVO",
+          "startLine": 12,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "nickname",
+            "email",
+            "mobile",
+            "sex"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OAuth2UserUpdateReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/MenuController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "createMenu",
+          "startLine": 35,
+          "endLine": 41,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateMenu",
+          "startLine": 43,
+          "endLine": 49,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteMenu",
+          "startLine": 51,
+          "endLine": 58,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteMenuList",
+          "startLine": 60,
+          "endLine": 67,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getMenuList",
+          "startLine": 69,
+          "endLine": 76,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getSimpleMenuList",
+          "startLine": 78,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "getMenu",
+          "startLine": 89,
+          "endLine": 95,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MenuController",
+          "startLine": 26,
+          "endLine": 97,
+          "methods": [
+            "createMenu",
+            "updateMenu",
+            "deleteMenu",
+            "deleteMenuList",
+            "getMenuList",
+            "getSimpleMenuList",
+            "getMenu"
+          ],
+          "properties": [
+            "menuService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMenu",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "updateMenu",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMenu",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "deleteMenuList",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "getMenuList",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleMenuList",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getMenu",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "MenuController",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMenu",
+          "callee": "menuService.createMenu",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createMenu",
+          "callee": "success",
+          "lineNumber": 40
+        },
+        {
+          "caller": "updateMenu",
+          "callee": "menuService.updateMenu",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateMenu",
+          "callee": "success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "deleteMenu",
+          "callee": "menuService.deleteMenu",
+          "lineNumber": 56
+        },
+        {
+          "caller": "deleteMenu",
+          "callee": "success",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deleteMenuList",
+          "callee": "menuService.deleteMenuList",
+          "lineNumber": 65
+        },
+        {
+          "caller": "deleteMenuList",
+          "callee": "success",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getMenuList",
+          "callee": "menuService.getMenuList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "getMenuList",
+          "callee": "list.sort",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getMenuList",
+          "callee": "Comparator.comparing",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getMenuList",
+          "callee": "success",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getMenuList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "menuService.getMenuListByTenant",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "new MenuListReqVO().setStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "new MenuListReqVO",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "menuService.filterDisableMenus",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "list.sort",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "Comparator.comparing",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getSimpleMenuList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getMenu",
+          "callee": "menuService.getMenu",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getMenu",
+          "callee": "success",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getMenu",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/PermissionController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "getRoleMenuList",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "roleId"
+          ]
+        },
+        {
+          "name": "assignRoleMenu",
+          "startLine": 41,
+          "endLine": 51,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "assignRoleDataScope",
+          "startLine": 53,
+          "endLine": 59,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "listAdminRoles",
+          "startLine": 61,
+          "endLine": 67,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "assignUserRole",
+          "startLine": 69,
+          "endLine": 75,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PermissionController",
+          "startLine": 23,
+          "endLine": 77,
+          "methods": [
+            "getRoleMenuList",
+            "assignRoleMenu",
+            "assignRoleDataScope",
+            "listAdminRoles",
+            "assignUserRole"
+          ],
+          "properties": [
+            "permissionService",
+            "tenantService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getRoleMenuList",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "assignRoleMenu",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "assignRoleDataScope",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "listAdminRoles",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "assignUserRole",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "PermissionController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getRoleMenuList",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getRoleMenuList",
+          "callee": "permissionService.getRoleMenuListByRoleId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "tenantService.handleTenantMenu",
+          "lineNumber": 46
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "reqVO.getMenuIds().removeIf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "reqVO.getMenuIds",
+          "lineNumber": 46
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "CollUtil.contains",
+          "lineNumber": 46
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "permissionService.assignRoleMenu",
+          "lineNumber": 49
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "reqVO.getRoleId",
+          "lineNumber": 49
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "reqVO.getMenuIds",
+          "lineNumber": 49
+        },
+        {
+          "caller": "assignRoleMenu",
+          "callee": "success",
+          "lineNumber": 50
+        },
+        {
+          "caller": "assignRoleDataScope",
+          "callee": "permissionService.assignRoleDataScope",
+          "lineNumber": 57
+        },
+        {
+          "caller": "assignRoleDataScope",
+          "callee": "reqVO.getRoleId",
+          "lineNumber": 57
+        },
+        {
+          "caller": "assignRoleDataScope",
+          "callee": "reqVO.getDataScope",
+          "lineNumber": 57
+        },
+        {
+          "caller": "assignRoleDataScope",
+          "callee": "reqVO.getDataScopeDeptIds",
+          "lineNumber": 57
+        },
+        {
+          "caller": "assignRoleDataScope",
+          "callee": "success",
+          "lineNumber": 58
+        },
+        {
+          "caller": "listAdminRoles",
+          "callee": "success",
+          "lineNumber": 66
+        },
+        {
+          "caller": "listAdminRoles",
+          "callee": "permissionService.getUserRoleIdListByUserId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "assignUserRole",
+          "callee": "permissionService.assignUserRole",
+          "lineNumber": 73
+        },
+        {
+          "caller": "assignUserRole",
+          "callee": "reqVO.getUserId",
+          "lineNumber": 73
+        },
+        {
+          "caller": "assignUserRole",
+          "callee": "reqVO.getRoleIds",
+          "lineNumber": 73
+        },
+        {
+          "caller": "assignUserRole",
+          "callee": "success",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/RoleController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "createRole",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateRole",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteRole",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteRoleList",
+          "startLine": 66,
+          "endLine": 73,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getRole",
+          "startLine": 75,
+          "endLine": 81,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getRolePage",
+          "startLine": 83,
+          "endLine": 89,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getSimpleRoleList",
+          "startLine": 91,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "export",
+          "startLine": 99,
+          "endLine": 109,
+          "params": [
+            "response",
+            "exportReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RoleController",
+          "startLine": 33,
+          "endLine": 111,
+          "methods": [
+            "createRole",
+            "updateRole",
+            "deleteRole",
+            "deleteRoleList",
+            "getRole",
+            "getRolePage",
+            "getSimpleRoleList",
+            "export"
+          ],
+          "properties": [
+            "roleService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRole",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateRole",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "deleteRole",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "deleteRoleList",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "getRole",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "getRolePage",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleRoleList",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "export",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "RoleController",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createRole",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRole",
+          "callee": "roleService.createRole",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateRole",
+          "callee": "roleService.updateRole",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateRole",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "deleteRole",
+          "callee": "roleService.deleteRole",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteRole",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "deleteRoleList",
+          "callee": "roleService.deleteRoleList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "deleteRoleList",
+          "callee": "success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getRole",
+          "callee": "roleService.getRole",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getRole",
+          "callee": "success",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getRole",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getRolePage",
+          "callee": "roleService.getRolePage",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getRolePage",
+          "callee": "success",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getRolePage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getSimpleRoleList",
+          "callee": "roleService.getRoleListByStatus",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSimpleRoleList",
+          "callee": "singleton",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSimpleRoleList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSimpleRoleList",
+          "callee": "list.sort",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getSimpleRoleList",
+          "callee": "Comparator.comparing",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getSimpleRoleList",
+          "callee": "success",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getSimpleRoleList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 96
+        },
+        {
+          "caller": "export",
+          "callee": "exportReqVO.setPageSize",
+          "lineNumber": 104
+        },
+        {
+          "caller": "export",
+          "callee": "roleService.getRolePage(exportReqVO).getList",
+          "lineNumber": 105
+        },
+        {
+          "caller": "export",
+          "callee": "roleService.getRolePage",
+          "lineNumber": 105
+        },
+        {
+          "caller": "export",
+          "callee": "ExcelUtils.write",
+          "lineNumber": 107
+        },
+        {
+          "caller": "export",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 9,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/vo/menu/MenuListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "MenuListReqVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "name",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MenuListReqVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/vo/menu/MenuRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 50,
+      "classes": [
+        {
+          "name": "MenuRespVO",
+          "startLine": 11,
+          "endLine": 69,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "permission",
+            "type",
+            "sort",
+            "parentId",
+            "path",
+            "icon",
+            "component",
+            "componentName",
+            "status",
+            "visible",
+            "keepAlive",
+            "alwaysShow",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MenuRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/vo/menu/MenuSaveVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "MenuSaveVO",
+          "startLine": 9,
+          "endLine": 64,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "permission",
+            "type",
+            "sort",
+            "parentId",
+            "path",
+            "icon",
+            "component",
+            "componentName",
+            "status",
+            "visible",
+            "keepAlive",
+            "alwaysShow"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MenuSaveVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-system/yudao-module-system-server/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/vo/menu/MenuSimpleRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "MenuSimpleRespVO",
+          "startLine": 6,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "parentId",
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MenuSimpleRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

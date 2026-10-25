@@ -1,0 +1,4993 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/logger/ApiErrorLogService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "ApiErrorLogService",
+          "startLine": 13,
+          "endLine": 55,
+          "methods": [
+            "createApiErrorLog",
+            "getApiErrorLog",
+            "getApiErrorLogPage",
+            "updateApiErrorLogProcess",
+            "cleanErrorLog"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ApiErrorLogService",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/logger/ApiErrorLogServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "createApiErrorLog",
+          "startLine": 38,
+          "endLine": 54,
+          "params": [
+            "createDTO"
+          ]
+        },
+        {
+          "name": "getApiErrorLogPage",
+          "startLine": 56,
+          "endLine": 59,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getApiErrorLog",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateApiErrorLogProcess",
+          "startLine": 66,
+          "endLine": 78,
+          "params": [
+            "id",
+            "processStatus",
+            "processUserId"
+          ]
+        },
+        {
+          "name": "cleanErrorLog",
+          "startLine": 80,
+          "endLine": 95,
+          "params": [
+            "exceedDay",
+            "deleteLimit"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApiErrorLogServiceImpl",
+          "startLine": 30,
+          "endLine": 97,
+          "methods": [
+            "createApiErrorLog",
+            "getApiErrorLogPage",
+            "getApiErrorLog",
+            "updateApiErrorLogProcess",
+            "cleanErrorLog"
+          ],
+          "properties": [
+            "apiErrorLogMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createApiErrorLog",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getApiErrorLogPage",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getApiErrorLog",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "updateApiErrorLogProcess",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "cleanErrorLog",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "ApiErrorLogServiceImpl",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createApiErrorLog",
+          "callee": "BeanUtils.toBean(createDTO, ApiErrorLogDO.class).setProcessStatus",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "ApiErrorLogProcessStatusEnum.INIT.getStatus",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "apiErrorLog.setRequestParams",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "StrUtils.maxLength",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "apiErrorLog.getRequestParams",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "TenantContextHolder.getTenantId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "TenantUtils.executeIgnore",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createApiErrorLog",
+          "callee": "log.error",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getApiErrorLogPage",
+          "callee": "apiErrorLogMapper.selectPage",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getApiErrorLog",
+          "callee": "apiErrorLogMapper.selectById",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "apiErrorLogMapper.selectById",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "exception",
+          "lineNumber": 70
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogProcessStatusEnum.INIT.getStatus().equals",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogProcessStatusEnum.INIT.getStatus",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "errorLog.getProcessStatus",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "exception",
+          "lineNumber": 73
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "apiErrorLogMapper.updateById",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogDO.builder().id(id).processStatus(processStatus)\n                .processUserId(processUserId).processTime(LocalDateTime.now()).build",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogDO.builder().id(id).processStatus(processStatus)\n                .processUserId(processUserId).processTime",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogDO.builder().id(id).processStatus(processStatus).processUserId",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogDO.builder().id(id).processStatus",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogDO.builder().id",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "ApiErrorLogDO.builder",
+          "lineNumber": 76
+        },
+        {
+          "caller": "updateApiErrorLogProcess",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 77
+        },
+        {
+          "caller": "cleanErrorLog",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 84
+        },
+        {
+          "caller": "cleanErrorLog",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 84
+        },
+        {
+          "caller": "cleanErrorLog",
+          "callee": "apiErrorLogMapper.deleteByCreateTimeLt",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/test/java/cn/iocoder/yudao/module/infra/service/logger/ApiAccessLogServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "testGetApiAccessLogPage",
+          "startLine": 33,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "testCleanJobLog",
+          "startLine": 77,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "testCreateApiAccessLog",
+          "startLine": 98,
+          "endLine": 108,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApiAccessLogServiceImplTest",
+          "startLine": 24,
+          "endLine": 110,
+          "methods": [
+            "testGetApiAccessLogPage",
+            "testCleanJobLog",
+            "testCreateApiAccessLog"
+          ],
+          "properties": [
+            "apiAccessLogService",
+            "apiAccessLogMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testGetApiAccessLogPage",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "testCleanJobLog",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateApiAccessLog",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "ApiAccessLogServiceImplTest",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "randomPojo",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setUserId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setUserType",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setApplicationName",
+          "lineNumber": 38
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setRequestUrl",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setBeginTime",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "buildTime",
+          "lineNumber": 40
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setDuration",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setResultCode",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "GlobalErrorCodeConstants.SUCCESS.getCode",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setUserId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setUserType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setApplicationName",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setRequestUrl",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setBeginTime",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "buildTime",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setDuration",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "o.setResultCode",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "new ApiAccessLogPageReqVO",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "reqVO.setUserId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "reqVO.setUserType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "reqVO.setApplicationName",
+          "lineNumber": 63
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "reqVO.setRequestUrl",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "reqVO.setBeginTime",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "buildBetweenTime",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "reqVO.setDuration",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "reqVO.setResultCode",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "GlobalErrorCodeConstants.SUCCESS.getCode",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "apiAccessLogService.getApiAccessLogPage",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "assertEquals",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 72
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "assertEquals",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "pageResult.getList().size",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "assertPojoEquals",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "pageResult.getList().get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testGetApiAccessLogPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 74
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "randomPojo",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "o.setCreateTime",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "addTime",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "Duration.ofDays",
+          "lineNumber": 80
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 81
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "randomPojo",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "o.setCreateTime",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "addTime",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "Duration.ofDays",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiAccessLogMapper.insert",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiAccessLogService.cleanAccessLog",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "assertEquals",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiAccessLogMapper.selectList",
+          "lineNumber": 92
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "assertEquals",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "logs.size",
+          "lineNumber": 93
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "assertPojoEquals",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "logs.get",
+          "lineNumber": 95
+        },
+        {
+          "caller": "testCreateApiAccessLog",
+          "callee": "randomPojo",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testCreateApiAccessLog",
+          "callee": "apiAccessLogService.createApiAccessLog",
+          "lineNumber": 104
+        },
+        {
+          "caller": "testCreateApiAccessLog",
+          "callee": "apiAccessLogMapper.selectOne",
+          "lineNumber": 106
+        },
+        {
+          "caller": "testCreateApiAccessLog",
+          "callee": "assertPojoEquals",
+          "lineNumber": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-infra/yudao-module-infra-server/src/test/java/cn/iocoder/yudao/module/infra/service/logger/ApiErrorLogServiceImplTest.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "testGetApiErrorLogPage",
+          "startLine": 39,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "testCreateApiErrorLog",
+          "startLine": 80,
+          "endLine": 91,
+          "params": []
+        },
+        {
+          "name": "testUpdateApiErrorLogProcess_success",
+          "startLine": 93,
+          "endLine": 111,
+          "params": []
+        },
+        {
+          "name": "testUpdateApiErrorLogProcess_processed",
+          "startLine": 113,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "testUpdateApiErrorLogProcess_notFound",
+          "startLine": 130,
+          "endLine": 141,
+          "params": []
+        },
+        {
+          "name": "testCleanJobLog",
+          "startLine": 143,
+          "endLine": 162,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ApiErrorLogServiceImplTest",
+          "startLine": 30,
+          "endLine": 164,
+          "methods": [
+            "testGetApiErrorLogPage",
+            "testCreateApiErrorLog",
+            "testUpdateApiErrorLogProcess_success",
+            "testUpdateApiErrorLogProcess_processed",
+            "testUpdateApiErrorLogProcess_notFound",
+            "testCleanJobLog"
+          ],
+          "properties": [
+            "apiErrorLogService",
+            "apiErrorLogMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "testGetApiErrorLogPage",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "testCreateApiErrorLog",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateApiErrorLogProcess_success",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateApiErrorLogProcess_processed",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "testUpdateApiErrorLogProcess_notFound",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "testCleanJobLog",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "ApiErrorLogServiceImplTest",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "randomPojo",
+          "lineNumber": 42
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setUserId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setUserType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 44
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setApplicationName",
+          "lineNumber": 45
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setRequestUrl",
+          "lineNumber": 46
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setExceptionTime",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "buildTime",
+          "lineNumber": 47
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setProcessStatus",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "ApiErrorLogProcessStatusEnum.INIT.getStatus",
+          "lineNumber": 48
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 50
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setUserType",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 54
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setApplicationName",
+          "lineNumber": 56
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setRequestUrl",
+          "lineNumber": 58
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "o.setExceptionTime",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "buildTime",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "cloneIgnoreId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "logDO.setProcessStatus",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "ApiErrorLogProcessStatusEnum.DONE.getStatus",
+          "lineNumber": 62
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "new ApiErrorLogPageReqVO",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "reqVO.setUserId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "reqVO.setUserType",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "reqVO.setApplicationName",
+          "lineNumber": 67
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "reqVO.setRequestUrl",
+          "lineNumber": 68
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "reqVO.setExceptionTime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "buildBetweenTime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "reqVO.setProcessStatus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "ApiErrorLogProcessStatusEnum.INIT.getStatus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "apiErrorLogService.getApiErrorLogPage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "assertEquals",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 75
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "assertEquals",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "pageResult.getList().size",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 76
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "assertPojoEquals",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "pageResult.getList().get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testGetApiErrorLogPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testCreateApiErrorLog",
+          "callee": "randomPojo",
+          "lineNumber": 83
+        },
+        {
+          "caller": "testCreateApiErrorLog",
+          "callee": "apiErrorLogService.createApiErrorLog",
+          "lineNumber": 86
+        },
+        {
+          "caller": "testCreateApiErrorLog",
+          "callee": "apiErrorLogMapper.selectOne",
+          "lineNumber": 88
+        },
+        {
+          "caller": "testCreateApiErrorLog",
+          "callee": "assertPojoEquals",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testCreateApiErrorLog",
+          "callee": "assertEquals",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateApiErrorLog",
+          "callee": "ApiErrorLogProcessStatusEnum.INIT.getStatus",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testCreateApiErrorLog",
+          "callee": "apiErrorLogDO.getProcessStatus",
+          "lineNumber": 90
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "randomPojo",
+          "lineNumber": 96
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "o.setProcessStatus",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "ApiErrorLogProcessStatusEnum.INIT.getStatus",
+          "lineNumber": 97
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 98
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "apiErrorLogDO.getId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "randomEle(ApiErrorLogProcessStatusEnum.values()).getStatus",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "randomEle",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "ApiErrorLogProcessStatusEnum.values",
+          "lineNumber": 101
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "randomLongId",
+          "lineNumber": 102
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "apiErrorLogService.updateApiErrorLogProcess",
+          "lineNumber": 105
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "apiErrorLogMapper.selectById",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "apiErrorLogDO.getId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "assertEquals",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "dbApiErrorLogDO.getProcessStatus",
+          "lineNumber": 108
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "assertEquals",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "dbApiErrorLogDO.getProcessUserId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "assertNotNull",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_success",
+          "callee": "dbApiErrorLogDO.getProcessTime",
+          "lineNumber": 110
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "randomPojo",
+          "lineNumber": 116
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "o.setProcessStatus",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "ApiErrorLogProcessStatusEnum.DONE.getStatus",
+          "lineNumber": 117
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 118
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "apiErrorLogDO.getId",
+          "lineNumber": 120
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "randomEle(ApiErrorLogProcessStatusEnum.values()).getStatus",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "randomEle",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "ApiErrorLogProcessStatusEnum.values",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "randomLongId",
+          "lineNumber": 122
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "assertServiceException",
+          "lineNumber": 125
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_processed",
+          "callee": "apiErrorLogService.updateApiErrorLogProcess",
+          "lineNumber": 126
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_notFound",
+          "callee": "randomLongId",
+          "lineNumber": 133
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_notFound",
+          "callee": "randomEle(ApiErrorLogProcessStatusEnum.values()).getStatus",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_notFound",
+          "callee": "randomEle",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_notFound",
+          "callee": "ApiErrorLogProcessStatusEnum.values",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_notFound",
+          "callee": "randomLongId",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_notFound",
+          "callee": "assertServiceException",
+          "lineNumber": 138
+        },
+        {
+          "caller": "testUpdateApiErrorLogProcess_notFound",
+          "callee": "apiErrorLogService.updateApiErrorLogProcess",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "randomPojo",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "o.setCreateTime",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "addTime",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "Duration.ofDays",
+          "lineNumber": 146
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 147
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "randomPojo",
+          "lineNumber": 148
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "o.setCreateTime",
+          "lineNumber": 148
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "addTime",
+          "lineNumber": 148
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "Duration.ofDays",
+          "lineNumber": 148
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiErrorLogMapper.insert",
+          "lineNumber": 149
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiErrorLogService.cleanErrorLog",
+          "lineNumber": 155
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "assertEquals",
+          "lineNumber": 157
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "apiErrorLogMapper.selectList",
+          "lineNumber": 158
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "assertEquals",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "logs.size",
+          "lineNumber": 159
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "assertPojoEquals",
+          "lineNumber": 161
+        },
+        {
+          "caller": "testCleanJobLog",
+          "callee": "logs.get",
+          "lineNumber": 161
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-api/src/main/java/cn/iocoder/yudao/module/iot/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PREFIX",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").anonymous()\n                        .requestMatchers(\"/actuator/**\").anonymous",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").anonymous().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").anonymous",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").anonymous",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-iot/yudao-module-iot-server/src/main/java/cn/iocoder/yudao/module/iot/framework/web/config/IotWebConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "iotGroupedOpenApi",
+          "startLine": 19,
+          "endLine": 22,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "IotWebConfiguration",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [
+            "iotGroupedOpenApi"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "iotGroupedOpenApi",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "IotWebConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "iotGroupedOpenApi",
+          "callee": "YudaoSwaggerAutoConfiguration.buildGroupedOpenApi",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-api/src/main/java/cn/iocoder/yudao/module/promotion/enums/kefu/KeFuMessageContentTypeEnum.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "array",
+          "startLine": 40,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "KeFuMessageContentTypeEnum",
+          "startLine": 14,
+          "endLine": 45,
+          "methods": [
+            "array"
+          ],
+          "properties": [
+            "ARRAYS",
+            "type",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "array",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "KeFuMessageContentTypeEnum",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/kefu/KeFuConversationController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "getConversation",
+          "startLine": 38,
+          "endLine": 55,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateConversationPinned",
+          "startLine": 57,
+          "endLine": 63,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteConversation",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getConversationList",
+          "startLine": 74,
+          "endLine": 87,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "KeFuConversationController",
+          "startLine": 27,
+          "endLine": 89,
+          "methods": [
+            "getConversation",
+            "updateConversationPinned",
+            "deleteConversation",
+            "getConversationList"
+          ],
+          "properties": [
+            "conversationService",
+            "memberUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getConversation",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateConversationPinned",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "deleteConversation",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "getConversationList",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "KeFuConversationController",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getConversation",
+          "callee": "conversationService.getConversation",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getConversation",
+          "callee": "success",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getConversation",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getConversation",
+          "callee": "memberUserApi.getUser(conversation.getUserId()).getCheckedData",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getConversation",
+          "callee": "memberUserApi.getUser",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getConversation",
+          "callee": "conversation.getUserId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getConversation",
+          "callee": "result.setUserAvatar(memberUser.getAvatar()).setUserNickname",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getConversation",
+          "callee": "result.setUserAvatar",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getConversation",
+          "callee": "memberUser.getAvatar",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getConversation",
+          "callee": "memberUser.getNickname",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getConversation",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "updateConversationPinned",
+          "callee": "conversationService.updateConversationPinnedByAdmin",
+          "lineNumber": 61
+        },
+        {
+          "caller": "updateConversationPinned",
+          "callee": "success",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deleteConversation",
+          "callee": "conversationService.deleteKefuConversation",
+          "lineNumber": 70
+        },
+        {
+          "caller": "deleteConversation",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "conversationService.getKefuConversationList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "memberUserApi.getUserMap",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "convertSet",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "respList.forEach",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "findAndThen",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "item.getUserId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "item.setUserAvatar(memberUser.getAvatar()).setUserNickname",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "item.setUserAvatar",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "memberUser.getAvatar",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "memberUser.getNickname",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getConversationList",
+          "callee": "success",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/kefu/KeFuMessageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "sendKeFuMessage",
+          "startLine": 42,
+          "endLine": 48,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "updateKeFuMessageReadStatus",
+          "startLine": 50,
+          "endLine": 57,
+          "params": [
+            "conversationId"
+          ]
+        },
+        {
+          "name": "getKeFuMessageList",
+          "startLine": 59,
+          "endLine": 72,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "KeFuMessageController",
+          "startLine": 31,
+          "endLine": 74,
+          "methods": [
+            "sendKeFuMessage",
+            "updateKeFuMessageReadStatus",
+            "getKeFuMessageList"
+          ],
+          "properties": [
+            "messageService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendKeFuMessage",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateKeFuMessageReadStatus",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getKeFuMessageList",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "KeFuMessageController",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendKeFuMessage",
+          "callee": "sendReqVO.setSenderId(getLoginUserId()).setSenderType",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sendKeFuMessage",
+          "callee": "sendReqVO.setSenderId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sendKeFuMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sendKeFuMessage",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sendKeFuMessage",
+          "callee": "success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "sendKeFuMessage",
+          "callee": "messageService.sendKefuMessage",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "messageService.updateKeFuMessageReadStatus",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "getLoginUserId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 55
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "messageService.getKeFuMessageList",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "convertSet",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "filterList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "UserTypeEnum.ADMIN.getValue().equals",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "item.getSenderType",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "result.forEach",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "findAndThen",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "item.getSenderId",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "item.setSenderAvatar",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "user.getAvatar",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "success",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/kefu/vo/conversation/KeFuConversationRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 32,
+      "classes": [
+        {
+          "name": "KeFuConversationRespVO",
+          "startLine": 8,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "userAvatar",
+            "userNickname",
+            "lastMessageTime",
+            "lastMessageContent",
+            "lastMessageContentType",
+            "adminPinned",
+            "userDeleted",
+            "adminDeleted",
+            "adminUnreadMessageCount",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuConversationRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/kefu/vo/conversation/KeFuConversationUpdatePinnedReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "classes": [
+        {
+          "name": "KeFuConversationUpdatePinnedReqVO",
+          "startLine": 7,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "id",
+            "adminPinned"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuConversationUpdatePinnedReqVO",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/kefu/vo/message/KeFuMessageListReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "KeFuMessageListReqVO",
+          "startLine": 14,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "LIMIT",
+            "conversationId",
+            "createTime",
+            "limit"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuMessageListReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/kefu/vo/message/KeFuMessageRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "KeFuMessageRespVO",
+          "startLine": 8,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "id",
+            "conversationId",
+            "senderId",
+            "senderAvatar",
+            "senderType",
+            "receiverId",
+            "receiverType",
+            "contentType",
+            "content",
+            "readStatus",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuMessageRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/kefu/vo/message/KeFuMessageSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "KeFuMessageSendReqVO",
+          "startLine": 8,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "conversationId",
+            "contentType",
+            "content",
+            "senderId",
+            "senderType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuMessageSendReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/kefu/AppKeFuMessageController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "sendKefuMessage",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "updateKefuMessageReadStatus",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "conversationId"
+          ]
+        },
+        {
+          "name": "getKefuMessageList",
+          "startLine": 57,
+          "endLine": 68,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppKeFuMessageController",
+          "startLine": 30,
+          "endLine": 70,
+          "methods": [
+            "sendKefuMessage",
+            "updateKefuMessageReadStatus",
+            "getKefuMessageList"
+          ],
+          "properties": [
+            "kefuMessageService",
+            "adminUserApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendKefuMessage",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateKefuMessageReadStatus",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getKefuMessageList",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "AppKeFuMessageController",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendKefuMessage",
+          "callee": "sendReqVO.setSenderId(getLoginUserId()).setSenderType",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "sendReqVO.setSenderId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getLoginUserId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessageService.sendKefuMessage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateKefuMessageReadStatus",
+          "callee": "kefuMessageService.updateKeFuMessageReadStatus",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateKefuMessageReadStatus",
+          "callee": "getLoginUserId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateKefuMessageReadStatus",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateKefuMessageReadStatus",
+          "callee": "success",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "kefuMessageService.getKeFuMessageList",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "getLoginUserId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "adminUserApi.getUserMap",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "convertSet",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "filterList",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "UserTypeEnum.ADMIN.getValue().equals",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "item.getSenderType",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "result.forEach",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "findAndThen",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "item.getSenderId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "item.setSenderAvatar",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "user.getAvatar",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getKefuMessageList",
+          "callee": "success",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/kefu/vo/message/AppKeFuMessagePageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "AppKeFuMessagePageReqVO",
+          "startLine": 14,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "LIMIT",
+            "conversationId",
+            "createTime",
+            "limit"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppKeFuMessagePageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/kefu/vo/message/AppKeFuMessageSendReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "AppKeFuMessageSendReqVO",
+          "startLine": 8,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "contentType",
+            "content",
+            "senderId",
+            "senderType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppKeFuMessageSendReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/kefu/KeFuConversationDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "KeFuConversationDO",
+          "startLine": 18,
+          "endLine": 83,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "lastMessageTime",
+            "lastMessageContent",
+            "lastMessageContentType",
+            "adminPinned",
+            "userDeleted",
+            "adminDeleted",
+            "adminUnreadMessageCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuConversationDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/kefu/KeFuMessageDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 73,
+      "classes": [
+        {
+          "name": "KeFuMessageDO",
+          "startLine": 16,
+          "endLine": 81,
+          "methods": [],
+          "properties": [
+            "id",
+            "conversationId",
+            "senderId",
+            "senderType",
+            "receiverId",
+            "receiverType",
+            "contentType",
+            "content",
+            "readStatus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuMessageDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/kefu/KeFuConversationMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "KeFuConversationMapper",
+          "startLine": 16,
+          "endLine": 35,
+          "methods": [
+            "selectConversationList",
+            "updateAdminUnreadMessageCountIncrement",
+            "selectByUserId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuConversationMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectConversationList",
+          "callee": "selectList",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectConversationList",
+          "callee": "new LambdaQueryWrapperX<KeFuConversationDO>()\n                .eq(KeFuConversationDO::getAdminDeleted, Boolean.FALSE).orderByDesc",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectConversationList",
+          "callee": "new LambdaQueryWrapperX<KeFuConversationDO>().eq",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectConversationList",
+          "callee": "new LambdaQueryWrapperX<KeFuConversationDO>",
+          "lineNumber": 20
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountIncrement",
+          "callee": "update",
+          "lineNumber": 26
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountIncrement",
+          "callee": "new LambdaUpdateWrapper<KeFuConversationDO>()\n                .eq(KeFuConversationDO::getId, id).setSql",
+          "lineNumber": 26
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountIncrement",
+          "callee": "new LambdaUpdateWrapper<KeFuConversationDO>().eq",
+          "lineNumber": 26
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountIncrement",
+          "callee": "new LambdaUpdateWrapper<KeFuConversationDO>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectByUserId",
+          "callee": "selectOne",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/kefu/KeFuMessageMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "KeFuMessageMapper",
+          "startLine": 19,
+          "endLine": 51,
+          "methods": [
+            "selectList",
+            "selectListByConversationIdAndUserTypeAndReadStatus",
+            "updateReadStatusBatchByIds"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuMessageMapper",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new QueryWrapperX<KeFuMessageDO>()\n                .eqIfPresent(\"conversation_id\", reqVO.getConversationId())\n                .ltIfPresent(\"create_time\", reqVO.getCreateTime())\n                .orderByDesc(\"create_time\").limitN",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new QueryWrapperX<KeFuMessageDO>()\n                .eqIfPresent(\"conversation_id\", reqVO.getConversationId())\n                .ltIfPresent(\"create_time\", reqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new QueryWrapperX<KeFuMessageDO>()\n                .eqIfPresent(\"conversation_id\", reqVO.getConversationId()).ltIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new QueryWrapperX<KeFuMessageDO>().eqIfPresent",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "new QueryWrapperX<KeFuMessageDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getConversationId",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getCreateTime",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getLimit",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectListByConversationIdAndUserTypeAndReadStatus",
+          "callee": "selectList",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectListByConversationIdAndUserTypeAndReadStatus",
+          "callee": "new LambdaQueryWrapper<KeFuMessageDO>()\n                .eq(KeFuMessageDO::getConversationId, conversationId)\n                .ne(KeFuMessageDO::getSenderType, userType).eq",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectListByConversationIdAndUserTypeAndReadStatus",
+          "callee": "new LambdaQueryWrapper<KeFuMessageDO>()\n                .eq(KeFuMessageDO::getConversationId, conversationId).ne",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectListByConversationIdAndUserTypeAndReadStatus",
+          "callee": "new LambdaQueryWrapper<KeFuMessageDO>().eq",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectListByConversationIdAndUserTypeAndReadStatus",
+          "callee": "new LambdaQueryWrapper<KeFuMessageDO>",
+          "lineNumber": 40
+        },
+        {
+          "caller": "updateReadStatusBatchByIds",
+          "callee": "update",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateReadStatusBatchByIds",
+          "callee": "new LambdaUpdateWrapper<KeFuMessageDO>().in",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateReadStatusBatchByIds",
+          "callee": "new LambdaUpdateWrapper<KeFuMessageDO>",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuConversationService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 79,
+      "classes": [
+        {
+          "name": "KeFuConversationService",
+          "startLine": 14,
+          "endLine": 93,
+          "methods": [
+            "getConversation",
+            "deleteKefuConversation",
+            "updateConversationPinnedByAdmin",
+            "updateConversationLastMessage",
+            "updateAdminUnreadMessageCountToZero",
+            "updateConversationAdminDeleted",
+            "getKefuConversationList",
+            "getOrCreateConversation",
+            "validateKefuConversationExists",
+            "getConversationByUserId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuConversationService",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuConversationServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "getConversation",
+          "startLine": 33,
+          "endLine": 36,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteKefuConversation",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateConversationPinnedByAdmin",
+          "startLine": 47,
+          "endLine": 54,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateConversationLastMessage",
+          "startLine": 56,
+          "endLine": 74,
+          "params": [
+            "kefuMessage"
+          ]
+        },
+        {
+          "name": "updateAdminUnreadMessageCountToZero",
+          "startLine": 76,
+          "endLine": 83,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "updateConversationAdminDeleted",
+          "startLine": 85,
+          "endLine": 88,
+          "params": [
+            "id",
+            "adminDeleted"
+          ]
+        },
+        {
+          "name": "getKefuConversationList",
+          "startLine": 90,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "getOrCreateConversation",
+          "startLine": 95,
+          "endLine": 107,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "validateKefuConversationExists",
+          "startLine": 109,
+          "endLine": 116,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getConversationByUserId",
+          "startLine": 118,
+          "endLine": 121,
+          "params": [
+            "userId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "KeFuConversationServiceImpl",
+          "startLine": 26,
+          "endLine": 123,
+          "methods": [
+            "getConversation",
+            "deleteKefuConversation",
+            "updateConversationPinnedByAdmin",
+            "updateConversationLastMessage",
+            "updateAdminUnreadMessageCountToZero",
+            "updateConversationAdminDeleted",
+            "getKefuConversationList",
+            "getOrCreateConversation",
+            "validateKefuConversationExists",
+            "getConversationByUserId"
+          ],
+          "properties": [
+            "conversationMapper"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getConversation",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "deleteKefuConversation",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "updateConversationPinnedByAdmin",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "updateConversationLastMessage",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "updateAdminUnreadMessageCountToZero",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "updateConversationAdminDeleted",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "getKefuConversationList",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "getOrCreateConversation",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "validateKefuConversationExists",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "getConversationByUserId",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "KeFuConversationServiceImpl",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getConversation",
+          "callee": "conversationMapper.selectById",
+          "lineNumber": 35
+        },
+        {
+          "caller": "deleteKefuConversation",
+          "callee": "validateKefuConversationExists",
+          "lineNumber": 41
+        },
+        {
+          "caller": "deleteKefuConversation",
+          "callee": "conversationMapper.updateById",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deleteKefuConversation",
+          "callee": "new KeFuConversationDO().setId(id).setAdminDeleted",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deleteKefuConversation",
+          "callee": "new KeFuConversationDO().setId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "deleteKefuConversation",
+          "callee": "new KeFuConversationDO",
+          "lineNumber": 44
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "validateKefuConversationExists",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "conversationMapper.updateById",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "new KeFuConversationDO().setId(updateReqVO.getId()).setAdminPinned",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "new KeFuConversationDO().setId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "new KeFuConversationDO",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateConversationPinnedByAdmin",
+          "callee": "updateReqVO.getAdminPinned",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "validateKefuConversationExists",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getConversationId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "conversationMapper.updateById",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "new KeFuConversationDO().setId(kefuMessage.getConversationId())\n                .setLastMessageTime(kefuMessage.getCreateTime()).setLastMessageContent(kefuMessage.getContent()).setLastMessageContentType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "new KeFuConversationDO().setId(kefuMessage.getConversationId())\n                .setLastMessageTime(kefuMessage.getCreateTime()).setLastMessageContent",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "new KeFuConversationDO().setId(kefuMessage.getConversationId()).setLastMessageTime",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "new KeFuConversationDO().setId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "new KeFuConversationDO",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getConversationId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getCreateTime",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getContent",
+          "lineNumber": 63
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getContentType",
+          "lineNumber": 64
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "UserTypeEnum.MEMBER.getValue().equals",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getSenderType",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "conversationMapper.updateAdminUnreadMessageCountIncrement",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getConversationId",
+          "lineNumber": 68
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "conversation.getAdminDeleted",
+          "lineNumber": 71
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "updateConversationAdminDeleted",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateConversationLastMessage",
+          "callee": "kefuMessage.getConversationId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountToZero",
+          "callee": "validateKefuConversationExists",
+          "lineNumber": 79
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountToZero",
+          "callee": "conversationMapper.updateById",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountToZero",
+          "callee": "new KeFuConversationDO().setId(id).setAdminUnreadMessageCount",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountToZero",
+          "callee": "new KeFuConversationDO().setId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateAdminUnreadMessageCountToZero",
+          "callee": "new KeFuConversationDO",
+          "lineNumber": 82
+        },
+        {
+          "caller": "updateConversationAdminDeleted",
+          "callee": "conversationMapper.updateById",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateConversationAdminDeleted",
+          "callee": "new KeFuConversationDO().setId(id).setAdminDeleted",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateConversationAdminDeleted",
+          "callee": "new KeFuConversationDO().setId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "updateConversationAdminDeleted",
+          "callee": "new KeFuConversationDO",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getKefuConversationList",
+          "callee": "conversationMapper.selectConversationList",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "conversationMapper.selectOne",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId(userId).setLastMessageTime(LocalDateTime.now())\n                    .setLastMessageContent(StrUtil.EMPTY).setLastMessageContentType(KeFuMessageContentTypeEnum.TEXT.getType())\n                    .setAdminPinned(Boolean.FALSE).setUserDeleted(Boolean.FALSE).setAdminDeleted(Boolean.FALSE).setAdminUnreadMessageCount",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId(userId).setLastMessageTime(LocalDateTime.now())\n                    .setLastMessageContent(StrUtil.EMPTY).setLastMessageContentType(KeFuMessageContentTypeEnum.TEXT.getType())\n                    .setAdminPinned(Boolean.FALSE).setUserDeleted(Boolean.FALSE).setAdminDeleted",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId(userId).setLastMessageTime(LocalDateTime.now())\n                    .setLastMessageContent(StrUtil.EMPTY).setLastMessageContentType(KeFuMessageContentTypeEnum.TEXT.getType())\n                    .setAdminPinned(Boolean.FALSE).setUserDeleted",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId(userId).setLastMessageTime(LocalDateTime.now())\n                    .setLastMessageContent(StrUtil.EMPTY).setLastMessageContentType(KeFuMessageContentTypeEnum.TEXT.getType()).setAdminPinned",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId(userId).setLastMessageTime(LocalDateTime.now())\n                    .setLastMessageContent(StrUtil.EMPTY).setLastMessageContentType",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId(userId).setLastMessageTime(LocalDateTime.now()).setLastMessageContent",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId(userId).setLastMessageTime",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO().setUserId",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "new KeFuConversationDO",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "KeFuMessageContentTypeEnum.TEXT.getType",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getOrCreateConversation",
+          "callee": "conversationMapper.insert",
+          "lineNumber": 104
+        },
+        {
+          "caller": "validateKefuConversationExists",
+          "callee": "conversationMapper.selectById",
+          "lineNumber": 111
+        },
+        {
+          "caller": "validateKefuConversationExists",
+          "callee": "exception",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getConversationByUserId",
+          "callee": "conversationMapper.selectByUserId",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuMessageService.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 52,
+      "classes": [
+        {
+          "name": "KeFuMessageService",
+          "startLine": 17,
+          "endLine": 61,
+          "methods": [
+            "sendKefuMessage",
+            "sendKefuMessage",
+            "updateKeFuMessageReadStatus",
+            "getKeFuMessageList",
+            "getKeFuMessageList"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeFuMessageService",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/service/kefu/KeFuMessageServiceImpl.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 170,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "sendKefuMessage",
+          "startLine": 56,
+          "endLine": 78,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "sendKefuMessage",
+          "startLine": 80,
+          "endLine": 97,
+          "params": [
+            "sendReqVO"
+          ]
+        },
+        {
+          "name": "updateKeFuMessageReadStatus",
+          "startLine": 99,
+          "endLine": 128,
+          "params": [
+            "conversationId",
+            "userId",
+            "userType"
+          ]
+        },
+        {
+          "name": "validateReceiverExist",
+          "startLine": 130,
+          "endLine": 137,
+          "params": [
+            "receiverId",
+            "receiverType"
+          ]
+        },
+        {
+          "name": "sendAsyncMessageToMember",
+          "startLine": 139,
+          "endLine": 142,
+          "params": [
+            "userId",
+            "messageType",
+            "content"
+          ]
+        },
+        {
+          "name": "sendAsyncMessageToAdmin",
+          "startLine": 144,
+          "endLine": 147,
+          "params": [
+            "messageType",
+            "content"
+          ]
+        },
+        {
+          "name": "getKeFuMessageList",
+          "startLine": 149,
+          "endLine": 152,
+          "params": [
+            "pageReqVO"
+          ]
+        },
+        {
+          "name": "getKeFuMessageList",
+          "startLine": 154,
+          "endLine": 164,
+          "params": [
+            "pageReqVO",
+            "userId"
+          ]
+        },
+        {
+          "name": "getSelf",
+          "startLine": 166,
+          "endLine": 168,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "KeFuMessageServiceImpl",
+          "startLine": 41,
+          "endLine": 170,
+          "methods": [
+            "sendKefuMessage",
+            "sendKefuMessage",
+            "updateKeFuMessageReadStatus",
+            "validateReceiverExist",
+            "sendAsyncMessageToMember",
+            "sendAsyncMessageToAdmin",
+            "getKeFuMessageList",
+            "getKeFuMessageList",
+            "getSelf"
+          ],
+          "properties": [
+            "keFuMessageMapper",
+            "conversationService",
+            "adminUserApi",
+            "memberUserApi",
+            "webSocketSenderApi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sendKefuMessage",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "sendKefuMessage",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "updateKeFuMessageReadStatus",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "sendAsyncMessageToMember",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "sendAsyncMessageToAdmin",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "getKeFuMessageList",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "getKeFuMessageList",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "KeFuMessageServiceImpl",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversationService.validateKefuConversationExists",
+          "lineNumber": 60
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "sendReqVO.getConversationId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "validateReceiverExist",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversation.getUserId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessage.setReceiverId(conversation.getUserId()).setReceiverType",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessage.setReceiverId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversation.getUserId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "keFuMessageMapper.insert",
+          "lineNumber": 67
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversationService.updateConversationLastMessage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "adminUserApi.getUser(kefuMessage.getSenderId()).getCheckedData",
+          "lineNumber": 72
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "adminUserApi.getUser",
+          "lineNumber": 72
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessage.getSenderId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "BeanUtils.toBean(kefuMessage, KeFuMessageRespVO.class).setSenderAvatar",
+          "lineNumber": 73
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 73
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "user.getAvatar",
+          "lineNumber": 73
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf().sendAsyncMessageToMember",
+          "lineNumber": 74
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf",
+          "lineNumber": 74
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversation.getUserId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf().sendAsyncMessageToAdmin",
+          "lineNumber": 76
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf",
+          "lineNumber": 76
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessage.getId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 83
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversationService.getOrCreateConversation",
+          "lineNumber": 84
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "sendReqVO.getSenderId",
+          "lineNumber": 84
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessage.setConversationId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversation.getId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "keFuMessageMapper.insert",
+          "lineNumber": 87
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversationService.updateConversationLastMessage",
+          "lineNumber": 90
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "memberUserApi.getUser(kefuMessage.getSenderId()).getCheckedData",
+          "lineNumber": 92
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "memberUserApi.getUser",
+          "lineNumber": 92
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessage.getSenderId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "BeanUtils.toBean(kefuMessage, KeFuMessageRespVO.class).setSenderAvatar",
+          "lineNumber": 93
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 93
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "user.getAvatar",
+          "lineNumber": 93
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf().sendAsyncMessageToAdmin",
+          "lineNumber": 94
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf",
+          "lineNumber": 94
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf().sendAsyncMessageToMember",
+          "lineNumber": 95
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "getSelf",
+          "lineNumber": 95
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "conversation.getUserId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "sendKefuMessage",
+          "callee": "kefuMessage.getId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "conversationService.validateKefuConversationExists",
+          "lineNumber": 103
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "UserTypeEnum.MEMBER.getValue().equals",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "ObjUtil.notEqual",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "conversation.getUserId",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "exception",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "keFuMessageMapper.selectListByConversationIdAndUserTypeAndReadStatus",
+          "lineNumber": 109
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 110
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "keFuMessageMapper.updateReadStatusBatchByIds",
+          "lineNumber": 115
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "convertSet",
+          "lineNumber": 115
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "new KeFuMessageDO().setReadStatus",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "new KeFuMessageDO",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "conversationService.updateAdminUnreadMessageCountToZero",
+          "lineNumber": 118
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "getFirst",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "filterList",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "UserTypeEnum.MEMBER.getValue().equals",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "message.getSenderType",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "getSelf().sendAsyncMessageToMember",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "getSelf",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "keFuMessage.getSenderId",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "new KeFuMessageRespVO().setConversationId",
+          "lineNumber": 124
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "new KeFuMessageRespVO",
+          "lineNumber": 124
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "keFuMessage.getConversationId",
+          "lineNumber": 124
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "getSelf().sendAsyncMessageToAdmin",
+          "lineNumber": 126
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "getSelf",
+          "lineNumber": 126
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "new KeFuMessageRespVO().setConversationId",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "new KeFuMessageRespVO",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateKeFuMessageReadStatus",
+          "callee": "keFuMessage.getConversationId",
+          "lineNumber": 127
+        },
+        {
+          "caller": "validateReceiverExist",
+          "callee": "UserTypeEnum.ADMIN.getValue().equals",
+          "lineNumber": 131
+        },
+        {
+          "caller": "validateReceiverExist",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 131
+        },
+        {
+          "caller": "validateReceiverExist",
+          "callee": "adminUserApi.validateUser",
+          "lineNumber": 132
+        },
+        {
+          "caller": "validateReceiverExist",
+          "callee": "UserTypeEnum.MEMBER.getValue().equals",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateReceiverExist",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validateReceiverExist",
+          "callee": "memberUserApi.validateUser(receiverId).checkError",
+          "lineNumber": 135
+        },
+        {
+          "caller": "validateReceiverExist",
+          "callee": "memberUserApi.validateUser",
+          "lineNumber": 135
+        },
+        {
+          "caller": "sendAsyncMessageToMember",
+          "callee": "webSocketSenderApi.sendObject",
+          "lineNumber": 141
+        },
+        {
+          "caller": "sendAsyncMessageToMember",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 141
+        },
+        {
+          "caller": "sendAsyncMessageToAdmin",
+          "callee": "webSocketSenderApi.sendObject",
+          "lineNumber": 146
+        },
+        {
+          "caller": "sendAsyncMessageToAdmin",
+          "callee": "UserTypeEnum.ADMIN.getValue",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "keFuMessageMapper.selectList",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "conversationService.getConversationByUserId",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "Collections.emptyList",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "pageReqVO.setConversationId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "conversation.getId",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "keFuMessageMapper.selectList",
+          "lineNumber": 163
+        },
+        {
+          "caller": "getKeFuMessageList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 163
+        },
+        {
+          "caller": "getSelf",
+          "callee": "SpringUtil.getBean",
+          "lineNumber": 167
+        },
+        {
+          "caller": "getSelf",
+          "callee": "getClass",
+          "lineNumber": 167
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 8,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 15,
+          "endLine": 34,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 12,
+          "endLine": 36,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 17
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 22
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll()\n                        .requestMatchers(\"/actuator/**\").permitAll",
+          "lineNumber": 27
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll().requestMatchers",
+          "lineNumber": 27
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").permitAll",
+          "lineNumber": 27
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 27
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").permitAll",
+          "lineNumber": 30
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-api/src/main/java/cn/iocoder/yudao/module/trade/enums/ApiConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "ApiConstants",
+          "startLine": 10,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "NAME",
+            "PREFIX",
+            "VERSION"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "PREFIX",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "ApiConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/framework/security/config/SecurityConfiguration.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "startLine": 16,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SecurityConfiguration",
+          "startLine": 13,
+          "endLine": 39,
+          "methods": [
+            "authorizeRequestsCustomizer"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "authorizeRequestsCustomizer",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "SecurityConfiguration",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "authorizeRequestsCustomizer",
+          "callee": "new AuthorizeRequestsCustomizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll()\n                        .requestMatchers(\"/swagger-ui/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll()\n                        .requestMatchers(\"/swagger-ui\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll()\n                        .requestMatchers(\"/webjars/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll().requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/v3/api-docs/**\").permitAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 23
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").anonymous()\n                        .requestMatchers(\"/actuator/**\").anonymous",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").anonymous().requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/actuator\").anonymous",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 28
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(\"/druid/**\").anonymous",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 31
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers(ApiConstants.PREFIX + \"/**\").permitAll",
+          "lineNumber": 33
+        },
+        {
+          "caller": "customize",
+          "callee": "registry.requestMatchers",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-api/src/main/java/cn/iocoder/yudao/module/member/enums/ErrorCodeConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 45,
+      "classes": [
+        {
+          "name": "ErrorCodeConstants",
+          "startLine": 10,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "USER_NOT_EXISTS",
+            "USER_MOBILE_NOT_EXISTS",
+            "USER_MOBILE_USED",
+            "USER_POINT_NOT_ENOUGH",
+            "USER_EMAIL_USED",
+            "AUTH_LOGIN_BAD_CREDENTIALS",
+            "AUTH_LOGIN_USER_DISABLED",
+            "AUTH_SOCIAL_USER_NOT_FOUND",
+            "AUTH_MOBILE_USED",
+            "ADDRESS_NOT_EXISTS",
+            "TAG_NOT_EXISTS",
+            "TAG_NAME_EXISTS",
+            "TAG_HAS_USER",
+            "POINT_RECORD_BIZ_NOT_SUPPORT",
+            "SIGN_IN_CONFIG_NOT_EXISTS",
+            "SIGN_IN_CONFIG_EXISTS",
+            "SIGN_IN_RECORD_TODAY_EXISTS",
+            "LEVEL_NOT_EXISTS",
+            "LEVEL_NAME_EXISTS",
+            "LEVEL_VALUE_EXISTS",
+            "LEVEL_EXPERIENCE_MIN",
+            "LEVEL_EXPERIENCE_MAX",
+            "LEVEL_HAS_USER",
+            "EXPERIENCE_BIZ_NOT_SUPPORT",
+            "GROUP_NOT_EXISTS",
+            "GROUP_HAS_USER"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ErrorCodeConstants",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/vo/MemberUserPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "MemberUserPageReqVO",
+          "startLine": 15,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "mobile",
+            "email",
+            "nickname",
+            "loginDate",
+            "createTime",
+            "tagIds",
+            "levelId",
+            "groupId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberUserPageReqVO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/AppAuthController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "login",
+          "startLine": 45,
+          "endLine": 50,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "logout",
+          "startLine": 52,
+          "endLine": 62,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "refreshToken",
+          "startLine": 64,
+          "endLine": 70,
+          "params": [
+            "refreshToken"
+          ]
+        },
+        {
+          "name": "smsLogin",
+          "startLine": 74,
+          "endLine": 79,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "sendSmsCode",
+          "startLine": 81,
+          "endLine": 87,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "validateSmsCode",
+          "startLine": 89,
+          "endLine": 95,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "socialAuthRedirect",
+          "startLine": 99,
+          "endLine": 109,
+          "params": [
+            "type",
+            "redirectUri"
+          ]
+        },
+        {
+          "name": "socialLogin",
+          "startLine": 111,
+          "endLine": 116,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "weixinMiniAppLogin",
+          "startLine": 118,
+          "endLine": 123,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "createWeixinMpJsapiSignature",
+          "startLine": 125,
+          "endLine": 133,
+          "params": [
+            "url"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppAuthController",
+          "startLine": 29,
+          "endLine": 135,
+          "methods": [
+            "login",
+            "logout",
+            "refreshToken",
+            "smsLogin",
+            "sendSmsCode",
+            "validateSmsCode",
+            "socialAuthRedirect",
+            "socialLogin",
+            "weixinMiniAppLogin",
+            "createWeixinMpJsapiSignature"
+          ],
+          "properties": [
+            "authService",
+            "socialClientApi",
+            "securityProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "login",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "logout",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "refreshToken",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "smsLogin",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "sendSmsCode",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "validateSmsCode",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "socialAuthRedirect",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "socialLogin",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "weixinMiniAppLogin",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "createWeixinMpJsapiSignature",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "AppAuthController",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "login",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "login",
+          "callee": "authService.login",
+          "lineNumber": 49
+        },
+        {
+          "caller": "logout",
+          "callee": "SecurityFrameworkUtils.obtainAuthorization",
+          "lineNumber": 56
+        },
+        {
+          "caller": "logout",
+          "callee": "securityProperties.getTokenHeader",
+          "lineNumber": 57
+        },
+        {
+          "caller": "logout",
+          "callee": "securityProperties.getTokenParameter",
+          "lineNumber": 57
+        },
+        {
+          "caller": "logout",
+          "callee": "StrUtil.isNotBlank",
+          "lineNumber": 58
+        },
+        {
+          "caller": "logout",
+          "callee": "authService.logout",
+          "lineNumber": 59
+        },
+        {
+          "caller": "logout",
+          "callee": "success",
+          "lineNumber": 61
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "success",
+          "lineNumber": 69
+        },
+        {
+          "caller": "refreshToken",
+          "callee": "authService.refreshToken",
+          "lineNumber": 69
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "smsLogin",
+          "callee": "authService.smsLogin",
+          "lineNumber": 78
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "authService.sendSmsCode",
+          "lineNumber": 85
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "getLoginUserId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "sendSmsCode",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "validateSmsCode",
+          "callee": "authService.validateSmsCode",
+          "lineNumber": 93
+        },
+        {
+          "caller": "validateSmsCode",
+          "callee": "getLoginUserId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "validateSmsCode",
+          "callee": "success",
+          "lineNumber": 94
+        },
+        {
+          "caller": "socialAuthRedirect",
+          "callee": "CommonResult.success",
+          "lineNumber": 108
+        },
+        {
+          "caller": "socialAuthRedirect",
+          "callee": "authService.getSocialAuthorizeUrl",
+          "lineNumber": 108
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "success",
+          "lineNumber": 115
+        },
+        {
+          "caller": "socialLogin",
+          "callee": "authService.socialLogin",
+          "lineNumber": 115
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "success",
+          "lineNumber": 122
+        },
+        {
+          "caller": "weixinMiniAppLogin",
+          "callee": "authService.weixinMiniAppLogin",
+          "lineNumber": 122
+        },
+        {
+          "caller": "createWeixinMpJsapiSignature",
+          "callee": "socialClientApi.createWxMpJsapiSignature(\n                UserTypeEnum.MEMBER.getValue(), url).getCheckedData",
+          "lineNumber": 130
+        },
+        {
+          "caller": "createWeixinMpJsapiSignature",
+          "callee": "socialClientApi.createWxMpJsapiSignature",
+          "lineNumber": 130
+        },
+        {
+          "caller": "createWeixinMpJsapiSignature",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 131
+        },
+        {
+          "caller": "createWeixinMpJsapiSignature",
+          "callee": "success",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createWeixinMpJsapiSignature",
+          "callee": "AuthConvert.INSTANCE.convert",
+          "lineNumber": 132
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 11,
+        "functionCount": 10,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthCheckCodeReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "classes": [
+        {
+          "name": "AppAuthCheckCodeReqVO",
+          "startLine": 18,
+          "endLine": 41,
+          "methods": [],
+          "properties": [
+            "mobile",
+            "code",
+            "scene"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppAuthCheckCodeReqVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/auth/vo/AppAuthLoginReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "isSocialCodeValid",
+          "startLine": 46,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "isSocialState",
+          "startLine": 51,
+          "endLine": 54,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppAuthLoginReqVO",
+          "startLine": 17,
+          "endLine": 56,
+          "methods": [
+            "isSocialCodeValid",
+            "isSocialState"
+          ],
+          "properties": [
+            "mobile",
+            "password",
+            "socialType",
+            "socialCode",
+            "socialState"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isSocialCodeValid",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "isSocialState",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "AppAuthLoginReqVO",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSocialCodeValid",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 48
+        },
+        {
+          "caller": "isSocialState",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

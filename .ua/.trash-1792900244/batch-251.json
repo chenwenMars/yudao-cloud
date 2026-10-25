@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "config:yudao-server/src/main/resources/application-dev.yaml",
+      "type": "config",
+      "name": "application-dev.yaml",
+      "filePath": "yudao-server/src/main/resources/application-dev.yaml",
+      "summary": "配置主应用的开发运行环境，包括服务端与 Spring 依赖、消息队列、任务调度、微信/认证集成、监控及项目扩展设置。",
+      "tags": [
+        "开发环境",
+        "Spring配置",
+        "主服务"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "YAML 多文档分隔符触发提取器回退到正则提取配置段；完整运行时绑定未验证。"
+    },
+    {
+      "id": "config:yudao-server/src/main/resources/application-local.yaml",
+      "type": "config",
+      "name": "application-local.yaml",
+      "filePath": "yudao-server/src/main/resources/application-local.yaml",
+      "summary": "配置主应用的本地运行环境，包括服务端与 Spring 依赖、消息队列、任务调度、微信/认证集成、监控及项目扩展设置。",
+      "tags": [
+        "本地环境",
+        "Spring配置",
+        "主服务"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "YAML 多文档分隔符触发提取器回退到正则提取配置段；完整运行时绑定未验证。"
+    },
+    {
+      "id": "config:yudao-server/src/main/resources/application.yaml",
+      "type": "config",
+      "name": "application.yaml",
+      "filePath": "yudao-server/src/main/resources/application.yaml",
+      "summary": "定义主应用的通用 Spring Boot 配置，覆盖服务端、Flowable、MyBatis、API 文档、消息队列、定时任务及项目扩展设置。",
+      "tags": [
+        "应用配置",
+        "Spring Boot",
+        "主服务"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:yudao-server/src/main/resources/logback-spring.xml",
+      "type": "config",
+      "name": "logback-spring.xml",
+      "filePath": "yudao-server/src/main/resources/logback-spring.xml",
+      "summary": "配置主应用的控制台与滚动文件日志输出，并通过异步 appender 写入文件；另包含可选的 SkyWalking 日志 appender。",
+      "tags": [
+        "日志配置",
+        "Logback",
+        "可观测性"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "提取器未解析 XML；摘要根据可读源文件的 appender、滚动策略和 root logger 配置。"
+    }
+  ],
+  "edges": []
+}

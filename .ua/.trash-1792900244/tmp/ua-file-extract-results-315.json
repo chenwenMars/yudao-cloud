@@ -1,0 +1,582 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/activity/AppActivityController.http",
+    "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/bargain/AppBargainHelpController.http",
+    "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/bargain/AppBargainRecordController.http",
+    "yudao-module-mall/yudao-module-promotion-server/src/test/resources/logback.xml",
+    "yudao-module-mall/yudao-module-statistics-api/pom.xml",
+    "yudao-module-mall/yudao-module-statistics-server/pom.xml"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 16,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/seckill/vo/activity/SeckillActivityBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "SeckillActivityBaseVO",
+          "startLine": 20,
+          "endLine": 58,
+          "methods": [],
+          "properties": [
+            "spuId",
+            "name",
+            "remark",
+            "startTime",
+            "endTime",
+            "sort",
+            "configIds",
+            "totalLimitCount",
+            "singleLimitCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SeckillActivityBaseVO",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/seckill/vo/config/SeckillConfigBaseVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "isValidStartTimeValid",
+          "startLine": 41,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "isValidEndTimeValid",
+          "startLine": 47,
+          "endLine": 51,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SeckillConfigBaseVO",
+          "startLine": 18,
+          "endLine": 53,
+          "methods": [
+            "isValidStartTimeValid",
+            "isValidEndTimeValid"
+          ],
+          "properties": [
+            "name",
+            "startTime",
+            "endTime",
+            "sliderPicUrls",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isValidStartTimeValid",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "isValidEndTimeValid",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "SeckillConfigBaseVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isValidStartTimeValid",
+          "callee": "LocalTime.parse(startTime).equals",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isValidStartTimeValid",
+          "callee": "LocalTime.parse",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isValidStartTimeValid",
+          "callee": "LocalTime.parse",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isValidEndTimeValid",
+          "callee": "LocalTime.parse(startTime).isAfter",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isValidEndTimeValid",
+          "callee": "LocalTime.parse",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isValidEndTimeValid",
+          "callee": "LocalTime.parse",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/controller/app/kefu/vo/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/framework/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/framework/rpc/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/framework/security/core/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/job/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/mq/consumer/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/mq/message/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/mq/producer/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/main/java/cn/iocoder/yudao/module/promotion/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/test/resources/application-unit-test.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 48,
+      "nonEmptyLines": 37,
+      "sections": [
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "spring",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "mybatis",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "yudao",
+          "level": 1,
+          "line": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/test/resources/sql/clean.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-promotion-server/src/test/resources/sql/create_tables.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 308,
+      "nonEmptyLines": 296,
+      "definitions": [
+        {
+          "name": "market_activity",
+          "kind": "table",
+          "fields": [],
+          "startLine": 1,
+          "endLine": 6
+        },
+        {
+          "name": "promotion_coupon_template",
+          "kind": "table",
+          "fields": [],
+          "startLine": 22,
+          "endLine": 27
+        },
+        {
+          "name": "promotion_coupon",
+          "kind": "table",
+          "fields": [],
+          "startLine": 53,
+          "endLine": 58
+        },
+        {
+          "name": "promotion_reward_activity",
+          "kind": "table",
+          "fields": [],
+          "startLine": 80,
+          "endLine": 85
+        },
+        {
+          "name": "promotion_discount_activity",
+          "kind": "table",
+          "fields": [],
+          "startLine": 100,
+          "endLine": 105
+        },
+        {
+          "name": "promotion_discount_product",
+          "kind": "table",
+          "fields": [],
+          "startLine": 116,
+          "endLine": 121
+        },
+        {
+          "name": "promotion_seckill_activity",
+          "kind": "table",
+          "fields": [],
+          "startLine": 137,
+          "endLine": 142
+        },
+        {
+          "name": "promotion_seckill_config",
+          "kind": "table",
+          "fields": [],
+          "startLine": 164,
+          "endLine": 169
+        },
+        {
+          "name": "promotion_combination_activity",
+          "kind": "table",
+          "fields": [],
+          "startLine": 181,
+          "endLine": 186
+        },
+        {
+          "name": "promotion_combination_record",
+          "kind": "table",
+          "fields": [],
+          "startLine": 206,
+          "endLine": 211
+        },
+        {
+          "name": "promotion_article_category",
+          "kind": "table",
+          "fields": [],
+          "startLine": 236,
+          "endLine": 241
+        },
+        {
+          "name": "promotion_article",
+          "kind": "table",
+          "fields": [],
+          "startLine": 252,
+          "endLine": 257
+        },
+        {
+          "name": "promotion_diy_template",
+          "kind": "table",
+          "fields": [],
+          "startLine": 276,
+          "endLine": 281
+        },
+        {
+          "name": "promotion_diy_page",
+          "kind": "table",
+          "fields": [],
+          "startLine": 293,
+          "endLine": 298
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 14
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-api/src/main/java/cn/iocoder/yudao/module/statistics/api/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-api/src/main/java/cn/iocoder/yudao/module/statistics/enums/package-info.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/StatisticsServerApplication.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "StatisticsServerApplication",
+          "startLine": 15,
+          "endLine": 30,
+          "methods": [
+            "main"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "StatisticsServerApplication",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "SpringApplication.run",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/controller/admin/member/vo/MemberAnalyseReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "MemberAnalyseReqVO",
+          "startLine": 11,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "times"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberAnalyseReqVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-statistics-server/src/main/java/cn/iocoder/yudao/module/statistics/controller/admin/member/vo/MemberCountRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "MemberCountRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "visitUserCount",
+            "registerUserCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberCountRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 1,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-system/yudao-module-system-server/Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "services": [
+        {
+          "name": "eclipse-temurin",
+          "image": "eclipse-temurin:21-jre",
+          "ports": [
+            48081
+          ],
+          "startLine": 3,
+          "endLine": 20
+        }
+      ],
+      "steps": [
+        {
+          "name": "FROM eclipse-temurin:21-jre",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "RUN mkdir -p /yudao-module-system-server",
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "WORKDIR /yudao-module-system-server",
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "COPY ./target/yudao-module-system-server.jar app.jar",
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "ENV TZ=Asia/Shanghai JAVA_OPTS=\"-Xms512m -Xmx512m\"",
+          "startLine": 13,
+          "endLine": 13
+        },
+        {
+          "name": "EXPOSE 48081",
+          "startLine": 16,
+          "endLine": 16
+        },
+        {
+          "name": "CMD java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -j",
+          "startLine": 19,
+          "endLine": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "serviceCount": 1,
+        "stepCount": 7
+      }
+    }
+  ]
+}

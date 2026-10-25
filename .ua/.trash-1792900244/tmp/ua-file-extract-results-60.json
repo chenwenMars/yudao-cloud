@@ -1,0 +1,4004 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 35,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 35,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/cart/vo/AppCartListRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "AppCartListRespVO",
+          "startLine": 10,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "validList",
+            "invalidList"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppCartListRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/config/AppTradeConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getTradeConfig",
+          "startLine": 38,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppTradeConfigController",
+          "startLine": 24,
+          "endLine": 46,
+          "methods": [
+            "getTradeConfig"
+          ],
+          "properties": [
+            "tradeConfigService",
+            "tencentLbsKey"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTradeConfig",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "AppTradeConfigController",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTradeConfig",
+          "callee": "ObjUtil.defaultIfNull",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getTradeConfig",
+          "callee": "tradeConfigService.getTradeConfig",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getTradeConfig",
+          "callee": "new TradeConfigDO",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getTradeConfig",
+          "callee": "success",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getTradeConfig",
+          "callee": "TradeConfigConvert.INSTANCE.convert02(config).setTencentLbsKey",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getTradeConfig",
+          "callee": "TradeConfigConvert.INSTANCE.convert02",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/config/vo/AppTradeConfigRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "AppTradeConfigRespVO",
+          "startLine": 9,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "tencentLbsKey",
+            "deliveryPickUpEnabled",
+            "afterSaleRefundReasons",
+            "afterSaleReturnReasons",
+            "brokeragePosterUrls",
+            "brokerageFrozenDays",
+            "brokerageWithdrawMinPrice",
+            "brokerageWithdrawTypes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeConfigRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/delivery/AppDeliverExpressController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "getDeliveryExpressList",
+          "startLine": 32,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppDeliverExpressController",
+          "startLine": 23,
+          "endLine": 41,
+          "methods": [
+            "getDeliveryExpressList"
+          ],
+          "properties": [
+            "deliveryExpressService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDeliveryExpressList",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "AppDeliverExpressController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getDeliveryExpressList",
+          "callee": "deliveryExpressService.getDeliveryExpressListByStatus",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getDeliveryExpressList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getDeliveryExpressList",
+          "callee": "list.sort",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getDeliveryExpressList",
+          "callee": "Comparator.comparing",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getDeliveryExpressList",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getDeliveryExpressList",
+          "callee": "DeliveryExpressConvert.INSTANCE.convertList03",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/delivery/vo/express/AppDeliveryExpressRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AppDeliveryExpressRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "id",
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppDeliveryExpressRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/AppTradeOrderController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "settlementOrder",
+          "startLine": 60,
+          "endLine": 64,
+          "params": [
+            "settlementReqVO"
+          ]
+        },
+        {
+          "name": "settlementProduct",
+          "startLine": 66,
+          "endLine": 72,
+          "params": [
+            "spuIds"
+          ]
+        },
+        {
+          "name": "createOrder",
+          "startLine": 74,
+          "endLine": 79,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateOrderPaid",
+          "startLine": 81,
+          "endLine": 88,
+          "params": [
+            "notifyReqDTO"
+          ]
+        },
+        {
+          "name": "getOrderDetail",
+          "startLine": 90,
+          "endLine": 118,
+          "params": [
+            "id",
+            "sync"
+          ]
+        },
+        {
+          "name": "getOrderExpressTrackList",
+          "startLine": 120,
+          "endLine": 126,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getOrderPage",
+          "startLine": 128,
+          "endLine": 138,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "getOrderCount",
+          "startLine": 140,
+          "endLine": 161,
+          "params": []
+        },
+        {
+          "name": "receiveOrder",
+          "startLine": 163,
+          "endLine": 169,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "cancelOrder",
+          "startLine": 171,
+          "endLine": 177,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "deleteOrder",
+          "startLine": 179,
+          "endLine": 185,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getOrderItem",
+          "startLine": 189,
+          "endLine": 195,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "createOrderItemComment",
+          "startLine": 197,
+          "endLine": 201,
+          "params": [
+            "createReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppTradeOrderController",
+          "startLine": 39,
+          "endLine": 203,
+          "methods": [
+            "settlementOrder",
+            "settlementProduct",
+            "createOrder",
+            "updateOrderPaid",
+            "getOrderDetail",
+            "getOrderExpressTrackList",
+            "getOrderPage",
+            "getOrderCount",
+            "receiveOrder",
+            "cancelOrder",
+            "deleteOrder",
+            "getOrderItem",
+            "createOrderItemComment"
+          ],
+          "properties": [
+            "tradeOrderUpdateService",
+            "tradeOrderQueryService",
+            "deliveryExpressService",
+            "afterSaleService",
+            "priceService",
+            "tradeOrderProperties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "settlementOrder",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "settlementProduct",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "createOrder",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "updateOrderPaid",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderDetail",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderExpressTrackList",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderPage",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderCount",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "receiveOrder",
+          "line": 163,
+          "isDefault": false
+        },
+        {
+          "name": "cancelOrder",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "deleteOrder",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "getOrderItem",
+          "line": 189,
+          "isDefault": false
+        },
+        {
+          "name": "createOrderItemComment",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "AppTradeOrderController",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "settlementOrder",
+          "callee": "success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "settlementOrder",
+          "callee": "tradeOrderUpdateService.settlementOrder",
+          "lineNumber": 63
+        },
+        {
+          "caller": "settlementOrder",
+          "callee": "getLoginUserId",
+          "lineNumber": 63
+        },
+        {
+          "caller": "settlementProduct",
+          "callee": "success",
+          "lineNumber": 71
+        },
+        {
+          "caller": "settlementProduct",
+          "callee": "priceService.calculateProductPrice",
+          "lineNumber": 71
+        },
+        {
+          "caller": "settlementProduct",
+          "callee": "getLoginUserId",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createOrder",
+          "callee": "tradeOrderUpdateService.createOrder",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createOrder",
+          "callee": "getLoginUserId",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createOrder",
+          "callee": "success",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createOrder",
+          "callee": "new AppTradeOrderCreateRespVO().setId(order.getId()).setPayOrderId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createOrder",
+          "callee": "new AppTradeOrderCreateRespVO().setId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createOrder",
+          "callee": "new AppTradeOrderCreateRespVO",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createOrder",
+          "callee": "order.getId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createOrder",
+          "callee": "order.getPayOrderId",
+          "lineNumber": 78
+        },
+        {
+          "caller": "updateOrderPaid",
+          "callee": "tradeOrderUpdateService.updateOrderPaid",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateOrderPaid",
+          "callee": "Long.valueOf",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateOrderPaid",
+          "callee": "notifyReqDTO.getMerchantOrderId",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateOrderPaid",
+          "callee": "notifyReqDTO.getPayOrderId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "updateOrderPaid",
+          "callee": "success",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "tradeOrderQueryService.getOrder",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "getLoginUserId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "success",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "TradeOrderStatusEnum.isUnpaid",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getStatus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getPayStatus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "tradeOrderUpdateService.syncOrderPayStatusQuietly",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getPayOrderId",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "tradeOrderQueryService.getOrder",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "tradeOrderQueryService.getOrderItemListByOrderId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getId",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getLogisticsId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getLogisticsId",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "deliveryExpressService.getDeliveryExpress",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "order.getLogisticsId",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "success",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getOrderDetail",
+          "callee": "TradeOrderConvert.INSTANCE.convert02",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getOrderExpressTrackList",
+          "callee": "success",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getOrderExpressTrackList",
+          "callee": "TradeOrderConvert.INSTANCE.convertList02",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getOrderExpressTrackList",
+          "callee": "tradeOrderQueryService.getExpressTrackList",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getOrderExpressTrackList",
+          "callee": "getLoginUserId",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getOrderPage",
+          "callee": "tradeOrderQueryService.getOrderPage",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getOrderPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getOrderPage",
+          "callee": "tradeOrderQueryService.getOrderItemListByOrderId",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getOrderPage",
+          "callee": "convertSet",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getOrderPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getOrderPage",
+          "callee": "success",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getOrderPage",
+          "callee": "TradeOrderConvert.INSTANCE.convertPage02",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "Maps.newLinkedHashMapWithExpectedSize",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "orderCount.put",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "tradeOrderQueryService.getOrderCount",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "orderCount.put",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "tradeOrderQueryService.getOrderCount",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "TradeOrderStatusEnum.UNPAID.getStatus",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "orderCount.put",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "tradeOrderQueryService.getOrderCount",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "TradeOrderStatusEnum.UNDELIVERED.getStatus",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "orderCount.put",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "tradeOrderQueryService.getOrderCount",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "TradeOrderStatusEnum.DELIVERED.getStatus",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "orderCount.put",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "tradeOrderQueryService.getOrderCount",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "TradeOrderStatusEnum.COMPLETED.getStatus",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "orderCount.put",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "afterSaleService.getApplyingAfterSaleCount",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "getLoginUserId",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getOrderCount",
+          "callee": "success",
+          "lineNumber": 160
+        },
+        {
+          "caller": "receiveOrder",
+          "callee": "tradeOrderUpdateService.receiveOrderByMember",
+          "lineNumber": 167
+        },
+        {
+          "caller": "receiveOrder",
+          "callee": "getLoginUserId",
+          "lineNumber": 167
+        },
+        {
+          "caller": "receiveOrder",
+          "callee": "success",
+          "lineNumber": 168
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "tradeOrderUpdateService.cancelOrderByMember",
+          "lineNumber": 175
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "getLoginUserId",
+          "lineNumber": 175
+        },
+        {
+          "caller": "cancelOrder",
+          "callee": "success",
+          "lineNumber": 176
+        },
+        {
+          "caller": "deleteOrder",
+          "callee": "tradeOrderUpdateService.deleteOrder",
+          "lineNumber": 183
+        },
+        {
+          "caller": "deleteOrder",
+          "callee": "getLoginUserId",
+          "lineNumber": 183
+        },
+        {
+          "caller": "deleteOrder",
+          "callee": "success",
+          "lineNumber": 184
+        },
+        {
+          "caller": "getOrderItem",
+          "callee": "tradeOrderQueryService.getOrderItem",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getOrderItem",
+          "callee": "getLoginUserId",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getOrderItem",
+          "callee": "success",
+          "lineNumber": 194
+        },
+        {
+          "caller": "getOrderItem",
+          "callee": "TradeOrderConvert.INSTANCE.convert03",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createOrderItemComment",
+          "callee": "success",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createOrderItemComment",
+          "callee": "tradeOrderUpdateService.createOrderItemCommentByMember",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createOrderItemComment",
+          "callee": "getLoginUserId",
+          "lineNumber": 200
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/AppTradeOrderCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "isDeliveryTypeNotNull",
+          "startLine": 15,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppTradeOrderCreateReqVO",
+          "startLine": 8,
+          "endLine": 21,
+          "methods": [
+            "isDeliveryTypeNotNull"
+          ],
+          "properties": [
+            "remark"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isDeliveryTypeNotNull",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "AppTradeOrderCreateReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isDeliveryTypeNotNull",
+          "callee": "getDeliveryType",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/AppTradeOrderDetailRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 101,
+      "classes": [
+        {
+          "name": "AppTradeOrderDetailRespVO",
+          "startLine": 10,
+          "endLine": 151,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "type",
+            "createTime",
+            "userRemark",
+            "status",
+            "productCount",
+            "finishTime",
+            "cancelTime",
+            "commentStatus",
+            "payStatus",
+            "payOrderId",
+            "payTime",
+            "payExpireTime",
+            "payChannelCode",
+            "payChannelName",
+            "totalPrice",
+            "discountPrice",
+            "deliveryPrice",
+            "adjustPrice",
+            "payPrice",
+            "deliveryType",
+            "logisticsId",
+            "logisticsName",
+            "logisticsNo",
+            "deliveryTime",
+            "receiveTime",
+            "receiverName",
+            "receiverMobile",
+            "receiverAreaId",
+            "receiverAreaName",
+            "receiverDetailAddress",
+            "pickUpStoreId",
+            "pickUpVerifyCode",
+            "refundStatus",
+            "refundPrice",
+            "couponId",
+            "couponPrice",
+            "pointPrice",
+            "vipPrice",
+            "combinationRecordId",
+            "items"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeOrderDetailRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/AppTradeOrderPageItemRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "AppTradeOrderPageItemRespVO",
+          "startLine": 10,
+          "endLine": 58,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "type",
+            "status",
+            "productCount",
+            "commentStatus",
+            "createTime",
+            "payOrderId",
+            "payPrice",
+            "deliveryType",
+            "items",
+            "combinationRecordId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeOrderPageItemRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/AppTradeOrderPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "AppTradeOrderPageReqVO",
+          "startLine": 9,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "status",
+            "commentStatus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeOrderPageReqVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/AppTradeOrderSettlementReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "isValidActivityItems",
+          "startLine": 69,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppTradeOrderSettlementReqVO",
+          "startLine": 18,
+          "endLine": 109,
+          "methods": [
+            "isValidActivityItems"
+          ],
+          "properties": [
+            "items",
+            "couponId",
+            "pointStatus",
+            "deliveryType",
+            "addressId",
+            "pickUpStoreId",
+            "receiverName",
+            "receiverMobile",
+            "seckillActivityId",
+            "combinationActivityId",
+            "combinationHeadId",
+            "bargainRecordId",
+            "pointActivityId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isValidActivityItems",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "AppTradeOrderSettlementReqVO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isValidActivityItems",
+          "callee": "ObjUtil.isAllEmpty",
+          "lineNumber": 73
+        },
+        {
+          "caller": "isValidActivityItems",
+          "callee": "items.size",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/AppTradeOrderSettlementRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 174,
+      "nonEmptyLines": 122,
+      "classes": [
+        {
+          "name": "AppTradeOrderSettlementRespVO",
+          "startLine": 13,
+          "endLine": 174,
+          "methods": [],
+          "properties": [
+            "type",
+            "items",
+            "coupons",
+            "price",
+            "address",
+            "usePoint",
+            "totalPoint",
+            "promotions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeOrderSettlementRespVO",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/AppTradeProductSettlementRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "AppTradeProductSettlementRespVO",
+          "startLine": 11,
+          "endLine": 81,
+          "methods": [],
+          "properties": [
+            "spuId",
+            "skus",
+            "rewardActivity"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeProductSettlementRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/item/AppTradeOrderItemCommentCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "AppTradeOrderItemCommentCreateReqVO",
+          "startLine": 10,
+          "endLine": 38,
+          "methods": [],
+          "properties": [
+            "anonymous",
+            "orderItemId",
+            "descriptionScores",
+            "benefitScores",
+            "content",
+            "picUrls"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeOrderItemCommentCreateReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/controller/app/order/vo/item/AppTradeOrderItemRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "AppTradeOrderItemRespVO",
+          "startLine": 9,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "id",
+            "orderId",
+            "spuId",
+            "spuName",
+            "skuId",
+            "properties",
+            "picUrl",
+            "count",
+            "commentStatus",
+            "price",
+            "payPrice",
+            "afterSaleId",
+            "afterSaleStatus"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppTradeOrderItemRespVO",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/aftersale/AfterSaleConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 70,
+      "classes": [
+        {
+          "name": "AfterSaleConvert",
+          "startLine": 27,
+          "endLine": 83,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertPage",
+            "convertPage",
+            "convert",
+            "convert",
+            "convertList1",
+            "convert02",
+            "convert02",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AfterSaleConvert",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 56
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList().forEach",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertPage",
+          "callee": "afterSale.setUser",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convert",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "memberUsers.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "afterSale.getUserId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convert",
+          "callee": "convert02",
+          "lineNumber": 67
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setUser",
+          "lineNumber": 69
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 69
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setOrder",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setOrderItem",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convert",
+          "callee": "convert02",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setLogs",
+          "lineNumber": 74
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList1",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/aftersale/AfterSaleLogConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "AfterSaleLogConvert",
+          "startLine": 8,
+          "endLine": 15,
+          "methods": [
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AfterSaleLogConvert",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/brokerage/BrokerageRecordConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 64,
+      "classes": [
+        {
+          "name": "BrokerageRecordConvert",
+          "startLine": 28,
+          "endLine": 75,
+          "methods": [
+            "convert",
+            "convertList",
+            "convertPage",
+            "convert",
+            "convertPage",
+            "convertPage03",
+            "copyTo"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageRecordConvert",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convert",
+          "callee": "BrokerageRecordStatusEnum.WAIT_SETTLEMENT.getStatus",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convert",
+          "callee": "BrokerageRecordStatusEnum.SETTLEMENT.getStatus",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice(user.getBrokeragePrice())\n                .setTitle(title)\n                .setDescription(StrUtil.format(bizType.getDescription(), MoneyUtils.fenToYuanStr(Math.abs(brokeragePrice))))\n                .setStatus(status).setFrozenDays(brokerageFrozenDays).setUnfreezeTime(unfreezeTime)\n                .setSourceUserLevel(sourceUserLevel).setSourceUserId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice(user.getBrokeragePrice())\n                .setTitle(title)\n                .setDescription(StrUtil.format(bizType.getDescription(), MoneyUtils.fenToYuanStr(Math.abs(brokeragePrice))))\n                .setStatus(status).setFrozenDays(brokerageFrozenDays).setUnfreezeTime(unfreezeTime).setSourceUserLevel",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice(user.getBrokeragePrice())\n                .setTitle(title)\n                .setDescription(StrUtil.format(bizType.getDescription(), MoneyUtils.fenToYuanStr(Math.abs(brokeragePrice))))\n                .setStatus(status).setFrozenDays(brokerageFrozenDays).setUnfreezeTime",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice(user.getBrokeragePrice())\n                .setTitle(title)\n                .setDescription(StrUtil.format(bizType.getDescription(), MoneyUtils.fenToYuanStr(Math.abs(brokeragePrice))))\n                .setStatus(status).setFrozenDays",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice(user.getBrokeragePrice())\n                .setTitle(title)\n                .setDescription(StrUtil.format(bizType.getDescription(), MoneyUtils.fenToYuanStr(Math.abs(brokeragePrice)))).setStatus",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice(user.getBrokeragePrice())\n                .setTitle(title).setDescription",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice(user.getBrokeragePrice()).setTitle",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId)\n                .setPrice(brokeragePrice).setTotalPrice",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId(bizId).setPrice",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId())\n                .setBizType(bizType.getType()).setBizId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId(user.getId()).setBizType",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO().setUserId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageRecordDO",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "convert",
+          "callee": "bizType.getType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getBrokeragePrice",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convert",
+          "callee": "StrUtil.format",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convert",
+          "callee": "bizType.getDescription",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convert",
+          "callee": "MoneyUtils.fenToYuanStr",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convert",
+          "callee": "Math.abs",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable(userMap.get(respVO.getUserId())).ifPresent",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userMap.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "respVO.getUserId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "convertPage",
+          "callee": "respVO.setUserNickname(user.getNickname()).setUserAvatar",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "respVO.setUserNickname",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getNickname",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getAvatar",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable(userMap.get(respVO.getSourceUserId())).ifPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userMap.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "respVO.getSourceUserId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "respVO.setSourceUserNickname(user.getNickname()).setSourceUserAvatar",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "respVO.setSourceUserNickname",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getNickname",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getAvatar",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "pageResult.getList",
+          "lineNumber": 68
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "copyTo",
+          "lineNumber": 69
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "userMap.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "vo.getId",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/brokerage/BrokerageUserConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 86,
+      "classes": [
+        {
+          "name": "BrokerageUserConvert",
+          "startLine": 27,
+          "endLine": 99,
+          "methods": [
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertPage",
+            "copyTo",
+            "convertPage03",
+            "copyTo",
+            "convert",
+            "copyTo"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageUserConvert",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convertPage",
+          "callee": "copyTo",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userMap.get",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.getId",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.setBrokerageUserCount",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtil.getInt",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.getId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userOrderSummaryMap.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.getId",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.setBrokerageOrderCount(orderSummaryOptional.map(UserBrokerageSummaryRespBO::getCount).orElse(0)).setBrokerageOrderPrice",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.setBrokerageOrderCount",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderSummaryOptional.map(UserBrokerageSummaryRespBO::getCount).orElse",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderSummaryOptional.map",
+          "lineNumber": 51
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderSummaryOptional.map(UserBrokerageSummaryRespBO::getPrice).orElse",
+          "lineNumber": 52
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderSummaryOptional.map",
+          "lineNumber": 52
+        },
+        {
+          "caller": "convertPage",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convertPage",
+          "callee": "withdrawMap.get",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.getId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.setWithdrawCount(withdrawSummaryOptional.map(BrokerageWithdrawSummaryRespBO::getCount).orElse(0)).setWithdrawPrice",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertPage",
+          "callee": "userVO.setWithdrawCount",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertPage",
+          "callee": "withdrawSummaryOptional.map(BrokerageWithdrawSummaryRespBO::getCount).orElse",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertPage",
+          "callee": "withdrawSummaryOptional.map",
+          "lineNumber": 55
+        },
+        {
+          "caller": "convertPage",
+          "callee": "withdrawSummaryOptional.map(BrokerageWithdrawSummaryRespBO::getPrice).orElse",
+          "lineNumber": 56
+        },
+        {
+          "caller": "convertPage",
+          "callee": "withdrawSummaryOptional.map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "copyTo",
+          "callee": "Optional.ofNullable(source).ifPresent",
+          "lineNumber": 65
+        },
+        {
+          "caller": "copyTo",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 65
+        },
+        {
+          "caller": "copyTo",
+          "callee": "target.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 66
+        },
+        {
+          "caller": "copyTo",
+          "callee": "target.setNickname",
+          "lineNumber": 66
+        },
+        {
+          "caller": "copyTo",
+          "callee": "user.getNickname",
+          "lineNumber": 66
+        },
+        {
+          "caller": "copyTo",
+          "callee": "user.getAvatar",
+          "lineNumber": 66
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "pageResult.getList().forEach",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "pageResult.getList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "copyTo",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "userMap.get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convertPage03",
+          "callee": "vo.getId",
+          "lineNumber": 72
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBrokerageUserMySummaryRespVO()\n                .setYesterdayPrice(ObjUtil.defaultIfNull(yesterdayPrice, 0))\n                .setWithdrawPrice(ObjUtil.defaultIfNull(withdrawPrice, 0))\n                .setBrokeragePrice(0).setFrozenPrice(0)\n                .setFirstBrokerageUserCount(ObjUtil.defaultIfNull(firstBrokerageUserCount, 0L)).setSecondBrokerageUserCount",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBrokerageUserMySummaryRespVO()\n                .setYesterdayPrice(ObjUtil.defaultIfNull(yesterdayPrice, 0))\n                .setWithdrawPrice(ObjUtil.defaultIfNull(withdrawPrice, 0))\n                .setBrokeragePrice(0).setFrozenPrice(0).setFirstBrokerageUserCount",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBrokerageUserMySummaryRespVO()\n                .setYesterdayPrice(ObjUtil.defaultIfNull(yesterdayPrice, 0))\n                .setWithdrawPrice(ObjUtil.defaultIfNull(withdrawPrice, 0))\n                .setBrokeragePrice(0).setFrozenPrice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBrokerageUserMySummaryRespVO()\n                .setYesterdayPrice(ObjUtil.defaultIfNull(yesterdayPrice, 0))\n                .setWithdrawPrice(ObjUtil.defaultIfNull(withdrawPrice, 0)).setBrokeragePrice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBrokerageUserMySummaryRespVO()\n                .setYesterdayPrice(ObjUtil.defaultIfNull(yesterdayPrice, 0)).setWithdrawPrice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBrokerageUserMySummaryRespVO().setYesterdayPrice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "new AppBrokerageUserMySummaryRespVO",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjUtil.defaultIfNull",
+          "lineNumber": 82
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjUtil.defaultIfNull",
+          "lineNumber": 83
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjUtil.defaultIfNull",
+          "lineNumber": 85
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjUtil.defaultIfNull",
+          "lineNumber": 86
+        },
+        {
+          "caller": "convert",
+          "callee": "Optional.ofNullable(brokerageUser).ifPresent",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convert",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setBrokeragePrice(user.getBrokeragePrice()).setFrozenPrice",
+          "lineNumber": 89
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setBrokeragePrice",
+          "lineNumber": 89
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getBrokeragePrice",
+          "lineNumber": 89
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getFrozenPrice",
+          "lineNumber": 89
+        },
+        {
+          "caller": "copyTo",
+          "callee": "Optional.ofNullable(userMap.get(vo.getId())).ifPresent",
+          "lineNumber": 95
+        },
+        {
+          "caller": "copyTo",
+          "callee": "Optional.ofNullable",
+          "lineNumber": 95
+        },
+        {
+          "caller": "copyTo",
+          "callee": "userMap.get",
+          "lineNumber": 95
+        },
+        {
+          "caller": "copyTo",
+          "callee": "vo.getId",
+          "lineNumber": 95
+        },
+        {
+          "caller": "copyTo",
+          "callee": "vo.setNickname(user.getNickname()).setAvatar",
+          "lineNumber": 96
+        },
+        {
+          "caller": "copyTo",
+          "callee": "vo.setNickname",
+          "lineNumber": 96
+        },
+        {
+          "caller": "copyTo",
+          "callee": "user.getNickname",
+          "lineNumber": 96
+        },
+        {
+          "caller": "copyTo",
+          "callee": "user.getAvatar",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/cart/TradeCartConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "TradeCartConvert",
+          "startLine": 20,
+          "endLine": 51,
+          "methods": [
+            "convertList"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeCartConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertList",
+          "callee": "convertMap",
+          "lineNumber": 27
+        },
+        {
+          "caller": "convertList",
+          "callee": "convertMap",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convertList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 30
+        },
+        {
+          "caller": "convertList",
+          "callee": "carts.size",
+          "lineNumber": 30
+        },
+        {
+          "caller": "convertList",
+          "callee": "new ArrayList<>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertList",
+          "callee": "carts.forEach",
+          "lineNumber": 32
+        },
+        {
+          "caller": "convertList",
+          "callee": "new AppCartListRespVO.Cart",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertList",
+          "callee": "cartVO.setId(cart.getId()).setCount(cart.getCount()).setSelected",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "cartVO.setId(cart.getId()).setCount",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "cartVO.setId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "cart.getId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "cart.getCount",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "cart.getSelected",
+          "lineNumber": 34
+        },
+        {
+          "caller": "convertList",
+          "callee": "spuMap.get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertList",
+          "callee": "cart.getSpuId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertList",
+          "callee": "skuMap.get",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertList",
+          "callee": "cart.getSkuId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertList",
+          "callee": "cartVO.setSpu(BeanUtils.toBean(spu, AppProductSpuBaseRespVO.class)).setSku",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertList",
+          "callee": "cartVO.setSpu",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertList",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 38
+        },
+        {
+          "caller": "convertList",
+          "callee": "ProductSpuStatusEnum.isEnable",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getStatus",
+          "lineNumber": 41
+        },
+        {
+          "caller": "convertList",
+          "callee": "spu.getStock",
+          "lineNumber": 42
+        },
+        {
+          "caller": "convertList",
+          "callee": "invalidList.add",
+          "lineNumber": 43
+        },
+        {
+          "caller": "convertList",
+          "callee": "validList.add",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convertList",
+          "callee": "new AppCartListRespVO().setValidList(validList).setInvalidList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertList",
+          "callee": "new AppCartListRespVO().setValidList",
+          "lineNumber": 48
+        },
+        {
+          "caller": "convertList",
+          "callee": "new AppCartListRespVO",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/config/TradeConfigConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "TradeConfigConvert",
+          "startLine": 15,
+          "endLine": 25,
+          "methods": [
+            "convert",
+            "convert",
+            "convert02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeConfigConvert",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/delivery/DeliveryExpressConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "DeliveryExpressConvert",
+          "startLine": 16,
+          "endLine": 37,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertList02",
+            "convertList1",
+            "convertList03"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryExpressConvert",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/delivery/DeliveryExpressTemplateConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 69,
+      "classes": [
+        {
+          "name": "DeliveryExpressTemplateConvert",
+          "startLine": 20,
+          "endLine": 95,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convert2",
+            "convertList",
+            "convertList1",
+            "convertPage",
+            "convert",
+            "convertTemplateCharge",
+            "convertTemplateCharge",
+            "convertTemplateChargeList",
+            "convertTemplateFree",
+            "convertTemplateFree",
+            "convertTemplateChargeList",
+            "convertTemplateFreeList",
+            "convertTemplateFreeList",
+            "convertMap"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryExpressTemplateConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convert",
+          "callee": "convert2",
+          "lineNumber": 44
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setCharges",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convert",
+          "callee": "convertTemplateChargeList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.setFrees",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convert",
+          "callee": "convertTemplateFreeList",
+          "lineNumber": 46
+        },
+        {
+          "caller": "convertTemplateChargeList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 57
+        },
+        {
+          "caller": "convertTemplateChargeList",
+          "callee": "convertTemplateCharge",
+          "lineNumber": 57
+        },
+        {
+          "caller": "convertTemplateFreeList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convertTemplateFreeList",
+          "callee": "convertTemplateFree",
+          "lineNumber": 71
+        },
+        {
+          "caller": "convertMap",
+          "callee": "convertMultiMap",
+          "lineNumber": 77
+        },
+        {
+          "caller": "convertMap",
+          "callee": "convertMultiMap",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convertMap",
+          "callee": "Maps.newHashMapWithExpectedSize",
+          "lineNumber": 82
+        },
+        {
+          "caller": "convertMap",
+          "callee": "templateList.size",
+          "lineNumber": 82
+        },
+        {
+          "caller": "convertMap",
+          "callee": "templateList.forEach",
+          "lineNumber": 83
+        },
+        {
+          "caller": "convertMap",
+          "callee": "new DeliveryExpressTemplateRespBO()\n                    .setChargeMode(template.getChargeMode())\n                    .setCharge(convertTemplateCharge(findFirst(templateIdChargeMap.get(template.getId()), charge -> charge.getAreaIds().contains(areaId)))).setFree",
+          "lineNumber": 84
+        },
+        {
+          "caller": "convertMap",
+          "callee": "new DeliveryExpressTemplateRespBO()\n                    .setChargeMode(template.getChargeMode()).setCharge",
+          "lineNumber": 84
+        },
+        {
+          "caller": "convertMap",
+          "callee": "new DeliveryExpressTemplateRespBO().setChargeMode",
+          "lineNumber": 84
+        },
+        {
+          "caller": "convertMap",
+          "callee": "new DeliveryExpressTemplateRespBO",
+          "lineNumber": 84
+        },
+        {
+          "caller": "convertMap",
+          "callee": "template.getChargeMode",
+          "lineNumber": 85
+        },
+        {
+          "caller": "convertMap",
+          "callee": "convertTemplateCharge",
+          "lineNumber": 86
+        },
+        {
+          "caller": "convertMap",
+          "callee": "findFirst",
+          "lineNumber": 86
+        },
+        {
+          "caller": "convertMap",
+          "callee": "templateIdChargeMap.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "convertMap",
+          "callee": "template.getId",
+          "lineNumber": 86
+        },
+        {
+          "caller": "convertMap",
+          "callee": "charge.getAreaIds().contains",
+          "lineNumber": 86
+        },
+        {
+          "caller": "convertMap",
+          "callee": "charge.getAreaIds",
+          "lineNumber": 86
+        },
+        {
+          "caller": "convertMap",
+          "callee": "convertTemplateFree",
+          "lineNumber": 87
+        },
+        {
+          "caller": "convertMap",
+          "callee": "findFirst",
+          "lineNumber": 87
+        },
+        {
+          "caller": "convertMap",
+          "callee": "templateIdFreeMap.get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "convertMap",
+          "callee": "template.getId",
+          "lineNumber": 87
+        },
+        {
+          "caller": "convertMap",
+          "callee": "free.getAreaIds().contains",
+          "lineNumber": 87
+        },
+        {
+          "caller": "convertMap",
+          "callee": "free.getAreaIds",
+          "lineNumber": 87
+        },
+        {
+          "caller": "convertMap",
+          "callee": "bo.getCharge",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convertMap",
+          "callee": "bo.getFree",
+          "lineNumber": 88
+        },
+        {
+          "caller": "convertMap",
+          "callee": "result.put",
+          "lineNumber": 89
+        },
+        {
+          "caller": "convertMap",
+          "callee": "template.getId",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/order/TradeOrderConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 293,
+      "nonEmptyLines": 255,
+      "classes": [
+        {
+          "name": "TradeOrderConvert",
+          "startLine": 55,
+          "endLine": 293,
+          "methods": [
+            "convert",
+            "convert",
+            "convertList",
+            "convert",
+            "convert",
+            "convertNegative",
+            "convert",
+            "convertPage",
+            "convertUser",
+            "convert",
+            "convert",
+            "convert",
+            "convertList03",
+            "convert2",
+            "convert",
+            "convertPage02",
+            "convert02",
+            "convert02",
+            "convert02",
+            "convert3",
+            "convert03",
+            "convert04",
+            "convert",
+            "convert",
+            "convert",
+            "convert0",
+            "convertList02",
+            "convert",
+            "convert",
+            "convert",
+            "convert",
+            "convertList04",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeOrderConvert",
+          "line": 55,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertList",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convertList",
+          "callee": "calculateRespBO.getItems",
+          "lineNumber": 79
+        },
+        {
+          "caller": "convertList",
+          "callee": "convert",
+          "lineNumber": 80
+        },
+        {
+          "caller": "convertList",
+          "callee": "orderItem.setOrderId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convertList",
+          "callee": "tradeOrderDO.getId",
+          "lineNumber": 81
+        },
+        {
+          "caller": "convertList",
+          "callee": "orderItem.setUserId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "convertList",
+          "callee": "tradeOrderDO.getUserId",
+          "lineNumber": 82
+        },
+        {
+          "caller": "convertList",
+          "callee": "orderItem.setAfterSaleStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "convertList",
+          "callee": "TradeOrderItemAfterSaleStatusEnum.NONE.getStatus",
+          "lineNumber": 83
+        },
+        {
+          "caller": "convertList",
+          "callee": "orderItem.setCommentStatus",
+          "lineNumber": 84
+        },
+        {
+          "caller": "convert",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 92
+        },
+        {
+          "caller": "convert",
+          "callee": "new ProductSkuUpdateStockReqDTO.Item().setId(item.getSkuId()).setIncrCount",
+          "lineNumber": 93
+        },
+        {
+          "caller": "convert",
+          "callee": "new ProductSkuUpdateStockReqDTO.Item().setId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "convert",
+          "callee": "new ProductSkuUpdateStockReqDTO.Item",
+          "lineNumber": 93
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getSkuId",
+          "lineNumber": 93
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getCount",
+          "lineNumber": 93
+        },
+        {
+          "caller": "convert",
+          "callee": "new ProductSkuUpdateStockReqDTO",
+          "lineNumber": 94
+        },
+        {
+          "caller": "convertNegative",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 98
+        },
+        {
+          "caller": "convertNegative",
+          "callee": "new ProductSkuUpdateStockReqDTO.Item().setId(item.getSkuId()).setIncrCount",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertNegative",
+          "callee": "new ProductSkuUpdateStockReqDTO.Item().setId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertNegative",
+          "callee": "new ProductSkuUpdateStockReqDTO.Item",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertNegative",
+          "callee": "item.getSkuId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertNegative",
+          "callee": "item.getCount",
+          "lineNumber": 99
+        },
+        {
+          "caller": "convertNegative",
+          "callee": "new ProductSkuUpdateStockReqDTO",
+          "lineNumber": 100
+        },
+        {
+          "caller": "convert",
+          "callee": "new PayOrderCreateReqDTO()\n                .setAppKey(orderProperties.getPayAppKey()).setUserIp(order.getUserIp())\n                .setUserId(order.getUserId()).setUserType",
+          "lineNumber": 105
+        },
+        {
+          "caller": "convert",
+          "callee": "new PayOrderCreateReqDTO()\n                .setAppKey(orderProperties.getPayAppKey()).setUserIp(order.getUserIp()).setUserId",
+          "lineNumber": 105
+        },
+        {
+          "caller": "convert",
+          "callee": "new PayOrderCreateReqDTO()\n                .setAppKey(orderProperties.getPayAppKey()).setUserIp",
+          "lineNumber": 105
+        },
+        {
+          "caller": "convert",
+          "callee": "new PayOrderCreateReqDTO().setAppKey",
+          "lineNumber": 105
+        },
+        {
+          "caller": "convert",
+          "callee": "new PayOrderCreateReqDTO",
+          "lineNumber": 105
+        },
+        {
+          "caller": "convert",
+          "callee": "orderProperties.getPayAppKey",
+          "lineNumber": 106
+        },
+        {
+          "caller": "convert",
+          "callee": "order.getUserIp",
+          "lineNumber": 106
+        },
+        {
+          "caller": "convert",
+          "callee": "order.getUserId",
+          "lineNumber": 107
+        },
+        {
+          "caller": "convert",
+          "callee": "UserTypeEnum.MEMBER.getValue",
+          "lineNumber": 107
+        },
+        {
+          "caller": "convert",
+          "callee": "createReqDTO.setMerchantOrderId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "convert",
+          "callee": "String.valueOf",
+          "lineNumber": 109
+        },
+        {
+          "caller": "convert",
+          "callee": "order.getId",
+          "lineNumber": 109
+        },
+        {
+          "caller": "convert",
+          "callee": "orderItems.get(0).getSpuName",
+          "lineNumber": 110
+        },
+        {
+          "caller": "convert",
+          "callee": "orderItems.get",
+          "lineNumber": 110
+        },
+        {
+          "caller": "convert",
+          "callee": "StrUtils.maxLength",
+          "lineNumber": 111
+        },
+        {
+          "caller": "convert",
+          "callee": "createReqDTO.setSubject",
+          "lineNumber": 112
+        },
+        {
+          "caller": "convert",
+          "callee": "createReqDTO.setBody",
+          "lineNumber": 113
+        },
+        {
+          "caller": "convert",
+          "callee": "createReqDTO.setPrice(order.getPayPrice()).setExpireTime",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert",
+          "callee": "createReqDTO.setPrice",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert",
+          "callee": "order.getPayPrice",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert",
+          "callee": "addTime",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convert",
+          "callee": "orderProperties.getPayExpireTime",
+          "lineNumber": 115
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMultiMap",
+          "lineNumber": 122
+        },
+        {
+          "caller": "convertPage",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 124
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 124
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderItemMap.get",
+          "lineNumber": 125
+        },
+        {
+          "caller": "convertPage",
+          "callee": "order.getId",
+          "lineNumber": 125
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convert",
+          "lineNumber": 126
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderVO.setReceiverAreaName",
+          "lineNumber": 128
+        },
+        {
+          "caller": "convertPage",
+          "callee": "AreaUtils.format",
+          "lineNumber": 128
+        },
+        {
+          "caller": "convertPage",
+          "callee": "order.getReceiverAreaId",
+          "lineNumber": 128
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderVO.setUser",
+          "lineNumber": 130
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertUser",
+          "lineNumber": 130
+        },
+        {
+          "caller": "convertPage",
+          "callee": "memberUserMap.get",
+          "lineNumber": 130
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderVO.getUserId",
+          "lineNumber": 130
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderVO.setBrokerageUser",
+          "lineNumber": 132
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertUser",
+          "lineNumber": 132
+        },
+        {
+          "caller": "convertPage",
+          "callee": "memberUserMap.get",
+          "lineNumber": 132
+        },
+        {
+          "caller": "convertPage",
+          "callee": "orderVO.getBrokerageUserId",
+          "lineNumber": 132
+        },
+        {
+          "caller": "convertPage",
+          "callee": "new PageResult<>",
+          "lineNumber": 135
+        },
+        {
+          "caller": "convertPage",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 135
+        },
+        {
+          "caller": "convert",
+          "callee": "convert2",
+          "lineNumber": 147
+        },
+        {
+          "caller": "convert",
+          "callee": "orderVO.setReceiverAreaName",
+          "lineNumber": 149
+        },
+        {
+          "caller": "convert",
+          "callee": "AreaUtils.format",
+          "lineNumber": 149
+        },
+        {
+          "caller": "convert",
+          "callee": "order.getReceiverAreaId",
+          "lineNumber": 149
+        },
+        {
+          "caller": "convert",
+          "callee": "orderVO.setUser",
+          "lineNumber": 151
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 151
+        },
+        {
+          "caller": "convert",
+          "callee": "orderVO.setBrokerageUser",
+          "lineNumber": 152
+        },
+        {
+          "caller": "convert",
+          "callee": "convert",
+          "lineNumber": 152
+        },
+        {
+          "caller": "convert",
+          "callee": "orderVO.setLogs",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convert",
+          "callee": "convertList03",
+          "lineNumber": 154
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convertMultiMap",
+          "lineNumber": 165
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "CollectionUtils.convertList",
+          "lineNumber": 167
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "pageResult.getList",
+          "lineNumber": 167
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "orderItemMap.get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "order.getId",
+          "lineNumber": 168
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "convert02",
+          "lineNumber": 169
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "new PageResult<>",
+          "lineNumber": 171
+        },
+        {
+          "caller": "convertPage02",
+          "callee": "pageResult.getTotal",
+          "lineNumber": 171
+        },
+        {
+          "caller": "convert02",
+          "callee": "convert3",
+          "lineNumber": 181
+        },
+        {
+          "caller": "convert02",
+          "callee": "orderVO.setPayExpireTime",
+          "lineNumber": 182
+        },
+        {
+          "caller": "convert02",
+          "callee": "order.getCreateTime().plus",
+          "lineNumber": 182
+        },
+        {
+          "caller": "convert02",
+          "callee": "order.getCreateTime",
+          "lineNumber": 182
+        },
+        {
+          "caller": "convert02",
+          "callee": "tradeOrderProperties.getPayExpireTime",
+          "lineNumber": 182
+        },
+        {
+          "caller": "convert02",
+          "callee": "StrUtil.isNotEmpty",
+          "lineNumber": 183
+        },
+        {
+          "caller": "convert02",
+          "callee": "order.getPayChannelCode",
+          "lineNumber": 183
+        },
+        {
+          "caller": "convert02",
+          "callee": "orderVO.setPayChannelName",
+          "lineNumber": 184
+        },
+        {
+          "caller": "convert02",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 184
+        },
+        {
+          "caller": "convert02",
+          "callee": "order.getPayChannelCode",
+          "lineNumber": 184
+        },
+        {
+          "caller": "convert02",
+          "callee": "orderVO.setReceiverAreaName",
+          "lineNumber": 187
+        },
+        {
+          "caller": "convert02",
+          "callee": "AreaUtils.format",
+          "lineNumber": 187
+        },
+        {
+          "caller": "convert02",
+          "callee": "order.getReceiverAreaId",
+          "lineNumber": 187
+        },
+        {
+          "caller": "convert02",
+          "callee": "orderVO.setLogisticsId(express.getId()).setLogisticsName",
+          "lineNumber": 189
+        },
+        {
+          "caller": "convert02",
+          "callee": "orderVO.setLogisticsId",
+          "lineNumber": 189
+        },
+        {
+          "caller": "convert02",
+          "callee": "express.getId",
+          "lineNumber": 189
+        },
+        {
+          "caller": "convert02",
+          "callee": "express.getName",
+          "lineNumber": 189
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus())\n                // 物流信息\n                .setDeliveryType(settlementReqVO.getDeliveryType()).setAddressId(settlementReqVO.getAddressId())\n                .setPickUpStoreId(settlementReqVO.getPickUpStoreId())\n                // 各种活动\n                .setSeckillActivityId(settlementReqVO.getSeckillActivityId())\n                .setBargainRecordId(settlementReqVO.getBargainRecordId())\n                .setCombinationActivityId(settlementReqVO.getCombinationActivityId())\n                .setCombinationHeadId(settlementReqVO.getCombinationHeadId()).setPointActivityId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus())\n                // 物流信息\n                .setDeliveryType(settlementReqVO.getDeliveryType()).setAddressId(settlementReqVO.getAddressId())\n                .setPickUpStoreId(settlementReqVO.getPickUpStoreId())\n                // 各种活动\n                .setSeckillActivityId(settlementReqVO.getSeckillActivityId())\n                .setBargainRecordId(settlementReqVO.getBargainRecordId())\n                .setCombinationActivityId(settlementReqVO.getCombinationActivityId()).setCombinationHeadId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus())\n                // 物流信息\n                .setDeliveryType(settlementReqVO.getDeliveryType()).setAddressId(settlementReqVO.getAddressId())\n                .setPickUpStoreId(settlementReqVO.getPickUpStoreId())\n                // 各种活动\n                .setSeckillActivityId(settlementReqVO.getSeckillActivityId())\n                .setBargainRecordId(settlementReqVO.getBargainRecordId()).setCombinationActivityId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus())\n                // 物流信息\n                .setDeliveryType(settlementReqVO.getDeliveryType()).setAddressId(settlementReqVO.getAddressId())\n                .setPickUpStoreId(settlementReqVO.getPickUpStoreId())\n                // 各种活动\n                .setSeckillActivityId(settlementReqVO.getSeckillActivityId()).setBargainRecordId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus())\n                // 物流信息\n                .setDeliveryType(settlementReqVO.getDeliveryType()).setAddressId(settlementReqVO.getAddressId())\n                .setPickUpStoreId(settlementReqVO.getPickUpStoreId()).setSeckillActivityId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus())\n                // 物流信息\n                .setDeliveryType(settlementReqVO.getDeliveryType()).setAddressId(settlementReqVO.getAddressId()).setPickUpStoreId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus())\n                // 物流信息\n                .setDeliveryType(settlementReqVO.getDeliveryType()).setAddressId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus(settlementReqVO.getPointStatus()).setDeliveryType",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size()))\n                .setCouponId(settlementReqVO.getCouponId()).setPointStatus",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId)\n                .setItems(new ArrayList<>(settlementReqVO.getItems().size())).setCouponId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId(userId).setItems",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO().setUserId",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO",
+          "lineNumber": 215
+        },
+        {
+          "caller": "convert",
+          "callee": "new ArrayList<>",
+          "lineNumber": 216
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getItems().size",
+          "lineNumber": 216
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getItems",
+          "lineNumber": 216
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getCouponId",
+          "lineNumber": 217
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getPointStatus",
+          "lineNumber": 217
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getDeliveryType",
+          "lineNumber": 219
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getAddressId",
+          "lineNumber": 219
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getPickUpStoreId",
+          "lineNumber": 220
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getSeckillActivityId",
+          "lineNumber": 222
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getBargainRecordId",
+          "lineNumber": 223
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getCombinationActivityId",
+          "lineNumber": 224
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getCombinationHeadId",
+          "lineNumber": 225
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getPointActivityId",
+          "lineNumber": 226
+        },
+        {
+          "caller": "convert",
+          "callee": "convertMap",
+          "lineNumber": 228
+        },
+        {
+          "caller": "convert",
+          "callee": "settlementReqVO.getItems",
+          "lineNumber": 229
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getSkuId",
+          "lineNumber": 231
+        },
+        {
+          "caller": "convert",
+          "callee": "reqBO.getItems().add",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "reqBO.getItems",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item().setSkuId(item.getSkuId()).setCount(item.getCount()).setSelected",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item().setSkuId(item.getSkuId()).setCount",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item().setSkuId",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getSkuId",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getCount",
+          "lineNumber": 232
+        },
+        {
+          "caller": "convert",
+          "callee": "cartMap.get",
+          "lineNumber": 237
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getCartId",
+          "lineNumber": 237
+        },
+        {
+          "caller": "convert",
+          "callee": "reqBO.getItems().add",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "reqBO.getItems",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item().setSkuId(cart.getSkuId()).setCount(cart.getCount())\n                    .setCartId(item.getCartId()).setSelected",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item().setSkuId(cart.getSkuId()).setCount(cart.getCount()).setCartId",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item().setSkuId(cart.getSkuId()).setCount",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item().setSkuId",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "new TradePriceCalculateReqBO.Item",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "cart.getSkuId",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "cart.getCount",
+          "lineNumber": 241
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getCartId",
+          "lineNumber": 242
+        },
+        {
+          "caller": "convert",
+          "callee": "convert0",
+          "lineNumber": 248
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.getAddress().setAreaName",
+          "lineNumber": 250
+        },
+        {
+          "caller": "convert",
+          "callee": "respVO.getAddress",
+          "lineNumber": 250
+        },
+        {
+          "caller": "convert",
+          "callee": "AreaUtils.format",
+          "lineNumber": 250
+        },
+        {
+          "caller": "convert",
+          "callee": "address.getAreaId",
+          "lineNumber": 250
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageAddReqBO().setBizId(String.valueOf(item.getId())).setSourceUserId(item.getUserId())\n                .setBasePrice(item.getPayPrice()).setTitle",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageAddReqBO().setBizId(String.valueOf(item.getId())).setSourceUserId(item.getUserId()).setBasePrice",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageAddReqBO().setBizId(String.valueOf(item.getId())).setSourceUserId",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageAddReqBO().setBizId",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "new BrokerageAddReqBO",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "String.valueOf",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getId",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getUserId",
+          "lineNumber": 267
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getPayPrice",
+          "lineNumber": 268
+        },
+        {
+          "caller": "convert",
+          "callee": "StrUtil.format",
+          "lineNumber": 269
+        },
+        {
+          "caller": "convert",
+          "callee": "user.getNickname",
+          "lineNumber": 269
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getSpuName",
+          "lineNumber": 269
+        },
+        {
+          "caller": "convert",
+          "callee": "BooleanUtil.isTrue",
+          "lineNumber": 270
+        },
+        {
+          "caller": "convert",
+          "callee": "spu.getSubCommissionType",
+          "lineNumber": 270
+        },
+        {
+          "caller": "convert",
+          "callee": "bo.setFirstFixedPrice(ObjectUtil.defaultIfNull(sku.getFirstBrokeragePrice(), 0) * item.getCount()).setSecondFixedPrice",
+          "lineNumber": 272
+        },
+        {
+          "caller": "convert",
+          "callee": "bo.setFirstFixedPrice",
+          "lineNumber": 272
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 272
+        },
+        {
+          "caller": "convert",
+          "callee": "sku.getFirstBrokeragePrice",
+          "lineNumber": 272
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getCount",
+          "lineNumber": 272
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjectUtil.defaultIfNull",
+          "lineNumber": 273
+        },
+        {
+          "caller": "convert",
+          "callee": "sku.getSecondBrokeragePrice",
+          "lineNumber": 273
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getCount",
+          "lineNumber": 273
+        }
+      ],
+      "metrics": {
+        "importCount": 33,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/convert/order/TradeOrderLogConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 10,
+      "classes": [
+        {
+          "name": "TradeOrderLogConvert",
+          "startLine": 8,
+          "endLine": 15,
+          "methods": [
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeOrderLogConvert",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 199,
+      "nonEmptyLines": 189,
+      "classes": [
+        {
+          "name": "AfterSaleDO",
+          "startLine": 23,
+          "endLine": 199,
+          "methods": [],
+          "properties": [
+            "id",
+            "no",
+            "status",
+            "way",
+            "type",
+            "userId",
+            "applyReason",
+            "applyDescription",
+            "applyPicUrls",
+            "orderId",
+            "orderNo",
+            "orderItemId",
+            "spuId",
+            "spuName",
+            "skuId",
+            "properties",
+            "picUrl",
+            "count",
+            "auditTime",
+            "auditUserId",
+            "auditReason",
+            "refundPrice",
+            "payRefundId",
+            "refundTime",
+            "logisticsId",
+            "logisticsNo",
+            "deliveryTime",
+            "receiveTime",
+            "receiveReason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AfterSaleDO",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleLogDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 65,
+      "classes": [
+        {
+          "name": "AfterSaleLogDO",
+          "startLine": 16,
+          "endLine": 71,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "userType",
+            "afterSaleId",
+            "beforeStatus",
+            "afterStatus",
+            "operateType",
+            "content"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AfterSaleLogDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageRecordDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 87,
+      "classes": [
+        {
+          "name": "BrokerageRecordDO",
+          "startLine": 18,
+          "endLine": 97,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "bizId",
+            "bizType",
+            "title",
+            "description",
+            "price",
+            "totalPrice",
+            "status",
+            "frozenDays",
+            "unfreezeTime",
+            "sourceUserLevel",
+            "sourceUserId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageRecordDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageUserDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "BrokerageUserDO",
+          "startLine": 16,
+          "endLine": 62,
+          "methods": [],
+          "properties": [
+            "id",
+            "bindUserId",
+            "bindUserTime",
+            "brokerageEnabled",
+            "brokerageTime",
+            "brokeragePrice",
+            "frozenPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BrokerageUserDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/cart/CartDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "CartDO",
+          "startLine": 15,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "spuId",
+            "skuId",
+            "count",
+            "selected"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CartDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/config/TradeConfigDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 106,
+      "classes": [
+        {
+          "name": "TradeConfigDO",
+          "startLine": 22,
+          "endLine": 118,
+          "methods": [],
+          "properties": [
+            "id",
+            "afterSaleRefundReasons",
+            "afterSaleReturnReasons",
+            "deliveryExpressFreeEnabled",
+            "deliveryExpressFreePrice",
+            "deliveryPickUpEnabled",
+            "brokerageEnabled",
+            "brokerageEnabledCondition",
+            "brokerageBindMode",
+            "brokeragePosterUrls",
+            "brokerageFirstPercent",
+            "brokerageSecondPercent",
+            "brokerageWithdrawMinPrice",
+            "brokerageWithdrawFeePercent",
+            "brokerageFrozenDays",
+            "brokerageWithdrawTypes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradeConfigDO",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryExpressDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "DeliveryExpressDO",
+          "startLine": 15,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "id",
+            "code",
+            "name",
+            "logo",
+            "sort",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryExpressDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryExpressTemplateChargeDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 57,
+      "classes": [
+        {
+          "name": "DeliveryExpressTemplateChargeDO",
+          "startLine": 18,
+          "endLine": 67,
+          "methods": [],
+          "properties": [
+            "id",
+            "templateId",
+            "areaIds",
+            "chargeMode",
+            "startCount",
+            "startPrice",
+            "extraCount",
+            "extraPrice"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryExpressTemplateChargeDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryExpressTemplateDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "DeliveryExpressTemplateDO",
+          "startLine": 15,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "chargeMode",
+            "sort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryExpressTemplateDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-mall/yudao-module-trade-server/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/delivery/DeliveryExpressTemplateFreeDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "DeliveryExpressTemplateFreeDO",
+          "startLine": 18,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "id",
+            "templateId",
+            "areaIds",
+            "freePrice",
+            "freeCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeliveryExpressTemplateFreeDO",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

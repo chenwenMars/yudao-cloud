@@ -1,0 +1,2385 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 34,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 34,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 34,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/tag/MemberTagController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "createTag",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "createReqVO"
+          ]
+        },
+        {
+          "name": "updateTag",
+          "startLine": 42,
+          "endLine": 48,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "deleteTag",
+          "startLine": 50,
+          "endLine": 57,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getMemberTag",
+          "startLine": 59,
+          "endLine": 66,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getSimpleTagList",
+          "startLine": 68,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "getMemberTagList",
+          "startLine": 77,
+          "endLine": 84,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "getTagPage",
+          "startLine": 86,
+          "endLine": 92,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemberTagController",
+          "startLine": 26,
+          "endLine": 94,
+          "methods": [
+            "createTag",
+            "updateTag",
+            "deleteTag",
+            "getMemberTag",
+            "getSimpleTagList",
+            "getMemberTagList",
+            "getTagPage"
+          ],
+          "properties": [
+            "tagService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTag",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "updateTag",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "deleteTag",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberTag",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "getSimpleTagList",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "getMemberTagList",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "getTagPage",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "MemberTagController",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTag",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createTag",
+          "callee": "tagService.createTag",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateTag",
+          "callee": "tagService.updateTag",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateTag",
+          "callee": "success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "tagService.deleteTag",
+          "lineNumber": 55
+        },
+        {
+          "caller": "deleteTag",
+          "callee": "success",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getMemberTag",
+          "callee": "tagService.getTag",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getMemberTag",
+          "callee": "success",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getMemberTag",
+          "callee": "MemberTagConvert.INSTANCE.convert",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getSimpleTagList",
+          "callee": "tagService.getTagList",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getSimpleTagList",
+          "callee": "success",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getSimpleTagList",
+          "callee": "MemberTagConvert.INSTANCE.convertList",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getMemberTagList",
+          "callee": "tagService.getTagList",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getMemberTagList",
+          "callee": "success",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getMemberTagList",
+          "callee": "MemberTagConvert.INSTANCE.convertList",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getTagPage",
+          "callee": "tagService.getTagPage",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getTagPage",
+          "callee": "success",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getTagPage",
+          "callee": "MemberTagConvert.INSTANCE.convertPage",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/tag/vo/MemberTagCreateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "MemberTagCreateReqVO",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberTagCreateReqVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/tag/vo/MemberTagPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "MemberTagPageReqVO",
+          "startLine": 14,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "name",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberTagPageReqVO",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/tag/vo/MemberTagRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "MemberTagRespVO",
+          "startLine": 10,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "id",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberTagRespVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/tag/vo/MemberTagUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "MemberTagUpdateReqVO",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberTagUpdateReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/MemberUserController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "updateUser",
+          "startLine": 54,
+          "endLine": 60,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateUserLevel",
+          "startLine": 62,
+          "endLine": 68,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "updateUserPoint",
+          "startLine": 70,
+          "endLine": 77,
+          "params": [
+            "updateReqVO"
+          ]
+        },
+        {
+          "name": "getUser",
+          "startLine": 79,
+          "endLine": 96,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getUserPage",
+          "startLine": 98,
+          "endLine": 121,
+          "params": [
+            "pageVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemberUserController",
+          "startLine": 37,
+          "endLine": 123,
+          "methods": [
+            "updateUser",
+            "updateUserLevel",
+            "updateUserPoint",
+            "getUser",
+            "getUserPage"
+          ],
+          "properties": [
+            "memberUserService",
+            "memberTagService",
+            "memberLevelService",
+            "memberGroupService",
+            "memberPointRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "updateUser",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserLevel",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserPoint",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "getUser",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "getUserPage",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "MemberUserController",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "updateUser",
+          "callee": "memberUserService.updateUser",
+          "lineNumber": 58
+        },
+        {
+          "caller": "updateUser",
+          "callee": "success",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "memberLevelService.updateUserLevel",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateUserLevel",
+          "callee": "success",
+          "lineNumber": 67
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "memberPointRecordService.createPointRecord",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "updateReqVO.getId",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "updateReqVO.getPoint",
+          "lineNumber": 74
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "String.valueOf",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "getLoginUserId",
+          "lineNumber": 75
+        },
+        {
+          "caller": "updateUserPoint",
+          "callee": "success",
+          "lineNumber": 76
+        },
+        {
+          "caller": "getUser",
+          "callee": "memberUserService.getUser",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getUser",
+          "callee": "success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getUser",
+          "callee": "MemberUserConvert.INSTANCE.convert03",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getUser",
+          "callee": "user.getLevelId",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getUser",
+          "callee": "memberLevelService.getLevel",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getUser",
+          "callee": "userVO.getLevelId",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getUser",
+          "callee": "userVO.setLevelName",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getUser",
+          "callee": "level.getName",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getUser",
+          "callee": "success",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "memberUserService.getUserPage",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 103
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "success",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "PageResult.empty",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList().stream()\n                .map(MemberUserDO::getTagIds)\n                .filter(Objects::nonNull)\n                .flatMap(Collection::stream).collect",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList().stream()\n                .map(MemberUserDO::getTagIds)\n                .filter(Objects::nonNull).flatMap",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList().stream()\n                .map(MemberUserDO::getTagIds).filter",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList().stream().map",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList().stream",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "Collectors.toSet",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "memberTagService.getTagList",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "memberLevelService.getLevelList",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "convertSet",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 116
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "memberGroupService.getGroupList",
+          "lineNumber": 118
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "convertSet",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "pageResult.getList",
+          "lineNumber": 119
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "success",
+          "lineNumber": 120
+        },
+        {
+          "caller": "getUserPage",
+          "callee": "MemberUserConvert.INSTANCE.convertPage",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 13,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/vo/MemberUserRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 36,
+      "classes": [
+        {
+          "name": "MemberUserRespVO",
+          "startLine": 11,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "id",
+            "registerIp",
+            "loginIp",
+            "loginDate",
+            "createTime",
+            "point",
+            "totalPoint",
+            "tagNames",
+            "levelName",
+            "groupName",
+            "experience"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberUserRespVO",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/vo/MemberUserUpdateLevelReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "MemberUserUpdateLevelReqVO",
+          "startLine": 10,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "id",
+            "levelId",
+            "reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberUserUpdateLevelReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/vo/MemberUserUpdateReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "MemberUserUpdateReqVO",
+          "startLine": 10,
+          "endLine": 20,
+          "methods": [],
+          "properties": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberUserUpdateReqVO",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/level/AppMemberExperienceRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "getExperienceRecordPage",
+          "startLine": 32,
+          "endLine": 39,
+          "params": [
+            "pageParam"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppMemberExperienceRecordController",
+          "startLine": 23,
+          "endLine": 41,
+          "methods": [
+            "getExperienceRecordPage"
+          ],
+          "properties": [
+            "experienceLogService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getExperienceRecordPage",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "AppMemberExperienceRecordController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getExperienceRecordPage",
+          "callee": "experienceLogService.getExperienceRecordPage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getExperienceRecordPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getExperienceRecordPage",
+          "callee": "success",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getExperienceRecordPage",
+          "callee": "MemberExperienceRecordConvert.INSTANCE.convertPage02",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/level/AppMemberLevelController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "getLevelList",
+          "startLine": 30,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppMemberLevelController",
+          "startLine": 21,
+          "endLine": 38,
+          "methods": [
+            "getLevelList"
+          ],
+          "properties": [
+            "levelService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getLevelList",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "AppMemberLevelController",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getLevelList",
+          "callee": "levelService.getEnableLevelList",
+          "lineNumber": 34
+        },
+        {
+          "caller": "getLevelList",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getLevelList",
+          "callee": "MemberLevelConvert.INSTANCE.convertList02",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/level/vo/experience/AppMemberExperienceRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "AppMemberExperienceRecordRespVO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "title",
+            "experience",
+            "description",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberExperienceRecordRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/level/vo/level/AppMemberLevelRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 19,
+      "classes": [
+        {
+          "name": "AppMemberLevelRespVO",
+          "startLine": 6,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "name",
+            "level",
+            "experience",
+            "discountPercent",
+            "icon",
+            "backgroundUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberLevelRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/point/AppMemberPointRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "getPointRecordPage",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "pageReqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppMemberPointRecordController",
+          "startLine": 25,
+          "endLine": 42,
+          "methods": [
+            "getPointRecordPage"
+          ],
+          "properties": [
+            "pointRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPointRecordPage",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "AppMemberPointRecordController",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPointRecordPage",
+          "callee": "pointRecordService.getPointRecordPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getPointRecordPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getPointRecordPage",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getPointRecordPage",
+          "callee": "BeanUtils.toBean",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/point/vo/AppMemberPointRecordPageReqVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "AppMemberPointRecordPageReqVO",
+          "startLine": 12,
+          "endLine": 23,
+          "methods": [],
+          "properties": [
+            "addStatus",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberPointRecordPageReqVO",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/point/vo/AppMemberPointRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 18,
+      "classes": [
+        {
+          "name": "AppMemberPointRecordRespVO",
+          "startLine": 8,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "id",
+            "title",
+            "description",
+            "point",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberPointRecordRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/signin/AppMemberSignInConfigController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "getSignInConfigList",
+          "startLine": 31,
+          "endLine": 37,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppMemberSignInConfigController",
+          "startLine": 22,
+          "endLine": 39,
+          "methods": [
+            "getSignInConfigList"
+          ],
+          "properties": [
+            "signInConfigService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getSignInConfigList",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "AppMemberSignInConfigController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSignInConfigList",
+          "callee": "signInConfigService.getSignInConfigList",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getSignInConfigList",
+          "callee": "CommonStatusEnum.ENABLE.getStatus",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getSignInConfigList",
+          "callee": "success",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getSignInConfigList",
+          "callee": "MemberSignInConfigConvert.INSTANCE.convertList02",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/signin/AppMemberSignInRecordController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "getSignInRecordSummary",
+          "startLine": 32,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "createSignInRecord",
+          "startLine": 38,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "getSignRecordPage",
+          "startLine": 45,
+          "endLine": 50,
+          "params": [
+            "pageParam"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppMemberSignInRecordController",
+          "startLine": 23,
+          "endLine": 52,
+          "methods": [
+            "getSignInRecordSummary",
+            "createSignInRecord",
+            "getSignRecordPage"
+          ],
+          "properties": [
+            "signInRecordService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getSignInRecordSummary",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "createSignInRecord",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "getSignRecordPage",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "AppMemberSignInRecordController",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSignInRecordSummary",
+          "callee": "success",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getSignInRecordSummary",
+          "callee": "signInRecordService.getSignInRecordSummary",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getSignInRecordSummary",
+          "callee": "getLoginUserId",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createSignInRecord",
+          "callee": "signInRecordService.createSignRecord",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createSignInRecord",
+          "callee": "getLoginUserId",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createSignInRecord",
+          "callee": "success",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createSignInRecord",
+          "callee": "MemberSignInRecordConvert.INSTANCE.coverRecordToAppRecordVo",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getSignRecordPage",
+          "callee": "signInRecordService.getSignRecordPage",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getSignRecordPage",
+          "callee": "getLoginUserId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getSignRecordPage",
+          "callee": "success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getSignRecordPage",
+          "callee": "MemberSignInRecordConvert.INSTANCE.convertPage02",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/signin/vo/config/AppMemberSignInConfigRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 11,
+      "classes": [
+        {
+          "name": "AppMemberSignInConfigRespVO",
+          "startLine": 6,
+          "endLine": 16,
+          "methods": [],
+          "properties": [
+            "day",
+            "point"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberSignInConfigRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/signin/vo/record/AppMemberSignInRecordRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "AppMemberSignInRecordRespVO",
+          "startLine": 8,
+          "endLine": 24,
+          "methods": [],
+          "properties": [
+            "day",
+            "point",
+            "experience",
+            "createTime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberSignInRecordRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/signin/vo/record/AppMemberSignInRecordSummaryRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "classes": [
+        {
+          "name": "AppMemberSignInRecordSummaryRespVO",
+          "startLine": 6,
+          "endLine": 19,
+          "methods": [],
+          "properties": [
+            "totalDay",
+            "continuousDay",
+            "todaySignIn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberSignInRecordSummaryRespVO",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/user/AppMemberUserController.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "getUserInfo",
+          "startLine": 34,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "updateUser",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateUserMobile",
+          "startLine": 49,
+          "endLine": 54,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateUserMobileByWeixin",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "updateUserPassword",
+          "startLine": 63,
+          "endLine": 68,
+          "params": [
+            "reqVO"
+          ]
+        },
+        {
+          "name": "resetUserPassword",
+          "startLine": 70,
+          "endLine": 76,
+          "params": [
+            "reqVO"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AppMemberUserController",
+          "startLine": 22,
+          "endLine": 78,
+          "methods": [
+            "getUserInfo",
+            "updateUser",
+            "updateUserMobile",
+            "updateUserMobileByWeixin",
+            "updateUserPassword",
+            "resetUserPassword"
+          ],
+          "properties": [
+            "userService",
+            "levelService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getUserInfo",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "updateUser",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserMobile",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserMobileByWeixin",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "updateUserPassword",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "resetUserPassword",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "AppMemberUserController",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getUserInfo",
+          "callee": "userService.getUser",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "getLoginUserId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "levelService.getLevel",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "user.getLevelId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "success",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getUserInfo",
+          "callee": "MemberUserConvert.INSTANCE.convert",
+          "lineNumber": 39
+        },
+        {
+          "caller": "updateUser",
+          "callee": "userService.updateUser",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateUser",
+          "callee": "getLoginUserId",
+          "lineNumber": 45
+        },
+        {
+          "caller": "updateUser",
+          "callee": "success",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "userService.updateUserMobile",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "getLoginUserId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "updateUserMobile",
+          "callee": "success",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "userService.updateUserMobileByWeixin",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "getLoginUserId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "updateUserMobileByWeixin",
+          "callee": "success",
+          "lineNumber": 60
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "userService.updateUserPassword",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "getLoginUserId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "updateUserPassword",
+          "callee": "success",
+          "lineNumber": 67
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "userService.resetUserPassword",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resetUserPassword",
+          "callee": "success",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/controller/app/user/vo/AppMemberUserInfoRespVO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "AppMemberUserInfoRespVO",
+          "startLine": 8,
+          "endLine": 62,
+          "methods": [],
+          "properties": [
+            "id",
+            "nickname",
+            "avatar",
+            "mobile",
+            "email",
+            "sex",
+            "point",
+            "experience",
+            "level",
+            "brokerageEnabled"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMemberUserInfoRespVO",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/group/MemberGroupConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 25,
+      "classes": [
+        {
+          "name": "MemberGroupConvert",
+          "startLine": 19,
+          "endLine": 35,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage",
+            "convertSimpleList"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberGroupConvert",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/level/MemberExperienceRecordConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 24,
+      "classes": [
+        {
+          "name": "MemberExperienceRecordConvert",
+          "startLine": 17,
+          "endLine": 34,
+          "methods": [
+            "convert",
+            "convertList",
+            "convertPage",
+            "convert",
+            "convertPage02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberExperienceRecordConvert",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/level/MemberLevelConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "MemberLevelConvert",
+          "startLine": 20,
+          "endLine": 39,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertSimpleList",
+            "convertList02",
+            "convert02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberLevelConvert",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/level/MemberLevelRecordConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "MemberLevelRecordConvert",
+          "startLine": 17,
+          "endLine": 37,
+          "methods": [
+            "convert",
+            "convertList",
+            "convertPage",
+            "copyTo"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberLevelRecordConvert",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "copyTo",
+          "callee": "to.setLevelId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "copyTo",
+          "callee": "from.getId",
+          "lineNumber": 30
+        },
+        {
+          "caller": "copyTo",
+          "callee": "to.setLevel",
+          "lineNumber": 31
+        },
+        {
+          "caller": "copyTo",
+          "callee": "from.getLevel",
+          "lineNumber": 31
+        },
+        {
+          "caller": "copyTo",
+          "callee": "to.setDiscountPercent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "copyTo",
+          "callee": "from.getDiscountPercent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "copyTo",
+          "callee": "to.setExperience",
+          "lineNumber": 33
+        },
+        {
+          "caller": "copyTo",
+          "callee": "from.getExperience",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/point/MemberPointRecordConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 30,
+      "classes": [
+        {
+          "name": "MemberPointRecordConvert",
+          "startLine": 22,
+          "endLine": 37,
+          "methods": [
+            "convertPage",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberPointRecordConvert",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 28
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 30
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList().forEach",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.getUserId",
+          "lineNumber": 31
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setNickname",
+          "lineNumber": 32
+        },
+        {
+          "caller": "convertPage",
+          "callee": "memberUserRespDTO.getNickname",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/signin/MemberSignInConfigConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MemberSignInConfigConvert",
+          "startLine": 18,
+          "endLine": 33,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertList02"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberSignInConfigConvert",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/signin/MemberSignInRecordConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 62,
+      "classes": [
+        {
+          "name": "MemberSignInRecordConvert",
+          "startLine": 27,
+          "endLine": 74,
+          "methods": [
+            "convertPage",
+            "convertPage",
+            "convertPage02",
+            "coverRecordToAppRecordVo",
+            "convert"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberSignInRecordConvert",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 33
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList().forEach",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertPage",
+          "callee": "voPageResult.getList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertPage",
+          "callee": "MapUtils.findAndThen",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.getUserId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "convertPage",
+          "callee": "record.setNickname",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convertPage",
+          "callee": "memberUserRespDTO.getNickname",
+          "lineNumber": 37
+        },
+        {
+          "caller": "convert",
+          "callee": "configs.sort",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convert",
+          "callee": "Comparator.comparing",
+          "lineNumber": 49
+        },
+        {
+          "caller": "convert",
+          "callee": "CollUtil.getLast",
+          "lineNumber": 50
+        },
+        {
+          "caller": "convert",
+          "callee": "DateUtils.isYesterday",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convert",
+          "callee": "lastRecord.getCreateTime",
+          "lineNumber": 53
+        },
+        {
+          "caller": "convert",
+          "callee": "lastRecord.getDay",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convert",
+          "callee": "lastConfig.getDay",
+          "lineNumber": 57
+        },
+        {
+          "caller": "convert",
+          "callee": "new MemberSignInRecordDO().setUserId(userId)\n                .setDay(day).setPoint(0).setExperience",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convert",
+          "callee": "new MemberSignInRecordDO().setUserId(userId)\n                .setDay(day).setPoint",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convert",
+          "callee": "new MemberSignInRecordDO().setUserId(userId).setDay",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convert",
+          "callee": "new MemberSignInRecordDO().setUserId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convert",
+          "callee": "new MemberSignInRecordDO",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convert",
+          "callee": "CollUtil.findOne",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convert",
+          "callee": "ObjUtil.equal",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convert",
+          "callee": "item.getDay",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convert",
+          "callee": "record.getDay",
+          "lineNumber": 65
+        },
+        {
+          "caller": "convert",
+          "callee": "record.setPoint",
+          "lineNumber": 69
+        },
+        {
+          "caller": "convert",
+          "callee": "config.getPoint",
+          "lineNumber": 69
+        },
+        {
+          "caller": "convert",
+          "callee": "record.setExperience",
+          "lineNumber": 70
+        },
+        {
+          "caller": "convert",
+          "callee": "config.getExperience",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/tag/MemberTagConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "MemberTagConvert",
+          "startLine": 18,
+          "endLine": 33,
+          "methods": [
+            "convert",
+            "convert",
+            "convert",
+            "convertList",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberTagConvert",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/convert/user/MemberUserConvert.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 53,
+      "classes": [
+        {
+          "name": "MemberUserConvert",
+          "startLine": 24,
+          "endLine": 68,
+          "methods": [
+            "convert",
+            "convert",
+            "convert2",
+            "convertList2",
+            "convert",
+            "convertPage",
+            "convert03",
+            "convertPage"
+          ],
+          "properties": [
+            "INSTANCE"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberUserConvert",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "convertPage",
+          "callee": "convertPage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 56
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 57
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertMap",
+          "lineNumber": 58
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList().forEach",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "result.getList",
+          "lineNumber": 60
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.setTagNames",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "convertList",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getTagIds",
+          "lineNumber": 61
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.setLevelName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "levelMap.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getLevelId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.setGroupName",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage",
+          "callee": "groupMap.get",
+          "lineNumber": 63
+        },
+        {
+          "caller": "convertPage",
+          "callee": "user.getGroupId",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/group/MemberGroupDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 41,
+      "classes": [
+        {
+          "name": "MemberGroupDO",
+          "startLine": 15,
+          "endLine": 45,
+          "methods": [],
+          "properties": [
+            "id",
+            "name",
+            "remark",
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberGroupDO",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-member/yudao-module-member-server/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/level/MemberExperienceRecordDO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 60,
+      "classes": [
+        {
+          "name": "MemberExperienceRecordDO",
+          "startLine": 16,
+          "endLine": 64,
+          "methods": [],
+          "properties": [
+            "id",
+            "userId",
+            "bizType",
+            "bizId",
+            "title",
+            "description",
+            "experience",
+            "totalExperience"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MemberExperienceRecordDO",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

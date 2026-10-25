@@ -1,0 +1,4417 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 33,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 33,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/business/CrmBusinessStatusMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "CrmBusinessStatusMapper",
+          "startLine": 14,
+          "endLine": 30,
+          "methods": [
+            "deleteByTypeId",
+            "selectListByTypeId",
+            "selectByTypeIdAndId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmBusinessStatusMapper",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deleteByTypeId",
+          "callee": "delete",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectListByTypeId",
+          "callee": "selectList",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectByTypeIdAndId",
+          "callee": "selectOne",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/business/CrmBusinessStatusTypeMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "CrmBusinessStatusTypeMapper",
+          "startLine": 15,
+          "endLine": 27,
+          "methods": [
+            "selectPage",
+            "selectByName"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmBusinessStatusTypeMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<CrmBusinessStatusTypeDO>().orderByDesc",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<CrmBusinessStatusTypeDO>",
+          "lineNumber": 19
+        },
+        {
+          "caller": "selectByName",
+          "callee": "selectOne",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/clue/CrmClueMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 47,
+      "classes": [
+        {
+          "name": "CrmClueMapper",
+          "startLine": 18,
+          "endLine": 52,
+          "methods": [
+            "selectPage",
+            "selectCountByFollow"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmClueMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmBizTypeEnum.CRM_CLUE.getType",
+          "lineNumber": 24
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSceneType",
+          "lineNumber": 25
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus())\n                .likeIfPresent(CrmClueDO::getTelephone, pageReqVO.getTelephone())\n                .likeIfPresent(CrmClueDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmClueDO::getIndustryId, pageReqVO.getIndustryId())\n                .eqIfPresent(CrmClueDO::getLevel, pageReqVO.getLevel())\n                .eqIfPresent(CrmClueDO::getSource, pageReqVO.getSource())\n                .eqIfPresent(CrmClueDO::getFollowUpStatus, pageReqVO.getFollowUpStatus())\n                .betweenIfPresent(CrmClueDO::getCreateTime, pageReqVO.getCreateTime()).orderByDesc",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus())\n                .likeIfPresent(CrmClueDO::getTelephone, pageReqVO.getTelephone())\n                .likeIfPresent(CrmClueDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmClueDO::getIndustryId, pageReqVO.getIndustryId())\n                .eqIfPresent(CrmClueDO::getLevel, pageReqVO.getLevel())\n                .eqIfPresent(CrmClueDO::getSource, pageReqVO.getSource())\n                .eqIfPresent(CrmClueDO::getFollowUpStatus, pageReqVO.getFollowUpStatus()).betweenIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus())\n                .likeIfPresent(CrmClueDO::getTelephone, pageReqVO.getTelephone())\n                .likeIfPresent(CrmClueDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmClueDO::getIndustryId, pageReqVO.getIndustryId())\n                .eqIfPresent(CrmClueDO::getLevel, pageReqVO.getLevel())\n                .eqIfPresent(CrmClueDO::getSource, pageReqVO.getSource()).eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus())\n                .likeIfPresent(CrmClueDO::getTelephone, pageReqVO.getTelephone())\n                .likeIfPresent(CrmClueDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmClueDO::getIndustryId, pageReqVO.getIndustryId())\n                .eqIfPresent(CrmClueDO::getLevel, pageReqVO.getLevel()).eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus())\n                .likeIfPresent(CrmClueDO::getTelephone, pageReqVO.getTelephone())\n                .likeIfPresent(CrmClueDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmClueDO::getIndustryId, pageReqVO.getIndustryId()).eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus())\n                .likeIfPresent(CrmClueDO::getTelephone, pageReqVO.getTelephone())\n                .likeIfPresent(CrmClueDO::getMobile, pageReqVO.getMobile()).eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus())\n                .likeIfPresent(CrmClueDO::getTelephone, pageReqVO.getTelephone()).likeIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmClueDO::getTransformStatus, pageReqVO.getTransformStatus()).likeIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class)\n                .likeIfPresent(CrmClueDO::getName, pageReqVO.getName()).eqIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmClueDO.class).likeIfPresent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getTransformStatus",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getTelephone",
+          "lineNumber": 30
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getMobile",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getIndustryId",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getLevel",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSource",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getFollowUpStatus",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getCreateTime",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectJoinPage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "CrmBizTypeEnum.CRM_CLUE.getType",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "CrmSceneTypeEnum.OWNER.getType",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "query.eq(CrmClueDO::getFollowUpStatus, false).eq",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "query.eq",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "selectCount",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/contact/CrmContactBusinessMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "CrmContactBusinessMapper",
+          "startLine": 16,
+          "endLine": 44,
+          "methods": [
+            "selectByContactIdAndBusinessId",
+            "deleteByContactIdAndBusinessId",
+            "deleteByBusinessIdAndContactId",
+            "selectListByContactId",
+            "selectListByBusinessId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmContactBusinessMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByContactIdAndBusinessId",
+          "callee": "selectOne",
+          "lineNumber": 20
+        },
+        {
+          "caller": "deleteByContactIdAndBusinessId",
+          "callee": "delete",
+          "lineNumber": 25
+        },
+        {
+          "caller": "deleteByContactIdAndBusinessId",
+          "callee": "new LambdaQueryWrapper<CrmContactBusinessDO>()\n                .eq(CrmContactBusinessDO::getContactId, contactId).in",
+          "lineNumber": 25
+        },
+        {
+          "caller": "deleteByContactIdAndBusinessId",
+          "callee": "new LambdaQueryWrapper<CrmContactBusinessDO>().eq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "deleteByContactIdAndBusinessId",
+          "callee": "new LambdaQueryWrapper<CrmContactBusinessDO>",
+          "lineNumber": 25
+        },
+        {
+          "caller": "deleteByBusinessIdAndContactId",
+          "callee": "delete",
+          "lineNumber": 31
+        },
+        {
+          "caller": "deleteByBusinessIdAndContactId",
+          "callee": "new LambdaQueryWrapper<CrmContactBusinessDO>()\n                .eq(CrmContactBusinessDO::getBusinessId, businessId).in",
+          "lineNumber": 31
+        },
+        {
+          "caller": "deleteByBusinessIdAndContactId",
+          "callee": "new LambdaQueryWrapper<CrmContactBusinessDO>().eq",
+          "lineNumber": 31
+        },
+        {
+          "caller": "deleteByBusinessIdAndContactId",
+          "callee": "new LambdaQueryWrapper<CrmContactBusinessDO>",
+          "lineNumber": 31
+        },
+        {
+          "caller": "selectListByContactId",
+          "callee": "selectList",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectListByBusinessId",
+          "callee": "selectList",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/contact/CrmContactMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "CrmContactMapper",
+          "startLine": 22,
+          "endLine": 81,
+          "methods": [
+            "updateOwnerUserIdByCustomerId",
+            "selectPageByCustomerId",
+            "selectPageByBusinessId",
+            "selectPage",
+            "selectListByCustomerId",
+            "selectListByCustomerIdOwnerUserId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmContactMapper",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "updateOwnerUserIdByCustomerId",
+          "callee": "update",
+          "lineNumber": 26
+        },
+        {
+          "caller": "updateOwnerUserIdByCustomerId",
+          "callee": "new LambdaUpdateWrapper<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, customerId).set",
+          "lineNumber": 26
+        },
+        {
+          "caller": "updateOwnerUserIdByCustomerId",
+          "callee": "new LambdaUpdateWrapper<CrmContactDO>().eq",
+          "lineNumber": 26
+        },
+        {
+          "caller": "updateOwnerUserIdByCustomerId",
+          "callee": "new LambdaUpdateWrapper<CrmContactDO>",
+          "lineNumber": 26
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "selectPage",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, pageVO.getCustomerId()) // 指定客户编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageVO.getEmail())\n                .eqIfPresent(CrmContactDO::getQq, pageVO.getQq())\n                .eqIfPresent(CrmContactDO::getWechat, pageVO.getWechat()).orderByDesc",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, pageVO.getCustomerId()) // 指定客户编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageVO.getEmail())\n                .eqIfPresent(CrmContactDO::getQq, pageVO.getQq()).eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, pageVO.getCustomerId()) // 指定客户编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageVO.getEmail()).eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, pageVO.getCustomerId()) // 指定客户编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone()).eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, pageVO.getCustomerId()) // 指定客户编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile()).eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, pageVO.getCustomerId()) // 指定客户编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName()).eqIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .eq(CrmContactDO::getCustomerId, pageVO.getCustomerId()).likeIfPresent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>().eq",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageVO.getCustomerId",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageVO.getName",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageVO.getMobile",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageVO.getTelephone",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageVO.getEmail",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageVO.getQq",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageVO.getWechat",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "selectPage",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .in(CrmContactDO::getId, ids) // 指定联系人编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageVO.getEmail())\n                .eqIfPresent(CrmContactDO::getQq, pageVO.getQq())\n                .eqIfPresent(CrmContactDO::getWechat, pageVO.getWechat()).orderByDesc",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .in(CrmContactDO::getId, ids) // 指定联系人编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageVO.getEmail())\n                .eqIfPresent(CrmContactDO::getQq, pageVO.getQq()).eqIfPresent",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .in(CrmContactDO::getId, ids) // 指定联系人编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageVO.getEmail()).eqIfPresent",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .in(CrmContactDO::getId, ids) // 指定联系人编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageVO.getTelephone()).eqIfPresent",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .in(CrmContactDO::getId, ids) // 指定联系人编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageVO.getMobile()).eqIfPresent",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .in(CrmContactDO::getId, ids) // 指定联系人编号\n                .likeIfPresent(CrmContactDO::getName, pageVO.getName()).eqIfPresent",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>()\n                .in(CrmContactDO::getId, ids).likeIfPresent",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>().in",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContactDO>",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageVO.getName",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageVO.getMobile",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageVO.getTelephone",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageVO.getEmail",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageVO.getQq",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageVO.getWechat",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmBizTypeEnum.CRM_CONTACT.getType",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSceneType",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContactDO.class)\n                .likeIfPresent(CrmContactDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageReqVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageReqVO.getEmail())\n                .eqIfPresent(CrmContactDO::getQq, pageReqVO.getQq())\n                .eqIfPresent(CrmContactDO::getWechat, pageReqVO.getWechat()).orderByDesc",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContactDO.class)\n                .likeIfPresent(CrmContactDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageReqVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageReqVO.getEmail())\n                .eqIfPresent(CrmContactDO::getQq, pageReqVO.getQq()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContactDO.class)\n                .likeIfPresent(CrmContactDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageReqVO.getTelephone())\n                .eqIfPresent(CrmContactDO::getEmail, pageReqVO.getEmail()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContactDO.class)\n                .likeIfPresent(CrmContactDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmContactDO::getTelephone, pageReqVO.getTelephone()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContactDO.class)\n                .likeIfPresent(CrmContactDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContactDO::getMobile, pageReqVO.getMobile()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContactDO.class)\n                .likeIfPresent(CrmContactDO::getName, pageReqVO.getName()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContactDO.class).likeIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getMobile",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getTelephone",
+          "lineNumber": 64
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getEmail",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getQq",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getWechat",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectJoinPage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "selectListByCustomerId",
+          "callee": "selectList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectListByCustomerIdOwnerUserId",
+          "callee": "selectList",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/contract/CrmContractConfigMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "CrmContractConfigMapper",
+          "startLine": 13,
+          "endLine": 20,
+          "methods": [
+            "selectOne"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmContractConfigMapper",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectOne",
+          "callee": "selectOne",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectOne",
+          "callee": "new QueryWrapperX<CrmContractConfigDO>().limitN",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectOne",
+          "callee": "new QueryWrapperX<CrmContractConfigDO>",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/contract/CrmContractMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 102,
+      "classes": [
+        {
+          "name": "CrmContractMapper",
+          "startLine": 25,
+          "endLine": 116,
+          "methods": [
+            "selectByNo",
+            "selectPageByCustomerId",
+            "selectPageByBusinessId",
+            "selectPage",
+            "selectCountByContactId",
+            "selectCountByBusinessId",
+            "selectCountByAudit",
+            "selectCountByRemind",
+            "selectListByCustomerIdOwnerUserId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmContractMapper",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByNo",
+          "callee": "selectOne",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "selectPage",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .eqIfPresent(CrmContractDO::getBusinessId, pageReqVO.getBusinessId()).orderByDesc",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContractDO::getCustomerId, pageReqVO.getCustomerId()).eqIfPresent",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName()).eqIfPresent",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo()).likeIfPresent",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getCustomerId, pageReqVO.getCustomerId()).likeIfPresent",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>().eq",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageReqVO.getCustomerId",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageReqVO.getNo",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageReqVO.getCustomerId",
+          "lineNumber": 37
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "pageReqVO.getBusinessId",
+          "lineNumber": 38
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "selectPage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getBusinessId, pageReqVO.getBusinessId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .eqIfPresent(CrmContractDO::getBusinessId, pageReqVO.getBusinessId()).orderByDesc",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getBusinessId, pageReqVO.getBusinessId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContractDO::getCustomerId, pageReqVO.getCustomerId()).eqIfPresent",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getBusinessId, pageReqVO.getBusinessId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName()).eqIfPresent",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getBusinessId, pageReqVO.getBusinessId())\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo()).likeIfPresent",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getBusinessId, pageReqVO.getBusinessId()).likeIfPresent",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>().eq",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageReqVO.getBusinessId",
+          "lineNumber": 44
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageReqVO.getNo",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageReqVO.getCustomerId",
+          "lineNumber": 47
+        },
+        {
+          "caller": "selectPageByBusinessId",
+          "callee": "pageReqVO.getBusinessId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmBizTypeEnum.CRM_CONTRACT.getType",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSceneType",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContractDO.class)\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .eqIfPresent(CrmContractDO::getBusinessId, pageReqVO.getBusinessId())\n                .eqIfPresent(CrmContractDO::getAuditStatus, pageReqVO.getAuditStatus()).orderByDesc",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContractDO.class)\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContractDO::getCustomerId, pageReqVO.getCustomerId())\n                .eqIfPresent(CrmContractDO::getBusinessId, pageReqVO.getBusinessId()).eqIfPresent",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContractDO.class)\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmContractDO::getCustomerId, pageReqVO.getCustomerId()).eqIfPresent",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContractDO.class)\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo())\n                .likeIfPresent(CrmContractDO::getName, pageReqVO.getName()).eqIfPresent",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContractDO.class)\n                .likeIfPresent(CrmContractDO::getNo, pageReqVO.getNo()).likeIfPresent",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmContractDO.class).likeIfPresent",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getNo",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 60
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getCustomerId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getBusinessId",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getAuditStatus",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmContractPageReqVO.EXPIRY_TYPE_ABOUT_TO_EXPIRE.equals",
+          "lineNumber": 69
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getExpiryType",
+          "lineNumber": 69
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.eq(CrmContractDO::getAuditStatus, CrmAuditStatusEnum.APPROVE.getStatus()).between",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.eq",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmAuditStatusEnum.APPROVE.getStatus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPage",
+          "callee": "endOfToday.plusDays",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectPage",
+          "callee": "config.getNotifyDays",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmContractPageReqVO.EXPIRY_TYPE_EXPIRED.equals",
+          "lineNumber": 72
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getExpiryType",
+          "lineNumber": 72
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.eq(CrmContractDO::getAuditStatus, CrmAuditStatusEnum.APPROVE.getStatus()).lt",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.eq",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmAuditStatusEnum.APPROVE.getStatus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectJoinPage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectCountByContactId",
+          "callee": "selectCount",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectCountByBusinessId",
+          "callee": "selectCount",
+          "lineNumber": 84
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 88
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 90
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmBizTypeEnum.CRM_CONTRACT.getType",
+          "lineNumber": 90
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmSceneTypeEnum.OWNER.getType",
+          "lineNumber": 91
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "query.eq",
+          "lineNumber": 93
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmAuditStatusEnum.PROCESS.getStatus",
+          "lineNumber": 93
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "selectCount",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 98
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 100
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "CrmBizTypeEnum.CRM_CONTRACT.getType",
+          "lineNumber": 100
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "CrmSceneTypeEnum.OWNER.getType",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 103
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 103
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 104
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 104
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "query.eq(CrmContractDO::getAuditStatus, CrmAuditStatusEnum.APPROVE.getStatus()).between",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "query.eq",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "CrmAuditStatusEnum.APPROVE.getStatus",
+          "lineNumber": 105
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "endOfToday.plusDays",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "config.getNotifyDays",
+          "lineNumber": 106
+        },
+        {
+          "caller": "selectCountByRemind",
+          "callee": "selectCount",
+          "lineNumber": 107
+        },
+        {
+          "caller": "selectListByCustomerIdOwnerUserId",
+          "callee": "selectList",
+          "lineNumber": 111
+        },
+        {
+          "caller": "selectListByCustomerIdOwnerUserId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>()\n                .eq(CrmContractDO::getCustomerId, customerId).eq",
+          "lineNumber": 111
+        },
+        {
+          "caller": "selectListByCustomerIdOwnerUserId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>().eq",
+          "lineNumber": 111
+        },
+        {
+          "caller": "selectListByCustomerIdOwnerUserId",
+          "callee": "new LambdaQueryWrapperX<CrmContractDO>",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/contract/CrmContractProductMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "classes": [
+        {
+          "name": "CrmContractProductMapper",
+          "startLine": 16,
+          "endLine": 23,
+          "methods": [
+            "selectListByContractId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmContractProductMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectListByContractId",
+          "callee": "selectList",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectListByContractId",
+          "callee": "new LambdaQueryWrapperX<CrmContractProductDO>().eq",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectListByContractId",
+          "callee": "new LambdaQueryWrapperX<CrmContractProductDO>",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/customer/CrmCustomerMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 165,
+      "classes": [
+        {
+          "name": "CrmCustomerMapper",
+          "startLine": 30,
+          "endLine": 183,
+          "methods": [
+            "selectCountByLockStatusAndOwnerUserId",
+            "selectCountByDealStatusAndOwnerUserId",
+            "updateOwnerUserIdById",
+            "selectPage",
+            "selectByCustomerName",
+            "selectPutPoolRemindCustomerPage",
+            "selectPutPoolRemindCustomerCount",
+            "buildPutPoolRemindCustomerQuery",
+            "selectListByAutoPool",
+            "selectCountByTodayContact",
+            "selectCountByFollow"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmCustomerMapper",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectCountByLockStatusAndOwnerUserId",
+          "callee": "selectCount",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectCountByLockStatusAndOwnerUserId",
+          "callee": "new LambdaUpdateWrapper<CrmCustomerDO>()\n                .eq(CrmCustomerDO::getLockStatus, lockStatus).eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectCountByLockStatusAndOwnerUserId",
+          "callee": "new LambdaUpdateWrapper<CrmCustomerDO>().eq",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectCountByLockStatusAndOwnerUserId",
+          "callee": "new LambdaUpdateWrapper<CrmCustomerDO>",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectCountByDealStatusAndOwnerUserId",
+          "callee": "selectCount",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectCountByDealStatusAndOwnerUserId",
+          "callee": "new LambdaQueryWrapperX<CrmCustomerDO>()\n                .eqIfPresent(CrmCustomerDO::getDealStatus, dealStatus).eq",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectCountByDealStatusAndOwnerUserId",
+          "callee": "new LambdaQueryWrapperX<CrmCustomerDO>().eqIfPresent",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectCountByDealStatusAndOwnerUserId",
+          "callee": "new LambdaQueryWrapperX<CrmCustomerDO>",
+          "lineNumber": 40
+        },
+        {
+          "caller": "updateOwnerUserIdById",
+          "callee": "update",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateOwnerUserIdById",
+          "callee": "new LambdaUpdateWrapper<CrmCustomerDO>()\n                .eq(CrmCustomerDO::getId, id).set",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateOwnerUserIdById",
+          "callee": "new LambdaUpdateWrapper<CrmCustomerDO>().eq",
+          "lineNumber": 46
+        },
+        {
+          "caller": "updateOwnerUserIdById",
+          "callee": "new LambdaUpdateWrapper<CrmCustomerDO>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 52
+        },
+        {
+          "caller": "selectPage",
+          "callee": "Boolean.TRUE.equals",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getPool",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.isNull",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmBizTypeEnum.CRM_CUSTOMER.getType",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSceneType",
+          "lineNumber": 58
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmCustomerDO.class)\n                .likeIfPresent(CrmCustomerDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmCustomerDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmCustomerDO::getIndustryId, pageReqVO.getIndustryId())\n                .eqIfPresent(CrmCustomerDO::getLevel, pageReqVO.getLevel())\n                .eqIfPresent(CrmCustomerDO::getSource, pageReqVO.getSource()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmCustomerDO.class)\n                .likeIfPresent(CrmCustomerDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmCustomerDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmCustomerDO::getIndustryId, pageReqVO.getIndustryId())\n                .eqIfPresent(CrmCustomerDO::getLevel, pageReqVO.getLevel()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmCustomerDO.class)\n                .likeIfPresent(CrmCustomerDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmCustomerDO::getMobile, pageReqVO.getMobile())\n                .eqIfPresent(CrmCustomerDO::getIndustryId, pageReqVO.getIndustryId()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmCustomerDO.class)\n                .likeIfPresent(CrmCustomerDO::getName, pageReqVO.getName())\n                .eqIfPresent(CrmCustomerDO::getMobile, pageReqVO.getMobile()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmCustomerDO.class)\n                .likeIfPresent(CrmCustomerDO::getName, pageReqVO.getName()).eqIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmCustomerDO.class).likeIfPresent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getName",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getMobile",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getIndustryId",
+          "lineNumber": 64
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getLevel",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSource",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getFollowUpStatus",
+          "lineNumber": 67
+        },
+        {
+          "caller": "selectPage",
+          "callee": "ObjUtil.isNotNull",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPage",
+          "callee": "Assert.isNull",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getPool",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 72
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 72
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus().equals",
+          "lineNumber": 74
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.between",
+          "lineNumber": 75
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus().equals",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus",
+          "lineNumber": 76
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.lt",
+          "lineNumber": 77
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus().equals",
+          "lineNumber": 78
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus",
+          "lineNumber": 78
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.between",
+          "lineNumber": 79
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new IllegalArgumentException",
+          "lineNumber": 81
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContactStatus",
+          "lineNumber": 81
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectJoinPage",
+          "lineNumber": 84
+        },
+        {
+          "caller": "selectByCustomerName",
+          "callee": "selectOne",
+          "lineNumber": 88
+        },
+        {
+          "caller": "selectPutPoolRemindCustomerPage",
+          "callee": "buildPutPoolRemindCustomerQuery",
+          "lineNumber": 94
+        },
+        {
+          "caller": "selectPutPoolRemindCustomerPage",
+          "callee": "selectJoinPage",
+          "lineNumber": 95
+        },
+        {
+          "caller": "selectPutPoolRemindCustomerPage",
+          "callee": "query.selectAll",
+          "lineNumber": 95
+        },
+        {
+          "caller": "selectPutPoolRemindCustomerCount",
+          "callee": "buildPutPoolRemindCustomerQuery",
+          "lineNumber": 101
+        },
+        {
+          "caller": "selectPutPoolRemindCustomerCount",
+          "callee": "selectCount",
+          "lineNumber": 102
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 110
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "CrmBizTypeEnum.CRM_CUSTOMER.getType",
+          "lineNumber": 110
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "pageReqVO.getSceneType",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "query.eq(CrmCustomerDO::getLockStatus, false).eq",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "query.eq",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "poolConfig.getDealExpireDays",
+          "lineNumber": 117
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "Math.max",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "poolConfig.getNotifyDays",
+          "lineNumber": 120
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "poolConfig.getContactExpireDays",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "Math.max",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "poolConfig.getNotifyDays",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "query.and",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "q.between(CrmCustomerDO::getOwnerTime, startDealRemindTime, endDealRemindTime).or",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "q.between",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "w.between(CrmCustomerDO::getOwnerTime, startContactRemindTime, endContactRemindTime).and",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "w.between",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "p.between(CrmCustomerDO::getContactLastTime, startContactRemindTime, endContactRemindTime)\n                            .or().isNull",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "p.between(CrmCustomerDO::getContactLastTime, startContactRemindTime, endContactRemindTime).or",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildPutPoolRemindCustomerQuery",
+          "callee": "p.between",
+          "lineNumber": 131
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "new LambdaQueryWrapper<>",
+          "lineNumber": 143
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "query.gt",
+          "lineNumber": 144
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "query.eq(CrmCustomerDO::getLockStatus, false).eq",
+          "lineNumber": 146
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "query.eq",
+          "lineNumber": 146
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 148
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 148
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "poolConfig.getDealExpireDays",
+          "lineNumber": 148
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "LocalDateTime.now().minusDays",
+          "lineNumber": 149
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 149
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "poolConfig.getContactExpireDays",
+          "lineNumber": 149
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "query.and",
+          "lineNumber": 150
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "q.lt(CrmCustomerDO::getOwnerTime, dealExpireTime).or",
+          "lineNumber": 152
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "q.lt",
+          "lineNumber": 152
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "w.lt(CrmCustomerDO::getOwnerTime, contactExpireTime).and",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "w.lt",
+          "lineNumber": 154
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "p.lt(CrmCustomerDO::getContactLastTime, contactExpireTime)\n                            .or().isNull",
+          "lineNumber": 155
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "p.lt(CrmCustomerDO::getContactLastTime, contactExpireTime).or",
+          "lineNumber": 155
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "p.lt",
+          "lineNumber": 155
+        },
+        {
+          "caller": "selectListByAutoPool",
+          "callee": "selectList",
+          "lineNumber": 158
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 162
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 164
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "CrmBizTypeEnum.CRM_CUSTOMER.getType",
+          "lineNumber": 164
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "CrmSceneTypeEnum.OWNER.getType",
+          "lineNumber": 165
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 167
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 167
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "LocalDateTimeUtil.endOfDay",
+          "lineNumber": 168
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 168
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "query.between",
+          "lineNumber": 169
+        },
+        {
+          "caller": "selectCountByTodayContact",
+          "callee": "selectCount",
+          "lineNumber": 170
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 174
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 176
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "CrmBizTypeEnum.CRM_CUSTOMER.getType",
+          "lineNumber": 176
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "CrmSceneTypeEnum.OWNER.getType",
+          "lineNumber": 177
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "query.eq",
+          "lineNumber": 179
+        },
+        {
+          "caller": "selectCountByFollow",
+          "callee": "selectCount",
+          "lineNumber": 180
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/customer/CrmCustomerPoolConfigMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "CrmCustomerPoolConfigMapper",
+          "startLine": 13,
+          "endLine": 20,
+          "methods": [
+            "selectOne"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmCustomerPoolConfigMapper",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectOne",
+          "callee": "selectOne",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectOne",
+          "callee": "new LambdaQueryWrapperX<CrmCustomerPoolConfigDO>().last",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectOne",
+          "callee": "new LambdaQueryWrapperX<CrmCustomerPoolConfigDO>",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/followup/CrmFollowUpRecordMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 33,
+      "classes": [
+        {
+          "name": "CrmFollowUpRecordMapper",
+          "startLine": 18,
+          "endLine": 40,
+          "methods": [
+            "selectPage",
+            "deleteByBiz",
+            "selectListByBiz"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmFollowUpRecordMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>()\n                .eqIfPresent(CrmFollowUpRecordDO::getBizType, reqVO.getBizType())\n                .eqIfPresent(CrmFollowUpRecordDO::getBizId, reqVO.getBizId()).orderByDesc",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>()\n                .eqIfPresent(CrmFollowUpRecordDO::getBizType, reqVO.getBizType()).eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>().eqIfPresent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getBizType",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getBizId",
+          "lineNumber": 24
+        },
+        {
+          "caller": "deleteByBiz",
+          "callee": "delete",
+          "lineNumber": 29
+        },
+        {
+          "caller": "deleteByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>()\n                .eq(CrmFollowUpRecordDO::getBizType, bizType).eq",
+          "lineNumber": 29
+        },
+        {
+          "caller": "deleteByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>().eq",
+          "lineNumber": 29
+        },
+        {
+          "caller": "deleteByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>",
+          "lineNumber": 29
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "selectList",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>()\n                .eq(CrmFollowUpRecordDO::getBizType, bizType).in",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>().eq",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmFollowUpRecordDO>",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/permission/CrmOwnerRecordMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 44,
+      "classes": [
+        {
+          "name": "CrmOwnerRecordMapper",
+          "startLine": 17,
+          "endLine": 52,
+          "methods": [
+            "selectPoolCustomerPutCountByDate",
+            "selectPoolCustomerTakeCountByDate",
+            "selectPoolCustomerPutCountByUser",
+            "selectPoolCustomerTakeCountByUser"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmOwnerRecordMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/permission/CrmPermissionMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 63,
+      "classes": [
+        {
+          "name": "CrmPermissionMapper",
+          "startLine": 16,
+          "endLine": 76,
+          "methods": [
+            "selectByBizTypeAndBizIdByUserId",
+            "selectByBizTypeAndBizId",
+            "selectByBizTypeAndBizIds",
+            "selectListByBizTypeAndUserId",
+            "selectListByBizTypeAndBizIdAndLevel",
+            "selectByIdAndUserId",
+            "selectByBizAndUserId",
+            "deletePermission",
+            "selectListByBiz"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmPermissionMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByBizTypeAndBizIdByUserId",
+          "callee": "selectOne",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectByBizTypeAndBizIdByUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType)\n                .eq(CrmPermissionDO::getBizId, bizId).eq",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectByBizTypeAndBizIdByUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType).eq",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectByBizTypeAndBizIdByUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().eq",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectByBizTypeAndBizIdByUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectByBizTypeAndBizId",
+          "callee": "selectList",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectByBizTypeAndBizId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType).eq",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectByBizTypeAndBizId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().eq",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectByBizTypeAndBizId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectByBizTypeAndBizIds",
+          "callee": "selectList",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectByBizTypeAndBizIds",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType).in",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectByBizTypeAndBizIds",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().eq",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectByBizTypeAndBizIds",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 33
+        },
+        {
+          "caller": "selectListByBizTypeAndUserId",
+          "callee": "selectList",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByBizTypeAndUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType).eq",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByBizTypeAndUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().eq",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByBizTypeAndUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectListByBizTypeAndBizIdAndLevel",
+          "callee": "selectList",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectListByBizTypeAndBizIdAndLevel",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType)\n                .eq(CrmPermissionDO::getBizId, bizId).eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectListByBizTypeAndBizIdAndLevel",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType).eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectListByBizTypeAndBizIdAndLevel",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().eq",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectListByBizTypeAndBizIdAndLevel",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 45
+        },
+        {
+          "caller": "selectByIdAndUserId",
+          "callee": "selectOne",
+          "lineNumber": 52
+        },
+        {
+          "caller": "selectByBizAndUserId",
+          "callee": "selectOne",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectByBizAndUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType)\n                .eq(CrmPermissionDO::getBizId, bizId).eq",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectByBizAndUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType).eq",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectByBizAndUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().eq",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectByBizAndUserId",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 57
+        },
+        {
+          "caller": "deletePermission",
+          "callee": "delete",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deletePermission",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .eq(CrmPermissionDO::getBizType, bizType).eq",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deletePermission",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().eq",
+          "lineNumber": 64
+        },
+        {
+          "caller": "deletePermission",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 64
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "selectCount",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .in(CrmPermissionDO::getBizType, bizTypes)\n                .in(CrmPermissionDO::getBizId, bizIds).in",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>()\n                .in(CrmPermissionDO::getBizType, bizTypes).in",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>().in",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectListByBiz",
+          "callee": "new LambdaQueryWrapperX<CrmPermissionDO>",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/product/CrmProductCategoryMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "CrmProductCategoryMapper",
+          "startLine": 16,
+          "endLine": 34,
+          "methods": [
+            "selectList",
+            "selectByParentIdAndName",
+            "selectCountByParentId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmProductCategoryMapper",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectList",
+          "callee": "selectList",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<CrmProductCategoryDO>()\n                .likeIfPresent(CrmProductCategoryDO::getName, reqVO.getName())\n                .eqIfPresent(CrmProductCategoryDO::getParentId, reqVO.getParentId()).orderByDesc",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<CrmProductCategoryDO>()\n                .likeIfPresent(CrmProductCategoryDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<CrmProductCategoryDO>().likeIfPresent",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "new LambdaQueryWrapperX<CrmProductCategoryDO>",
+          "lineNumber": 20
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getName",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectList",
+          "callee": "reqVO.getParentId",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectByParentIdAndName",
+          "callee": "selectOne",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectCountByParentId",
+          "callee": "selectCount",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/product/CrmProductMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 31,
+      "classes": [
+        {
+          "name": "CrmProductMapper",
+          "startLine": 17,
+          "endLine": 39,
+          "methods": [
+            "selectPage",
+            "selectByNo",
+            "selectCountByCategoryId",
+            "selectListByStatus"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmProductMapper",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectPage",
+          "callee": "selectPage",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<CrmProductDO>()\n                .likeIfPresent(CrmProductDO::getName, reqVO.getName())\n                .eqIfPresent(CrmProductDO::getStatus, reqVO.getStatus()).orderByDesc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<CrmProductDO>()\n                .likeIfPresent(CrmProductDO::getName, reqVO.getName()).eqIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<CrmProductDO>().likeIfPresent",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<CrmProductDO>",
+          "lineNumber": 21
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getName",
+          "lineNumber": 22
+        },
+        {
+          "caller": "selectPage",
+          "callee": "reqVO.getStatus",
+          "lineNumber": 23
+        },
+        {
+          "caller": "selectByNo",
+          "callee": "selectOne",
+          "lineNumber": 28
+        },
+        {
+          "caller": "selectCountByCategoryId",
+          "callee": "selectCount",
+          "lineNumber": 32
+        },
+        {
+          "caller": "selectListByStatus",
+          "callee": "selectList",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/receivable/CrmReceivableMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 85,
+      "classes": [
+        {
+          "name": "CrmReceivableMapper",
+          "startLine": 31,
+          "endLine": 97,
+          "methods": [
+            "selectByNo",
+            "selectPageByCustomerId",
+            "selectPage",
+            "selectCountByAudit",
+            "selectListByContractIdAndStatus",
+            "selectReceivablePriceMapByContractId",
+            "selectCountByContractId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmReceivableMapper",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectByNo",
+          "callee": "selectOne",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "selectPage",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>()\n                .eq(CrmReceivableDO::getCustomerId, reqVO.getCustomerId()) // 必须传递\n                .eqIfPresent(CrmReceivableDO::getNo, reqVO.getNo())\n                .eqIfPresent(CrmReceivableDO::getContractId, reqVO.getContractId())\n                .eqIfPresent(CrmReceivableDO::getPlanId, reqVO.getPlanId()).orderByDesc",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>()\n                .eq(CrmReceivableDO::getCustomerId, reqVO.getCustomerId()) // 必须传递\n                .eqIfPresent(CrmReceivableDO::getNo, reqVO.getNo())\n                .eqIfPresent(CrmReceivableDO::getContractId, reqVO.getContractId()).eqIfPresent",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>()\n                .eq(CrmReceivableDO::getCustomerId, reqVO.getCustomerId()) // 必须传递\n                .eqIfPresent(CrmReceivableDO::getNo, reqVO.getNo()).eqIfPresent",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>()\n                .eq(CrmReceivableDO::getCustomerId, reqVO.getCustomerId()).eqIfPresent",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>().eq",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getCustomerId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getNo",
+          "lineNumber": 41
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getContractId",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getPlanId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmBizTypeEnum.CRM_RECEIVABLE.getType",
+          "lineNumber": 50
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSceneType",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivableDO.class)\n                .eqIfPresent(CrmReceivableDO::getNo, pageReqVO.getNo())\n                .eqIfPresent(CrmReceivableDO::getPlanId, pageReqVO.getPlanId())\n                .eqIfPresent(CrmReceivableDO::getContractId, pageReqVO.getContractId())\n                .eqIfPresent(CrmReceivableDO::getAuditStatus, pageReqVO.getAuditStatus()).orderByDesc",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivableDO.class)\n                .eqIfPresent(CrmReceivableDO::getNo, pageReqVO.getNo())\n                .eqIfPresent(CrmReceivableDO::getPlanId, pageReqVO.getPlanId())\n                .eqIfPresent(CrmReceivableDO::getContractId, pageReqVO.getContractId()).eqIfPresent",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivableDO.class)\n                .eqIfPresent(CrmReceivableDO::getNo, pageReqVO.getNo())\n                .eqIfPresent(CrmReceivableDO::getPlanId, pageReqVO.getPlanId()).eqIfPresent",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivableDO.class)\n                .eqIfPresent(CrmReceivableDO::getNo, pageReqVO.getNo()).eqIfPresent",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivableDO.class).eqIfPresent",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getNo",
+          "lineNumber": 54
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getPlanId",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContractId",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getAuditStatus",
+          "lineNumber": 57
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectJoinPage",
+          "lineNumber": 59
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 63
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmBizTypeEnum.CRM_RECEIVABLE.getType",
+          "lineNumber": 65
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmSceneTypeEnum.OWNER.getType",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "query.eq",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "CrmAuditStatusEnum.PROCESS.getStatus",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectCountByAudit",
+          "callee": "selectCount",
+          "lineNumber": 69
+        },
+        {
+          "caller": "selectListByContractIdAndStatus",
+          "callee": "selectList",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectListByContractIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>()\n                .eq(CrmReceivableDO::getContractId, contractId).in",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectListByContractIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>().eq",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectListByContractIdAndStatus",
+          "callee": "new LambdaQueryWrapperX<CrmReceivableDO>",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "CollUtil.isEmpty",
+          "lineNumber": 79
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "Collections.emptyMap",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "selectMaps",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "new QueryWrapper<CrmReceivableDO>()\n                .select(\"contract_id, SUM(price) AS total_price\")\n                .in(\"audit_status\", CrmAuditStatusEnum.DRAFT.getStatus(), // 草稿 + 审批中 + 审批通过\n                        CrmAuditStatusEnum.PROCESS.getStatus(), CrmAuditStatusEnum.APPROVE.getStatus())\n                .groupBy(\"contract_id\").in",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "new QueryWrapper<CrmReceivableDO>()\n                .select(\"contract_id, SUM(price) AS total_price\")\n                .in(\"audit_status\", CrmAuditStatusEnum.DRAFT.getStatus(), // 草稿 + 审批中 + 审批通过\n                        CrmAuditStatusEnum.PROCESS.getStatus(), CrmAuditStatusEnum.APPROVE.getStatus()).groupBy",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "new QueryWrapper<CrmReceivableDO>()\n                .select(\"contract_id, SUM(price) AS total_price\").in",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "new QueryWrapper<CrmReceivableDO>().select",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "new QueryWrapper<CrmReceivableDO>",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "CrmAuditStatusEnum.DRAFT.getStatus",
+          "lineNumber": 85
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "CrmAuditStatusEnum.PROCESS.getStatus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "CrmAuditStatusEnum.APPROVE.getStatus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "convertMap",
+          "lineNumber": 90
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "obj.get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "selectReceivablePriceMapByContractId",
+          "callee": "obj.get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "selectCountByContractId",
+          "callee": "selectCount",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/receivable/CrmReceivablePlanMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 80,
+      "classes": [
+        {
+          "name": "CrmReceivablePlanMapper",
+          "startLine": 23,
+          "endLine": 89,
+          "methods": [
+            "selectMaxPeriodByContractId",
+            "selectPageByCustomerId",
+            "selectPage",
+            "selectReceivablePlanCountByRemind"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmReceivablePlanMapper",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectMaxPeriodByContractId",
+          "callee": "selectOne",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectMaxPeriodByContractId",
+          "callee": "new MPJLambdaWrapperX<CrmReceivablePlanDO>()\n                .eq(CrmReceivablePlanDO::getContractId, contractId)\n                .orderByDesc(CrmReceivablePlanDO::getPeriod).last",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectMaxPeriodByContractId",
+          "callee": "new MPJLambdaWrapperX<CrmReceivablePlanDO>()\n                .eq(CrmReceivablePlanDO::getContractId, contractId).orderByDesc",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectMaxPeriodByContractId",
+          "callee": "new MPJLambdaWrapperX<CrmReceivablePlanDO>().eq",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectMaxPeriodByContractId",
+          "callee": "new MPJLambdaWrapperX<CrmReceivablePlanDO>",
+          "lineNumber": 27
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 34
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "Objects.nonNull",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getContractNo",
+          "lineNumber": 35
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "query.innerJoin",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "on.like(CrmContractDO::getNo, reqVO.getContractNo()).eq",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "on.like",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getContractNo",
+          "lineNumber": 36
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "query.eq(CrmReceivablePlanDO::getCustomerId, reqVO.getCustomerId()) // 必须传递\n                .eqIfPresent(CrmReceivablePlanDO::getContractId, reqVO.getContractId()).orderByDesc",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "query.eq(CrmReceivablePlanDO::getCustomerId, reqVO.getCustomerId()).eqIfPresent",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "query.eq",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getCustomerId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "reqVO.getContractId",
+          "lineNumber": 40
+        },
+        {
+          "caller": "selectPageByCustomerId",
+          "callee": "selectJoinPage",
+          "lineNumber": 42
+        },
+        {
+          "caller": "selectPage",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 46
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmBizTypeEnum.CRM_RECEIVABLE_PLAN.getType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getSceneType",
+          "lineNumber": 49
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivablePlanDO.class)\n                .eqIfPresent(CrmReceivablePlanDO::getCustomerId, pageReqVO.getCustomerId())\n                .eqIfPresent(CrmReceivablePlanDO::getContractId, pageReqVO.getContractId()).orderByDesc",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivablePlanDO.class)\n                .eqIfPresent(CrmReceivablePlanDO::getCustomerId, pageReqVO.getCustomerId()).eqIfPresent",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll(CrmReceivablePlanDO.class).eqIfPresent",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.selectAll",
+          "lineNumber": 51
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getCustomerId",
+          "lineNumber": 52
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContractId",
+          "lineNumber": 53
+        },
+        {
+          "caller": "selectPage",
+          "callee": "Objects.nonNull",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContractNo",
+          "lineNumber": 55
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.innerJoin",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "on.like(CrmContractDO::getNo, pageReqVO.getContractNo()).eq",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "on.like",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getContractNo",
+          "lineNumber": 56
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 61
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmReceivablePlanPageReqVO.REMIND_TYPE_NEEDED.equals",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getRemindType",
+          "lineNumber": 62
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.isNull(CrmReceivablePlanDO::getReceivableId).le",
+          "lineNumber": 64
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.isNull",
+          "lineNumber": 64
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmReceivablePlanPageReqVO.REMIND_TYPE_EXPIRED.equals",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getRemindType",
+          "lineNumber": 66
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.isNull(CrmReceivablePlanDO::getReceivableId).lt",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.isNull",
+          "lineNumber": 68
+        },
+        {
+          "caller": "selectPage",
+          "callee": "CrmReceivablePlanPageReqVO.REMIND_TYPE_RECEIVED.equals",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPage",
+          "callee": "pageReqVO.getRemindType",
+          "lineNumber": 70
+        },
+        {
+          "caller": "selectPage",
+          "callee": "query.isNotNull",
+          "lineNumber": 71
+        },
+        {
+          "caller": "selectPage",
+          "callee": "selectJoinPage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "new MPJLambdaWrapperX<>",
+          "lineNumber": 77
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "CrmPermissionUtils.appendPermissionCondition",
+          "lineNumber": 79
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "CrmBizTypeEnum.CRM_RECEIVABLE_PLAN.getType",
+          "lineNumber": 79
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "CrmSceneTypeEnum.OWNER.getType",
+          "lineNumber": 80
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "LocalDateTimeUtil.beginOfDay",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 82
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "query.isNull(CrmReceivablePlanDO::getReceivableId) // 未回款\n                .lt(CrmReceivablePlanDO::getReturnTime, beginOfToday).lt",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "query.isNull(CrmReceivablePlanDO::getReceivableId).lt",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "query.isNull",
+          "lineNumber": 83
+        },
+        {
+          "caller": "selectReceivablePlanCountByRemind",
+          "callee": "selectCount",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/statistics/CrmStatisticsCustomerMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 146,
+      "nonEmptyLines": 124,
+      "classes": [
+        {
+          "name": "CrmStatisticsCustomerMapper",
+          "startLine": 13,
+          "endLine": 146,
+          "methods": [
+            "selectCustomerCreateCountGroupByDate",
+            "selectCustomerDealCountGroupByDate",
+            "selectCustomerCreateCountGroupByUser",
+            "selectCustomerDealCountGroupByUser",
+            "selectContractPriceGroupByUser",
+            "selectReceivablePriceGroupByUser",
+            "selectFollowUpRecordCountGroupByDate",
+            "selectFollowUpCustomerCountGroupByDate",
+            "selectFollowUpRecordCountGroupByUser",
+            "selectFollowUpCustomerCountGroupByUser",
+            "selectContractSummary",
+            "selectFollowUpRecordCountGroupByType",
+            "selectCustomerDealCycleGroupByDate",
+            "selectCustomerDealCycleGroupByUser",
+            "selectCustomerDealCycleGroupByAreaId",
+            "selectCustomerDealCycleGroupByProductId"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmStatisticsCustomerMapper",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/statistics/CrmStatisticsFunnelMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "CrmStatisticsFunnelMapper",
+          "startLine": 18,
+          "endLine": 33,
+          "methods": [
+            "selectCustomerCountByDate",
+            "selectBusinessCountByDateAndEndStatus",
+            "selectBusinessSummaryListGroupByEndStatus",
+            "selectBusinessSummaryListGroupByStatus",
+            "selectBusinessSummaryGroupByDate",
+            "selectBusinessInversionRateSummaryByDate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmStatisticsFunnelMapper",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/statistics/CrmStatisticsPortraitMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 16,
+      "classes": [
+        {
+          "name": "CrmStatisticsPortraitMapper",
+          "startLine": 13,
+          "endLine": 24,
+          "methods": [
+            "selectSummaryListGroupByAreaId",
+            "selectCustomerIndustryListGroupByIndustryId",
+            "selectCustomerSourceListGroupBySource",
+            "selectCustomerLevelListGroupByLevel"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmStatisticsPortraitMapper",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/statistics/CrmStatisticsProductMapper.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "CrmStatisticsProductMapper",
+          "startLine": 15,
+          "endLine": 34,
+          "methods": [
+            "selectProductSalesList",
+            "selectProductCategorySummary"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CrmStatisticsProductMapper",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/redis/RedisKeyConstants.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 15,
+      "classes": [
+        {
+          "name": "RedisKeyConstants",
+          "startLine": 8,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "NO"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RedisKeyConstants",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/dal/redis/no/CrmNoRedisDAO.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "generate",
+          "startLine": 42,
+          "endLine": 50,
+          "params": [
+            "prefix"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmNoRedisDAO",
+          "startLine": 19,
+          "endLine": 52,
+          "methods": [
+            "generate"
+          ],
+          "properties": [
+            "CONTRACT_NO_PREFIX",
+            "RECEIVABLE_PREFIX",
+            "stringRedisTemplate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CONTRACT_NO_PREFIX",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "RECEIVABLE_PREFIX",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "generate",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "CrmNoRedisDAO",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "DateUtil.format",
+          "lineNumber": 44
+        },
+        {
+          "caller": "generate",
+          "callee": "LocalDateTime.now",
+          "lineNumber": 44
+        },
+        {
+          "caller": "generate",
+          "callee": "stringRedisTemplate.opsForValue().increment",
+          "lineNumber": 46
+        },
+        {
+          "caller": "generate",
+          "callee": "stringRedisTemplate.opsForValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "generate",
+          "callee": "stringRedisTemplate.expire",
+          "lineNumber": 48
+        },
+        {
+          "caller": "generate",
+          "callee": "Duration.ofDays",
+          "lineNumber": 48
+        },
+        {
+          "caller": "generate",
+          "callee": "String.format",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/excel/core/AreaExcelColumnSelectFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "getName",
+          "startLine": 20,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "getOptions",
+          "startLine": 25,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "AreaExcelColumnSelectFunction",
+          "startLine": 15,
+          "endLine": 33,
+          "methods": [
+            "getName",
+            "getOptions"
+          ],
+          "properties": [
+            "NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "getName",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "getOptions",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "AreaExcelColumnSelectFunction",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOptions",
+          "callee": "AreaUtils.getArea",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getOptions",
+          "callee": "AreaUtils.getAreaNodePathList",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getOptions",
+          "callee": "area.getChildren",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmBusinessParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 25,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 35,
+          "endLine": 42,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmBusinessParseFunction",
+          "startLine": 16,
+          "endLine": 44,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME",
+            "businessService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "CrmBusinessParseFunction",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "businessService.getBusiness",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "Long.parseLong",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "businessDO.getName",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmContactParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 25,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 35,
+          "endLine": 42,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmContactParseFunction",
+          "startLine": 16,
+          "endLine": 44,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME",
+            "contactService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "CrmContactParseFunction",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "contactService.getContact",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "Long.parseLong",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "contactDO.getName",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmContractParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 25,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 35,
+          "endLine": 42,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmContractParseFunction",
+          "startLine": 16,
+          "endLine": 44,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME",
+            "contractService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "CrmContractParseFunction",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "contractService.getContract",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "Long.parseLong",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "contract.getName",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmCustomerIndustryParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 22,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmCustomerIndustryParseFunction",
+          "startLine": 16,
+          "endLine": 40,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "CrmCustomerIndustryParseFunction",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 34
+        },
+        {
+          "caller": "apply",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmCustomerLevelParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 22,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmCustomerLevelParseFunction",
+          "startLine": 16,
+          "endLine": 40,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "CrmCustomerLevelParseFunction",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 34
+        },
+        {
+          "caller": "apply",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmCustomerParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 25,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 30,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 35,
+          "endLine": 42,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmCustomerParseFunction",
+          "startLine": 16,
+          "endLine": 44,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME",
+            "customerService"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "CrmCustomerParseFunction",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "customerService.getCustomer",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "Long.parseLong",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "apply",
+          "callee": "crmCustomerDO.getName",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmCustomerSourceParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 22,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 32,
+          "endLine": 38,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmCustomerSourceParseFunction",
+          "startLine": 16,
+          "endLine": 40,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "CrmCustomerSourceParseFunction",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 34
+        },
+        {
+          "caller": "apply",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 37
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmProductStatusParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 31,
+          "endLine": 37,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmProductStatusParseFunction",
+          "startLine": 15,
+          "endLine": 39,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "CrmProductStatusParseFunction",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "apply",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 36
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "yudao-module-crm/yudao-module-crm-server/src/main/java/cn/iocoder/yudao/module/crm/framework/operatelog/core/CrmProductUnitParseFunction.java",
+      "language": "java",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "executeBefore",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "functionName",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "apply",
+          "startLine": 31,
+          "endLine": 37,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CrmProductUnitParseFunction",
+          "startLine": 15,
+          "endLine": 39,
+          "methods": [
+            "executeBefore",
+            "functionName",
+            "apply"
+          ],
+          "properties": [
+            "NAME"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NAME",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "executeBefore",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "functionName",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "CrmProductUnitParseFunction",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apply",
+          "callee": "StrUtil.isEmptyIfStr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "apply",
+          "callee": "DictFrameworkUtils.parseDictDataLabel",
+          "lineNumber": 36
+        },
+        {
+          "caller": "apply",
+          "callee": "value.toString",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    }
+  ]
+}

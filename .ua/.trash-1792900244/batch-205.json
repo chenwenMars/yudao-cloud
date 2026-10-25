@@ -1,0 +1,42 @@
+{
+  "nodes": [
+    {
+      "id": "service:yudao-module-mes/yudao-module-mes-server/Dockerfile",
+      "type": "service",
+      "name": "Dockerfile",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/Dockerfile",
+      "summary": "为MES 服务构建 Java 21 运行容器：复制 yudao-module-mes-server.jar 为 app.jar，设置上海时区与 512 MB JVM 初始及最大堆，并通过 java 命令启动；镜像声明暴露 48091 端口。",
+      "tags": [
+        "容器化",
+        "基础设施",
+        "MES 服务",
+        "java-21"
+      ],
+      "complexity": "simple",
+      "languageNotes": "基础镜像为 eclipse-temurin:21-jre，JAVA_OPTS 可通过容器环境变量覆盖。"
+    },
+    {
+      "id": "service:yudao-module-mes/yudao-module-mes-server/Dockerfile:eclipse-temurin",
+      "type": "service",
+      "name": "eclipse-temurin",
+      "filePath": "yudao-module-mes/yudao-module-mes-server/Dockerfile",
+      "summary": "Docker 构建阶段使用 eclipse-temurin:21-jre 作为 MES 服务 的 Java 21 运行时基础镜像。",
+      "tags": [
+        "运行时镜像",
+        "容器基础设施",
+        "java-21"
+      ],
+      "complexity": "simple",
+      "languageNotes": "该阶段声明暴露 48091 端口。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:yudao-module-mes/yudao-module-mes-server/Dockerfile",
+      "target": "service:yudao-module-mes/yudao-module-mes-server/Dockerfile:eclipse-temurin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

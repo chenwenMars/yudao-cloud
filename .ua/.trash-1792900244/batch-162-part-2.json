@@ -1,0 +1,1241 @@
+{
+  "nodes": [
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "type": "file",
+      "name": "AppFileController.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "summary": "提供 AppFile 管理端 REST API，接收请求并委托服务层完成业务操作。",
+      "tags": [
+        "管理端接口",
+        "api-handler",
+        "REST API",
+        "文件服务",
+        "对象存储"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "type": "file",
+      "name": "AppFileUploadReqVO.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "summary": "定义 AppFileUploadReq 的接口展示或请求字段，供管理端 API 交互使用。",
+      "tags": [
+        "数据模型",
+        "接口契约",
+        "管理端接口",
+        "api-handler",
+        "REST API"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java",
+      "type": "file",
+      "name": "FileConfigConvert.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java",
+      "summary": "在文件存储配置对象与 API 响应结构之间转换字段。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "type": "file",
+      "name": "FileConfigDO.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "summary": "定义 FileConfig 持久化数据对象，承载数据库记录字段供服务和 Mapper 使用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "type": "file",
+      "name": "FileContentDO.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "summary": "定义 FileContent 持久化数据对象，承载数据库记录字段供服务和 Mapper 使用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "type": "file",
+      "name": "FileDO.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "summary": "定义 File 持久化数据对象，承载数据库记录字段供服务和 Mapper 使用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "type": "file",
+      "name": "FileConfigMapper.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "summary": "声明 FileConfig 的 MyBatis 数据访问方法，连接制造业务服务与数据库记录。",
+      "tags": [
+        "数据访问",
+        "mybatis",
+        "文件服务",
+        "对象存储",
+        "持久化"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java",
+      "type": "file",
+      "name": "FileContentMapper.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java",
+      "summary": "声明 FileContent 的 MyBatis 数据访问方法，连接制造业务服务与数据库记录。",
+      "tags": [
+        "数据访问",
+        "mybatis",
+        "文件服务",
+        "对象存储",
+        "持久化"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "type": "file",
+      "name": "FileMapper.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "summary": "声明 File 的 MyBatis 数据访问方法，连接制造业务服务与数据库记录。",
+      "tags": [
+        "数据访问",
+        "mybatis",
+        "文件服务",
+        "对象存储",
+        "持久化"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "type": "file",
+      "name": "YudaoFileAutoConfiguration.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "summary": "注册文件存储客户端、配置和文件服务相关的 Spring Boot 组件。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "type": "file",
+      "name": "AbstractFileClient.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "summary": "封装文件存储客户端的通用上传、删除和 URL 解析行为。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java",
+      "type": "file",
+      "name": "FileClient.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java",
+      "summary": "定义文件存储后端上传、删除和访问地址解析契约。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "type": "file",
+      "name": "FileClientConfig.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "summary": "定义 FileClientConfig 相关的 Java 公共类型，供框架和业务模块复用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java",
+      "type": "file",
+      "name": "FileClientFactory.java",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java",
+      "summary": "根据存储配置创建和缓存对应的文件客户端实例。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:AppFileController",
+      "type": "class",
+      "name": "AppFileController",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "lineRange": [
+        24,
+        63
+      ],
+      "summary": "提供 AppFile 管理端 REST API，接收请求并委托服务层完成业务操作。",
+      "tags": [
+        "管理端接口",
+        "api-handler",
+        "REST API",
+        "文件服务",
+        "对象存储"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java:AppFileUploadReqVO",
+      "type": "class",
+      "name": "AppFileUploadReqVO",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "lineRange": [
+        11,
+        28
+      ],
+      "summary": "实现 AppFileUploadReq 的接口展示或请求字段，供管理端 API 交互使用。",
+      "tags": [
+        "数据模型",
+        "接口契约",
+        "管理端接口",
+        "api-handler",
+        "REST API"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java:FileConfigConvert",
+      "type": "class",
+      "name": "FileConfigConvert",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java",
+      "lineRange": [
+        14,
+        22
+      ],
+      "summary": "在文件存储配置对象与 API 响应结构之间转换字段。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java:FileConfigDO",
+      "type": "class",
+      "name": "FileConfigDO",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "lineRange": [
+        28,
+        113
+      ],
+      "summary": "实现 FileConfig 持久化数据对象，承载数据库记录字段供服务和 Mapper 使用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java:FileContentDO",
+      "type": "class",
+      "name": "FileContentDO",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "lineRange": [
+        18,
+        49
+      ],
+      "summary": "实现 FileContent 持久化数据对象，承载数据库记录字段供服务和 Mapper 使用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java:FileDO",
+      "type": "class",
+      "name": "FileDO",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "lineRange": [
+        15,
+        57
+      ],
+      "summary": "实现 File 持久化数据对象，承载数据库记录字段供服务和 Mapper 使用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java:FileConfigMapper",
+      "type": "class",
+      "name": "FileConfigMapper",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "lineRange": [
+        10,
+        25
+      ],
+      "summary": "声明 FileConfig 的 MyBatis 数据访问方法，连接制造业务服务与数据库记录。",
+      "tags": [
+        "数据访问",
+        "mybatis",
+        "文件服务",
+        "对象存储",
+        "持久化"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java:FileContentMapper",
+      "type": "class",
+      "name": "FileContentMapper",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java",
+      "lineRange": [
+        10,
+        25
+      ],
+      "summary": "声明 FileContent 的 MyBatis 数据访问方法，连接制造业务服务与数据库记录。",
+      "tags": [
+        "数据访问",
+        "mybatis",
+        "文件服务",
+        "对象存储",
+        "持久化"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java:FileMapper",
+      "type": "class",
+      "name": "FileMapper",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "lineRange": [
+        15,
+        33
+      ],
+      "summary": "声明 File 的 MyBatis 数据访问方法，连接制造业务服务与数据库记录。",
+      "tags": [
+        "数据访问",
+        "mybatis",
+        "文件服务",
+        "对象存储",
+        "持久化"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java:YudaoFileAutoConfiguration",
+      "type": "class",
+      "name": "YudaoFileAutoConfiguration",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "lineRange": [
+        13,
+        21
+      ],
+      "summary": "注册文件存储客户端、配置和文件服务相关的 Spring Boot 组件。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:AbstractFileClient",
+      "type": "class",
+      "name": "AbstractFileClient",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "lineRange": [
+        12,
+        79
+      ],
+      "summary": "封装文件存储客户端的通用上传、删除和 URL 解析行为。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java:FileClient",
+      "type": "class",
+      "name": "FileClient",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java",
+      "lineRange": [
+        8,
+        66
+      ],
+      "summary": "实现文件存储后端上传、删除和访问地址解析契约。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java:FileClientConfig",
+      "type": "class",
+      "name": "FileClientConfig",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "lineRange": [
+        11,
+        16
+      ],
+      "summary": "实现 FileClientConfig 相关的 Java 公共类型，供框架和业务模块复用。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java:FileClientFactory",
+      "type": "class",
+      "name": "FileClientFactory",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java",
+      "lineRange": [
+        5,
+        24
+      ],
+      "summary": "根据存储配置创建和缓存对应的文件客户端实例。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:uploadFile",
+      "type": "function",
+      "name": "uploadFile",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "lineRange": [
+        34,
+        43
+      ],
+      "summary": "执行 uploadFile 相关的框架处理逻辑。",
+      "tags": [
+        "管理端接口",
+        "api-handler",
+        "REST API",
+        "文件服务",
+        "对象存储"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:getFilePresignedUrl",
+      "type": "function",
+      "name": "getFilePresignedUrl",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "lineRange": [
+        45,
+        55
+      ],
+      "summary": "查询 FilePresignedUrl 相关数据或业务状态。",
+      "tags": [
+        "管理端接口",
+        "api-handler",
+        "REST API",
+        "文件服务",
+        "对象存储"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:createFile",
+      "type": "function",
+      "name": "createFile",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "lineRange": [
+        57,
+        61
+      ],
+      "summary": "创建或登记 File 相关数据或业务状态。",
+      "tags": [
+        "管理端接口",
+        "api-handler",
+        "REST API",
+        "文件服务",
+        "对象存储"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java:isDirectoryValid",
+      "type": "function",
+      "name": "isDirectoryValid",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "lineRange": [
+        22,
+        26
+      ],
+      "summary": "判断 DirectoryValid 相关数据或业务状态。",
+      "tags": [
+        "数据模型",
+        "接口契约",
+        "管理端接口",
+        "api-handler",
+        "REST API"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java:fileClientFactory",
+      "type": "function",
+      "name": "fileClientFactory",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "lineRange": [
+        16,
+        19
+      ],
+      "summary": "执行 fileClientFactory 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:AbstractFileClient",
+      "type": "function",
+      "name": "AbstractFileClient",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "lineRange": [
+        31,
+        35
+      ],
+      "summary": "执行 AbstractFileClient 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:init",
+      "type": "function",
+      "name": "init",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "lineRange": [
+        40,
+        43
+      ],
+      "summary": "初始化字典数据访问依赖。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:refresh",
+      "type": "function",
+      "name": "refresh",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "lineRange": [
+        50,
+        60
+      ],
+      "summary": "执行 refresh 相关的框架处理逻辑。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:getId",
+      "type": "function",
+      "name": "getId",
+      "filePath": "yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "lineRange": [
+        62,
+        65
+      ],
+      "summary": "查询 Id 相关数据或业务状态。",
+      "tags": [
+        "文件服务",
+        "对象存储",
+        "数据访问",
+        "持久化",
+        "mybatis"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:AppFileController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:AppFileController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java:AppFileUploadReqVO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java:AppFileUploadReqVO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java:FileConfigConvert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java:FileConfigConvert",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java:FileConfigDO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java:FileConfigDO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java:FileContentDO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java:FileContentDO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java:FileDO",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java:FileDO",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java:FileConfigMapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java:FileConfigMapper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java:FileContentMapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java:FileContentMapper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java:FileMapper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java:FileMapper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java:YudaoFileAutoConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java:YudaoFileAutoConfiguration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:AbstractFileClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:AbstractFileClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java:FileClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClient.java:FileClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java:FileClientConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java:FileClientConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java:FileClientFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java",
+      "target": "class:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java:FileClientFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:uploadFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:uploadFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:getFilePresignedUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:getFilePresignedUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:createFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java:createFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java:isDirectoryValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java:isDirectoryValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java:fileClientFactory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java:fileClientFactory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:AbstractFileClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:AbstractFileClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:init",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:refresh",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:refresh",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:getId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "function:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java:getId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/pojo/CommonResult.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/vo/file/FileCreateReqVO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/vo/file/FilePresignedUrlRespVO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/AppFileController.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/service/file/FileService.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/app/file/vo/AppFileUploadReqVO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/vo/file/FileUploadReqVO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/vo/config/FileConfigSaveReqVO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/convert/file/FileConfigConvert.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/json/JsonUtils.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/aop/TenantIgnore.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/dataobject/BaseDO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/db/DBFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/ftp/FtpFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/local/LocalFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/s3/S3FileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/sftp/SftpFileClientConfig.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/aop/TenantIgnore.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/dataobject/BaseDO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/db/DBFileClient.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/aop/TenantIgnore.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/dataobject/BaseDO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/pojo/PageResult.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/mapper/BaseMapperX.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/query/LambdaQueryWrapperX.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/vo/config/FileConfigPageReqVO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileConfigMapper.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileConfigDO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileContentMapper.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileContentDO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/pojo/PageResult.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/mapper/BaseMapperX.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "target": "file:yudao-framework/yudao-spring-boot-starter-mybatis/src/main/java/cn/iocoder/yudao/framework/mybatis/core/query/LambdaQueryWrapperX.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/vo/file/FilePageReqVO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/config/YudaoFileAutoConfiguration.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactoryImpl.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/AbstractFileClient.java",
+      "target": "file:yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/util/http/HttpUtils.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/client/FileClientFactory.java",
+      "target": "file:yudao-module-infra/yudao-module-infra-server/src/main/java/cn/iocoder/yudao/module/infra/framework/file/core/enums/FileStorageEnum.java",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}
