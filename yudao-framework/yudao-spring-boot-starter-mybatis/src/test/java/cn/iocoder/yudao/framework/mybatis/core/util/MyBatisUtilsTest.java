@@ -2,6 +2,7 @@ package cn.iocoder.yudao.framework.mybatis.core.util;
 
 import cn.iocoder.yudao.framework.common.pojo.PageParam;
 import cn.iocoder.yudao.framework.common.pojo.SortingField;
+import cn.iocoder.yudao.framework.mybatis.core.query.MPJLambdaWrapperX;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -84,6 +85,7 @@ public class MyBatisUtilsTest {
         // 断言
         assertEquals(2, page.getCurrent());
         assertEquals(20, page.getSize());
+        assertEquals(20, page.offset());
         assertEquals(2, page.orders().size());
         assertOrderItem(page.orders().get(0), "user_name", true);
         assertOrderItem(page.orders().get(1), "u.id", false);
@@ -137,6 +139,20 @@ public class MyBatisUtilsTest {
     }
 
     @Test
+    public void testAddOrder_mpjLambdaWrapper() {
+        // 准备参数
+        MPJLambdaWrapperX<TestDO> query = new MPJLambdaWrapperX<>();
+
+        // 调用
+        MyBatisUtils.addOrder(query, TestDO::getName,
+                new SortingField("name", SortingField.ORDER_ASC));
+
+        // 断言
+        assertTrue(query.getSqlSegment().contains("ORDER BY"));
+        assertTrue(query.getSqlSegment().contains("name ASC"));
+    }
+
+    @Test
     public void testOrderDirection() {
         // 准备参数
         String ascOrder = SortingField.ORDER_ASC;
@@ -162,6 +178,9 @@ public class MyBatisUtilsTest {
         // 调用，并断言各数据库模板保持原有参数序号和列名
         assertEquals("FIND_IN_SET({0}, websites) <> 0",
                 MyBatisUtils.findInSet(DbType.MYSQL, "websites", 0));
+        // MariaDB：与 MySQL 相同；JdbcUtils 按产品名或原生驱动 URL 识别为 MARIADB
+        assertEquals("FIND_IN_SET({0}, websites) <> 0",
+                MyBatisUtils.findInSet(DbType.MARIADB, "websites", 0));
         assertEquals("POSITION(',' || CAST({0} AS VARCHAR) || ',' IN ',' || websites || ',') > 0",
                 MyBatisUtils.findInSet(DbType.H2, "websites", 0));
         assertEquals("INSTR(',' || t.websites || ',', ',' || {0} || ',') > 0",
@@ -238,9 +257,51 @@ public class MyBatisUtilsTest {
         assertEquals(value2, query.getParamNameValuePairs().get("MPGENVAL2"));
     }
 
+    @Test
+    public void testSafeColumnName_boundaries() {
+        // 准备参数
+        List<String> validColumns = Arrays.asList("a", "_", "9", "u.id", "A9_._b2", "a.b.c");
+        List<String> invalidColumns = Arrays.asList("", ".a", "a.", "a..b", "a b", "a\n", "中文", "a;drop", "`a`");
+
+        // 调用，并断言
+        for (String valid : validColumns) {
+            assertTrue(MyBatisUtils.isSafeColumnName(valid), valid);
+        }
+        for (String invalid : invalidColumns) {
+            assertFalse(MyBatisUtils.isSafeColumnName(invalid), invalid);
+        }
+        assertFalse(MyBatisUtils.isSafeColumnName(null));
+    }
+
+    @Test
+    public void testBuildPage_longSegmentedColumn() {
+        // 准备参数
+        String valid = cn.hutool.core.util.StrUtil.repeat("a.", 10_000) + "a";
+
+        // 调用
+        Page<Object> page = MyBatisUtils.buildPage(new PageParam(),
+                Collections.singletonList(new SortingField(valid, SortingField.ORDER_ASC)));
+
+        // 断言
+        assertEquals(1, page.orders().size());
+        assertEquals(valid, page.orders().get(0).getColumn());
+        assertTrue(MyBatisUtils.buildPage(new PageParam(),
+                Collections.singletonList(new SortingField(valid + ".", SortingField.ORDER_ASC))).orders().isEmpty());
+    }
+
     private void assertOrderItem(OrderItem orderItem, String column, boolean asc) {
         assertEquals(column, orderItem.getColumn());
         assertEquals(asc, orderItem.isAsc());
+    }
+
+    private static class TestDO {
+
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
     }
 
 }

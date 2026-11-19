@@ -41,19 +41,23 @@ import cn.iocoder.yudao.module.ai.service.model.AiModelService;
 import cn.iocoder.yudao.module.ai.service.model.AiToolService;
 import cn.iocoder.yudao.module.ai.service.requestlog.AiRequestLogService;
 import cn.iocoder.yudao.module.ai.service.requestlog.dto.AiRequestLogCreateReqDTO;
+import cn.iocoder.yudao.module.ai.service.skill.AiSkillService;
+import cn.iocoder.yudao.module.ai.tool.skill.AiSkillToolCallback;
 import cn.iocoder.yudao.module.ai.util.AiChatUtils;
+import cn.iocoder.yudao.module.ai.util.AiDocumentUtils;
 import cn.iocoder.yudao.module.ai.util.AiReasoningUtils;
 import cn.iocoder.yudao.module.ai.util.FileTypeUtils;
 import com.google.common.collect.Maps;
 import io.modelcontextprotocol.client.McpSyncClient;
+import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.MessageType;
 import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.ai.chat.model.StreamingChatModel;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.content.Media;
@@ -134,6 +138,8 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
     @Resource
     private AiToolService toolService;
     @Resource
+    private AiSkillService skillService;
+    @Resource
     private AiRequestLogService requestLogService;
 
     @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
@@ -175,9 +181,7 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
                 sendReqVO.getContent(), conversation);
 
         // 2.2 联网搜索
-        AiWebSearchResponse webSearchResponse = Boolean.TRUE.equals(sendReqVO.getUseSearch()) && webSearchClient != null ?
-                webSearchClient.search(new AiWebSearchRequest().setQuery(sendReqVO.getContent())
-                        .setSummary(true).setCount(WEB_SEARCH_COUNT)) : null;
+        AiWebSearchResponse webSearchResponse = searchWeb(sendReqVO);
 
         // 2.3 创建 chat 需要的 Prompt：在插入消息前构建，图片读取失败时不留下消息
         Prompt prompt = buildPrompt(conversation, contextMessages, knowledgeSegments, webSearchResponse, model, sendReqVO,
@@ -199,7 +203,8 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
         // 4.2 调用模型
         ChatResponse chatResponse;
         try {
-            chatResponse = chatModel.call(prompt);
+            // 经 ChatClient 调用：Spring AI 2.x 的 ChatModel 不再自行执行工具调用，由 ChatClient 执行
+            chatResponse = ChatClient.create(chatModel).prompt(prompt).call().chatResponse();
         } catch (RuntimeException ex) {
             finishChatCall(requestLog, AiRequestLogStatusEnum.FAIL, ex);
             throw ex;
@@ -251,7 +256,7 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
             return Flux.just(error(ex.getCode(), ex.getMessage()));
         }
         // 1.4 获得模型客户端
-        StreamingChatModel chatModel = modalService.getChatModel(model.getId(), reasoningOptions);
+        ChatModel chatModel = modalService.getChatModel(model.getId(), reasoningOptions);
         // 1.5 选出上下文消息
         List<AiChatMessageDO> contextMessages = filterContextMessages(historyMessages, conversation, sendReqVO);
 
@@ -260,9 +265,7 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
                 sendReqVO.getContent(), conversation);
 
         // 2.2 联网搜索
-        AiWebSearchResponse webSearchResponse = Boolean.TRUE.equals(sendReqVO.getUseSearch()) && webSearchClient != null ?
-                webSearchClient.search(new AiWebSearchRequest().setQuery(sendReqVO.getContent())
-                        .setSummary(true).setCount(WEB_SEARCH_COUNT)) : null;
+        AiWebSearchResponse webSearchResponse = searchWeb(sendReqVO);
 
         // 2.3 构建 Prompt：在插入消息前构建，图片读取失败时返回错误帧，不留下消息
         Prompt prompt;
@@ -290,7 +293,8 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
         // 4.2 调用模型
         Flux<ChatResponse> streamResponse;
         try {
-            streamResponse = chatModel.stream(prompt);
+            // 经 ChatClient 调用：Spring AI 2.x 的 ChatModel 不再自行执行工具调用，由 ChatClient 执行
+            streamResponse = ChatClient.create(chatModel).prompt(prompt).stream().chatResponse();
         } catch (RuntimeException ex) {
             finishChatStream(requestLog, finished, assistantMessage.getId(), "", "",
                     AiRequestLogStatusEnum.FAIL, ex);
@@ -431,15 +435,30 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
         return knowledgeSegments;
     }
 
+    /**
+     * 联网搜索：按消息内容搜索
+     *
+     * @param sendReqVO 发送请求
+     * @return 搜索结果；未开启联网搜索时返回 null
+     */
+    private AiWebSearchResponse searchWeb(AiChatMessageSendReqVO sendReqVO) {
+        if (!Boolean.TRUE.equals(sendReqVO.getUseSearch()) || webSearchClient == null) {
+            return null;
+        }
+        return webSearchClient.search(new AiWebSearchRequest().setQuery(sendReqVO.getContent())
+                .setSummary(true).setCount(WEB_SEARCH_COUNT));
+    }
+
     private Prompt buildPrompt(AiChatConversationDO conversation, List<AiChatMessageDO> contextMessages,
                                List<AiKnowledgeSegmentSearchRespBO> knowledgeSegments,
                                AiWebSearchResponse webSearchResponse,
                                AiModelDO model, AiChatMessageSendReqVO sendReqVO,
                                List<ToolCallback> toolCallbacks, Map<String, Object> reasoningOptions) {
         List<Message> chatMessages = new ArrayList<>();
-        // 1.1 System Context 角色设定
-        if (StrUtil.isNotBlank(conversation.getSystemMessage())) {
-            chatMessages.add(new SystemMessage(conversation.getSystemMessage()));
+        // 1.1 System Context 角色设定；角色绑定了技能时，末尾追加可用技能清单（仅名称与描述）
+        String systemMessage = AiSkillToolCallback.appendSkillPrompt(conversation.getSystemMessage(), toolCallbacks);
+        if (StrUtil.isNotBlank(systemMessage)) {
+            chatMessages.add(new SystemMessage(systemMessage));
         }
 
         // 1.2 历史 history message 历史消息（已由 filterContextMessages 选出）；user 消息带上该轮的图片
@@ -488,7 +507,7 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
 
         // 2.1 tool 工具：已在调用方解析
         Map<String,Object> toolContext = CollUtil.isNotEmpty(toolCallbacks) ? AiChatUtils.buildCommonToolContext()
-                : Map.of();
+                : Collections.emptyMap();
         // 2.2 构建 ChatOptions 对象：思考参数与客户端是同一份；未配置思考时为 null，与原有行为一致
         AiPlatformEnum platform = AiPlatformEnum.validatePlatform(model.getPlatform());
         boolean hasMedia = CollUtil.anyMatch(chatMessages, message -> message instanceof UserMessage
@@ -526,6 +545,7 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
      *
      * 1. 通过角色的 toolIds，解析本地注册的工具
      * 2. 通过角色的 mcpClientNames，匹配已连接的 MCP Client，获取它们提供的工具
+     * 3. 通过角色的 skillIds，追加只读的技能工具 read_skill、read_skill_file
      *
      * @param roleId 角色编号
      * @return 工具回调列表；角色编号为空、或角色不存在时，返回 null
@@ -563,6 +583,10 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
                     CollUtil.addAll(toolCallbacks, mcpToolCallBacks);
                 });
             });
+        }
+        // 3. 通过 skillIds：只读的技能工具；已删除、停用的技能自动跳过
+        if (CollUtil.isNotEmpty(chatRole.getSkillIds())) {
+            toolCallbacks.addAll(skillService.getSkillToolCallbackList(chatRole));
         }
         return toolCallbacks;
     }
@@ -627,7 +651,7 @@ public class AiChatMessageServiceImpl implements AiChatMessageService {
                     byte[] bytes = HttpUtil.downloadBytes(attachmentUrl);
                     content = Base64.encode(bytes);
                 } else {
-                    content = knowledgeDocumentService.readUrl(attachmentUrl);
+                    content = AiDocumentUtils.readUrl(attachmentUrl);
                 }
                 if (StrUtil.isNotEmpty(content)) {
                     attachmentContents.put(name, content);
